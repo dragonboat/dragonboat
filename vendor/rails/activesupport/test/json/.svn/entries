@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6893"
+   name=""
+   committed-date="2007-05-29T09:10:36.616541Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/json"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6893"
+   name="encoding_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-05-29T09:10:36.616541Z"
+   checksum="660eb1d353064545ce28cf071d0a01d6"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="decoding_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="60729ff6d80d5e68e7a4d483af49828e"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+</wc-entries>

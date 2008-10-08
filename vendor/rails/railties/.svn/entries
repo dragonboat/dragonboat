@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7006"
+   name=""
+   committed-date="2007-06-12T16:46:25.345607Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   prop-time="2007-06-20T22:19:06.000000Z"
+   revision="7027"/>
+<entry
+   name="test"
+   kind="dir"/>
+<entry
+   committed-rev="6881"
+   name="Rakefile"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-28T22:55:14.347282Z"
+   checksum="d5a9bd81ef3ae4912d297f2eb9998021"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="7002"
+   name="CHANGELOG"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-06-11T18:05:02.655164Z"
+   checksum="eee5bfd41de2026c409f92272f72c6ff"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   name="environments"
+   kind="dir"/>
+<entry
+   name="dispatches"
+   kind="dir"/>
+<entry
+   name="configs"
+   kind="dir"/>
+<entry
+   committed-rev="6611"
+   name="README"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="d8fb946f11f939df1ff512ab46034128"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   name="helpers"
+   kind="dir"/>
+<entry
+   name="html"
+   kind="dir"/>
+<entry
+   name="doc"
+   kind="dir"/>
+<entry
+   name="lib"
+   kind="dir"/>
+<entry
+   name="builtin"
+   kind="dir"/>
+<entry
+   name="bin"
+   kind="dir"/>
+<entry
+   committed-rev="4030"
+   name="fresh_rakefile"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-03-25T21:57:08.878299Z"
+   checksum="17f2f134da4cd31ea095d5868ca89e86"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="4922"
+   name="MIT-LICENSE"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-09-03T18:53:05.200315Z"
+   checksum="f764e1184ad8e4b928e3fe1f60248b7d"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

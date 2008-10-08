@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4913"
+   name=""
+   committed-date="2006-09-03T00:18:31.234706Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/mocks"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4913"
+   name="routes.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2006-09-03T00:18:31.234706Z"
+   checksum="961ac0220b2260ca551be1a3de6d839b"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="1819"
+   name="dispatcher.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-07-13T02:12:00.733854Z"
+   checksum="1f3237c3d739e41f6406ce15e83deaf0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="4913"
+   name="stubbed_breakpoint.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2006-09-03T00:18:31.234706Z"
+   checksum="652b853d66ec6803b923c5dda5717325"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="1592"
+   name="fcgi.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-07-02T04:52:14.478278Z"
+   checksum="0b221c9fe8febccf85cef63697f7008e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="4913"
+   name="stubbed_kernel.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2006-09-03T00:18:31.234706Z"
+   checksum="a371131cd5b6e00287a00e203aaa9fb9"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

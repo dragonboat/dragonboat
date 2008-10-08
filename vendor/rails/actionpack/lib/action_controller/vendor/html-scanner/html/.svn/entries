@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6117"
+   name=""
+   committed-date="2007-02-04T20:04:40.510515Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_controller/vendor/html-scanner/html"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6057"
+   name="document.rb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-01-28T07:16:55.337195Z"
+   checksum="adccf1a34405299464c7b138438b3cf7"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6057"
+   name="selector.rb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-01-28T07:16:55.337195Z"
+   checksum="ae80c432b90d4aecb25922ce18d02748"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6117"
+   name="node.rb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-04T20:04:40.510515Z"
+   checksum="9116bfb6cf9d92f21f545672f7767675"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="3154"
+   name="version.rb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2005-11-21T21:02:10.997726Z"
+   checksum="0e3470b00768f297c164dc1ab10f3691"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="3153"
+   name="tokenizer.rb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2005-11-21T20:43:35.234905Z"
+   checksum="a474cbb0c55696cbec06bfe4682d585b"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+</wc-entries>

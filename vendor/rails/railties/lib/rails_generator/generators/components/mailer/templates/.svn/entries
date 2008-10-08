@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6180"
+   name=""
+   committed-date="2007-02-21T00:29:44.661503Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/mailer/templates"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6180"
+   name="view.rhtml"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="5329"
+   name="unit_test.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-10-20T19:33:14.554651Z"
+   checksum="9808e4a0fda50ab1d3c64200b0be2369"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="view.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="b91acca1d5e15110498ba6583ce7bf7b"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="fixture.rhtml"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="988"
+   name="mailer.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-03-23T14:16:46.883120Z"
+   checksum="7b8696260c2c8cf910788cb8dade5768"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="fixture.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="b91acca1d5e15110498ba6583ce7bf7b"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

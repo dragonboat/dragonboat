@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2959"
+   name=""
+   committed-date="2005-11-09T21:15:41.418700Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/bin/performance"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="2959"
+   name="benchmarker"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-11-09T21:15:41.418700Z"
+   checksum="91086af38733556c5aabc91eb4b20bed"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="2959"
+   name="profiler"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-11-09T21:15:41.418700Z"
+   checksum="4dd7faa9b0b5f678082e19c97852b005"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

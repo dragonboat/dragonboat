@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6869"
+   name=""
+   committed-date="2007-05-27T18:44:33.826000Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/configs"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4294"
+   name="lighttpd.conf"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-04-28T00:00:50.337113Z"
+   checksum="9df5d40f1b3a3a9f1248e44d6ebbabcf"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="routes.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="10c12ea27a545cac3db47aede9c2c503"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="apache.conf"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="efabcc9c4d4c5abeea2e1a17ff578c64"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   name="initializers"
+   kind="dir"/>
+<entry
+   name="databases"
+   kind="dir"/>
+<entry
+   committed-rev="620"
+   name="empty.log"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-02-15T13:09:18.655840Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

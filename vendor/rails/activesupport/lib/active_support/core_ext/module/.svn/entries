@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6441"
+   name=""
+   committed-date="2007-03-18T03:16:53.637156Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/module"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4060"
+   name="loading.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-03-27T05:13:46.164893Z"
+   checksum="3dcd1c8ec564a7a2166a76d3ac9c0d62"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6426"
+   name="introspection.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-14T23:27:28.855203Z"
+   checksum="f99bbe681ef644f9806f827caab42172"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="3519"
+   name="inclusion.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-02-02T04:54:07.847612Z"
+   checksum="1cab1b460a5581400ee1ae4a03718e25"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="4839"
+   name="attr_internal.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-08-29T08:24:04.802818Z"
+   checksum="eeebe58eb6b9fb2cea45f80b70146908"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6441"
+   name="aliasing.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T03:16:53.637156Z"
+   checksum="208dcf36f1ca81b5eeb0eb02887ab91e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6050"
+   name="attribute_accessors.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-28T01:18:51.163439Z"
+   checksum="ec2c6414bc9775eebb83360892ed2678"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="5793"
+   name="attr_accessor_with_default.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-12-27T00:42:31.010294Z"
+   checksum="2fd4be9831f55c4f8c2d3e43a9f91552"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="4330"
+   name="delegation.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-05-08T18:10:40.802641Z"
+   checksum="b6ca517e7ae14877c644bc159029baa9"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6990"
+   name=""
+   committed-date="2007-06-10T23:04:19.218773Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/scaffold"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6884"
+   name="USAGE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-29T02:07:08.012721Z"
+   checksum="fcedba60a19e3d1576e9cf4bf1a5f44e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6840"
+   name="scaffold_generator.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-25T21:15:46.212649Z"
+   checksum="7455304830eb831b06176cd5e54c7604"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+</wc-entries>

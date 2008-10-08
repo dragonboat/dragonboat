@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6969"
+   name=""
+   committed-date="2007-06-08T04:40:12.568474Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/test/fixtures"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5079"
+   name="raw_email_quoted_with_0d0a"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-09-09T20:16:42.398619Z"
+   checksum="4efdb0949ed9128af944e2339772560e"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="first_mailer"
+   kind="dir"/>
+<entry
+   committed-rev="1300"
+   name="raw_email2"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-05-10T13:40:26.029812Z"
+   checksum="310de87b3d70d173ac9e949cc27d5856"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1300"
+   name="raw_email3"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-05-10T13:40:26.029812Z"
+   checksum="3ebbe5891db60f8861a61bf164ea5491"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1300"
+   name="raw_email4"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-05-10T13:40:26.029812Z"
+   checksum="6e96f544ab88004ea3c2019529065ccb"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1301"
+   name="raw_email5"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-05-10T15:30:18.737476Z"
+   checksum="3ac44e545bd39f01953c8f6746e8c8df"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1374"
+   name="raw_email6"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-05-30T23:09:50.212405Z"
+   checksum="5ed881b7bbb3c06cd32a31c69dfb6f0a"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="3475"
+   name="raw_email7"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-01-23T16:48:24.410932Z"
+   checksum="48a04a4c7024e005a88756a365debb30"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1390"
+   name="raw_email8"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-06-06T16:12:38.088046Z"
+   checksum="f055f76bf37e09569dc37b8100b3b457"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1391"
+   name="raw_email9"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-06-06T16:47:20.120761Z"
+   checksum="25fb900a75d83dea8603f547d4ff3997"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+<entry
+   committed-rev="1276"
+   name="raw_email"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-05-02T17:18:53.659040Z"
+   checksum="fd5693756ae4bb93adba3ac3d1ad6084"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1396"
+   name="raw_email10"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-06-08T10:29:17.737563Z"
+   checksum="2d81f7c964dab0b9c19374de267b6c06"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="helpers"
+   kind="dir"/>
+<entry
+   committed-rev="1476"
+   name="raw_email11"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-06-22T09:59:14.655771Z"
+   checksum="91380c06d52de79dbedd8fd2e533f17b"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2036"
+   name="raw_email12"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-08-22T21:05:44.259233Z"
+   checksum="1ef9609111f11f69b711becfa0c3b143"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="second_mailer"
+   kind="dir"/>
+<entry
+   committed-rev="3474"
+   name="raw_email13"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-01-23T16:37:46.209307Z"
+   checksum="e0d4031d92f61ae92a3f2ecd4689f0b0"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6207"
+   name="raw_email_with_nested_attachment"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-22T19:04:00.143256Z"
+   checksum="9e8311409df88d827e343dba3f4ebc85"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="test_mailer"
+   kind="dir"/>
+<entry
+   name="helper_mailer"
+   kind="dir"/>
+<entry
+   committed-rev="5080"
+   name="raw_email_with_partially_quoted_subject"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-09-09T21:14:43.902803Z"
+   checksum="cb532ab2cb6ba0a8ecc119fddf02e227"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="path.with.dots"
+   kind="dir"/>
+</wc-entries>

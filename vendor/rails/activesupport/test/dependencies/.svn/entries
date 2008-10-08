@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5781"
+   name=""
+   committed-date="2006-12-24T14:41:29.690530Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/dependencies"
+   last-author="ulysses"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4837"
+   name="requires_nonexistent0.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-29T06:52:39.779674Z"
+   checksum="99542427ae9c72d393c274a7f0c9ac74"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4837"
+   name="requires_nonexistent1.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-29T06:52:39.779674Z"
+   checksum="fa74fe3ad083f5f0f2b29af9d563b5d9"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="3193"
+   name="mutual_two.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-11-28T20:39:26.435912Z"
+   checksum="ca0836d84f972ef7642a94d776de6b50"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4728"
+   name="conflict.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-08T21:21:04.703048Z"
+   checksum="e053272c93126ea96146b693f4390adf"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="273"
+   name="service_one.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2004-12-29T21:03:21.846328Z"
+   checksum="6011321ecf89c9a8d570266371751d4e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="5781"
+   name="cross_site_depender.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-12-24T14:41:29.690530Z"
+   checksum="06cf82dbb36191b1ef3ab17d600a8626"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4782"
+   name="raises_exception.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-17T17:32:23.250775Z"
+   checksum="ccf192d06b8a6213e75a2569ecedbcde"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="3169"
+   name="check_warnings.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-11-23T21:31:51.586822Z"
+   checksum="ee48b2b133ff22ffc2115a8468b85e76"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="3193"
+   name="mutual_one.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-11-28T20:39:26.435912Z"
+   checksum="c2831e90b79d15a71d96ad01bedf5603"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="273"
+   name="service_two.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2004-12-29T21:03:21.846328Z"
+   checksum="f1abafc1dc6a20268b783fbf2f335bf4"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+</wc-entries>

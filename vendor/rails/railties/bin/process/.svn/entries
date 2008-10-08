@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4300"
+   name=""
+   committed-date="2006-04-28T03:56:30.898461Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/bin/process"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="2959"
+   name="spawner"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-11-09T21:15:41.418700Z"
+   checksum="e7e52ded28489a821b5eb156f92ca0f5"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="4300"
+   name="inspector"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-04-28T03:56:30.898461Z"
+   checksum="73662c6991e4d3ea2332b5fcadd5b3d3"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="2959"
+   name="reaper"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-11-09T21:15:41.418700Z"
+   checksum="77608fa9e09e9f24410e7374c67956b7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

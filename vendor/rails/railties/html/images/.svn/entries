@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2933"
+   name=""
+   committed-date="2005-11-08T04:26:34.030813Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/html/images"
+   last-author="sam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="2933"
+   name="rails.png"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-11-08T04:26:34.030813Z"
+   checksum="450fc241fab7867e96536903244087f4"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

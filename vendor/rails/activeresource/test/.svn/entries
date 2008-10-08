@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6972"
+   name=""
+   committed-date="2007-06-08T19:32:15.083567Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activeresource/test"
+   last-author="xal"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   prop-time="2007-06-20T22:18:39.000000Z"
+   revision="7027"/>
+<entry
+   committed-rev="6864"
+   name="connection_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-05-26T20:57:08.192238Z"
+   checksum="e22552280e90120ade2e0fd0f015db9e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="5714"
+   name="authorization_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2006-12-12T15:29:54.492398Z"
+   checksum="6be77de9ef63405d916402c68ea8b7c8"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6611"
+   name="abstract_unit.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="d90f4fb59cfae3c77000695ff8defb7c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="5967"
+   name="base_errors_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-01-17T00:46:32.921936Z"
+   checksum="f4852b49df90e95d8203ebe96c1081b6"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+<entry
+   name="base"
+   kind="dir"/>
+<entry
+   committed-rev="6972"
+   name="base_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-06-08T19:32:15.083567Z"
+   checksum="7adb9eddc39c971335307e8e7f395ab8"
+   last-author="xal"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6033"
+   name="setter_trap.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-01-24T18:29:07.725149Z"
+   checksum="095abc69fe95a34e92f754a75d977b25"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+</wc-entries>

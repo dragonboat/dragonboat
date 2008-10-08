@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6969"
+   name=""
+   committed-date="2007-06-08T04:40:12.568474Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/test/fixtures/test_mailer"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6180"
+   name="signed_up_with_url.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="signed_up.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="7cb9c937ab4270f2a325b81e865c8950"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.text.yaml.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="ea9bb5d239fb9baca74be1243072d511"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.text.plain.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="f2de1e51129c04d61c3f872ba17a8ec2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.text.html.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="672d72e04d99eead849f027a931f794b"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.ignored.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="6e8fe7c6da775c55e69e459de31878b8"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6969"
+   name="custom_templating_extension.text.plain.haml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-06-08T04:40:12.568474Z"
+   checksum="37d9b0bbf78332528c90c98fdcee2159"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6969"
+   name="custom_templating_extension.text.html.haml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-06-08T04:40:12.568474Z"
+   checksum="37d9b0bbf78332528c90c98fdcee2159"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="signed_up_with_url.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="b11247662471435fa7fb0e333554e84a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="signed_up.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.text.yaml.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.text.plain.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.text.html.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="implicitly_multipart_example.ignored.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="3040"
+   name="implicitly_multipart_example.rhtml.bak"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2005-11-15T08:36:38.991356Z"
+   checksum="6e8fe7c6da775c55e69e459de31878b8"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+</wc-entries>

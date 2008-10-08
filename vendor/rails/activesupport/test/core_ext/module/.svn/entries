@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6976"
+   name=""
+   committed-date="2007-06-08T22:19:15.219302Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/core_ext/module"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6050"
+   name="attribute_accessor_test.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2007-01-28T01:18:51.163439Z"
+   checksum="81cd92bd43b883852dd3e69bbef29591"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4692"
+   name="attr_internal_test.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-07T01:16:37.229312Z"
+   checksum="f7ee90a48dccdf3a862124daa0cc20c1"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4653"
+   name="attribute_aliasing_test.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-03T18:47:43.904261Z"
+   checksum="01b4842cd0030b761a8b57e1dce71a6b"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6976"
+   name="attr_accessor_with_default_test.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2007-06-08T22:19:15.219302Z"
+   checksum="a1a7b0b9a7ba6a5b16be707443697fef"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6976"
+   name="attr_accessor_with_default.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2007-06-08T22:19:15.219302Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+</wc-entries>

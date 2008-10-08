@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6980"
+   name=""
+   committed-date="2007-06-09T04:42:32.694262Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activeresource/lib/active_resource"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6625"
+   name="custom_methods.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-04-29T04:46:14.930969Z"
+   checksum="51803bd26114b51ce93c92e8907d2dec"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="5962"
+   name="validations.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-01-16T06:34:10.658669Z"
+   checksum="2fd56a9e423ed7d83397cb05ef2df51d"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6864"
+   name="connection.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-05-26T20:57:08.192238Z"
+   checksum="6ff2ae21add090fae5fb6678e4c49b70"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6550"
+   name="version.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-04-23T18:55:54.453450Z"
+   checksum="62a57e0657e98fded75a083ce9f1af00"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6584"
+   name="http_mock.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-04-26T01:53:01.994058Z"
+   checksum="9376e11036a8bc3f1aaf07d91740d873"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6972"
+   name="base.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-06-08T19:32:15.083567Z"
+   checksum="93cc827fb67883f852b8a1cefd104a5c"
+   last-author="xal"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+</wc-entries>

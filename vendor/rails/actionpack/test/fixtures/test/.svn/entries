@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6735"
+   name=""
+   committed-date="2007-05-15T03:15:36.737199Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/test"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6180"
+   name="_hash_object.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="9bd8ba1e367c6168fc1a1527de4f1e72"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="hello_xml_world.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="974f216527d9b1ac066301a8591780de"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="render_file_with_ivar.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6404"
+   name="list.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-03-13T05:06:41.088224Z"
+   checksum="e8ea3a426aa28637e624cc0f56cf1bfe"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="hello_world_with_layout_false.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="86fb269d190d2c85f6e0468ceca42a20"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="hello.rxml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_customer.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="3078"
+   name="delete_with_js.rjs"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2005-11-17T21:28:59.486091Z"
+   checksum="6c79696643124b25062d48dd994a612b"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="_hello.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="6f27d46fa27b1f96296d3139d8f6be4c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="hello.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="e0ead73f40aedf6e2cb060bb44353391"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="greeting.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_person.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="_customer_greeting.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="f966d17ab2e5180478a6e28a98085641"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="hello_world_container.rxml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_hash_object.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6545"
+   name="hello_world.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-04-20T21:44:08.349642Z"
+   checksum="425e38cf365262e4414340d419a7e2f4"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="list.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="hello_world_with_layout_false.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="block_content_for.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="4fef223e0eff96df188770f700b9f162"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6734"
+   name="_partial.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-05-15T03:13:32.206819Z"
+   checksum="fedb2d84cafe20862cb4399751a8a7e3"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6499"
+   name="formatted_xml_erb.xml.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-04-02T00:02:11.131371Z"
+   checksum="815b97be61ca83044eb1ab471c19afbd"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="_partial_only.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="5d67106db09633e6950c703fb4ae34e0"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="capturing.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="e806aa4d8624325bb85aff09ef92edb6"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6734"
+   name="_partial.html.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-05-15T03:13:32.206819Z"
+   checksum="a1210e456c8751490bcf1a3fd229c8aa"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_customer_greeting.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="potential_conflicts.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d6829ff09f2141193c88ac091d8e071c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="hello_xml_world.rxml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="render_to_string_test.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="639d87292249a7c42b3e83d9a45768ce"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="render_file_with_locals.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="5d8aa4ab64ef8d99d202aacfaea5bcb3"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6735"
+   name="_partial.js.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-05-15T03:15:36.737199Z"
+   checksum="8c018f633a8780bb1c35b8750e6aabd0"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="3774"
+   name="enum_rjs_test.rjs"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2006-03-05T16:41:04.575451Z"
+   checksum="4ba7546ffedcdf91d07f66d8bbc6702c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="erb_content_for.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="8392db3ce8126139b88efb8de64aa700"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="block_content_for.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6734"
+   name="_partial.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-05-15T03:13:32.206819Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="update_element_with_capture.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="c766bf5c058103c0220a02fd19d0ea96"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="capturing.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_partial_only.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="hello_world.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="86fb269d190d2c85f6e0468ceca42a20"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="non_erb_block_content_for.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="dab2ea9deaacb3cd6c174ea151b2e72c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6499"
+   name="formatted_xml_erb.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-04-02T00:02:11.131371Z"
+   checksum="491d34ba344758ad941f21f62fc5d5a1"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_hello.rxml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="content_for.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="b7dcb6a47d36da0ee8b63318887fb253"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="potential_conflicts.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   name="dot.directory"
+   kind="dir"/>
+<entry
+   committed-rev="6178"
+   name="hello_world.rxml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="render_file_with_locals.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="render_to_string_test.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="erb_content_for.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="action_talk_to_layout.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="5eec87e7350585f8b39c1c257c298b95"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="update_element_with_capture.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="hello_world.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="hello_world_container.builder"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="94666ff852b10492a7ef50b5b607cc18"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="render_file_with_ivar.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="052cfcb14a1f7b1cd8f70de19722ab2b"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="content_for.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6499"
+   name="formatted_xml_erb.html.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-04-02T00:02:11.131371Z"
+   checksum="7b07e16b25dafba8a4b258ddb49d5c4b"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="_customer.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="875e3e0079c23e80e5495cecbaec6f11"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6499"
+   name="formatted_html_erb.html.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-04-02T00:02:11.131371Z"
+   checksum="866e01f47a58b5e710f00f107c104301"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="greeting.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="bb1ab25d7a74db3f837739350a2f76ca"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="action_talk_to_layout.rhtml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="_person.erb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="7f8a2f4a11e7e4574c32c77a1afa33cb"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="non_erb_block_content_for.rxml"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+</wc-entries>

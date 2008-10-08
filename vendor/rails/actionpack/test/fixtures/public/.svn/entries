@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6188"
+   name=""
+   committed-date="2007-02-21T15:58:42.213495Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/public"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="5504"
+   name="500.html"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-11-13T02:03:50.247790Z"
+   checksum="ed24e5e349297a55cb18607d8b160e62"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="javascripts"
+   kind="dir"/>
+<entry
+   committed-rev="5504"
+   name="404.html"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-11-13T02:03:50.247790Z"
+   checksum="4d175f9da7b7ea28d28cfe516d776845"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="stylesheets"
+   kind="dir"/>
+</wc-entries>

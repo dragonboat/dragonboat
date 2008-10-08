@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4394"
+   name=""
+   committed-date="2006-06-01T15:42:08.006606Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/controller/controller_fixtures/app/controllers/admin"
+   last-author="minam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4394"
+   name="user_controller.rb"
+   text-time="2007-06-20T22:18:52.000000Z"
+   committed-date="2006-06-01T15:42:08.006606Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:52.000000Z"/>
+</wc-entries>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5436"
+   name=""
+   committed-date="2006-11-05T21:56:18.038003Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/test/fixtures/helpers"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5436"
+   name="example_helper.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-11-05T21:56:18.038003Z"
+   checksum="8fac47ad388e5a01bfdc784125f35ae1"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+</wc-entries>

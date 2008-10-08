@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="800"
+   name=""
+   committed-date="2005-02-25T23:39:39.620985Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/test/apis"
+   last-author="bitserf"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="800"
+   name="auto_load_api.rb"
+   text-time="2007-06-20T22:19:00.000000Z"
+   committed-date="2005-02-25T23:39:39.620985Z"
+   checksum="ac560a676e964ca883ad5025b9949fb3"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+<entry
+   committed-rev="800"
+   name="broken_auto_load_api.rb"
+   text-time="2007-06-20T22:19:00.000000Z"
+   committed-date="2005-02-25T23:39:39.620985Z"
+   checksum="e1c06d85ae7b8b032bef47e42e4c08f9"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+</wc-entries>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3537"
+   name=""
+   committed-date="2006-02-04T21:24:40.043857Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/autoloading_fixtures/a"
+   last-author="xal"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="c"
+   kind="dir"/>
+<entry
+   committed-rev="3493"
+   name="b.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-01-29T00:37:39.221698Z"
+   checksum="d212156dfbf11fbe286aeddf515eaca2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+</wc-entries>

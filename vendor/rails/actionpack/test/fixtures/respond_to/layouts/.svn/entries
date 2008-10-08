@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="3944"
+   name=""
+   committed-date="2006-03-18T21:17:14.671671Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/respond_to/layouts"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="3944"
+   name="standard.rhtml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-03-18T21:17:14.671671Z"
+   checksum="087a92d4c37732a7733d3b56b3851f94"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6938"
+   name=""
+   committed-date="2007-06-05T02:42:57.981099Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/session_migration"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6884"
+   name="USAGE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-29T02:07:08.012721Z"
+   checksum="8823d308a3b93ed122cec377926e25f0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="4360"
+   name="session_migration_generator.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-05-22T21:09:47.193655Z"
+   checksum="e131538cb45c2fb5e5983993c68ec964"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+</wc-entries>

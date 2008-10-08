@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6939"
+   name=""
+   committed-date="2007-06-05T03:34:56.967061Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/model"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6884"
+   name="USAGE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-29T02:07:08.012721Z"
+   checksum="3bc7b2ad4300620a30fa7a1706050c2d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:04.000000Z"/>
+<entry
+   committed-rev="5237"
+   name="model_generator.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-10-09T00:11:46.747653Z"
+   checksum="4869d787d3871305c5c5f721ecc31f63"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+</wc-entries>

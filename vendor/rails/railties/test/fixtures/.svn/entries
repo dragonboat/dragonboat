@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6488"
+   name=""
+   committed-date="2007-03-29T05:44:44.627343Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/fixtures"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="plugins"
+   kind="dir"/>
+<entry
+   name="lib"
+   kind="dir"/>
+<entry
+   committed-rev="6488"
+   name="environment_with_constant.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-29T05:44:44.627343Z"
+   checksum="737f77753886304ab5a1b0fd522111e9"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

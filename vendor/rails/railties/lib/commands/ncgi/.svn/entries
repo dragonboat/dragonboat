@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2411"
+   name=""
+   committed-date="2005-09-29T12:18:51.558950Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/commands/ncgi"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="2411"
+   name="listener"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-09-29T12:18:51.558950Z"
+   checksum="36075ca6802174ed2ce3c688bbc902f6"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="2411"
+   name="tracker"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-09-29T12:18:51.558950Z"
+   checksum="06198020b95b9c91901ed7ad7eebc4a1"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

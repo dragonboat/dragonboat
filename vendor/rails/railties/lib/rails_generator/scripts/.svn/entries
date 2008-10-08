@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6768"
+   name=""
+   committed-date="2007-05-18T14:37:44.339517Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/scripts"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="617"
+   name="update.rb"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2005-02-15T01:45:35.459004Z"
+   checksum="63bf5ff99c2f6146e58b408873d74ea4"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="6768"
+   name="destroy.rb"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2007-05-18T14:37:44.339517Z"
+   checksum="4256e16737afac12364038d350c290ac"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="617"
+   name="generate.rb"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2005-02-15T01:45:35.459004Z"
+   checksum="ac1c4b3176aed871fe78453e1b230e73"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+</wc-entries>

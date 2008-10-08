@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4138"
+   name=""
+   committed-date="2006-04-03T05:15:29.072500Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/builtin"
+   last-author="ulysses"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="rails_info"
+   kind="dir"/>
+</wc-entries>

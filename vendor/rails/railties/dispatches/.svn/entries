@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1721"
+   name=""
+   committed-date="2005-07-06T04:29:18.913190Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/dispatches"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="342"
+   name="dispatch.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-01-06T15:56:57.404459Z"
+   checksum="c90fe303c91b4b6e5232e9351f5646e2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="1721"
+   name="gateway.cgi"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-07-06T04:29:18.913190Z"
+   checksum="bd6be1779aed672ca0ab08bc2ccc06f1"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="1592"
+   name="dispatch.fcgi"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2005-07-02T04:52:14.478278Z"
+   checksum="84228cf80b90c3c335bfb9f679e59351"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

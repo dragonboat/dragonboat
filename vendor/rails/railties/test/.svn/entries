@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6991"
+   name=""
+   committed-date="2007-06-10T23:06:47.131866Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6611"
+   name="fcgi_dispatcher_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="a8a47625996ea356872b70abf521166c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6778"
+   name="rails_generator_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-05-18T23:24:42.250068Z"
+   checksum="2904acb91bf366cb5a6ea42167e513e7"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6292"
+   name="plugin_locator_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-03T02:53:06.887180Z"
+   checksum="70e4bf7bfcaa27ae5b4b56c67e04a7fa"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6898"
+   name="console_app_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-05-29T21:49:37.324131Z"
+   checksum="4c52e8a5c50544282a5854bbc9afd860"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6276"
+   name="abstract_unit.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-01T23:29:56.599937Z"
+   checksum="eb7d71cdc23557afaa8e9434cd7cb243"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6488"
+   name="initializer_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-29T05:44:44.627343Z"
+   checksum="4f5986a3b45a6c22a74cd99b5a97165c"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6290"
+   name="plugin_loader_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-02T23:39:29.136162Z"
+   checksum="ea8e9a347763c14c5a5ff342ff1cffeb"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="4912"
+   name="rails_info_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2006-09-03T00:04:20.363220Z"
+   checksum="acc3ff46cdebe675dc30fd263bf7990d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6276"
+   name="dispatcher_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-01T23:29:56.599937Z"
+   checksum="33219bd57e99bb27759f989544800af8"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+<entry
+   name="generators"
+   kind="dir"/>
+<entry
+   committed-rev="4912"
+   name="rails_info_controller_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2006-09-03T00:04:20.363220Z"
+   checksum="278f76a31cd5e3895ad7c36e5c344a51"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   name="mocks"
+   kind="dir"/>
+<entry
+   committed-rev="6290"
+   name="plugin_test_helper.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-03-02T23:39:29.136162Z"
+   checksum="fc22eeac8a3d63ea185c6ed6673448a9"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

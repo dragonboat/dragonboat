@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2506"
+   name=""
+   committed-date="2005-10-09T17:52:42.964550Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/range"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="2506"
+   name="conversions.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-10-09T17:52:42.964550Z"
+   checksum="73a18ecca8acecb67ecab4ebe551d342"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6050"
+   name=""
+   committed-date="2007-01-28T01:18:51.163439Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/core_ext/class"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6050"
+   name="class_inheritable_attributes_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-01-28T01:18:51.163439Z"
+   checksum="f98c8f17cfd9865822c06e8041583bfa"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6050"
+   name="attribute_accessor_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-01-28T01:18:51.163439Z"
+   checksum="ace08d6a66d198d8252fa1ecadba3a1e"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+</wc-entries>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6443"
+   name=""
+   committed-date="2007-03-18T07:05:58.676978Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/vendor/builder"
+   last-author="sam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6443"
+   name="blankslate.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="75d78e5bb5ed48adeaf9f8f92b87646b"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="5813"
+   name="xmlmarkup.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-12-31T19:28:28.130989Z"
+   checksum="14c6bfb6e27f8c0064a9ef0d152db522"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4260"
+   name="xchar.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-04-25T02:47:44.602266Z"
+   checksum="91078ffb26d05e64be7ea7a1518f9986"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4"
+   name="xmlevents.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="44315cc745330e2c749c335d289774a2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4839"
+   name="xmlbase.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-08-29T08:24:04.802818Z"
+   checksum="b5a0c51a2268701b261ba11bad441e3d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+</wc-entries>

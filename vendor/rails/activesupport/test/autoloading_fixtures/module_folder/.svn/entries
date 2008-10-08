@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4769"
+   name=""
+   committed-date="2006-08-16T09:18:17.576693Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/autoloading_fixtures/module_folder"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4769"
+   name="inline_class.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-16T09:18:17.576693Z"
+   checksum="60dd94b3e8b820743be99951f1e641c2"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4769"
+   name="nested_class.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-16T09:18:17.576693Z"
+   checksum="f6bc9791a5ba2870de51d95776dd2945"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4060"
+   name="nested_sibling.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-03-27T05:13:46.164893Z"
+   checksum="23df1786c092a9b14ce09e55c5f67807"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+</wc-entries>

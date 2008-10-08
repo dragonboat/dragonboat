@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6785"
+   name=""
+   committed-date="2007-05-19T20:57:11.447262Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/html"
+   last-author="sam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="1876"
+   name="robots.txt"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2005-07-22T06:18:25.729106Z"
+   checksum="a9d8217ec04c304aba7926ae1f066973"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="5306"
+   name="500.html"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-10-15T23:32:30.148212Z"
+   checksum="8e19fd3c53aec78af1087378d5367833"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   name="javascripts"
+   kind="dir"/>
+<entry
+   committed-rev="5306"
+   name="404.html"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-10-15T23:32:30.148212Z"
+   checksum="adc851c2e0698b5d05ef0380ed69f6b9"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="4126"
+   name="index.html"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-04-01T22:28:46.930505Z"
+   checksum="f09c82f6afd0bbae971902e3f1afcddf"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="861"
+   name="favicon.ico"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2005-03-06T17:22:56.456055Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+</wc-entries>

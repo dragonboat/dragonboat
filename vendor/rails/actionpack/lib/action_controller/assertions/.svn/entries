@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6894"
+   name=""
+   committed-date="2007-05-29T09:42:13.406085Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_controller/assertions"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6470"
+   name="routing_assertions.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-03-27T14:04:06.069428Z"
+   checksum="84a263804bbe567903ee28620b01c524"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6057"
+   name="tag_assertions.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-01-28T07:16:55.337195Z"
+   checksum="e79093c0049c8f05c6e0eb5bb8081dc3"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6470"
+   name="response_assertions.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-03-27T14:04:06.069428Z"
+   checksum="3e4ac088b64194bb90c303838e6ab124"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6470"
+   name="dom_assertions.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-03-27T14:04:06.069428Z"
+   checksum="fa14df40270c88f4f8324b746460e628"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6470"
+   name="model_assertions.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-03-27T14:04:06.069428Z"
+   checksum="1f2e771ffbb1e02b89767b421ca4fe02"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6894"
+   name="selector_assertions.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-05-29T09:42:13.406085Z"
+   checksum="99de9b72d17c6b308d2efaf6d8beba0c"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+</wc-entries>

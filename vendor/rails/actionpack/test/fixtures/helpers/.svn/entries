@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6221"
+   name=""
+   committed-date="2007-02-24T20:31:34.418470Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/helpers"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4"
+   name="abc_helper.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="af2b443c69355a74ca675aa9d0926e6d"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="fun"
+   kind="dir"/>
+</wc-entries>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6180"
+   name=""
+   committed-date="2007-02-21T00:29:44.661503Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/test"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="800"
+   name="gencov"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-02-25T23:39:39.620985Z"
+   checksum="831231ee0b26849c3e5855d176e822a5"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+<entry
+   committed-rev="800"
+   name="container_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-02-25T23:39:39.620985Z"
+   checksum="ea49bc20210c6d2543fe28c0edabc1c1"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+<entry
+   committed-rev="1089"
+   name="struct_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-04-04T22:58:02.037446Z"
+   checksum="70cef5e61c317dbad812ff5ab38f2201"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+<entry
+   committed-rev="1293"
+   name="casting_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-05-07T22:57:08.181882Z"
+   checksum="77ea7a34290973dc88fee61a76fc393d"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+<entry
+   committed-rev="4497"
+   name="test_invoke_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-06-27T19:41:14.826368Z"
+   checksum="c7d4bb62038b69defaef849358813a23"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+<entry
+   name="apis"
+   kind="dir"/>
+<entry
+   committed-rev="6180"
+   name="scaffolded_controller_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="e8e14a1e64a9d88cf47c716d325b8ee6"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="5670"
+   name="client_soap_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-12-03T20:30:34.307100Z"
+   checksum="20826c4348cfe13dd69e0959b213f068"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="4761"
+   name="abstract_client.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-08-14T23:14:08.570204Z"
+   checksum="920c3a6370307cd684702c912a59f968"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="4966"
+   name="abstract_unit.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-09-04T03:38:13.368598Z"
+   checksum="83af20f751b205ba24bd1b9d38f267e7"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="5670"
+   name="client_xmlrpc_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-12-03T20:30:34.307100Z"
+   checksum="b4fb69b9b5b3861490c6481420bba0e9"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="1030"
+   name="run"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-03-28T03:20:13.082361Z"
+   checksum="dec340f07c580385acb1cb82ef730ab9"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="4891"
+   name="dispatcher_action_controller_soap_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-09-01T02:18:52.821714Z"
+   checksum="e8a35110519e0764ec62d11baa3c62e4"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+<entry
+   committed-rev="1294"
+   name="invocation_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-05-07T23:49:45.596696Z"
+   checksum="e8b10ed7a25ec7b795fe900b396896b6"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="1293"
+   name="api_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-05-07T22:57:08.181882Z"
+   checksum="5685ab618bacce532440df188fc6d765"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="672"
+   name="base_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-02-18T23:55:29.453682Z"
+   checksum="e95211f883beb9e98e9d87cdc02fca24"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="6028"
+   name="abstract_dispatcher.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2007-01-24T08:05:33.210928Z"
+   checksum="301cb819ef651019fed3e7c6403c64e6"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="4810"
+   name="dispatcher_action_controller_xmlrpc_test.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-08-23T09:34:46.327045Z"
+   checksum="e1afeb8d3f15ed506e0330bdbdbb3d8f"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+</wc-entries>

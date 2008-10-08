@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6180"
+   name=""
+   committed-date="2007-02-21T00:29:44.661503Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_controller/templates/scaffolds"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6178"
+   name="list.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="new.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="19fcacfd671aa5d845f7bdb3722728e1"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="layout.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="list.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="5e4bc2d101f347f9b8ae12553c9fe141"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="layout.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="db582ebbad5aa7873d332cd8bfeb881d"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="show.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="show.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="e56def5bd9653a1c99b9f8d1124f24ae"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="edit.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="edit.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="96fd8cec36567af25e2c1d03b1d0f845"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="new.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+</wc-entries>

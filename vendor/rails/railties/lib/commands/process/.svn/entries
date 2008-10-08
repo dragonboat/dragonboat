@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6531"
+   name=""
+   committed-date="2007-04-16T21:55:59.488102Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/commands/process"
+   last-author="xal"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6344"
+   name="reaper.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-03-06T09:22:07.094759Z"
+   checksum="63ec8bae4c7480c7fc777e9b0bdb7ffe"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="4502"
+   name="spinner.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-06-28T20:53:00.228184Z"
+   checksum="4ee7df5b892d994adac0beac17692bb3"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6531"
+   name="spawner.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-04-16T21:55:59.488102Z"
+   checksum="32b160981308408abbcaa872d3e8785c"
+   last-author="xal"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6344"
+   name="inspector.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-03-06T09:22:07.094759Z"
+   checksum="fcf56851f53a660c2fb9b39994d4a7dd"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

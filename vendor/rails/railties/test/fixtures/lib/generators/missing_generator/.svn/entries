@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="63"
+   name=""
+   committed-date="2004-12-07T11:49:38.266981Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/fixtures/lib/generators/missing_generator"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="templates"
+   kind="dir"/>
+</wc-entries>

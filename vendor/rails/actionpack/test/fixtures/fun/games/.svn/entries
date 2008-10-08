@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6180"
+   name=""
+   committed-date="2007-02-21T00:29:44.661503Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/fun/games"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6178"
+   name="hello_world.rhtml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="hello_world.erb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="07a28f60d310e8dbf146eea1bd3a70e3"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

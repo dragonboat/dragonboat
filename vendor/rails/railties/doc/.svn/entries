@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="791"
+   name=""
+   committed-date="2005-02-24T12:26:30.670332Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/doc"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4"
+   name="README_FOR_APP"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="b4c29cfcb0758d15bdf7afbd2a5c280a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+</wc-entries>

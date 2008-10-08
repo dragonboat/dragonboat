@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5143"
+   name=""
+   committed-date="2006-09-18T16:32:41.309290Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/content_type"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5129"
+   name="render_default_for_rhtml.rhtml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-09-17T16:20:32.229151Z"
+   checksum="9a9bef14d101da557a6e8e18130e693c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="5143"
+   name="render_default_for_rjs.rjs"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-09-18T16:32:41.309290Z"
+   checksum="92be1323c11cc7c955f5e4f7c31a7eee"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="5131"
+   name="render_default_content_types_for_respond_to.rhtml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-09-17T18:10:25.180318Z"
+   checksum="25d2ca266b16973dbe69ab135ec656dd"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="5129"
+   name="render_default_for_rxml.rxml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-09-17T16:20:32.229151Z"
+   checksum="c29d76bc79def73693306014228386fe"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

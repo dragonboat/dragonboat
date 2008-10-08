@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2904"
+   name=""
+   committed-date="2005-11-07T08:09:38.364244Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/fixtures/plugins/alternate"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="a"
+   kind="dir"/>
+</wc-entries>

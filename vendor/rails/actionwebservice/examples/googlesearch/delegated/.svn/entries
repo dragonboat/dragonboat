@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="672"
+   name=""
+   committed-date="2005-02-18T23:55:29.453682Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/examples/googlesearch/delegated"
+   last-author="bitserf"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="672"
+   name="google_search_service.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-02-18T23:55:29.453682Z"
+   checksum="5ff8356e01152011ef73e971a8fa2940"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="668"
+   name="search_controller.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-02-18T21:22:52.314407Z"
+   checksum="2d914d65a1783c214b846686a7c8826b"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

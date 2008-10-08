@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6424"
+   name=""
+   committed-date="2007-03-14T11:33:10.065566Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_controller/session"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="315"
+   name="drb_server.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2005-01-02T16:00:50.323050Z"
+   checksum="a7ad8a4e4c7a623c1cccf6ab0db1b5f0"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="5512"
+   name="mem_cache_store.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2006-11-13T18:59:01.799772Z"
+   checksum="17c515b20899255e2d879b6224233e12"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="5512"
+   name="drb_store.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2006-11-13T18:59:01.799772Z"
+   checksum="68a8158f9910bbdf54d47048ce70c721"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="5531"
+   name="active_record_store.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2006-11-15T20:08:43.498892Z"
+   checksum="1e9212cd91ae5e3cb855bc59390e57ea"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+<entry
+   committed-rev="6424"
+   name="cookie_store.rb"
+   text-time="2007-06-20T22:18:57.000000Z"
+   committed-date="2007-03-14T11:33:10.065566Z"
+   checksum="b9d202aad7759b9e88dc59183ce97d77"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:57.000000Z"/>
+</wc-entries>

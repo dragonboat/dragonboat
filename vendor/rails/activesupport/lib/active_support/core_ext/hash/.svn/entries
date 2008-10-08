@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6946"
+   name=""
+   committed-date="2007-06-05T14:09:15.123857Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/hash"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6532"
+   name="indifferent_access.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-04-16T22:17:59.521695Z"
+   checksum="316c7cbd318a17efe499a3f8a034752a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:43.000000Z"/>
+<entry
+   committed-rev="5726"
+   name="slice.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-12-17T00:49:41.226041Z"
+   checksum="ed7b322e78bb4c129bb15ccc0bc22426"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:43.000000Z"/>
+<entry
+   committed-rev="6946"
+   name="conversions.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-06-05T14:09:15.123857Z"
+   checksum="0fe01cd575bbc63334b9a1f5c7a8cb72"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="3969"
+   name="diff.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-03-19T03:50:14.509334Z"
+   checksum="3d1f3ef76b591204b9a6d246a4ba7433"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="5725"
+   name="reverse_merge.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-12-16T23:48:24.913163Z"
+   checksum="e96155e2bb1887b34a0dbee2e11108db"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="2166"
+   name="keys.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-09-09T08:20:14.861478Z"
+   checksum="f9da2ee5b9051ec13071de730ae28727"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6869"
+   name=""
+   committed-date="2007-05-27T18:44:33.826000Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/configs/initializers"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6869"
+   name="inflections.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="f506448fb29f0eeef74bb97833c1dfc5"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="mime_types.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="25c56155b770adb1bba54eea5b4dbb88"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

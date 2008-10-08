@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6870"
+   name=""
+   committed-date="2007-05-27T19:10:08.965100Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/resource/templates"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5236"
+   name="helper.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-10-09T00:08:13.764339Z"
+   checksum="c3f7249360807dbb24bdd52c2700fdb4"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="5236"
+   name="functional_test.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-10-09T00:08:13.764339Z"
+   checksum="f7a9521fe811a63d2193fa6be66910ba"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="USAGE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="65323fa883faaa9f1aa9ceebcdaad772"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="controller.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="4ed013d8c3184dbb1ebb69b46e73d92b"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6069"
+   name="fixtures.yml"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-01-28T13:55:39.278278Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

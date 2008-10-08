@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6962"
+   name=""
+   committed-date="2007-06-07T23:42:47.744571Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/lib/action_mailer"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5436"
+   name="test_helper.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-11-05T21:56:18.038003Z"
+   checksum="bf9abde981aa6516cc9a93bdc32f8988"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="1732"
+   name="utils.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-07-06T09:53:34.337258Z"
+   checksum="28afd25575a78895a0ae2abd45086efa"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2648"
+   name="mail_helper.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T15:00:27.355371Z"
+   checksum="7172e316e94abed3dce8bb0fdb03926d"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="4312"
+   name="helpers.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-04-29T20:20:22.345875Z"
+   checksum="c1b5573a0ca7a0c7aa69db2fae3721b5"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6548"
+   name="version.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2007-04-21T17:06:16.295456Z"
+   checksum="8b28399fe16bae547304910ab589f94e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="4310"
+   name="adv_attr_accessor.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-04-29T18:10:14.113276Z"
+   checksum="aa7dd85d884baa63dcb50450dc4ed06f"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="3959"
+   name="part.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-03-18T23:53:07.135408Z"
+   checksum="38d0cc17824f467c9ed364c9b0d79f7b"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2088"
+   name="quoting.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-09-01T14:26:13.030343Z"
+   checksum="69a20b595a861068788cf187a8081d0a"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="3959"
+   name="part_container.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-03-18T23:53:07.135408Z"
+   checksum="397c7434878a75825698ee7f8d8ea473"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6962"
+   name="base.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2007-06-07T23:42:47.744571Z"
+   checksum="680a3994e15fee84802d50e34a7ddd98"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="vendor"
+   kind="dir"/>
+</wc-entries>

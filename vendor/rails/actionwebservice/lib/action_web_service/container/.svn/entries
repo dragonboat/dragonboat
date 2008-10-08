@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4312"
+   name=""
+   committed-date="2006-04-29T20:20:22.345875Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/lib/action_web_service/container"
+   last-author="marcel"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4310"
+   name="delegated_container.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-04-29T18:10:14.113276Z"
+   checksum="8f0e65d5ea7fba7409c1e8fc0d7a813b"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="4312"
+   name="action_controller_container.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-04-29T20:20:22.345875Z"
+   checksum="7d49b75dccf770c6bbd44f3d25078a26"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="4310"
+   name="direct_container.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-04-29T18:10:14.113276Z"
+   checksum="65c40418371c9daeb46444d7c8991cae"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+</wc-entries>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6869"
+   name=""
+   committed-date="2007-05-27T18:44:33.826000Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/bin"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="performance"
+   kind="dir"/>
+<entry
+   committed-rev="6869"
+   name="console"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="00804f829cb1999ec77f6ab4d049e2bd"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="server"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="388c324df4833774abddb29e26034c22"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="destroy"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="5c1ea181ad81e54033bcd9ede8641e17"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="runner"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="6ec682e7826bfaf360e5ecfc8fafc356"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="about"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="5671cc8ba343f3d59d1d9313d22921ff"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="generate"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="38be12e68204c69e228e238b6a45aac9"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="4145"
+   name="rails"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-04-03T22:39:36.164241Z"
+   checksum="2fd0e0f17e6ff4df2004b90a9bcae74d"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   name="process"
+   kind="dir"/>
+<entry
+   committed-rev="6869"
+   name="plugin"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="350129a228b12653a697c8dd88166e67"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

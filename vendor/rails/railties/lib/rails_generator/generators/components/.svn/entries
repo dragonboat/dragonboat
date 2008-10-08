@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6990"
+   name=""
+   committed-date="2007-06-10T23:04:19.218773Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="model"
+   kind="dir"/>
+<entry
+   name="scaffold"
+   kind="dir"/>
+<entry
+   name="integration_test"
+   kind="dir"/>
+<entry
+   name="controller"
+   kind="dir"/>
+<entry
+   name="observer"
+   kind="dir"/>
+<entry
+   name="resource"
+   kind="dir"/>
+<entry
+   name="mailer"
+   kind="dir"/>
+<entry
+   name="migration"
+   kind="dir"/>
+<entry
+   name="session_migration"
+   kind="dir"/>
+<entry
+   name="web_service"
+   kind="dir"/>
+<entry
+   name="plugin"
+   kind="dir"/>
+</wc-entries>

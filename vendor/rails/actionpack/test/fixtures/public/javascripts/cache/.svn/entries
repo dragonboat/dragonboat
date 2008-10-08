@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6188"
+   name=""
+   committed-date="2007-02-21T15:58:42.213495Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/public/javascripts/cache"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+</wc-entries>

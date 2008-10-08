@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6991"
+   name=""
+   committed-date="2007-06-10T23:06:47.131866Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/generators"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6991"
+   name="rails_scaffold_generator_test.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-06-10T23:06:47.131866Z"
+   checksum="3b68739ba719e4e2665953c084a0d5d0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="6883"
+   name="generator_test_helper.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-05-29T00:11:56.857863Z"
+   checksum="0d882720fcf902dadcd76ea119591557"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

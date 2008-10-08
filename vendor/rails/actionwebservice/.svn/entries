@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6881"
+   name=""
+   committed-date="2007-05-28T22:55:14.347282Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   prop-time="2007-06-20T22:19:02.000000Z"
+   revision="7027"/>
+<entry
+   name="test"
+   kind="dir"/>
+<entry
+   committed-rev="6881"
+   name="Rakefile"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-05-28T22:55:14.347282Z"
+   checksum="cd3be71c388cbddb10e49729839821aa"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="3067"
+   name="setup.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-11-17T00:48:16.455840Z"
+   checksum="932b6c52330c6fa3da2ece4b188dfe0b"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="1375"
+   name="TODO"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-05-31T02:50:02.749561Z"
+   checksum="3abdeb2e1fcf507edb896d8c702c6191"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   name="lib"
+   kind="dir"/>
+<entry
+   committed-rev="6037"
+   name="CHANGELOG"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2007-01-24T20:59:41.234817Z"
+   checksum="c99551fc7d1ea1dc56055c888edd9a2f"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="2909"
+   name="install.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-11-07T09:52:56.530599Z"
+   checksum="c7791d0f9ffc803142739285f37e40d1"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="658"
+   name="MIT-LICENSE"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-02-18T10:35:25.804139Z"
+   checksum="bbd71e184d4a6dd00b559735c3471d30"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   committed-rev="2909"
+   name="README"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-11-07T09:52:56.530599Z"
+   checksum="92595f1cd833430f70e99e305f42f776"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+<entry
+   name="examples"
+   kind="dir"/>
+</wc-entries>

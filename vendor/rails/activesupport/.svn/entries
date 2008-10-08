@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7021"
+   name=""
+   committed-date="2007-06-14T01:59:27.172086Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   prop-time="2007-06-20T22:18:45.000000Z"
+   revision="7027"/>
+<entry
+   name="test"
+   kind="dir"/>
+<entry
+   committed-rev="6881"
+   name="Rakefile"
+   text-time="2007-06-20T22:18:45.000000Z"
+   committed-date="2007-05-28T22:55:14.347282Z"
+   checksum="7817c0e7c6146ea5ebf36952943c35aa"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   name="lib"
+   kind="dir"/>
+<entry
+   committed-rev="7019"
+   name="CHANGELOG"
+   text-time="2007-06-20T22:18:45.000000Z"
+   committed-date="2007-06-14T01:17:42.232857Z"
+   checksum="4cc8e5550917ca107f67e415fa38c013"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:45.000000Z"/>
+<entry
+   committed-rev="1053"
+   name="install.rb"
+   text-time="2007-06-20T22:18:45.000000Z"
+   committed-date="2005-04-02T07:29:08.937976Z"
+   checksum="e048cbf680f86a747c75c376643ce4fc"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:45.000000Z"/>
+<entry
+   committed-rev="5120"
+   name="MIT-LICENSE"
+   text-time="2007-06-20T22:18:45.000000Z"
+   committed-date="2006-09-15T10:13:27.165265Z"
+   checksum="8e11d5530bab3c7732205a5febfe41f7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:45.000000Z"/>
+<entry
+   committed-rev="2908"
+   name="README"
+   text-time="2007-06-20T22:18:45.000000Z"
+   committed-date="2005-11-07T09:51:47.108770Z"
+   checksum="6d5825d5dbcc4f0d3d158618837d7b23"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:45.000000Z"/>
+</wc-entries>

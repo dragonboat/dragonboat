@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6869"
+   name=""
+   committed-date="2007-05-27T18:44:33.826000Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/configs/databases"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4587"
+   name="frontbase.yml"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-07-08T01:22:48.203220Z"
+   checksum="b4dc80fe5115563b4c9d3f553ea69acb"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="3642"
+   name="postgresql.yml"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-02-25T18:41:13.666674Z"
+   checksum="2703bbd1390c4ffff4225d79deed4285"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="3704"
+   name="sqlite2.yml"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-02-28T19:43:34.544832Z"
+   checksum="302dc188a6462f9b9f9a565f84d438c2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="5258"
+   name="sqlite3.yml"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-10-09T02:02:27.349520Z"
+   checksum="4a8097bd98fc30286b07fc7e098ba14e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="mysql.yml"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="62f27a10de6c552e9932f442f1eca4f4"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="5509"
+   name="oracle.yml"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-11-13T07:36:52.557416Z"
+   checksum="db4d9b21d81a64a4c8e5d07b822c53ec"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

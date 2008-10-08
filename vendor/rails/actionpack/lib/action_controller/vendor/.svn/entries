@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6511"
+   name=""
+   committed-date="2007-04-09T15:33:38.117260Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_controller/vendor"
+   last-author="xal"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="html-scanner"
+   kind="dir"/>
+</wc-entries>

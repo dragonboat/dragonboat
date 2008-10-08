@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4843"
+   name=""
+   committed-date="2006-08-29T10:33:40.393507Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/fixtures/lib/generators"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="missing_generator"
+   kind="dir"/>
+<entry
+   name="working"
+   kind="dir"/>
+<entry
+   name="missing_templates"
+   kind="dir"/>
+<entry
+   name="missing_class"
+   kind="dir"/>
+</wc-entries>

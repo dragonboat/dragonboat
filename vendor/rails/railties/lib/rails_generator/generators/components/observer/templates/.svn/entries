@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4365"
+   name=""
+   committed-date="2006-05-23T17:15:15.596216Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/observer/templates"
+   last-author="marcel"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4365"
+   name="unit_test.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-05-23T17:15:15.596216Z"
+   checksum="165ff2e730af1baa56b5bb6c191fffad"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="4365"
+   name="observer.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-05-23T17:15:15.596216Z"
+   checksum="4c895d9eb68003006e79b6e5e7619b37"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

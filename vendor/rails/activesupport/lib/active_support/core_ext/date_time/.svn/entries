@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6933"
+   name=""
+   committed-date="2007-06-04T17:49:43.503859Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/date_time"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6921"
+   name="calculations.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-06-01T04:03:46.347244Z"
+   checksum="1d0eb2a258e8ba9aef294d80c6f91de3"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6933"
+   name="conversions.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-06-04T17:49:43.503859Z"
+   checksum="233601a6056c01fc5ce8ef42e6633b3d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

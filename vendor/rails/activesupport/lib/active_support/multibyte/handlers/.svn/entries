@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6044"
+   name=""
+   committed-date="2007-01-26T21:37:38.940478Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/multibyte/handlers"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6044"
+   name="utf8_handler.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="1fc601303f57de30a8794798f9a9bb83"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6044"
+   name="passthru_handler.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="51f28943e579af3c7b8bb30a9fe1c4d8"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6044"
+   name="utf8_handler_proc.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="5180cabeb3c731b9e6a91f48698fdbe7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

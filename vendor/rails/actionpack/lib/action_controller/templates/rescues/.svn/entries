@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6611"
+   name=""
+   committed-date="2007-04-28T15:57:29.737443Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_controller/templates/rescues"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6178"
+   name="unknown_action.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_trace.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="layout.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="611ae7088624ad743b1b39d0c01c9ac5"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="routing_error.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="missing_template.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="template_error.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="b78a0dab5f4d1313b6bae74ab5c8b1be"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="diagnostics.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6611"
+   name="_request_and_response.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="e5ee458ad82462e61d90734121598c3e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="layout.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="unknown_action.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="4490bfdf863bcc799b294af7ab392e1a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="_trace.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="09575dea809dd1e0658a59fbfc5f3520"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="routing_error.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="55fb57b66d263c2acce721099638c135"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="template_error.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="missing_template.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="b2db6c633e7391bcee4a540fc33a1e85"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6178"
+   name="_request_and_response.rhtml"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-20T22:09:12.770855Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="diagnostics.erb"
+   text-time="2007-06-20T22:18:58.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="9f423d644a9cc4f7cc27fa280becddc8"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+</wc-entries>

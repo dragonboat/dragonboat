@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7027"
+   name=""
+   committed-date="2007-06-15T01:58:32.679699Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/lib/action_view"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6920"
+   name="partials.rb"
+   text-time="2007-06-20T22:19:00.000000Z"
+   committed-date="2007-06-01T03:53:39.389709Z"
+   checksum="01bcd1aa8600525caa8d4e92e1730a24"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:58.000000Z"/>
+<entry
+   name="helpers"
+   kind="dir"/>
+<entry
+   committed-rev="6923"
+   name="template_error.rb"
+   text-time="2007-06-20T22:19:00.000000Z"
+   committed-date="2007-06-01T05:18:21.875426Z"
+   checksum="b2757c50a325701c9a30d47eb75a89f3"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:59.000000Z"/>
+<entry
+   committed-rev="6871"
+   name="base.rb"
+   text-time="2007-06-20T22:19:00.000000Z"
+   committed-date="2007-05-27T19:16:09.880948Z"
+   checksum="b57a356573c51631f83dbcd2dcce3194"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:59.000000Z"/>
+<entry
+   committed-rev="6679"
+   name="compiled_templates.rb"
+   text-time="2007-06-20T22:19:00.000000Z"
+   committed-date="2007-05-06T04:46:11.080519Z"
+   checksum="f6533e02a56cb4960ff3958179ca34d5"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:00.000000Z"/>
+</wc-entries>

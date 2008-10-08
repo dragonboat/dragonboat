@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6946"
+   name=""
+   committed-date="2007-06-05T14:09:15.123857Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="kernel"
+   kind="dir"/>
+<entry
+   name="bigdecimal"
+   kind="dir"/>
+<entry
+   committed-rev="3670"
+   name="logger.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-02-26T19:48:33.630654Z"
+   checksum="961bf4bbb7b195efb332e341ff191960"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:43.000000Z"/>
+<entry
+   name="hash"
+   kind="dir"/>
+<entry
+   committed-rev="5726"
+   name="hash.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-12-17T00:49:41.226041Z"
+   checksum="6e7393fbccd275cd0b30b991a71eaadc"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6793"
+   name="blank.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-20T23:19:10.221717Z"
+   checksum="227f44022cb8378d58a304f46587759c"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6044"
+   name="name_error.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="3824bf9ee5acaa251964abc9891e0c80"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="date_time"
+   kind="dir"/>
+<entry
+   name="range"
+   kind="dir"/>
+<entry
+   committed-rev="6303"
+   name="date_time.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-04T04:12:42.113834Z"
+   checksum="ab34c9c647fa2d121b746af4330c4774"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="time"
+   kind="dir"/>
+<entry
+   name="numeric"
+   kind="dir"/>
+<entry
+   name="cgi"
+   kind="dir"/>
+<entry
+   committed-rev="3469"
+   name="proc.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-01-23T06:40:43.892554Z"
+   checksum="bd28243bcf9ac3304cbeda55c7c360e9"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="5223"
+   name="string.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-10-03T23:45:32.554264Z"
+   checksum="69ff2be0172a1dff94620067e13f4956"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="3493"
+   name="object.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-01-29T00:37:39.221698Z"
+   checksum="dea5d60fd9f4e61bf02a55556050fd4a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="date"
+   kind="dir"/>
+<entry
+   committed-rev="5951"
+   name="date.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-15T17:12:32.042047Z"
+   checksum="2c511f9cae53a5665ec81ab998048337"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="test"
+   kind="dir"/>
+<entry
+   committed-rev="4387"
+   name="array.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-05-31T23:25:36.157021Z"
+   checksum="4607595969dd2f81ab7e6c2f3f0d04c9"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6647"
+   name="test.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-01T21:02:37.845685Z"
+   checksum="9f92bc20464c2ec113f2a086b3b94c8a"
+   last-author="xal"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6262"
+   name="file.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-02-27T23:16:06.159271Z"
+   checksum="37510bd44e4a7fa4abf8e940df2f02ed"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="5334"
+   name="enumerable.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-10-22T03:04:50.864009Z"
+   checksum="1dfd65cb99010f689ee0771dd321bc78"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6611"
+   name="kernel.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="44b4be1bc9fcf7106163844faa959dc3"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="4608"
+   name="bigdecimal.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-07-13T03:23:39.855407Z"
+   checksum="de7e1a6ae1ab32b875a891be53ce7f98"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="module"
+   kind="dir"/>
+<entry
+   committed-rev="5539"
+   name="module.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-11-16T19:35:13.178014Z"
+   checksum="3ddfc3b4890f5b976497c343269af614"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="4386"
+   name="load_error.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-05-31T22:43:53.020643Z"
+   checksum="31f2cca22c0c33b76b868041fd9bba1b"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="pathname"
+   kind="dir"/>
+<entry
+   name="integer"
+   kind="dir"/>
+<entry
+   committed-rev="2506"
+   name="range.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-10-09T17:52:42.964550Z"
+   checksum="6c4eb8a893bb395b391d991be86c76ce"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="1863"
+   name="integer.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-07-19T12:58:01.488069Z"
+   checksum="f6c507d7decab6c511fae9034ad42da8"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="4158"
+   name="pathname.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-04-04T19:37:29.000324Z"
+   checksum="1bc3089c8f25b9c302750dd2c0d000c5"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="5546"
+   name="exception.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-11-17T14:09:04.459479Z"
+   checksum="c027acb659f03a222fe8ecea4d7639b6"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6099"
+   name="time.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-02-01T18:06:16.365770Z"
+   checksum="ca1ea0b4321eb312b656565ef9c8cc65"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="624"
+   name="numeric.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-02-15T15:57:44.326578Z"
+   checksum="1a4b03ed9fa5dc54f3384bfd522a22fd"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="1735"
+   name="cgi.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-07-06T10:43:42.670111Z"
+   checksum="7ae51b84b2870e8c1d3d8af88e57aacc"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="class"
+   kind="dir"/>
+<entry
+   name="string"
+   kind="dir"/>
+<entry
+   name="object"
+   kind="dir"/>
+<entry
+   committed-rev="3493"
+   name="class.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-01-29T00:37:39.221698Z"
+   checksum="3d49678ad3eef241da5dfda26f50695e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="4455"
+   name="symbol.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-06-17T03:01:57.038040Z"
+   checksum="78e4fbdeebe54efdd1b91bd111fce7bb"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="array"
+   kind="dir"/>
+</wc-entries>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6869"
+   name=""
+   committed-date="2007-05-27T18:44:33.826000Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/plugin/templates"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6869"
+   name="plugin.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="ef1161f4e5783007dfb8299955759759"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="2790"
+   name="unit_test.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-10-28T20:28:09.991285Z"
+   checksum="e1ec22aa82cd5e157f7428dc1064354e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="3649"
+   name="Rakefile"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-02-25T23:27:41.116778Z"
+   checksum="1e9251596882869f9e35f39e7653f60f"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="USAGE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="bf46a0d94539ce86dc90c767fe3fd977"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="init.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="674cbb7a806a3aedf68a4a5bb3c2e760"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="tasks.rake"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="ad7718b9233b6c40a460e2f182d119b8"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="2797"
+   name="generator.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-10-28T23:52:34.646734Z"
+   checksum="c6f33d886e8d484c9190994e4169fd7e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="3215"
+   name="install.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-12-03T06:53:14.641401Z"
+   checksum="cbe738c10eba4ae2da8c6859c9723e44"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="MIT-LICENSE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="ba826ae68593d063b726b4e66dcb1e8f"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="4440"
+   name="uninstall.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-06-06T15:44:11.463383Z"
+   checksum="2a5fc883fe7f8dfe22ced24643d59ad4"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="README"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="8ab296002af85c5c3c934ed8fe0a7195"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

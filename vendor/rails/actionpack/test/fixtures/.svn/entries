@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7005"
+   name=""
+   committed-date="2007-06-12T07:44:23.074581Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="test"
+   kind="dir"/>
+<entry
+   name="override"
+   kind="dir"/>
+<entry
+   committed-rev="6920"
+   name="topic.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-06-01T03:53:39.389709Z"
+   checksum="352a765a93c1a9b8a1b1e21c9426104f"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+<entry
+   name="db_definitions"
+   kind="dir"/>
+<entry
+   committed-rev="3553"
+   name="developers_projects.yml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="021192cd31a5c3a39cbe7bd14144425a"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="multipart"
+   kind="dir"/>
+<entry
+   committed-rev="3553"
+   name="developer.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="92e8d8a3cd6b419bdabbafc91be07b13"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="fun"
+   kind="dir"/>
+<entry
+   committed-rev="3553"
+   name="projects.yml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="3605b2a8f1cf10cbc34343bd7c49330d"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="3553"
+   name="reply.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="dccebb95780c20b896fe26306d904e9d"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="layout_tests"
+   kind="dir"/>
+<entry
+   name="layouts"
+   kind="dir"/>
+<entry
+   committed-rev="3553"
+   name="topics.yml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="5953f128689c82c1d5c9ab2709a682e4"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="helpers"
+   kind="dir"/>
+<entry
+   committed-rev="3553"
+   name="replies.yml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="cc2715c9793cffccefbac86e97dd5a08"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="3553"
+   name="project.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="98f978d0e16223524ee8dc769136a3c4"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="3553"
+   name="developers.yml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="f1bf372057211d4a6d86499e561d903c"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="3553"
+   name="company.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="182661632986d51f75c49d74b19df40c"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="scope"
+   kind="dir"/>
+<entry
+   name="content_type"
+   kind="dir"/>
+<entry
+   name="respond_to"
+   kind="dir"/>
+<entry
+   name="addresses"
+   kind="dir"/>
+<entry
+   name="public"
+   kind="dir"/>
+<entry
+   committed-rev="3553"
+   name="companies.yml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-02-09T09:17:40.383535Z"
+   checksum="318c27008dc35148da64e32ff9bf53c7"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

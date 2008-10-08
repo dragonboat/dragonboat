@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6969"
+   name=""
+   committed-date="2007-06-08T04:40:12.568474Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/test"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5436"
+   name="test_helper_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-11-05T21:56:18.038003Z"
+   checksum="06ba1096208387c6adfd4128cd1b93af"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="5436"
+   name="mail_helper_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-11-05T21:56:18.038003Z"
+   checksum="950308c8de22628cfe77bb3f52af566b"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="4523"
+   name="mail_render_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-06-30T05:27:05.154763Z"
+   checksum="5407bf9a0355ec417c006d5290fdcc9a"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6962"
+   name="mail_service_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-06-07T23:42:47.744571Z"
+   checksum="8cf6008d201af13cad151cccdf1e0f10"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="5081"
+   name="url_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-09-09T21:56:38.973849Z"
+   checksum="a83100e99290a310146b8dd12f3d20e1"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6006"
+   name="abstract_unit.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-01-21T23:20:44.819486Z"
+   checksum="fdf1fbfdcae3b77f93cb884297ec80af"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="5080"
+   name="quoting_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2006-09-09T21:14:43.902803Z"
+   checksum="411b322a9a22a895b48107f38792531f"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6207"
+   name="tmail_test.rb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-22T19:04:00.143256Z"
+   checksum="5533016237e00509bfe88fd900a29f81"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+</wc-entries>

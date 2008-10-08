@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6857"
+   name=""
+   committed-date="2007-05-26T03:18:57.699616Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/respond_to"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="layouts"
+   kind="dir"/>
+<entry
+   committed-rev="6507"
+   name="using_defaults.xml.builder"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="c29d76bc79def73693306014228386fe"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6857"
+   name="custom_constant_handling_without_block.mobile.erb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-05-26T03:18:57.699616Z"
+   checksum="87d17f4624a514e81dc7c8e016a7405c"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="using_defaults.js.rjs"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="0b27ffe891585ee6d8ab1809939b2d21"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="using_defaults.html.erb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="86fb269d190d2c85f6e0468ceca42a20"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="using_defaults_with_type_list.xml.builder"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="c29d76bc79def73693306014228386fe"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="using_defaults_with_type_list.js.rjs"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="0b27ffe891585ee6d8ab1809939b2d21"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="all_types_with_layout.js.rjs"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="b345192e6c91a34b6faf021bff6b3d82"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="using_defaults_with_type_list.html.erb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="86fb269d190d2c85f6e0468ceca42a20"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6507"
+   name="all_types_with_layout.html.erb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-08T17:16:36.876343Z"
+   checksum="19cbb63a4c0675f656bf325c9a6b65b8"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

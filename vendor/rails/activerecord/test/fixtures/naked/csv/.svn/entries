@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="156"
+   name=""
+   committed-date="2004-12-15T00:46:26.323763Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activerecord/test/fixtures/naked/csv"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="156"
+   name="accounts.csv"
+   text-time="2007-06-20T22:18:46.000000Z"
+   committed-date="2004-12-15T00:46:26.323763Z"
+   checksum="68b329da9893e34099c7d8ad5cb9c940"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:46.000000Z"/>
+</wc-entries>

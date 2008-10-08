@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6869"
+   name=""
+   committed-date="2007-05-27T18:44:33.826000Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/environments"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6869"
+   name="test.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="657c0e8ef656bf3a1c0094e04e570f0f"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6611"
+   name="development.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="03048070eb8e3a8537586cac8306c446"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6445"
+   name="boot.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-03-18T13:35:16.881792Z"
+   checksum="f7b5a2a3651a4956ca41bbb697870912"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="environment.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="baddad223ba6c135e657b9b32ae0ab95"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+<entry
+   committed-rev="5262"
+   name="production.rb"
+   text-time="2007-06-20T22:19:06.000000Z"
+   committed-date="2006-10-09T02:20:43.987600Z"
+   checksum="d6d2310ca7a81a85390c62abd8ca43df"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:06.000000Z"/>
+</wc-entries>

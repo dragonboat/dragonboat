@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5767"
+   name=""
+   committed-date="2006-12-21T22:12:21.806876Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activeresource/test/fixtures"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5767"
+   name="beast.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2006-12-21T22:12:21.806876Z"
+   checksum="55d0399a8a69897274657f223df1fd0e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="4890"
+   name="person.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2006-09-01T01:15:10.904365Z"
+   checksum="bdc5d593aff69900d798fc6fa3b6a64c"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="4985"
+   name="street_address.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2006-09-04T10:04:23.685324Z"
+   checksum="6b285e50a633ed7db2ca53251ee1681a"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+</wc-entries>

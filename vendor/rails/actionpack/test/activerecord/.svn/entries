@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6992"
+   name=""
+   committed-date="2007-06-11T00:51:11.331469Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/activerecord"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6057"
+   name="active_record_store_test.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-01-28T07:16:55.337195Z"
+   checksum="8ea31accec490fbddafa6e4a89aceacc"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6920"
+   name="render_partial_with_record_identification_test.rb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-06-01T03:53:39.389709Z"
+   checksum="217547a2cdbdd25a519b963542a02428"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6623"
+   name=""
+   committed-date="2007-04-29T01:35:33.923743Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/commands"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="ncgi"
+   kind="dir"/>
+<entry
+   committed-rev="6248"
+   name="plugin.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-02-27T03:15:44.539459Z"
+   checksum="677535fa7b6acd11b4d86a7fa62665b2"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   name="performance"
+   kind="dir"/>
+<entry
+   committed-rev="6512"
+   name="console.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-04-09T17:34:24.782301Z"
+   checksum="f52558958113b13e9a3ac018b2b49369"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="2412"
+   name="update.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-09-29T12:33:48.767093Z"
+   checksum="3fc3b52dd7341895a7a0483dc7de1027"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6344"
+   name="server.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-03-06T09:22:07.094759Z"
+   checksum="0de30cbc766c4f50043f7c5cc33d93bb"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   name="servers"
+   kind="dir"/>
+<entry
+   committed-rev="2412"
+   name="destroy.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-09-29T12:33:48.767093Z"
+   checksum="e587619c540fa3dc4b8dc7be6e6a09ac"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="5203"
+   name="runner.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-09-29T07:45:08.314264Z"
+   checksum="b7f8fbe52cb92e1a3023f55b43f6082d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="2883"
+   name="about.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-11-05T14:30:47.053411Z"
+   checksum="3558a2bfd45e79411b1563cdd1720563"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="2412"
+   name="generate.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2005-09-29T12:33:48.767093Z"
+   checksum="b8b922ea968c7a19893df7b4c1f60a6a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   name="process"
+   kind="dir"/>
+</wc-entries>

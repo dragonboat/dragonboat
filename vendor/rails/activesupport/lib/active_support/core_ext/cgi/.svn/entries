@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1496"
+   name=""
+   committed-date="2005-06-24T16:40:01.381404Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/cgi"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="1496"
+   name="escape_skipping_slashes.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-06-24T16:40:01.381404Z"
+   checksum="554198d0982af8e7edef9e48f84dafee"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6990"
+   name=""
+   committed-date="2007-06-10T23:04:19.218773Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/scaffold/templates"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5132"
+   name="helper.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-09-17T22:20:18.885891Z"
+   checksum="c3f7249360807dbb24bdd52c2700fdb4"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="functional_test.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="9a988055fcfde921f4538117713cf1e6"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="view_show.html.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="7de0e69b579c2c57782fb58c5d09c828"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6990"
+   name="controller.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-06-10T23:04:19.218773Z"
+   checksum="057b6747e3d3a97fb96a98ea0988f307"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6690"
+   name="layout.html.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-06T10:34:18.957330Z"
+   checksum="616243c5451213362abfa218162c06a8"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="5565"
+   name="style.css"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-11-19T16:57:33.181620Z"
+   checksum="70e729685fb3ef28f5db5035a50567eb"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="view_edit.html.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="1c7500fd4ec278c505dacbad84a1e31d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="view_index.html.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="b03ef3144a1b6c33e76db74f5a076303"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6869"
+   name="view_new.html.erb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-05-27T18:44:33.826000Z"
+   checksum="34657f58044dea90eabf5595baf1ab81"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

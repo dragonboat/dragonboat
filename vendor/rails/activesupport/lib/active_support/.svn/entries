@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6946"
+   name=""
+   committed-date="2007-06-05T14:09:15.123857Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6886"
+   name="inflections.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-29T02:40:34.503714Z"
+   checksum="0d8a27a87f6e528a345b6ef210f615a0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6044"
+   name="multibyte.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="898606a5641f14ba6b592dce87d0bd51"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6225"
+   name="clean_logger.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-02-25T00:07:54.775947Z"
+   checksum="3d6f5e150c79ad82a5a494dee4593ca4"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6548"
+   name="version.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-04-21T17:06:16.295456Z"
+   checksum="27180b31b08f39f54d6cbcc7c682770a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6937"
+   name="duration.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-06-04T22:00:53.573002Z"
+   checksum="0e7ec349e0ddcc0116f504c1b36c47cf"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6075"
+   name="inflector.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-28T15:52:45.742842Z"
+   checksum="341c7857791682568da7315466f1b0cb"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="dependencies.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="4644f923d607d3faeaebf9edfe8b735e"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6044"
+   name="reloadable.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="3f0c21c193d70ed81b8b71ec2ba59109"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   name="vendor"
+   kind="dir"/>
+<entry
+   committed-rev="6140"
+   name="deprecation.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-02-08T00:17:39.670745Z"
+   checksum="42f944cbbe463cef6e945b96516a64d2"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   name="values"
+   kind="dir"/>
+<entry
+   committed-rev="4817"
+   name="ordered_options.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-08-25T06:01:02.873645Z"
+   checksum="0f2a265ce0834c239da03154c1aaa3b0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:43.000000Z"/>
+<entry
+   committed-rev="6818"
+   name="whiny_nil.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-23T07:03:31.267867Z"
+   checksum="4e926aa97613319b400f0ef638fc88d3"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:43.000000Z"/>
+<entry
+   name="core_ext"
+   kind="dir"/>
+<entry
+   name="json"
+   kind="dir"/>
+<entry
+   committed-rev="624"
+   name="core_ext.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2005-02-15T15:57:44.326578Z"
+   checksum="7632bcee464a923f5aa7c9eba29f8081"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="5197"
+   name="option_merger.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-09-27T18:46:46.139732Z"
+   checksum="740c5f3c23c0a1c60f27edc5e6b53bd1"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="json.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="8b99b16ca6e2d36e723449050f262eec"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   name="multibyte"
+   kind="dir"/>
+<entry
+   committed-rev="4059"
+   name="caching_tools.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2006-03-27T03:59:35.687261Z"
+   checksum="6c4af171a24eb2570292cb8c8406774f"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

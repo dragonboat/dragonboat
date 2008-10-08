@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4730"
+   name=""
+   committed-date="2006-08-08T22:08:09.855462Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/autoloading_fixtures/module_with_custom_const_missing/a"
+   last-author="ulysses"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4730"
+   name="b.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-08-08T22:08:09.855462Z"
+   checksum="a26e3a25382e5d6a457b3157b919d901"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+</wc-entries>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5670"
+   name=""
+   committed-date="2006-12-03T20:30:34.307100Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/lib/action_web_service/support"
+   last-author="kent"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5670"
+   name="signature_types.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-12-03T20:30:34.307100Z"
+   checksum="9776059c303f04ff56c341a694401330"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="658"
+   name="class_inheritable_options.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-02-18T10:35:25.804139Z"
+   checksum="cd8d14ccf02b65d79290a9f5f75b2674"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+</wc-entries>

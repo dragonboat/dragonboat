@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5670"
+   name=""
+   committed-date="2006-12-03T20:30:34.307100Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/test/fixtures/db_definitions"
+   last-author="kent"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5670"
+   name="mysql.sql"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-12-03T20:30:34.307100Z"
+   checksum="08819ed9db43dcd2d274b6b55455a474"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+</wc-entries>

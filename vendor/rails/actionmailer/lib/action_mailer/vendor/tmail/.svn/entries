@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6207"
+   name=""
+   committed-date="2007-02-22T19:04:00.143256Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/lib/action_mailer/vendor/tmail"
+   last-author="minam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="2634"
+   name="mail.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="36b300254d3384b010b783729fe10357"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="base64.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="d963ba45181b88966d5f25fdc6880518"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="port.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="f45f816c3e0c5d720a2e7f0edae130e2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="address.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="b68094297b8b0f808014192afe04a058"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="5080"
+   name="quoting.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2006-09-09T21:14:43.902803Z"
+   checksum="7d002abd72ca05081b9a6359e54c36ea"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="net.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="ef3f2766e9447edcee454fe0fbceb81a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="header.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="4f5bdf9d591c3bcc62a1ee8b1559e5b1"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="scanner.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="1e866986736363fad39d6156d28356f0"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="info.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="1814bb5548736d77aa3bb70b142ab3df"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="mailbox.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="2e7226ef1345f47542bbb3007df5bee7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="parser.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="c147f999aeda571251aad6140a4d972d"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="encode.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="7110a714aa5a081d333879de12453ac1"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="stringio.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="5ef916cc3ba2ccf1faf06d99d52f948b"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="utils.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="29833f5e310535b82b206ddb9a2461ed"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="facade.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="bb5d9ad80eeb8511f62b097b76f902bf"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4"
+   name="mbox.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="ab50e7fcb9aa17bb436971dc4ca832da"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="config.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="74f5c1ae2c64230b615fc8e8287f62b7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4"
+   name="loader.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="ab50e7fcb9aa17bb436971dc4ca832da"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4"
+   name="tmail.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="7fd8853a5d50ab7b3dd9d5d3c596d0e7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="scanner_r.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="593a571d4662696b3cf07f799c10083a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6207"
+   name="attachments.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2007-02-22T19:04:00.143256Z"
+   checksum="4836d56c8f886244e05cc8a8ced66735"
+   last-author="minam"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="2634"
+   name="obsolete.rb"
+   text-time="2007-06-20T22:18:41.000000Z"
+   committed-date="2005-10-16T01:40:03.832351Z"
+   checksum="51dda57fcba7a27fb7b962698e3ecad7"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+</wc-entries>

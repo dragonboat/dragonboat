@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7021"
+   name=""
+   committed-date="2007-06-14T01:59:27.172086Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/test/core_ext"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="7019"
+   name="time_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-14T01:17:42.232857Z"
+   checksum="8ed4db0fc6caef3d134d000b6fcd8ee0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4599"
+   name="enumerable_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-09T20:48:31.925971Z"
+   checksum="b738ff992b731379a158138b04231ea4"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6262"
+   name="file_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-02-27T23:16:06.159271Z"
+   checksum="a65d8ebc4404a8dbd417b003d82bea6a"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="kernel_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="7ba8fc3564cd8a5c601b024b397cff09"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6937"
+   name="numeric_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-04T22:00:53.573002Z"
+   checksum="34ab844d0680dba8c9450b458e46ef55"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="cgi_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="1c547b33f4bd1d03277577d9195f7374"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   name="module"
+   kind="dir"/>
+<entry
+   committed-rev="6441"
+   name="module_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-03-18T03:16:53.637156Z"
+   checksum="afb3b0f2bfc36da756a1b1e2243c1f86"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6007"
+   name="duration_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-01-21T23:31:41.183700Z"
+   checksum="d999bf3086bb9a6f83fbb24287b963cf"
+   last-author="nzkoz"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6935"
+   name="string_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-04T19:49:13.466227Z"
+   checksum="5fbf35af2b5cf965186a8b7402015686"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="blank_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="f93af2bd9d19fce54cfb711aa33a30a5"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4839"
+   name="name_error_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-08-29T08:24:04.802818Z"
+   checksum="c9c36639220be948d677babc57503855"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6036"
+   name="object_and_class_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-01-24T20:47:32.424230Z"
+   checksum="a3fe5e0115c860769a93f5ee06b09ae1"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="7019"
+   name="date_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-14T01:17:42.232857Z"
+   checksum="23be7de7c4b8c99e52635267b1b65085"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="pathname_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="b11c94acd9ebcb735d91a02a853a1083"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="4885"
+   name="exception_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-08-31T03:16:28.008467Z"
+   checksum="6920cda374b2be4738aa7b060b6cf53d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:41.000000Z"/>
+<entry
+   committed-rev="6946"
+   name="array_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-05T14:09:15.123857Z"
+   checksum="2736fbba7a3c78cfe83d9b45124c4891"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6946"
+   name="hash_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-05T14:09:15.123857Z"
+   checksum="90bfe83df96bb0aa87fa0119a891a166"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="proc_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="e7d22c2fbd5d2a3c49ac1ed9a4295e4d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   name="class"
+   kind="dir"/>
+<entry
+   committed-rev="4595"
+   name="class_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="160b8a8d88c2634d290c544993bb2819"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="symbol_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="abe979687b471cc2409e4fd7fd74fde0"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="load_error_tests.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="c13ef140ff9b0ec1c0e866ba9d7f7168"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="7021"
+   name="date_time_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-06-14T01:59:27.172086Z"
+   checksum="0f09dfe528caecf22755f509bc13bc11"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="range_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="6aff92b95f052a2e6124290c5a1fa9f3"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="4595"
+   name="integer_ext_test.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2006-07-08T18:14:49.818429Z"
+   checksum="f79e060e100dc5b3967edce2b903878e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+</wc-entries>

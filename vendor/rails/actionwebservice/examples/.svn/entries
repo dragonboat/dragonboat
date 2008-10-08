@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="883"
+   name=""
+   committed-date="2005-03-10T11:53:29.977848Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/examples"
+   last-author="bitserf"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="googlesearch"
+   kind="dir"/>
+<entry
+   name="metaWeblog"
+   kind="dir"/>
+</wc-entries>

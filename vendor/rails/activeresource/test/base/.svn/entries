@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6646"
+   name=""
+   committed-date="2007-05-01T04:48:48.838294Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activeresource/test/base"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6587"
+   name="load_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-04-26T19:38:16.356539Z"
+   checksum="e1a20762c2e3c5a6cafc4281f16474e6"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="6646"
+   name="custom_methods_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2007-05-01T04:48:48.838294Z"
+   checksum="5cec8b8603ae8b8a7825b5a6029c390c"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+<entry
+   committed-rev="5773"
+   name="equality_test.rb"
+   text-time="2007-06-20T22:18:39.000000Z"
+   committed-date="2006-12-22T21:42:52.968449Z"
+   checksum="4fd8e84637164ccb7f2689bfdf71cfdb"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:39.000000Z"/>
+</wc-entries>

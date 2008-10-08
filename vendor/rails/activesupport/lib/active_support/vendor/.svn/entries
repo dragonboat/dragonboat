@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6443"
+   name=""
+   committed-date="2007-03-18T07:05:58.676978Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/vendor"
+   last-author="sam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="builder"
+   kind="dir"/>
+<entry
+   committed-rev="4"
+   name="builder.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2004-11-24T01:04:44.745113Z"
+   checksum="80f725825cbd92437a509360081ba3af"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+<entry
+   committed-rev="6044"
+   name="xml_simple.rb"
+   text-time="2007-06-20T22:18:42.000000Z"
+   committed-date="2007-01-26T21:37:38.940478Z"
+   checksum="9fb25e1745ab241d7cbeab28e3623db2"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:42.000000Z"/>
+</wc-entries>

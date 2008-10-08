@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="1819"
+   name=""
+   committed-date="2005-07-13T02:12:00.733854Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/test/fixtures/lib/generators/working"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="1819"
+   name="working_generator.rb"
+   text-time="2007-06-20T22:19:02.000000Z"
+   committed-date="2005-07-13T02:12:00.733854Z"
+   checksum="20cbe5370af30c1a977fbecf9c88ece3"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:02.000000Z"/>
+</wc-entries>

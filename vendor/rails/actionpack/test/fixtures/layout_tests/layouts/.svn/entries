@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6554"
+   name=""
+   committed-date="2007-04-24T01:26:44.572639Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/layout_tests/layouts"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="3397"
+   name="layout_test.rhtml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-01-12T07:16:23.246835Z"
+   checksum="a3adbd00a6338bbdc37746624226c9d3"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="3397"
+   name="item.rhtml"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-01-12T07:16:23.246835Z"
+   checksum="cd829f823592014cd02fb4030c081db8"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6554"
+   name="multiple_extensions.html.erb"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-04-24T01:26:44.572639Z"
+   checksum="efb604e58af24bf4b29b73550feb0991"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="3397"
+   name="third_party_template_library.mab"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2006-01-12T07:16:23.246835Z"
+   checksum="db212ea4d5b85e04915f24de135bddd5"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   name="controller_name_space"
+   kind="dir"/>
+</wc-entries>

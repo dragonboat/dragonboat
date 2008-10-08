@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6893"
+   name=""
+   committed-date="2007-05-29T09:10:36.616541Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/json/encoders"
+   last-author="rick"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6773"
+   name="date.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-18T21:20:35.006378Z"
+   checksum="e778cce9267f53c208356bf55b06ca7c"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6773"
+   name="time.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-18T21:20:35.006378Z"
+   checksum="2349fcfabd011d17074ff6128e70f4b9"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="enumerable.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="3e1f48f05966da1c8c2fb47654c01f91"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="false_class.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="3c500e520d30aa6e8dfe02731e3d7bd0"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="numeric.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="15fa5fcc9e998e0f4ad89a21f495a823"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="hash.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="bc68d346d5cd3a90a9e09c9fd2a484cd"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="true_class.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="7b944e4f14bbf9e5207380b705bb4ada"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="symbol.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="e04f0ea5791d37e807488fcf87944f0c"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="object.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="29cb5c43a7efb18678a34d9213bdc2ce"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6893"
+   name="string.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-29T09:10:36.616541Z"
+   checksum="9260c7d50ebae8b30b3e496385d0440b"
+   last-author="rick"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="nil_class.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="fc1e79be0d8652f3a13f3bdc6c4d53a1"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6443"
+   name="regexp.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-03-18T07:05:58.676978Z"
+   checksum="d0607edeb6e02efde5a67c83521f2ef0"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+<entry
+   committed-rev="6773"
+   name="date_time.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-05-18T21:20:35.006378Z"
+   checksum="6dc59292953a14093b12667db2a68107"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

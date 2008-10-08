@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6188"
+   name=""
+   committed-date="2007-02-21T15:58:42.213495Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/fixtures/public/javascripts"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   name="cache"
+   kind="dir"/>
+<entry
+   committed-rev="6164"
+   name="bank.js"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-02-18T23:54:20.727254Z"
+   checksum="7ee70007824c766124d2a3f5168aef14"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="6164"
+   name="robber.js"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-02-18T23:54:20.727254Z"
+   checksum="791b174841ae7d29dd66c460eb575273"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+<entry
+   committed-rev="5875"
+   name="application.js"
+   text-time="2007-06-20T22:18:55.000000Z"
+   committed-date="2007-01-08T17:30:46.024042Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:55.000000Z"/>
+</wc-entries>

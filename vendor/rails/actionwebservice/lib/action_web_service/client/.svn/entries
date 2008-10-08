@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="5127"
+   name=""
+   committed-date="2006-09-16T07:26:43.394915Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionwebservice/lib/action_web_service/client"
+   last-author="kent"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="5127"
+   name="soap_client.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2006-09-16T07:26:43.394915Z"
+   checksum="06589d32e09763679ac03676fda82277"
+   last-author="kent"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="1072"
+   name="xmlrpc_client.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-04-02T21:03:36.254404Z"
+   checksum="f23716542eedaaf7ad4d5ba4f2f7fa8a"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+<entry
+   committed-rev="800"
+   name="base.rb"
+   text-time="2007-06-20T22:19:01.000000Z"
+   committed-date="2005-02-25T23:39:39.620985Z"
+   checksum="4b37b2ec6752da93f4e0261cfabfa7ea"
+   last-author="bitserf"
+   kind="file"
+   prop-time="2007-06-20T22:19:01.000000Z"/>
+</wc-entries>

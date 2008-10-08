@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6611"
+   name=""
+   committed-date="2007-04-28T15:57:29.737443Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/applications/app"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6197"
+   name="USAGE"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-02-21T23:13:32.606224Z"
+   checksum="2f7ac9b48acb37d79209a7e16c9652ff"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6611"
+   name="app_generator.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-04-28T15:57:29.737443Z"
+   checksum="66c0778c551c6c8af11c4f1bb58081f4"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

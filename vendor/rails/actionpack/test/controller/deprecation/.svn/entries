@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6412"
+   name=""
+   committed-date="2007-03-13T05:44:18.944672Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/controller/deprecation"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6412"
+   name="deprecated_base_methods_test.rb"
+   text-time="2007-06-20T22:18:53.000000Z"
+   committed-date="2007-03-13T05:44:18.944672Z"
+   checksum="a2eb01552c9b3eb18b95f86136e900be"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:53.000000Z"/>
+</wc-entries>

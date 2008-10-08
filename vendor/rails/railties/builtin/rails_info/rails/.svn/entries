@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4138"
+   name=""
+   committed-date="2006-04-03T05:15:29.072500Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/builtin/rails_info/rails"
+   last-author="ulysses"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4097"
+   name="info_controller.rb"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-03-29T15:11:47.954938Z"
+   checksum="689887c32fd3a324ef8c894dad2aefca"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="4138"
+   name="info_helper.rb"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-04-03T05:15:29.072500Z"
+   checksum="b8e02423fc2a64dd1abd400471f042f6"
+   last-author="ulysses"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="4134"
+   name="info.rb"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-04-03T02:46:22.373791Z"
+   checksum="4e6076fd25db4956fafd4b0648189e11"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+</wc-entries>

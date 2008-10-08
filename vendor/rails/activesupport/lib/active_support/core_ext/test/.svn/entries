@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6926"
+   name=""
+   committed-date="2007-06-01T20:20:19.765429Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/test"
+   last-author="xal"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6926"
+   name="difference.rb"
+   text-time="2007-06-20T22:18:44.000000Z"
+   committed-date="2007-06-01T20:20:19.765429Z"
+   checksum="7ea93c4b706d8ff5df5aab57529af8a6"
+   last-author="xal"
+   kind="file"
+   prop-time="2007-06-20T22:18:44.000000Z"/>
+</wc-entries>

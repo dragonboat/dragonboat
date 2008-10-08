@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4553"
+   name=""
+   committed-date="2006-07-05T04:40:48.847696Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails_generator/generators/components/migration/templates"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4553"
+   name="migration.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2006-07-05T04:40:48.847696Z"
+   checksum="8004a49318eae33553f1bf16a2231bdd"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

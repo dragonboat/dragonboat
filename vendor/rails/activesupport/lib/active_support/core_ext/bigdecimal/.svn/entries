@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="4608"
+   name=""
+   committed-date="2006-07-13T03:23:39.855407Z"
+   url="http://svn.rubyonrails.org/rails/trunk/activesupport/lib/active_support/core_ext/bigdecimal"
+   last-author="marcel"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="4608"
+   name="formatting.rb"
+   text-time="2007-06-20T22:18:43.000000Z"
+   committed-date="2006-07-13T03:23:39.855407Z"
+   checksum="21bfc20c59a6bcb5b27e280414c729c8"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:18:43.000000Z"/>
+</wc-entries>

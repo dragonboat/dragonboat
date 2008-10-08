@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6764"
+   name=""
+   committed-date="2007-05-18T06:24:50.027922Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionpack/test/controller/session"
+   last-author="bitsweat"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6764"
+   name="cookie_store_test.rb"
+   text-time="2007-06-20T22:18:52.000000Z"
+   committed-date="2007-05-18T06:24:50.027922Z"
+   checksum="38ee0c32870c8f4e67d21c6d0572996d"
+   last-author="bitsweat"
+   kind="file"
+   prop-time="2007-06-20T22:18:52.000000Z"/>
+</wc-entries>

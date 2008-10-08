@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6293"
+   name=""
+   committed-date="2007-03-03T04:50:56.576080Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/lib/rails/plugin"
+   last-author="marcel"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6293"
+   name="locator.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-03-03T04:50:56.576080Z"
+   checksum="a539c0e78cde65cb25008c9232eea8ec"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+<entry
+   committed-rev="6293"
+   name="loader.rb"
+   text-time="2007-06-20T22:19:05.000000Z"
+   committed-date="2007-03-03T04:50:56.576080Z"
+   checksum="d9c91513ffd89cf84dcfccc24ec97626"
+   last-author="marcel"
+   kind="file"
+   prop-time="2007-06-20T22:19:05.000000Z"/>
+</wc-entries>

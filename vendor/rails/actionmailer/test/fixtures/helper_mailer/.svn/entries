@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6180"
+   name=""
+   committed-date="2007-02-21T00:29:44.661503Z"
+   url="http://svn.rubyonrails.org/rails/trunk/actionmailer/test/fixtures/helper_mailer"
+   last-author="david"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6180"
+   name="use_helper.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_helper_method.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_helper.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="952a7e65ccaf841dcaea5d42bc05f228"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_helper_method.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="58e7e0746efdbd26f61b2fa9f605230d"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_mail_helper.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_mail_helper.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="3d7a22c1b85ac199ee9e4597eb27a710"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_example_helper.rhtml"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+<entry
+   committed-rev="6180"
+   name="use_example_helper.erb"
+   text-time="2007-06-20T22:18:40.000000Z"
+   committed-date="2007-02-21T00:29:44.661503Z"
+   checksum="633bfaa31d0bf37c9050faf0b20cccd0"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:18:40.000000Z"/>
+</wc-entries>

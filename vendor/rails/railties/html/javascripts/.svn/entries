@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="6785"
+   name=""
+   committed-date="2007-05-19T20:57:11.447262Z"
+   url="http://svn.rubyonrails.org/rails/trunk/railties/html/javascripts"
+   last-author="sam"
+   kind="dir"
+   uuid="5ecf4fe2-1ee6-0310-87b1-e25e094e27de"
+   repos="http://svn.rubyonrails.org/rails"
+   revision="7027"/>
+<entry
+   committed-rev="6785"
+   name="prototype.js"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2007-05-19T20:57:11.447262Z"
+   checksum="3f1a3b63fe59ce5ec9de7a86f825b787"
+   last-author="sam"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="6781"
+   name="effects.js"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2007-05-19T00:23:42.704759Z"
+   checksum="3b97e9a2d87ff1e0a344f63b8f69a303"
+   last-author="madrobby"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="6781"
+   name="dragdrop.js"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2007-05-19T00:23:42.704759Z"
+   checksum="db24694e540162550a65b0c69b7d9047"
+   last-author="madrobby"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="3770"
+   name="application.js"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2006-03-04T23:53:41.044794Z"
+   checksum="8a750594360b0bd302e15147eacadc9a"
+   last-author="david"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+<entry
+   committed-rev="6781"
+   name="controls.js"
+   text-time="2007-06-20T22:19:03.000000Z"
+   committed-date="2007-05-19T00:23:42.704759Z"
+   checksum="89d8c1c0113250173f62b76f1e177a3e"
+   last-author="madrobby"
+   kind="file"
+   prop-time="2007-06-20T22:19:03.000000Z"/>
+</wc-entries>
