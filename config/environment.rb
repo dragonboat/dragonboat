@@ -25,11 +25,14 @@ Rails::Initializer.run do |config|
   # Force all environments to use the same logger level 
   # (by default production uses :info, the others :debug)
   # config.log_level = :debug
-
+  config.action_controller.session = {
+    :session_key => '_dragonboat_session',
+    :secret      => '0065486985468546954654620349'
+  }
   # Use the database for sessions instead of the file system
   # (create the session table with 'rake db:sessions:create')
-  # config.action_controller.session_store = :active_record_store
-
+  config.action_controller.session_store = :active_record_store
+  config.active_record.observers = :user_observer
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper, 
   # like if you have constraints or database-specific column types
@@ -57,4 +60,10 @@ end
 # Mime::Type.register "text/richtext", :rtf
 # Mime::Type.register "application/x-mobile", :mobile
 
-# Include your application configuration below
+# Moved here to avoid already defined constant warning when testing
+application_config_file = "#{RAILS_ROOT}/config/application.yml"
+if !File.exists?(application_config_file)
+  raise "Application config file not found: " +application_config_file
+else
+  APP_CONFIG = YAML::load(File.open(application_config_file))
+end

@@ -1,0 +1,160 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/themes/advanced
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+jscripts
+dir
+
+about.htm
+file
+
+
+
+
+2008-09-29T13:48:59.921875Z
+e8ba5a4b2ef242bb521854ed89a5e6a6
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+anchor.htm
+file
+
+
+
+
+2008-09-29T13:48:59.937500Z
+9930809042b8f1ebaab51d4ea23c5c8f
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+charmap.htm
+file
+
+
+
+
+2008-09-29T13:48:59.953125Z
+0391875972ec40c7e1cbe0842791ab5c
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+color_picker.htm
+file
+
+
+
+
+2008-09-29T13:48:59.968750Z
+f68446b78dd2fe6d93b413128045c4db
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+editor_template_src.js
+file
+
+
+
+
+2008-09-29T13:48:59.968750Z
+1f4cebfd2bda933a76b14018a9c6c431
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+langs
+dir
+
+link.htm
+file
+
+
+
+
+2008-09-29T13:49:00.000000Z
+6c3c4f78977636971fee22e156e8c27f
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+images
+dir
+
+css
+dir
+
+docs
+dir
+
+image.htm
+file
+
+
+
+
+2008-09-29T13:49:00.000000Z
+7c492f5526dec43ff3bfe56db2e3d78a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+editor_template.js
+file
+
+
+
+
+2008-09-29T13:49:00.015625Z
+34f49851a46c0c3f5f90929fb5a1260e
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+source_editor.htm
+file
+
+
+
+
+2008-09-29T13:49:00.046875Z
+5109edd6a3f233fcaca629c978d7aa5a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

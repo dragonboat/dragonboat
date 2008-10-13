@@ -1,0 +1,77 @@
+body {
+    background-color:#FFFFFF;
+    padding-top: 0;
+    margin-top: 0;
+    }
+#msg {
+    margin: 10px 10px 10px 20px;
+    padding: 5px 0 5px 10px;
+    font: bold 12px 'Verdana', sans-serif;
+    background: #F9F7F3;
+    color: #FF6633;
+    width: 790px;
+    }
+#top {background-color:#F35F17; border:1px #ffffff solid;}
+#top h1 {color: #3039B0;}
+#right {float:right;}
+
+/* Main Menu */
+#mainMenu {
+    clear: both;
+    margin: 0 10px 9px 0;
+    height: 25px;
+    }
+#mainMenu ul.tabs {
+    margin:0;
+    padding:0;
+    list-style:none;
+    height: 34px;
+    width: 740px;
+    float: left;
+    }
+#mainMenu ul.tabs li {
+    display: block;
+    width: 100px;
+    padding: 0 2px 0 2px;
+    margin: 0;
+    height: 34px;
+    float: left;
+    }
+
+
+/*** MAIN CONTENT ***/
+
+#main {
+    margin: 5px 5px 20px 5px;
+    background: #FFF;
+    border: 1px solid #C3C9BD;
+    }  
+#main h2 {
+    color: #5E8078;
+    font: normal 20px 'Georgia', sans-serif; 
+    margin: 15px 30px;
+    }    
+#main div#links{
+    font: normal 12px 'Verdana', sans-serif;
+    color: #725C51;
+    }    
+#main #welcome{
+    text-align: center;
+    padding: 30px 0;
+    }
+#main #welcome h1 {
+    font: normal 18px 'Verdana', sans-serif;
+    color: #5E8078;
+    }
+#main a {color:#FF0000;}    
+/* Login form */
+
+/* Main menu */
+#main_menu a {color:#9999AF; text-decoration: none;}
+
+/* Path*/
+#path {background-color:#F35F17; color:#ffffff; border:1px #ffffff solid;}
+#path a {color:#ffffff; text-decoration: none;}
+
+div.for_printing, table.for_printing {display:none}
+img.for_printing {position:absolute; top:-3000px;}

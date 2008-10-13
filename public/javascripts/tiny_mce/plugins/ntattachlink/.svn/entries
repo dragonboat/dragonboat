@@ -1,0 +1,55 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/ntattachlink
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:45.843750Z
+7a4292ad27f8d36d9bc5350b5c512e8f
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+langs
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:45.859375Z
+f4f002cb2bac874450f86f416563fbf0
+2007-06-19T17:58:49.266831Z
+79
+niket
+

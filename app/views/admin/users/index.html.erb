@@ -1,0 +1,8 @@
+<h1>Listing users</h1>
+<div id="submenu">
+  <%= link_to 'New user', admin_new_user_path %>
+</div>
+
+<div id="pages"><%= will_paginate @users %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate @users %></div>

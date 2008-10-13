@@ -1,0 +1,92 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/advhr
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:48.515625Z
+260cb67b0bee17945d54ad914d10f58f
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:48.531250Z
+27ad49b87ed76d80fba88a0fc5a49dc4
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+css
+dir
+
+readme.txt
+file
+
+
+
+
+2008-09-29T13:48:48.546875Z
+fe81b122bcf0e8599bb841cca33f967a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+rule.htm
+file
+
+
+
+
+2008-09-29T13:48:48.546875Z
+9f0f25c967cf5c3b346442a4e7278b58
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

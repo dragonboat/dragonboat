@@ -1,0 +1,92 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/searchreplace
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:54.203125Z
+7b80afbdfdc07c28e609e8e7d3ca4d98
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:54.218750Z
+dd0be2a57b0b8d9518b31a84b8dba02b
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+css
+dir
+
+searchreplace.htm
+file
+
+
+
+
+2008-09-29T13:48:54.234375Z
+bdc8bd17db118bc3cec9cd79b47f0b70
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+readme.txt
+file
+
+
+
+
+2008-09-29T13:48:54.250000Z
+fe81b122bcf0e8599bb841cca33f967a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

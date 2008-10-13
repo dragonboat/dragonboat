@@ -1,0 +1,73 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/iespell
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:48.031250Z
+fae3a5e1abb9e78c55eb4dab42d8dfd1
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+langs
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:48.046875Z
+35aeb5f9bf2f1860a796334272f2a6cb
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+readme.txt
+file
+
+
+
+
+2008-09-29T13:48:48.062500Z
+fe81b122bcf0e8599bb841cca33f967a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

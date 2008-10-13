@@ -1,0 +1,3 @@
+# Hostname of the server, used to generate bounced email return addresses
+hostname: localhost:3000
+admin_per_page: 3

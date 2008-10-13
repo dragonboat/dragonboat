@@ -1,0 +1,54 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/devkit/css
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+devkit_ui.css
+file
+
+
+
+
+2008-09-29T13:48:50.781250Z
+ca3e9336bfb4bc511738f6d2d6693306
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+devkit.css
+file
+
+
+
+
+2008-09-29T13:48:50.781250Z
+1fdee80fdc34802395a507eb1054ae1f
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

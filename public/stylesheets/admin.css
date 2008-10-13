@@ -1,0 +1,206 @@
+h2{
+color:#05303c;
+/* margin:30px 0px 10px 0px; */
+font-size:12px;
+padding:0px 0px 5px 0px;
+border-bottom:1px solid #d2cdca;
+}
+
+p{
+  margin:10px 0px 10px 0px;
+  padding:0px;
+}
+
+a{
+  color: #00669A;
+  text-decoration:none;
+}
+a:hover{
+  color: #00669A;
+  text-decoration:underline;
+}
+
+a:visited{
+  color:#00669A;
+}
+
+
+table.form, table.form2{
+  margin:0px 0px 15px 0px;
+}
+
+table.form tr td.heading{
+  background-color:#8faebe;
+  border-bottom:1px solid #05303c;
+  padding:2px 0px 2px 5px;
+  vertical-align:middle;
+  font-weight:bold;
+}
+
+table.form tr td.color_2 { background-color: #DDDDDD; }
+
+table.form tr td.label{
+        background-color:#eeeeee;
+        width:165px;
+        border-bottom:1px solid #8faebe;
+        padding:5px;
+}
+
+table.form tr td{
+        padding-left:5px;
+        background-color:#fcfcfc;
+
+}
+
+table.form2 tr td.heading{
+        background-color:#8faebe;
+        border-bottom:1px solid #05303c;
+        padding:2px 0px 2px 5px;
+        vertical-align:middle;
+        font-weight:bold;
+        font-size:12px;
+}
+
+table.form2 tr td.label{
+        background-color:#eeeeee;
+        border-bottom:1px solid #8faebe;
+}
+
+table.form2 tr td{
+    font-size:12px;
+        border-bottom:1px solid #8faebe;
+        padding: 8px;
+        background-color:#fcfcfc;
+}
+
+form{
+    margin:0px;
+}
+input {padding-left:3px;}
+/* Use this to undo form and form2 class stuff in embedded tables */
+table.blank tr td {
+        border-bottom: none;
+}
+
+
+/* Rails */
+.fieldWithErrors {
+  border: 1px solid red;
+  display: inline-table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 1px solid #F7B8BA;
+  padding: 5px;
+  margin: 0 0 20px 30px;
+  font: normal 11px 'Verdana', sans-serif; 
+  color: #474747;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  padding: 7px 5px 7px 15px;
+  font: bold 11px 'Verdana', sans-serif; 
+  margin: -6px;
+  background-color: #FEF3F3;
+  color: #E31319;
+  border: 1px solid #E31319;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font: normal 11px 'Verdana', sans-serif; 
+  list-style: disc;
+}
+/* Table Obj List*/
+table.obj_list {border: 1px #DDD solid; width: 100%;}
+table.obj_list td {vertical-align: top;}
+table.obj_list  th {
+  background-color:#8faebe;
+  border-bottom:1px solid #05303c;
+  padding:2px 0px 2px 5px;
+  vertical-align:middle;
+  font-weight:bold;
+}
+
+
+#right {float:right;}
+
+
+
+td.label{
+    background-color:#eeeeee;
+    width:200px;
+    padding:5px;
+}
+
+table.form td.footer {
+    height: 30px;
+    padding: 5px;
+}
+
+#content {
+    clear: both;
+    padding: 10px;
+}
+.faded { color: #eee; }
+.icon { vertical-align: middle; border: none; }
+
+
+/* Boxes */
+.warning_box {
+  padding: 10px 5px 10px 30px;
+  margin: 0px 0px 15px 0px;
+  border: 1px dotted #cfcfcf;
+  background: #F9E4E4 url(../images/icons/exclamation.png) no-repeat 8px 8px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.info_box {
+  padding: 10px 5px 10px 30px;
+  margin: 0px 0px 15px 0px;
+  border: 1px dotted #3c78b5;
+  background: #D8E4F1 url(../images/icons/information.png) no-repeat 8px 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.big_num {
+  font-size: 32px;
+  color: #1f2f8f;
+  border: 1px solid #ccc;
+  padding: 6px;
+}
+.clearEm {
+  clear: both;
+}
+
+.submit {font: 18px Verdana, Arial, sans-serif; line-height: 24px; height: 32px; padding: 5px 38px 5px 0; color: #fff; text-decoration: none;}
+.submit:hover {color: red;}
+
+#textarea-editor {backgound: transparent; width: 807px;}
+#textarea-editor textarea {display: block; width: 800px; height: 300px; border: 1px solid #000; padding: 5px;}
+#textarea-editor input {float: right; cursor: pointer;}
+#textarea-editor img {float: right; cursor: pointer; margin-left:20px;}
+
+/* Submenu*/
+#submenu {float:right}
+#required {color:red;}
+div#pages {
+    text-align: center;
+    margin: 0 0 10px 20px;
+    font: 11px;
+    width: 800px;
+    }    
+div#pages a {color: #725C51;}
+#close {color: red; float:right; font-size:14px;}
+#close a, a:hover {text-decoration: none}
+
+

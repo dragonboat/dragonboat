@@ -13,7 +13,7 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 development:
   adapter: mysql
-  database: dragonboat_development
+  database: dragonboat_dev
   username: root
   password:
   host: localhost
@@ -30,7 +30,7 @@ test:
 
 production:
   adapter: mysql
-  database: dragonboat_production
+  database: dragonboat_dev
   username: root
   password: 
   host: localhost

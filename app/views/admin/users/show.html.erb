@@ -1,0 +1,27 @@
+<table id="users" class="obj_list">
+  <tr>
+    <td><b>Login</b></td>
+    <td><%=@user.login%></td>
+  </tr>
+  <tr>
+    <td><b>E-mail</b></td>
+    <td><%=mail_to @user.email%></td>
+  </tr>
+  <tr>
+     <td><b>Type</b></td>
+     <td><%=@user.type%></td>
+ </tr>
+  <tr>
+     <td><b>Created at</b></td>
+     <td><%=@user.created_at.strftime("%d.%m.%Y")%></td> 
+  </tr>
+
+
+  <tr>
+  <td colspan="2" align="center"><%= link_to 'Show', admin_user_path(@user) %> |
+        <%= link_to 'Edit', admin_edit_user_path(@user) %> |
+        <%= link_to 'Destroy', admin_user_path(@user) , :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+</table>
+
+<%= link_to 'Back', admin_users_path %>

@@ -1,0 +1,65 @@
+body{margin:0 0 0 0; padding:0 0 0 0;}
+div{display:none}
+
+th input[type="checkbox"] {display:block}
+td input[type="checkbox"] {display:block}
+
+.edit_column{display:none}
+.non_print{display:none}
+
+td{
+  color: #000000;
+  white-space:nowrap;  
+}
+
+a{display:none}
+
+table {
+  border-top:1px solid #000000;
+  border-left:1px solid #000000;
+  margin: 0 0 0 0;
+  width: 100%;
+}
+
+#filter_param div p{margin:0;}
+#filter_param{margin-bottom:10px}
+
+td, th{ 
+  font: normal 9px 'Verdana', sans-serif;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;  
+  padding-left: 3px;
+  padding-right: 3px;
+  width: 1px;
+  height:1px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+td div.to_print{display:block; white-space:nowrap;}
+
+div#main {width:100%;display:block;}
+div#topInfo, div#topInfoMonthly,
+div#filter_param, div#filter_param div,
+div#topMonthlyHoursInfo, div#topMonthlyHoursInfo div,
+div#topSpendingsInfo, div#topSpendingsInfo div{display:block;}
+div#topInfo div, div#topInfoMonthly div{display:block;}
+
+/*div#calculate_area table tr td input {border:0; background-color:white;}
+div#calculate_area table tr td {width:200px;}
+div#calculate_area table{margin-top:5px; }*/
+
+div.to_print{display:block}
+
+div.for_printing{display:block}
+img.for_printing {position:relative; top:0px;display:block; margin:0; padding:0; margin-left: 5pt; }/*{position:relative; top:0px; left:0px;}*/
+table.for_printing {
+        border-left:0; border-right:0; border-top:0;
+        width:100%; 
+        border-bottom: 1px solid #000000;}
+table.for_printing td, table.for_printing th{white-space:nowrap; text-align:left; vertical-align:middle; border:0; }
+table.for_printing th{width:100%}
+
+td#align {text-align:center;}
+td#align *{margin-right:auto;  margin-left:auto; }
+

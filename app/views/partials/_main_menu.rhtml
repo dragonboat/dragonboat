@@ -1,0 +1,19 @@
+<% url = controller.controller_path %>
+<% pages_paths = Comatose::Page.root.children.map(&:full_path)%>
+
+    
+    <div id="mainMenu">
+      <ul class="tabs">
+        <li><a href="/">Home</a> </li>
+            <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>
+            
+            <li  <%= "class=\"current\"" if url == 'clients' || url == 'items' || url =~/(sessions|student|clients\/subjects|contracts)/ %>>
+            <%= link_to p.slug.titleize, p.uri %> 
+            </li> 
+            <% end %>
+             <% if logged_in? %>
+             <li><%=link_to "Admin", comatose_admin_url%></li>
+             <%end %>            
+      </ul>
+    </div>          
+    

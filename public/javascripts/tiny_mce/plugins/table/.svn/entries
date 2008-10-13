@@ -1,0 +1,131 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/table
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:51.843750Z
+21d04eeb64cf88af767f0641f1c360ee
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+images
+dir
+
+cell.htm
+file
+
+
+
+
+2008-09-29T13:48:51.859375Z
+69c1b58e21795e8ab5b7d98f3a9f895d
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:51.875000Z
+859ff047dbd26d9ccbb68544726cb070
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+css
+dir
+
+merge_cells.htm
+file
+
+
+
+
+2008-09-29T13:48:51.906250Z
+7535aa48ccbdb05fcb1b7ffd778ccb61
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+readme.txt
+file
+
+
+
+
+2008-09-29T13:48:51.921875Z
+fe81b122bcf0e8599bb841cca33f967a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+row.htm
+file
+
+
+
+
+2008-09-29T13:48:51.921875Z
+6dc34f4ff4f7a3daa1edc3a607eb268a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+table.htm
+file
+
+
+
+
+2008-09-29T13:48:51.937500Z
+acf2df767874c0ce8f73faf0469a2a00
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

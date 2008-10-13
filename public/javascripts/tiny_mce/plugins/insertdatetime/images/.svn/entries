@@ -1,0 +1,54 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/insertdatetime/images
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+insertdate.gif
+file
+
+
+
+
+2008-09-29T13:48:45.687500Z
+867e95f603e63a1f0c02fbde1490ab3e
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+inserttime.gif
+file
+
+
+
+
+2008-09-29T13:48:45.703125Z
+25d09a9350cb2dc12ac66e5a4153bac6
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

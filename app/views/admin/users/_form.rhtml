@@ -1,0 +1,32 @@
+<tr>
+  <td><label for="user_login">Login:</lable></td>
+  <td id="required">*<%= f.text_field :login, :size=>50 %></td>
+</tr>
+<tr>
+  <td><label for="user_email">E-mail:</lable></td>
+  <td id="required">*<%= f.text_field :email, :size=>50 %></td>
+</tr>
+<tr>
+  <td><label for="user_role">Type:</lable></td>
+  <td id="required">*<%= f.select :role, User::ROLE.map { |r| [r.capitalize, r] } %></td>
+  </tr>
+<tr height="10">
+  <td></td>
+  <td></td>
+  </tr>
+  <%if ["new","create"].include? controller.action_name%>
+  <tr>
+  <td><label for="user_password">Password:</lable></td>
+  <td id="required">*<%= f.password_field :password, :size=>50 %></td>
+</tr>
+<tr>
+  <td><label for="user_password_confirmation">Password confirmation:</lable></td>
+  <td id="required">*<%= f.password_field :password_confirmation, :size=>50 %></td>
+  </tr>
+  <%else%>
+  <tr>
+    <td></td>
+    <td><%=link_to_function "changed password", "$('changed_password').style.display='block';"%></td>
+  </tr>
+  
+<%end%>

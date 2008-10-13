@@ -1,0 +1,76 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/inlinepopups
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:46.390625Z
+60a158eb25b031cc91db516a06df55e7
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+jscripts
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:46.406250Z
+09f259437954b75991a3f33f82df55fc
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+css
+dir
+
+readme.txt
+file
+
+
+
+
+2008-09-29T13:48:46.421875Z
+d41d8cd98f00b204e9800998ecf8427e
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+

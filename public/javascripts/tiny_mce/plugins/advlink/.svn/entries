@@ -1,0 +1,89 @@
+8
+
+dir
+227
+http://thepattern.svnrepository.com/svn/cccweb/chicagocostume_com/trunk/public/javascripts/tiny_mce/plugins/advlink
+http://thepattern.svnrepository.com/svn/cccweb
+
+
+
+2007-06-19T17:58:49.266831Z
+79
+niket
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7558b987-851b-0410-8d71-a11b41888695
+
+editor_plugin.js
+file
+
+
+
+
+2008-09-29T13:48:52.171875Z
+b3b74662dad1cc9fdaee704efcbb0e46
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+link.htm
+file
+
+
+
+
+2008-09-29T13:48:52.187500Z
+93e98a479cdff0b65fecdf5447b5250d
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-09-29T13:48:52.203125Z
+7180cf88a3484c1cddf15e82e8f1242a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
+css
+dir
+
+readme.txt
+file
+
+
+
+
+2008-09-29T13:48:52.218750Z
+fe81b122bcf0e8599bb841cca33f967a
+2007-06-19T17:58:49.266831Z
+79
+niket
+has-props
+
