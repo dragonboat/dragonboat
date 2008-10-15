@@ -12,11 +12,11 @@ module TinymceUse
         unlink image undo redo code print},
      :theme_advanced_buttons2 => %w{ formatselect fontselect fontsizeselect pastetext pasteword selectall 
                   },
-       :theme_advanced_buttons3_add => %w{ tablecontrols fullscreen flash media},
+       :theme_advanced_buttons3_add => %w{ tablecontrols fullscreen flash media advlink },
         #          :editor_selector => 'mceEditor',
    
       # :editor_selector => 'mceEditor',
-      :plugins => %w{ contextmenu paste table fullscreen  advimage media print}
+      :plugins => %w{ contextmenu paste table fullscreen  advimage media print advlink}
     })
   end
 end

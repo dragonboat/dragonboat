@@ -1,5 +1,5 @@
 class Admin::WebsiteController < ApplicationController
-  before_filter :admin_login_required
+  before_filter :login_required
   layout 'comatose_admin'
   
   def index 

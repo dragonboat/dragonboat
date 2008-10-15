@@ -1,0 +1,41 @@
+<h1>View Image</h1>
+	
+<div style="width: 450px; margin-top: 10px">
+
+<%= error_messages_for "image" %>
+<% form_for :image,:url => admin_image_path(@image), :html=>{:method=>:put} do |f| %>
+	   
+<fieldset style="width:450px;">
+  <%= link_to(image_tag(@image.public_filename(:thumb_big)),@image.public_filename, :target=>"_blank") %>
+        <ol>
+	<li><span style="display: block; width: 300px;line-height:1.8">Image size: 
+        <b><%=@image.width%></b>x<b><%=@image.height%></b></span></li>
+        <li><span style="display: block; width: 300px;line-height:1.8">Date added:
+            <b><%=@image.created_at.strftime('%B %d %Y')%></b></span></li>
+         <li><span style="display: block; width: 300px;line-height:1.8">Uploaded by:
+              <b><%=@image.user.login%></b></span></li>  
+         <li><span style="display: block; width: 300px;line-height:1.8">Full Path:
+              <b>http://<%=APP_CONFIG['hostname']%><%=@image.public_filename%></b></span></li>              
+              </ol>
+</fieldset>	
+
+<div id="button-group">
+  <div class="last-update">
+    <label>
+	  Created <%= time_ago_in_words(@image.created_at) %> ago
+    </label>
+  </div>
+  <%= submit_tag 'Save' %>
+  or 
+  <%= link_to('Cancel', :controller => 'admin/images')%>
+</div>  
+
+
+<div>
+  <h2>Description</h2>
+  <%=f.text_area :description, :rows=>'3', :cols=>'57'%>
+</div>
+
+</div>
+<% end %>
+

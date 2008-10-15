@@ -7,7 +7,8 @@
 	<script language="javascript" type="text/javascript" src="../../utils/validate.js"></script>
 	<script language="javascript" type="text/javascript" src="jscripts/functions.js"></script>
 	<link href="css/advimage.css" rel="stylesheet" type="text/css" />
-	<base target="_self" />
+        <script language="javascript" type="text/javascript" src="/javascripts/prototype.js"></script>
+        <base target="_self" />
 </head>
 <body id="advimage" onload="tinyMCEPopup.executeOnLoad('init();');" style="display: none">
     <form onsubmit="insertAction();return false;" action="#"> 
@@ -34,7 +35,23 @@
 									</tr>
 								  </table></td>
 							</tr>
-							<tr id="imagelistsrcrow">
+                                                        <tr>
+								<td class="column1"><label id="srclabel" for="src">Select from lib</label></td>
+								<td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+									<tr> 
+									  <td>
+                                                                              <script type="text/javascript">//<![CDATA[
+                                                                                    new Ajax.Request("/manage_images",
+                                                                                            {asynchronous:true, evalScripts:true, method:'get'});     //]]>
+                                                                               </script>
+                                                                               
+
+                                                                          </td> 
+                                                                            <td id="srcbrowsercontainer">&nbsp;</td>
+									</tr>
+								  </table></td>
+							</tr>
+                                                            <tr id="imagelistsrcrow">
 								<td class="column1"><label for="imagelistsrc">{$lang_image_list}</label></td>
 								<td colspan="2" id="imagelistsrccontainer">&nbsp;</td>
 							</tr>
@@ -83,7 +100,8 @@
 									edipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
 									erat volutpat.
 								</div>
-							</td>
+                                                             
+                                                            </td>
 						</tr>
 
 						<tr>
@@ -225,8 +243,18 @@
 					</table>
 				</fieldset>
 			</div>
-		</div>
-
+                        <fieldset>
+					<legend>Select from Image Lib</legend>
+                                                            <div class="ImageLibPreview">
+									
+									 <div id='dynamic_images_list'>
+                                                                                    Loading Images...<br />
+                                                                                    <img src='/images/loading.gif'>
+                                                                          </div>
+                                                             </div>
+                      </fieldset>                                   
+                    </div>
+                                                               
 		<div class="mceActionPanel">
 			<div style="float: left">
 				<input type="button" id="insert" name="insert" value="{$lang_insert}" onclick="insertAction();" />

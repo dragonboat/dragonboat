@@ -1,0 +1,17 @@
+<div class="image-block"><div class="image-wrapper">
+        <%= link_to image_tag(file.thumb), admin_edit_file_path(file) %>
+</div>
+       <div style="width:180px;">
+       <small style="word-wrap:break-word;">Name: <%=file.filename%></small><br/>
+       <small>Size: <%=file.size/1.kilobyte %> Kb</small><br/>
+        <small>Owner: <%=file.user.login%></small>
+        <br/>
+        <%= link_to("view", admin_file_path(file), :title=>"Show") %>  
+        <%= link_to("Delete",
+ 	               admin_file_path(file) ,
+ 	               :confirm => "Delete file permanently?", 
+                       :title => 'Delete file',
+                       :method => :delete, :class => 'delete') %>       
+                       
+      </div>
+</div>

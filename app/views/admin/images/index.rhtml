@@ -1,0 +1,51 @@
+<h1>Images</h1>
+
+<div id="submenu">
+  <%= link_to_function 'Upload Image', "Effect.toggle('new_image', 'blind');", {:title=>"New Image" }%>
+</div>
+
+<div id="new_image" class="callout" style="display:none">
+
+<%=error_messages_for :image if @image%>
+<%@image = Image.new unless @image%>
+<% form_for(:image, {:url => admin_images_path}, :html => { :multipart => true }) do |f| %>
+  Select File: <%= f.file_field :uploaded_data %>
+  <%= submit_tag "Upload image" %>
+<%end%>
+</div>
+<br/>
+<table border="0" width="100%" class>
+	<tr><td>
+	<%form_tag(admin_images_path,:method=>:get) do |f|%>
+	Search: <%= text_field_tag :q, value = session[:image_search_query], :size => 40 %>
+	<%= image_submit_tag("icons/magnifier.png") %>
+	<%= link_to(image_tag("icons/broom.png", :border => 0), :action => "index", :clear => true) %>
+	<%end%>
+	</td>
+	<td align="right">
+		<%= will_paginate @images %>
+	</td>
+	</tr>
+</table>
+
+<div class="index-list image-list">
+<% for image in @images %>
+      <div class="image-block"><div class="image-wrapper">
+        <%= link_to image_tag(image.public_filename(:thumb_big)), admin_edit_image_path(image) %>
+      </div>
+       <div style="width:180px;">
+       <small style="word-wrap:break-word;">Name: <%=image.filename%></small><br/>
+       <small>Size: <%=image.width%>x<%=image.height%></small><br/>
+       <small>Owner: <%=image.user.login%></small>
+        
+       
+        <%= link_to(image_tag("icons/delete.png", :border => 0, :title => 'Delete image'),
+ 	               admin_image_path(image) ,
+ 	               :confirm => "Delete image permanently?", 
+                       :method => :delete, :class => 'delete') %>       
+                       
+      </div>
+      </div>
+<% end %>
+</div>
+<div class="clearEm">&nbsp;</div>

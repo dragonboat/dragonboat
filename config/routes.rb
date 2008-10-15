@@ -21,6 +21,8 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :users,    :controller => 'admin/users'
+    m.resources     :images,    :controller => 'admin/images'
+    m.resources     :files,    :controller => 'admin/files'
   end
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'

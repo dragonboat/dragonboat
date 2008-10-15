@@ -1,0 +1,12 @@
+<% if images.size > 0 %>
+<ul>
+  <% images.each do |image| %>
+    <li>
+      <a href="javascript:void(0)" onclick="<%="$('src').value='http://#{APP_CONFIG['hostname']+image.public_filename()}';showPreviewImage($('src').value);" %>">
+      <%= image_tag( image.public_filename(:thumb) ) %></a>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+ No Images Uploaded Yet.
+<% end %>

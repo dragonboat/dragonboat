@@ -1,0 +1,36 @@
+<h1>Files</h1>
+
+<div id="submenu">
+  <%= link_to_function 'Upload File', "Effect.toggle('new_file', 'blind');", {:title=>"New File" }%>
+</div>
+
+<div id="new_file" class="callout" style="display:none">
+
+<%=error_messages_for :file if @file%>
+<%@file = DataFile.new unless @file%>
+<% form_for(:file, {:url => admin_files_path}, :html => { :multipart => true }) do |f| %>
+  Select File: <%= f.file_field :uploaded_data %>
+  <%= submit_tag "Upload file" %>
+<%end%>
+</div>
+<br/>
+<table border="0" width="100%" class>
+	<tr><td>
+	<%form_tag(admin_files_path,:method=>:get) do |f|%>
+	Search: <%= text_field_tag :q, value = session[:file_search_query], :size => 40 %>
+	<%= image_submit_tag("icons/magnifier.png") %>
+	<%= link_to(image_tag("icons/broom.png", :border => 0), :action => "index", :clear => true) %>
+	<%end%>
+	</td>
+	<td align="right">
+		<%= will_paginate @files %>
+	</td>
+	</tr>
+</table>
+
+<div class="index-list image-list">
+<% for file in @files %>
+  <%= render :partial => 'file', :locals => { :file => file } %>
+<% end %>
+</div>
+<div class="clearEm">&nbsp;</div>

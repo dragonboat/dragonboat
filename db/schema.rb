@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 12) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -18,6 +18,39 @@ ActiveRecord::Schema.define(:version => 7) do
     t.datetime "updated_on"
     t.datetime "created_on"
   end
+
+  create_table "data_files", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.text     "description"
+    t.integer  "created_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "data_files", ["created_by"], :name => "index_data_files_on_created_by"
+  add_index "data_files", ["parent_id"], :name => "index_data_files_on_parent_id"
+
+  create_table "images", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "created_by"
+    t.text     "description"
+  end
+
+  add_index "images", ["created_by"], :name => "index_images_on_created_by"
 
   create_table "page_versions", :force => true do |t|
     t.integer  "page_id"

@@ -1,3 +1,4 @@
+img {border:0px;}
 h2{
 color:#05303c;
 /* margin:30px 0px 10px 0px; */
@@ -203,4 +204,15 @@ div#pages a {color: #725C51;}
 #close {color: red; float:right; font-size:14px;}
 #close a, a:hover {text-decoration: none}
 
+/* Image Styles */
+.image-list img {border: none;}
+.image-list .image-wrapper a {display: block; width: 120px; height: 120px; padding: 5px;}
+
+.index-list .image-block {float: left; height: 180px; width: 180px; margin: 10px 5px; border: 0px solid #000;}
+.index-list .image-wrapper {border-bottom: 1px solid #000;}
+.index-list .image-wrapper a:hover {background-color:  #DDD;}
+.index-list .delete {float: right;}
+
+/*View Box*/
+.view_box img {float:left;}
 

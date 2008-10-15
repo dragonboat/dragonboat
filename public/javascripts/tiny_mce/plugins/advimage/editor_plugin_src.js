@@ -2,7 +2,7 @@
  * $Id: editor_plugin_src.js 126 2006-10-22 16:19:55Z spocke $
  *
  * @author Moxiecode
- * @copyright Copyright © 2004-2006, Moxiecode Systems AB, All rights reserved.
+ * @copyright Copyright ï¿½ 2004-2006, Moxiecode Systems AB, All rights reserved.
  */
 
 /* Import plugin specific language pack */
@@ -34,8 +34,8 @@ var TinyMCE_AdvancedImagePlugin = {
 				var template = new Array();
 
 				template['file']   = '../../plugins/advimage/image.htm';
-				template['width']  = 480;
-				template['height'] = 380;
+				template['width']  = 680;
+				template['height'] = 680;
 
 				// Language specific width and height addons
 				template['width']  += tinyMCE.getLang('lang_advimage_delta_width', 0);

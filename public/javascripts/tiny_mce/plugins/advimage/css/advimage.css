@@ -15,7 +15,21 @@
 	overflow: hidden;
 	padding: 5px;
 }
-
+.ImageLibPreview {
+	margin: 0;
+	border: 1px
+	solid black;
+	width: 99%;
+	height: 150px;
+	overflow: auto;
+}
+.ImageLibPreview ul { list-style: none; margin: 0;  }
+.ImageLibPreview li {
+ display: inline;
+ padding: 5px;
+ white-space: nowrap;
+}
+img {border:0px;}
 .checkbox {
 	border: 0;
 }
