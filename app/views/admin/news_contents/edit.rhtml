@@ -1,0 +1,11 @@
+<h1>Editing News</h1>
+
+<%= error_messages_for :news %>
+
+<% form_for(:news, :url => admin_news_content_path(@news), :html=>{:method=>:put}) do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<span id="required">*</span>-requered <br/>
+<%= f.submit "Update" %>
+<% end %>
+  
+<%= link_to 'Back', admin_news_contents_path %>

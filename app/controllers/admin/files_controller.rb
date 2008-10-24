@@ -1,7 +1,5 @@
-class Admin::FilesController < ApplicationController
-  require_role "admin", :if => "login_required"
-  layout 'comatose_admin'
-  
+class Admin::FilesController < Admin::WebsiteController
+
   def index
     session[:file_search_query] = params[:q] if params[:q]
     session[:file_search_query] = nil if params[:clear]

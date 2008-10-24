@@ -2,7 +2,7 @@
         <%= link_to image_tag(file.thumb), admin_edit_file_path(file) %>
 </div>
        <div style="width:180px;">
-       <small style="word-wrap:break-word;">Name: <%=file.filename%></small><br/>
+       <small style="word-wrap:break-word;">Name: <%=truncate(file.filename)%></small><br/>
        <small>Size: <%=file.size/1.kilobyte %> Kb</small><br/>
         <small>Owner: <%=file.user.login%></small>
         <br/>

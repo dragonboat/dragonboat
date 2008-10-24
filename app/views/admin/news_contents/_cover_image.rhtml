@@ -1,0 +1,6 @@
+<div style="display:block; width:80px; height:80px;border: 1px solid #ccc;">
+<%=image_tag(filename) if filename%>
+<%=image_tag("icons/picture.png") unless filename%>
+<%="<br>no thumb" unless filename%>
+  <%=hidden_field_tag "news[cover_image_id]", cover_image_id%>
+</div>

@@ -59,7 +59,7 @@ module Comatose
 
     # For use in the #show method... determines the current page path
     def get_page_path
-      page_name = params[:page].to_s
+      page_name = params[:page].join('/')
       page_ext = page_name.split('.')[1] unless page_name.empty?
       # TODO: Automatic support for page RSS feeds... ????
       if page_name.nil? or page_name.empty?

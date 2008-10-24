@@ -1,0 +1,16 @@
+<div>
+   <% @news.each do |news| %>
+   <table>
+   <tr><td>
+       <div class="news_block" id="hot_<%=news.id%>">
+         <h2><%=link_to h(news.title),{:action=>:show, :id => news.id} %></h2>
+         <%if news.cover_image %>
+         <%= image_tag(news.cover_image.thumb_big.public_filename, :class=>"cover" )if news.cover_image.thumb_big %>
+         <%end%>
+         <span id="date"><%=news.published%></span>
+         <%=news.description%>..<%=link_to "read more&#187;", {:action=>:show, :id => news.id} , :class=>"to_full"%>
+       </div>
+       </td></tr>
+</table>  
+       <%end%>   
+</div>

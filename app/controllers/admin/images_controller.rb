@@ -1,6 +1,4 @@
-class Admin::ImagesController < ApplicationController
-  require_role "admin", :if => "login_required"
-  layout 'comatose_admin'
+class Admin::ImagesController < Admin::WebsiteController
   
   def index
     session[:image_search_query] = params[:q] if params[:q]

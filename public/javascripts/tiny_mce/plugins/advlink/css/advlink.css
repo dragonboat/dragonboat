@@ -9,7 +9,7 @@
 }
 
 .panel_wrapper div.current {
-	height: 320px;
+	height: 220px;
 }
 
 #classlist, #title, #href {
@@ -33,3 +33,19 @@
 #events_panel input {
 	width: 200px;
 }
+
+.ImageLibPreview {
+	margin: 0;
+	border: 1px
+	solid black;
+	width: 99%;
+	height: 150px;
+	overflow: auto;
+}
+.FileLibPreview ul { list-style: none; margin: 0;  }
+.FileLibPreview li {
+ display: inline;
+ padding: 5px;
+ white-space: nowrap;
+}
+img {border:0px;}

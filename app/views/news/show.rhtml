@@ -1,0 +1,26 @@
+<table>
+ <tr><td>
+<div class="news_block">
+         <h1><%=@news.title%></h1>
+          
+         
+         
+         <div><i><%=@news.description%></i></div>  
+          <%if @news.cover_image %>
+          <%= image_tag(@news.cover_image.thumb_big.public_filename, :class=>"cover" )if @news.cover_image.thumb_big %>
+          <%end%>
+          <span id="date"><%=@news.published%></span>
+          
+          <%=@news.content%>
+
+
+
+        </div>
+</td></tr>
+</table>    
+<i>Read too:</i>
+<table>
+ <tr>
+    <td><%= render :partial => 'list', :locals => { :news => @news_contents} %></td>
+</tr>
+</table>

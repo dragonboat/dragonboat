@@ -1,0 +1,11 @@
+<% content_for :title do %>Editing Volunteer<% end %>
+<div>   
+    <h3>General Information</h3>
+    <% form_for(:volunteer,:url => admin_volunteer_path(@volunteer.id), :html=>{:method=>:put}) do |f|%>
+        <%= render :partial => 'form', :locals =>{:f=>f} %>
+       <%= f.submit "Update" %>
+        <% end %>
+
+<%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', admin_volunteers_path %>
+</div> 

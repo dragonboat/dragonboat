@@ -1,0 +1,63 @@
+<fieldset>
+  <legend>General News Setting</legend>
+  <p>
+    <strong>Title:</strong>
+    <span id="required">*<br />
+    <%= f.text_field :title, :size => 50 %></span>
+  </p>
+  
+  
+  <p>
+    <strong>Publeshed at:</strong><br />
+     <%= f.date_select :published_at, :order => [:day, :month, :year] %>
+  </p>
+  
+  <p>
+    <strong>Hide Publeshed date?:</strong><br/>
+     <%= f.select :data_is_visible, News::VISIBLES %>
+  </p>
+  
+  <p>
+     <strong>News is visible?:</strong><br />
+     <%= f.select :is_visible, News::VISIBLES %>
+   </p>
+   
+   <p>
+    <strong>Short Description:</strong><br />
+    <%= f.text_area :description, :cols=>50, :rows=>3 %>
+  </p>
+ </fieldset>
+<fieldset>
+  <legend>Meta</legend>  
+   <p>
+    <strong>Keywords separated by comma:</strong><br />
+     <%= text_field_tag 'tag_list', @news.tags.collect{|t| t.name}.join(", "), :size=>80 %>
+   </p>
+</fieldset>  
+<fieldset>
+  <legend>Thumb</legend>
+   <p>
+     <%=link_to_redbox('<b>Loading Images>></b>', 'content_cover_image', {:complete => 'content_cover_image', :loading => visual_effect(:highlight, 'content_cover_image')}) %> 
+      <% filename=@news.cover_image.thumb.public_filename if @news.cover_image && @news.cover_image.thumb%>
+      <div id="current_cover_image">
+        <%= render :partial => 'cover_image', :locals => { :cover_image_id=>@news.cover_image_id, :filename=>filename}%>
+      </div>
+      
+      <%
+      @images = Image.find_all_by_thumbnail(nil)
+      @thumb_images = Image.find_all_by_thumbnail('thumb')
+      %><br/>
+     <div id="content_cover_image" style ="display: none">
+       <%= render :partial => 'partials/show_image_list', :images=>@images, :locals => { :images => @images}%>
+     </div>
+   </p>
+</fieldset> 
+<fieldset>
+  <legend>Body</legend>   
+   
+   <p><%= f.text_area :content, :rows=>20, :cols=> 100,:tabindex=>2 %><p>
+   
+   
+</fieldset>
+
+

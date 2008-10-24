@@ -1,19 +1,29 @@
 <% url = controller.controller_path %>
-<% pages_paths = Comatose::Page.root.children.map(&:full_path)%>
-
-    
+<% pages_paths = Comatose::Page.root.children.map(&:full_path)%> 
     <div id="mainMenu">
       <ul class="tabs">
-        <li><a href="/">Home</a> </li>
+        <li><a href="/">Home</a> |</li>
+        <li><%=link_to "News", {:controller=>'news', :action=>'index'} %> |</li>
+        
             <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>
             
             <li  <%= "class=\"current\"" if url == 'clients' || url == 'items' || url =~/(sessions|student|clients\/subjects|contracts)/ %>>
-            <%= link_to p.slug.titleize, p.uri %> 
-            </li> 
+            <%= link_to p.title.titleize, p.uri %> 
+            |</li> 
             <% end %>
-             <% if logged_in? %>
-             <li><%=link_to "Admin", comatose_admin_url%></li>
-             <%end %>            
-      </ul>
+            
+            <!-- For admin user  -->
+            <% if logged_in? && current_user.is_admin? %>
+            <li><%=link_to "Admin", comatose_admin_url%> |</li> 
+            <%end %>
+            
+            <!-- For unregister user  -->
+             <% unless logged_in? %>
+             <li><%=link_to "Sign up", new_user_path%> |</li> 
+             <% end %>
+             
+            <li><%=link_to "Volunteer", new_volunteer_path%> |</li> 
+            <li><%=link_to "Paddler", new_paddler_path%> |</li> 
+        </ul>
     </div>          
     

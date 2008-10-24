@@ -1,0 +1,16 @@
+<% @person = @user.person %>
+            <h4>Account Information</h4>
+            <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>Login:</td>
+                        <td><%= @user.login %></td>
+                    </tr>
+                    <tr id="mail">
+                        <td>E-mail:</td>
+                        <td><%= @user.email %></td>
+                    </tr>      
+            </table>
+<h4>Personal Information</h4>
+<table cellpadding="0" cellspacing="0">
+   <%= render :partial => 'persons/person'%>
+</table>

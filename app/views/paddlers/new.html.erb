@@ -1,0 +1,11 @@
+<% content_for :title do %>Paddler Registration<% end %>
+<div>
+    <h2>Paddler Registration</h2>      
+    <% form_for :paddler, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
+        <%= render :partial => 'form', :locals =>{:f=>f} %>
+        <div id="buttons">
+            <%= submit_tag  "Submit"%>&nbsp;&nbsp;
+            <%= link_to("Cancel", "/" ) %> 
+        </div>
+    <%end%>
+</div>       

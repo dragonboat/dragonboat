@@ -11,7 +11,7 @@
     config.admin_includes << :authenticated_system
 
     # authorization
-    config.admin_authorization = :login_required
+    config.admin_authorization = :admin_login_required
     config.disable_caching = true
 
     config.admin_get_author do

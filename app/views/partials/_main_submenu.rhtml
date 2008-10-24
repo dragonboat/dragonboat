@@ -1,0 +1,9 @@
+<% url = controller.controller_path %>
+    <ul class="page-list root">  
+      <li><%=link_to "News", {:controller=>'news', :action=>'index'} %> </li>
+      <% pages_paths = Comatose::Page.root.children.map(&:full_path)%>
+      <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |page| %>    
+        <%= render :partial=>'partials/page_list_item', :locals=>{ :page=>page, :level=>1 } %>
+      <% end %>
+    </ul>         
+    

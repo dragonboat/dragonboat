@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 12) do
+ActiveRecord::Schema.define(:version => 23) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -52,6 +52,55 @@ ActiveRecord::Schema.define(:version => 12) do
 
   add_index "images", ["created_by"], :name => "index_images_on_created_by"
 
+  create_table "member_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "members", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "user_id"
+    t.integer  "invitation_status_id"
+    t.integer  "waiver_status_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "members", ["type_id"], :name => "index_members_on_type_id"
+  add_index "members", ["user_id"], :name => "index_members_on_user_id"
+  add_index "members", ["invitation_status_id"], :name => "index_members_on_invitation_status_id"
+  add_index "members", ["waiver_status_id"], :name => "index_members_on_waiver_status_id"
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.integer  "cover_image_id"
+    t.boolean  "is_short"
+    t.boolean  "is_visible",      :default => true
+    t.boolean  "data_is_visible", :default => true
+    t.integer  "created_by"
+    t.datetime "created_at"
+    t.datetime "published_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "news", ["cover_image_id"], :name => "index_news_on_cover_image_id"
+  add_index "news", ["created_by"], :name => "index_news_on_created_by"
+  add_index "news", ["is_visible"], :name => "index_news_on_is_visible"
+  add_index "news", ["is_short"], :name => "index_news_on_is_short"
+  add_index "news", ["data_is_visible"], :name => "index_news_on_data_is_visible"
+
+  create_table "orphaned_paddlers", :force => true do |t|
+    t.integer  "person_id"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orphaned_paddlers", ["person_id"], :name => "index_orphaned_paddlers_on_person_id"
+
   create_table "page_versions", :force => true do |t|
     t.integer  "page_id"
     t.integer  "version"
@@ -66,6 +115,22 @@ ActiveRecord::Schema.define(:version => 12) do
     t.integer  "position",                  :default => 0
     t.datetime "updated_on"
     t.datetime "created_on"
+  end
+
+  create_table "persons", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "phone_2"
+    t.date     "birthday_date"
+    t.string   "zip"
+    t.string   "address"
+    t.text     "experience"
+    t.text     "preference"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
@@ -90,6 +155,27 @@ ActiveRecord::Schema.define(:version => 12) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "statuses", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer "tag_id"
+    t.integer "taggable_id"
+    t.string  "taggable_type"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type"], :name => "index_taggings_on_tag_id_and_taggable_id_and_taggable_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name"
+
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "email"
@@ -99,6 +185,21 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
+    t.integer  "person_id"
   end
+
+  add_index "users", ["person_id"], :name => "index_users_on_person_id"
+
+  create_table "volunteers", :force => true do |t|
+    t.integer  "person_id"
+    t.datetime "date_applied"
+    t.integer  "status_id"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "volunteers", ["person_id"], :name => "index_volunteers_on_person_id"
+  add_index "volunteers", ["status_id"], :name => "index_volunteers_on_status_id"
 
 end

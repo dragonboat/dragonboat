@@ -5,11 +5,12 @@
 	<script language="javascript" type="text/javascript" src="../../utils/mctabs.js"></script>
 	<script language="javascript" type="text/javascript" src="../../utils/form_utils.js"></script>
 	<script language="javascript" type="text/javascript" src="jscripts/functions.js"></script>
-	<link href="css/advlink.css" rel="stylesheet" type="text/css" />
+         <script language="javascript" type="text/javascript" src="/javascripts/prototype.js"></script>
+        <link href="css/advlink.css" rel="stylesheet" type="text/css" />
 	<base target="_self" />
 </head>
 <body id="advlink" onload="tinyMCEPopup.executeOnLoad('init();');" style="display: none">
-    <form onsubmit="insertAction();return false;" action="#">
+    <form id="advlink_form" onsubmit="insertAction();return false;" action="#">
 		<div class="tabs">
 			<ul>
 				<li id="general_tab" class="current"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{$lang_advlink_general_tab}</a></span></li>
@@ -321,7 +322,23 @@
 					</table>
 				</fieldset>
 			</div>
-		</div>
+                        <script type="text/javascript">
+                            //<![CDATA[
+                          new Ajax.Request("/manage_files",
+                             {asynchronous:true, evalScripts:true, method:'get'});     
+                             //]]>
+                        </script>
+                       <fieldset>
+					<legend>Select from Files Lib</legend>
+                                                            <div class="FileLibPreview">
+									
+									 <div id='dynamic_files_list'>
+                                                                                    Loading Files...<br />
+                                                                                    <img src='/images/loading.gif'>
+                                                                          </div>
+                                                             </div>
+                      </fieldset>     
+                    </div>
 
 		<div class="mceActionPanel">
 			<div style="float: left">

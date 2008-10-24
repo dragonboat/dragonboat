@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   validates_presence_of     :login
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
-  validates_length_of       :password, :within => 4..40, :if => :password_required?
+  validates_length_of       :password, :within => 4..40, :if => :password_required? && Proc.new { |user| !user.password.empty? }
   validates_confirmation_of :password,                   :if => :password_required?
   validates_length_of       :login,    :within => 3..40, :if => :login?
-  validates_format_of   :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid'
+  validates_format_of       :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid'
   validates_uniqueness_of   :login, :case_sensitive => false #:email
   before_save :encrypt_password
   
@@ -23,6 +23,13 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :images, :foreign_key => 'created_by'
   has_many :files, :foreign_key => 'created_by', :class_name=>"DataFile"
+  has_many :news, :foreign_key => 'created_by', :class_name=>"News"
+  belongs_to :person
+  validates_associated :person
+    
+  def after_initialize
+    build_person unless person
+  end
   
   def after_save
     roles << Role.find_by_name("standard")
@@ -31,6 +38,10 @@ class User < ActiveRecord::Base
     elsif role == "captain"
       roles<< Role.find_by_name("captain")
     end
+  end
+  
+  def after_destroy
+    person.destroy
   end
   # has_role? simply needs to return true or false whether a user has a role or not.  
   # It may be a good idea to have "admin" roles return true always
@@ -117,6 +128,14 @@ class User < ActiveRecord::Base
   def recently_activated?
     @activated
   end
+  
+  def password_reset!
+    new_password = self.class.random_string(10)
+    self.password = self.password_confirmation = new_password
+    self.valid?
+    puts self.errors.to_xml
+    self.save ? new_password : nil    
+  end
 
   protected
     # before filter 
@@ -130,8 +149,16 @@ class User < ActiveRecord::Base
       crypted_password.blank? || !password.blank?
     end
     
+    def self.random_string(len) 
+      #generate  a  random  password  consisting  of  strings  and  digits 
+      chars  =  ("a".."z").to_a  +  ("A".."Z").to_a  +  ("0".."9").to_a 
+      newpass  =  "" 
+      1.upto(len)  {  |i|  newpass  <<  chars[rand(chars.size-1)]  } 
+      return  newpass 
+    end
+    
     def login?
-      login.blank?
+      !login.blank?
     end
     
     

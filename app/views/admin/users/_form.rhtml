@@ -1,3 +1,4 @@
+<% @person = @user.person %>
 <tr>
   <td><label for="user_login">Login:</lable></td>
   <td id="required">*<%= f.text_field :login, :size=>50 %></td>
@@ -14,7 +15,7 @@
   <td></td>
   <td></td>
   </tr>
-  <%if ["new","create"].include? controller.action_name%>
+ <%if ["new","create"].include? controller.action_name%>
   <tr>
   <td><label for="user_password">Password:</lable></td>
   <td id="required">*<%= f.password_field :password, :size=>50 %></td>
@@ -28,5 +29,13 @@
     <td></td>
     <td><%=link_to_function "changed password", "$('changed_password').style.display='block';"%></td>
   </tr>
-  
-<%end%>
+  <%end%>
+  <tr>
+    <td colspan="2"><h4>Personal Information</h4>
+<table cellpadding="0" cellspacing="0">
+  <tr><td colspan="2"><%= error_messages_for :person %></td></tr>
+    <% fields_for "person", @person do |person_field| %>
+    <%= render :partial => 'persons/form_1', :locals =>{:f=>person_field} %>
+  <% end %>
+</table></td>
+  </tr>

@@ -1,0 +1,13 @@
+<% content_for :title do %>Volunteer Registration<% end %>
+<div>
+    
+    <h2>Volunteer Registration</h2>      
+    <h3>General Information</h3>
+    <% form_for :volunteer, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
+        <%= render :partial => 'form', :locals =>{:f=>f} %>
+        <div id="buttons">
+            <%= submit_tag  "Apply"%>&nbsp;&nbsp;
+            <%= link_to("Cancel", "/" ) %> 
+        </div>
+    <%end%>
+</div>       

@@ -1,0 +1,12 @@
+<% content_for :title do %>Confirmation User Info<% end %>
+<div>
+    <h2>Registration: Confirmation Info</h2>      
+        <h3>General Information</h3>
+       
+        <%= render :partial => 'user'%>
+        <div id="buttons">
+            <%= button_to  "Confirm",  :action => 'confirm'%>&nbsp;&nbsp;
+            <%= button_to "Unconfirm", :action => 'unconfirm'%> 
+        </div>
+ 
+</div>       

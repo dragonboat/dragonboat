@@ -1,4 +1,5 @@
 class ManageImagesController < ApplicationController
+  require_role "admin", :if => "login_required"
   def index
     @images= current_user.images
     

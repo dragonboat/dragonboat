@@ -1,0 +1,23 @@
+<% @person = @volunteer.person %>
+ <table cellpadding="0" cellspacing="0">
+              <tr><td colspan="2">  <%= error_messages_for :volunteer %></td></tr>
+                    <tr>
+                        <td>Date of Applied:</td>
+                        <td id="required">&#42;&nbsp;<%= f.date_select :date_applied, :order => [:day, :month, :year], :start_year => 1950  %></td>
+                    </tr>
+                    <tr>
+                        <td>Note:</td>
+                        <td><%= f.text_area :note, :rows=>3 %></td>
+                    </tr>
+                    
+</table>
+<h4>Contact Information</h4>
+<table cellpadding="0" cellspacing="0">
+  <tr><td colspan="2"><%= error_messages_for :person %></td></tr>
+    <% fields_for "person", @person do |person_field| %>
+    <%= render :partial => 'persons/form_2', :locals =>{:f=>person_field} %>
+  <% end %>
+</table>
+
+        
+           

@@ -1,0 +1,35 @@
+<table id="news_contents" class="obj_list">
+  <tr>
+    <th><%= link_to(image_tag('icons/control_stop.png'), admin_news_contents_url(:sort => sort_link_for('is_visible', params[:sort]))) %></th>
+   
+    <th width="200" colspan="2"><%= link_to('Title', admin_news_contents_url(:sort => sort_link_for('title', params[:sort]))) %></th>
+    <th><%= link_to('Published at', admin_news_contents_url(:sort => sort_link_for('published_at', params[:sort]))) %></th>
+    <th><%= link_to('Created at', admin_news_contents_url(:sort => sort_link_for('created_at', params[:sort]))) %></th>
+    <th><%= link_to('Author', admin_news_contents_url(:sort => sort_link_for('created_by', params[:sort]))) %></th>
+    <th width="200">Content</td>
+    <th colspan="3">&nbsp;</th>
+  </tr>
+  
+  <%@news_contents.each do |news| %>
+  <%@news = news%>
+  <tr class="<%= cycle('','alt') %>">
+    <td><%= news.is_visible ? image_tag('icons/bullet_green.png') : image_tag('icons/bullet_red.png') %></td>
+    <td>
+        <%= link_to(h(truncate(news.title,50)), admin_edit_news_content_path(news)) %>
+    </td>
+    <td><%=image_tag(news.cover_image.thumb.public_filename ) if news.cover_image && news.cover_image.thumb%></td>
+    <td><b><%=h news.published_at.strftime("%d %B %Y") %></b></td>
+        
+    <td><%=h news.created_at.strftime("%d %B %Y") %></td>
+    <td><%=h news.user.login %></td>
+   <td>
+   <%= truncate(news.content, 150) %>
+  </td>
+  </td>
+    <td colspan="3">
+      <%= link_to(image_tag("icons/page_white_edit.png"), admin_edit_news_content_path(news), :style => "margin-right: 3px;") %>
+      <%= link_to(image_tag("icons/delete.png"), admin_news_content_path(news), :confirm => 'Are you sure?', :method => :delete, :style => "margin-right: 3px;") %>
+    </td>
+  </tr>
+<% end %>
+</table>

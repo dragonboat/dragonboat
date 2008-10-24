@@ -1,0 +1,12 @@
+<% if files.size > 0 %>
+<ul>
+  <% files.each do |file| %>
+    <li>
+      <a href="javascript:void(0)" onclick="<%="$('href').value='http://#{APP_CONFIG['hostname']+file.public_filename}'; selectByValue($('advlink_form'),'linklisthref',$('href').value);" %>">
+      <%= image_tag( file.thumb) %> <%= truncate(file.filename) %> </a>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+ No Files Uploaded Yet.
+<% end %>

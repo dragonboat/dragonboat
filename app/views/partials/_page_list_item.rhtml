@@ -1,0 +1,26 @@
+
+
+<%
+
+collapse_children = (level >= Comatose.config.default_tree_level)
+%>
+
+<li id="page_<%= page.id %>">
+  <table cellpadding="0" cellspacing="0">
+    <tr>
+   
+      <td>
+        <%= link_to page.title, page.uri , :title=>"Path:#{page.full_path}", :class=>'page' %>
+      </td>
+    </tr>
+  
+  </table>
+
+  <ul id="page_list_<%= page.id %>" old="lvl-<%= page.id %>" class="page-list <%= 'collapsed' if collapse_children %>" >
+    <% for child in page.children %>
+      <%= render :partial=>'partials/page_list_item', :locals=>{ :page=>child, :level=>level+1 } %>
+    <% end %>
+  </ul>
+
+  
+</li>

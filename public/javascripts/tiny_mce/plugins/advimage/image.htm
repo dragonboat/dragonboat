@@ -35,23 +35,8 @@
 									</tr>
 								  </table></td>
 							</tr>
-                                                        <tr>
-								<td class="column1"><label id="srclabel" for="src">Select from lib</label></td>
-								<td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
-									<tr> 
-									  <td>
-                                                                              <script type="text/javascript">//<![CDATA[
-                                                                                    new Ajax.Request("/manage_images",
-                                                                                            {asynchronous:true, evalScripts:true, method:'get'});     //]]>
-                                                                               </script>
-                                                                               
-
-                                                                          </td> 
-                                                                            <td id="srcbrowsercontainer">&nbsp;</td>
-									</tr>
-								  </table></td>
-							</tr>
-                                                            <tr id="imagelistsrcrow">
+                                                      
+                                                        <tr id="imagelistsrcrow">
 								<td class="column1"><label for="imagelistsrc">{$lang_image_list}</label></td>
 								<td colspan="2" id="imagelistsrccontainer">&nbsp;</td>
 							</tr>
@@ -243,8 +228,12 @@
 					</table>
 				</fieldset>
 			</div>
+                        <script type="text/javascript">//<![CDATA[
+                        new Ajax.Request("/manage_images",
+                          {asynchronous:true, evalScripts:true, method:'get'});     //]]>
+                        </script>
                         <fieldset>
-					<legend>Select from Image Lib</legend>
+					<legend>Select from Images Lib</legend>
                                                             <div class="ImageLibPreview">
 									
 									 <div id='dynamic_images_list'>

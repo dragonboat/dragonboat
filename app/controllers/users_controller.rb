@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   #before_filter :login_required
-  before_filter :admin_login_required
+  #before_filter :admin_login_required
  # require_role "admin", :if => "login_required"
-
+  layout "application"
   # render new.rhtml
   def new
+    @user = User.new
+    session[:register_user] = nil
   end
 
   def create
@@ -14,14 +16,34 @@ class UsersController < ApplicationController
     # uncomment at your own risk
     # reset_session
     @user = User.new(params[:user])
-    @user.save
-    if @user.errors.empty?
-      self.current_user = @user
-      redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!"
+    @user.person.attributes = (params[:person])
+    if @user.valid? #&& @user.save
+      session[:register_user] = @user
+      render :action => 'confirm'
+     # self.current_user = @user
+      #redirect_back_or_default('/')
+      #flash[:notice] = "Thanks for signing up!"
     else
       render :action => 'new'
     end
   end
 
+  def confirm
+    if session[:register_user]
+      @user = session[:register_user]
+    end
+    if @user&&@user.save
+      self.current_user = @user
+      redirect_back_or_default(member_index_url)
+      flash[:notice] = "Thanks for signing up!"
+    else
+      new
+      render :action => 'new'
+    end 
+  end
+  
+  def unconfirm
+    @user = session[:register_user]
+    render :action => 'new' 
+  end
 end

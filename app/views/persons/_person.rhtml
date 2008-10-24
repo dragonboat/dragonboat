@@ -1,0 +1,28 @@
+    <tr>
+        <td>First name:</td>
+        <td><%=@person.first_name %></td>
+    </tr>
+    <tr>
+        <td>Last name:</td>
+        <td><%= @person.last_name %></td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td><%= @person.phone %></td>
+    </tr>
+    <tr>
+        <td>Another Phone:</td>
+        <td><%= @person.phone_2 %></td>  
+    </tr>
+    <tr>
+        <td>Zip code:</td>
+        <td><%= @person.zip%></td>    
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td><%= @person.address %></td>
+    </tr>
+    <tr>
+        <td>Birthday:</td>
+        <td><%= @person.birthday_date.strftime("%d/%m/%Y") %></td>
+    </tr>

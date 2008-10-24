@@ -1,0 +1,32 @@
+<%@person = @volunteer.person%>
+<h1>General Volunteer Info</h1>
+<table id="users" class="obj_list">
+  <tr>
+    <td><b>Name</b></td>
+    <td><%=@person.name%></td>
+  </tr>
+ 
+  <tr>
+     <td><b>Note</b></td>
+     <td class="note"><%=@volunteer.note%></td>
+  </tr>
+  <tr>
+     <td><b>Applied at</b></td>
+     <td><%= @volunteer.date_applied.strftime("%d.%m.%Y")%></td> 
+  </tr>
+  <tr>
+     <td><b>Created at</b></td>
+     <td><%= @volunteer.created_at.strftime("%d.%m.%Y")%></td> 
+  </tr>
+  <tr>
+     <td colspan="2"><h4>Contact Information</h4></td>
+  </tr>
+  <%= render :partial => 'persons/show_2'%>
+  <tr>
+  <td colspan="2" align="center"><%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
+        <%= link_to 'Edit', admin_edit_volunteer_path(@volunteer) %> |
+        <%= link_to 'Destroy', admin_volunteer_path(@volunteer) , :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+</table>
+
+<%= link_to 'Back', admin_volunteers_path %>

@@ -1,0 +1,22 @@
+<div id="login">
+    <h2>Password Restore</h2>
+    <% form_tag '/forgot' do %>
+      <table cellpadding="0" cellspacing="5">
+        <tr>
+            <td id="label"><label for="login">Login:</label></td>
+            <td id="input"><%= text_field_tag :login %></td>
+        </tr>
+        <tr>
+            <td id="label"><label for="password">E-mail:</label></td>
+            <td id="input"><%= text_field_tag :email %></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td id="buttons">
+                <%= submit_tag "OK" %>
+                <%= link_to("Cancel", '/login' ) %> 
+            </td>
+        </tr>
+      </table>
+    <% end%>
+</div>

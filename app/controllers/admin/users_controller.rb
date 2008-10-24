@@ -1,6 +1,4 @@
-class Admin::UsersController < ApplicationController
-  require_role "admin", :if => "login_required"
-  layout 'comatose_admin'
+class Admin::UsersController < Admin::WebsiteController
   # GET /users
   # GET /users.xml
   def index
@@ -54,6 +52,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @role = Role.find_by_name(params[:user]['role'])
+    @user.person.attributes = (params[:person])
     #@user.roles.new(@role)
     respond_to do |format|
       if @user.save
@@ -71,9 +70,9 @@ class Admin::UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-
+    @user.person.attributes = (params[:person])
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(params[:user]) && @user.person.save
         if params[:user][:password].length > 0
           UserNotifier.deliver_password_changed(@user, params[:user][:password])   
         end

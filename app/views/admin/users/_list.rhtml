@@ -2,6 +2,7 @@
   <tr>
     <th><%= link_to('Login', admin_users_url(:sort => sort_link_for('user_login', params[:sort])), :title=>"Sort by Login" ) %></th>
     <th><%= link_to('E-mail', admin_users_url(:sort => sort_link_for('user_email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th>Name</th>
     <th>Type</th>
     <th><%= link_to('Created at', admin_users_url(:sort => sort_link_for('user_created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
     <th>&nbsp;</th>
@@ -11,6 +12,7 @@
   <tr>
     <td><%=user.login%></td>
     <td><%=mail_to user.email%></td>
+    <td><%=user.person.name%></td>
     <td><%=user.type%></td>
     <td><%=user.created_at.strftime("%d.%m.%Y")%></td>  
     <td><%= link_to 'Show', admin_user_path(user) %> |

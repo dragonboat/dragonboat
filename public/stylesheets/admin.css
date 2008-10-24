@@ -215,4 +215,11 @@ div#pages a {color: #725C51;}
 
 /*View Box*/
 .view_box img {float:left;}
-
+#images_library {
+        margin: 0;
+	border: 1px
+	solid black;
+	width: 99%;
+	height: 300px;
+	overflow: auto;}
+fieldset {margin-top:10px;margin-bottom:10px;}

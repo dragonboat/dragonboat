@@ -1,0 +1,30 @@
+<div id="images_library">
+<div style="float:right;"> 
+  <%= link_to_close_redbox(image_tag("icons/close.png", :alt=>"Закрыть"))%>
+</div>
+<%= image_tag('loading.gif', :id=>'loading-indicator', :style=>'display:none; float:left;margin-right:5px;') %>
+<p>
+  <b>Images Library</b>
+</p>
+<% if @images.size > 0 %>
+<ul>
+  <li style="padding:5px;margin:0;list-style-type:none;display:inline;" class="odd">
+      <%=link_to_remote "no thumb"+image_tag("icons/picture.png"), 
+      :url=>{:action=>:reload_cover_image,:cover_image_id=>0},
+      :loading => "Element.show('loading-indicator');", 
+      :complete =>"Element.hide('loading-indicator');RedBox.close(); return false;"%>     
+   </li>
+    <% @images.each_with_index do |image, i| %>
+    <li style="padding:5px;margin:0list-style-type:none;display:inline;" class="<%= cycle("even", "odd") %>">
+      <%filename = @thumb_images[i] ? image_tag( @thumb_images[i].public_filename ) : image.filename + "<br />" %>
+      <%=link_to_remote filename, 
+      :url=>{:action=>:reload_cover_image,:cover_image_id=>image.id},
+      :loading => "Element.show('loading-indicator');", 
+      :complete =>"Element.hide('loading-indicator');RedBox.close(); return false;"%>     
+    </li>
+  <% end %>
+</ul>
+<% else %>
+No Images Uploaded Yet.
+<% end %>
+</div>
