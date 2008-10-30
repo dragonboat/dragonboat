@@ -1,0 +1,11 @@
+<h1>New Event</h1>
+<%= error_messages_for :event %>
+<% form_for(:event, :url => admin_events_path) do |f| %>
+ 
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+ <span id="required">*</span>-requered <br/>
+  <%= f.submit "Create" %>
+<% end %>
+  
+<%= link_to 'Back', admin_events_path %>

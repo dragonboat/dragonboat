@@ -1,5 +1,5 @@
 <fieldset>
-  <legend>General News Setting</legend>
+  <legend>General News Settings</legend>
   <p>
     <strong>Title:</strong>
     <span id="required">*<br />
@@ -31,7 +31,7 @@
   <legend>Meta</legend>  
    <p>
     <strong>Keywords separated by comma:</strong><br />
-     <%= text_field_tag 'tag_list', @news.tags.collect{|t| t.name}.join(", "), :size=>80 %>
+     <%= text_field_tag 'tag_list', params[:tag_list] ? params[:tag_list] : @news.tags.collect{|t| t.name}.join(", "), :size=>80 %>
    </p>
 </fieldset>  
 <fieldset>

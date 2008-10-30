@@ -1,5 +1,7 @@
 <h1>Listing volunteers</h1>
-
+<div id="submenu">
+  <%= link_to 'Send Message to all', admin_send_message_by_type_volunteer_path, :title=>"Message All Volunteers" %>
+</div>
 <div id="pages"><%= will_paginate @volunteers %></div>
 <%= render :partial => 'list'%>
 <div id="pages"><%= will_paginate @volunteers %></div>

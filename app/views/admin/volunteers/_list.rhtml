@@ -7,6 +7,7 @@
     <th><%= link_to('Applied at', admin_volunteers_url(:sort => sort_link_for('applied_at', params[:sort])), :title=>"Sort by Applied at" ) %></th>
     <th><%= 'Created at'%></th>
     <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
   
   <% for volunteer in @volunteers %>
@@ -17,10 +18,15 @@
     <td><%=volunteer.status.name%></td>
     <td><%=person.phone%></td>
     <td><%=volunteer.date_applied.strftime("%d.%m.%Y")%></td>  
-    <td><%=volunteer.created_at.strftime("%d.%m.%Y %H:%M")%></td>  
-      <td><%= link_to 'Show', admin_volunteer_path(volunteer) %> |
+    <td><%=volunteer.created_at.strftime("%d.%m.%Y %H:%M")%></td> 
+    <td>
+        <%= link_to 'Send Message', admin_send_message_volunteer_path(volunteer.id) %> 
+    </td>
+      <td>
+        <%= link_to 'Show', admin_volunteer_path(volunteer) %> |
         <%= link_to 'Edit', admin_edit_volunteer_path(volunteer) %> |
-        <%= link_to 'Destroy', admin_volunteer_path(volunteer) , :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+        <%= link_to 'Destroy', admin_volunteer_path(volunteer) , :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+    </tr>
 <% end %>
 </table>

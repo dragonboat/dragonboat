@@ -1,5 +1,5 @@
 class Admin::VolunteersController < Admin::WebsiteController
- before_filter :set_statuses, :only=>[:edit, :update]
+ before_filter :set_statuses, :only=>[:edit, :update, :send_message_by_type]
  def index
     order = case params[:sort]
       when 'name'             then 'first_name, last_name'
@@ -56,6 +56,44 @@ class Admin::VolunteersController < Admin::WebsiteController
     end
   end
   
+  def send_message
+    @errors = []
+    @volunteer = Volunteer.find(params[:id]) 
+    if request.post?  
+      @subject = params[:email][:subject].to_s
+      @message = params[:email][:message].to_s
+      if (@subject.blank? || @message.blank?)
+        @errors << "Subject is required" if @subject.blank?
+        @errors << "Message is required" if @message.blank?
+      elsif VolunteerNotifier.deliver_message(@volunteer, @subject, @message )
+        flash[:notice] = "Message was successfully sent to #{@volunteer.person.email}."
+        redirect_to admin_volunteers_url
+      end
+    end
+  end
+  
+   def send_message_by_type
+     @errors = []
+     @emails = [] 
+     if request.post?  
+      @subject = params[:email][:subject].to_s
+      @message = params[:email][:message].to_s
+      @type_id = params[:type_id].to_i if params[:type_id].to_i > 0
+      if (@subject.blank? || @message.blank?)
+        @errors << "Subject is required" if @subject.blank?
+        @errors << "Message is required" if @message.blank?
+      else
+        conditions = @type_id ? "status_id=#{@type_id}" : nil
+        Volunteer.find(:all, :conditions=>conditions).each do |volunteer| 
+          VolunteerNotifier.deliver_message(volunteer, @subject, @message)
+          @emails << volunteer.person.email
+        end
+        flash[:notice] = "Message was successfully sent to #{@emails.join(',')}." if @emails.size>0
+        #flash[:notice] = "Any volunteer was found with this type" unless @emails.size>0
+        redirect_to admin_volunteers_url
+      end
+    end
+   end
   private
   def set_statuses
      @statuses = Status.find_volunteer(:all)

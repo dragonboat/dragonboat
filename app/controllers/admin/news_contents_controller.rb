@@ -38,11 +38,11 @@ class Admin::NewsContentsController < Admin::WebsiteController
   
   def create
     @news = News.new(params[:news])
-    @news.tag_with(params[:tag_list]) 
     @news.user = current_user
     if @news.save
+       @news.tag_with(params[:tag_list]) 
        respond_to do |format|
-       flash[:notice] = 'News was successfully uploaded.'
+       flash[:notice] = 'News was successfully created.'
        format.html { redirect_to admin_news_contents_path }
        end
      else

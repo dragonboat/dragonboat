@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 23) do
+ActiveRecord::Schema.define(:version => 24) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(:version => 23) do
 
   add_index "data_files", ["created_by"], :name => "index_data_files_on_created_by"
   add_index "data_files", ["parent_id"], :name => "index_data_files_on_parent_id"
+
+  create_table "events", :force => true do |t|
+    t.datetime "start_date"
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"

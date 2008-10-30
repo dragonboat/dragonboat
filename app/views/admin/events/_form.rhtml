@@ -1,0 +1,26 @@
+<fieldset>
+  <legend>General Event Settings</legend>
+  <p>
+    <strong>Date:</strong> <span id="required">*<br />
+     <%= f.datetime_select :start_date, :order => [:day, :month, :year] %>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <span id="required">*<br />
+    <%= f.text_field :name, :size => 50 %></span>
+  </p> 
+</fieldset>
+<fieldset>
+  <legend>Meta</legend>  
+   <p>
+    <strong>Keywords separated by comma:</strong><br />
+     <%= text_field_tag 'tag_list', params[:tag_list] ? params[:tag_list] : @event.tags.collect{|t| t.name}.join(", "), :size=>80 %>
+   </p>
+</fieldset>  
+<fieldset>
+  <legend>Content</legend>   
+   
+   <p><%= f.text_area :content, :rows=>20, :cols=> 100,:tabindex=>2 %><p>  
+</fieldset>
+
+

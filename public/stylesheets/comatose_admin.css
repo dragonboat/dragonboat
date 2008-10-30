@@ -363,8 +363,8 @@ BODY {
     margin:0;
     padding:0;
     list-style:none;
-    height: 34px;
-    width: 740px;
+    height: 70px;
+    width: 100%;
     float: left;
     }
 #mainMenu ul.tabs li {

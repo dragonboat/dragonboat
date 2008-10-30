@@ -1,0 +1,17 @@
+ <% content_for :title do %>Send Message to <%=@volunteer.person.name%><% end %>
+  <h1>Send Message</h1>
+  <%= render :partial => 'partials/errors'%>
+  <p> TO: <strong><%=@volunteer.person.name%> < <%=@volunteer.person.email%> ></strong></p>
+  <p> From: <strong><%=APP_CONFIG['admin_email']%></strong></p>
+  <div>   
+  
+    <% form_for(:volunteer,:url => admin_send_message_volunteer_path(@volunteer.id), :html=>{:method=>:post}) do |f|%>
+     
+    <p> Subject:<span id="required">* <%=text_field_tag "email[subject]", @subject, :size=>"50"  %></span></p>
+    <p> Message:<span id="required">* <br/> <%=text_area_tag "email[message]", @message, :size=>"50x5" %></span></p>
+    <%= f.submit "Send" %>
+    <% end %>
+
+<%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
+<%= link_to 'Back', admin_volunteers_path %>
+</div> 

@@ -1,0 +1,12 @@
+<h1>Events List</h1>
+<div id="submenu">
+  <%= render :partial => 'admin/events/submenu/menu'%>
+</div>
+
+<div id="pages"><%= will_paginate @events %></div>
+ 
+<div id="table">
+  <%= render :partial => 'list'%>
+</div>
+
+<div id="pages"><%= will_paginate @events %></div>

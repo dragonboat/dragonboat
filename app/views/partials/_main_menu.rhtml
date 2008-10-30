@@ -4,7 +4,8 @@
       <ul class="tabs">
         <li><a href="/">Home</a> |</li>
         <li><%=link_to "News", {:controller=>'news', :action=>'index'} %> |</li>
-        
+        <li><%=link_to "Events", {:controller=>'events', :action=>'index'}  %> |</li>
+            
             <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>
             
             <li  <%= "class=\"current\"" if url == 'clients' || url == 'items' || url =~/(sessions|student|clients\/subjects|contracts)/ %>>

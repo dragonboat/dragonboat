@@ -1,0 +1,6 @@
+<%if @errors && @errors.size>0%>
+    <div id="errorExplanation" class="errorExplanation">
+      <%=content_tag("p", "There were problems with the following fields:") %>
+      <%= content_tag("ul", @errors.collect { |msg| content_tag("li", msg) }) %>
+    </div>
+<%end%>

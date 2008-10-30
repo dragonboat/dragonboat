@@ -3,7 +3,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :volunteers
   map.resources :paddlers
-
   # The priority is based upon order of creation: first created -> highest priority.
   
   # Sample of regular route:
@@ -23,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '',    :controller => 'member/website',  :action => 'index'
     m.resources     :paddlers,    :controller => 'member/paddlers'
+    m.resource     :user,    :controller => 'member/users'
   end
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
@@ -30,7 +30,10 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
     m.resources     :files,    :controller => 'admin/files'
+    m.send_message_volunteer  'admin/volunteers/:id/send_message', :controller => 'admin/volunteers', :action=>'send_message'
+    m.send_message_by_type_volunteer  'admin/volunteers/send_message_by_type', :controller => 'admin/volunteers', :action=>'send_message_by_type'
     m.resources     :volunteers,    :controller => 'admin/volunteers'
+    m.resources     :events,    :controller => 'admin/events'
   end
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'

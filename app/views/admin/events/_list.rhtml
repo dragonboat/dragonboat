@@ -1,0 +1,22 @@
+<table id="news_contents" class="obj_list">
+  <tr>
+    <th width="200"><%= link_to('Name', admin_events_url(:sort => sort_link_for('name', params[:sort]))) %></th>
+    <th><%= link_to('Date', admin_events_url(:sort => sort_link_for('date', params[:sort]))) %></th>
+    <th>Content</td>
+    <th colspan="3">&nbsp;</th>
+  </tr>
+  
+  <%@events.each do |event| %>
+  <tr class="<%= cycle('','alt') %>">
+    <td><%= link_to(h(truncate(event.name,50)), admin_edit_event_path(event)) %>
+    </td>
+    <td><b><%=h event.start_date.strftime("%d %B %Y") %></b></td>
+   <td><%= truncate(event.content, 150) %></td>
+  </td>
+    <td colspan="3">
+      <%= link_to(image_tag("icons/page_white_edit.png"), admin_edit_event_path(event), :style => "margin-right: 3px;") %>
+      <%= link_to(image_tag("icons/delete.png"), admin_event_path(event), :confirm => 'Are you sure?', :method => :delete, :style => "margin-right: 3px;") %>
+    </td>
+  </tr>
+<% end %>
+</table>

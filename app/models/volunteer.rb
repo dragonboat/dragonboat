@@ -10,4 +10,6 @@ class Volunteer < ActiveRecord::Base
   def after_destroy
     person.destroy
   end
+  
+  
 end

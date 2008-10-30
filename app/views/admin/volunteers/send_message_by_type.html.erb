@@ -1,0 +1,16 @@
+ <% content_for :title do %>Message All Volunteers<% end %>
+    <h1>Message All Volunteers</h1>
+    
+    <% form_for(:volunteer,:url => admin_send_message_by_type_volunteer_path, :html=>{:method=>:post}) do |f|%>
+    <%= render :partial => 'partials/errors'%>
+   
+    <p>TO:  <%= select_tag "type_id",options_for_select([["All",""]]) + options_from_collection_for_select(@statuses, 'id', 'name', @type_id) %></p>
+    <p>From: <strong><%=APP_CONFIG['admin_email']%></strong></p>
+    
+    <br/>
+    <p> Subject:<span id="required">* <%=text_field_tag "email[subject]", @subject, :size=>"50"  %></span></p>
+    <p> Message:<span id="required">* <br/> <%=text_area_tag "email[message]", @message, :size=>"50x5" %></span></p>
+    <%= f.submit "Send" %>
+    <% end %>
+
+<%= link_to 'Back', admin_volunteers_path %>

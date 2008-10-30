@@ -23,7 +23,9 @@
   </tr>
   <%= render :partial => 'persons/show_2'%>
   <tr>
-  <td colspan="2" align="center"><%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
+  <td colspan="2" align="center">
+        <%= link_to 'Send Message', admin_send_message_volunteer_path(@volunteer.id) %> |
+        <%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
         <%= link_to 'Edit', admin_edit_volunteer_path(@volunteer) %> |
         <%= link_to 'Destroy', admin_volunteer_path(@volunteer) , :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
