@@ -2,3 +2,4 @@
 hostname: localhost:3000
 admin_per_page: 5
 news_per_page: 5
+admin_email: admin@dragonboat.com
