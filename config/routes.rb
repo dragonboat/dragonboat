@@ -45,9 +45,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   # install comatose root lowest priority
   map.comatose_admin
-  map.comatose_root '', :layout => 'application', :use_cache=>false
-  map.comatose_help 'new-page-457675', :index=>'about-us/new-page-457675', :layout=>'application'
-
-
-
+  map.comatose_root '/', :layout => 'application', :use_cache=>false
 end
