@@ -16,11 +16,11 @@ config.action_controller.perform_caching             = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
-ActionMailer::Base.smtp_settings = {
-  :domain             => "phillydragonboat.info",
-  :perform_deliveries => true,
-  :address            => 'mail.phillydragonboat.info',
-  :port               => 2525,
-  :user_name                => "admin",
-  :password                => "admin"
-}
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings= {  
+    :address=> "smtp.phillydragonboat.info" ,
+    :port => 25,
+    :domain => "phillydragonboat.info"
+  }
+ActionMailer::Base.perform_deliveries = false
