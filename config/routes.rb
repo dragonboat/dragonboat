@@ -19,6 +19,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
+  map.home '',  :controller => 'member/news',:action=>"index"
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '',    :controller => 'member/website',  :action => 'index'
     m.resources     :paddlers,    :controller => 'member/paddlers'
@@ -45,5 +46,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   # install comatose root lowest priority
   map.comatose_admin
-  map.comatose_root '/', :layout => 'application', :use_cache=>false
+  map.comatose_root '', :layout => 'application', :use_cache=>false
 end
