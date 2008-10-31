@@ -1,7 +1,9 @@
 class AddAdminUser < ActiveRecord::Migration
   def self.up
-    @person = Person.create(:first_name=>"Admin", :last_name=>"BragonBoat")
-    @user = User.create({:person_id=>@person,:login=>"admin",:email => "din.chick@gmail.com", :password => "admin", :password_confirmation=> "admin" })
+    @user = User.new({:login=>"admin",:email => "din.chick@gmail.com", :password => "admin", :password_confirmation=> "admin" })
+    @user.person.attributes = ({:first_name=>"Admin", :last_name=>"BragonBoat"})
+    @user.valid?
+    @user.save!
   end
 
   def self.down
