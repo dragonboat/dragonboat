@@ -1,9 +1,9 @@
    <%@news = news%>
    <% @news.each do |news| %>
        <div class="news_block" id="hot_<%=news.id%>">
-         <h2><%=link_to h(news.title),{:action=>:show, :id => news.id} %></h2>
+         <h2><%=link_to h(news.title),{:controller=>"news",:action=>'show', :id => news.id} %></h2>
          
          <span id="date"><%=news.published%></span>
-         <%=news.description%>..<%=link_to "read more&#187;", {:action=>:show, :id => news.id} , :class=>"to_full"%>
+         <%=news.description%>..<%=link_to "read more&#187;", {:controller=>"news",:action=>'show', :id => news.id} , :class=>"to_full"%>
        </div>
      <%end%>     
