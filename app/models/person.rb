@@ -4,7 +4,7 @@ class Person < ActiveRecord::Base
   has_one :user, :dependent => :destroy
   has_one :volunteer, :dependent => :destroy
   has_one :orphaned_paddler, :dependent => :destroy
-  validates_format_of  :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid', :if=>Proc.new { |person| person.email&&!person.email.empty? }
+  validates_format_of  :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid' #, :if=>Proc.new { |person| person.email&&!person.email.empty? }
  
   attr_accessor :validation_mode
   attr_reader :age
@@ -32,6 +32,10 @@ class Person < ActiveRecord::Base
       for attr_name in [:phone, :email, :birthday_date, :experience, :preference]
         errors.add_on_blank(attr_name, 'is required')
       end
-    end
+    elsif  self.validation_mode == :order
+      for attr_name in [:phone, :email, :address, :zip, :city]
+        errors.add_on_blank(attr_name, 'is required')
+      end
+    end 
   end
 end

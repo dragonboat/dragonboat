@@ -104,7 +104,4 @@ def set_filter
   @filter.end_date = get_local_time(params[:filter], "end_date")  
 end
 
-def get_local_time(params, field)
-  Time.local(params["#{field}(1i)"], params["#{field}(2i)"], params["#{field}(3i)"]).to_date
-end
 end

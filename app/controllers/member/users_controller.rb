@@ -1,4 +1,5 @@
 class Member::UsersController < Member::WebsiteController 
+before_filter :is_not_member?
 before_filter :set_user, :only=>[:index,:edit,:show]
 
 def index

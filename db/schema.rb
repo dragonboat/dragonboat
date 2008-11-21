@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 24) do
+ActiveRecord::Schema.define(:version => 44) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(:version => 24) do
     t.datetime "updated_at"
   end
 
+  create_table "extras_orders", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "extras_id"
+    t.string   "extras_type"
+    t.integer  "pay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "images", :force => true do |t|
     t.integer  "parent_id"
     t.string   "content_type"
@@ -73,12 +82,14 @@ ActiveRecord::Schema.define(:version => 24) do
     t.integer  "waiver_status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   add_index "members", ["type_id"], :name => "index_members_on_type_id"
   add_index "members", ["user_id"], :name => "index_members_on_user_id"
   add_index "members", ["invitation_status_id"], :name => "index_members_on_invitation_status_id"
   add_index "members", ["waiver_status_id"], :name => "index_members_on_waiver_status_id"
+  add_index "members", ["team_id"], :name => "index_members_on_team_id"
 
   create_table "news", :force => true do |t|
     t.string   "title"
@@ -99,6 +110,23 @@ ActiveRecord::Schema.define(:version => 24) do
   add_index "news", ["is_visible"], :name => "index_news_on_is_visible"
   add_index "news", ["is_short"], :name => "index_news_on_is_short"
   add_index "news", ["data_is_visible"], :name => "index_news_on_data_is_visible"
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.string   "customer_ip"
+    t.text     "gateway_message"
+    t.string   "phone_number"
+    t.string   "status"
+    t.text     "credit_card"
+    t.integer  "boat_pay"
+    t.integer  "total_pay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
+  add_index "orders", ["team_id"], :name => "index_orders_on_team_id"
 
   create_table "orphaned_paddlers", :force => true do |t|
     t.integer  "person_id"
@@ -139,7 +167,22 @@ ActiveRecord::Schema.define(:version => 24) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
   end
+
+  create_table "practices", :force => true do |t|
+    t.integer  "status_id"
+    t.integer  "team_id"
+    t.text     "description"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "practices", ["status_id"], :name => "index_practices_on_status_id"
+  add_index "practices", ["team_id"], :name => "index_practices_on_team_id"
 
   create_table "roles", :force => true do |t|
     t.string "name"
@@ -165,7 +208,7 @@ ActiveRecord::Schema.define(:version => 24) do
 
   create_table "statuses", :force => true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "status_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -184,9 +227,31 @@ ActiveRecord::Schema.define(:version => 24) do
 
   add_index "tags", ["name"], :name => "index_tags_on_name"
 
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "captain_id"
+    t.integer  "logo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "status_id",   :default => 14
+  end
+
+  add_index "teams", ["captain_id"], :name => "index_teams_on_captain_id"
+  add_index "teams", ["logo_id"], :name => "index_teams_on_logo_id"
+  add_index "teams", ["status_id"], :name => "index_teams_on_status_id"
+
+  create_table "tents", :force => true do |t|
+    t.integer  "team_id"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tents", ["team_id"], :name => "index_tents_on_team_id"
+
   create_table "users", :force => true do |t|
     t.string   "login"
-    t.string   "email"
     t.string   "crypted_password",          :limit => 40
     t.string   "salt",                      :limit => 40
     t.datetime "created_at"

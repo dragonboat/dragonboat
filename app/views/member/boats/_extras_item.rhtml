@@ -1,0 +1,12 @@
+ <table border='1'>
+      <tr>
+        <th></th>
+        <th>Extras</th>
+        <th>Price</th>
+        </tr> 
+        <tr>
+          <td><%= check_box_tag("extras_tent","1",!@team.tent.nil?,{:id=>"extras_tent"}) %> </td>
+          <td>Tent</td>
+          <td><b><%=number_to_currency APP_CONFIG['tent_price']%></b></td>
+        </tr>
+ </table>

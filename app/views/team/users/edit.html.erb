@@ -1,0 +1,20 @@
+<% content_for :title do %>Team Member Home : Editing Team Member Profile<% end %>
+   <h1>Editing Profile</h1>
+   
+   <%= error_messages_for :person %>
+   
+   <% form_for(:person, :url => team_user_path, :html=>{:method=>:put}) do |f| %>
+   <h4>Personal Information</h4>
+     <table>
+     <tr> 
+       <%= render :partial => 'persons/full_form_1', :locals =>{:f=>f} %>
+     </tr>
+     <table>
+       
+  <span id="required">*</span>-requered <br/>
+  <%= f.submit "Update" %>
+<% end %>
+<p>
+<%= link_to 'Show', team_user_path %> |
+<%= link_to 'Back', team_user_path %>
+</p>

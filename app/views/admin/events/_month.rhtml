@@ -1,5 +1,5 @@
  <%= calendar({:year => year, :month => month}) do |d| 
-        cell_text = link_to(d.mday, admin_new_event_path(:mday=>d.mday,:mon=>d.mon,:year=>d.year ),:title=>"Click to create a new event") << "<br />" 
+        cell_text = link_to(d.mday, admin_new_event_path(:mday=>d.mday,:mon=>d.mon,:year=>d.year ),:title=>"Click to create a new event on this date") << "<br />" 
         cell_attrs = {:class => 'day'} 
         @events.each do |e| 
           if e.start_date.to_date == d 

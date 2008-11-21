@@ -1,0 +1,11 @@
+<% content_for :title do %>Boat Home<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+<h1>General Boat Info</h1>
+<p>Name: <%=@team.name%></p>
+<p>Description: <%=@team.description%></p>
+<p>Captain: <%=@team.captain.person.name%></p>
+<p>Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></p>
+<p>Members count: 0</p>
+<p>Logo: <%= image_tag( @team.image.public_filename(:thumb_big) ) if @team.image%> </p>

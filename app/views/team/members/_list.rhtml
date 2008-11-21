@@ -1,0 +1,26 @@
+<table id="members" class="obj_list">
+  <tr>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th>Type</th>
+    <th>Created at</th>
+    <th>Waiver status</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for member in @members %>
+  <%user = member.user%>
+  <%person = user.person%>
+  <tr>
+    <td><%= link_to(person.name,team_member_path(@team.name.to_slug,member.id))%></td>
+    <td><%= mail_to user.email%></td>
+    <td><%=member.type.name%></td>
+    <td><%=member.created_at.strftime("%d.%m.%Y")%></td>
+    <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
+    
+    <td>
+      <%= link_to 'Show', team_member_path(@team.name.to_slug,member.id) %>    
+    </td>
+    </tr>
+<% end %>
+</table>

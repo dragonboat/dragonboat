@@ -1,0 +1,37 @@
+<table id="members" class="obj_list">
+  <tr>
+    <th><%= link_to('Name', member_team_members_path(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
+    <th><%= link_to('E-mail', member_team_members_path(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th>Login</th>
+    <th><%= link_to('Type', member_team_members_path(:sort => sort_link_for('type', params[:sort])), :title=>"Sort by Type" ) %></th>
+    <th><%= link_to('Created at', member_team_members_path(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    <th><%= link_to('Invitation', member_team_members_path(:sort => sort_link_for('invitation', params[:sort])), :title=>"Sort by Invitation" ) %></th>
+    <th><%= link_to('Waiver status', member_team_members_path(:sort => sort_link_for('waiver_status', params[:sort])), :title=>"Sort by Waiver status" ) %></th>
+    
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for member in @members %>
+  <%user = member.user%>
+  <%person = user.person%>
+  <tr>
+    <td><%= link_to(person.name,member_team_members_path(@team, "show", member.id))%></td>
+    <td><%= mail_to user.email%></td>
+    <td><%= user.login %></td>
+    <td><%=member.type.name%></td>
+    <td><%=member.created_at.strftime("%d.%m.%Y")%></td>
+    <td align="center"><%=image_tag "icons/#{member.invitation_status.name.downcase}.png", :title=>"#{member.invitation_status.name}".capitalize %></td>
+    <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
+    
+    <td><%= link_to 'Show', member_team_members_path(@team, "show", member.id) %> |
+        <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %>
+        <%unless member.invitation_status.name == 'confirmed' %>
+        |
+        <%= link_to 'Invite', member_team_members_path(@team, "confirm", member.id)%>
+        <%else%>
+        |  <%= link_to 'Access Info', member_team_members_path(@team, "access", member.id) %>
+        <%end%>
+      </td>
+    </tr>
+<% end %>
+</table>

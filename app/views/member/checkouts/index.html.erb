@@ -1,0 +1,45 @@
+<h2>Boat: <%=@team.name%></h2>   
+   <h3>Enter Payment Details</h3>
+   <%= error_messages_for :order, :credit_card, :person %>
+   
+   <% form_for :order, @order, :url => {:action => "confirm_order"} do |f| %>
+   
+   <% content_tag :fieldset do %> 
+   <%= content_tag :legend, "Your Personal Information" %>
+   <% labeled_fields_for :person, @person do |p| %>
+   <%= p.text_field :first_name %>
+   <%= p.text_field :last_name %>
+   <%= p.text_field :email %>
+   <%= p.text_field :phone %>
+   <% end %>
+   <% end %>
+   
+   <% content_tag :fieldset do %> 
+   <%= content_tag :legend, "Credit Card" %>
+    <% labeled_fields_for :credit_card, @credit_card do |cc| %>
+       <%= cc.select :type, Order::CARD_TYPES.map { |t| [t ,t] } %>
+       <%= cc.text_field :first_name %>
+       <%= cc.text_field :last_name %>
+       <%= cc.text_field :number %>
+       <%= cc.select :month, (1..12) %>
+       <%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
+       <%= cc.text_field :verification_value, :label => "CVV2" %>
+    <% end %>
+   <% end %>
+
+   <% content_tag :fieldset do %> 
+   <%= content_tag :legend, "Your Address" %>
+     <div>
+         <% labeled_fields_for :person, @person do |p| %>
+             <%= p.text_field :address %>
+             <%= p.text_field :city %>
+             <%= p.text_field :zip %>
+             <%= p.select :state, states_options %>
+             <%= p.country_select :country, ['United States', 'Canada'] %>
+         <% end %>
+     </div>
+   <% end %>
+   
+   <%= f.submit "Continue Checkout..." %>
+  
+<% end %>

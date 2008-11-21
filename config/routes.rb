@@ -21,10 +21,27 @@ ActionController::Routing::Routes.draw do |map|
   # instead of a file named 'wsdl'
   map.home '',  :controller => 'news',:action=>"index"
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
-    m.index   '',    :controller => 'member/website',  :action => 'index'
-    m.resources     :paddlers,    :controller => 'member/paddlers'
-    m.resource     :user,    :controller => 'member/users'
+    m.index   '', :controller => 'member/website',  :action => 'index'
+    m.resources   :tents, :controller => 'member/tents'
+    m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
+    m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"
+    m.resources   :paddlers,    :controller => 'member/paddlers'
+    m.resource    :user,    :controller => 'member/users'
+    m.extras_boat  '/boats/:id/extras', :controller => 'member/boats', :action => 'extras'
+    m.resources   :boats, :controller => 'member/boats'
+    m.boat_checkout '/boats/:team_id/checkouts/:action/:id', :controller => 'member/checkouts'
+    m.team_members '/boats/:team_id/members/:action/:id', :controller => 'member/members'
+    m.team_tents '/boats/:team_id/tents/:action/:id', :controller => 'member/tents'
   end
+  
+  map.with_options :path_prefix => 'team/:slug', :name_prefix => 'team_' do |m|
+    m.index   '', :controller => 'team/website', :action => 'index'
+    m.resource    :user,    :controller => 'team/users'
+    m.resources    :members,    :controller => 'team/members'
+    m.url_code '/:url_code', :controller => 'team/website', :action => 'index'
+  end
+  
+  
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :users,    :controller => 'admin/users'
@@ -35,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
     m.send_message_by_type_volunteer  'admin/volunteers/send_message_by_type', :controller => 'admin/volunteers', :action=>'send_message_by_type'
     m.resources     :volunteers,    :controller => 'admin/volunteers'
     m.resources     :events,    :controller => 'admin/events'
+    m.resources     :practices,    :controller => 'admin/practices'  
   end
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'

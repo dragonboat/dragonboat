@@ -1,0 +1,16 @@
+<% content_for :title do %>Manage Team Members : Edit Team Member<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+
+<h1>Editing Team Member</h1>
+<%= error_messages_for :member %>
+
+<% form_for(:member, :url => member_team_members_path(@team,"update",@member.id), :html=>{:method=>:put}) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <span id="required">*</span>-requered <br/>
+  <%= f.submit "Update" %>
+<% end %>
+
+<%= link_to 'Show', member_team_members_path(@team, "show", @member.id) %> |
+<%= link_to 'Back', member_team_members_path(@team)%>

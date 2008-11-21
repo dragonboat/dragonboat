@@ -4,10 +4,6 @@
   <td id="required">*<%= f.text_field :login, :size=>50 %></td>
 </tr>
 <tr>
-  <td><label for="user_email">E-mail:</lable></td>
-  <td id="required">*<%= f.text_field :email, :size=>50 %></td>
-</tr>
-<tr>
   <td><label for="user_role">Type:</lable></td>
   <td id="required">*<%= f.select :role, User::ROLE.map { |r| [r.capitalize, r] } %></td>
   </tr>

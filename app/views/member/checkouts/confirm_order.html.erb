@@ -1,0 +1,63 @@
+<h2>Boat: <%=@team.name%></h2>   
+<h3>Confirm Order</h3>
+
+<h4>Your Details</h4>
+<%= @person.first_name %>
+<%= @person.last_name %><br>
+<%= @person.email %><br>
+<%= @person.phone %>
+<h4>Credit Card</h4>
+<%= @credit_card.type %><br>
+<%= @credit_card.first_name %>
+<%= @credit_card.last_name %><br>
+<%= @credit_card.display_number %><br>
+<%= @credit_card.month %> - <%= @credit_card.year %>
+<h4>Your Address</h4>
+<%= @person.address %><br>
+<%= @person.city %><br>
+<%= @person.zip %><br>
+<%= @person.state %><br>
+<%= @person.country %><br>
+
+<h4>Your Ordered: </h4>
+<h5>Boat</h5>
+<%= render :partial => 'member/boats/boat'%><br>
+
+<h5>Extras</h5>
+<%= render :partial => 'member/boats/extras_item'%><br>
+
+<h5>TOTAL PAY:</h5>
+<strong><%= number_to_currency @team.total%></strong>
+
+<% form_for :order, @order, :url => {:action => "place_order"} do |f| %>
+
+     <% fields_for :person, @person do |p| %>
+        <%= p.hidden_field :first_name %>
+        <%= p.hidden_field :last_name %>
+        <%= p.hidden_field :email %>
+        <%= p.hidden_field :phone %>
+     <% end %>
+
+    <% fields_for :credit_card, @credit_card do |cc| %>
+       <%= cc.hidden_field :type %>
+       <%= cc.hidden_field :first_name %>
+       <%= cc.hidden_field :last_name %>
+       <%= cc.hidden_field :number %>
+       <%= cc.hidden_field :month %>
+       <%= cc.hidden_field :year %>
+       <%= cc.hidden_field :verification_value, :label => "CVV2" %>
+    <% end %>
+
+      <% fields_for :person, @person do |p| %>
+        <%= p.hidden_field :address %>
+        <%= p.hidden_field :zip %>
+        <%= p.hidden_field :city %>
+        <%= p.hidden_field :country %>
+        <%= p.hidden_field :state %>
+        <% end %>
+   
+
+        <%= f.submit "Place Order" %>
+        
+<% end %>
+        

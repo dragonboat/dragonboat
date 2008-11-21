@@ -1,0 +1,11 @@
+<h1>New Practice</h1>
+<%= error_messages_for :practice %>
+<% form_for(:practice, :url => admin_practices_path) do |f| %>
+ 
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+ <span id="required">*</span>-requered <br/>
+  <%= f.submit "Create" %>
+<% end %>
+  
+<%= link_to 'Back', admin_practices_path %>

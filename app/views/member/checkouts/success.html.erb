@@ -1,0 +1,44 @@
+<% content_for :title do %>Order process was successfully completed<% end %>
+<h3>Thanks for your order!</h3>
+
+<% content_tag :fieldset do %> 
+  <%= content_tag :legend, "Your Details" %>
+   Name: <%= @person.name %><br>
+   E-mail: <%= @person.email %><br>
+   Phone: <%= @person.phone %><br>
+<% end %>
+
+<% content_tag :fieldset do %> 
+  <%= content_tag :legend, "Your Account" %>
+   Login: <%=@user.login%><br>
+   E-mail: <%=@user.email%><br>
+   Type: <%=@user.type%>
+<% end %>
+
+<% content_tag :fieldset do %> 
+  <%= content_tag :legend, "Your Address" %>
+  Address:  <%= @person.address %><br>
+  City:  <%= @person.city %><br>
+  Zip:  <%= @person.zip %><br>
+  State:  <%= @person.state %><br>
+  Country:  <%= @person.country %><br>
+<% end %>
+
+<% content_tag :fieldset do %> 
+  <%= content_tag :legend, "Your Ordered" %>
+    <% content_tag :fieldset do %> 
+    <%= content_tag :legend, "Boat" %>
+    <%= render :partial => 'member/boats/boat'%><br>
+    <% end %>
+    <% content_tag :fieldset do %> 
+    <%= content_tag :legend, "Extras" %>
+    <%= render :partial => 'member/boats/extras_item'%><br>
+    <% end %>
+    <h5>TOTAL PAY:</h5> <strong><%=number_to_currency @team.total%></strong>
+    <% end %>
+    
+    <% content_tag :fieldset do %> 
+    <%= content_tag :legend, "Payment Info" %>
+    Your credit card had been charged: <%=number_to_currency @order.total_pay %>
+    <% end %>
+    <%=link_to "Go to Boat Home Page", member_boats_path %>

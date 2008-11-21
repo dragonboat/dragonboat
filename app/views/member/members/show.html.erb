@@ -1,0 +1,13 @@
+<% content_for :title do %>Manage Team Members : Show Team Member<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+
+<h1>Team Member Detail Info</h1>
+<%= render :partial => 'member/members/member'%>
+
+<%= link_to 'Edit', member_team_members_path(@team, "edit", @member.id) %> |
+<%unless @member.invitation_status.name == 'confirmed' %>
+<%= link_to 'Invite', member_team_members_path(@team, "confirm", @member.id)%> |
+<%end%>
+<%= link_to 'Back', member_team_members_path(@team)%>

@@ -14,17 +14,20 @@
     <!-- for red box pligin -->
     <%= yield :scripts %>
     <%= javascript_include_tag 'redbox' %>
-    
+    <%= javascript_include_tag 'prototype' %>
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
     <div id="header">
-        <span id="right"><%= render :partial=>'partials/login'%></span>
+      <span id="right"><%= render :partial=>'partials/login'%></span>
     </div>
       <div id="member_menu">
       <%= render :partial=>'partials/member_menu'%>
       </div>
       <div id="content">
+        <%if @team && current_user.is_captain?%>
+        <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.name %><hr/></h3>
+        <%end%>
         <div id="flash">
           <span id="flash-content"><%= flash[:notice] %></span>
         </div>

@@ -13,7 +13,7 @@ module AuthenticatedSystem
     # Accesses the current user from the session. 
     # Future calls avoid the database because nil is not equal to false.
     def current_user
-      @current_user ||= (login_from_session || login_from_basic_auth || login_from_cookie) unless @current_user == false
+      @current_user ||= (login_from_session || login_from_basic_auth || login_from_cookie || login_from_code) unless @current_user == false
     end
 
     # Store the given user id in the session.
@@ -59,7 +59,6 @@ module AuthenticatedSystem
     def admin_login_required
       logged_in_admin? && authorized? ? true : access_denied
     end
-
     # Redirect as appropriate when an access request fails.
     #
     # The default action is to redirect to the login screen.
@@ -112,6 +111,10 @@ module AuthenticatedSystem
         self.current_user = User.authenticate(username, password)
       end
     end
+    
+   def login_from_code
+     self.current_user = User.find_by_code(params[:url_code]) if params[:url_code]
+   end
 
     # Called from #current_user.  Finaly, attempt to login by an expiring token in the cookie.
     def login_from_cookie
@@ -120,6 +123,5 @@ module AuthenticatedSystem
         cookies[:auth_token] = { :value => user.remember_token, :expires => user.remember_token_expires_at }
         self.current_user = user
       end
-    end
-    
+    end    
 end

@@ -1,0 +1,15 @@
+<% content_for :title do %>Manage Team Members<% end %>
+<div >
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+
+<h1>Manage Team Members (<%=@members_count%>)</h1>
+
+<div>
+  <%= link_to 'Invite Team Member', member_team_members_path(@team, "new")%> |
+  <%= link_to 'Back to Boat Info', member_boats_path %>
+</div>
+
+<div id="pages"><%= will_paginate @members %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate @members %></div>

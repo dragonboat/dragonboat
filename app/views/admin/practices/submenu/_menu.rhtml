@@ -1,0 +1,3 @@
+<%= link_to 'New practice', admin_new_practice_path %> |
+<%= link_to 'Calendar', admin_practices_path(:view => "calendar") if @view == "list"%>
+<%= link_to 'List', admin_practices_path(:view => "list") if @view == "calendar"%>

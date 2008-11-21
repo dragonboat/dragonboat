@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
 
   # Pick a unique cookie name to distinguish our session data from others'
 #  session :session_key => '_dragonboat_session_id'
+  def get_local_time(params, field)
+    Time.local(params["#{field}(1i)"], params["#{field}(2i)"], params["#{field}(3i)"]).to_date
+  end
+  
+
 end

@@ -1,0 +1,10 @@
+<% content_for :title do %>Complete Boat Details<% end %>
+<div>
+    <h2>Complete Boat Details</h2>      
+    <%= render :partial => 'boat'%>
+    <div id="buttons">
+       <%= button_to  "Confirm",  :action => 'confirm'%>&nbsp;&nbsp;
+       <%= button_to "Unconfirm", :action => 'unconfirm'%> 
+   </div>
+ 
+</div>       

@@ -1,0 +1,18 @@
+<% content_for :title do %>Manage Team Members : Invite Team Member<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+ <h1>Invite Team Member</h1>
+  
+  <%= error_messages_for :member %>
+  
+  
+  <% form_for(:member, :url => member_team_members_path(@team, 'create')) do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+
+  <span id="required">*</span>-requered <br/>
+  <%= f.submit "Create" %>
+  <% end %>
+  
+<%= link_to 'Back', member_team_members_path(@team) %>

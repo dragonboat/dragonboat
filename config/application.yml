@@ -2,4 +2,7 @@
 hostname: localhost:3000
 admin_per_page: 5
 news_per_page: 5
-admin_email: admin@dragonboat.com
+#admin_email: admin@dragonboat.com
+admin_email: din.chick@gmail.com
+boat_price: 15.00
+tent_price: 5.00

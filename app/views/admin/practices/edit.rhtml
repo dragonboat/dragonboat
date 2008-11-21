@@ -1,0 +1,11 @@
+<h1>Editing Practice</h1>
+
+<%= error_messages_for :practice%>
+
+<% form_for(:practice, :url => admin_practice_path(@practice), :html=>{:method=>:put}) do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<span id="required">*</span>-requered <br/>
+<%= f.submit "Update" %>
+<% end %>
+  
+<%= link_to 'Back', admin_practices_path %>

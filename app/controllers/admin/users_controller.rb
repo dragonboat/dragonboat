@@ -51,9 +51,9 @@ class Admin::UsersController < Admin::WebsiteController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-    @role = Role.find_by_name(params[:user]['role'])
+    @roles = [Role.find_by_name(params[:user]['role'])]
     @user.person.attributes = (params[:person])
-    #@user.roles.new(@role)
+    @user.roles = @roles
     respond_to do |format|
       if @user.save
         flash[:notice] = 'User was successfully created.'
@@ -71,6 +71,8 @@ class Admin::UsersController < Admin::WebsiteController
   def update
     @user = User.find(params[:id])
     @user.person.attributes = (params[:person])
+    @roles = [Role.find_by_name(params[:user]['role'])]
+    @user.roles = @roles
     respond_to do |format|
       if @user.update_attributes(params[:user]) && @user.person.save
         if params[:user][:password].length > 0

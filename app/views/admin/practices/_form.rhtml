@@ -1,0 +1,26 @@
+<fieldset>
+  <legend>General Practice Settings</legend>
+  <p>
+    <strong>Date:</strong> <span id="required">*<br /></span>
+     <%= f.datetime_select :created_at, :order => [:day, :month, :year] %>
+  </p>
+  <p>
+    <strong>Team:</strong> <span id="required">*<br/></span>
+  </p>
+  <p>
+    <strong>Status:</strong>  <span id="required">*<br/></span>
+    <%= f.select(:status_id, @statuses.collect {|status| [status.name, status.id]}) %></td>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <span id="required">*<br/>
+    <%= f.text_field :name, :size => 50 %></span>
+  </p> 
+  <p>
+    <strong>Description:</strong><br/>
+    <p><%= f.text_area :description, :rows=>20, :cols=> 100%></p> 
+  </p>
+ </fieldset>
+
+
+

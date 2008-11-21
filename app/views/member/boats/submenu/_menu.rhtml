@@ -1,0 +1,15 @@
+<% url = controller.controller_path %>
+
+    <div id="subMenu">
+      <ul class="tabs">
+        <li <%= "class=\"current\"" if url =~/(members)/ %>><%= link_to 'Manage Team Members', member_team_members_path(@team.id) %> |</li>
+        
+        <%if @team.tent%>
+        <li <%= "class=\"current\"" if url =~/(tents)/ %>><%= link_to 'Select Tent Position', member_team_tents_path(@team.id, "show", @team.tent.id) %> |</li>
+        <%end%>
+        <li><%= link_to 'Manage Practice Date', admin_events_path(:view => "calendar")%> |</li>
+      
+        <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Boat Details Setting', member_edit_boat_url(@team.id) %></li>
+      </ul>
+    </div>
+    <span class="clearEm">&nbsp;&nbsp;</span>

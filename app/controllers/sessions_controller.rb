@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
   
   def forgot
     if request.post?      
-      user = User.find(:first, :conditions=>["email=? AND login=?", params[:email], params[:login]])
+      user = User.find(:first, :include=>[:person], :conditions=>["persons.email=? AND login=?", params[:email], params[:login]])
       if user
         new_password = user.password_reset!
         if new_password
@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
       else
         #flash.delete(:info)
         #flash[:warning] = "No user found with login #{params[:login]} and email address " + params[:email]
-        flash[:notice] = "No user found with login #{params[:login]} or email address " + params[:email]
+        flash[:notice] = "No user found with login #{params[:login]} and email address " + params[:email]
       end
     end
   end

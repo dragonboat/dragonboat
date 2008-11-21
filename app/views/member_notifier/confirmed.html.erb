@@ -1,0 +1,18 @@
+Dear, <%= @member.user.person.name %>
+
+The Dragonboat Team: <%= @team.name %> 
+invite you to join the team as <%=@member.type.name%> of boat.
+
+
+Boat Details:
+Name: <%= @team.name %>
+Description: <%= @team.description %>
+Captain: <%=@captain.person.name%>  <  <%=@captain.email%>  >
+
+Go to URL: 
+<%=@code_url%>
+to accept or declide your membership.
+
+Thanks,
+Captain of "<%= @team.name %>" Team,
+<%=@captain.person.name%>

@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   validates_presence_of     :login
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
-  validates_length_of       :password, :within => 4..40, :if => :password_required? && Proc.new { |user| !user.password.empty? }
+  validates_length_of       :password, :within => 4..40, :if => :password_required? && Proc.new { |user| user.password&&!user.password.empty? }
   validates_confirmation_of :password,                   :if => :password_required?
   validates_length_of       :login,    :within => 3..40, :if => :login?
-  validates_format_of       :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid'
+  #validates_format_of       :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid'
   validates_uniqueness_of   :login, :case_sensitive => false #:email
   before_save :encrypt_password
   
@@ -24,6 +24,17 @@ class User < ActiveRecord::Base
   has_many :images, :foreign_key => 'created_by'
   has_many :files, :foreign_key => 'created_by', :class_name=>"DataFile"
   has_many :news, :foreign_key => 'created_by', :class_name=>"News"
+  
+  has_one :member, :dependent=>:destroy
+ 
+  has_many :teams, :foreign_key => 'captain_id', :class_name=>"Team",:dependent=>:destroy
+  has_many :orders, :dependent=>:destroy
+
+  has_many :active_teams, :foreign_key => 'captain_id', :class_name=>"Team",:dependent=>:destroy,
+    :conditions => "status_id=#{Status.find_team_by_name('active').id}"
+  has_many :unactive_teams, :foreign_key => 'captain_id', :class_name=>"Team",:dependent=>:destroy,
+    :conditions => "status_id=#{Status.find_team_by_name('unactive').id}"
+  
   belongs_to :person
   validates_associated :person
     
@@ -31,12 +42,12 @@ class User < ActiveRecord::Base
     build_person unless person
   end
   
-  def after_save
-    roles << Role.find_by_name("standard")
+  def after_create
+    roles << Role.find_by_name("standard") unless is_standard?
     if role == "admin"
-      roles<< Role.find_by_name("admin")
+      roles << Role.find_by_name("admin") unless is_admin?
     elsif role == "captain"
-      roles<< Role.find_by_name("captain")
+      roles << Role.find_by_name("captain") unless is_captain?
     end
   end
   
@@ -64,6 +75,18 @@ class User < ActiveRecord::Base
     has_role?("standard") && !is_captain? && !is_admin?
   end
   
+  def is_member?
+    !member.nil?
+  end
+  
+  def has_any_boat?
+    !is_member? && active_teams.count < 1
+  end
+  
+  def has_any_unactive_boat?
+    unactive_teams.count > 0
+  end 
+  
   def type
     role.capitalize
   end
@@ -79,10 +102,32 @@ class User < ActiveRecord::Base
     write_attribute(:role,str)
   end
   
+  def to_captain
+    unless is_captain?
+      roles << Role.find_by_name("captain") 
+    end
+  end
+  
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(login, password)
     u = find_by_login(login) # need to get the salt
     u && u.authenticated?(password) ? u : nil
+  end
+  
+  def self.find_by_code(url_code)
+    User.find(:all).each do |u|
+      return u if u.has_code?(url_code) && u.is_member?
+      break if u.has_code?(url_code)
+    end
+    nil
+  end
+  
+  def has_code?(url_code)
+    url_code == code
+  end
+  
+  def code
+    encrypt(self.login)
   end
 
   # Encrypts some data with the salt.
@@ -135,6 +180,16 @@ class User < ActiveRecord::Base
     self.valid?
     puts self.errors.to_xml
     self.save ? new_password : nil    
+  end
+  
+  def email
+    person.email
+  end
+  
+  def generate_account(prefix_name="")
+    self.login = "#{person.first_name}.#{person.last_name}.#{Time.now.to_i}@#{prefix_name}".downcase
+    new_password = self.class.random_string(10)
+    self.password = self.password_confirmation = new_password
   end
 
   protected

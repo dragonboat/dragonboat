@@ -1,0 +1,29 @@
+Hello, <%= @order.user.person.name %>
+
+Your order#<%= @order.id %> of boat registration has been <%= @order.status %>.
+
+
+Boat Details:
+Name: <%= @order.team.name %>
+Description: <%= @order.team.description %>
+
+Your Account Details:
+login: <%= @order.user.login %>
+Type: <%= @order.user.type %>
+
+<%if @order.extras_orders.size > 0%>
+Extras Details:
+<% if !@order.team.tent.nil?%>
+Tent: 1
+<%end%>
+<%end%>
+
+Receipt
+Boat: <%=number_to_currency @order.boat_pay %>
+<% if !@order.team.tent.nil?%>
+Extras: <%=number_to_currency @order.extras_pay %>
+<%end%>
+TOTAL PAY: <%=number_to_currency @order.total_pay %>
+
+Thanks,
+Dragonboat Team

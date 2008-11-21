@@ -1,0 +1,9 @@
+<% content_for :title do %>Team Member Home : Show Team Member Profile<% end %>
+
+<h1>Show Profile</h1>
+<%= render :partial => 'member/members/member'%>
+
+  <div  align="center">
+        <%= link_to 'Edit Personal Info', team_edit_user_path %>
+  </div>
+

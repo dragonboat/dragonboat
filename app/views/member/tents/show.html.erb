@@ -1,0 +1,18 @@
+<% content_for :title do %><%=@team.name%> : Select Tent Position<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+
+<h1>Select Tent Position</h1>
+
+<div id="tent_location">
+  <%= render :partial => 'tent_location', :locals=>{:tent => @tent}%>
+</div>
+<br/>
+<%form_remote_for :tent, :url => member_team_tents_path(@team.id, "update", @team.tent.id),
+            :loading => visual_effect(:highlight, 'tent_location')do |f| %>
+<%=f.text_field :location%> <%=f.submit "Update"%>
+<%end%>
+
+
+

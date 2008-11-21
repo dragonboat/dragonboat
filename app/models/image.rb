@@ -11,4 +11,6 @@ class Image < ActiveRecord::Base
 
   has_one :thumb_big, :class_name =>"Image", :foreign_key => :parent_id, :conditions => "thumbnail = 'thumb_big'"
   belongs_to :user, :foreign_key => 'created_by'
+  
+  has_one :team, :foreign_key => 'logo_id', :class_name=>"Image"
 end

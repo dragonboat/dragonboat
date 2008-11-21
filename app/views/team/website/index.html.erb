@@ -1,0 +1,23 @@
+<% content_for :title do %>Team member Home<% end %>
+
+<h1>Team member Home</h1>
+
+<h1>General Boat Info</h1>
+<p>Name: <%=@team.name%></p>
+<p>Description: <%=@team.description%></p>
+<p>Captain: <%=@team.captain.person.name%> <%=link_to_function "detail..", "$('captain_details').show()"%></p>
+
+<div id="captain_details" style="display:none;width:600px;">
+  <%=link_to_function "X", "$('captain_details').hide()", :id=>"close"%>
+  <%= render :partial => 'captain/show', :locals =>{:user=>@team.captain} %>
+</div>
+
+<p>Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></p>
+<%
+active = @team.members.find_active(:all).size
+confirmed_and_unread = @team.members.find_confirmed_and_unread(:all).size
+total = active  + confirmed_and_unread
+%>
+<p>Total Members:  <%=link_to total, team_members_path()%></p>
+<p>Active Members:  <%= active%></p>
+<p>Unconfirmed Team Membership People Count: <%= confirmed_and_unread%></p>

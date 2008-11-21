@@ -1,0 +1,27 @@
+<table id="users" class="obj_list">
+  <tr>
+    <td><b>Login</b></td>
+    <td><%=@user.login%></td>
+  </tr>
+  <tr>
+    <td><b>E-mail</b></td>
+    <td><%=mail_to @user.email%></td>
+  </tr>
+  <tr>
+     <td><b>Type</b></td>
+     <td><%=@user.type%></td>
+ </tr>
+  <tr>
+     <td><b>Created at</b></td>
+     <td><%=@user.created_at.strftime("%d.%m.%Y")%></td> 
+  </tr>
+  <tr>
+     <td colspan="2"><h4>Personal Information</h4></td>
+  </tr>
+  <%= render :partial => 'persons/full_show'%>
+
+  <tr>
+  <td colspan="2" align="center">
+        <%= link_to 'Edit', member_edit_user_path %>
+  </tr>
+</table>

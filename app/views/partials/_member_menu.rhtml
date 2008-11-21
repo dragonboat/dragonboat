@@ -3,10 +3,19 @@
     
     <div id="mainMenu">
       <ul class="tabs">
+        
+        <%if current_user.has_any_boat?%>
         <li><%=link_to "Home", member_index_url %></li>
-        <li><%=link_to "Boat Register" %></li>
-        <li><%=link_to "Orphaned Paddlers", member_paddlers_path %></li>
-        <li><%=link_to "Profile", member_user_path %></li>
+        <li><%=link_to "New Boat", member_new_boat_url %></li>
+        <%elsif current_user.is_member?%>
+        <%slug = @team.name.to_slug%>
+        <li <%= "class=\"current\"" if url =~/(website)/ %>><%=link_to "Home", team_index_path(slug) %></li>
+		<li <%= "class=\"current\"" if url =~/(members)/ %>><%=link_to "Members", team_members_path(slug) %></li>
+        <li <%= "class=\"current\"" if url =~/(user)/ %>><%=link_to "Profile", team_user_path(slug) %></li>
+        <%else%>
+        <li <%= "class=\"current\"" if url =~/(boats|members)/ %>><%=link_to "Boat Home", member_boats_url %></li>
+        <li <%= "class=\"current\"" if url =~/(paddlers)/ %>><%=link_to "Orphaned Paddlers", member_paddlers_path %></li>
+        <li <%= "class=\"current\"" if url =~/(user)/ %>><%=link_to "Profile", member_user_path %></li>
+        <%end%>
       </ul>
-    </div>          
-    
+    </div>
