@@ -3,6 +3,7 @@ body {
     padding-top: 0;
     margin-top: 0;
     color: #020239;
+    font: normal 12px 'Verdana', sans-serif;
     }
 
 a {color:#393537;}
@@ -42,13 +43,13 @@ h1 {font-size:18px;}
     float: left;
     }
 /**Main Submenu**/
-#main_submenu  {width:250px; height: 500px; display: block; 
+#main_submenu  {width:250px; height: 1800px; display: block; 
                 border: 1px solid #C3C9BD; float: left; margin-right:10px;
                 background-color:#F35F17; color:#ffffff;
             }
 
 #main_submenu a {color:#ffffff;text-decoration: none;}
-#main_submenu ul { list-style:none;  padding-left:20px;   }
+#main_submenu ul { list-style:none;  padding-left:20px; font-size:14px;  }
 #main_submenu ul li {
 
 
@@ -57,7 +58,7 @@ h1 {font-size:18px;}
 #main { }  
 #main h2 {
     color: #5E8078;
-    font: normal 20px 'Georgia', sans-serif; 
+    font: normal 20px 'Veranda', sans-serif; 
     margin: 15px 30px;
     }    
    
@@ -91,4 +92,23 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 .clearEm {
   clear: both;
 }
+.notice {font-size:12px; font-style :italic; font-stretch : extra-condensed; margin:0 0 5 0;}
+#numbered  {list-style-type : decimal; display : block; margin-left:250px;}
+#numbered li {padding:3px;}
+
+#none  {list-style-type : none; display : block; margin-left:230px;}
+#none  li {padding:3px;}
+
+/**Volunteer Form**/
+#volunteer_form table.person td {padding:0px 5px 5px 0px;}
+#volunteer_form table.person td.notRequired {padding-left:12px;}
+#volunteer_form input.fixed {width:400px;}
+#volunteer_form input#person_phone  {width:345px;}
+#volunteer_form input.small {width:150px;}
+#volunteer_form label {font-weight : bold;}
+
+#volunteer_form #volunteer_note {width:515px;}
+
+#buttons input, button {display:inline;}
+
 

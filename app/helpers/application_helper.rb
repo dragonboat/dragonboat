@@ -92,4 +92,18 @@ module ApplicationHelper
      status = Status.find_invitation_by_name(name)
      return  status ? status.id : nil
    end
+   
+   def pre_festival_times(from_time=nil, to_time=nil)
+     html = []
+     from_time = Time.now.beginning_of_day unless from_time
+     to_time = Time.now.end_of_day  unless to_time
+
+     Date::DAYNAMES.each do |d|
+       d = d.downcase
+       from = select_hour(from_time,:field_name=>"from_hour", :prefix=>"#{d}" ) 
+       to = select_hour(to_time,:field_name => "to_hour")
+       html << {:name=>"#{d.capitalize }, from #{from} to #{to} (hours)", :id=>"#{d}"}
+     end
+     html
+   end
 end

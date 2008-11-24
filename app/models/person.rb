@@ -25,15 +25,15 @@ class Person < ActiveRecord::Base
   
   def validate    
     if self.validation_mode == :volunteer   
-      for attr_name in [:phone, :email]
+      for attr_name in [:phone, :address]
         errors.add_on_blank(attr_name, 'is required')
       end
     elsif  self.validation_mode == :paddler
-      for attr_name in [:phone, :email, :birthday_date, :experience, :preference]
+      for attr_name in [:phone, :birthday_date, :experience, :preference]
         errors.add_on_blank(attr_name, 'is required')
       end
     elsif  self.validation_mode == :order
-      for attr_name in [:phone, :email, :address, :zip, :city]
+      for attr_name in [:phone,:address, :zip, :city]
         errors.add_on_blank(attr_name, 'is required')
       end
     end 

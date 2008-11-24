@@ -1,13 +1,25 @@
 <% content_for :title do %>Volunteer Registration<% end %>
-<div>
-    
-    <h2>Volunteer Registration</h2>      
-    <h3>General Information</h3>
-    <% form_for :volunteer, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
-        <%= render :partial => 'form', :locals =>{:f=>f} %>
-        <div id="buttons">
+<div id="volunteer_form">
+    <%today = Time.now%>
+  <h2>Philadelphia International Dragon Boat Festival – 
+    <%=today.strftime("%b")%> <%=today.strftime("%d").to_i%><sup>th</sup> <%=today.strftime("%Y")%>
+    Volunteer Form
+    </h2>      
+    <div class="notice">must be at least 12 years of age to volunteer</div>
+    <br/>
+    <ul id="none">
+        <li>Please fill out all requered fields:</li>
+         </ul>
+         
+         <% form_for :volunteer, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
+         <%= render :partial => 'form', :locals =>{:f=>f} %>
+         
+         <p>  <span id="required">*</span>-requered</p>
+
+         <div id="buttons">
             <%= submit_tag  "Apply"%>&nbsp;&nbsp;
-            <%= link_to("Cancel", "/" ) %> 
-        </div>
-    <%end%>
-</div>       
+           
+          </div>
+          <%end%>
+          <p><br> <%= link_to("Cancel", "/" ) %>  </p>
+  </div>       

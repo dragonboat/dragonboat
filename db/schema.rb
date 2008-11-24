@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 56) do
+ActiveRecord::Schema.define(:version => 52) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -112,9 +112,21 @@ ActiveRecord::Schema.define(:version => 56) do
   add_index "news", ["data_is_visible"], :name => "index_news_on_data_is_visible"
 
   create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.string   "customer_ip"
+    t.text     "gateway_message"
+    t.string   "phone_number"
+    t.string   "status"
+    t.text     "credit_card"
+    t.integer  "boat_pay"
+    t.integer  "total_pay"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
+  add_index "orders", ["team_id"], :name => "index_orders_on_team_id"
 
   create_table "orphaned_paddlers", :force => true do |t|
     t.integer  "person_id"
@@ -222,7 +234,7 @@ ActiveRecord::Schema.define(:version => 56) do
     t.integer  "logo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status_id",   :default => 6
+    t.integer  "status_id",   :default => 14
   end
 
   add_index "teams", ["captain_id"], :name => "index_teams_on_captain_id"
@@ -251,6 +263,14 @@ ActiveRecord::Schema.define(:version => 56) do
 
   add_index "users", ["person_id"], :name => "index_users_on_person_id"
 
+  create_table "volunteer_options", :force => true do |t|
+    t.integer "volunteer_id"
+    t.string  "type"
+    t.string  "option"
+  end
+
+  add_index "volunteer_options", ["volunteer_id"], :name => "index_volunteer_options_on_volunteer_id"
+
   create_table "volunteers", :force => true do |t|
     t.integer  "person_id"
     t.datetime "date_applied"
@@ -258,6 +278,7 @@ ActiveRecord::Schema.define(:version => 56) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "have_you_volunteered_before"
   end
 
   add_index "volunteers", ["person_id"], :name => "index_volunteers_on_person_id"

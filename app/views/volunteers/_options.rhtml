@@ -1,0 +1,21 @@
+<p>Times you are available on the day of the event: <span id="required">*</span>
+<ul id="none">
+ <%VolunteerOptions::TIMES_AVAILABLE.each_with_index  do |option, i| %>
+  <li><%= check_box_tag("options['times_available']", option[:id], false, :id=>"times_available_#{i}")%> 
+
+    <label  for="times_available_<%=i%>"><%=option[:name] %></label>
+  </li>
+  <%end%>
+  </ul>
+</p>
+
+<p>Times you are available Pre-Festival:<span id="required">*</span>
+<ul id="none">
+ <%pre_festival_times.each_with_index  do |option, i| %>
+  <li><%= check_box_tag("options['pre_festival_times']", option[:id], false, :id=>"pre_festival_times_#{i}")%> 
+
+    <label  for="pre_festival_times_<%=i%>"><%=option[:name] %></label>
+  </li>
+  <%end%>
+  </ul>
+</p>

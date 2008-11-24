@@ -1,32 +1,23 @@
     <tr>
-        <td>First name:</td>
-        <td id="required">&#42;&nbsp;<%= f.text_field :first_name %></td>
+        <td><label for="person_first_name">First name:</label></td>
+        <td id="required">&#42;&nbsp;<%= f.text_field :first_name, :class=>"small" %></td>
+        <td><label for="person_last_name">Last name:</label></td>
+        <td id="required">&#42;&nbsp;<%= f.text_field :last_name, :class=>"small" %></td>
     </tr>
     <tr>
-        <td>Last name:</td>
-        <td id="required">&#42;&nbsp;<%= f.text_field :last_name %></td>
+        <td><label for="person_email">Email address:</label></td>
+        <td id="required" colspan="3">&#42;&nbsp;<%= f.text_field :email, :class=>"fixed" %></td>
     </tr>
     <tr>
-        <td>E-mail:</td>
-        <td id="required">&#42;&nbsp;<%= f.text_field :email %></td>
+        <td><label for="person_address">Address:</label></td>
+        <td id="required" colspan="3">&#42;&nbsp;<%= f.text_field :address, :class=>"fixed" %></td>
     </tr>
     <tr>
-        <td>Phone:</td>
-        <td id="required">&#42;&nbsp;<%= f.text_field :phone %></td>
+        <td colspan="4"><label for="person_phone">Contact phone number:</label>
+        <span id="required">&#42;&nbsp;<%= f.text_field :phone %>
+        </td>
     </tr>
-    <tr>
-        <td>Another Phone:</td>
-        <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :phone_2 %></td>  
-    </tr>
-    <tr>
-        <td>Zip code:</td>
-        <td  class="notRequired">&nbsp;&nbsp;<%= f.text_field :zip%></td>    
-    </tr>
-    <tr>
-        <td>Address:</td>
-        <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address %></td>
-    </tr>
-    <tr>
-        <td>Birthday:</td>
-        <td class="notRequired">&nbsp;&nbsp;<%= f.date_select :birthday_date, :order => [:day, :month, :year], :start_year => 1950 %></td>
-    </tr>
+   
+ 
+   
+ 

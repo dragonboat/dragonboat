@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   # You can move this into a different controller, if you wish.  This module gives you the require_role helpers, and others.
   include RoleRequirementSystem
+  
+	
 
 
   # Pick a unique cookie name to distinguish our session data from others'

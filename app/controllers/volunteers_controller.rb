@@ -22,6 +22,8 @@ class VolunteersController < ApplicationController
     @volunteer = Volunteer.find(params[:id])
   end
   
+ 
+  
   private
   def set_statuses
     @statuses = Status.find_volunteer(:all)

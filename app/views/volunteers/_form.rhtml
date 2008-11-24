@@ -1,23 +1,32 @@
 <% @person = @volunteer.person %>
- <table cellpadding="0" cellspacing="0">
-              <tr><td colspan="2">  <%= error_messages_for :volunteer %></td></tr>
-                    <tr>
-                        <td>Date of Applied:</td>
-                        <td id="required">&#42;&nbsp;<%= f.date_select :date_applied, :order => [:day, :month, :year], :start_year => 1950  %></td>
-                    </tr>
-                    <tr>
-                        <td>Note:</td>
-                        <td><%= f.text_area :note, :rows=>3 %></td>
-                    </tr>
-                    
+<%= error_messages_for :person %>
+<% fields_for "person", @person do |person_field| %>
+<table class="person" cellpadding="0" cellspacing="0">
+  <%= render :partial => 'persons/form_2', :locals =>{:f=>person_field} %>  
 </table>
-<h4>Contact Information</h4>
-<table cellpadding="0" cellspacing="0">
-  <tr><td colspan="2"><%= error_messages_for :person %></td></tr>
-    <% fields_for "person", @person do |person_field| %>
-    <%= render :partial => 'persons/form_2', :locals =>{:f=>person_field} %>
-  <% end %>
-</table>
+<% end %>
 
-        
+<div class="volunteer_question">
+ <p>
+   Have you volunteered with the festival before? <span id="required">*</span>
+  
+          <%=f.radio_button :have_you_volunteered_before, 0 %> 
+          <label for="volunteer_have_you_volunteered_before_0">Yes </label>
+          <%=f.radio_button :have_you_volunteered_before, 1 %> 
+          <label for="volunteer_have_you_volunteered_before_1">No</label>
+        </p>
+
+ <%= render :partial => 'options'%>  
+
+
+ <p>             
+  <label for="volunteer_note">Please provide any additional comments in the space below:</label>
+  <br/>
+    <%= f.text_area :note, :rows=>3 %>
+  </p>
+</div>
+
+
+<%# f.date_select :date_applied, :order => [:day, :month, :year], :start_year => 1950  %>
+
            
