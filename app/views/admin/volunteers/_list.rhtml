@@ -5,7 +5,6 @@
     <th><%= link_to('Status', admin_volunteers_url(:sort => sort_link_for('status', params[:sort])), :title=>"Sort by Status" ) %></th>
     <th>Phone</th>
     <th><%= link_to('Applied at', admin_volunteers_url(:sort => sort_link_for('applied_at', params[:sort])), :title=>"Sort by Applied at" ) %></th>
-    <th><%= 'Created at'%></th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
   </tr>
@@ -17,7 +16,6 @@
     <td><%=mail_to person.email%></td>
     <td><%=volunteer.status.name%></td>
     <td><%=person.phone%></td>
-    <td><%=volunteer.date_applied.strftime("%d.%m.%Y")%></td>  
     <td><%=volunteer.created_at.strftime("%d.%m.%Y %H:%M")%></td> 
     <td>
         <%= link_to 'Send Message', admin_send_message_volunteer_path(volunteer.id) %> 

@@ -1,34 +1,59 @@
+<% content_for :title do %>Displaying Volunteer<% end %>
 <%@person = @volunteer.person%>
-<h1>General Volunteer Info</h1>
-<table id="users" class="obj_list">
-  <tr>
-    <td><b>Name</b></td>
-    <td><%=@person.name%></td>
-  </tr>
- 
-  <tr>
-     <td><b>Note</b></td>
-     <td class="note"><%=@volunteer.note%></td>
-  </tr>
-  <tr>
-     <td><b>Applied at</b></td>
-     <td><%= @volunteer.date_applied.strftime("%d.%m.%Y")%></td> 
-  </tr>
-  <tr>
-     <td><b>Created at</b></td>
-     <td><%= @volunteer.created_at.strftime("%d.%m.%Y")%></td> 
-  </tr>
-  <tr>
-     <td colspan="2"><h4>Contact Information</h4></td>
-  </tr>
-  <%= render :partial => 'persons/show_2'%>
-  <tr>
-  <td colspan="2" align="center">
+<div id="volunteer_form"> 
+  <%today = @volunteer.created_at%> 
+  <h2>Philadelphia International Dragon Boat Festival – 
+    <%=today.strftime("%b")%> <%=today.strftime("%d").to_i%><sup>th</sup> <%=today.strftime("%Y")%>
+    Volunteer Form - Displaying
+    </h2>  
+    
+  <table class="person" cellpadding="0" cellspacing="0">
+    <%= render :partial => 'persons/show_2' %>  
+  </table>
+
+
+<div class="volunteer_question">
+  <p>
+   Have you volunteered with the festival before?  
+   <span class="answer"><%=@volunteer.have_you_volunteered_before_to_human %> </span>           
+  </p>
+
+ <p>Times you are available on the day of the event: 
+ <ul id="none">
+ <%VolunteerOptions::TIMES_AVAILABLE.each_with_index  do |option, i| %>
+  <li>
+    <span class="answer"><%="- "+option[:name] if  @options&&@options.map(&:option).include?(option[:id])%></span>
+  </li>
+  <%end%>
+  </ul>
+</p>
+
+<p>Times you are available Pre-Festival:
+<ul id="none">
+ <%pre_festival_times(@options, true).each_with_index  do |option, i| %>
+  <li>
+    <span class="answer"><%="- #{option[:id].capitalize }" + option[:name] if  @options&&@options.map(&:option).include?(option[:id])%></span>
+  </li>
+  <%end%>
+  </ul>
+</p> 
+
+
+ <p>             
+  <label for="volunteer_note">Please provide any additional comments in the space below:</label>
+  <br/>
+    <%= text_area :volunteer, :note, :rows=>3, :readonly=> true, :class=>"answer" %>
+  </p>
+  </div>
+  
+  <table>
+    <tr>
+      <td colspan="2" align="center">
         <%= link_to 'Send Message', admin_send_message_volunteer_path(@volunteer.id) %> |
         <%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
         <%= link_to 'Edit', admin_edit_volunteer_path(@volunteer) %> |
         <%= link_to 'Destroy', admin_volunteer_path(@volunteer) , :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 </table>
-
+</div>
 <%= link_to 'Back', admin_volunteers_path %>

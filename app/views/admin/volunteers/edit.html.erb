@@ -1,8 +1,13 @@
-<% content_for :title do %>Editing Volunteer<% end %>
-<div>   
-    <h3>General Information</h3>
-    <% form_for(:volunteer,:url => admin_volunteer_path(@volunteer.id), :html=>{:method=>:put}) do |f|%>
-        <%= render :partial => 'form', :locals =>{:f=>f} %>
+<% content_for :title do %>Editing Volunteer Form<% end %>
+<div id="volunteer_form"> 
+  <%today = @volunteer.created_at%>  
+  <h2>Philadelphia International Dragon Boat Festival – 
+    <%=today.strftime("%b")%> <%=today.strftime("%d").to_i%><sup>th</sup> <%=today.strftime("%Y")%>
+    Volunteer Form Editing
+    </h2>  
+    
+        <% form_for(:volunteer,:url => admin_volunteer_path(@volunteer.id), :html=>{:method=>:put}) do |f|%>
+        <%= render :partial => 'volunteers/form', :locals =>{:f=>f} %>
        <%= f.submit "Update" %>
         <% end %>
 

@@ -1,5 +1,7 @@
 class Admin::VolunteersController < Admin::WebsiteController
  before_filter :set_statuses, :only=>[:edit, :update, :send_message_by_type]
+
+ 
  def index
     order = case params[:sort]
       when 'name'             then 'first_name, last_name'
@@ -23,6 +25,7 @@ class Admin::VolunteersController < Admin::WebsiteController
 
   def edit
     @volunteer = Volunteer.find(params[:id]) 
+    fetch_options
   end
   
   def update
@@ -30,6 +33,33 @@ class Admin::VolunteersController < Admin::WebsiteController
     @volunteer.attributes = (params[:volunteer])
     @volunteer.person.attributes = (params[:person])
     @volunteer.person.validation_mode = :volunteer
+    
+    if params[:options]
+      options = params[:options] 
+     
+      times_available = options[:times_available] if  options[:times_available]
+      pre_festival_times = options[:pre_festival_times] if  options[:pre_festival_times]
+      if times_available
+        tao = @volunteer.options.find_all_by_option_type("times_available")
+        tao.each(&:destroy) if tao
+        times_available.each do |t|
+          @volunteer.options.build({:option_type=>"times_available", :option=>t})
+        end
+      end
+      
+      if pre_festival_times
+        pto = @volunteer.options.find_all_by_option_type("pre_festival_times")
+        pto.each(&:destroy) if pto
+        pre_festival_times.each do |t|
+          now = Time.now
+          from = Time.local( now.year, now.month, now.day, params["#{t}"]["from_hour"].to_i)
+          to = Time.local( now.year, now.month, now.day, params["#{t}"]["to_hour"].to_i)
+          @volunteer.options.build({:option_type=>"pre_festival_times", :option=>t, :from=>from, :to => to})
+        end
+      end
+    end
+    
+    fetch_options
     respond_to do |format|
       if @volunteer.valid? && @volunteer.save &&  @volunteer.person.save
         flash[:notice] = 'Volunteer was successfully updated.'
@@ -44,6 +74,7 @@ class Admin::VolunteersController < Admin::WebsiteController
   
   def show
     @volunteer = Volunteer.find(params[:id]) 
+    fetch_options
   end
   
   def destroy
@@ -97,5 +128,9 @@ class Admin::VolunteersController < Admin::WebsiteController
   private
   def set_statuses
      @statuses = Status.find_volunteer(:all)
+  end
+  
+  def fetch_options
+    @options = @volunteer.options 
   end
 end

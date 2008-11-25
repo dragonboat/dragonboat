@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 52) do
+ActiveRecord::Schema.define(:version => 54) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -265,8 +265,10 @@ ActiveRecord::Schema.define(:version => 52) do
 
   create_table "volunteer_options", :force => true do |t|
     t.integer "volunteer_id"
-    t.string  "type"
+    t.string  "option_type"
     t.string  "option"
+    t.time    "from"
+    t.time    "to"
   end
 
   add_index "volunteer_options", ["volunteer_id"], :name => "index_volunteer_options_on_volunteer_id"

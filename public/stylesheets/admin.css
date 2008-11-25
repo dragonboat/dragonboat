@@ -223,3 +223,24 @@ div#pages a {color: #725C51;}
 	height: 300px;
 	overflow: auto;}
 fieldset {margin-top:10px;margin-bottom:10px;}
+
+
+.notice {font-size:12px; font-style :italic; font-stretch : extra-condensed; margin:0 0 5 0;}
+#numbered  {list-style-type : decimal; display : block; margin-left:250px;}
+#numbered li {padding:3px;}
+
+#none  {list-style-type : none; display : block; margin-left:5px;}
+#none  li {padding:3px;}
+
+/**Volunteer Form**/
+#volunteer_form table.person td {padding:0px 5px 5px 0px;}
+#volunteer_form table.person td.notRequired {padding-left:12px;}
+#volunteer_form input.fixed {width:400px;}
+#volunteer_form input#person_phone  {width:345px;}
+#volunteer_form input.small {width:150px;}
+#volunteer_form label {font-weight : bold;}
+
+#volunteer_form #volunteer_note {width:515px;}
+
+#buttons input, button {display:inline;}
+.answer {font-style :italic; color:blue; font-weight:bold;}

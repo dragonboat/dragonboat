@@ -1,4 +1,5 @@
 <% @person = @volunteer.person %>
+<%= error_messages_for :volunteer %>
 <%= error_messages_for :person %>
 <% fields_for "person", @person do |person_field| %>
 <table class="person" cellpadding="0" cellspacing="0">
@@ -7,16 +8,17 @@
 <% end %>
 
 <div class="volunteer_question">
- <p>
+  
+  <p>
    Have you volunteered with the festival before? <span id="required">*</span>
   
-          <%=f.radio_button :have_you_volunteered_before, 0 %> 
-          <label for="volunteer_have_you_volunteered_before_0">Yes </label>
-          <%=f.radio_button :have_you_volunteered_before, 1 %> 
-          <label for="volunteer_have_you_volunteered_before_1">No</label>
+          <%=f.radio_button :have_you_volunteered_before, true %> 
+          <label for="volunteer_have_you_volunteered_before_true">Yes </label>
+          <%=f.radio_button :have_you_volunteered_before, false %> 
+          <label for="volunteer_have_you_volunteered_before_false">No</label>
         </p>
 
- <%= render :partial => 'options'%>  
+ <%= render :partial => 'volunteers/options'%>  
 
 
  <p>             

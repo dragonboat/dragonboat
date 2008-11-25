@@ -93,16 +93,28 @@ module ApplicationHelper
      return  status ? status.id : nil
    end
    
-   def pre_festival_times(from_time=nil, to_time=nil)
+   def pre_festival_times( options = nil, text_format = false)
      html = []
-     from_time = Time.now.beginning_of_day unless from_time
-     to_time = Time.now.end_of_day  unless to_time
-
-     Date::DAYNAMES.each do |d|
+     from_time = Time.now.beginning_of_day 
+     to_time =   Time.now.end_of_day  
+     Date::DAYNAMES.each_with_index do |d,i|
        d = d.downcase
-       from = select_hour(from_time,:field_name=>"from_hour", :prefix=>"#{d}" ) 
-       to = select_hour(to_time,:field_name => "to_hour")
-       html << {:name=>"#{d.capitalize }, from #{from} to #{to} (hours)", :id=>"#{d}"}
+       if options
+         option = options.map(&:option)
+         from_ts = options.map(&:from)
+         to_ts = options.map(&:to)
+         index = option.index(d)  
+       end 
+       from = index ? from_ts[index] : from_time
+       to = index ? to_ts[index] : to_time
+       unless text_format
+        from = select_hour(from,:field_name=>"from_hour", :prefix=>"#{d}" ) 
+        to = select_hour(to,:field_name => "to_hour", :prefix=>"#{d}")
+       else
+        from = from.strftime("%H")
+        to = to.strftime("%H")
+       end
+       html << {:name=>", from #{from} to #{to} (hours)", :id=>"#{d}"}
      end
      html
    end
