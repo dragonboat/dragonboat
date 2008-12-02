@@ -1,6 +1,6 @@
 <% url = controller.controller_path 
 
-  pages_paths = []
+  
   
   page = Comatose::Page.find_by_path( @current_page_name ) if @current_page_name&&!@current_page_name.empty?
   if page
@@ -11,7 +11,8 @@
       pages_paths = page.ancestors.map(&:full_path).select {|p| p!=""}.last
     end
   end 
-%>
+  pages_paths = [] unless pages_paths
+    %>
 
     <ul class="page-list root">    
       <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |page| %>    
