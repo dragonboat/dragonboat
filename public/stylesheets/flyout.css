@@ -1,0 +1,57 @@
+.red {color:#c00;}
+
+#positioner {clear:both; position:relative; top:0; left:1px; z-index:100;}
+
+.menu {display:none;}
+#noniemenu {position:absolute;}
+
+#noniemenu .holder ul {padding:0; margin:0;}
+#noniemenu .holder ul li {list-style-type: none;}
+#noniemenu .holder li ul {display: none;} 
+#noniemenu .holder li:hover > ul#a3 {display:block; position:absolute; left:105px; margin-top:-20px; border:1px solid #000;}
+#noniemenu .holder .bold {font-weight:bold;}
+
+#noniemenu .holder {
+  color:#fff; 
+  width:104px; 
+  height:18px; 
+  display:block; 
+  overflow:hidden;
+  float:left;
+  border:1px solid #000;
+  margin-right:1px;
+  font-size:10px;
+  }
+#noniemenu .holder:hover {
+  height:auto; 
+  }
+#noniemenu a.outer, #noniemenu a.outer:visited {
+   color:#fff; 
+   width:104px; 
+   line-height:18px;
+   display:block; 
+   background:#e09222; 
+   text-align:center; 
+   text-decoration:none; 
+   font-family: verdana, arial, sans-serif;
+   }
+#noniemenu a.outer:hover {
+  background:#697210; 
+  overflow:visible;
+  }
+#noniemenu div.open {display:none;}
+#noniemenu a.inner, #noniemenu a.inner:visited {
+  display:block; 
+  width:104px; 
+  height:18px;
+  line-height:18px;
+  border-bottom:1px solid #000; 
+  text-decoration:none; 
+  color:#000; 
+  background:#eee;
+  text-align:center;
+  }
+#noniemenu a.second {font-weight:bold;}
+#noniemenu a.inner:hover {
+  background:#add;
+  }

@@ -1,30 +1,30 @@
 <% url = controller.controller_path %>
-<% pages_paths = Comatose::Page.root.children.map(&:full_path)%> 
-    <div id="mainMenu">
-      <ul class="tabs">
-        <li><a href="/">Home</a> |</li>
-        <li><%=link_to "News", {:controller=>'news', :action=>'index'} %> |</li>
-        <li><%=link_to "Events", {:controller=>'events', :action=>'index'}  %> |</li>
-            
+<% pages_paths = Comatose::Page.root.children.map(&:full_path)%>  
+<br/>
+<div class="menu">
+<ul>
+  <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"",:url=>"/"}%>
+  <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Events", :title=>"",:url=>{:controller=>'events', :action=>'index'}}%>
+  <%= render :partial=>'partials/menu_item', :locals=>{:name=>"News", :title=>"",:url=>{:controller=>'news', :action=>'index'}} %>
+
             <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>
-            
-            <li  <%= "class=\"current\"" if url == 'clients' || url == 'items' || url =~/(sessions|student|clients\/subjects|contracts)/ %>>
-            <%= link_to p.title.titleize, p.uri %> 
-            |</li> 
+            <%= render :partial=>'partials/parent_menu', :locals=>{ :p=>p } %>
             <% end %>
             
             <!-- For admin user  -->
             <% if logged_in? && current_user.is_admin? %>
-            <li><%=link_to "Admin", comatose_admin_url%> |</li> 
+             <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Admin", :title=>"",:url=>comatose_admin_url} %>
             <%end %>
             
             <!-- For unregister user  -->
              <% unless logged_in? %>
-             <li><%=link_to "Sign up", new_user_path%> |</li> 
+             <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Sign up", :title=>"",:url=>new_user_path} %>
              <% end %>
-             
-            <li><%=link_to "Volunteer", new_volunteer_path%> |</li> 
-            <li><%=link_to "Paddler", new_paddler_path%> |</li> 
-        </ul>
-    </div>          
+              
+</ul>
+</div>
+
+
+
+    
     

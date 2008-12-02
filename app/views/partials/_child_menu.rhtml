@@ -1,0 +1,22 @@
+  <%if p.children.size >0 %>
+  <li><%=link_to p.title.titleize, p.uri, :class=>"hide"%>
+
+    <!--[if lte IE 6]>
+    <%=link_to p.title.titleize, p.uri%>
+    <table><tr><td>
+    <![endif]-->
+
+		<ul>
+		<%p.children.each do |c|%>
+                 <%= render :partial=>'partials/child_menu', :locals=>{ :p=>c } %>    
+                <%end%>
+		</ul>
+
+	<!--[if lte IE 6]>
+	</td></tr></table>
+    </a>
+    <![endif]-->
+  </li>
+  <%else%>
+    <li><%=link_to p.title.titleize, p.uri%></li>
+  <%end%>

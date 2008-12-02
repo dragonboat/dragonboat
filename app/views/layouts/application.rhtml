@@ -10,6 +10,11 @@
     <%= stylesheet_link_tag 'redbox' %>
     <%= stylesheet_link_tag 'errors_box' %>
     <%= stylesheet_link_tag 'calendar/red/style' %>
+    <%= stylesheet_link_tag 'dropdown' %>
+    <!--[if lte IE 6]>
+    <%= stylesheet_link_tag 'dropdown_ie' %>
+    <![endif]-->
+    
     <!-- Scripts -->
    
     <!-- for red box pligin -->
@@ -18,7 +23,7 @@
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
-    <div id="main_menu">
+    <div>
       <%= render :partial=>'partials/main_menu'%>
     </div>
     <div id="top">
