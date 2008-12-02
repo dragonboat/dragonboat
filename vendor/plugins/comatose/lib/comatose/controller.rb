@@ -15,6 +15,7 @@ module Comatose
         page = Comatose::Page.find_by_path( '404' )
         status = 404
       end
+      @current_page_name = page_name
       # if it's still nil, well, send a 404 status
       if page.nil?
         render :nothing=>true, :status=>status
