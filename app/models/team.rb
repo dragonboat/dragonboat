@@ -3,12 +3,14 @@ class Team < ActiveRecord::Base
   belongs_to :captain, :foreign_key => 'captain_id', :class_name=>"User"
   belongs_to :image, :foreign_key => 'logo_id', :class_name=>"Image"
   has_many :members, :dependent=>:destroy
+  has_many :users, :through => :members
   has_one :tent, :dependent=>:destroy
   
   has_one :order, :dependent=>:destroy
  
   has_enumerated  :status, :class_name => 'Status',:foreign_key => 'status_id'
   
+  belongs_to :status
   validates_associated :captain
   validates_uniqueness_of :name, :case_sensitive => false
   
@@ -31,6 +33,10 @@ class Team < ActiveRecord::Base
   
   def unactivate
     set_status('unactive')
+  end
+  
+  def status_human_name
+    status.name == 'unactive' ? 'unactive (unpaid)' : 'active (paid)'
   end
   
   private

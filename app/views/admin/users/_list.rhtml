@@ -17,7 +17,10 @@
     <td><%=user.created_at.strftime("%d.%m.%Y")%></td>  
     <td><%= link_to 'Show', admin_user_path(user) %> |
         <%= link_to 'Edit', admin_edit_user_path(user) %> |
-        <%= link_to 'Destroy', admin_user_path(user) , :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+        <%= link_to 'Destroy', admin_user_path(user) , :confirm => 'Are you sure?', :method => :delete %> |
+        <%= link_to 'Login as', {:action=> "login_as", :id=>user.id} %>
+        
+      </td>
+    </tr>
 <% end %>
 </table>

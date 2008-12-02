@@ -99,4 +99,10 @@ class Admin::UsersController < Admin::WebsiteController
       format.xml  { head :ok }
     end
   end
+  
+  def login_as
+    @user = User.find(params[:id])
+    session[:user_id] = @user.id if @user
+    redirect_back_or_default(member_index_url)
+  end
 end

@@ -1,0 +1,29 @@
+<table id="teams" class="obj_list">
+  <tr>
+    <th><%= link_to('Name', admin_teams_url(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by team name" ) %></th>
+    <th><%= link_to('Captain', admin_teams_url(:sort => sort_link_for('captain', params[:sort])), :title=>"Sort by captain name" ) %></th>
+    <th><%= link_to('Created at', admin_teams_url(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by date created" ) %></th>
+    <th><%= link_to('Members', admin_teams_url(:sort => sort_link_for('members_count', params[:sort])), :title=>"Sort by number of members" ) %></th>
+    <th><%= link_to('Complete Members', admin_teams_url(:sort => sort_link_for('complete_members_count', params[:sort])), :title=>"Sort by number of complete members" ) %></th>
+    <th><%= link_to('Status', admin_teams_url(:sort => sort_link_for('status', params[:sort])), :title=>"Sort by status" ) %></th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for team in @teams %>
+  <%
+    captain = team.captain 
+    active = team.members.find_active(:all).size
+%>
+  <tr>
+    <td><%=team.name%></td>
+    <td><%=captain.person.name%> < <%= mail_to captain.email %> ></td>
+    <td><%=team.created_at.strftime("%d/%m/%Y")%></td>
+    <td><%=team.members.size%></td> 
+    <td><%=active%></td>
+    <td><%=team.status_human_name%></td> 
+    <td><%= link_to 'Show', admin_team_path(team) %> |
+        <%= link_to 'Edit', admin_edit_team_path(team) %> |
+        <%= link_to 'Destroy', admin_team_path(team) , :confirm => 'Are you sure that you want to delete this team?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

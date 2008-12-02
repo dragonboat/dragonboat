@@ -1,0 +1,11 @@
+<% content_for :title do %>Listing Teams<% end %>
+<h1>Listing teams</h1>
+
+<div id="submenu">
+  <%= link_to 'Chronological view' %> |
+  <%= link_to 'Alphabetical view' %>
+</div>
+
+<div id="pages"><%= will_paginate @teams %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate @teams %></div>

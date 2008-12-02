@@ -35,6 +35,9 @@ class Member < ActiveRecord::Base
     end
   end
   
+  def after_destroy
+    user.destroy
+  end
   private
 
 end

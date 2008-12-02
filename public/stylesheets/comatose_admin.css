@@ -359,20 +359,22 @@ BODY {
     margin:2px;
     height: 25px;
     }
+
 #mainMenu ul.tabs {
     margin:0;
     padding:0;
     list-style:none;
-    height: 70px;
+    
     width: 100%;
     float: left;
     }
 #mainMenu ul.tabs li {
     display: block;
-    width: 100px;
-    padding: 0 2px 0 2px;
+ 
+    padding: 0 20px 0 0px;
     margin: 0;
     height: 34px;
     float: left;
     font-weight:bold;
     }
+#mainMenu ul.tabs li.block1 {color: grey;}

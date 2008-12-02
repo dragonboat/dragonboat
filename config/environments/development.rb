@@ -18,4 +18,15 @@ config.action_view.cache_template_extensions         = false
 config.action_view.debug_rjs                         = true
 
 # Don't care if the mailer can't send
-config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
+
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings= {  
+    :address=> "smtp.rambler.ru" ,
+    :port => 25,
+    :domain => "rambler.ru",
+    :user_name  => "dinchik-i",
+    :password  => "scheissel"
+  }
+#ActionMailer::Base.perform_deliveries = true

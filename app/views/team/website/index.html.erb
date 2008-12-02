@@ -18,6 +18,6 @@ active = @team.members.find_active(:all).size
 confirmed_and_unread = @team.members.find_confirmed_and_unread(:all).size
 total = active  + confirmed_and_unread
 %>
-<p>Total Members:  <%=link_to total, team_members_path()%></p>
-<p>Active Members:  <%= active%></p>
+<p>Members Count:  <%=link_to total, team_members_path()%></p>
+<p>Complete Members Count:  <%= active%></p>
 <p>Unconfirmed Team Membership People Count: <%= confirmed_and_unread%></p>
