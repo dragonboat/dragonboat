@@ -119,27 +119,9 @@ module ApplicationHelper
      html
    end
    
-   # Public Navigation
-   def _navigation_path(current_page = '')
-     
-     page = Comatose::Page.find_by_path( current_page_name ) if current_page_name&&!current_page_name.empty?
-     if page && page.is_page==true
-       parent = page.parent 
-       if page.root == parent ||  parent == nil 
-        pages_paths = [page.full_path]
-       else
-        pages_paths = page.ancestors.map(&:full_path).select {|p| p&&p!=""}.last
-       end
-     end 
-     pages_paths = [] unless pages_paths
-     html = ""
-      pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |page|     
-         page_item(html,page, current_page) 
-      end      
-   end
-   
+   # Public Navigation  
    def navigation_links(current_page_slug = '', separator = " >> ")   
-     page = Comatose::Page.find_by_path( current_page_slug ) if current_page_slug && !current_page_slug.empty?
+     page = Comatose::Page.find_by_path( current_page_slug ) if !current_page_slug.nil? && !current_page_slug.empty?
      if page && page.is_page==true
        pages_paths = page.ancestors.map(&:full_path)
        current_page = {:title=>page.title.titleize, :uri=>page.uri}
@@ -156,7 +138,7 @@ module ApplicationHelper
    end
    
    def navigation_path(current_page_slug = '', separator = " >> ")   
-     page = Comatose::Page.find_by_path( current_page_slug ) if current_page_slug && !current_page_slug.empty?
+     page = Comatose::Page.find_by_path( current_page_slug ) if !current_page_slug.nil? && !current_page_slug.empty?
      if page && page.is_page==true
        pages_paths = page.ancestors.map(&:full_path)
        current_page = {:title=>page.title.titleize, :uri=>page.uri}
