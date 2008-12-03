@@ -31,14 +31,19 @@
     <div id="top">
       <%= render :partial=>'partials/header'%>
     </div>
-    <div id="path"></div>
+    <div>
+      <%= navigation_links(@current_page_name)  %>
+    </div>
     <p style="color: green"><%= flash[:notice] %></p>
     <div id="content">
       <div id="main_submenu">
       <%= render :partial=>'partials/main_submenu'%>
       </div>
       <div>
-        <div id="main"><%= yield %> </div>
+        <h3><%= navigation_path(@current_page_name, "/")%></h3>
+        <div id="main">
+          <%= yield %> 
+        </div>
       </div>
      </div>
       <div id="copy"></div>
