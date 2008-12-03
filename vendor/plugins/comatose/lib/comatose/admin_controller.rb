@@ -17,7 +17,7 @@ module Comatose
     # Edit a specfic page (posts back)
     def edit
       # Clear the page cache for this page... ?
-      @page = Comatose::Page.find params[:id]
+      @page = Comatose::Page.find_is_page params[:id]
       @root_pages = [fetch_root_page].flatten
       if request.post?
         @page.update_attributes(params[:page])

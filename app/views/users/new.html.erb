@@ -1,5 +1,7 @@
 <% content_for :title do %>Account Registration<% end %>
-<div>
+<%= render :comatose=>'registration-instructions', :silent=>true %>
+
+  <div>
     <% @object = @user %>  
     <h2>Account Registration</h2>      
     <h3>General Information</h3>

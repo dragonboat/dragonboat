@@ -3,10 +3,11 @@
 </div>
   
 <h1>
-  Page List
+  Snippets List
   <%= image_tag 'comatose/spinner.gif', :id=>'spinner', :align=>'absmiddle', :style=>'display:none;' %>
 </h1>
 
+<%= link_to('Add a new snippet', {:action=>'new', :parent=>Comatose::Page.root.id}, :title=>"Add a new snippet", :class=>'add-page')%>
 <ul class="page-list root">
 <% @root_pages.each do |page| %>
 <%= render :partial=>'page_list_item', :locals=>{ :page=>page, :level=>1 } %>

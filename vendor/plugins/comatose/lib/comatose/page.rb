@@ -26,6 +26,11 @@ class Comatose::Page < ActiveRecord::Base
   #before_create :create_full_path
   before_save :cache_full_path, :create_full_path
   after_save :update_children_full_path
+  
+  scope_out :is_page,
+            :conditions => "is_page=1"
+  scope_out :is_snippet,
+            :conditions => "is_page=0"
 
   # Using before_validation so we can default the slug from the title
   before_validation do |record|
@@ -41,7 +46,7 @@ class Comatose::Page < ActiveRecord::Base
   end
 
   validates_presence_of :title, :on => :save, :message => "must be present"
-  validates_uniqueness_of :slug, :on => :save, :scope=>'parent_id', :message => "is already in use"
+  validates_uniqueness_of :slug, :on => :save, :scope=> [:parent_id, :slug], :message => "is already in use"
   validates_presence_of :parent_id, :on=>:create, :message=>"must be present"
 
   # Tests ERB/Liquid content...
@@ -125,7 +130,7 @@ protected
      end
   end
   
-  # Caches old path (before save) for comparison later
+  # es old path (before save) for comparison later
   def cache_full_path
     @old_full_path = self[:full_path]
   end

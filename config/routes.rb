@@ -54,6 +54,7 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :events,    :controller => 'admin/events'
     m.resources     :practices,    :controller => 'admin/practices'  
     m.resources     :teams,    :controller => 'admin/teams'
+    m.snippets_index '/admin/snippets', :controller => 'admin/snippets',:action=> 'index'
   end
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'

@@ -3,7 +3,7 @@
   
   
   page = Comatose::Page.find_by_path( @current_page_name ) if @current_page_name&&!@current_page_name.empty?
-  if page
+  if page && page.is_page==true
     parent = page.parent 
     if page.root == parent ||  parent == nil 
       pages_paths = [page.full_path]
