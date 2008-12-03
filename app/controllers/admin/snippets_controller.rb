@@ -1,4 +1,5 @@
 class Admin::SnippetsController < Admin::WebsiteController 
+  include TinymceUse
   #Snippet
   before_filter :fetch_root_pages
      # Shows the page tree
