@@ -1,6 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
@@ -10,9 +12,9 @@
     <%= stylesheet_link_tag 'redbox' %>
     <%= stylesheet_link_tag 'errors_box' %>
     <%= stylesheet_link_tag 'calendar/red/style' %>
-    <%= stylesheet_link_tag 'dropdown' %>
+    <%= stylesheet_link_tag 'dropdown', :media=>"all" %>
     <!--[if lte IE 6]>
-    <%= stylesheet_link_tag 'dropdown_ie' %>
+    <%= stylesheet_link_tag 'dropdown_ie', :media=>"all" %>
     <![endif]-->
     
     <!-- Scripts -->

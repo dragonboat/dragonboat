@@ -8,11 +8,11 @@
     if page.root == parent ||  parent == nil 
       pages_paths = [page.full_path]
     else
-      pages_paths = page.ancestors.map(&:full_path).select {|p| p!=""}.last
+      pages_paths = page.ancestors.map(&:full_path).select {|p| p&&p!=""}.last
     end
   end 
   pages_paths = [] unless pages_paths
-    %>
+ %>
 
     <ul class="page-list root">    
       <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |page| %>    
