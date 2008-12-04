@@ -1,15 +1,19 @@
 <% content_for :title do %>Account Registration<% end %>
-<%= render :comatose=>'registration-instructions', :silent=>true %>
-
+<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+  <%= render :comatose=>'registration-instructions', :silent=>true %>
+<!-- -->
+  <p class="notice">If you are registered on the online system already please  click here
+  <%= link_to "Sign In", login_url%>
+  </p>
   <div>
     <% @object = @user %>  
-    <h2>Account Registration</h2>      
-    <h3>General Information</h3>
-    <% form_for :user, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
-        <%= render :partial => 'form', :locals =>{:f=>f} %>
-        <div id="buttons">
-            <%= submit_tag  "Sign Up"%>&nbsp;&nbsp;
-            <%= link_to("Cancel", "/" ) %> 
-        </div>
-    <%end%>
-</div>       
+     <fieldset>
+     <legend>Step 1 from 5 - Create Account</legend>
+      <% form_for :user, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
+          <%= render :partial => 'form', :locals =>{:f=>f} %>
+          <div id="buttons">
+              <%= submit_tag  "Sign Up"%>
+          </div>
+      <%end%>
+    </fieldset>
+  </div>

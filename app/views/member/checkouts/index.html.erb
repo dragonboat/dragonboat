@@ -1,41 +1,76 @@
-<h2>Boat: <%=@team.name%></h2>   
-   <h3>Enter Payment Details</h3>
-   <%= error_messages_for :order, :credit_card, :person %>
-   
-   <% form_for :order, @order, :url => {:action => "confirm_order"} do |f| %>
-   
-   <% content_tag :fieldset do %> 
-   <%= content_tag :legend, "Your Personal Information" %>
-   <% labeled_fields_for :person, @person do |p| %>
-   <%= p.text_field :first_name %>
-   <%= p.text_field :last_name %>
-   <%= p.text_field :email %>
-   <%= p.text_field :phone %>
-   <% end %>
+<h2>Boat: <%=@team.name%></h2> 
+  <fieldset>
+    <legend>Step 4 from 5 - Payment Details</legend>
+    <%= error_messages_for :order, :credit_card, :person %>
+    
+    <% form_for :order, @order, :url => {:action => "confirm_order"} do |f| %>
+    
+    <% content_tag :fieldset do %> 
+    <%= content_tag :legend, "Your Personal Information" %>
+    <% fields_for :person, @person do |p| %>
+    <p>
+      <label for="person_first_name">First Name</label>:<br/><%= p.text_field :first_name %> 
+    </p>
+    <p>
+      <label for="person_last_name">Last Name</label>:<br/><%= p.text_field :last_name %> 
+    </p>
+    <p>
+      <label for="person_email">E-mail</label>:<br/><%= p.text_field :email %>
+    </p>
+    <p>
+      <label for="person_phone">Phone number</label>:<br/><%= p.text_field :phone %>
+    </p> 
+    <% end %>
    <% end %>
    
    <% content_tag :fieldset do %> 
    <%= content_tag :legend, "Credit Card" %>
-    <% labeled_fields_for :credit_card, @credit_card do |cc| %>
-       <%= cc.select :type, Order::CARD_TYPES.map { |t| [t ,t] } %>
-       <%= cc.text_field :first_name %>
-       <%= cc.text_field :last_name %>
-       <%= cc.text_field :number %>
-       <%= cc.select :month, (1..12) %>
-       <%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
-       <%= cc.text_field :verification_value, :label => "CVV2" %>
+    <% fields_for :credit_card, @credit_card do |cc| %>
+    <p>
+      <label for="credit_card_type">Type</label>:<br/><%= cc.select :type, Order::CARD_TYPES.map { |t| [t ,t] } %>
+    </p>
+    <p>
+      <label for="credit_card_first_name">First Name</label>:<br/> <%= cc.text_field :first_name %>
+    </p>
+    <p>
+      <label for="credit_card_last_name">Last Name</label>:<br/><%= cc.text_field :last_name %>
+    </p>
+    <p>
+      <label for="credit_card_number">Number</label>:<br/><%= cc.text_field :number %></p>
+    <p>
+      <label for="credit_card_month">Month</label>:<br/><%= cc.select :month, (1..12) %>
+    </p>
+    <p>
+      <label for="credit_card_year">Year</label>:<br/> <%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
+    </p>
+    <p>
+      <label for="credit_card_month">Verification Value</label>:<br/> <%= cc.text_field :verification_value, :label => "CVV2" %>
+    </p>     
     <% end %>
    <% end %>
 
    <% content_tag :fieldset do %> 
-   <%= content_tag :legend, "Your Address" %>
+   <%= content_tag :legend, "Billing Address" %>
      <div>
-         <% labeled_fields_for :person, @person do |p| %>
-             <%= p.text_field :address %>
-             <%= p.text_field :city %>
-             <%= p.text_field :zip %>
-             <%= p.select :state, states_options %>
-             <%= p.country_select :country, ['United States', 'Canada'] %>
+         <% fields_for :person, @person do |p| %>
+          <p>
+            <label for="person_address">Street Address 1</label>:<br/>  <%= p.text_field :address %>
+          </p>
+          <p>
+            <label for="person_address2">Street Address 2</label>:<br/>  <%= p.text_field :address2 %>
+          </p>
+          <p>
+            <label for="person_city">City</label>:<br/><%= p.text_field :city %>
+          </p>
+          <p>
+            <label for="person_zip">Zip</label>:<br/>  <%= p.text_field :zip %>
+          </p>
+          <p>
+            <label for="person_state">State</label>:<br/>  <%= p.select :state, states_options %>
+          </p>
+          <p>
+            <label for="person_country">Country</label>:<br/><%= p.country_select :country, ['United States', 'Canada'] %>
+          </p>
          <% end %>
      </div>
    <% end %>
@@ -43,3 +78,4 @@
    <%= f.submit "Continue Checkout..." %>
   
 <% end %>
+</fieldset>

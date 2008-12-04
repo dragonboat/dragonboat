@@ -5,7 +5,7 @@
   <%= content_tag :legend, "Your Details" %>
    Name: <%= @person.name %><br>
    E-mail: <%= @person.email %><br>
-   Phone: <%= @person.phone %><br>
+   Phone Number: <%= @person.phone %><br>
 <% end %>
 
 <% content_tag :fieldset do %> 
@@ -16,8 +16,9 @@
 <% end %>
 
 <% content_tag :fieldset do %> 
-  <%= content_tag :legend, "Your Address" %>
-  Address:  <%= @person.address %><br>
+  <%= content_tag :legend, "Billing Address" %>
+  Street Address 1:  <%= @person.address %><br>
+  Street Address 2:  <%= @person.address2 %><br>
   City:  <%= @person.city %><br>
   Zip:  <%= @person.zip %><br>
   State:  <%= @person.state %><br>

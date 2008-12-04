@@ -6,7 +6,6 @@
         
         <%if current_user.has_any_boat?%>
         <li><%=link_to "Home", member_index_url %></li>
-        <li><%=link_to "New Boat", member_new_boat_url %></li>
         <%elsif current_user.is_member?%>
         <%slug = @team.name.to_slug%>
         <li <%= "class=\"current\"" if url =~/(website)/ %>><%=link_to "Home", team_index_path(slug) %></li>

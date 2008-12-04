@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     end
     if @user&&@user.save
       self.current_user = @user
-      redirect_back_or_default(member_index_url)
+      redirect_back_or_default(member_new_boat_url)
       flash[:notice] = "Thanks for signing up!"
     else
       new

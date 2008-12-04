@@ -120,7 +120,7 @@ module ApplicationHelper
    end
    
    # Public Navigation  
-   def navigation_links(current_page_slug = '', separator = " >> ")   
+   def navigation_links(current_page_slug = '', separator = " &raquo; ")   
      page = Comatose::Page.find_by_path( current_page_slug ) if !current_page_slug.nil? && !current_page_slug.empty?
      if page && page.is_page==true
        pages_paths = page.ancestors.map(&:full_path).select {|p| p}
@@ -137,7 +137,7 @@ module ApplicationHelper
       html << link_to(current_page[:title], current_page[:uri])
    end
    
-   def navigation_path(current_page_slug = '', separator = " >> ")   
+   def navigation_path(current_page_slug = '', separator = " &raquo; ")   
      page = Comatose::Page.find_by_path( current_page_slug ) if !current_page_slug.nil? && !current_page_slug.empty?
      if page && page.is_page==true
        pages_paths = page.ancestors.map(&:full_path).select {|p| p}

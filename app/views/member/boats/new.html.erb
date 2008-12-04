@@ -1,16 +1,17 @@
 <% content_for :title do %>New Boat Registration<% end %>
 <div>
-    <h2>New Boat</h2>      
+ 
+    <fieldset>
+    <legend>Step 2 from 5 - Enter Boat Details</legend>
     <% form_for :team, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
     <%= error_messages_for :team %>
-    <fieldset>
-     <legend>Step 1 - Detailed information about registering a boat</legend>
+    
      <%= render :partial => 'form', :locals =>{:f=>f} %>
-     </fieldset>
+    
         
         <div id="buttons">
             <%= submit_tag  "Create"%><br/>
-            <%= link_to("Cancel", member_index_url ) %> 
         </div>
     <%end%>
+    </fieldset>
 </div>

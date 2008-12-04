@@ -11,11 +11,11 @@
         <td id="required">&#42;&nbsp;<%= f.text_field :email %></td>
     </tr>
       <tr>
-        <td>Phone:</td>
+        <td>Phone number:</td>
         <td>&nbsp;&nbsp;<%= f.text_field :phone %></td>
     </tr>
     <tr>
-        <td>Another Phone:</td>
+        <td>Phone number Ext:</td>
         <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :phone_2 %></td>  
     </tr>
    <tr>
@@ -35,10 +35,14 @@
         <td  class="notRequired"><%= f.country_select :country, ['Select a Country','United States', 'Canada']%></td>    
     </tr>
     <tr>
-        <td>Address:</td>
+        <td>Street Address 1:</td>
         <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address %></td>
     </tr>
     <tr>
+        <td>Street Address 2:</td>
+        <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address2 %></td>
+    </tr>
+    <tr>
         <td>Birthday:</td>
-        <td class="notRequired">&nbsp;&nbsp;<%= f.date_select :birthday_date, :order => [:day, :month, :year], :start_year => 1950 %></td>
+        <td class="notRequired">&nbsp;&nbsp;<%= f.date_select :birthday_date, :order => [:day, :month, :year], :start_year => 1950,  :include_blank => ""%></td>
     </tr>

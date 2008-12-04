@@ -8,12 +8,13 @@
     <td class="label"><label for="page_title">Title</label></td>
     <td class="field"><%= f.text_field :title, :tabindex=>1, :maxlength=>255, :size=>50 %> <%= link_to_function "More...", "ComatoseEditForm.toggle_extra_fields(this)", :id=>'more-options' %></td>
   </tr>
-      
+
+    
   <tr id="slug_row" class="meta-info">
     <td class="label"><label for="page_slug">Slug</label></td>
     <td class="field"><%= f.text_field :slug, :tabindex=>6, :maxlength=>255, :size=>50 %></td>
   </tr>
-
+ 
 
   <tr>
     <td class="label body"><label for="page_body">Body</label></td>
@@ -38,6 +39,12 @@
     </td>
   </tr>
   <% end %>
+  
+    
+  <tr>
+    <td class="label"><label for="page_notice">Notice</label></td>
+    <td class="field"><%= f.text_field :notice, :tabindex=>7, :maxlength=>255, :size=>50%></td>
+  </tr>
   <%if mode == :edit%> 
  <tr>
     <td class="label"><small>Code to include into template</small></td>

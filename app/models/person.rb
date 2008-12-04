@@ -9,11 +9,21 @@ class Person < ActiveRecord::Base
   attr_accessor :validation_mode
   attr_reader :age
   
+  HUMANIZED_ATTRIBUTES = {
+    :phone => "Phone number",
+    :address => "Street Address 1"
+  }
+
+  def self.human_attribute_name(attr)
+    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end
+  
   def check_dependency?
    !has_associated?(self, Client, Manager, Tutor, Student, Parent)
   end
   
   def age
+    return "" unless birthday_date
     d1 = self.birthday_date
     d2 = Date.today
    (d2.year - d1.year) + ((d2.month - d1.month) + ((d2.day - d1.day) < 0 ? -1 : 0) < 0 ? -1 : 0)
@@ -21,6 +31,10 @@ class Person < ActiveRecord::Base
     
   def name
     self.first_name + " " + self.last_name
+  end
+  
+  def human_birthday_date
+    birthday_date ? birthday_date.strftime("%d/%m/%Y") : ""  
   end
   
   def validate    

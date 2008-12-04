@@ -1,7 +1,9 @@
  <% if logged_in? %>
-        Logged as <b><%= current_user.login %></b>
-        
-        &nbsp;|&nbsp; <%= link_to "logout", logout_url %>
+        Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
+        <%unless mode == :admin%>
+        <%= link_to "My Account",  member_user_path %> &nbsp;|&nbsp;
+        <%end%>
+        <%= link_to "logout", logout_url %>
         <br/>
    <%else%>
        <%= link_to "login", login_url %>

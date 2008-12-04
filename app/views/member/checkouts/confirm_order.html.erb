@@ -1,6 +1,6 @@
-<h2>Boat: <%=@team.name%></h2>   
-<h3>Confirm Order</h3>
-
+<h2>Boat: <%=@team.name%></h2> 
+<fieldset>
+      <legend>Step 5 from 5 - Verify Registration Details</legend>
 <h4>Your Details</h4>
 <%= @person.first_name %>
 <%= @person.last_name %><br>
@@ -12,7 +12,7 @@
 <%= @credit_card.last_name %><br>
 <%= @credit_card.display_number %><br>
 <%= @credit_card.month %> - <%= @credit_card.year %>
-<h4>Your Address</h4>
+<h4>Billing Address</h4>
 <%= @person.address %><br>
 <%= @person.city %><br>
 <%= @person.zip %><br>
@@ -57,7 +57,10 @@
         <% end %>
    
 
-        <%= f.submit "Place Order" %>
-        
+        <%= f.submit "Complete Boat Registration" %>
+
 <% end %>
-        
+ <!-- This is a snippet being edited by admin. Snippet Name "Confirm Order" -->
+  <%= render :comatose=>'confirm-order', :silent=>true %>
+  <!-- -->
+</fieldset>

@@ -7,11 +7,11 @@
         <td><%= @person.last_name %></td>
     </tr>
     <tr>
-        <td>Phone:</td>
+        <td>Phone number:</td>
         <td><%= @person.phone %></td>
     </tr>
     <tr>
-        <td>Another Phone:</td>
+        <td>Phone number Ext:</td>
         <td><%= @person.phone_2 %></td>  
     </tr>
     <tr>
@@ -19,10 +19,14 @@
         <td><%= @person.zip%></td>    
     </tr>
     <tr>
-        <td>Address:</td>
+        <td>Street Address 1:</td>
         <td><%= @person.address %></td>
     </tr>
     <tr>
+        <td>Street Address 2:</td>
+        <td><%= @person.address2 %></td>
+    </tr>
+      <tr>
         <td>Birthday:</td>
-        <td><%= @person.birthday_date.strftime("%d/%m/%Y") %></td>
+        <td><%= @person.human_birthday_date %></td>
     </tr>

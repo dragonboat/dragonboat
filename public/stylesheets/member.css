@@ -174,7 +174,13 @@ BODY {
 #content .page-list .do-reorder .commands A {
   display: none;
 }
+LABEL {
 
+}
+LEGEND {
+  font-weight: bold;
+  color:  #62669A;
+}
 /* Page Form */
 #content .page-form {
   margin-top: 10px;

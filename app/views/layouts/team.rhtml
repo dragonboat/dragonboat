@@ -21,7 +21,7 @@
     <div id="header">
       <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
       <h1><%=@team.name %></h1>
-      <span id="right"><%= render :partial=>'partials/login'%></span>
+      <span id="right"><%= render :partial=>'partials/login' , :locals=>{:mode=>:team}%></span>
     </div>
       <div id="member_menu">
       <%= render :partial=>'partials/member_menu'%>

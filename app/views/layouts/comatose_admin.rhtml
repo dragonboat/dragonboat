@@ -25,7 +25,7 @@
     <div id="page-container">
       <div id="header">
         <h1><%= link_to Comatose.config.admin_title, :controller=>controller.controller_name, :action=>'index' %></h1>
-        <span id="right"><%= render :partial=>'partials/login'%></span>
+        <span id="right"><%= render :partial=>'partials/login', :locals=>{:mode=>:admin}%></span>
         <h5><%= Comatose.config.admin_sub_title %></h5>
       </div>
       <div id="admin_menu">

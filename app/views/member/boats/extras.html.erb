@@ -1,16 +1,18 @@
 <% content_for :title do %>Boat <%=@team.name%> - Select Extras<% end %>
 <div>
-    <h2>Boat: <%=@team.name%></h2>      
-    <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true } do |f| %>
-    <fieldset>
-      <legend>Step 2 - Select Extras</legend>
+    <h2>Boat: <%=@team.name%></h2>  
+     <fieldset>
+      <legend>Step 3 from 5 - Add Extras</legend>
+      <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true } do |f| %>
+   
       <%= render :partial => 'extras_item'%>
      
 
-    </fieldset>
+    
         <div id="buttons">
             <%= submit_tag  "Next"%><br/>
             <%= link_to("Cancel", member_new_boat_path ) %> 
         </div>
     <%end%>
-</div>
+    </fieldset>
+  </div>

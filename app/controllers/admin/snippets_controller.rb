@@ -21,7 +21,7 @@ class Admin::SnippetsController < Admin::WebsiteController
       else
         @page = Comatose::Page.new :title=>'New Snippet', :parent_id=>(params[:parent] || nil)
       end 
- expire_fragment( :action => "new", :action_suffix => "page")
+ expire_fragment( :action => "new", :controller => self.controller_name)
       
     end
     

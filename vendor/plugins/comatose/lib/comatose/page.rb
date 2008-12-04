@@ -14,7 +14,24 @@
 class Comatose::Page < ActiveRecord::Base
   
   set_table_name 'comatose_pages'
-  
+#  validates_presence_of :title, :on => :save, :message => "must be present"
+#  validates_uniqueness_of :slug, :on => :save, :scope=> [:parent_id, :slug], :message => "is already in use"
+#  validates_presence_of :parent_id, :on=>:create, :message=>"must be present"
+
+  def validate_on_create
+    for attr_name in [:parent_id]
+     errors.add_on_blank(attr_name, 'must be present')
+    end
+  end
+
+  def validate
+    for attr_name in [:title]
+     errors.add_on_blank(attr_name, 'must be present')
+    end
+    if Comatose::Page.count(:conditions=>"slug='#{slug}' AND comatose_pages.id<>#{id.to_i} AND comatose_pages.parent_id=#{parent_id.to_i}") > 0
+     errors.add(:slug, 'has already been taken')
+    end
+  end
   # Only versions the content... Not all of the meta data or position
   acts_as_versioned :if_changed => [:title, :slug, :keywords, :body]
   
@@ -26,6 +43,8 @@ class Comatose::Page < ActiveRecord::Base
   #before_create :create_full_path
   before_save :cache_full_path, :create_full_path
   after_save :update_children_full_path
+  
+
   
   scope_out :is_page,
             :conditions => "is_page=1"
@@ -45,9 +64,6 @@ class Comatose::Page < ActiveRecord::Base
     record[:created_on] = record[:updated_on] = Time.now
   end
 
-  validates_presence_of :title, :on => :save, :message => "must be present"
-  validates_uniqueness_of :slug, :on => :save, :scope=> [:parent_id, :slug], :message => "is already in use"
-  validates_presence_of :parent_id, :on=>:create, :message=>"must be present"
 
   # Tests ERB/Liquid content...
   validates_each :body do |record, attr, value|
