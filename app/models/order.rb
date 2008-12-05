@@ -44,7 +44,7 @@ class Order < ActiveRecord::Base
   end
   
   def process
-    populate_tent(team.tent) if !team.tent.nil?
+    team.tents.each { |tent| populate_tent(tent) }
     self.status = "processed"
     self.boat_pay = calculate_boat_pay
     self.total_pay = calculate_total_pay
@@ -60,7 +60,7 @@ class Order < ActiveRecord::Base
   end
   
   def failed!
-    populate_tent(team.tent) if !team.tent.nil?
+    team.tents.each { |tent| populate_tent(tent) }
     self.status = 'failed'
     self.save!
   end

@@ -13,14 +13,14 @@ Type: <%= @order.user.type %>
 
 <%if @order.extras_orders.size > 0%>
 Extras Details:
-<% if !@order.team.tent.nil?%>
-Tent: 1
+<%if @order.team.tents.size>0%>
+Tent: <%=@order.team.tents.size%>
 <%end%>
 <%end%>
 
 Receipt
 Boat: <%=number_to_currency @order.boat_pay %>
-<% if !@order.team.tent.nil?%>
+<% if @order.team.tents.size>0%>
 Extras: <%=number_to_currency @order.extras_pay %>
 <%end%>
 TOTAL PAY: <%=number_to_currency @order.total_pay %>

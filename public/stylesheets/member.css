@@ -423,3 +423,14 @@ LEGEND {
 }
 
 #logo {float:left; widht:50px; height:50px; margin-bottom:5px; margin-right:5px;}
+
+/* Table Item List*/
+table.item_list {border: 1px #DDD solid; width: 100%;}
+table.item_list td {vertical-align: top;}
+table.item_list  th {
+  background-color:#8faebe;
+  border-bottom:1px solid #05303c;
+  padding:2px 0px 2px 5px;
+  vertical-align:middle;
+  font-weight:bold;
+}

@@ -24,7 +24,12 @@
 <%= render :partial => 'member/boats/boat'%><br>
 
 <h5>Extras</h5>
-<%= render :partial => 'member/boats/extras_item'%><br>
+<%if @team.tents.size>0%>
+<%= render :partial => 'member/boats/extras_item', :locals=>{:mode=>:read}%>
+<%else%>
+-- no item was selected --
+<%end%>
+<br>
 
 <h5>TOTAL PAY:</h5>
 <strong><%= number_to_currency @team.total%></strong>

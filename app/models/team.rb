@@ -4,7 +4,7 @@ class Team < ActiveRecord::Base
   belongs_to :image, :foreign_key => 'logo_id', :class_name=>"Image"
   has_many :members, :dependent=>:destroy
   has_many :users, :through => :members
-  has_one :tent, :dependent=>:destroy
+  has_many :tents, :dependent=>:destroy
   
   has_one :order, :dependent=>:destroy
  
@@ -19,7 +19,7 @@ class Team < ActiveRecord::Base
           
   def total
     total = self.price
-    total+= tent.price if tent
+    tents.each {|t| total+= t.price}
     return total
   end
 

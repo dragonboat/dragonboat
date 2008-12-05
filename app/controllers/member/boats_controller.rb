@@ -68,16 +68,24 @@ class Member::BoatsController < Member::WebsiteController
   end
   
   def extras
-    
   end
   
   def add_extras 
-    if params[:extras_tent]
-      @team.create_tent if @team.tent.nil?  
-    elsif !@team.tent.nil? 
-        @team.tent.destroy
+    @team.tents.each(&:destroy)  if @team.tents.size>0
+    if params[:extras_tent]&&params[:quantity]
+      quantity = params[:quantity].to_i
+      price = APP_CONFIG['tent_price'].to_f
+      quantity.times {|i| @team.tents.create}
     end
     redirect_to member_boat_checkout_path(@team)
+  end
+  
+  def update_total_count
+    quantity = params[:quantity]
+    price = APP_CONFIG['tent_price']
+    render :update do |page|
+      page.replace_html 'total_count', :partial => 'member/boats/total_count', :locals=>{:price=>price, :quantity => quantity}
+    end
   end
 
   private

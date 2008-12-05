@@ -1,12 +1,29 @@
- <table border='1'>
+<%tent_price = APP_CONFIG['tent_price']
+  default =  @team.tents.size>0 ?  @team.tents.size : 1
+%>
+    <table class="item_list">
       <tr>
         <th></th>
-        <th>Extras</th>
-        <th>Price</th>
-        </tr> 
-        <tr>
-          <td><%= check_box_tag("extras_tent","1",!@team.tent.nil?,{:id=>"extras_tent"}) %> </td>
+        <th width="60%">Extras</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+      </tr> 
+      <tr style="background-color:#eee">
+          <td><%= check_box_tag("extras_tent","1",1,{:id=>"extras_tent", :disabled => (mode==:read)}) %> </td>
           <td>Tent</td>
-          <td><b><%=number_to_currency APP_CONFIG['tent_price']%></b></td>
-        </tr>
- </table>
+          <td><%=text_field_tag :quantity, default, :id=>"quantity",:size=>3,:disabled => (mode==:read)%> </td>
+          
+          <td><%=number_to_currency tent_price%></td>
+      </tr>
+      <tr><td colspan="4"></td></tr>
+      <tr>
+        <td colspan="2"></td>
+        <td><b>Total Price:</b></td>
+        <td><div id="total_count"><%= render :partial => 'member/boats/total_count', :locals=>{:price=>tent_price, :quantity=> default }%></div></td>
+      </tr> 
+    </table>
+    
+    <%= observe_field('quantity',
+                                  :url => { :action => 'update_total_count' },
+                                  :frequency => 0.5, 
+                                  :with =>  "'quantity='+encodeURIComponent($('quantity').value)") %> 
