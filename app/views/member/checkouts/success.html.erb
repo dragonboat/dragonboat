@@ -33,7 +33,12 @@
     <% end %>
     <% content_tag :fieldset do %> 
     <%= content_tag :legend, "Extras" %>
-    <%= render :partial => 'member/boats/extras_item'%><br>
+   <%if @team.tents.size>0%>
+    <%= render :partial => 'member/boats/extras_item', :locals=>{:mode=>:read}%>
+    <%else%>
+    -- no item was selected --
+    <%end%>
+    <br>
     <% end %>
     <h5>TOTAL PAY:</h5> <strong><%=number_to_currency @team.total%></strong>
     <% end %>
