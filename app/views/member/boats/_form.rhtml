@@ -3,13 +3,13 @@
     <span id="required">*<br />
     <%= f.text_field :name, :size => 50 %></span>
   </p>
-  
+  <%unless ["edit","update"].include? controller.action_name%>
   <p>
     <strong>Boat Type:</strong>
     <span id="required">*<br />
     <%= f.select :type_id, BoatType.find_active(:all).map { |r| [r.name.capitalize, r.id] } %></span>
   </p>
-
+  <%end%>
   
   <p>
     <strong>Description:</strong><br />
