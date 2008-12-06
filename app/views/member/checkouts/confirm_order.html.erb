@@ -24,8 +24,8 @@
 <%= render :partial => 'member/boats/boat'%><br>
 
 <h5>Extras</h5>
-<%if @team.tents.size>0%>
-<%= render :partial => 'member/boats/extras_item', :locals=>{:mode=>:read}%>
+<%if @team.team_extras.size>0%>
+<%= render :partial => 'member/boats/extras_item', :locals=>{:mode=>:read, :items=>@team.team_extras.map(&:extras)}%>
 <%else%>
 -- no item was selected --
 <%end%>

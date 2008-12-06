@@ -1,20 +1,18 @@
-<% url = controller.controller_path %>
-
-    
-    <div id="mainMenu">
-      <ul class="tabs">
-        
+<% url = controller.controller_path %> 
+<br/>
+<div class="menu">
+<ul>
         <%if current_user.has_any_boat?%>
-        <li><%=link_to "Home", member_index_url %></li>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Register", :title=>"",:url=>member_index_url}%>
         <%elsif current_user.is_member?%>
         <%slug = @team.name.to_slug%>
-        <li <%= "class=\"current\"" if url =~/(website)/ %>><%=link_to "Home", team_index_path(slug) %></li>
-		<li <%= "class=\"current\"" if url =~/(members)/ %>><%=link_to "Members", team_members_path(slug) %></li>
-        <li <%= "class=\"current\"" if url =~/(user)/ %>><%=link_to "Profile", team_user_path(slug) %></li>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"", :url=>team_index_path(slug), :current=>url =~/(website)/} %>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Members", :title=>"", :url=> team_members_path(slug), :current=> url =~/(members)/} %>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=>team_user_path(slug), :current=>url =~/(user)/} %>
         <%else%>
-        <li <%= "class=\"current\"" if url =~/(boats|members)/ %>><%=link_to "Boat Home", member_boats_url %></li>
-        <li <%= "class=\"current\"" if url =~/(paddlers)/ %>><%=link_to "Orphaned Paddlers", member_paddlers_path %></li>
-        <li <%= "class=\"current\"" if url =~/(user)/ %>><%=link_to "Profile", member_user_path %></li>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Home", :title=>"", :url=>member_boats_url, :current=>url =~/(boats|members)/ } %>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Orphaned Paddlers", :title=>"", :url=>member_paddlers_path, :current=> url =~/(paddlers)/ } %>
+        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=> member_user_path, :current=> url =~/(user)/ } %>
         <%end%>
-      </ul>
-    </div>
+</ul>
+</div>

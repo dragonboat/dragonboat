@@ -1,0 +1,13 @@
+<% content_for :title do %>New Boat Type<% end %>
+
+<h1>New Type</h1>
+<%= error_messages_for :boat_type %>
+<% form_for(:boat_type, :url => admin_boat_types_path) do |f| %>
+ 
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+ <span id="required">*</span>-requered <br/>
+ <%= f.submit "Create" %>
+<% end %>
+  
+<%= link_to 'Back', admin_boat_types_path %>

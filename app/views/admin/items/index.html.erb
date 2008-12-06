@@ -1,0 +1,10 @@
+<% content_for :title do %>Extras List<% end %>
+<h1>Extras List</h1>
+
+<div id="submenu">
+  <%= link_to 'New Extras', admin_new_item_url  %>
+</div>
+
+<div id="pages"><%= will_paginate @extras_items %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate  @extras_items %></div>

@@ -1,0 +1,24 @@
+
+    <table class="item_list">
+      <tr>
+        <th width="60%">Extras</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+        </tr> 
+        <%orders.each do |order|%>
+        <%extras= order.extras%>
+        <%quantity = order.quantity%>
+        <% default = quantity %>
+        <tr style="background-color:#eee">
+          <td><%=extras.name%> <%= "(#{extras.notice})" if extras.notice && !extras.notice.empty? %></td>
+          <td><%=text_field_tag "quantity[#{order.id}]", default, :id=>"quantity_#{order.id}",:size=>3,:disabled => true%> </td>
+          
+          <td><%=number_to_currency order.pay%></td>
+          <td><div id="total_count_<%=order.id%>"><%= render :partial => 'member/boats/total_count', :locals=>{:price=>order.pay, :quantity=> default }%></div>     
+        </td>
+        </tr>
+        <%end%>
+    </table>
+    
+    

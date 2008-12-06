@@ -1,5 +1,47 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  
+  # TODO: Move the click to edit extension to ajax_form_helper.js and split this into two methods
+  # with in_place_collection_editor_field_editor.
+  # See http://api.rubyonrails.org/classes/ActionView/Helpers/JavaScriptMacrosHelper.html#M000461
+  def in_place_collection_editor_field(object, method, collection_array, tag_options={}, in_place_collection_editor_options={},update={})
+    collection = collection_array.dup
+    if in_place_collection_editor_options.delete(:include_blank)
+      collection.unshift(['',''])
+    end
+    tag = ::ActionView::Helpers::InstanceTag.new(object, method, self)
+    match = collection.inject('') do |memo, element|
+      if !element.is_a?(String) and element.respond_to?(:first) and element.respond_to?(:last)
+        element.last.to_s == tag.value(tag.object).to_s ? element.first : memo
+      else
+        element.to_s == tag.value(tag.object).to_s ? element.to_s : memo
+      end
+    end
+
+    unless match.blank?
+      content, tag_class = [match, "in_place_editor_field"]      
+    else
+      content, tag_class = ['нажмите для редактирования...', 'inplaceeditor-empty']
+    end
+    tag_options = {:tag => "span", :id => "#{object}_#{method}_#{tag.object.id}_in_place_collection_editor", 
+      :class => tag_class}.merge!(tag_options)
+    url = url_for( {:action => "set_#{object}_#{method}", :id => tag.object.id}.merge(update) )
+    function =  "new Ajax.InPlaceCollectionEditor(" 
+    function << "'#{object}_#{method}_#{tag.object.id}_in_place_collection_editor'," 
+    function << "'#{url}',"
+    js_collection = collection.inject([]) do |options, element|
+       if !element.is_a?(String) and element.respond_to?(:first) and element.respond_to?(:last)
+        options << "[ '#{html_escape(escape_javascript(element.last.to_s))}', '#{escape_javascript(element.first.to_s)}']"
+      else
+        options << "[ '#{html_escape(escape_javascript(element.to_s))}', '#{escape_javascript(element.to_s)}']"        
+      end
+    end
+    function << "{collection: [#{js_collection.join(',')}],"
+    function << "value: '#{tag.value(tag.object)}'" unless tag.value(tag.object).blank?
+    function << "});" 
+    content_tag(tag_options.delete(:tag), content, tag_options) + javascript_tag(function)
+  end
+  
   def sort_link_for( txt, parm )
     txt==parm ? "#{txt}_reverse" : txt
   end

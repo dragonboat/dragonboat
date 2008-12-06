@@ -1,0 +1,12 @@
+<% content_for :title do %>Edit Extras<% end %>
+
+<h1>Edit Extras</h1>
+<%= error_messages_for :extras_item %>
+
+<% form_for(:extras_item, :url => admin_item_path(@extras_item), :html=>{:method=>:put}) do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<span id="required">*</span>-requered <br/>
+<%= f.submit "Update" %>
+<% end %>
+  
+<%= link_to 'Back', admin_items_path %>

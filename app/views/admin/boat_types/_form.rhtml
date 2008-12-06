@@ -1,0 +1,18 @@
+<fieldset>
+    <legend>General Settings</legend>
+    
+    <p>
+      <strong>Name:</strong>
+      <span id="required">*<br /></span>
+       <%= f.text_field :name, :size => 50 %></span>
+     </p>
+    <p>
+        <strong>Price:</strong><br />
+        $<%= f.text_field :price, :size => 3 %></span>
+    </p>
+    <p>
+        <strong>Active?:</strong><br />
+        <%= f.select :is_active, BoatType::IS_ACTIVE %></span>
+    </p>
+</fieldset>
+

@@ -1,7 +1,12 @@
 class Team < ActiveRecord::Base
   validates_presence_of :name
+  belongs_to :boat_type, :foreign_key => 'type_id', :class_name=>"BoatType"
   belongs_to :captain, :foreign_key => 'captain_id', :class_name=>"User"
   belongs_to :image, :foreign_key => 'logo_id', :class_name=>"Image"
+ 
+  has_many :team_extras, :dependent=>:destroy, :foreign_key => 'team_id', :class_name=>"TeamExtras"
+ # has_many :extras, :as=>:"items", :through=>:team_extras, :foreign_key => 'team_id', :class_name=>"TeamExtras"
+  
   has_many :members, :dependent=>:destroy
   has_many :users, :through => :members
   has_many :tents, :dependent=>:destroy
@@ -19,12 +24,12 @@ class Team < ActiveRecord::Base
           
   def total
     total = self.price
-    tents.each {|t| total+= t.price}
+    team_extras.each {|te| total+= te.extras.price*te.quantity}
     return total
   end
 
   def price
-    APP_CONFIG['boat_price']
+    boat_type.price
   end
   
   def activate

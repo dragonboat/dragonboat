@@ -7,6 +7,8 @@ ActiveMerchant::Billing::Base.mode = :test
 
  def index
     @order = Order.new
+    
+
     @customer = current_user
     @person = current_user.person 
     @credit_card = ActiveMerchant::Billing::CreditCard.new(

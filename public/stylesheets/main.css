@@ -112,3 +112,57 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 #buttons input, button {display:inline;}
 
 
+
+#logo {float:left; widht:50px; height:50px; margin-bottom:5px; margin-right:5px;}
+
+/* Table Item List*/
+table.item_list {border: 1px #DDD solid; width: 100%;}
+table.item_list td {vertical-align: top;}
+table.item_list  th {
+  background-color:#8faebe;
+  border-bottom:1px solid #05303c;
+  padding:2px 0px 2px 5px;
+  vertical-align:middle;
+  font-weight:bold;
+}
+
+LEGEND {
+  font-weight: bold;
+  color:  #62669A;
+}
+
+/* SUB Menu */
+#subMenu {
+    clear: both;
+    margin:2px;
+    height: 25px;
+    }
+#subMenu ul.tabs {
+    margin:0;
+    padding:0;
+    list-style:none;
+    height: 34px;
+    width: 740px;
+    float: left;
+    }
+#subMenu ul.tabs li {
+    display: block; 
+    padding: 0 2px 0 2px;
+    margin: 0;
+    height: 34px;
+    float: left;
+    font-weight:normal;   
+    }
+#subMenu ul.tabs li a {padding:2px;}
+#subMenu ul.tabs li.current a {
+    color:#fff;
+    background: url(/images/tabBgCurrent.png) repeat-x 0 0;
+    padding:2px;
+    }
+      
+ .note { height: 50px;   overflow: auto; border: 1px solid silver;}
+ .clearEm {
+  clear: both;
+}
+
+

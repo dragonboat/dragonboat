@@ -1,0 +1,20 @@
+<table id="boat_types" class="obj_list">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Active?</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for boat_type in  @boat_types %>
+  <%@boat_type = boat_type%>
+  <tr>
+    <td><%=boat_type.name%></td>
+    <td><%= number_to_currency boat_type.price%></td>
+    <td><%= in_place_collection_editor_field( :boat_type, 'is_active',  BoatType::IS_ACTIVE )%></td>
+    <td>
+        <%= link_to 'Edit', admin_edit_boat_type_path(boat_type) %> |
+        <%= link_to 'Destroy', admin_boat_type_path(boat_type) , :confirm => 'Are you sure that you want to delete this type?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

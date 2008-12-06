@@ -68,23 +68,33 @@ class Member::BoatsController < Member::WebsiteController
   end
   
   def extras
+    @extras = Extras.find_available(:all)
+    @team.team_extras.each(&:destroy) if !@team.team_extras.empty?
+    @extras.each { |extras| @team.team_extras.create(:extras=>extras, :quantity => 1 )}
   end
   
   def add_extras 
-    @team.tents.each(&:destroy)  if @team.tents.size>0
-    if params[:extras_tent]&&params[:quantity]
-      quantity = params[:quantity].to_i
-      price = APP_CONFIG['tent_price'].to_f
-      quantity.times {|i| @team.tents.create}
+    @team.team_extras.each(&:destroy) if !@team.team_extras.empty?
+    
+    if params[:extras]&&params[:quantity]
+      #each_pair
+      params[:extras].each_key  do |id|
+        extras = Extras.find_available(id)
+        quantity = params[:quantity][id].to_i
+        @team.team_extras.create(:extras=>extras, :quantity => quantity ) if quantity > 0
+      end
     end
     redirect_to member_boat_checkout_path(@team)
   end
   
   def update_total_count
+    @extras = Extras.find(params[:id])
+   # @extras = Extras.find_available(:all)
     quantity = params[:quantity]
-    price = APP_CONFIG['tent_price']
+    price = @extras.price
+    
     render :update do |page|
-      page.replace_html 'total_count', :partial => 'member/boats/total_count', :locals=>{:price=>price, :quantity => quantity}
+      page.replace_html "total_count_#{@extras.id}", :partial => 'member/boats/total_count', :locals=>{:price=>price, :quantity => quantity}
     end
   end
 

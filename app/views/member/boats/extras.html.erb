@@ -5,7 +5,7 @@
       <legend>Step 3 from 5 - Add Extras</legend>
       <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true } do |f| %>
    
-      <%= render :partial => 'extras_item', :locals=>{:mode=>:write}%>
+      <%= render :partial => 'extras_item', :locals=>{:mode=>:write, :items=>@extras}%>
      
 
     

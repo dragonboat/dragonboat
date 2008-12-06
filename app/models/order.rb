@@ -44,10 +44,10 @@ class Order < ActiveRecord::Base
   end
   
   def process
-    team.tents.each { |tent| populate_tent(tent) }
+    team.team_extras.each { |item| populate_item(item) }
     self.status = "processed"
     self.boat_pay = calculate_boat_pay
-    self.total_pay = calculate_total_pay
+    self.total_pay = team.total
     self.save!
   end
   
@@ -55,22 +55,26 @@ class Order < ActiveRecord::Base
     return false unless  self.valid?
     user.to_captain
     team.activate
+    #empty cart
+    team.team_extras.each(&:destroy) if !@team.team_extras.empty?
     OrderNotifier.send("deliver_processed", self)
     true
   end
   
   def failed!
-    team.tents.each { |tent| populate_tent(tent) }
+    team.team_extras.each { |item| populate_item(item) }
     self.status = 'failed'
     self.save!
   end
   
   private
-  def populate_tent(tent)
+  def populate_item(item)
+   extras = item.extras 
    extras_orders << ExtrasOrder.create({
-                                        :extras_id => tent.id,
-                                        :extras_type => "Tent",
-                                        :pay => tent.price
+                                        :extras_id => extras.id,
+                                        :extras_type => "#{extras.name}" + extras.description ,
+                                        :pay => extras.price,
+                                        :quantity  =>item.quantity
                                       })
   end
 end

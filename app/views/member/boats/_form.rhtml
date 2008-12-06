@@ -3,7 +3,14 @@
     <span id="required">*<br />
     <%= f.text_field :name, :size => 50 %></span>
   </p>
+  
+  <p>
+    <strong>Boat Type:</strong>
+    <span id="required">*<br />
+    <%= f.select :type_id, BoatType.find_active(:all).map { |r| [r.name.capitalize, r.id] } %></span>
+  </p>
 
+  
   <p>
     <strong>Description:</strong><br />
     <%= f.text_area :description, :rows=>3%></span>

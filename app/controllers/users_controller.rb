@@ -17,21 +17,6 @@ class UsersController < ApplicationController
     # reset_session
     @user = User.new(params[:user])
     @user.person.attributes = (params[:person])
-    if @user.valid? #&& @user.save
-      session[:register_user] = @user
-      render :action => 'confirm'
-     # self.current_user = @user
-      #redirect_back_or_default('/')
-      #flash[:notice] = "Thanks for signing up!"
-    else
-      render :action => 'new'
-    end
-  end
-
-  def confirm
-    if session[:register_user]
-      @user = session[:register_user]
-    end
     if @user&&@user.save
       self.current_user = @user
       redirect_back_or_default(member_new_boat_url)
@@ -41,9 +26,23 @@ class UsersController < ApplicationController
       render :action => 'new'
     end 
   end
+
+#  def confirm
+#    if session[:register_user]
+#      @user = session[:register_user]
+#    end
+#    if @user&&@user.save
+#      self.current_user = @user
+#      redirect_back_or_default(member_new_boat_url)
+#      flash[:notice] = "Thanks for signing up!"
+#    else
+#      new
+#      render :action => 'new'
+#    end 
+#  end
   
-  def unconfirm
-    @user = session[:register_user]
-    render :action => 'new' 
-  end
+#  def unconfirm
+#    @user = session[:register_user]
+#    render :action => 'new' 
+#  end
 end

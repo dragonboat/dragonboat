@@ -13,15 +13,24 @@ Type: <%= @order.user.type %>
 
 <%if @order.extras_orders.size > 0%>
 Extras Details:
-<%if @order.team.tents.size>0%>
-Tent: <%=@order.team.tents.size%>
+<%@order.extras_orders.each do |extras_order|%>
+Name: <%=extras_order.extras.name%>
+Quantity: <%=extras_order.quantity%>
+--
 <%end%>
 <%end%>
 
 Receipt
 Boat: <%=number_to_currency @order.boat_pay %>
-<% if @order.team.tents.size>0%>
-Extras: <%=number_to_currency @order.extras_pay %>
+<%if @order.extras_orders.size > 0%>
+Extras:
+<%@order.extras_orders.each do |extras_order|%>
+Name: <%=extras_order.extras.name%>
+Quantity: <%=extras_order.quantity%>
+Price: <%=extras_order.pay%>
+Total: <%=extras_order.pay * extras_order.quantity%>
+--
+<%end%>
 <%end%>
 TOTAL PAY: <%=number_to_currency @order.total_pay %>
 

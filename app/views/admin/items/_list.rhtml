@@ -1,0 +1,22 @@
+<table id="extras_items" class="obj_list">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Available?</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for extras_item in  @extras_items %>
+  <%@extras = extras_item%>
+  <tr>
+    <td><%=extras_item.name%>
+        <%= "(#{extras_item.notice})" if extras_item.notice && !extras_item.notice.empty?%>
+    </td>
+    <td><%= number_to_currency extras_item.price%></td>
+    <td><%= in_place_collection_editor_field( :extras, 'is_available',  Extras::IS_AVAILABLE )%></td>
+    <td>
+        <%= link_to 'Edit', admin_edit_item_path(extras_item) %> |
+        <%= link_to 'Destroy', admin_item_path(extras_item) , :confirm => 'Are you sure that you want to delete this type?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

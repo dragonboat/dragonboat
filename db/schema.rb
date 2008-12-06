@@ -2,7 +2,17 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 58) do
+ActiveRecord::Schema.define(:version => 63) do
+
+  create_table "boat_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.boolean  "is_active",  :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "boat_types", ["is_active"], :name => "index_boat_types_on_is_active"
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
@@ -48,6 +58,17 @@ ActiveRecord::Schema.define(:version => 58) do
     t.datetime "updated_at"
   end
 
+  create_table "extras", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.text     "notice"
+    t.boolean  "is_available", :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "extras", ["is_available"], :name => "index_extras_on_is_available"
+
   create_table "extras_orders", :force => true do |t|
     t.integer  "order_id"
     t.integer  "extras_id"
@@ -55,6 +76,7 @@ ActiveRecord::Schema.define(:version => 58) do
     t.integer  "pay"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   create_table "images", :force => true do |t|
@@ -236,6 +258,17 @@ ActiveRecord::Schema.define(:version => 58) do
 
   add_index "tags", ["name"], :name => "index_tags_on_name"
 
+  create_table "team_extras", :force => true do |t|
+    t.integer  "extras_id"
+    t.integer  "team_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "team_extras", ["extras_id"], :name => "index_team_extras_on_extras_id"
+  add_index "team_extras", ["team_id"], :name => "index_team_extras_on_team_id"
+
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -244,11 +277,13 @@ ActiveRecord::Schema.define(:version => 58) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status_id",   :default => 14
+    t.integer  "type_id"
   end
 
   add_index "teams", ["captain_id"], :name => "index_teams_on_captain_id"
   add_index "teams", ["logo_id"], :name => "index_teams_on_logo_id"
   add_index "teams", ["status_id"], :name => "index_teams_on_status_id"
+  add_index "teams", ["type_id"], :name => "index_teams_on_type_id"
 
   create_table "tents", :force => true do |t|
     t.integer  "team_id"

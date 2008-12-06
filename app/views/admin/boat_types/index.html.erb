@@ -1,0 +1,10 @@
+<% content_for :title do %>Boat Types List<% end %>
+<h1>Boat Types List</h1>
+
+<div id="submenu">
+  <%= link_to 'New Type', admin_new_boat_type_url  %>
+</div>
+
+<div id="pages"><%= will_paginate @boat_types %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate  @boat_types %></div>
