@@ -42,6 +42,10 @@ class Person < ActiveRecord::Base
       for attr_name in [:phone, :address]
         errors.add_on_blank(attr_name, 'is required')
       end
+    elsif  self.validation_mode  == :member 
+      for attr_name in [:gender]
+        errors.add_on_blank(attr_name, 'is required')
+      end
     elsif  self.validation_mode == :paddler
       for attr_name in [:phone, :birthday_date, :experience, :preference]
         errors.add_on_blank(attr_name, 'is required')

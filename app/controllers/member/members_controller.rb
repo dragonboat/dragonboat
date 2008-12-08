@@ -1,9 +1,14 @@
 class Member::MembersController < Member::WebsiteController 
   before_filter :has_boat?
   before_filter :fetch_team
-  before_filter :set_types, :except=>[:index]
+  before_filter :set_types 
   include ApplicationHelper
   def index
+    list
+    new
+  end
+  
+  def list
     order = case params[:sort]
       when 'name'             then 'persons.first_name, persons.last_name'
       when 'name_reverse'      then 'persons.first_name desc, persons.last_name desc'
@@ -32,7 +37,7 @@ class Member::MembersController < Member::WebsiteController
   
   def new
     @member = @team.members.build
-    @member.invitation_status_id = invitation_status_id_by_name('confirmed')
+    @member.invitation_status_id = invitation_status_id_by_name('unconfirmed')
     @user = User.new
     @person = @user.person
   end
@@ -47,19 +52,19 @@ class Member::MembersController < Member::WebsiteController
       @user.generate_account(@team.name)
     end
     @member.user = @user
-   # @roles = [Role.find_by_name(params[:user]['role'])]
-   # @user.person.attributes = (params[:person])
-   # @user.roles = @roles
-    respond_to do |format|
-      if @person.valid? && @user.valid? && @member.valid? && @person.save! && @user.save! && @member.save!
-        flash[:notice] = 'Member was successfully created.'
-        format.html { redirect_to member_team_members_url(@team) }
-        format.xml  { render :xml => @member, :status => :created, :location => @member }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
-      end
-    end
+    
+     if @person.valid? && @user.valid? && @member.valid? && @person.save! && @user.save! && @member.save! 
+       list
+       new
+       render :update do |page|
+          page.replace_html :member_list,  :partial => 'member_list'
+          page.replace_html :inline_form,  :partial => 'inline_form'
+       end
+     else
+       render :update do |page|
+          page.replace_html :inline_form,  :partial => 'inline_form'
+       end
+     end
   end
   
   def edit
