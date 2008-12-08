@@ -6,11 +6,18 @@
         <td>Last name:</td>
         <td id="required">&#42;&nbsp;<%= f.text_field :last_name %></td>
     </tr>
-     <tr>
+    <tr>
+        <td>Gender:</td>
+        <td><span id="required">&#42;&nbsp;</span>
+        <%= f.radio_button :gender, "F" %> <label for="person_gender_f">F</label>
+        <%= f.radio_button :gender, "M" %> <label for="person_gender_m">M</label>
+      </td>
+    </tr>
+    <tr>
         <td>Email:</td>
         <td id="required">&#42;&nbsp;<%= f.text_field :email %></td>
     </tr>
-      <tr>
+    <tr>
         <td>Phone number:</td>
         <td>&nbsp;&nbsp;<%= f.text_field :phone %></td>
     </tr>

@@ -7,6 +7,13 @@
         <td id="required">&#42;&nbsp;<%= f.text_field :last_name %></td>
     </tr>
     <tr>
+        <td>Gender:</td>
+        <td>
+        <%= f.radio_button :gender, "F" %> <label for="person_gender_f">F</label>
+        <%= f.radio_button :gender, "M" %> <label for="person_gender_m">M</label>
+      </td>
+    </tr>
+    <tr>
         <td>E-mail:</td>
         <td class="notRequired"><%= f.text_field :email %></td>
     </tr>

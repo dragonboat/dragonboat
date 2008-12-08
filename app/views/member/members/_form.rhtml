@@ -1,4 +1,4 @@
-<p>Type: 
+<p>Position: 
 <span id="required">*<%= f.select :type_id, @types.map { |t| [t.name.capitalize, t.id] } %></span>
 </p>
 <%unless ["new","create"].include? controller.action_name%>

@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   # render new.rhtml
   def new
     @user = User.new
-    session[:register_user] = nil
+    @person = Person.new
+   # session[:register_user] = nil
   end
 
   def create
@@ -16,13 +17,14 @@ class UsersController < ApplicationController
     # uncomment at your own risk
     # reset_session
     @user = User.new(params[:user])
-    @user.person.attributes = (params[:person])
-    if @user&&@user.save
+    @person = @user.person
+    @person.validation_mode = :member 
+    @person.attributes = (params[:person])    
+    if @person.valid? && @user.valid? && @person.save && @user.save
       self.current_user = @user
       redirect_back_or_default(member_new_boat_url)
       flash[:notice] = "Thanks for signing up!"
     else
-      new
       render :action => 'new'
     end 
   end

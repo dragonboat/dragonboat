@@ -1,6 +1,6 @@
 class Team::WebsiteController < Member::WebsiteController 
  before_filter :is_member?, :fetch_team
- layout 'team'
+ layout 'member'
  
  def index
    
