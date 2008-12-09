@@ -53,7 +53,7 @@ class Member::MembersController < Member::WebsiteController
     end
     @member.user = @user
     
-     if @person.valid? && @user.valid? && @member.valid? && @person.save! && @user.save! && @member.save! 
+    if @person.valid? && @user.valid? && @member.valid? && @person.save! && @user.save! && @member.save! 
        list
        new
        render :update do |page|

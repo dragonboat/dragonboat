@@ -46,6 +46,10 @@ class Team < ActiveRecord::Base
     status.name == 'unactive' ? 'unactive (unpaid)' : 'active (paid)'
   end
   
+  def url
+    read_attribute(:url).nil? ? "" : read_attribute(:url)
+  end
+  
   private
   def set_status(name)
     update_attribute(:status_id, Status.find_team_by_name(name).id)

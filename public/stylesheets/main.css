@@ -181,7 +181,7 @@ LEGEND {
     float: right;
     font-size:11px;
 }
-.next {background-color:white;}
-.current {background-color:yellow;}
-.previous {color:grey;}
+#step_list .next {background-color:white;}
+#step_list .current {background-color:yellow;}
+#step_list .previous {color:grey;}
 
