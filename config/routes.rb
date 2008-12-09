@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :users
-  map.resource :session
-  map.resources :volunteers
-  map.resources :paddlers
   # The priority is based upon order of creation: first created -> highest priority.
   
   # Sample of regular route:
@@ -59,6 +55,12 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :items,    :controller => 'admin/items'
     m.snippets_index '/admin/snippets', :controller => 'admin/snippets',:action=> 'index'
   end
+  
+  map.resources :users
+  map.resource :session
+  map.resources :volunteers
+  map.resources :paddlers
+  
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.forgot '/forgot', :controller => 'sessions', :action => 'forgot'
