@@ -1,5 +1,6 @@
 <% content_for :title do %>Account Registration<% end %>
-<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"current", :s2=>"next", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
+  <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'registration-instructions', :silent=>true %>
 <!-- -->
   <p class="notice">If you are registered on the online system already please  click here

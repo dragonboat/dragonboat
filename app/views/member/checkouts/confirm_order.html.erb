@@ -1,5 +1,6 @@
 <h2>Boat: <%=@team.name%></h2> 
-<fieldset>
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"current", :s6=>"next"} %>
+    <fieldset>
       <legend>Step 5 from 5 - Verify Registration Details</legend>
 <h4>Your Details</h4>
 <%= @person.first_name %>

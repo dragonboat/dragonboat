@@ -1,4 +1,5 @@
 <h2>Boat: <%=@team.name%></h2> 
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"current", :s5=>"next", :s6=>"next"} %>
   <fieldset>
     <legend>Step 4 from 5 - Payment Details</legend>
     <%= error_messages_for :order, :credit_card, :person %>

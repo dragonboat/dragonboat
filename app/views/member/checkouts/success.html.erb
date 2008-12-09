@@ -1,4 +1,6 @@
 <% content_for :title do %>Order process was successfully completed<% end %>
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"previous", :s6=>"current"} %>
+<div>
 <h3>Thanks for your order!</h3>
 
 <% content_tag :fieldset do %> 
@@ -47,4 +49,7 @@
     <%= content_tag :legend, "Payment Info" %>
     Your credit card had been charged: <%=number_to_currency @order.total_pay %>
     <% end %>
+    
+    </div>
     <%=link_to "Go to Boat Home Page", member_boats_path %>
+    

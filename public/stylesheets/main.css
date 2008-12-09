@@ -171,4 +171,17 @@ LEGEND {
   display: inline-table;
   padding:10px;
 }
+/*Order Steps*/
+#step_list ul{
+    margin:0;
+    padding:0 5 0 0;
+    list-style:none;
+
+    width: 250px;
+    float: right;
+    font-size:11px;
+}
+.next {background-color:white;}
+.current {background-color:yellow;}
+.previous {color:grey;}
 

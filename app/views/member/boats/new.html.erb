@@ -1,5 +1,6 @@
 <% content_for :title do %>New Boat Registration<% end %>
-<div>
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"current", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
+  <div>
  
     <fieldset>
     <legend>Step 2 from 5 - Enter Boat Details</legend>

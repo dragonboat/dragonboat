@@ -1,7 +1,9 @@
 <% content_for :title do %>Boat <%=@team.name%> - Select Extras<% end %>
-<div>
-    <h2>Boat: <%=@team.name%></h2>  
-     <fieldset>
+
+  <div>
+    <h2>Boat: <%=@team.name%></h2> 
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"current", :s4=>"next", :s5=>"next", :s6=>"next"} %>    
+    <fieldset>
       <legend>Step 3 from 5 - Add Extras</legend>
       <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true } do |f| %>
    
