@@ -20,6 +20,53 @@ class Member < ActiveRecord::Base
 
   #invatation status : unconfirmed, confirmed
   #sign waver: unread, accept, decline
+  HUMANIZED_ATTRIBUTES = {
+    :confirm => "Accept the invitation",
+    :accept => "The terms consent",
+    :sign_waiver_notice => "Your Full Name"
+  }
+  
+  attr_accessor :accept, :confirm
+  attr_accessor :validation_mode
+  
+   def validate    
+    if self.validation_mode == :waiver_form   
+      for attr_name in [:confirm]
+        errors.add_on_blank(attr_name, 'is required')
+      end
+    end
+    if !self.is_unconfirmed? 
+      errors.add(:accept, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver') if self.waiver_status_id != Status.find_waiver_by_name('accept').id
+      errors.add_on_blank(:sign_waiver_notice, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver')
+    end
+   end
+  
+  def accept=(checked)
+    @accept = checked
+    if checked.to_i == 1
+      self.waiver_status_id = Status.find_waiver_by_name('accept').id
+    else
+      self.waiver_status_id = Status.find_waiver_by_name('decline').id
+    end
+  end
+  
+   def confirm=(checked)
+    @confirm= checked
+    if checked == "yes"
+      self.invitation_status_id = Status.find_invitation_by_name('confirmed').id
+    else
+      self.invitation_status_id = Status.find_invitation_by_name('unconfirmed').id
+    end
+  end
+  
+  def accept
+    @accept  if @accept 
+  end
+  
+  def confirm
+   @confirm  if @confirm  
+  end
+  
   def after_initialize
     self.waiver_status_id = Status.find_waiver_by_name('unread').id unless self.waiver_status_id 
     self.invitation_status_id = Status.find_invitation_by_name('unconfirmed').id unless self.invitation_status_id 
@@ -37,6 +84,10 @@ class Member < ActiveRecord::Base
   
   def after_destroy
     user.destroy
+  end
+  
+  def is_unconfirmed?
+    self.invitation_status_id == Status.find_invitation_by_name('unconfirmed').id
   end
   private
 

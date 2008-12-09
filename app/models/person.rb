@@ -37,6 +37,22 @@ class Person < ActiveRecord::Base
     birthday_date ? birthday_date.strftime("%d/%m/%Y") : ""  
   end
   
+  def gender_f=(f)
+    self.gender = f
+  end
+  
+  def gender_m=(m)
+    self.gender = m
+  end
+  
+  def gender_f
+    self.gender
+  end
+  
+  def gender_m
+    self.gender
+  end
+  
   def validate    
     if self.validation_mode == :volunteer   
       for attr_name in [:phone, :address]
@@ -51,7 +67,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
     elsif  self.validation_mode == :order
-      for attr_name in [:phone,:address, :zip, :city]
+      for attr_name in [:phone,:address, :zip, :city, :state]
         errors.add_on_blank(attr_name, 'is required')
       end
     end 

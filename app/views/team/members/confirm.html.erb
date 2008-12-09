@@ -1,0 +1,33 @@
+<%content_for :title do %>Team Member Home : You have been invited to join <%=@team.name.capitalize%><%end%>
+<div align="center">
+<div align="left" class="confirmed_box">
+  <%=error_messages_for :member%>
+  <%form_for :member do |f|%>
+  <p>You have been invited to join <b><%=@team.name.capitalize%></b></p>
+  
+  <p>Would you like to accept the invitation?</p>
+  
+  <%= f.radio_button :confirm, "yes"%><label for="member_invitation_status_yes">YES</label>
+  <%= f.radio_button :confirm, "no"%><label for="member_invitation_status_no">NO</label>
+
+   <p>
+     If you are accepting the invitation, you need to digitally sign
+     our liability release waiver in order to ride in a dragon boat.
+   </p>
+   
+   <p>
+     To Sign the waiver, please type your full name into the text box
+     below, and check the box that says I consent to the terms of
+     Philadelphia Dragon Boat's Liability Waiver <%= link_to "link to waiver content page in new window","", :target=>"_blank" %>
+   </p>
+   <p>
+   <label for="member_sign_waiver_status">Your Full Name:</label><br/>
+   <%= f.text_field :sign_waiver_notice%>
+   </p>
+   <p>
+   <%= f.check_box :accept, {},1, 0 %> I consent to the terms of
+   </p>
+   <%=submit_tag  "JOIN THE TEAM!" %>
+   <%end%>
+ </div>
+ </div>

@@ -1,7 +1,7 @@
  <% if logged_in? %>
         Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
         <%unless mode == :admin%>
-        <%= link_to "My Account",  member_user_path %> &nbsp;|&nbsp;
+        <%= link_to "My Account",current_user.is_member? ?  team_user_path(@team.name.to_slug) : member_user_path %> &nbsp;|&nbsp;
         <%end%>
         <%= link_to "logout", logout_url %>
         <br/>

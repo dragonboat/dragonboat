@@ -37,8 +37,9 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix => 'team/:slug', :name_prefix => 'team_' do |m|
     m.index   '', :controller => 'team/website', :action => 'index'
     m.resource    :user,    :controller => 'team/users'
+    m.member_confirm   'member/confirm',    :controller => 'team/members', :action=> "confirm"
     m.resources    :members,    :controller => 'team/members'
-    m.url_code '/:url_code', :controller => 'team/website', :action => 'index'
+    m.url_code 'member/confirm/:url_code', :controller => 'team/website', :action => 'index'
   end
   
   

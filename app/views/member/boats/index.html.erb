@@ -4,6 +4,7 @@
 </div>
 <h1>General Boat Info</h1>
 <p>Name: <%=@team.name%></p>
+<p>Team URL: <%=link_to @team.url, @team.url%></p>
 <p>Description: <%=@team.description%></p>
 <p>Captain: <%=@team.captain.person.name%></p>
 <p>Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></p>

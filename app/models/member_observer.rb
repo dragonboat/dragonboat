@@ -1,7 +1,7 @@
 class MemberObserver < ActiveRecord::Observer
   def after_create(member)
-    if %w(confirmed).include?(member.invitation_status.name)
-      MemberNotifier.send("deliver_confirmed", member)
+    if %w(unconfirmed).include?(member.invitation_status.name)
+      MemberNotifier.send("deliver_unconfirmed", member)
     end
   end
 end

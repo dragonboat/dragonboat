@@ -1,4 +1,5 @@
 class Team::MembersController < Team::WebsiteController
+  before_filter :is_confirmed_member?, :except => [:confirm]
   def index
     @members = @team.members.paginate_accessible(:all,
                    :page => params[:page], 
@@ -6,6 +7,21 @@ class Team::MembersController < Team::WebsiteController
                    :order => "created_at desc")
     @members_count = @team.members.find_accessible(:all).size
   end
-
-
+  
+  def confirm
+    redirect_to team_edit_user_url(@team.name.to_slug) if !@member.is_unconfirmed?
+    if request.post?
+      @member.attributes = (params[:member])
+      @member.validation_mode = :waiver_form   
+      if @member.valid? && @member.save
+        if @member.is_unconfirmed?
+          redirect_to logout_url 
+        else
+          flash[:notice] = "Thank you for joining the team and signing your waiver!"
+          redirect_to team_edit_user_url(@team.name.to_slug)
+        end
+      end
+    end
+    
+  end
 end

@@ -7,10 +7,13 @@
   <p>
     <strong>Boat Type:</strong>
     <span id="required">*<br />
-    <%= f.select :type_id, BoatType.find_active(:all).map { |r| [r.name.capitalize, r.id] } %></span>
+    <%= f.select :type_id, BoatType.find_active(:all).map { |r| ["#{r.name.capitalize} - #{number_to_currency r.price}", r.id] } %></span>
   </p>
   <%end%>
-  
+  <p>
+    <strong>Team URL:</strong><br/>
+    <%= f.text_field :url, :size => 50 %>
+  </p>
   <p>
     <strong>Description:</strong><br />
     <%= f.text_area :description, :rows=>3%></span>

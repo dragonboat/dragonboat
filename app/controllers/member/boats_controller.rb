@@ -10,16 +10,15 @@ class Member::BoatsController < Member::WebsiteController
   
   def new
     @team = current_user.has_any_unactive_boat? ?  current_user.unactive_teams.first : Team.new
-    session[:register_team] = nil
+ #   session[:register_team] = nil
   end
   
   def create
     @team = current_user.has_any_unactive_boat? ? current_user.unactive_teams.first : Team.new
     @team.attributes = (params[:team])
     @team.captain = current_user
-    if @team.valid? #&& @user.save
-      session[:register_team] = @team
-      render :action => 'confirm'
+    if @team.valid?&&@team.save
+      redirect_to member_extras_boat_path(@team.id)
     else
       render :action => 'new'
     end

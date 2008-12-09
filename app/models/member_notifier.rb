@@ -1,5 +1,5 @@
 class MemberNotifier < ActionMailer::Base
-  def confirmed(member, sent_at = Time.now)
+  def unconfirmed(member, sent_at = Time.now)
     team = member.team
     captain = team.captain
     @subject           = "Invitation to join the team #{team.name}"

@@ -7,16 +7,16 @@
   <th><label for="person_first_name">First Name<span id="required">*</span></label></th>
   <th><label for="person_last_name">Last Name<span id="required">*</span></label></th>
   <th><label for="person_email">Email<span id="required">*</span></label></th>
-  <th><label for="person_gender">Gender<span id="required">*</span></label></th>
+  <th><label for="person_gender_f">Gender<span id="required">*</span></label></th>
 </tr>
 <tr>
-  <td><%= f.select :type_id, @types.map { |t| [t.name.capitalize, t.id] } %></td>
+  <td><%= f.select :type_id, @types.map { |t| [t.name.capitalize, t.id] }, :tabindex=>1001  %></td>
   <% fields_for "person", @person do |person_field| %>
-  <td><%= person_field.text_field :first_name, :size=> 25 %></td>
-  <td><%= person_field.text_field :last_name, :size=> 25 %></td>
-  <td><%= person_field.text_field :email, :size=> 25 %></td>
-  <td><%= person_field.radio_button :gender, "F" %> <label for="person_gender_f">F</label>
-      <%= person_field.radio_button :gender, "M" %> <label for="person_gender_m">M</label>
+  <td><%= person_field.text_field :first_name, :size=> 25, :tabindex=>1002 %></td>
+  <td><%= person_field.text_field :last_name, :size=> 25, :tabindex=>1003 %></td>
+  <td><%= person_field.text_field :email, :size=> 25, :tabindex=>1004%></td>
+  <td><%= person_field.radio_button :gender_f, "F", :tabindex=> 1005, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1"%> <label for="person_gender_f_f" >F</label>
+      <%= person_field.radio_button :gender_m, "M", :tabindex=> 1006, :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1"%> <label for="person_gender_m_m">M</label>
   </td>
 <% end %>
 
@@ -24,5 +24,5 @@
 </table>  
 
   <span id="required">*</span>-requered <br/>
-  <%= f.submit "Add a new member" %>
+  <%= f.submit "Add a new member" , :tabindex=>1007%>
   <% end %>

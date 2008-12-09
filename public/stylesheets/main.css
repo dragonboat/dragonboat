@@ -164,5 +164,11 @@ LEGEND {
  .clearEm {
   clear: both;
 }
-
+/* Confirmed Box*/
+.confirmed_box {
+  border: 1px solid grey;
+  width: 80%;
+  display: inline-table;
+  padding:10px;
+}
 

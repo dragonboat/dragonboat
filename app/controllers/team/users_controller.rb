@@ -1,4 +1,5 @@
 class Team::UsersController < Team::WebsiteController
+  before_filter :is_confirmed_member?
 
   def index
    render :action=>:show

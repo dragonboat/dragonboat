@@ -24,13 +24,8 @@
     <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
     
     <td><%= link_to 'Show', member_team_members_path(@team, "show", member.id) %> |
-        <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %>
-        <%unless member.invitation_status.name == 'confirmed' %>
-        |
-        <%= link_to 'Invite', member_team_members_path(@team, "confirm", member.id)%>
-        <%else%>
-        |  <%= link_to 'Access Info', member_team_members_path(@team, "access", member.id) %>
-        <%end%>
+        <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %> |
+        <%= link_to 'Access Info', member_team_members_path(@team, "access", member.id) %>
       </td>
     </tr>
 <% end %>
