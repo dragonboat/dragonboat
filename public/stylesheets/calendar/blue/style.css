@@ -39,7 +39,7 @@
   color: #eeeeee;
   background-color: white;
 }
-
+.other { background-color: white;}
 .day, .specialDay-no-practices, .specialDay-full, .specialDay-current_reserved, .specialDay-available {
   text-align: center;
   border-bottom: 1px dotted #bbbbbb;
@@ -55,7 +55,7 @@
   background-color: #FFB8B8;
 }
 .specialDay-current_reserved {
-  background-color: blue;
+  background-color: #9393FF;
 }
 .specialDay-available {
   background-color: #99DB99;
@@ -71,7 +71,7 @@
   background-color: black;
 }
 .weekendDay {
-  background-color: #ffffdd;
+  
 }
 .today{
 	background-color: #4682b4;

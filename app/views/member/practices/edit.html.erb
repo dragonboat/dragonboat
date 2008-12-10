@@ -1,0 +1,24 @@
+<% content_for :title do %>Manage Practices : Reserve Practice Time<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+<%if @practice%>
+<%d = @practice.created_at%>
+<h1 class="specialDay-available"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
+
+<%= error_messages_for :practice %>
+
+<% form_for(:practice, :url => member_team_practices_path(@team,"update",@practice.id), :html=>{:method=>:put}) do |f| %>
+<%= f.hidden_field :team_id %>
+
+<p><%= f.submit "Reserve This Practice Time" %></p>
+<% end %>
+<p>
+<%= button_to "Cancel",member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ) %>
+</p>
+
+<%else%>
+<p>Sorry, this is unavailable time..</p>
+<%= link_to 'Back', member_team_practices_path(@team)%>
+<%end%>
+

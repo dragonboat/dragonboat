@@ -29,6 +29,11 @@ class Practice < ActiveRecord::Base
     Practice.find(:all, :conditions=>"CAST(created_at AS DATE) = '#{current_date.to_date.to_s(:db)}'").size
   end
   
+  
+  def self.find_by_day(current_date=Date.today)
+    Practice.find(:all, :conditions=>"CAST(created_at AS DATE) = '#{current_date.to_date.to_s(:db)}'")
+  end
+  
   def self.total_available(current_date=Date.today)
     Practice.find_available(:all, :conditions=>"CAST(created_at AS DATE) = '#{current_date.to_date.to_s(:db)}'").size  
   end
