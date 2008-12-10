@@ -30,6 +30,18 @@ class Member::PracticesController < Member::WebsiteController
     @practice.team_id = @team.id
   end
   
+  def undo_reservation
+    @practice = @team.practices.find(params[:id])
+  end
+  
+  def undo
+    @practice = @team.practices.find(params[:id])
+    @practice.team_id = nil    
+    flash[:notice] = 'Practice was successfully undone reservation.' if @practice.save
+    d = @practice.created_at
+    redirect_to member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year )
+  end
+  
   def update
     @practice = Practice.find_available(params[:id])
     @practice.team_id = @team.id    

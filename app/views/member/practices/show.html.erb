@@ -12,7 +12,7 @@
   <%@practices.each do |p|%>
   <tr>
     <%if p.team_id == @team.id%>
-     <td class="specialDay-current_reserved"><%=p.time%></td>
+     <td class="specialDay-current_reserved"><%=link_to p.time, member_team_practices_path(@team.id,'undo_reservation', p.id), :title=>"Click to undo your reservation"%></td>
      <td class="other"><%=p.team_name.capitalize%></td>
      <%elsif p.team_id.nil?%>
     <td class="specialDay-available">
