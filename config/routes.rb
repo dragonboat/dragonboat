@@ -19,6 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '', :controller => 'member/website',  :action => 'index'
     m.resources   :tents, :controller => 'member/tents'
+   
     m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
     m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"
     m.resources   :paddlers,    :controller => 'member/paddlers'
@@ -27,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
     m.resources   :boats, :controller => 'member/boats'
     m.boat_checkout '/boats/:team_id/checkouts/:action/:id', :controller => 'member/checkouts'
     m.team_members '/boats/:team_id/members/:action/:id', :controller => 'member/members'
+    m.team_practices '/boats/:team_id/practices/:action/:id', :controller => 'member/practices'
     m.team_tents '/boats/:team_id/tents/:action/:id', :controller => 'member/tents'
   end
   
