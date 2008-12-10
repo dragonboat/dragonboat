@@ -1,0 +1,20 @@
+<% content_for :title do %>Team Detail Info<% end %>
+
+    <h1>Team Detail Info</h1>
+     <%
+    captain = @team.captain 
+    active = @team.members.find_active(:all).size
+    %> 
+    <p>Name: <%=@team.name%></p>
+    <p>Description: <%=@team.description%></p>
+    <p>URL: <%=link_to @team.url, @team.url%></p>
+    <p>Type: <%=@team.boat_type_human%></p>
+    <p>Captain: <%=captain.person.name%> < <%= mail_to captain.email %> > </p>
+
+    <p>Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></p>
+    <p>Logo: <%= image_tag( @team.image.public_filename(:thumb_big) ) if @team.image%> </p>
+    
+
+<%= link_to 'Edit', admin_edit_team_path(@team) %> |
+<%= link_to 'Destroy', admin_team_path(@team) , :confirm => 'Are you sure that you want to delete this team?', :method => :delete %> |
+<%= link_to 'Back', admin_teams_path%>

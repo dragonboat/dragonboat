@@ -50,6 +50,10 @@ class Team < ActiveRecord::Base
     read_attribute(:url).nil? ? "" : read_attribute(:url)
   end
   
+  def boat_type_human
+    boat_type ? boat_type.name : ""
+  end
+  
   private
   def set_status(name)
     update_attribute(:status_id, Status.find_team_by_name(name).id)

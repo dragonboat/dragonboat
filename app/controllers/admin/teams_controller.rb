@@ -28,6 +28,34 @@ class Admin::TeamsController < Admin::WebsiteController
     end
   end
   
+  def show
+    @team = Team.find(params[:id])
+  end
+  
+  def edit
+    @team = Team.find(params[:id])
+  end
+  
+  def update
+    @team = Team.find(params[:id])
+    @team.attributes = (params[:team])
+    if params[:image] && !params[:image].blank?
+      @image = Image.new(params[:image])
+      @image.user = User.find(current_user)
+      @team.image = @image if @image.valid?
+    end
+    respond_to do |format|
+      if  @team.save
+        flash[:notice] = 'TEam was successfully updated.'
+        format.html { redirect_to admin_teams_url }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @team.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+      
   def destroy
     @team = Team.find(params[:id])
     flash[:notice] = "The Team with all associated members was successfully deleted" if @team.destroy
