@@ -1,0 +1,14 @@
+TwelveHour
+==========
+
+Customize time_select method helper to display 12 hour style time. 
+
+USAGE:
+
+<%= time_select 'event', 'time', {:twelve_hour => true} %>
+
+Special Thanks to Rich(mobilepope).
+
+Enjoy, 
+Bruno
+bruno@bopia.com

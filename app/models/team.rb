@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
   belongs_to :captain, :foreign_key => 'captain_id', :class_name=>"User"
   belongs_to :image, :foreign_key => 'logo_id', :class_name=>"Image"
  
+  has_many :practices, :dependent=>:destroy
   has_many :team_extras, :dependent=>:destroy, :foreign_key => 'team_id', :class_name=>"TeamExtras"
  # has_many :extras, :as=>:"items", :through=>:team_extras, :foreign_key => 'team_id', :class_name=>"TeamExtras"
   

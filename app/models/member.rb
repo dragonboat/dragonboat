@@ -26,6 +26,10 @@ class Member < ActiveRecord::Base
     :sign_waiver_notice => "Your Full Name"
   }
   
+  def self.human_attribute_name(attr)
+    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end
+  
   attr_accessor :accept, :confirm
   attr_accessor :validation_mode
   

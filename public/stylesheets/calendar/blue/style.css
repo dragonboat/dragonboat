@@ -29,10 +29,10 @@
   color: white;
 }
 
-.otherMonth, .day, .specialDay {
+.otherMonth, .day, .specialDay, .specialDay-no-practices, .specialDay-full, .specialDay-current_reserved, .specialDay-available  {
   padding: 0.7em 1em;
   border-right: 1px solid white;
-
+  font-size: 11px;
 }
 
 .otherMonth {
@@ -40,15 +40,27 @@
   background-color: white;
 }
 
-.day, .specialDay {
+.day, .specialDay-no-practices, .specialDay-full, .specialDay-current_reserved, .specialDay-available {
   text-align: center;
   border-bottom: 1px dotted #bbbbbb;
-  background-color: #bbccff;
+  background-color: #ccc;
 }
-.specialDay {
+
+.specialDay-no-practices {
   background-color: #cccccc;
   color: red;
 }
+/*Practice Styles*/
+.specialDay-full {
+  background-color: #FFB8B8;
+}
+.specialDay-current_reserved {
+  background-color: blue;
+}
+.specialDay-available {
+  background-color: #99DB99;
+}
+
 .specialDay a, .specialDay a:visited, .specialDay a:hover {
   color: red;
   text-decoration: none;

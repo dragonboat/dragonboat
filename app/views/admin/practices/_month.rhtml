@@ -1,10 +1,16 @@
  <%= calendar({:year => year, :month => month}) do |d| 
         cell_text = link_to(d.mday, admin_new_practice_path(:mday=>d.mday,:mon=>d.mon,:year=>d.year ),:title=>"Click to create a new practice on this date") << "<br />" 
         cell_attrs = {:class => 'day'} 
-        @practices.each do |p| 
+          @practices.each do |p| 
           if p.created_at.to_date == d 
-          cell_text << link_to(truncate(p.name, 60), admin_edit_practice_path(p)) << "<br />" 
-          cell_attrs[:class] = 'specialDay'
+          cell_text << link_to(truncate(p.time), admin_edit_practice_path(p)) << "-"
+          cell_text << link_to(truncate(p.team_name, 10), admin_edit_practice_path(p)) << "<br />" 
+         
+          if Practice.is_full?(p.created_at)
+                 cell_attrs[:class] = 'specialDay-full'
+          else
+            cell_attrs[:class] = 'specialDay-available'
+          end
           end 
         end 
         [cell_text, cell_attrs]
