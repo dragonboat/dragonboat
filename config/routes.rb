@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home '',  :controller => 'news',:action=>"index"
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '', :controller => 'member/website',  :action => 'index'
-    m.resources   :tents, :controller => 'member/tents'
+    m.resource   :tent, :controller => 'member/tents'
    
     m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
     m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"

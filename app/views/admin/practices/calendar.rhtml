@@ -8,19 +8,22 @@
 
 </div>
  
-<div id="table">
+<div id="table" align="center">
   <table border="0" cellspaccing="1" cellpadding="1">
   <tr>
    <%sub_month = (@start_date.month-@start_date.beginning_of_quarter.month).to_i %>
-   <%= "<td></td><td></td>" if sub_month == 2 %> 
-   <%= "<td></td>" if sub_month == 1 %> 
-   <% @start_date.step( @end_date, 1.month ) do |date| %>
-   <% @year = date.year
+   <%#= "<td></td><td></td>" if sub_month == 2 %> 
+    <%# "<td></td>" if sub_month == 1 %> 
+    <% @start_date.step( @end_date, 1.month ) do |date| %>
+    <tr>
+    <% @year = date.year
     @month = date.month
-   %>     
-     <td valign="top"><%= render :partial => 'month' , :locals=>{:year=> @year, :month=> @month }%> </td>   
-   <%= "</tr><tr>" if @month.to_f%3 == 0 %> 
-    <%end%>   
+   %>   
+     <td align="center" class="schedule_header"></td> </tr><tr>
+     <td  valign="top"><%= render :partial => 'month' , :locals=>{:year=> @year, :month=> @month }%> </td>   
+   <%# "</tr><tr>" if @month.to_f%3 == 0 %> 
     </tr>
+    <%end%>   
+   
     </table>          
 </div>

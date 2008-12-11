@@ -16,6 +16,8 @@ class Practice < ActiveRecord::Base
             :conditions => "team_id IS NULL"
   scope_out :reserved,
             :conditions => "team_id IS NOT NULL"
+  
+  attr_accessor :validation_mode
           
   def self.human_attribute_name(attr)
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
@@ -25,8 +27,33 @@ class Practice < ActiveRecord::Base
     self.created_at = Time.local(2009,7,1,8,0) unless self.created_at 
   end
   
+  def validate    
+    if self.validation_mode == :team   
+      total_per_month = team.practices.total_per_month(created_at)
+      if total_per_month > 0
+        errors.add(:created_at, 'is already reserved by your team in this month')
+      end
+    end 
+  end
+  
   def self.total(current_date=Date.today)
     Practice.find(:all, :conditions=>"CAST(created_at AS DATE) = '#{current_date.to_date.to_s(:db)}'").size
+  end
+  
+  def self.total_per_month(current_date=Date.today)
+    self.find(:all, :conditions=>"DATE_FORMAT(created_at,'%m-%Y') = '#{current_date.strftime('%m-%Y')}'").size
+  end
+  
+  #week_num this is a number from 0 till 6 starting on Sunday
+  def self.find_by_week(week_num=0)
+    self.find(:all, :conditions=>"DATE_FORMAT(created_at,'%w')= '#{week_num.to_i}'",
+      :order => "created_at DESC" )
+  end
+  
+  #month_num this is a number from 0 till 12
+  def self.find_by_month(month_num=0)
+    self.find(:all, :conditions=>"DATE_FORMAT(created_at,'%c')= '#{month_num.to_i}'",
+      :order => "created_at DESC" )
   end
   
   
@@ -57,4 +84,6 @@ class Practice < ActiveRecord::Base
   def team_name
     team.nil? ? "available" : team.name
   end
+  
+  
 end

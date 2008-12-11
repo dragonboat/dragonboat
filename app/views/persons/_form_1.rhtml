@@ -22,33 +22,37 @@
         <td>&nbsp;&nbsp;<%= f.text_field :phone %></td>
     </tr>
     <tr>
-        <td>Phone number Ext:</td>
+        <td>Mobile Phone:</td>
         <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :phone_2 %></td>  
     </tr>
-   <tr>
-        <td>City:</td>
-        <td  class="notRequired"><%= f.text_field :city%></td>    
-    </tr>
-    <tr>
-        <td>Zip code:</td>
-        <td  class="notRequired"><%= f.text_field :zip%></td>    
-    </tr>
-    <tr>
-        <td>State:</td>
-        <td  class="notRequired"><%= f.select :state, states_options%></td>    
-    </tr>
-    <tr>
-        <td>Country:</td>
-        <td  class="notRequired"><%= f.country_select :country, ['Select a Country','United States', 'Canada']%></td>    
-    </tr>
+
     <tr>
         <td>Street Address 1:</td>
-        <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address %></td>
+        <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address %>
+        <!-- Hide Country: -->
+          <%= hidden_field_tag "person[country]", "United States"%>
+        </td>
     </tr>
     <tr>
         <td>Street Address 2:</td>
         <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address2 %></td>
     </tr>
+
+    <tr>
+        <td>City:</td>
+        <td  class="notRequired"><%= f.text_field :city%></td>    
+    </tr>
+    
+    <tr>
+        <td>State:</td>
+        <td  class="notRequired"><%= f.select :state, states_options%></td>    
+    </tr>
+    
+    <tr>
+        <td>Zip code:</td>
+        <td  class="notRequired"><%= f.text_field :zip%></td>    
+    </tr>
+    
     <tr>
         <td>Birthday:</td>
         <td class="notRequired">&nbsp;&nbsp;<%= f.date_select :birthday_date, :order => [:day, :month, :year], :start_year => 1950,  :include_blank => ""%></td>

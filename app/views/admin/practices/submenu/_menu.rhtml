@@ -1,3 +1,11 @@
 <%= link_to 'New practice', admin_new_practice_path %> |
-<%= link_to 'Calendar', admin_practices_path(:view => "calendar") if @view == "list"%>
-<%= link_to 'List', admin_practices_path(:view => "list") if @view == "calendar"%>
+<%unless @view == "calendar"%>
+<%= link_to 'Calendar', admin_practices_path(:view => "calendar") %> |
+<%end%>
+<%unless @view == "list"%>
+<%= link_to 'List', admin_practices_path(:view => "list") %> |
+<%end%>
+<%= link_to 'By Week', admin_practices_path(:view=>'week') unless @view == "week"%> 
+<%= link_to 'Cancel By Week', admin_practices_path(:view_clear=>'1') if @view == "week"%> |
+<%= link_to 'By Month', admin_practices_path(:view=>'month') unless @view == "month" %> 
+<%= link_to 'Cancel By Month', admin_practices_path(:view_clear=>'1') if @view == "month"%> |

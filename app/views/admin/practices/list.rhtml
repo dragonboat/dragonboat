@@ -1,12 +1,17 @@
 <h1>Manage Practices List</h1>
 <div id="submenu">
   <%= render :partial => 'admin/practices/submenu/menu'%>
-</div>
-
-<div id="pages"><%= will_paginate @practices %></div>
- 
-<div id="table">
+   </div>
+  <%if @view == 'week'%> 
+   <%= render :partial => 'week_view'%>
+  <%elsif @view == 'month'%>
+   <%= render :partial => 'month_view'%>
+  <%else%> 
+  <div id="pages"><%= will_paginate @practices %></div>
+  <div id="table">
   <%= render :partial => 'list'%>
-</div>
+  </div>
+  <div id="pages"><%= will_paginate  @practices %></div>
+  <%end%>
 
-<div id="pages"><%= will_paginate  @practices %></div>
+

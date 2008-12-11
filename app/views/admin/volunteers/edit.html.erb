@@ -1,16 +1,38 @@
 <% content_for :title do %>Editing Volunteer Form<% end %>
-<div id="volunteer_form"> 
+
   <%today = @volunteer.created_at%>  
   <h2>Philadelphia International Dragon Boat Festival – 
     <%=today.strftime("%b")%> <%=today.strftime("%d").to_i%><sup>th</sup> <%=today.strftime("%Y")%>
     Volunteer Form Editing
-    </h2>  
-    
-        <% form_for(:volunteer,:url => admin_volunteer_path(@volunteer.id), :html=>{:method=>:put}) do |f|%>
-        <%= render :partial => 'volunteers/form', :locals =>{:f=>f} %>
-       <%= f.submit "Update" %>
-        <% end %>
+            </h2>  
+            
+            <% form_for(:volunteer,:url => admin_volunteer_path(@volunteer.id), :html=>{:method=>:put}) do |f|%>
+            <table>             
+            <tr>
+              
+              <td colspan="2">
+                <div id="volunteer_form"> 
+                <%= render :partial => 'volunteers/form', :locals =>{:f=>f} %>
+                </div> 
+              </td>
+            </tr>
+            <tr>
+              <td><legend for="volunteer_status_id"><b>Status:</b></legend></td>
+              <td><%= f.select(:status_id, @statuses.collect {|status| [status.name, status.id]}) %></td>
+            </tr>
+            <tr>
+              <td colspan="2"><%= f.submit "Update" %><br/>
+            <%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
+            <%= link_to 'Back', admin_volunteers_path %>
+            </td>
+              
+            </tr>
+            </tabel>
+        
+           
+          
+            
+            <% end %>
+                    
+        
 
-<%= link_to 'Show', admin_volunteer_path(@volunteer) %> |
-<%= link_to 'Back', admin_volunteers_path %>
-</div> 

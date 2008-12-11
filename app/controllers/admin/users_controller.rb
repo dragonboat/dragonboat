@@ -2,6 +2,7 @@ class Admin::UsersController < Admin::WebsiteController
   # GET /users
   # GET /users.xml
   def index
+    conditions = user_search
     order = case params[:sort]
       when 'user_login'             then 'login'
       when 'user_logi_reverse'      then 'login desc'
@@ -12,6 +13,8 @@ class Admin::UsersController < Admin::WebsiteController
       else 'users.created_at DESC'
     end
     @users = User.paginate(:page => params[:page], 
+                                :include => [:person],
+                                :conditions => conditions,
                                 :per_page =>APP_CONFIG["admin_per_page"],
                                 :order => order)
     respond_to do |format|
@@ -104,5 +107,18 @@ class Admin::UsersController < Admin::WebsiteController
     @user = User.find(params[:id])
     session[:user_id] = @user.id if @user
     redirect_back_or_default(member_index_url)
+  end
+  
+  private
+  def user_search
+    session[:user_search_query] = params[:q] if params[:q]
+    session[:user_search_query] = nil if params[:clear]
+    conditions = nil
+    if session[:user_search_query]
+      @query = session[:user_search_query]
+      conditions = ["login LIKE :query OR persons.email LIKE :query OR persons.first_name LIKE :query OR persons.last_name LIKE :query OR CONCAT(persons.first_name,' ',persons.last_name) LIKE :query",
+                    {:query => "%#{@query}%"}]
+    end
+    conditions
   end
 end

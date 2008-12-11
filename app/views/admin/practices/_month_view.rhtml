@@ -1,20 +1,31 @@
 <table id="practices_contents" class="obj_list">
-  <tr>
-    <th width="200"><%= link_to('Date', admin_practices_url(:sort => sort_link_for('created_ad', params[:sort]))) %></th>
-    <th width="70">Time</th>
-    <th><%= link_to('Scheduled', admin_practices_url(:sort => sort_link_for('status', params[:sort]))) %></th>    
-    <th colspan="3">&nbsp;</th>
-  </tr>
+
   
-  <% @practices.each do |practice| %>
-  <tr class="<%= cycle('','alt') %>">
+<% Date::MONTHNAMES.each_with_index do |m,i| %>
+  <% practices = Practice.find_by_month(i) %>
+  <%if practices.size>0%>
+  <tr>
+    <td align="center" colspan="5" class="schedule_header"><%= m.upcase if m %></td> 
+
+    <tr>
+    
+      <th width="200">Date</th>
+      <th width="70">Time</th>
+      <th>Team Name</th>    
+      <th>&nbsp;</th>
+    </tr>
+   
+    <%practices.each do |practice|%>
+    <tr class="<%= cycle('','alt') %>">
     <td><b><%=h practice.created_at.strftime("%d %B %Y - %a") %></b></td>
     <td><%=h practice.created_at.strftime("%I:%M%p") %></td>
     <td><%= practice.team_name %></td>
-    <td colspan="3">
+    <td >
       <%= link_to(image_tag("icons/page_white_edit.png"), admin_edit_practice_path(practice), :style => "margin-right: 3px;") %>
       <%= link_to(image_tag("icons/delete.png"), admin_practice_path(practice), :confirm => 'Are you sure?', :method => :delete, :style => "margin-right: 3px;") %>
     </td>
-  </tr>
-<% end %>
-</table>
+    </tr>
+    <%end%>
+ <%end%>
+<%end%>
+  </table>

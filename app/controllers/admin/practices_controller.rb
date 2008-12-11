@@ -17,6 +17,8 @@ before_filter :init_filter, :set_filter, :store_filter
   elsif @view == "calendar"
     calendar
     render :action=>"calendar"
+  else
+    render :action=>"list"
   end
 end
 
@@ -84,6 +86,7 @@ private
   
   def set_view
     session[:practices_view] = params[:view] if params[:view]
+    session[:practices_view] = nil if params[:view_clear]
   end
 
   def get_view

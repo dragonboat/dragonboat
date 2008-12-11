@@ -3,6 +3,18 @@
   <%= link_to 'New user', admin_new_user_path %>
 </div>
 
+<table border="0" width="100%">
+	<tr><td>
+	<%form_tag(admin_users_path,:method=>:get) do |f|%>
+	Search: <%= text_field_tag :q, value = session[:user_search_query], :size => 40 %>
+	<%= image_submit_tag("icons/magnifier.png") %>
+	<%= link_to(image_tag("icons/broom.png", :border => 0), :action => "index", :clear => true) %>
+	<%end%>
+	</td>
+	</tr>
+</table>
+
+
 <div id="pages"><%= will_paginate @users %></div>
 <%= render :partial => 'list'%>
 <div id="pages"><%= will_paginate @users %></div>

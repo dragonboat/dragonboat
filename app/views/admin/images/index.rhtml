@@ -14,7 +14,7 @@
 <%end%>
 </div>
 <br/>
-<table border="0" width="100%" class>
+<table border="0" width="100%">
 	<tr><td>
 	<%form_tag(admin_images_path,:method=>:get) do |f|%>
 	Search: <%= text_field_tag :q, value = session[:image_search_query], :size => 40 %>

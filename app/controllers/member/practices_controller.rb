@@ -45,6 +45,7 @@ class Member::PracticesController < Member::WebsiteController
   def update
     @practice = Practice.find_available(params[:id])
     @practice.team_id = @team.id    
+    @practice.validation_mode = :team   
   
     if @practice.save
       flash[:notice] = 'Practice was successfully reserved.'
