@@ -76,5 +76,8 @@ class Order < ActiveRecord::Base
                                         :pay => extras.price,
                                         :quantity  =>item.quantity
                                       })
+   if extras.name =~ /tent/i 
+     team.create_tent unless team.tent
+   end
   end
 end

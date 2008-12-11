@@ -5,7 +5,7 @@
 
 <% form_for(:boat_type, :url => admin_boat_type_path(@boat_type), :html=>{:method=>:put}) do |f| %>
 <%= render :partial => 'form', :locals => { :f => f } %>
-<span id="required">*</span>-requered <br/>
+<span id="required">*</span>-Required <br/>
 <%= f.submit "Update" %>
 <% end %>
   

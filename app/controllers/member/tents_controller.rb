@@ -2,15 +2,15 @@ class Member::TentsController < Member::WebsiteController
   before_filter :has_boat?
   before_filter :fetch_team
   def index
-    @tents = @team.tents
+    @tents = [@team.tent]
   end
   
   def show
-    @tent = @team.tents.find(params[:id])
+    @tent = @team.tent
   end
   
   def update
-    @tent = @team.tents.find(params[:id]) 
+    @tent = @team.tent
     @tent.update_attribute(:location, params[:tent][:location])
     
     render :update do |page|
