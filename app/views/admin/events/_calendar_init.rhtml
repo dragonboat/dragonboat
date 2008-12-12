@@ -1,0 +1,50 @@
+
+<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+
+<script type="text/javascript" src="/ext/ext-all.js"></script>
+
+<script type="text/javascript">
+
+//set local blank image
+Ext.BLANK_IMAGE_URL = 'ext/resources/images/default/s.gif';
+//define function to be executed when page loaded
+
+Ext.onReady(function() {
+//define select handler
+var selectHandler = function(myDP, date) {
+//get the text field
+
+//var field = document.getElementById('dateField');
+//add the selected date to the field
+var day = document.getElementById('event_start_date_3i'); 
+var mon = document.getElementById('event_start_date_2i'); 
+var year = document.getElementById('event_start_date_1i'); 
+day.value = parseInt(date.format('d'));
+mon.value = parseInt(date.format('m'));
+year.value = date.format('Y');
+//hide the date picker
+myDP.hide();
+};
+//create the date picker
+var myDP = new Ext.DatePicker(
+{
+startDay: 1,
+listeners: {
+'select':selectHandler
+}
+}
+);
+//render the date picker
+myDP.render('calendar');
+//hide date picker straight away
+myDP.hide();
+//define click handler
+var clickHandler = function() {
+//show the date picker
+myDP.show();
+};
+//add listener for button click
+Ext.EventManager.on('openCalendar', 'click', clickHandler);
+});
+</script>
+    

@@ -1,10 +1,19 @@
-<fieldset>
+  <fieldset>
   <legend>General Event Settings</legend>
   <p>
     <strong>Date:</strong> <span id="required">*<br /></span>
-     <%= f.datetime_select :start_date, :order => [:day, :month, :year] %>
-  </p>
-  <p>
+     <%= f.date_select :start_date, :order => [:day, :month, :year] %>
+    
+     <%=link_to_function image_tag("icons/calendar.gif",:title=>"Open Calendar"), "return false;", :id=>"openCalendar"%>
+     <div id="calendar"></div>
+     <%= render :partial => 'calendar_init'%>
+   </p>
+   <br />
+   <p>
+    <strong>Time:</strong> <br />
+     <%=  f.time_select :created_at, {:order=>[:hour], :discard_minute=>true, :twelve_hour => true}  %>
+   </p>
+   <p>
     <strong>Name:</strong>
     <span id="required">*<br /></span>
     <%= f.text_field :name, :size => 50 %></span>
