@@ -52,6 +52,8 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :volunteers,    :controller => 'admin/volunteers'
     m.resources     :events,    :controller => 'admin/events'
     m.resources     :practices,    :controller => 'admin/practices'  
+    m.teams_alphabetical 'teams/teams_alphabetical' , :controller => 'admin/teams', :action=>"alphabetical_to_csv"
+    m.teams_chronological 'teams/teams_chronological' , :controller => 'admin/teams', :action=>"chronological_to_csv"
     m.resources     :teams,    :controller => 'admin/teams'
     m.resources     :boat_types,    :controller => 'admin/boat_types'
     m.resources     :items,    :controller => 'admin/items'

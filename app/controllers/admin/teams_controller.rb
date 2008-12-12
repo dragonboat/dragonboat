@@ -1,5 +1,7 @@
 class Admin::TeamsController < Admin::WebsiteController
+  require 'fastercsv'
   def index
+    conditions = team_search
     order = case params[:sort]
       when 'name'                   then 'teams.name'
       when 'name_reverse'           then 'teams.name DESC'
@@ -21,6 +23,7 @@ class Admin::TeamsController < Admin::WebsiteController
                                 :joins => "LEFT JOIN users as captain ON captain.id = teams.captain_id
                                           LEFT JOIN persons cp ON cp.id=captain.person_id",
                                 :per_page =>APP_CONFIG["admin_per_page"],
+                                :conditions => conditions,
                                 :order => order)
     respond_to do |format|
       format.html # index.html.erb
@@ -64,6 +67,47 @@ class Admin::TeamsController < Admin::WebsiteController
       format.html { redirect_to(admin_teams_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  #Alphabetical View
+  def alphabetical_to_csv
+    @teams = Team.find(:all, :include => [:members, :users, :status], :order => "teams.name")
+    csv_str = FasterCSV.generate do |csv|
+      csv << ["Name", "Captain", "E-mail", "Created at", "Members", "Complete Members", "Status"]   
+      @teams.each do |team|
+        captain = team.captain 
+        active = team.members.find_active(:all).size
+        csv << [team.name, captain.person.name,  captain.email, team.created_at.strftime("%d/%m/%Y"), team.members.size, active, team.status_human_name]
+      end
+    end
+    send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=alphabetical_teams_report.csv"
+  end
+  
+  #Chronological View
+  def chronological_to_csv
+    @teams = Team.find(:all, :include => [:members, :users, :status], :order => "teams.created_at DESC")
+    csv_str = FasterCSV.generate do |csv|
+      csv << ["Created at", "Name", "Captain", "E-mail", "Members", "Complete Members", "Status"]   
+      @teams.each do |team|
+        captain = team.captain 
+        active = team.members.find_active(:all).size
+        csv << [team.created_at.strftime("%d/%m/%Y"), team.name, captain.person.name,  captain.email,team.members.size, active, team.status_human_name]
+      end
+    end
+    send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=chronological_teams_report.csv"
+  end
+  
+  private
+  def team_search
+    session[:team_search_query] = params[:q] if params[:q]
+    session[:team_search_query] = nil if params[:clear]
+    conditions = nil
+    if session[:team_search_query]
+      @query = session[:team_search_query]
+      conditions = ["teams.name LIKE :query OR cp.first_name LIKE :query OR cp.last_name LIKE :query OR CONCAT(cp.first_name,' ',cp.last_name) LIKE :query",
+                    {:query => "%#{@query}%"}]
+    end
+    conditions
   end
 
 end

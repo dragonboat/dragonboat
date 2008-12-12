@@ -2,9 +2,19 @@
 <h1>Listing teams</h1>
 
 <div id="submenu">
-  <%= link_to 'Chronological view' %> |
-  <%= link_to 'Alphabetical view' %>
+  <%= link_to 'Chronological view', admin_teams_chronological_url %> |
+  <%= link_to 'Alphabetical view', admin_teams_alphabetical_url %>
 </div>
+<table border="0" width="100%" id="search">
+	<tr><td>
+	<%form_tag(admin_teams_path,:method=>:get) do |f|%>
+	Search: <%= text_field_tag :q, value = session[:team_search_query], :size => 40 %>
+	<%= image_submit_tag("icons/magnifier.png") %>
+	<%= link_to(image_tag("icons/broom.png", :border => 0), :action => "index", :clear => true) %>
+	<%end%>
+	</td>
+	</tr>
+</table>
 
 <div id="pages"><%= will_paginate @teams %></div>
 <%= render :partial => 'list'%>
