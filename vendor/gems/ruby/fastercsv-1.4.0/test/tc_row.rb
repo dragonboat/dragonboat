@@ -195,6 +195,9 @@ class TestFasterCSVRow < Test::Unit::TestCase
     
     # with minimum indices
     assert_equal([2, 3, 4], @row.fields("B", "C", ["A", 3]))
+    
+    # by header range
+    assert_equal([2, 3], @row.values_at("B".."C"))
   end
   
   def test_index
@@ -275,5 +278,28 @@ class TestFasterCSVRow < Test::Unit::TestCase
     # with options
     assert_equal( "1|2|3|4|\r\n",
                   @row.to_csv(:col_sep => "|", :row_sep => "\r\n") )
+  end
+  
+  def test_array_delegation
+    assert(!@row.empty?, "Row was empty.")
+    
+    assert_equal([@row.headers.size, @row.fields.size].max, @row.size)
+  end
+  
+  def test_inspect_shows_header_field_pairs
+    str = @row.inspect
+    @row.each do |header, field|
+      assert( str.include?("#{header.inspect}:#{field.inspect}"),
+              "Header field pair not found." )
+    end
+  end
+  
+  def test_inspect_shows_symbol_headers_as_bare_attributes
+    str = FasterCSV::Row.new( @row.headers.map { |h| h.to_sym },
+                              @row.fields ).inspect
+    @row.each do |header, field|
+      assert( str.include?("#{header}:#{field.inspect}"),
+              "Header field pair not found." )
+    end
   end
 end

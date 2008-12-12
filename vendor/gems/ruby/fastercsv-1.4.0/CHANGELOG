@@ -2,6 +2,69 @@
 
 Below is a complete listing of changes for each revision of FasterCSV.
 
+== 1.4.0
+
+* Added encoding support patch from Michael Reinsch.
+* Improved inspect() messages for better IRb support.
+* Fixed header writing bug reported by Dov Murik.
+* Use custom separators in parsing header Strings as suggested by Shmulik Regev.
+* Added a <tt>:write_headers</tt> option for outputting headers.
+* Handle open() calls in binary mode whenever we can to workaround a Windows
+  issue where line-ending translation can cause an off-by-one error in seeking
+  back to a non-zero starting position after auto-discovery for
+  <tt>:row_sep</tt> as suggested by Robert Battle.
+* Improved the parser to fail faster when fed some forms of invalid CSV that can
+  be detected without reading ahead.
+* Added a <tt>:field_size_limit</tt> option to control FasterCSV's lookahead and
+  prevent the parser from biting off more data than it can chew.
+  
+== 1.2.3
+
+* Default to the system line ending when passed a GzipWriter object to wrap.
+  
+== 1.2.2
+
+* Worked around GzipReader's lack of a seek() method so we could still use
+  automatic row separator detection with them.
+  
+== 1.2.1
+
+* Worked around an odd incompatibility with the Regexps used to remove line
+  endings in some (seemingly rare) Ruby environments.
+* Made FasterCSV::lineno() writer aware.
+* Support Hashes in FasterCSV#<<(), by detecting headers when writing.
+* Added limited support for switching the quote character.
+* Refining Data and DateTime matching for built-in convertors.
+
+== 1.2.0
+
+* Added the FasterCSV::table() shortcut.
+
+== 1.1.1
+
+* Added a <tt>:force_quotes</tt> output option.
+
+== 1.1.0
+
+* Added empty?(), length(), and size() methods to FasterCSV::Row and
+  FasterCSV::Table.
+* Cleaned up bug fix regression tests.
+* Fixed bug causing Arrays to be returned for blank rows when header processing
+  is active.
+* Added a <tt>:skip_blanks</tt> option for ignoring empty rows.
+
+== 1.0.0
+
+* Fixed FasterCSV.rewind() to reset the FasterCSV.lineno() counter.
+* Fixed FasterCSV.rewind() to reset the header processing.
+* Fixed documentation typos.
+* Switched STDOUT and STDERR usage to $stdout and $stderr where appropriate.
+* Added FasterCSV::Row.==().
+* Enhanced FasterCSV::Row.fields() to support Ranges, even for headers.
+* The slurping methods now return the new FasterCSV::Table objects.
+* Fixed parser so multibyte <tt>:col_sep</tt> works now.
+* Added a few examples for usage.
+
 == 0.2.1
 
 * Removed autorequire from GemSpec.
@@ -12,9 +75,9 @@ Below is a complete listing of changes for each revision of FasterCSV.
 
 * Added VERSION constant.
 * Significantly improved test speed.
-* Worked around Date::parse bug so tests will pass on Windows.
+* Worked around Date::parse() bug so tests will pass on Windows.
 * Documented test procedure.
-* Made FasterCSV#lineno CSV aware.
+* Made FasterCSV.lineno() CSV aware.
 * Added line numbers to MalformedCSVError messages.
 * <tt>:headers</tt> can now be set to an Array of headers to use.
 * <tt>:headers</tt> can now be set to an external CSV String of headers to use.
@@ -25,7 +88,7 @@ Below is a complete listing of changes for each revision of FasterCSV.
 * Added header information to FieldInfo Struct for conversions by header.
 * Added an alias to support <tt>require "fastercsv"</tt>.
 * Added FCSV alias for FasterCSV.
-* Added FasterCSV::instance and FasterCSV()/FCSV() shortcuts for easy output.
+* Added FasterCSV::instance() and FasterCSV()/FCSV() shortcuts for easy output.
 
 == 0.1.9
 

@@ -90,6 +90,12 @@ class TestFasterCSVInterface < Test::Unit::TestCase
     assert_equal(@expected, data)
   end
   
+  def test_table
+    table = FasterCSV.table(@path, :col_sep => "\t", :row_sep => "\r\n")
+    assert_instance_of(FasterCSV::Table, table)
+    assert_equal([[:"1", :"2", :"3"], [4, 5, nil]], table.to_a)
+  end
+  
   def test_shift  # aliased as gets() and readline()
     FasterCSV.open(@path, "r+", :col_sep => "\t", :row_sep => "\r\n") do |csv|
       assert_equal(@expected.shift, csv.shift)
@@ -127,6 +133,112 @@ class TestFasterCSVInterface < Test::Unit::TestCase
     assert_not_nil(line)
     assert_instance_of(String, line)
     assert_equal("1;2;3\n", line)
+  end
+
+  def test_write_header_detection
+    File.unlink(@path)
+
+    headers = %w{a b c}
+    FasterCSV.open(@path, "w", :headers => true) do |csv|
+      csv << headers
+      csv << %w{1 2 3}
+      assert_equal(headers, csv.instance_variable_get(:@headers))
+    end
+  end
+
+  def test_write_lineno
+    File.unlink(@path)
+
+    FasterCSV.open(@path, "w") do |csv|
+      lines = 20
+      lines.times { csv << %w{a b c} }
+      assert_equal(lines, csv.lineno)
+    end
+  end
+
+  def test_write_hash
+    File.unlink(@path)
+
+    lines = [{:a => 1, :b => 2, :c => 3}, {:a => 4, :b => 5, :c => 6}]
+    FasterCSV.open( @path, "w", :headers           => true,
+                                :header_converters => :symbol ) do |csv|
+      csv << lines.first.keys
+      lines.each { |line| csv << line }
+    end
+    FasterCSV.open( @path, "w", :headers           => true,
+                                :converters        => :all,
+                                :header_converters => :symbol ) do |csv|
+      csv.each { |line| assert_equal(lines.shift, line.to_hash) }
+    end
+  end
+
+  def test_write_hash_with_headers_array
+    File.unlink(@path)
+
+    lines = [{:a => 1, :b => 2, :c => 3}, {:a => 4, :b => 5, :c => 6}]
+    FasterCSV.open(@path, "w", :headers => [:b, :a, :c]) do |csv|
+      lines.each { |line| csv << line }
+    end
+
+    # test writing fields in the correct order
+    File.open(@path, "r") do |f|
+      assert_equal("2,1,3", f.gets.strip)
+      assert_equal("5,4,6", f.gets.strip)
+    end
+
+    # test reading CSV with headers
+    FasterCSV.open( @path, "r", :headers    => [:b, :a, :c],
+                                :converters => :all ) do |csv|
+      csv.each { |line| assert_equal(lines.shift, line.to_hash) }
+    end
+  end
+
+  def test_write_hash_with_headers_string
+    File.unlink(@path)
+
+    lines = [{"a" => 1, "b" => 2, "c" => 3}, {"a" => 4, "b" => 5, "c" => 6}]
+    FasterCSV.open( @path, "w", :headers => "b|a|c",
+                                :col_sep => "|" ) do |csv|
+      lines.each { |line| csv << line }
+    end
+
+    # test writing fields in the correct order
+    File.open(@path, "r") do |f|
+      assert_equal("2|1|3", f.gets.strip)
+      assert_equal("5|4|6", f.gets.strip)
+    end
+
+    # test reading CSV with headers
+    FasterCSV.open( @path, "r", :headers    => "b|a|c",
+                                :col_sep    => "|",
+                                :converters => :all ) do |csv|
+      csv.each { |line| assert_equal(lines.shift, line.to_hash) }
+    end
+  end
+  
+  def test_write_headers
+    File.unlink(@path)
+
+    lines = [{"a" => 1, "b" => 2, "c" => 3}, {"a" => 4, "b" => 5, "c" => 6}]
+    FasterCSV.open( @path, "w", :headers       => "b|a|c",
+                                :write_headers => true,
+                                :col_sep       => "|" ) do |csv|
+      lines.each { |line| csv << line }
+    end
+
+    # test writing fields in the correct order
+    File.open(@path, "r") do |f|
+      assert_equal("b|a|c", f.gets.strip)
+      assert_equal("2|1|3", f.gets.strip)
+      assert_equal("5|4|6", f.gets.strip)
+    end
+
+    # test reading CSV with headers
+    FasterCSV.open( @path, "r", :headers    => true,
+                                :col_sep    => "|",
+                                :converters => :all ) do |csv|
+      csv.each { |line| assert_equal(lines.shift, line.to_hash) }
+    end
   end
   
   def test_append  # aliased add_row() and puts()
