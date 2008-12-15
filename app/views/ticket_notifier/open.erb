@@ -1,0 +1,16 @@
+Your ticket#<%= @ticket.id %> has been created.
+
+
+Ticket Details:
+ID#:            <%= @ticket.id %>
+Subject:        <%= @ticket.subject %>
+Priority:       <%= @ticket.priority.capitalize %>
+Current Status: <%= @ticket.status %>
+Created at:     <%= @ticket.created_at.strftime("%d/%m/%Y") %>
+
+Message: 
+<%= @ticket.message  %>
+
+
+Thanks,
+Dragonboat Team

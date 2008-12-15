@@ -2,12 +2,22 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 69) do
+ActiveRecord::Schema.define(:version => 73) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "ticket_id"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["ticket_id"], :name => "index_answers_on_ticket_id"
 
   create_table "boat_types", :force => true do |t|
     t.string   "name"
-    t.integer  "price"
-    t.boolean  "is_active",  :default => false
+    t.integer  "price_in_cents"
+    t.boolean  "is_active",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,9 +70,9 @@ ActiveRecord::Schema.define(:version => 69) do
 
   create_table "extras", :force => true do |t|
     t.string   "name"
-    t.integer  "price"
+    t.integer  "price_in_cents"
     t.text     "notice"
-    t.boolean  "is_available", :default => false
+    t.boolean  "is_available",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -292,6 +302,22 @@ ActiveRecord::Schema.define(:version => 69) do
   end
 
   add_index "tents", ["team_id"], :name => "index_tents_on_team_id"
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "parent_id"
+    t.integer  "user_id"
+    t.string   "email"
+    t.string   "subject"
+    t.string   "priority",    :limit => 50
+    t.string   "status",      :limit => 50
+    t.text     "message"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tickets", ["parent_id"], :name => "index_tickets_on_parent_id"
+  add_index "tickets", ["priority"], :name => "index_tickets_on_priority"
 
   create_table "users", :force => true do |t|
     t.string   "login"

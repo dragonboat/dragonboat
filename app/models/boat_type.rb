@@ -7,5 +7,5 @@ class BoatType < ActiveRecord::Base
             :order => "name"
           
   validates_presence_of :name
-  validates_numericality_of :price
+  validates_numericality_of :price_in_cents
 end

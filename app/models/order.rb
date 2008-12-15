@@ -62,9 +62,25 @@ class Order < ActiveRecord::Base
   end
   
   def failed!
-    team.team_extras.each { |item| populate_item(item) }
+  #  team.team_extras.each { |item| populate_item(item) }
     self.status = 'failed'
     self.save!
+  end
+  
+  def boat_pay
+    read_attribute(:boat_pay).to_f/100
+  end
+  
+  def boat_pay=(pay)
+    write_attribute(:boat_pay, pay*100)
+  end
+  
+  def total_pay
+    read_attribute(:total_pay).to_f/100
+  end
+  
+  def total_pay=(pay)
+    write_attribute(:total_pay, pay*100)
   end
   
   private

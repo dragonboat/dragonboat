@@ -1,0 +1,35 @@
+<%= error_messages_for :ticket %></td></tr>
+<h4>From</h4>
+ 
+  <p>
+    <label for="user_login">Login:</label>
+    <span class='notice'>(if you are registered on the online system already enter your login here else leave this field empty)</span><br/>
+    <% fields_for "user", @user do |user_field| %>
+    <%= user_field.text_field :login, :disabled=>current_user%>
+   <% end %>         
+ </p>
+ 
+ <span id="ticket_email_box">
+  <%= render :partial => 'email' %>
+ </span>
+  
+  <%= observe_field("user_login",
+                   :url => { :action => 'email_by_login' , :id=>@ticket},
+                   :on=>:changed,
+                   :loading => "Element.show('loading-indicator'); Element.hide('ticket_email');", 
+                   :complete =>"Element.hide('loading-indicator'); Element.show('ticket_email');",
+                   :with =>  "'login='+encodeURIComponent($('user_login').value)") %> 
+ 
+<br/><br/>
+<p>
+  <label for="ticket_subject">Subject:<span id="required">*</span><br/></label>
+  <%= f.text_field :subject%>
+</p>
+<p>
+  <label for="ticket_priority">Priority:<span id="required">*</span><br/></label>
+  <%= f.select :priority, Ticket::PRIORITY %>
+</p>
+<p>
+  <label for="ticket_message">Message:<span id="required">*</span><br/></label>
+  <%= f.text_area :message, :rows=>10%>
+</p>

@@ -8,7 +8,7 @@ class UserNotifier < ActionMailer::Base
   def password_changed(user, new_password)
     setup_email(user)
     @subject = 'DragonBoat: password changed'
-    @from = 'admin@dragonboat.com'    
+    @from = "#{APP_CONFIG['admin_email']}"  
     @content_type = "text/html"
     @body[:new_password] = new_password
   end

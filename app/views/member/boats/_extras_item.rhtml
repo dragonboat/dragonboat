@@ -8,8 +8,8 @@
         <th>Total Price</th>
         </tr> 
         <%items.each do |item|%>
-        <%team_extras= item.team_extras%>
-        <%quantity = item.team_extras.quantity if team_extras%>
+        <%team_extras= item.team_extras.find_by_team_id(@team.id)%>
+        <%quantity = team_extras.quantity if team_extras%>
         <% default = quantity && quantity>0 ?  quantity : 1 %>
         <tr style="background-color:#eee">
           <td><%= check_box_tag("extras[#{item.id}]","1",team_extras,{:id=>"extras_tent", :disabled => (mode==:read)}) %> </td>

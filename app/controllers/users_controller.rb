@@ -17,8 +17,10 @@ class UsersController < ApplicationController
     # uncomment at your own risk
     # reset_session
     @user = User.new(params[:user])
+    @user.validation_mode  = :member
     @person = @user.person
     @person.validation_mode = :member 
+    
     @person.attributes = (params[:person])    
     if @person.valid? && @user.valid? && @person.save && @user.save
       self.current_user = @user

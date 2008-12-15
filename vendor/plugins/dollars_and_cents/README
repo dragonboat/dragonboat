@@ -1,0 +1,40 @@
+= dollars_and_cents plugin for Rails
+
+A transparent handler for storing monetary values as integer fields in a
+database.
+
+== Installation
+
+If your project is source-controlled by Subversion (which it should be, really),
+the easiest way to install this is via Rails' plugin script:
+
+  ./script/plugin install -x http://svn.codahale.com/dollars_and_cents/trunk
+
+If you're not using Subversion, or if you don't want it adding
+<tt>svn:externals</tt> in your project, remove the <tt>-x</tt> switch:
+
+  ./script/plugin install http://svn.codahale.com/dollars_and_cents/trunk
+
+== Usage
+
+In this example, let's assume we have a price we need to store in our database.
+
+1. Create a database field named +price_in_cents+, of type +INTEGER+.
+2. Access the price as follows:
+    @product.price          #=> 29.99
+    @product.price = 24.99  #=> 24.99
+    @product.price          #=> 24.99
+
+== Resources
+
+=== Subversion
+
+* http://svn.codahale.com/dollars_and_cents
+
+=== Blog
+
+* http://blog.codahale.com
+
+== Credits
+
+Written by Coda Hale <coda.hale@gmail.com>.

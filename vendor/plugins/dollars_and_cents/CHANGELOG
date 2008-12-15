@@ -1,0 +1,35 @@
+= April 18, 2006
+
+Moved the conversions code into its own module and used it to extend the Numeric
+class, because I'll extend anything if given the chance. The following are not
+only possible, but also fun:
+
+  3.00.to_cents              #=> 300
+  300.to_dollars             #=> 3.00
+  300.as_cents.to_cents      #=> 300
+  3.00.as_cents.to_dollars   #=> 3
+  3_000.to_cents             #=> 300,000
+
+= June 1, 2006
+
+Hampton Catlin (www.justasloud.org) tossed me a patch which allows d&c to deal
+with string values like a grownup. A few changes, and hey-presto you can now
+do stuff like this:
+
+  @monkey.bribe = "300.20"
+  @money.bribe_in_cents == 30020 #=> true
+  
+  "3.00".to_cents            #=> 300
+  "300".to_dollars           #=> 3.00
+
+Also, as he points out, this means you can do this:
+
+  @monkey.update_attributes(params[:monkey)
+
+Please note that any non-numeric strings (e.g., "shazbot" or "twiddle") are
+treated as 0, which means:
+
+  @monkey.bribe = 'banana'  #=> 0.00, and @monkey.bribe_in_cents == 0
+
+This is weird, personally, but it matches the way that ActiveRecord deals with
+non-numeric strings being written to numeric attributes. Go fig.

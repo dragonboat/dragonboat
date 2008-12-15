@@ -5,6 +5,8 @@ class Person < ActiveRecord::Base
   has_one :volunteer, :dependent => :destroy
   has_one :orphaned_paddler, :dependent => :destroy
   validates_format_of  :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid' #, :if=>Proc.new { |person| person.email&&!person.email.empty? }
+  validates_format_of :first_name, :with => /^[A-Za-z.]*\z/, :message => "Cannot contain Numbers,White Space"
+  validates_format_of :last_name, :with => /^[A-Za-z.]*\z/, :message => "Cannot contain Numbers,White Space"
  
   attr_accessor :validation_mode
   attr_reader :age
@@ -16,10 +18,6 @@ class Person < ActiveRecord::Base
 
   def self.human_attribute_name(attr)
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
-  end
-  
-  def check_dependency?
-   !has_associated?(self, Client, Manager, Tutor, Student, Parent)
   end
   
   def age
@@ -54,10 +52,12 @@ class Person < ActiveRecord::Base
   end
   
   def validate    
+    phone_number = phone.gsub(/[^0-9]/, "") if phone
     if self.validation_mode == :volunteer   
       for attr_name in [:phone, :address]
         errors.add_on_blank(attr_name, 'is required')
       end
+      errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
     elsif  self.validation_mode  == :member 
       for attr_name in [:gender]
         errors.add_on_blank(attr_name, 'is required')
@@ -66,10 +66,12 @@ class Person < ActiveRecord::Base
       for attr_name in [:phone, :birthday_date, :experience, :preference]
         errors.add_on_blank(attr_name, 'is required')
       end
+      errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
     elsif  self.validation_mode == :order
       for attr_name in [:phone,:address, :zip, :city, :state]
         errors.add_on_blank(attr_name, 'is required')
       end
+      errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
     end 
   end
 end
