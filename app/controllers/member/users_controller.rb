@@ -9,6 +9,10 @@ end
 def edit 
 end
 
+def show
+  
+end
+
 def update
   @user = current_user
   @user.person.attributes = (params[:person])
