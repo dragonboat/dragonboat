@@ -1,0 +1,10 @@
+<% content_for :title do %>Support : Pending Tickets List<% end %>
+<%if @tickets.size>0%>
+<h2>Pending Support Tickets List</h2>  
+    
+<div id="list">
+  <%= render :partial => 'list'%>
+</div>
+<%else%>
+<p class="notice">Pending Tickets List is empty</p>
+<%end%>

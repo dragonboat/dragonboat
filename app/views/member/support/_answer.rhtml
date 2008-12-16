@@ -1,0 +1,9 @@
+
+<div id="answer">
+  <div id="date"><%=answer.created_at.strftime("%d/%m/%Y %H:%M")%></div>
+  <i>PDB Admin:</i> <br/>
+  <strong><%=answer.subject%></strong>
+  <div>
+    <%=h answer.message%>
+  </div>
+</div>

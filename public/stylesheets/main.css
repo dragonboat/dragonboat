@@ -185,3 +185,16 @@ LEGEND {
 #step_list .current {background-color:yellow;}
 #step_list .previous {color:grey;}
 
+#ticket-list ul {
+    margin:0;
+    padding-left:15px;
+    list-style:none;
+    width: 600px;
+}
+#ticket-list li {  list-style:none; }
+#ticket-list h1 {  font-size:12px; font-weight:normal; color: #5D5D5D; padding:0px; }
+#ticket-list div#answer {background-color:#E1E1E1; width: 600px; padding:3px; margin-top:3px;}
+#ticket-list div#answer i {color:#F35F17}
+#ticket-list div#date, div#right {float:right; font-size:11px; color: #020239;}
+#ticket-list div#from {padding-top:5px; color:blue;}
+

@@ -8,9 +8,7 @@ Priority:       <%= @ticket.priority.capitalize %>
 Current Status: <%= @ticket.status %>
 Created at:     <%= @ticket.created_at.strftime("%d/%m/%Y") %>
 
+URL to view ticket:  <%= @url_to_view%>
+
 Message: 
 <%= @ticket.message  %>
-
-
-Thanks,
-Dragonboat Team

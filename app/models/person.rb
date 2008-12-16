@@ -4,9 +4,10 @@ class Person < ActiveRecord::Base
   has_one :user, :dependent => :destroy
   has_one :volunteer, :dependent => :destroy
   has_one :orphaned_paddler, :dependent => :destroy
-  validates_format_of  :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid' #, :if=>Proc.new { |person| person.email&&!person.email.empty? }
-  validates_format_of :first_name, :with => /^[A-Za-z.]*\z/, :message => "Cannot contain Numbers,White Space"
-  validates_format_of :last_name, :with => /^[A-Za-z.]*\z/, :message => "Cannot contain Numbers,White Space"
+  validates_format_of  :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'should be valid' #, :if=>Proc.new { |person| person.email&&!person.email.empty? }
+  validates_format_of :first_name, :with => /^[A-Za-z.]*\z/, :message => "cannot contain numbers,white space"
+  validates_format_of :last_name, :with => /^[A-Za-z.]*\z/, :message => "cannot contain numbers,white space"
+  
  
   attr_accessor :validation_mode
   attr_reader :age
@@ -72,6 +73,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
+      errors.add(:zip, 'is not a valid zip code') unless zip =~ /^[\d]{5}+$/
     end 
   end
 end

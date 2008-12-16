@@ -1,0 +1,17 @@
+<table id="members" class="obj_list">
+  <tr>
+    <th width="50">ID#</th>
+    <th>Subject</th>
+    <th width="100">Priority</th>
+    <th width="100">Status</th>
+  </tr>
+  
+  <% for ticket in @tickets %>
+  <tr>
+    <td><%=ticket.id%></td>
+    <td><%=link_to ticket.subject, {:action=>:show, :id=>ticket.id}, :title=>"Click to review"%></td>
+    <td><%=ticket.priority%></td>
+    <td><%= ticket.status%></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,13 @@
+<% content_for :title do %>Support : New Ticket<% end %>
+  <div>
+     <fieldset>
+            <legend>Create Ticket</legend> 
+            <% form_for :ticket, :url => { :action => 'reply' }, :html => { :method => :post } do |f| %>
+            <%= render :partial => 'member/support/form', :locals =>{:f=>f} %>
+            <p><span id="required">*</span>-Required </p>
+            <div id="buttons">
+              <%= submit_tag  "Reply"%>
+          </div>
+      <%end%>
+    </fieldset>
+   </div>

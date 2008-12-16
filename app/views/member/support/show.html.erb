@@ -1,0 +1,17 @@
+<% content_for :title do %>Support : View Ticket<% end %>
+<%if @ticket %>
+<h1>Ticket ID#<%=@ticket.id%></h1>
+<table>
+<tr>
+<td>
+  <% ancestors = @ticket.ancestors %>
+  <% if ancestors.size > 0%>
+    <%=link_to "View all thread", :action=>:show, :id=>@ticket.root.id%>
+  <%end%>
+  <%= render :partial => 'ticket', :locals=>{:ticket=>@ticket}%>
+</td>
+</tr>
+</table>
+<%else%>
+No Tickets was found with ID#<%=params[:id]%>
+<%end%>

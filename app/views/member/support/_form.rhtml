@@ -1,0 +1,19 @@
+<%= error_messages_for :ticket %></td></tr>
+  <h4>From:</h4>
+  <%=@ticket.email%>
+
+ 
+  
+<br/>
+<p>
+  <label for="ticket_subject">Subject:<span id="required">*</span><br/></label>
+  <%= f.text_field :subject%>
+</p>
+<p>
+  <label for="ticket_priority">Priority:<span id="required">*</span><br/></label>
+  <%= f.select :priority, Ticket::PRIORITY %>
+</p>
+<p>
+  <label for="ticket_message">Message:<span id="required">*</span><br/></label>
+  <%= f.text_area :message, :rows=>10%>
+</p>

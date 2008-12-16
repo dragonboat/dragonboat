@@ -1,0 +1,26 @@
+<% children = ticket.children.find(:all, :order=>"created_at") %>
+<ul id="ticket-list" style="width:600px;">
+  <li>
+   
+    <div id="from">
+      <div id="right"><%=ticket.status.capitalize%> | <%=ticket.priority.capitalize%> | <%=ticket.created_at.strftime("%d/%m/%Y %H:%M")%></div>
+      <%=link_to_function(image_tag("icons/collapsed.gif", :border=>0), "$('child_#{ticket.id}').style.display=($('child_#{ticket.id}').style.display=='none' ? 'block' : 'none')") if children.size > 0%> 
+      <i><%=ticket.email%></i>:
+    </div>
+    <h1>
+      <b>Ticket ID#<%=ticket.id%></b>: <%=ticket.subject%>
+    </h1>
+    
+    <p>
+      <%=h ticket.message%>
+    </p>
+    <%ticket.answers.find(:all, :order=>"created_at").each do |answer|%>
+    <%= render :partial => 'answer', :locals=>{:answer=>answer}%>
+    <%end%>
+    <div id="child_<%=ticket.id%>" style="display:block;">
+    <%children.each do |child|%>
+    <%= render :partial => 'ticket', :locals=>{:ticket=>child}%>
+    <%end%>
+    </div>
+  </li>
+</ul>

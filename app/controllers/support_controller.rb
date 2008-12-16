@@ -27,6 +27,13 @@ class SupportController < ApplicationController
     end 
   end
   
+  def show
+    begin
+      @ticket = Ticket.find_nonregistered(params[:id])
+      rescue Exception 
+    end  
+  end
+  
   def email_by_login
     @ticket = Ticket.find_or_initialize_by_id(params[:id])
     if params[:login]
