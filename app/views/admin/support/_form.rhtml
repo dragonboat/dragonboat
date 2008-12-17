@@ -1,0 +1,33 @@
+<%= error_messages_for :ticket %>
+  <h1>Ticket ID#<%=@ticket.id%></h1>
+  <h3><%=@ticket.subject%></h3>
+  <p> <%=simple_format(@ticket.message)%></p>
+
+  <%if @user%>
+  <p>
+    <label for="user_login">User Login:</label><br/>
+   <% fields_for "user", @user do |user_field| %>
+    <%= user_field.text_field :login, :disabled=>current_user%>
+   <% end %>         
+ </p>
+ <%end%>
+
+ <p>
+   <label>User E-mail:<br/></label>
+    <%= f.text_field :email, :disabled=>true%>     
+ </p>
+
+<p>
+  <label for="ticket_priority">Priority:<br/></label>
+  <%= f.select :priority, Ticket::PRIORITY %>
+</p>
+<p>
+  <label for="ticket_status">Status:<br/></label>
+  <%= f.select :status, Ticket::STATUS %>
+</p>
+<p>
+  <label for="answer_message">Add Reply Message:<br/></label>
+   <% fields_for "answer", @answer do |a| %>
+    <%= a.text_area :message, :rows=>15%>
+   <% end %>
+</p>

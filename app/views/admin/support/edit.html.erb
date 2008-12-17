@@ -1,0 +1,14 @@
+<% content_for :title do %>Support : Edit Support Ticket<% end %>
+  <div>
+     <fieldset>
+            <legend>Edit Support Ticket</legend>
+            
+            <% form_for :ticket, :url => { :action => 'update' },  :html=>{:method=>:put} do |f| %>
+            <%= render :partial => 'form', :locals =>{:f=>f} %>
+            <p><span id="required">*</span>-Required </p>
+            <div id="buttons">
+              <%= submit_tag  "Update"%>
+          </div>
+      <%end%>
+    </fieldset>
+   </div>

@@ -1,4 +1,5 @@
 class SupportController < ApplicationController
+  include SupportHelper
   layout "application"
   def index
     new
@@ -46,6 +47,27 @@ class SupportController < ApplicationController
       page.replace_html :ticket_email_box, :partial => 'email'
     end
   end
+  
+ def reply
+  #params[:answer_id]  - answer id
+  #params[:id] - ticket id
+  @parent = Ticket.find_nonregistered(params[:id])
+  @ticket = Ticket.new
+  @ticket.parent_id = @parent.id
+  @ticket.email = @parent.email
+  @ticket.user = @parent.user
+   
+  @answer = @parent.answers.find(params[:answer_id])
+  @ticket.subject, @ticket.message = reply_to(@parent, @answer)
+  if request.post?
+    @ticket.attributes=(params[:ticket])
+    if @ticket.save
+      flash[:notice] = "Reply ticket was successfully created"
+      redirect_to :action=>:show, :id=>@ticket.id
+      return
+    end
+  end
+end
   
   private
   def define_user

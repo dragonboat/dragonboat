@@ -4,6 +4,9 @@
   <i>PDB Admin:</i> <br/>
   <strong><%=answer.subject%></strong>
   <div>
-    <%=h answer.message%>
+    <%=simple_format answer.message%>
+  </div>
+  <div class="navigation" align="right">
+    <b><%=link_to "Reply", reply_url(ticket.id,answer.id)%></b>
   </div>
 </div>

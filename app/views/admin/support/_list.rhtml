@@ -1,0 +1,28 @@
+<table id="tickets" class="obj_list">
+  <tr>
+    <th><%= link_to('ID#', admin_support_tickets_url(:sort => sort_link_for('ticket_id', params[:sort])), :title=>"Sort by ID" ) %></th>
+    <th><%= link_to('Subject', admin_support_tickets_url(:sort => sort_link_for('ticket_subject', params[:sort])), :title=>"Sort by Subject" ) %></th>
+    <th><%= link_to('E-mail', admin_support_tickets_url(:sort => sort_link_for('ticket_email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th><%= link_to('User', admin_support_tickets_url(:sort => sort_link_for('ticket_user', params[:sort])), :title=>"Sort by User" ) %></th>
+    <th><%= link_to('Priority', admin_support_tickets_url(:sort => sort_link_for('ticket_priority', params[:sort])), :title=>"Sort by Priority" ) %></th>
+    <th><%= link_to('Status', admin_support_tickets_url(:sort => sort_link_for('ticket_status', params[:sort])), :title=>"Sort by Status" ) %></th>
+    <th><%= link_to('Created at', admin_support_tickets_url(:sort => sort_link_for('ticket_created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% for ticket in @tickets %>
+  <tr>
+    <td><%=ticket.id%></td>
+    <td><%=ticket.subject%></td>
+    <td><%=mail_to ticket.email%></td>
+    <td><%=ticket.user ? link_to(ticket.user_name, admin_user_path(ticket.user), :target=>"_blank") : ticket.user_name%></td>
+    <td><%=ticket.priority%></td>
+    <td><%=ticket.status%></td>  
+    <td><%=ticket.created_at.strftime("%d/%m/%Y %H:%M")%></td>  
+      <td><%= link_to 'Show', admin_support_ticket_path(ticket) %> |
+        <%= link_to 'Edit', admin_edit_support_ticket_path(ticket) %> |
+        <%= link_to 'Destroy', admin_support_ticket_path(ticket) , :confirm => 'Are you sure?', :method => :delete %> 
+      </td>
+    </tr>
+<% end %>
+</table>

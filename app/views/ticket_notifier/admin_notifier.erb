@@ -14,7 +14,14 @@ Ticket Details:
 
 <p>
 Message: <br>
-<%= @ticket.message  %>
+<%= simple_format(@ticket.message)  %>
+</p>
+
+<p>
+<%if @history && !@history.empty?%>
+History:
+<%= simple_format(@history) %>
+<%end%>
 </p>
 
 <p><%=link_to "Edit", "" %> | <%=link_to "View", "" %></p>

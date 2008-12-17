@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
   map.home '',  :controller => 'news',:action=>"index"
+  
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '', :controller => 'member/website',  :action => 'index'
     m.resource   :tent, :controller => 'member/tents'
@@ -30,6 +31,7 @@ ActionController::Routing::Routes.draw do |map|
     m.team_members '/boats/:team_id/members/:action/:id', :controller => 'member/members'
     m.team_practices '/boats/:team_id/practices/:action/:id', :controller => 'member/practices'
     m.team_tents '/boats/:team_id/tents/:action/:id', :controller => 'member/tents'
+    m.reply '/support/reply/:id/:answer_id', :controller => 'member/support', :action => 'reply'
   end
   
   map.with_options :path_prefix => 'team/:slug', :name_prefix => 'team_' do |m|
@@ -43,6 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
+    m.resources     :support_tickets,    :controller => 'admin/support'
     m.resources     :users,    :controller => 'admin/users'
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
@@ -65,6 +68,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :support, :controller => 'support'
   map.resources :volunteers
   map.resources :paddlers
+  map.reply '/support/reply/:id/:answer_id', :controller => 'support', :action => 'reply'
   
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'

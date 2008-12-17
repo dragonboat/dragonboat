@@ -6,7 +6,10 @@
 <td>
   <% ancestors = @ticket.ancestors %>
   <% if ancestors.size > 0%>
-    <%=link_to "View all thread", :action=>:show, :id=>@ticket.root.id%>
+    <%if @ticket.parent && ancestors.size > 1%> 
+    <%=link_to "View parent ticket", :action=>:show, :id=>@ticket.parent.id%> |
+    <%end%>
+    <%=link_to "View all thread", :action=>:show, :id=>@ticket.root.id%> 
   <%end%>
   <%= render :partial => 'ticket', :locals=>{:ticket=>@ticket}%>
 </td>

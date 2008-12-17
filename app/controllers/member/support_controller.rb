@@ -1,4 +1,5 @@
 class Member::SupportController < ApplicationController
+  include SupportHelper
   before_filter :login_required, :is_not_admin?, :fetch_user
   layout 'member'
 
@@ -20,7 +21,18 @@ def reply
   @ticket = @user.tickets.build
   @ticket.parent_id = @parent.id
   @ticket.email = @parent.email
-  @answer = @ticket.answers.find(params[:answer_id])
+   
+  @answer = @parent.answers.find(params[:answer_id])
+  @ticket.subject, @ticket.message = reply_to(@parent, @answer)
+  if request.post?
+    @ticket.attributes=(params[:ticket])
+    if @ticket.save
+      flash[:notice] = "Reply ticket was successfully created"
+      redirect_to :action=>:show, :id=>@ticket.id
+      return
+    end
+  end
+  #@history = history(@ticket)
 end
 
 private
@@ -40,6 +52,7 @@ private
             redirect_to admin_index_path if current_user.is_admin?
             redirect_to member_index_path unless current_user.is_admin?
           else
+            flash[:notice] = "Please, Sign in to view this page"
             redirect_to new_session_path
           end
         end

@@ -1,8 +1,20 @@
-<%= error_messages_for :ticket %></td></tr>
-  <h4>From:</h4>
-  <%=@ticket.email%>
-
- 
+<%= error_messages_for :ticket %>
+<ul id="ticket-list" style="width:600px;">
+  <li>
+<h1>Reply to Ticket ID#<%=@parent.id%>: <%=@parent.subject%></h1>
+<div id="answer">
+  <div id="date"><%=@answer.created_at.strftime("%d/%m/%Y %H:%M")%></div>
+  <i>PDB Admin:</i> <br/>
+  <strong><%=@answer.subject%></strong>
+  <div>
+    <%=h @answer.message%>
+  </div>
+</div>
+<h4>From:</h4>
+<%=@ticket.email%>
+<p>
+<b></b>
+</p> 
   
 <br/>
 <p>
@@ -17,3 +29,5 @@
   <label for="ticket_message">Message:<span id="required">*</span><br/></label>
   <%= f.text_area :message, :rows=>10%>
 </p>
+</li>
+</ul>

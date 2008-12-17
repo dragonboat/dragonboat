@@ -12,11 +12,11 @@ class Ticket < ActiveRecord::Base
   has_many :answers, :dependent=>:destroy
   
   scope_out :registered,
-            :conditions => "user_id IS NOT NULL",
+            :conditions => "user_id IS NOT NULL AND user_id<>0",
             :order=>:created_at
           
   scope_out :nonregistered,
-            :conditions => "user_id IS NULL",
+            :conditions => "user_id IS NULL OR user_id=0",
             :order=>:created_at
           
   scope_out :pending, :conditions => "status='pending'",  :order=>"created_at"
@@ -25,4 +25,9 @@ class Ticket < ActiveRecord::Base
   def after_initialize
     self.status = 'open' unless self.status
   end
+  
+  def user_name
+    user ? user.login: "non-registered"
+  end
+  
 end

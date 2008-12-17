@@ -8,19 +8,22 @@
       <i><%=ticket.email%></i>:
     </div>
     <h1>
-      <b>Ticket ID#<%=ticket.id%></b>: <%=link_to ticket.subject , {:action=>:show, :id=>ticket.id},:title=>"Click to view this ticket" %>
+      
+      <b>Ticket ID#<%=ticket.id%></b>: <%=link_to ticket.subject,{:action=>:show, :id=>ticket.id},:title=>"Click to view this ticket" %> 
+       &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to image_tag("icons/page_white_edit.png", :border=>0, :title=>"Edit"), admin_edit_support_ticket_path(ticket) %>
     </h1>
-   
+    
     <p>
       <%=simple_format(ticket.message)%>
     </p>
     <%ticket.answers.find(:all, :order=>"created_at").each do |answer|%>
     <%= render :partial => 'answer', :locals=>{:answer=>answer, :ticket=>ticket}%>
     <%end%>
-    <div id="child_<%=ticket.id%>" style="display:block;">
+    <div id="child_<%=ticket.id%>" style="display:none;">
     <%children.each do |child|%>
     <%= render :partial => 'ticket', :locals=>{:ticket=>child}%>
     <%end%>
     </div>
+   
   </li>
 </ul>

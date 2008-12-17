@@ -8,14 +8,14 @@
       <i><%=ticket.email%></i>:
     </div>
     <h1>
-      <b>Ticket ID#<%=ticket.id%></b>: <%=ticket.subject%>
+      <b>Ticket ID#<%=ticket.id%></b>: <%=link_to ticket.subject,{:action=>:show, :id=>ticket.id},:title=>"Click to view this ticket" %> 
     </h1>
     
     <p>
-      <%=h ticket.message%>
+      <%=simple_format(ticket.message)%>
     </p>
     <%ticket.answers.find(:all, :order=>"created_at").each do |answer|%>
-    <%= render :partial => 'answer', :locals=>{:answer=>answer}%>
+    <%= render :partial => 'answer', :locals=>{:answer=>answer, :ticket=>ticket}%>
     <%end%>
     <div id="child_<%=ticket.id%>" style="display:block;">
     <%children.each do |child|%>

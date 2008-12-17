@@ -10,12 +10,15 @@
     <%=link_to "View parent ticket", :action=>:show, :id=>@ticket.parent.id%> |
     <%end%>
     <%=link_to "View all thread", :action=>:show, :id=>@ticket.root.id%> 
-    
   <%end%>
   <%= render :partial => 'ticket', :locals=>{:ticket=>@ticket}%>
-  </td>
+</td>
 </tr>
 </table>
 <%else%>
 No Tickets was found with ID#<%=params[:id]%>
 <%end%>
+
+<p>
+<%=link_to "Back", admin_support_tickets_path%>
+</p>
