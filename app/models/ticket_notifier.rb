@@ -8,7 +8,12 @@ class TicketNotifier < ActionMailer::Base
     setup_email(ticket)
   end
   
-  def reopen(ticket)  
+  def reply(ticket) 
+    @recipients  = "#{ticket.email}"
+    @from        = "#{APP_CONFIG['admin_email']}"
+    @subject     =  ""
+    setup_email(ticket)
+    set_answer(ticket)    
   end 
   
   def pending(ticket)
@@ -65,6 +70,6 @@ class TicketNotifier < ActionMailer::Base
     str+="\n"+message #if !message.empty?
     answer.update_attribute(:message, str )
     @body[:answer] = answer.reload.message
-    @subject +=ticket.subject
+    @subject +="Re: "+ticket.subject
   end
 end

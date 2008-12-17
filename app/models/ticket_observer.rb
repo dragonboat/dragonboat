@@ -7,6 +7,8 @@ class TicketObserver < ActiveRecord::Observer
   def after_update(ticket)
     if %w(pending review closed).include?(ticket.status)
       TicketNotifier.send("deliver_#{ticket.status}", ticket)
+    else
+      TicketNotifier.deliver_reply(ticket) 
     end
   end
 end

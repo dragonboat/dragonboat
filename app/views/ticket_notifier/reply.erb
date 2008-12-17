@@ -1,0 +1,26 @@
+<%if @ticket.user%>Hello, <%= @ticket.user.person.name %><%end%>
+
+<%= @answer %>
+
+
+Ticket Details:
+ID#:            <%= @ticket.id %>
+Subject:        <%= @ticket.subject %>
+Priority:       <%= @ticket.priority.capitalize %>
+Current Status: <%= @ticket.status %>
+Created at:     <%= @ticket.created_at.strftime("%d/%m/%Y") %>
+
+<%if @ticket.user%>
+You are registered on our online system already. 
+Please,don`t forget login before clicking this link
+<%end%>
+URL to view ticket:  <%= @url_to_view%>
+
+Message: 
+<%= @ticket.message  %>
+
+
+<%if @history && !@history.empty?%>
+History:
+<%= @history %>
+<%end%>
