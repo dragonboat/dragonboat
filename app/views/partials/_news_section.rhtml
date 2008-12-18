@@ -11,7 +11,7 @@
          <%end%>
          <%=news.description%>..<%=link_to "read more&#187;", {:action=>:show, :id => news.id} , :class=>"to_full"%> 
        
-         <span id="date"><%=news.published%></span>
+         <div id="date"><%=news.published%></div>
        </div>
    <%end%>  
 </div>
