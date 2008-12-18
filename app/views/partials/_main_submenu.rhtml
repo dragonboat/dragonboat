@@ -1,5 +1,6 @@
-<% url = controller.controller_path 
 
+<% url = controller.controller_path 
+  
   
   
   page = Comatose::Page.find_by_path( @current_page_name ) if @current_page_name&&!@current_page_name.empty?
@@ -19,4 +20,4 @@
         <%= render :partial=>'partials/page_list_item', :locals=>{ :page=>page, :level=>1 } %>
       <% end %>
     </ul>         
-    
+ 

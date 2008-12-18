@@ -8,19 +8,20 @@ This stylesheet and the assocaited (x)html may be modified in any
 way to fit your requirements.
 =================================================================== */
 /* common styling */
-.menu {font-family: arial, sans-serif; width:750px; height:100px; position:relative; font-size:11px; z-index:100;}
-.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;width:104px; height:20px; text-align:center; color:#fff; border:1px solid #fff; background:#710069; line-height:20px; font-size:11px; overflow:hidden;}
+/* widht 104 - 80*/
+.menu {font-family: verdana, sans-serif; width:100%; height:10px; position:relative; font-size:11px; z-index:100;}
+.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000; width:83px; height:20px; text-align:center; border:1px solid #fff; background:#ffffff; line-height:20px; font-size:12px; font-weight:bold;  overflow:hidden;}
 .menu ul {padding:0; margin:0; list-style: none;}
 .menu ul li {float:left; position:relative;}
 .menu ul li ul {display: none;}
 
 /* specific to non IE browsers */
-.menu ul li:hover a {color:#fff; background:#36f;}
-.menu ul li:hover ul {display:block; position:absolute; top:21px; left:0; width:105px;}
-.menu ul li:hover ul li a.hide {background:#6a3; color:#fff;}
-.menu ul li:hover ul li:hover a.hide {background:#6fc; color:#000;}
+.menu ul li:hover a {color:#fff; background:#F7941D;  border:1px solid #F7941D;}
+.menu ul li:hover ul {display:block; position:absolute; top:22px; left:0; width:84px;}
+.menu ul li:hover ul li a.hide {background:#F7941D; color:#fff;}
+.menu ul li:hover ul li:hover a.hide {background:#fff; color:#F7941D;}
 .menu ul li:hover ul li ul {display: none;}
-.menu ul li:hover ul li a {display:block; background:#ddd; color:#000;}
-.menu ul li:hover ul li a:hover {background:#6fc; color:#000;}
-.menu ul li:hover ul li:hover ul {display:block; position:absolute; left:105px; top:0;}
-.menu ul li:hover ul li:hover ul.left {left:-105px;}
+.menu ul li:hover ul li a {display:block; background:#F7941D; color:#fff;}
+.menu ul li:hover ul li a:hover {background:#fff; color:#F7941D;}
+.menu ul li:hover ul li:hover ul {display:block; position:absolute; left:84px; top:0;}
+.menu ul li:hover ul li:hover ul.left {left:-84px;}

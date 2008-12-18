@@ -24,11 +24,10 @@
     <%= javascript_include_tag 'redbox' %>
     <%= javascript_include_tag :defaults %>
   </head>
+  
   <body>
-    <div>
-      <%= render :partial=>'partials/main_menu'%>
-    </div>
-    <div id="top">
+      
+    <div id="header">
       <%= render :partial=>'partials/header'%>
     </div>
     <div>
@@ -36,9 +35,13 @@
     </div>
     <p style="color: green"><%= flash[:notice] %></p>
     <div id="content">
+      <%if params[:page] && !params[:page].empty?%>       
       <div id="main_submenu">
       <%= render :partial=>'partials/main_submenu'%>
       </div>
+      <%else%>
+      <%= render :partial=>'partials/news_section'%>
+      <%end%>
       <div>
         <h3><%= navigation_path(@current_page_name,"/")%></h3>
         <div id="main">
@@ -46,6 +49,9 @@
         </div>
       </div>
      </div>
-      <div id="footer"></div>
-  </body>
+     
+     <div id="footer">
+        <%= render :partial=>'partials/footer'%>  
+      </div>
+    </body>
 </html>

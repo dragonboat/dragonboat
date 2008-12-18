@@ -17,6 +17,6 @@ class News < ActiveRecord::Base
             :order => 'published_at DESC'
      
   def published
-    data_is_visible== true ? published_at.strftime("%d/%m/%Y") : ""
+    data_is_visible== true ? published_at.strftime("%B %d, %Y") : ""
   end
 end

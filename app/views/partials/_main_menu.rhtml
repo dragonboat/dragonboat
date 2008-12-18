@@ -3,9 +3,9 @@
 <br/>
 <div class="menu">
 <ul>
-  <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"",:url=>"/"}%>
-  <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Events", :title=>"",:url=>{:controller=>'events', :action=>'index'}}%>
-  <%= render :partial=>'partials/menu_item', :locals=>{:name=>"News", :title=>"",:url=>{:controller=>'news', :action=>'index'}} %>
+  <%# render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"",:url=>"/"}%>
+  <%# render :partial=>'partials/menu_item', :locals=>{:name=>"Events", :title=>"",:url=>{:controller=>'events', :action=>'index'}}%>
+  <%# render :partial=>'partials/menu_item', :locals=>{:name=>"News", :title=>"",:url=>{:controller=>'news', :action=>'index'}} %>
   
               
             <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>
@@ -15,12 +15,12 @@
    
             <!-- For admin user  -->
             <% if logged_in? && current_user.is_admin? %>
-             <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Admin", :title=>"",:url=>comatose_admin_url} %>
+             <%# render :partial=>'partials/menu_item', :locals=>{:name=>"Admin", :title=>"",:url=>comatose_admin_url} %>
             <%end %>
             
             <!-- For unregister user  -->
              <% unless logged_in? %>
-             <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Register a Boat", :title=>"",:url=>new_user_path} %>
+             <%# render :partial=>'partials/menu_item', :locals=>{:name=>"Registration", :title=>"",:url=>new_user_path} %>
              <% end %>
               
 </ul>
