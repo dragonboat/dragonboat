@@ -25,26 +25,26 @@
     <%= javascript_include_tag :defaults %>
   </head>
   
-  <body>
-      
+  <body>     
     <div id="header">
       <%= render :partial=>'partials/header'%>
+    </div>  
+    <div id="breadcrumbing_area">
+      <%unless request.request_uri=="/"%>
+      <h1><%=navigation_links(@current_page_name, " > ")%></h1>
+      <%end%>
     </div>
-    <div>
-      <%= navigation_links(@current_page_name)  %>
-    </div>
-    <p style="color: green"><%= flash[:notice] %></p>
+   
     <div id="content">
-      <%if params[:page] && !params[:page].empty?%>       
-      <div id="main_submenu">
-      <%= render :partial=>'partials/main_submenu'%>
-      </div>
+      <%unless request.request_uri=="/"%>       
+        <%= render :partial=>'partials/main_submenu'%>
       <%else%>
-      <%= render :partial=>'partials/news_section'%>
+        <%= render :partial=>'partials/news_section'%>
       <%end%>
       <div>
-        <h3><%= navigation_path(@current_page_name,"/")%></h3>
         <div id="main">
+          <h1><%= navigation_path(@current_page_name,"/")%></h1>
+          <p style="color: green"><%= flash[:notice] %></p>
           <%= yield %> 
         </div>
       </div>

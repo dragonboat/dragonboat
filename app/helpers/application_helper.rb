@@ -168,7 +168,7 @@ module ApplicationHelper
        pages_paths = page.ancestors.map(&:full_path).select {|p| p}
        current_page = {:title=>page.title.titleize, :uri=>page.uri}
      else
-       current_page = {:title=>"Home", :uri=>"/"}
+       #current_page = {:title=>"Home", :uri=>"/"}
      end
      pages_paths = [] unless pages_paths
      html = ""
@@ -176,7 +176,7 @@ module ApplicationHelper
         html << link_to(page.title.titleize, page.uri)
         html << separator
       end 
-      html << link_to(current_page[:title], current_page[:uri])
+      html << link_to(current_page[:title], current_page[:uri]) if current_page
    end
    
    def navigation_path(current_page_slug = '', separator = " &raquo; ")   

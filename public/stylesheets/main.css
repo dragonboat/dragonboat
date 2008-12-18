@@ -9,7 +9,8 @@ body {
     }
 
 a {color:#393537;}
-h1 {font-size:18px;}
+h1 {font-size:22px; color:#000; font-weight:bold;}
+h3 {font-size:12px; color:#F7941D;font-weight:bold;}
 #required {color:red;}
 #msg {
     margin: 10px 10px 10px 20px;
@@ -21,13 +22,13 @@ h1 {font-size:18px;}
     }
 img {border:0px;}
 /*Header*/
-#header { height: 162px; background: url(/images/top_line.gif)  repeat-x bottom;}
+#header { height: 162px; background: url(/images/top_line.gif)  repeat-x bottom; }
 img#pdb_logo { 
-            height: 157px; 
+            height: 159px; 
             width:327px; 
             border:0px; 
             margin-top:3px;
-            margin-bottom:2px;    
+            margin-bottom:0px;    
         }
 #header div#pdb_logo {width:347px; height: 162px;  float:left;}
 #header div#user_panel {height: 122px; text-align:right;}
@@ -37,20 +38,24 @@ img#pdb_logo {
 #user_panel a {color:#F7941D; text-decoration: underline;}
 
 /* Content */
-#content {height: 500px;}
+#content {height: 500px; overflow: auto; margin-left:12px;}
 
 /* Footer */
 #footer { height: 50px; background: url(/images/top_line.gif)  repeat-x top; padding-top:10px;}
-
+#footer div {font-size:13px; font-weight:bold; text-align:right;}
 /* News Sevtion*/
 #content div#news_section {height: 100%; width:220px; float:left; 
                     background: url(/images/vert_line_grey.gif)  repeat-y right; 
-                    padding-right:15px; font-size:11px;}
+                    padding-right:15px; font-size:11px;        
+                }
+#content div#news_section div#news_block {padding-bottom:15px;  background: url(/images/news_line.gif)  repeat-x bottom; }
 #content div#news_section h1 {color:#fff; background:#000000; text-transform : uppercase; margin-top: 0px; margin-bottom: 16px; padding-left: 10px;}
 #content div#news_section div.news_block { color: #959595;}
-#content div#news_section div.news_block h2 { font-size: 14px;  background: url(/images/arrow_grey.gif)  no-repeat left top; padding-left:20px;}
+#content div#news_section div.news_block h2 { margin-bottom:5px; font-size: 14px;  background: url(/images/arrow_grey.gif)  no-repeat left top; padding-left:20px;}
 #content div#news_section div.news_block h2 a { color: #000; text-decoration: none }
-#content div#news_section div.news_block #date {color:#F7941D;}
+#content div#news_section div.news_block #date {color:#F7941D; font-weight:bold; margin-top:10px;}
+#content div#news_section div.news_block a.to_full {color: #959595; text-decoration: none;}
+
 /* Main Content */
 #content div#main {  position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px;}  
 #content div#main h2 {
@@ -58,7 +63,16 @@ img#pdb_logo {
     font: normal 20px 'Veranda', sans-serif; 
     margin: 15px 30px;
     }    
-   
+/* Breadcrumbing Area */
+#breadcrumbing_area {height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
+#breadcrumbing_area h1{margin:0px; padding-top:5px;  padding-left:15px; height: 32px; background-color: #000; color: #fff; font-size:14px; font-weight:bold;}
+#breadcrumbing_area a {color: #fff; text-decoration: none;}
+
+/*Submenu Section*/
+#content div#submenu_section {height: 100%; width:220px; float:left; 
+                    background-color: #F7941D; 
+                    padding-right:15px; font-size:12px;        
+                } 
 
 /* Main Menu */
 #mainMenu {
@@ -82,7 +96,7 @@ img#pdb_logo {
     float: left;
     }
 /**Main Submenu**/
-#main_submenu  {width:250px; height: 1800px; display: block; 
+#main_submenu  {width:250px; height: 100%; display: block; 
                 border: 1px solid #C3C9BD; float: left; margin-right:10px;
                 background-color:#F35F17; color:#ffffff;
             }

@@ -1,4 +1,4 @@
-
+<div id="submenu_section">
 <% url = controller.controller_path 
   
   
@@ -19,5 +19,6 @@
       <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |page| %>    
         <%= render :partial=>'partials/page_list_item', :locals=>{ :page=>page, :level=>1 } %>
       <% end %>
-    </ul>         
- 
+    </ul> 
+</div>
+    

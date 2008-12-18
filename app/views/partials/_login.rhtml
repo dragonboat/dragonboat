@@ -5,6 +5,9 @@
         <%if current_user.tickets.find_pending(:first)%>
         <%= link_to "Support", :controller=>"member/support", :action=>"index"%> &nbsp;|&nbsp; 
         <%end%>
+        
+        <%else%>
+         <%= link_to "My Account",admin_user_path(current_user)%> &nbsp;|&nbsp;
         <%end%>
         <%= link_to "logout", logout_url %>
         <br/>
