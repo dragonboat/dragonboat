@@ -1,7 +1,22 @@
-<% content_for :title do %>Order process was successfully completed<% end %>
-<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"previous", :s6=>"current"} %>
+<% content_for :title do %>Registration Complete<% end %>
+<% content_for :breadcrumbing_area do%>
+<h1>Team Registration > Registration Complete</h1>
+<%end%>
+<% content_for :submenu_area do%>
+  <div id="submenu_section">
+    <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
+    <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"previous", :s6=>"current"} %>
+  </div>
+<%end%>
+<% content_for  :current_page_name do%>
+  Registration Complete
+<%end%>
+<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+  <%= render :comatose=>'registration-complete-instructions', :silent=>true %>
+<!-- -->
+
 <div>
-<h3>Thanks for your order!</h3>
+<h2>Thanks for your order!</h2>
 
 <% content_tag :fieldset do %> 
   <%= content_tag :legend, "Your Details" %>

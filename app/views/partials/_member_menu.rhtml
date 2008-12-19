@@ -1,10 +1,14 @@
 <% url = controller.controller_path %> 
+
+<%if current_user.has_any_boat?%>
+<%= render :partial=>'partials/main_menu'%>
+<%# render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Register", :title=>"",:url=>member_index_url}%>
+<%else%>
+        
 <br/>
 <div class="menu">
 <ul>
-        <%if current_user.has_any_boat?%>
-        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Register", :title=>"",:url=>member_index_url}%>
-        <%elsif current_user.is_member?%>
+        <%if current_user.is_member?%>
           <%slug = @team.name.to_slug%>
           <%unless current_user.member.is_unconfirmed?%>
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"", :url=>team_index_path(slug), :current=>url =~/(website)/} %>
@@ -12,9 +16,11 @@
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=>team_user_path(slug), :current=>url =~/(user)/} %>
           <%end%>
         <%else%>
-        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Home", :title=>"", :url=>member_boats_url, :current=>url =~/(boats|members)/ } %>
-        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Orphaned Paddlers", :title=>"", :url=>member_paddlers_path, :current=> url =~/(paddlers)/ } %>
-        <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=> member_user_path, :current=> url =~/(user)/ } %>
+          <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Home", :title=>"", :url=>member_boats_url, :current=>url =~/(boats|members)/ } %>
+          <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Orphaned Paddlers", :title=>"", :url=>member_paddlers_path, :current=> url =~/(paddlers)/ } %>
+          <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=> member_user_path, :current=> url =~/(user)/ } %>
         <%end%>
-</ul>
+      </ul>
 </div>
+<%end%>
+      

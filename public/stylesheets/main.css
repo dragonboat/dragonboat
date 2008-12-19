@@ -10,6 +10,7 @@ body {
 
 a {color:#393537;}
 h1 {font-size:22px; color:#000; font-weight:bold;}
+h2 {font-size:14px; color:#F7941D;font-weight:bold;}
 h3 {font-size:12px; color:#F7941D;font-weight:bold;}
 #required {color:red;}
 #msg {
@@ -38,15 +39,17 @@ img#pdb_logo {
 #user_panel a {color:#F7941D; text-decoration: underline;}
 
 /* Content */
-#content {height: 500px; overflow: auto; margin-left:12px;}
+#content {min-height:500px; height: 100%; overflow: visible; margin-left:12px;  background-color: #fff; }
 
 /* Footer */
 #footer { height: 50px; background: url(/images/top_line.gif)  repeat-x top; padding-top:10px;}
 #footer div {font-size:13px; font-weight:bold; text-align:right;}
+
 /* News Sevtion*/
-#content div#news_section {height: 100%; width:220px; float:left; 
+#content div#news_section {height:100%; width:220px; float:left; 
                     background: url(/images/vert_line_grey.gif)  repeat-y right; 
-                    padding-right:15px; font-size:11px;        
+                    padding-right:15px; font-size:11px; 
+                    background-color: #fff;       
                 }
 #content div#news_section div#news_block {padding-bottom:15px;  background: url(/images/news_line.gif)  repeat-x bottom; }
 #content div#news_section h1 {color:#fff; background:#000000; text-transform : uppercase; margin-top: 0px; margin-bottom: 16px; padding-left: 10px;}
@@ -57,14 +60,10 @@ img#pdb_logo {
 #content div#news_section div.news_block a.to_full {color: #959595; text-decoration: none;}
 
 /* Main Content */
-#content div#main {  position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px;}  
-#content div#main h2 {
-    color: #5E8078;
-    font: normal 20px 'Veranda', sans-serif; 
-    margin: 15px 30px;
-    }    
+#content div#main { min-height:500px;height:100%; background-color: #fff; position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;}  
+    
 /* Breadcrumbing Area */
-#breadcrumbing_area {height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
+#breadcrumbing_area {min-width:800px; height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
 #breadcrumbing_area h1{margin:0px; padding-top:5px;  padding-left:15px; height: 32px; background-color: #000; color: #fff; font-size:14px; font-weight:bold;}
 #breadcrumbing_area a {color: #fff; text-decoration: none;}
 
@@ -72,8 +71,35 @@ img#pdb_logo {
 #content div#submenu_section {height: 100%; width:220px; float:left; 
                     background-color: #F7941D; 
                     padding-right:15px; font-size:12px;        
-                } 
+                }                
+/*Order Steps*/
+#step_list ul {
+    margin:0 10 0 10;
+    padding-top:5px;  padding-bottom:5px; padding-right:0px;  padding-left:5px;
+    list-style:none;
+    font-size:13.5px;
+    font-weight: bold;
+    color: #fff;
+}
+#step_list li{ padding-left:5px; padding-right:5px;  padding-bottom:3px;}
+#step_list .next {background-color:#F7941D;}
+#step_list .current {background-color:#fff; color:#F7941D;}
+#step_list .previous {color:#ccc;}
 
+/*Page-list*/
+ul#page_list, #page_list ul {
+    margin-left:10px;
+    list-style:none;
+    padding:0px;
+}
+ul#page_list{
+    margin-left:0px;
+}
+#page_list li{ list-style:none; padding-top:2px;  padding-bottom:2px; padding-right:0px;  padding-left:2px;}
+#page_list a {  padding-left:5px; padding-right:5px; padding-top:2px; padding-bottom:2px; width:100%; text-transform : capitalize; color: #fff;font-size:13px;font-weight: bold; text-decoration: none;  }
+#page_list #current {background-color:#fff; color:#F7941D;}
+#page_list a:hover {background-color:#fff; color:#F7941D;}
+#separator {clear:both;height:1px; margin:0px; padding:0px; width:100%;}
 /* Main Menu */
 #mainMenu {
     clear: both;
@@ -217,19 +243,6 @@ LEGEND {
   display: inline-table;
   padding:10px;
 }
-/*Order Steps*/
-#step_list ul{
-    margin:0;
-    padding:0 5 0 0;
-    list-style:none;
-
-    width: 250px;
-    float: right;
-    font-size:11px;
-}
-#step_list .next {background-color:white;}
-#step_list .current {background-color:yellow;}
-#step_list .previous {color:grey;}
 
 #ticket-list ul {
     margin:0;

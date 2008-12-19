@@ -31,24 +31,29 @@
     </div>  
     <div id="breadcrumbing_area">
       <%unless request.request_uri=="/"%>
-      <h1><%=navigation_links(@current_page_name, " > ")%></h1>
+      <h1><%=navigation_links(@current_page_name, " > ")%><%= yield :breadcrumbing_area %></h1>
       <%end%>
     </div>
    
     <div id="content">
-      <%unless request.request_uri=="/"%>       
-        <%= render :partial=>'partials/main_submenu'%>
-      <%else%>
+      <%unless request.request_uri=="/"%> 
+        <div id="submenu_section">
+            <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
+            <%= yield :submenu_area %> 
+            <%= render :partial=>'partials/main_submenu'%>
+        </div>
+        <%else%>
         <%= render :partial=>'partials/news_section'%>
       <%end%>
-      <div>
+  
         <div id="main">
-          <h1><%= navigation_path(@current_page_name,"/")%></h1>
+          <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1>
           <p style="color: green"><%= flash[:notice] %></p>
           <%= yield %> 
         </div>
+    
       </div>
-     </div>
+      <div id="separator"></div>
      
      <div id="footer">
         <%= render :partial=>'partials/footer'%>  

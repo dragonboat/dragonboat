@@ -378,3 +378,24 @@ BODY {
     font-weight:bold;
     }
 #mainMenu ul.tabs li.block1 {color: grey;}
+
+img {border:0px;}
+
+p{
+  margin:10px 0px 10px 0px;
+  padding:0px;
+}
+
+a{
+  color: #00669A;
+  text-decoration:none;
+}
+a:hover{
+  color: #00669A;
+  text-decoration:underline;
+}
+
+a:visited{
+  color:#00669A;
+}
+#content {margin:0 10 1 10;}

@@ -1,5 +1,5 @@
-<p>Name: <%=h @team.name%></p>
-<p>Description: <%=h @team.description%></p>
+<p>Team Name: <%=h @team.name%></p>
+<p>Team Biography: <%=h @team.description%></p>
 <%@person = current_user.person %>
 <p>Captain: <%=@person.name%></p>
 <p>Price: <b><%=number_to_currency @team.price%></b></p>

@@ -1,7 +1,23 @@
+<% content_for :title do %>Step 5 - Verify Details<% end %>
+<% content_for :breadcrumbing_area do%>
+<h1>Team Registration > Step 5 - Verify Details</h1>
+<%end%>
+<% content_for :submenu_area do%>
+  <div id="submenu_section">
+    <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
+     <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"current", :s6=>"next"} %>
+  </div>
+<%end%>
+<% content_for  :current_page_name do%>
+  Verify Details
+<%end%>
+<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+  <%= render :comatose=>'step5-instructions', :silent=>true %>
+<!-- -->
 <h2>Boat: <%=@team.name%></h2> 
-<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"current", :s6=>"next"} %>
+   
     <fieldset>
-      <legend>Step 5 from 5 - Verify Registration Details</legend>
+    <legend>Step 5 - Verify Registration Details</legend>
 <h4>Your Details</h4>
 <%= @person.first_name %>
 <%= @person.last_name %><br>

@@ -7,14 +7,39 @@ Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
 This stylesheet and the assocaited (x)html may be modified in any 
 way to fit your requirements.
 =================================================================== */
-.menu {font-family: verdana, sans-serif; width:100%; height:10px; position:relative; font-size:11px; z-index:100;}
+.menu {font-family: verdana, sans-serif; min-width:900px; width:100%; height:1px; position:absolute; font-size:11px; z-index:100;}
+.menu ul ul a {padding-left:15px; padding-right:15px;}
+.menu ul { background:#FFF;  }
+.menu ul ul { background:#F7941D; color:#fff;}
+
+.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;  white-space: nowrap; width:1px; height: 1px; vertical-align: bottom; text-align:center; border:1px solid #fff; background:#fff; line-height:20px; font-size:12px; font-weight:bold;  overflow:visible;}
 .menu ul li a.hide, .menu ul li a:visited.hide {display:none;}
 .menu ul li a:hover ul li a.hide {display:none; }
 .menu ul li a:hover {color:#fff; background:#F7941D; border:1px solid #F7941D;}
-.menu ul li a:hover ul {display:block; position:absolute; top:22px; left:0; width:84px;}
-.menu ul li a:hover ul li a.sub {background:#F7941D; color:#fff; border:1px solid #F7941D}
+.menu ul li a:hover ul {display:block; position:absolute; top:25px; left:0; width:auto; }
+.menu ul li a:hover ul li a.sub {background:#F7941D; color:#fff; border:1px solid #F7941D;}
 .menu ul li a:hover ul li a {display:block; background:#F7941D; color:#fff; border:1px solid #F7941D}
 .menu ul li a:hover ul li a ul {visibility:hidden;}
 .menu ul li a:hover ul li a:hover {background:#fff; color:#F7941D;}
-.menu ul li a:hover ul li a:hover ul {visibility:visible; position:absolute; left:84px; top:0; color:#000;}
-.menu ul li a:hover ul li a:hover ul.left {left:-84px;}
+.menu ul li a:hover ul li a:hover ul {visibility:visible; position:absolute; left:100%; top:0; color:#000;}
+.menu ul li a:hover ul li a:hover ul.left {left:-100%;}
+
+
+img#pdb_logo { 
+            height: 159px; 
+            width:327px; 
+            border:0px; 
+            margin-top:3px;
+            margin-bottom:0px;   
+            white-space: nowrap; 
+        }
+#header { height: 162px; background: url(/images/top_line.gif)  repeat-x 0px 159px; }
+
+
+#header div#user_panel {height: 119px; text-align:right;}
+#header div#main_nav {height: 43px; vertical-align : bottom;}
+        
+       
+
+
+

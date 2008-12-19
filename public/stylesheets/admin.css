@@ -1,31 +1,3 @@
-img {border:0px;}
-h2{
-color:#05303c;
-/* margin:30px 0px 10px 0px; */
-font-size:12px;
-padding:0px 0px 5px 0px;
-border-bottom:1px solid #d2cdca;
-}
-
-p{
-  margin:10px 0px 10px 0px;
-  padding:0px;
-}
-
-a{
-  color: #00669A;
-  text-decoration:none;
-}
-a:hover{
-  color: #00669A;
-  text-decoration:underline;
-}
-
-a:visited{
-  color:#00669A;
-}
-
-
 table.form, table.form2{
   margin:0px 0px 15px 0px;
 }
@@ -146,10 +118,7 @@ table.form td.footer {
     padding: 5px;
 }
 
-#content {
-    clear: both;
-    padding: 10px;
-}
+
 .faded { color: #eee; }
 .icon { vertical-align: middle; border: none; }
 

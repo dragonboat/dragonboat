@@ -24,21 +24,31 @@
   </head>
   <body>
     <div id="header">
-      <%= render :partial=>'partials/header'%>
+      <%= render :partial=>'partials/member_header'%>
+    </div>  
+    <div id="breadcrumbing_area">
+      <%unless request.request_uri=="/"%>
+      <%= yield :breadcrumbing_area %>
+      <%end%>
     </div>
-    <div>
-      <%= navigation_links(@current_page_name)  %>
-    </div>
-
+    
     <div id="content">
-        <%if @team && current_user.is_captain?%>
-        <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.name %><hr/></h3>
-        <%end%>
-        
-        <p style="color: green"><%= flash[:notice] %></p>
+        <%= yield :submenu_area %> 
+        <div id="main">
+         <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
+         
+         <%if @team && current_user.is_captain?%>
+         <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.name %></h3>
+         <%end%>  
+         <p style="color: green"><%= flash[:notice] %></p>
         
         <%= yield %>
+        </div>
      </div>
-      <div id="footer"></div>
+     <div id="separator"></div>
+     
+     <div id="footer">
+       <%= render :partial=>'partials/footer'%>  
+     </div>
   </body>
 </html>

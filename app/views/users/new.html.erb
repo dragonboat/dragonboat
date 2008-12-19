@@ -1,7 +1,15 @@
-<% content_for :title do %>Account Registration<% end %>
-<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"current", :s2=>"next", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
-  <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
-  <%= render :comatose=>'registration-instructions', :silent=>true %>
+<% content_for :title do %>Step 1 - Create Account<% end %>
+<% content_for :breadcrumbing_area do%>
+Team Registration > Step 1 - Create Account
+<%end%>
+<% content_for :submenu_area do%>
+  <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"current", :s2=>"next", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
+<%end%>
+<% content_for  :current_page_name do%>
+  Create Account
+<%end%>
+<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+  <%= render :comatose=>'step1-instructions', :silent=>true %>
 <!-- -->
   <p class="notice">If you are registered on the online system already please  click here
   <%= link_to "Sign In", login_url%>
@@ -9,7 +17,7 @@
   <div>
     <% @object = @user %>  
      <fieldset>
-          <legend>Step 1 from 5 - Create Account</legend>
+          <legend>Step 1 - Create Account</legend>
         
           <% form_for :user, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
           <%= render :partial => 'form', :locals =>{:f=>f} %>
