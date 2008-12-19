@@ -10,9 +10,10 @@ way to fit your requirements.
 /* common styling */
 /* widht 104 - 80*/
 .menu a {padding-left:15px; padding-right:15px;}
-.menu ul { background:#F7941D; color:#fff; }
-.menu {font-family: verdana, sans-serif; min-width:980px; width:100%; height:10px; position:relative; font-size:11px; z-index:100;}
-.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;  white-space: nowrap; width:auto; height:20px; text-align:center; border:1px solid #fff; background:#ffffff; line-height:20px; font-size:12px; font-weight:bold;  overflow:visible;}
+.menu ul { background:#F7941D; color:#fff; widht:auto; }
+
+.menu {font-family: verdana, sans-serif; min-width:980px; width:100%; height:10px;; position:relative; font-size:11px; z-index:100;}
+.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;  white-space: nowrap; width:auto; height:20px;  border:1px solid #fff; background:#ffffff; line-height:20px; font-size:12px; font-weight:bold;  overflow:visible;}
 .menu ul {padding:0; margin:0; list-style: none;}
 .menu ul li {float:left; position:relative;}
 .menu ul li ul {display: none;}
@@ -27,3 +28,13 @@ way to fit your requirements.
 .menu ul li:hover ul li a:hover {background:#fff; color:#F7941D;}
 .menu ul li:hover ul li:hover ul {display:block; position:absolute; left:100%;  top:0;  }
 .menu ul li:hover ul li:hover ul.left {left:-100%;  }
+
+.menu li
+	{
+	position:relative;
+        min-height: 1px; 	
+        vertical-align: bottom; 
+	}
+.menu ul li li{float:none; position:relative; text-align:left;}
+
+
