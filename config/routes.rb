@@ -63,6 +63,7 @@ ActionController::Routing::Routes.draw do |map|
     m.snippets_index '/admin/snippets', :controller => 'admin/snippets',:action=> 'index'
   end
   
+  map.register_user "/register", :controller =>"users", :action=>"new"
   map.resources :users
   map.resource :session
   map.resource :support, :controller => 'support'

@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   layout "application"
   # render new.rhtml
   def new
+    if request.post?
+      create
+      return
+    end
     @user = User.new
     @person = Person.new
    # session[:register_user] = nil

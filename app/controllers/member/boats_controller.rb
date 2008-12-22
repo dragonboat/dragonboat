@@ -75,7 +75,13 @@ class Member::BoatsController < Member::WebsiteController
   def extras
     @extras = Extras.find_available(:all)
     @team.team_extras.each(&:destroy) if !@team.team_extras.empty?
-    @extras.each { |extras| @team.team_extras.create(:extras=>extras, :quantity => 1 )}
+    @extras.each do |extras| 
+      unless extras.name=="Additional Tent"
+        @team.team_extras.create(:extras=>extras, :quantity => 1 ) 
+      else
+        @team.team_extras.create(:extras=>extras, :quantity => 0 ) 
+      end
+    end
   end
   
   def add_extras 

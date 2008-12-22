@@ -1,5 +1,5 @@
 
-    <table class="item_list">
+    <table class="obj_list">
       <tr>
         <th></th>
         <th width="60%">Extras</th>
@@ -10,11 +10,12 @@
         <%items.each do |item|%>
         <%team_extras= item.team_extras.find_by_team_id(@team.id)%>
         <%quantity = team_extras.quantity if team_extras%>
-        <% default = quantity && quantity>0 ?  quantity : 1 %>
+        <% default = quantity ?  quantity : 1 %>
+        
         <tr style="background-color:#eee">
-          <td><%= check_box_tag("extras[#{item.id}]","1",team_extras,{:id=>"extras_tent", :disabled => (mode==:read)}) %> </td>
-          <td><%=item.name%> <%= "(#{item.notice})" if item.notice && !item.notice.empty? %></td>
-          <td><%=text_field_tag "quantity[#{item.id}]", default, :id=>"quantity_#{item.id}",:size=>3,:disabled => (mode==:read)%> </td>
+          <td><%= check_box_tag("extras[#{item.id}]","1",quantity>0,{:id=>"extras_tent_#{item.id}", :disabled => (mode==:read)}) %> </td>
+          <td><%=item.name%> <div class='notice'><%= "(#{item.notice})" if item.notice && !item.notice.empty? %></div></td>
+          <td><%=text_field_tag "quantity[#{item.id}]", default, :id=>"quantity_#{item.id}",:size=>3,:disabled => (mode==:read), :onclick=>"$('extras_tent_#{item.id}').checked=true;"%> </td>
           
           <td><%=number_to_currency item.price%></td>
           <td><div id="total_count_<%=item.id%>"><%= render :partial => 'member/boats/total_count', :locals=>{:price=>item.price, :quantity=> default }%></div>

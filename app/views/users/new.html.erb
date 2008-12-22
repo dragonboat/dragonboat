@@ -19,7 +19,7 @@ Team Registration > Step 1 - Create Account
      <fieldset>
           <legend>Step 1 - Create Account</legend>
         
-          <% form_for :user, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
+          <% form_for :user, :url => register_user_path, :html => { :multipart => true } do |f| %>
           <%= render :partial => 'form', :locals =>{:f=>f} %>
           <div id="buttons">
               <%= submit_tag  "Sign Up"%>
