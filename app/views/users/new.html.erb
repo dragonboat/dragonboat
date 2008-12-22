@@ -16,8 +16,8 @@ Team Registration > Step 1 - Create Account
   </p>
   <div>
     <% @object = @user %>  
-     <fieldset>
-          <legend>Step 1 - Create Account</legend>
+   
+          <h2>Step 1: Personal Details </h2>
         
           <% form_for :user, :url => register_user_path, :html => { :multipart => true } do |f| %>
           <%= render :partial => 'form', :locals =>{:f=>f} %>
@@ -25,5 +25,4 @@ Team Registration > Step 1 - Create Account
               <%= submit_tag  "Sign Up"%>
           </div>
       <%end%>
-    </fieldset>
   </div>

@@ -13,7 +13,7 @@ class Person < ActiveRecord::Base
   attr_reader :age
   
   HUMANIZED_ATTRIBUTES = {
-    :phone => "Phone number",
+    :phone => "Home Phone number",
     :address => "Street Address 1"
   }
 
@@ -73,7 +73,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
-      errors.add(:zip, 'is not a valid zip code') unless zip =~ /^[\d]{5}+$/
+      errors.add(:zip, 'is not a valid zip code') unless zip =~ /^[\d]{6}+$/
     end 
   end
 end

@@ -21,14 +21,14 @@
 <% content_tag :fieldset do %> 
   <%= content_tag :legend, "Your Details" %>
    Name: <%= @person.name %><br>
-   E-mail: <%= @person.email %><br>
-   Phone Number: <%= @person.phone %><br>
+   Email Address : <%= @person.email %><br>
+   Home Phone number: <%= @person.phone %><br>
 <% end %>
 
 <% content_tag :fieldset do %> 
   <%= content_tag :legend, "Your Account" %>
    Login: <%=@user.login%><br>
-   E-mail: <%=@user.email%><br>
+   Email Address: <%=@user.email%><br>
    Type: <%=@user.type%>
 <% end %>
 

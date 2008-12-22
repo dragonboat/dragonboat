@@ -32,10 +32,10 @@
       <label for="person_last_name">Last Name</label>:<br/><%= p.text_field :last_name %> 
     </p>
     <p>
-      <label for="person_email">E-mail</label>:<br/><%= p.text_field :email %>
+      <label for="person_email">Email Address</label>:<br/><%= p.text_field :email %>
     </p>
     <p>
-      <label for="person_phone">Phone number</label>:<br/><%= p.text_field :phone %>
+      <label for="person_phone">Home Phone number</label>:<br/><%= p.text_field :phone %>
     </p> 
     <% end %>
    <% end %>
@@ -80,7 +80,7 @@
             <label for="person_city">City</label>:<br/><%= p.text_field :city %>
           </p>
           <p>
-            <label for="person_zip">Zip</label>:<br/>  <%= p.text_field :zip %>
+            <label for="person_zip">Zip</label>:<br/>  <%= p.text_field :zip , :size=>6%>
           </p>
           <p>
             <label for="person_state">State</label>:<br/>  <%= p.select :state, states_options %>

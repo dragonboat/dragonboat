@@ -7,11 +7,11 @@
         <td id="required">&#42;&nbsp;<%= f.text_field :last_name %></td>
     </tr>
     <tr>
-        <td>E-mail:</td>
+        <td>Email Address:</td>
         <td id="required">&#42;&nbsp;<%= f.text_field :email %></td>
     </tr>
     <tr>
-        <td>Phone number:</td>
+        <td>Home Phone number:</td>
         <td id="required">&#42;&nbsp;<%= f.text_field :phone %></td>
     </tr>
     <tr>
@@ -31,7 +31,7 @@
         <td class="notRequired">&nbsp;&nbsp;<%= f.text_field :address2 %></td>
     </tr>
       <tr>
-        <td>Birthday:</td>
+        <td>Date of Birth:</td>
         <td id="required">&#42;&nbsp;<%= f.date_select :birthday_date, :order => [:day, :month, :year], :start_year => 1950 ,  :include_blank => ""%></td>
     </tr>
      <tr>
