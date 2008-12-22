@@ -14,7 +14,7 @@ def show
 end
 
 def update
-  @user = current_user
+  @user = current_usert
   @user.person.attributes = (params[:person])
   respond_to do |format|
       if @user.update_attributes(params[:user]) && @user.person.save
