@@ -44,7 +44,7 @@
    <%= content_tag :legend, "Credit Card" %>
     <% fields_for :credit_card, @credit_card do |cc| %>
     <p>
-      <label for="credit_card_type">Type</label>:<br/><%= cc.select :type, Order::CARD_TYPES.map { |t| [t ,t] } %>
+      <label for="credit_card_type">Type</label>:<br/><%= cc.select :type, Order::CARD_TYPES.map { |t| t} %>
     </p>
     <p>
       <label for="credit_card_first_name">First Name</label>:<br/> <%= cc.text_field :first_name %>

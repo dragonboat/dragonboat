@@ -11,18 +11,8 @@ ActiveMerchant::Billing::Base.mode = :test
 
     @customer = current_user
     @person = current_user.person 
-    if ActiveMerchant::Billing::Base.mode == :test
-      @credit_card = ActiveMerchant::Billing::CreditCard.new(
-                  :first_name         => 'Bob',
-                  :last_name          => 'Bobsen',
-                  :number             => '4242424242424242',
-                  :month              => 8,
-                  :year               => 2012,
-                  :verification_value => '123'
-                )
-    else
-       @credit_card = ActiveMerchant::Billing::CreditCard.new
-    end
+    #@credit_card = ActiveMerchant::Billing::CreditCard.new(:first_name=> 'Bob',:last_name=> 'Bobsen',:number => '4242424242424242', :month=>8, :year=> 2012,:verification_value => '123')
+    @credit_card = ActiveMerchant::Billing::CreditCard.new
   
     rescue ActionController::RedirectBackError => e
     redirect_to '/'
