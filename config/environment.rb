@@ -48,7 +48,7 @@ Rails::Initializer.run do |config|
 end
 require 'in_place_editing'
 
-ExceptionNotifier.exception_recipients = %w(din.chick@gmail.com) 
+ExceptionNotifier.exception_recipients = %w(errors@thepattern.net) 
 
 # Add new inflection rules using the following format 
 # (all these examples are active by default):
