@@ -3,8 +3,8 @@
 <h1>Team member Home</h1>
 
 <h1>General Boat Info</h1>
-<p>Name: <%=@team.name%></p>
-<p>Description: <%=@team.description%></p>
+<p>Team Name: <%=@team.human_name%></p>
+<p>Team Biography: <%=@team.description%></p>
 <p>Captain: <%=@team.captain.person.name%> <%=link_to_function "detail..", "$('captain_details').show()"%></p>
 
 <div id="captain_details" style="display:none;width:600px;">

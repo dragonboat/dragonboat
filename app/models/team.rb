@@ -1,4 +1,5 @@
 class Team < ActiveRecord::Base
+  include ActionView::Helpers::TextHelper
   validates_presence_of :name
   belongs_to :boat_type, :foreign_key => 'type_id', :class_name=>"BoatType"
   belongs_to :captain, :foreign_key => 'captain_id', :class_name=>"User"
@@ -25,6 +26,10 @@ class Team < ActiveRecord::Base
   scope_out :active,
             :conditions => "status_id=#{Status.find_team_by_name('active').id}"
           
+  def before_validation
+    self.name = strip_tags(self.human_name)
+  end
+  
   def total
     total = self.price
     team_extras.each {|te| total+= te.extras.price*te.quantity}

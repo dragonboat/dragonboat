@@ -1,4 +1,4 @@
-<% content_for :title do %><%=@team.name%> : Boat Details Setting<% end %>
+<% content_for :title do %>Boat Details Setting<% end %>
 <div>
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
@@ -9,16 +9,7 @@
 <% form_for(:team, :url => member_boat_path(@team.id), :html=>{:method=>:put,:multipart => true }) do |f| %>
   
   <%= render :partial => 'form', :locals =>{:f=>f} %>
-  
- 
 
-  <div id="team_logo">
-  <%= render :partial => 'logo', :locals =>{:image=>@team.image} %>
-</div>
-<% fields_for :image do |image| %>
-Select File: <%= image.file_field :uploaded_data %>
-<%end%>
-<br/>
  <span id="required">*</span>-Required <br/>
   <%= f.submit "Update" %>
 <% end %> 

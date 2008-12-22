@@ -5,7 +5,7 @@
     captain = @team.captain 
     active = @team.members.find_active(:all).size
     %> 
-    <p>Name: <%=@team.name%></p>
+    <p>Name: <%=@team.human_name%></p>
     <p>Description: <%=@team.description%></p>
     <p>URL: <%=link_to @team.url, @team.url%></p>
     <p>Type: <%=@team.boat_type_human%></p>

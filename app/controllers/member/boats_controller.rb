@@ -17,7 +17,13 @@ class Member::BoatsController < Member::WebsiteController
     @team = current_user.has_any_unactive_boat? ? current_user.unactive_teams.first : Team.new
     @team.attributes = (params[:team])
     @team.captain = current_user
+    if params[:image] && !params[:image][:uploaded_data].blank?
+      @image = Image.new(params[:image])
+      @image.user = User.find(current_user)
+      @team.image = @image if @image.valid?
+    end
     if @team.valid?&&@team.save
+  
       redirect_to member_extras_boat_path(@team.id)
     else
       render :action => 'new'
@@ -31,7 +37,7 @@ class Member::BoatsController < Member::WebsiteController
   def update
     @team = current_user.teams.find(params[:id])
     @team.attributes = (params[:team])
-    if params[:image] && !params[:image].blank?
+    if params[:image] && !params[:image][:uploaded_data].blank?
       @image = Image.new(params[:image])
       @image.user = User.find(current_user)
       @team.image = @image if @image.valid?

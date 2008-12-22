@@ -1,7 +1,22 @@
+  <script>
+  tinyMCE.init({
+    height : "80",
+    mode : "exact",
+    elements : "team_human_name",
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : false,
+    theme_advanced_resizing : false,
+    theme_advanced_resize_horizontal: false,
+    paste_auto_cleanup_on_paste : false,
+    theme_advanced_buttons1: "bold,italic,underline, forecolor",
+    theme_advanced_buttons2: "",
+    plugins: ""
+});
+</script>
   <p>
-    <strong>Name:</strong>
+    <strong>Team Name:</strong>
     <span id="required">*<br />
-    <%= f.text_field :name, :size => 50 %></span>
+    <%= f.text_field :human_name, :size => 50 %></span>
   </p>
   <%unless ["edit","update"].include? controller.action_name%>
   <p>
@@ -15,7 +30,7 @@
     <%= f.text_field :url, :size => 50 %>
   </p>
   <p>
-    <strong>Description:</strong><br />
+    <strong>Team Biography:</strong><br />
     <%= f.text_area :description, :rows=>3%></span>
   </p>
 

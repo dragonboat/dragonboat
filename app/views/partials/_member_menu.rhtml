@@ -1,13 +1,7 @@
-<% url = controller.controller_path %> 
-
-<%if current_user.has_any_boat?%>
-<%= render :partial=>'partials/main_menu'%>
-<%# render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Register", :title=>"",:url=>member_index_url}%>
-<%else%>
-        
-<br/>
-<div class="menu">
-<ul>
+<% url = controller.controller_path %>
+<%unless current_user.has_any_boat? or request.request_uri=~ /checkouts\/success/i%>
+<div>
+<ul id="page_list">
         <%if current_user.is_member?%>
           <%slug = @team.name.to_slug%>
           <%unless current_user.member.is_unconfirmed?%>
@@ -21,6 +15,5 @@
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=> member_user_path, :current=> url =~/(user)/ } %>
         <%end%>
       </ul>
-</div>
-<%end%>
-      
+    </div>
+    <%end%>

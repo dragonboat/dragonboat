@@ -1,7 +1,8 @@
- <li><%=link_to name, url, :title=>title, :class=>"hide"%>
-
+<% current = nil unless current %>
+<li><%=link_to name, url, :title=>title, :class=>"hide" , :id=>current ? "current" : ""%>
+  
 <!--[if lte IE 6]>
-<a href="<%=url%>" title="<%=title%>"><%=name%>
+<a href="<%=url%>" title="<%=title%>" <%="id='current'" if current%>><%=name%>
 <table><tr><td>
 <![endif]-->
 

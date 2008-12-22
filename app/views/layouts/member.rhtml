@@ -20,6 +20,8 @@
     <%= yield :scripts %>
     <%= javascript_include_tag 'redbox' %>
     <%= javascript_include_tag 'prototype' %>
+    <%= javascript_include_tag 'tiny_mce/tiny_mce.js' %>
+  
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
@@ -34,11 +36,13 @@
     
     <div id="content">
         <%= yield :submenu_area %> 
+    
         <div id="main">
-         <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
+          
+          <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
          
          <%if @team && current_user.is_captain?%>
-         <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.name %></h3>
+         <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.human_name %></h3>
          <%end%>  
          <p style="color: green"><%= flash[:notice] %></p>
         

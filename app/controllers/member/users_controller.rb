@@ -10,7 +10,7 @@ def edit
 end
 
 def show
-  
+  render :action=>:show  
 end
 
 def update
