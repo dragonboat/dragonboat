@@ -5,7 +5,7 @@ class Extras < ActiveRecord::Base
   
   scope_out :available,
             :conditions => "is_available=1",
-            :order => "name"
+            :order => "created at DESC"
           
   validates_presence_of     :name
   validates_numericality_of :price_in_cents
