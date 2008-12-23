@@ -1,3 +1,3 @@
 <%= error_messages_for :image %>  
-<strong>Logo:</strong><br />
+<label for="image">Logo:</label><br />
 <%= image_tag( image.public_filename(:thumb) ) if image%>

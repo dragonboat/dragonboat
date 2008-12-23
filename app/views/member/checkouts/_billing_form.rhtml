@@ -1,0 +1,24 @@
+ <div style="display:none;" id="billing_address">
+         <% fields_for :person, @billing do |p| %>
+          <p class="required">
+            <label for="person_address">Street Address 1</label>:<span id="required">*</span><br/>  <%= p.text_field :address %>
+          </p>
+          <p>
+            <label for="person_address2">Street Address 2</label>:<br/>  <%= p.text_field :address2 %>
+          </p>
+          <p class="required">
+            <label for="person_city">City</label>:<span id="required">*</span><br/><%= p.text_field :city %>
+          </p>
+          <p class="required">
+            <label for="person_zip">Zip code</label>:<span id="required">*</span><br/>  <%= p.text_field :zip , :size=>6%>
+          </p>
+          <p class="required">
+            <label for="person_state">State</label>:<span id="required">*</span><br/>  <%= p.select :state, states_options %>
+          </p>
+          <p class="required">
+            <label for="person_country">Country</label>:<span id="required">*</span><br/><%= p.country_select :country, ['United States', 'Canada'] %>
+          </p>
+         <% end %>
+       </div>
+       
+       <%=javascript_tag("if (!$('use_personal_address').checked) {$('billing_address').show();}") %>

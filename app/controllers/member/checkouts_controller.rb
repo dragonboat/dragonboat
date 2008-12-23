@@ -11,10 +11,11 @@ ActiveMerchant::Billing::Base.mode = :test
 
     @customer = current_user
     @person = current_user.person 
+    @billing = Person.new
     #@credit_card = ActiveMerchant::Billing::CreditCard.new(:first_name=> 'Bob',:last_name=> 'Bobsen',:number => '4242424242424242', :month=>8, :year=> 2012,:verification_value => '123')
     @credit_card = ActiveMerchant::Billing::CreditCard.new
-  
-    rescue ActionController::RedirectBackError => e
+    params[:use_personal_address]="1"
+    rescue ActionController::RedirectBackError => e  
     redirect_to '/'
   end
   
@@ -24,7 +25,7 @@ ActiveMerchant::Billing::Base.mode = :test
   
   def place_order
     return unless prepare_valid_order
-    if @person.save && @customer.save
+    if @billing.save && @customer.save
      @order.user = @customer
      @order.customer_ip = request.remote_ip
     end
@@ -41,15 +42,15 @@ ActiveMerchant::Billing::Base.mode = :test
       
       options = {
         :ip => request.remote_ip,
-        :email => @person.email,
+        :email => @billing.email,
         :address => { 
-        :address1 => @person.address,
-        :address2 =>  @person.address2,
-        :city =>  @person.city,
-        :state => @person.state,
-        :zip => @person.zip,
-        :country => @person.country,
-        :phone => @person.phone
+        :address1 => @billing.address,
+        :address2 =>  @billing.address2,
+        :city =>  @billing.city,
+        :state => @billing.state,
+        :zip => @billing.zip,
+        :country => @billing.country,
+        :phone => @billing.phone
       },
         :currency => 'USD',
         :order_id => @order.id,
@@ -96,7 +97,7 @@ ActiveMerchant::Billing::Base.mode = :test
   def success
     @order =  Order.find(params[:id])
     @user = current_user
-    @person = @user.person
+    @billing = @order.person
   end
   
   protected
@@ -105,12 +106,17 @@ ActiveMerchant::Billing::Base.mode = :test
     @order.team = @team
     @customer = current_user
     @person = @customer.person
-    
-    @person.attributes = (params[:person])
-    @person.validation_mode = :order
+    if params[:use_personal_address] == "1"
+      @billing = Person.new(@person.attributes)
+    else
+      @billing = Person.new(params[:person])
+    end
+    #@person.attributes = (params[:person])
+    @billing.validation_mode = :order
+    @order.person = @billing
     @credit_card = ActiveMerchant::Billing::CreditCard.new(params[:credit_card])
     @order.credit_card = @credit_card
-    if @order.valid? && @person.valid? && @customer.valid? && @credit_card.valid?
+    if @order.valid? && @billing.valid? && @customer.valid? && @credit_card.valid?
       return true
     else
       flash.now[:notice] = "Please correct your details before you can continue"

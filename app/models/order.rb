@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :team
   belongs_to :user
+  belongs_to :person, :foreign_key => 'billing_id', :class_name=>"Person"
   
   has_many :extras_orders, :dependent=>:destroy
   # =============
@@ -23,6 +24,10 @@ class Order < ActiveRecord::Base
   
   def after_initialize
     self.status = 'open'
+  end
+  
+  def after_destroy
+    person.destroy
   end
   
   def allow_validation

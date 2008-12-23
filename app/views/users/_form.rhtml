@@ -1,16 +1,16 @@
 <% @person = @user.person %>
                         <h4>Account Information</h4>
                         <%= error_messages_for :user %>
-                        <p>  
+                        <p class="required">  
                           <label for="user_login">Login:</label><span id="required">*</span><br/>
                           <%= f.text_field :login, :tabindex=> 1 %>
                         </p>
-                        <p>  
+                        <p class="required">  
                           <label for="user_password">Password:</label><span id="required">*</span><br/>
                           <%= f.password_field :password, :tabindex=> 2 %>
                         </p>
                         
-                        <p>  
+                        <p class="required">  
                           <label for="user_password_confirmation">Password Confirmation:</label><span id="required">*</span><br/>
                           <%= f.password_field :password_confirmation, :tabindex=> 3 %>
                         </p>

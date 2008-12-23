@@ -20,9 +20,9 @@
 
 <% content_tag :fieldset do %> 
   <%= content_tag :legend, "Your Details" %>
-   Name: <%= @person.name %><br>
-   Email Address : <%= @person.email %><br>
-   Home Phone number: <%= @person.phone %><br>
+   Name: <%= @billing.name %><br>
+   Email Address : <%= @billing.email %><br>
+   Home Phone number: <%= @billing.phone %><br>
 <% end %>
 
 <% content_tag :fieldset do %> 
@@ -34,12 +34,12 @@
 
 <% content_tag :fieldset do %> 
   <%= content_tag :legend, "Billing Address" %>
-  Street Address 1:  <%= @person.address %><br>
-  Street Address 2:  <%= @person.address2 %><br>
-  City:  <%= @person.city %><br>
-  Zip:  <%= @person.zip %><br>
-  State:  <%= @person.state %><br>
-  Country:  <%= @person.country %><br>
+  Street Address 1:  <%= @billing.address %><br>
+  Street Address 2:  <%= @billing.address2 %><br>
+  City:  <%= @billing.city %><br>
+  Zip:  <%= @billing.zip %><br>
+  State:  <%= @billing.state %><br>
+  Country:  <%= @billing.country %><br>
 <% end %>
 
 <% content_tag :fieldset do %> 

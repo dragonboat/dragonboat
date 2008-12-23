@@ -1,6 +1,6 @@
-<% content_for :title do %>Step 3 - Add Extras<% end %>
+<% content_for :title do %>Step 3 - Select Tents<% end %>
 <% content_for :breadcrumbing_area do%>
-<h1>Team Registration > Step 3 - Add Extras</h1>
+<h1>Team Registration > Step 3 - Select Tents</h1>
 <%end%>
 <% content_for :submenu_area do%>
   <div id="submenu_section">
@@ -9,7 +9,7 @@
   </div>
 <%end%>
 <% content_for  :current_page_name do%>
-  Add Extras
+  Select Tents
 <%end%>
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'step3-instructions', :silent=>true %>
@@ -18,7 +18,7 @@
     <h2>Boat: <%=@team.human_name%></h2> 
 
     <fieldset>
-      <legend>Step 3 - Add Extras</legend>
+      <legend>Step 3 - Select Tents</legend>
       <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true } do |f| %>
    
       <%= render :partial => 'extras_item', :locals=>{:mode=>:write, :items=>@extras}%>

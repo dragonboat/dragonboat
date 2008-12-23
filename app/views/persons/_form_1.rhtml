@@ -1,17 +1,17 @@
     <tr>
-        <td><label for="person_first_name">First name:</label>
+        <td class="required"><label for="person_first_name">First name:</label>
         <span id="required">*</span><br/>
         <%= f.text_field :first_name, :tabindex=> 4 %>
       </td>
     </tr>
     <tr>
-       <td><label for="person_last_name">Last name:</label>
+       <td class="required"><label for="person_last_name">Last name:</label>
         <span id="required">*</span><br/>
         <%= f.text_field :last_name, :tabindex=> 5 %>
        </td>
     </tr>
     <tr>
-        <td><label for="person_gender_f_f">Gender:</label>
+        <td class="required"><label for="person_gender_f_f">Gender:</label>
         <span id="required">*</span><br/>
         <%=f.radio_button :gender_f, "F", :tabindex=> 6, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1"%> <label for="person_gender_f_f" >Female</label>
         <%= f.radio_button :gender_m, "M", :tabindex=> 7, :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1"%> <label for="person_gender_m_m">Male</label>
@@ -20,14 +20,14 @@
       </td>
     </tr>
     <tr>
-        <td><label for="person_email">Email Address:</label>
+        <td class="required"><label for="person_email">Email Address:</label>
         <span id="required">*</span><br/>
         <%= f.text_field :email, :tabindex=> 8 %>
         </td>
     </tr>
     <tr>
-        <td><label for="person_phone">Home Phone number:</label>
-        <br/>
+        <td class="required"><label for="person_phone">Home Phone number:</label>
+        <span id="required">*</span><br/>
         <%= f.text_field :phone, :tabindex=> 9 %><a>
         </td>
     </tr>
@@ -39,37 +39,39 @@
     </tr>
 
     <tr>
-         <td><label for="person_address">Street Address 1:</label>
-         <br/>
+         <td class="required"><label for="person_address">Street Address 1:</label>
+         <span id="required">*</span><br/>
          <%= f.text_field :address , :tabindex=> 11%>
           <!-- Hide Country: -->
           <%= hidden_field_tag "person[country]", "United States"%>
         </td>
     </tr>
     <tr>
-        <td><label for="person_address2">Street Address 2:</label>
+        <td ><label for="person_address2">Street Address 2:</label>
         <br/><%= f.text_field :address2 , :tabindex=> 12%>
         </td>
     </tr>
 
     <tr>
-        <td><label for="person_city">City:</label>
-        <br/>
+        <td class="required"><label for="person_city">City:</label>
+        <span id="required">*</span><br/>
         <%= f.text_field :city, :tabindex=> 13%></td>    
     </tr>
     
     <tr>
-        <td><label for="person_state">State:</label>
-        <br/><%= f.select :state, states_options, :tabindex=> 14%></td>    
+        <td class="required"><label for="person_state">State:</label>
+        <span id="required">*</span><br/>
+        <%= f.select :state, states_options, :tabindex=> 14%></td>    
     </tr>
     
     <tr>
-        <td><label for="person_zip">Zip code:</label>
-        <br/><%= f.text_field :zip, :tabindex=> 15, :size=>6%></td>    
+        <td class="required"><label for="person_zip">Zip code:</label>
+        <span id="required">*</span><br/>
+        <%= f.text_field :zip, :tabindex=> 15, :size=>6%></td>    
     </tr>
     
     <tr>
-        <td><label for="person_birthday_date">Date of Birth:</label>
+        <td><label for="person_birthday_date">Date of Birth Month / Day / Year:</label>
         <br/>
-        <%= f.date_select :birthday_date, :order => [:day, :month, :year], :start_year => 1950,  :include_blank => "", :tabindex=> 16%></td>
+        <%= f.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1950,  :include_blank => "", :tabindex=> 16%></td>
     </tr>

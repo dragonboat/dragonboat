@@ -31,6 +31,7 @@
 <%= @credit_card.month %> - <%= @credit_card.year %>
 <h4>Billing Address</h4>
 <%= @person.address %><br>
+<%= @person.address2 %><br>
 <%= @person.city %><br>
 <%= @person.zip %><br>
 <%= @person.state %><br>
@@ -70,8 +71,9 @@
        <%= cc.hidden_field :verification_value, :label => "CVV2" %>
     <% end %>
 
-      <% fields_for :person, @person do |p| %>
+      <% fields_for :person, @billing do |p| %>
         <%= p.hidden_field :address %>
+        <%= p.hidden_field :address2 %>
         <%= p.hidden_field :zip %>
         <%= p.hidden_field :city %>
         <%= p.hidden_field :country %>

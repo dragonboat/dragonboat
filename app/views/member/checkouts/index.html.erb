@@ -18,24 +18,24 @@
   <h2>Boat: <%=@team.human_name%></h2> 
   <fieldset>
     <legend>Step 4 - Payment Details</legend>
-    <%= error_messages_for :order, :credit_card, :person %>
+    <%= error_messages_for :order, :credit_card, :person, :billing %>
     
     <% form_for :order, @order, :url => {:action => "confirm_order"} do |f| %>
     
     <% content_tag :fieldset do %> 
     <%= content_tag :legend, "Your Personal Information" %>
     <% fields_for :person, @person do |p| %>
-    <p>
-      <label for="person_first_name">First Name</label>:<br/><%= p.text_field :first_name %> 
+    <p class="required">
+      <label for="person_first_name">First Name</label>:<span id="required">*</span><br/><%= p.text_field :first_name %> 
     </p>
-    <p>
-      <label for="person_last_name">Last Name</label>:<br/><%= p.text_field :last_name %> 
+    <p class="required">
+      <label for="person_last_name">Last Name</label>:<span id="required">*</span><br/><%= p.text_field :last_name %> 
     </p>
-    <p>
-      <label for="person_email">Email Address</label>:<br/><%= p.text_field :email %>
+    <p class="required">
+      <label for="person_email">Email Address</label>:<span id="required">*</span><br/><%= p.text_field :email %>
     </p>
-    <p>
-      <label for="person_phone">Home Phone number</label>:<br/><%= p.text_field :phone %>
+    <p class="required">
+      <label for="person_phone">Home Phone number</label>:<span id="required">*</span><br/><%= p.text_field :phone %>
     </p> 
     <% end %>
    <% end %>
@@ -43,54 +43,33 @@
    <% content_tag :fieldset do %> 
    <%= content_tag :legend, "Credit Card" %>
     <% fields_for :credit_card, @credit_card do |cc| %>
-    <p>
-      <label for="credit_card_type">Type</label>:<br/><%= cc.select :type, Order::CARD_TYPES.map { |t| t} %>
+    <p class="required">
+      <label for="credit_card_type">Type</label>:<span id="required">*</span><br/><%= cc.select :type, Order::CARD_TYPES.map { |t| t} %>
     </p>
-    <p>
-      <label for="credit_card_first_name">First Name</label>:<br/> <%= cc.text_field :first_name %>
+    <p class="required">
+      <label for="credit_card_first_name">First Name</label>:<span id="required">*</span><br/> <%= cc.text_field :first_name %>
     </p>
-    <p>
-      <label for="credit_card_last_name">Last Name</label>:<br/><%= cc.text_field :last_name %>
+    <p class="required">
+      <label for="credit_card_last_name">Last Name</label>:<span id="required">*</span><br/><%= cc.text_field :last_name %>
     </p>
-    <p>
-      <label for="credit_card_number">Number</label>:<br/><%= cc.text_field :number %></p>
-    <p>
-      <label for="credit_card_month">Month</label>:<br/><%= cc.select :month, (1..12) %>
+    <p class="required">
+      <label for="credit_card_number">Card Number</label>:<span id="required">*</span><br/><%= cc.text_field :number %></p>
+    <p class="required">
+      <label for="credit_card_month">Expiration Date Month / Year</label>:<span id="required">*</span><br/><%= cc.select :month, (1..12) %> <%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
     </p>
-    <p>
-      <label for="credit_card_year">Year</label>:<br/> <%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
-    </p>
-    <p>
-      <label for="credit_card_month">Verification Value</label>:<br/> <%= cc.text_field :verification_value, :label => "CVV2" %>
-    </p>     
-    <% end %>
-   <% end %>
+    <p class="required">
+      <label for="credit_card_month">Card Verification Number</label>:<span id="required">*</span><br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
+       </p>     
+       <% end %>
+       <% end %>
+       
+       <% content_tag :fieldset do %> 
+       <%= content_tag :legend, "Billing Address" %>
+       <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>the same as personal address</p>
 
-   <% content_tag :fieldset do %> 
-   <%= content_tag :legend, "Billing Address" %>
-     <div>
-         <% fields_for :person, @person do |p| %>
-          <p>
-            <label for="person_address">Street Address 1</label>:<br/>  <%= p.text_field :address %>
-          </p>
-          <p>
-            <label for="person_address2">Street Address 2</label>:<br/>  <%= p.text_field :address2 %>
-          </p>
-          <p>
-            <label for="person_city">City</label>:<br/><%= p.text_field :city %>
-          </p>
-          <p>
-            <label for="person_zip">Zip</label>:<br/>  <%= p.text_field :zip , :size=>6%>
-          </p>
-          <p>
-            <label for="person_state">State</label>:<br/>  <%= p.select :state, states_options %>
-          </p>
-          <p>
-            <label for="person_country">Country</label>:<br/><%= p.country_select :country, ['United States', 'Canada'] %>
-          </p>
-         <% end %>
-     </div>
-   <% end %>
+       <%= render :partial => 'billing_form' %>
+       <% end %>
+   
    
    <%= f.submit "Continue Checkout..." %>
   
