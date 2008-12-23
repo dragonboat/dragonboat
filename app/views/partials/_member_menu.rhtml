@@ -2,7 +2,7 @@
 <%unless current_user.has_any_boat? or request.request_uri=~ /checkouts\/success/i%>
 <div>
 <ul id="page_list">
-        <%if current_user.is_member?%>
+        <%if current_user.is_member?&&!current_user.is_captain?%>
           <%slug = @team.name.to_slug%>
           <%unless current_user.member.is_unconfirmed?%>
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"", :url=>team_index_path(slug), :current=>url =~/(website)/} %>
@@ -16,4 +16,4 @@
         <%end%>
       </ul>
     </div>
-    <%end%>
+<%end%>

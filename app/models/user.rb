@@ -84,7 +84,10 @@ class User < ActiveRecord::Base
   end
   
   def has_any_boat?
-    !is_member? && active_teams.count < 1
+    if is_member?&&member.user.is_captain? 
+      return false
+    end  
+    !is_member?&&active_teams.count < 1
   end
   
   def has_any_unactive_boat?

@@ -76,6 +76,12 @@ class Member < ActiveRecord::Base
     self.invitation_status_id = Status.find_invitation_by_name('unconfirmed').id unless self.invitation_status_id 
   end
   
+  def after_save
+    if  !self.is_unconfirmed? && self.is_accept? && type.name == 'co-captain'
+      user.to_captain
+    end
+  end
+  
   def invite
     unless self.invitation_status.name == 'confirmed'
       update_attribute(:invitation_status_id, Status.find_invitation_by_name('confirmed').id) 
@@ -93,6 +99,9 @@ class Member < ActiveRecord::Base
   def is_unconfirmed?
     self.invitation_status_id == Status.find_invitation_by_name('unconfirmed').id
   end
-  private
-
+  
+  def is_accept?
+    self.waiver_status_id == Status.find_waiver_by_name('accept').id
+  end
+  
 end

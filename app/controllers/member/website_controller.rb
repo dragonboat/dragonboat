@@ -4,9 +4,9 @@ class Member::WebsiteController < ApplicationController
   
  def index 
   # current_user.member.team.name.to_slug
-   redirect_to member_boats_url if (current_user.is_captain?&&!current_user.has_any_boat?)
+   redirect_to member_boats_url if  (current_user.is_captain?&&!current_user.has_any_boat?)
    redirect_to member_new_boat_path if current_user.has_any_boat?         
-   redirect_to team_index_path(current_user.member.team.name.to_slug) if current_user.is_member?     
+   redirect_to team_index_path(current_user.member.team.name.to_slug) if current_user.is_member?&&!current_user.is_captain?     
  end
  
  private
@@ -33,7 +33,12 @@ class Member::WebsiteController < ApplicationController
   end
   
   def has_boat?
-    current_user.is_captain?&&!current_user.has_any_boat? ? true : access_denied
+    unless current_user.is_captain?&&!current_user.has_any_boat? 
+      access_denied
+      return
+    end
+    @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
+    true
   end
   
   def is_not_admin?
@@ -41,14 +46,14 @@ class Member::WebsiteController < ApplicationController
   end
   
   def is_member?
-    current_user.is_member? ? true : access_denied
+    current_user.is_member?&&!current_user.is_captain? ? true : access_denied
   end
   
   def is_not_member?
-     !current_user.is_member? ? true : access_denied
+     current_user.is_captain? or !current_user.is_member? ? true : access_denied
   end
   
   def fetch_team
-    @team = current_user.teams.find(params[:team_id])
+    @team = current_user.is_member? ?  current_user.member.team : current_user.teams.find(params[:team_id])
   end
 end

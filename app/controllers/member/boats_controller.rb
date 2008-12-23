@@ -5,7 +5,7 @@ class Member::BoatsController < Member::WebsiteController
   before_filter :fetch_team, :only=>[:extras, :add_extras]
  
   def index
-    @team = current_user.teams.find(:first)
+   # @team = @teams.first
   end
   
   def new
@@ -31,11 +31,11 @@ class Member::BoatsController < Member::WebsiteController
   end
   
   def edit
-    @team = current_user.teams.find(:first)
+    #@team = current_user.teams.find(:first)
   end
   
   def update
-    @team = current_user.teams.find(params[:id])
+    #@team = current_user.teams.find(params[:id])
     @team.attributes = (params[:team])
     if params[:image] && !params[:image][:uploaded_data].blank?
       @image = Image.new(params[:image])
@@ -111,6 +111,6 @@ class Member::BoatsController < Member::WebsiteController
 
   private
   def fetch_team
-    @team = current_user.teams.find(params[:id])
+    @team =  current_user.is_member? ?  current_user.member.team : current_user.teams.find(params[:id])
   end
 end
