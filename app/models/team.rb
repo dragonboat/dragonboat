@@ -26,7 +26,7 @@ class Team < ActiveRecord::Base
   scope_out :active,
             :conditions => "status_id=#{Status.find_team_by_name('active').id}"
           
-  def before_validation_on_create
+  def before_validation
     self.name = strip_tags(self.human_name)
   end
   
