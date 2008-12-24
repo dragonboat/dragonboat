@@ -42,11 +42,14 @@ ActionController::Routing::Routes.draw do |map|
     m.url_code 'member/confirm/:url_code', :controller => 'team/website', :action => 'index'
   end
   
+  map.with_options :path_prefix => 'admin/teams/:team_id', :name_prefix => 'admin_' do |m|
+    m.resources     :paddlers,    :controller => 'admin/paddlers'
+  end
   
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :support_tickets,    :controller => 'admin/support'
-    m.resources     :paddlers,    :controller => 'admin/paddlers'
+    #m.resources     :paddlers,    :controller => 'admin/paddlers'
     m.resources     :users,    :controller => 'admin/users'
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
