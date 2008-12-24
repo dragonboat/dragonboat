@@ -1,6 +1,6 @@
 class AddStatusIdTeams < ActiveRecord::Migration
   def self.up
-    add_column :teams, :status_id, :integer, :default=>Status.find_team_by_name('unactive').id
+    add_column :teams, :status_id, :integer, :default=>Status.find_team_by_name('inactive').id
     add_index :teams, :status_id
   end
 

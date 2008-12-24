@@ -22,7 +22,6 @@ class Team < ActiveRecord::Base
   validates_uniqueness_of :name, :case_sensitive => false
   validates_format_of  :url, :with =>/(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
 
-  
   scope_out :active,
             :conditions => "status_id=#{Status.find_team_by_name('active').id}"
           
@@ -49,7 +48,7 @@ class Team < ActiveRecord::Base
   end
   
   def status_human_name
-    status.name == 'inactive' ? 'inactive (unpaid)' : 'active (paid)'
+    status.name == 'inactive' ? 'inactive (unpaid)' : 'active (paid)' if status
   end
   
   def url

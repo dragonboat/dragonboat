@@ -1,0 +1,9 @@
+<% url = controller.controller_path %>
+    <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.human_name %></h3>
+    <br/>
+    <div id="mainMenu">
+      <ul class="tabs">
+        <li <%= "class=\"current\"" if url =~/(paddlers)/ %>><%= link_to 'Paddlers', admin_paddlers_path(@team.id) %> |</li>
+      </ul>
+    </div>
+    <span class="clearEm">&nbsp;&nbsp;</span>

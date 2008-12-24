@@ -104,7 +104,7 @@ class Admin::TeamsController < Admin::WebsiteController
     conditions = nil
     if session[:team_search_query]
       @query = session[:team_search_query]
-      conditions = ["teams.name LIKE :query OR cp.first_name LIKE :query OR cp.last_name LIKE :query OR CONCAT(cp.first_name,' ',cp.last_name) LIKE :query",
+      conditions = ["teams.id LIKE :query OR teams.name LIKE :query OR cp.first_name LIKE :query OR cp.last_name LIKE :query OR CONCAT(cp.first_name,' ',cp.last_name) LIKE :query",
                     {:query => "%#{@query}%"}]
     end
     conditions

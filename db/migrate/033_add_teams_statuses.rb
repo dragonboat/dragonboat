@@ -3,7 +3,7 @@ class AddTeamsStatuses < ActiveRecord::Migration
     Status.enumeration_model_updates_permitted = true
     status = Status.create(:name => 'active')
     status.update_attribute(:status_type, "Team")
-    status = Status.create(:name => 'unactive')
+    status = Status.create(:name => 'inactive')
     status.update_attribute(:status_type, "Team")
   end
 

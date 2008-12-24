@@ -1,5 +1,20 @@
-<% content_for :title do %>Listing Orphaned Paddlers<% end %>
-<h1>Listing Orphaned Paddlers</h1>
+<% content_for :title do %>Listing Paddlers<% end %>
+<div>
+  <%= render :partial => 'admin/teams/submenu/menu'%>
+</div>
+<h1>Listing Paddlers</h1>
+
+<table border="0" width="100%" id="search">
+	<tr><td>
+	<%form_tag(admin_paddlers_path(@team.id),:method=>:get) do |f|%>
+	Search: <%= text_field_tag :q, value = session["paddler_search_query_#{@team.id}"], :size => 40 %>
+	<%= image_submit_tag("icons/magnifier.png") %>
+	<%= link_to(image_tag("icons/broom.png", :border => 0), :action => "index", :clear => true) %>
+	<%end%>
+	</td>
+	</tr>
+</table>
+
 
 <div id="pages"><%= will_paginate @paddlers %></div>
 <%= render :partial => 'list'%>

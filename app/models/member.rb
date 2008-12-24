@@ -14,6 +14,9 @@ class Member < ActiveRecord::Base
             :conditions => "invitation_status_id=#{Status.find_invitation_by_name('confirmed').id} AND waiver_status_id=#{Status.find_waiver_by_name('unread').id}"        
   scope_out :accessible,
             :conditions => "invitation_status_id=#{Status.find_invitation_by_name('confirmed').id} AND waiver_status_id<>#{Status.find_waiver_by_name('decline').id}"        
+ 
+  scope_out :paddlers,
+            :conditions => "type_id=#{MemberType[:paddler].id}"
   
   validates_presence_of  :type_id,:waiver_status_id,:invitation_status_id
   validates_associated :team, :user
@@ -104,4 +107,7 @@ class Member < ActiveRecord::Base
     self.waiver_status_id == Status.find_waiver_by_name('accept').id
   end
   
+  def date_of_signature
+    waiver_sign_at.strftime("%d.%m.%Y") if waiver_sign_at
+  end
 end
