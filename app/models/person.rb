@@ -63,7 +63,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
     elsif  self.validation_mode == :paddler
-      for attr_name in [:phone, :birthday_date, :experience, :preference]
+      for attr_name in [:gender, :phone, :birthday_date, :experience, :preference]
         errors.add_on_blank(attr_name, 'is required')
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 

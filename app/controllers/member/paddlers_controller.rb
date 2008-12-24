@@ -36,7 +36,7 @@ class Member::PaddlersController < Member::WebsiteController
    @member = Member.new(params[:member])
    @member.type_id = MemberType[:paddler].id
    @team = @member.team
-   @member.invitation_status_id = invitation_status_id_by_name('confirmed')
+   #@member.invitation_status_id = invitation_status_id_by_name('confirmed')
    @user = User.new(params[:user])
    @person = @paddler.person
    @person.attributes = (params[:person])

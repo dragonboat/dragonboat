@@ -1,0 +1,6 @@
+<% content_for :title do %>Listing Orphaned Paddlers<% end %>
+<h1>Listing Orphaned Paddlers</h1>
+
+<div id="pages"><%= will_paginate @paddlers %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate @paddlers %></div>

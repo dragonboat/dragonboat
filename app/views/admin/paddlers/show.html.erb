@@ -1,0 +1,28 @@
+<%@person = @paddler.person%>
+<h1>General Paddler Info</h1>
+<table id="users" class="obj_list">
+  <tr>
+    <td><b>Name</b></td>
+    <td><%=@person.name%></td>
+  </tr>
+ 
+  <tr>
+     <td><b>Note</b></td>
+     <td class="note"><%=@paddler.note%></td>
+  </tr>
+  <tr>
+     <td><b>Created at</b></td>
+     <td><%= @paddler.created_at.strftime("%d.%m.%Y")%></td> 
+  </tr>
+  <tr>
+     <td colspan="2"><h4>Contact Information</h4></td>
+  </tr>
+  <%= render :partial => 'persons/full_show'%>
+  <tr>
+     <td colspan="2" align="center"><%= link_to 'Show', member_paddler_path(@paddler) %> |
+       <%= link_to 'Invite to join team'%>
+     </td>
+   </tr>
+</table>
+
+<%= link_to 'Back', member_paddlers_path %>
