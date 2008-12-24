@@ -1,10 +1,10 @@
 <table id="paddlers" class="obj_list">
   <tr>
-    <th><%= link_to('Name', admin_paddlers_url(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
-    <th><%= link_to('E-mail', admin_paddlers_url(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
-    <th><%= link_to('Age', admin_paddlers_url(:sort => sort_link_for('age', params[:sort])), :title=>"Sort by Age" ) %></th>
+    <th><%= link_to('Name', member_paddlers_url(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
+    <th><%= link_to('E-mail', member_paddlers_url(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th><%= link_to('Age', member_paddlers_url(:sort => sort_link_for('age', params[:sort])), :title=>"Sort by Age" ) %></th>
     <th>Phone number</th>
-    <th><%= link_to('Created at', admin_paddlers_url(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    <th><%= link_to('Created at', member_paddlers_url(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
     <th>&nbsp;</th>
   </tr>
   

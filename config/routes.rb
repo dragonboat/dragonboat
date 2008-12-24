@@ -46,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :support_tickets,    :controller => 'admin/support'
+    m.resources     :paddlers,    :controller => 'admin/paddlers'
     m.resources     :users,    :controller => 'admin/users'
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
