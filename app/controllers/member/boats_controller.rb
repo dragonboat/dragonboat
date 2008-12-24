@@ -9,12 +9,12 @@ class Member::BoatsController < Member::WebsiteController
   end
   
   def new
-    @team = current_user.has_any_unactive_boat? ?  current_user.unactive_teams.first : Team.new
+    @team = current_user.has_any_inactive_boat? ?  current_user.inactive_teams.first : Team.new
  #   session[:register_team] = nil
   end
   
   def create
-    @team = current_user.has_any_unactive_boat? ? current_user.unactive_teams.first : Team.new
+    @team = current_user.has_any_inactive_boat? ? current_user.inactive_teams.first : Team.new
     @team.attributes = (params[:team])
     @team.captain = current_user
     if params[:image] && !params[:image][:uploaded_data].blank?

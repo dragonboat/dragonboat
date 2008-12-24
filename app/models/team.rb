@@ -45,11 +45,11 @@ class Team < ActiveRecord::Base
   end
   
   def unactivate
-    set_status('unactive')
+    set_status('inactive')
   end
   
   def status_human_name
-    status.name == 'unactive' ? 'unactive (unpaid)' : 'active (paid)'
+    status.name == 'inactive' ? 'inactive (unpaid)' : 'active (paid)'
   end
   
   def url

@@ -36,8 +36,8 @@ class User < ActiveRecord::Base
 
   has_many :active_teams, :foreign_key => 'captain_id', :class_name=>"Team",:dependent=>:destroy,
     :conditions => "status_id=#{Status.find_team_by_name('active').id}"
-  has_many :unactive_teams, :foreign_key => 'captain_id', :class_name=>"Team",:dependent=>:destroy,
-    :conditions => "status_id=#{Status.find_team_by_name('unactive').id}"
+  has_many :inactive_teams, :foreign_key => 'captain_id', :class_name=>"Team",:dependent=>:destroy,
+    :conditions => "status_id=#{Status.find_team_by_name('inactive').id}"
   
   belongs_to :person
   validates_associated :person
@@ -90,8 +90,8 @@ class User < ActiveRecord::Base
     !is_member?&&active_teams.count < 1
   end
   
-  def has_any_unactive_boat?
-    unactive_teams.count > 0
+  def has_any_inactive_boat?
+    inactive_teams.count > 0
   end 
   
   def type
