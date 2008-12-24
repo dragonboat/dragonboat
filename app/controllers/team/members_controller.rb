@@ -13,6 +13,8 @@ class Team::MembersController < Team::WebsiteController
     if request.post?
       @member.attributes = (params[:member])
       @member.validation_mode = :waiver_form   
+      @member.ip = request.remote_ip
+      @member.waiver_sign_at = Time.now()
       if @member.valid? && @member.save
         if @member.is_unconfirmed?
           redirect_to logout_url 
