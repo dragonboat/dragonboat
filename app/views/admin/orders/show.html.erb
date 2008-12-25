@@ -32,7 +32,10 @@
 <h4>Order Items: </h4>
 <p>
 <h5>Boat</h5>
-<%= render :partial => 'member/boats/boat'%><br>
+<p>Team Name: <%=@team.human_name%></p>
+<p>Team Biography: <%=h @team.description%></p>
+<p>Captain: <%=@person.name%></p>
+<p>Price: <b><%=number_to_currency @order.boat_pay%></b></p>
 
 <h5>Extras</h5>
 <%if @order.extras_orders.size>0%>
