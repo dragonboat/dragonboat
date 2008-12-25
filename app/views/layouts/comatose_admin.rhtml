@@ -4,15 +4,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=<%= Comatose.config.content_type %>"/>
     <title>DragonBoatAdmin : <%= yield :title %> </title>
-    <%= stylesheet_link_tag 'comatose_admin' %>
+    <%= yield :scripts %>
     <%= stylesheet_link_tag 'admin' %>
     <%= stylesheet_link_tag 'redbox' %>
     <%= stylesheet_link_tag 'calendar/blue/style' %>
-    <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css">
+    <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css">  
+    <%= stylesheet_link_tag 'comatose_admin' %>
+    
     <!-- Scripts -->
    
     <!-- for red box pligin -->
-    <%= yield :scripts %>
     <%= javascript_include_tag 'redbox' %>
     
     <%= javascript_include_tag :defaults %>

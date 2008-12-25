@@ -52,7 +52,19 @@ BODY {
   border-left: 1px solid silver;
   border-right: 1px solid silver;
 }
+
 #content h1 {
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 0px;
+  font-size: 220%;
+  color: gray;
+  width: 300px;
+display: block;
+float: none;
+}
+
+#content h1.index {
   margin: 0px;
   padding: 0px;
   padding-bottom: 0px;
@@ -62,6 +74,8 @@ BODY {
 display: block;
 float: left;
 }
+
+
 
 #content .action {
   float: right;

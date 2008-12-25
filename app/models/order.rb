@@ -23,7 +23,7 @@ class Order < ActiveRecord::Base
   validates_inclusion_of  :status, :in => %w(open processed prepared canceled failed)
   
   def after_initialize
-    self.status = 'open'
+    self.status = 'open' unless self.status
   end
   
   def after_destroy

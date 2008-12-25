@@ -1,0 +1,46 @@
+<% content_for :title do %>View Paddlers by Invitation Status - <%=@status_title%> <% end %>
+<div>
+  <%= render :partial => 'admin/teams/submenu/menu'%>
+</div>
+<h1 class="index">Paddlers <%=@status_title%> list</h1> 
+
+<div id="submenu">
+   <%= link_to 'CSV Format',  admin_list_by_waiver_sign_status_to_csv_path(@team, @status.id)%> |
+  <%unless @status == Status.find_waiver_by_name('accept')%>
+  <%= link_to 'Signed waivers', admin_list_by_waiver_sign_status_path(@team.id, Status.find_waiver_by_name('accept').id) %> 
+  <%else%>
+  <%= link_to 'Not signed waivers', admin_list_by_waiver_sign_status_path(@team.id, Status.find_waiver_by_name('decline').id) %> 
+  <%end%>  
+  | <%= link_to 'All Paddlers', admin_paddlers_path(@team)%>
+</div>
+
+
+<table id="members" class="obj_list">
+  <tr>
+    <th>Name</th>
+    <th width="200">E-mail</th>
+    <th width="100">Gender</th>  
+    <th width="100">Invitation</th>
+    <th width="100">Waiver status</th>
+    <th width="100">Created at</th>
+    <th width="120">Date of Signature</th>
+    <th>IP</th>
+  </tr>
+  
+  <% for member in @paddlers %>
+  <%user = member.user%>
+  <%person = user.person%>
+  <tr>
+    <td><%= link_to(person.name,admin_paddler_path(@team, member.id))%></td>
+    <td><%= mail_to user.email%></td>
+    <td><%=person.gender%></td>
+    <td align="center"><%=image_tag "icons/#{member.invitation_status.name.downcase}.png", :title=>"#{member.invitation_status.name}".capitalize %></td>
+    <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
+   
+    <td><%=member.created_at.strftime("%d.%m.%Y")%></td>
+    <td><%=member.date_of_signature%></td>
+    <td><%=member.ip%></td>
+    </tr>
+<% end %>
+</table>
+

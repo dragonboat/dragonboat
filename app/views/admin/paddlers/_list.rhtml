@@ -1,12 +1,12 @@
 <table id="members" class="obj_list">
   <tr>
     <th><%= link_to('Name', admin_paddlers_path(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
-    <th><%= link_to('E-mail', admin_paddlers_path(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
-    <th><%= link_to('Gender', admin_paddlers_path(:sort => sort_link_for('gender', params[:sort])), :title=>"Sort by Gender" ) %></th>  
-    <th><%= link_to('Invitation', admin_paddlers_path(:sort => sort_link_for('invitation', params[:sort])), :title=>"Sort by Invitation" ) %></th>
-    <th><%= link_to('Waiver status', admin_paddlers_path(:sort => sort_link_for('waiver_status', params[:sort])), :title=>"Sort by Waiver status" ) %></th>
-    <th><%= link_to('Created at', admin_paddlers_path(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
-    <th><%= link_to('Date of Signature', admin_paddlers_path(:sort => sort_link_for('date_of_signature', params[:sort])), :title=>"Sort by Date of Signature" ) %></th>
+    <th width="200"><%= link_to('E-mail', admin_paddlers_path(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th width="100"><%= link_to('Gender', admin_paddlers_path(:sort => sort_link_for('gender', params[:sort])), :title=>"Sort by Gender" ) %></th>  
+    <th width="1width="100"00"><%= link_to('Invitation', admin_paddlers_path(:sort => sort_link_for('invitation', params[:sort])), :title=>"Sort by Invitation" ) %></th>
+    <th width="100"><%= link_to('Waiver status', admin_paddlers_path(:sort => sort_link_for('waiver_status', params[:sort])), :title=>"Sort by Waiver status" ) %></th>
+    <th width="100"><%= link_to('Created at', admin_paddlers_path(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    <th width="120"><%= link_to('Date of Signature', admin_paddlers_path(:sort => sort_link_for('date_of_signature', params[:sort])), :title=>"Sort by Date of Signature" ) %></th>
     <th>&nbsp;</th>
   </tr>
   
@@ -14,7 +14,7 @@
   <%user = member.user%>
   <%person = user.person%>
   <tr>
-    <td><%= link_to(person.name,member_team_members_path(@team, "show", member.id))%></td>
+    <td><%= link_to(person.name,admin_paddler_path(@team, member.id))%></td>
     <td><%= mail_to user.email%></td>
     <td><%=person.gender%></td>
     <td align="center"><%=image_tag "icons/#{member.invitation_status.name.downcase}.png", :title=>"#{member.invitation_status.name}".capitalize %></td>
@@ -22,9 +22,9 @@
    
     <td><%=member.created_at.strftime("%d.%m.%Y")%></td>
     <td><%=member.date_of_signature%></td>
-    <td><%# link_to 'Show', admin_paddler_path(@team, member.id) %> |
-        <%# link_to 'Edit', admin_edit_paddler_path(@team, member.id) %> |
-        <%# link_to 'Access Info', admin_edit_paddler_path(@team, "access", member.id) %>
+    <td><%= link_to 'Show', admin_paddler_path(@team, member.id) %> |
+        <%= link_to 'Edit', admin_edit_paddler_path(@team, member.id) %> |
+        <%= link_to 'Access Info', admin_access_paddler_path(@team,member.id) %>
       </td>
     </tr>
 <% end %>

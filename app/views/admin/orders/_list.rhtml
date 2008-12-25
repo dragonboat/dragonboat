@@ -1,0 +1,31 @@
+
+<table id="volunteers" class="obj_list">
+  <tr>
+    <th>ID</th>
+    <th width="80"><%= link_to('Status', admin_orders_url(:sort => sort_link_for('status', params[:sort])), :title=>"Sort by Status" ) %></th>
+    <th><%= link_to('Customer', admin_orders_url(:sort => sort_link_for('customer', params[:sort])), :title=>"Sort by Customer" ) %></th>
+    <th width="80"><%= link_to('Credit Card', admin_orders_url(:sort => sort_link_for('credit_cart', params[:sort])), :title=>"Sort by Credit Card" ) %></th>
+    <th width="80"><%= link_to('Total', admin_orders_url(:sort => sort_link_for('total', params[:sort])), :title=>"Sort by Total" ) %></th>
+    <th width="100"><%= link_to('Created At', admin_orders_url(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created At" ) %></th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for order in @orders %>
+  <%person = order.person ? order.person : order.user.person%>
+  <tr>
+    <td><%=order.id%></td>
+    <td><%=order.status%></td>
+    <td><%=person.name%> < <%=mail_to person.email%> > <%= order.customer_ip %> <br> 
+       <%= person.phone %>
+    </td>
+    <td><%= order.credit_card.type %></td>
+    <td><%=number_to_currency order.total_pay%></td> 
+    <td><%=order.created_at.strftime("%d.%m.%Y %H:%M") %></td>     
+    <td>
+        <%= link_to 'Details', admin_order_path(order) %> 
+      
+        <%# link_to 'Destroy', admin_order_path(order) , :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+    </tr>
+<% end %>
+</table>

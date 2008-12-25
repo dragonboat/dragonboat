@@ -1,21 +1,23 @@
-<p>
-  <lable for="">Team Name:</lable>
-  <% if @teams.size > 1 %>
-    <%= f.select(:team_id, @teams.collect {|t| [t.name, t.id]}, :readonly => true ) %>
-  <%else%>
-    <%= text_field_tag "team",@teams.first.name ,:readonly => true%>
-    <%= hidden_field_tag "member[team_id]", @teams.first.id %>
-  <%end%>
-</p>
 
-<p>
-  Type: 
-  <%= text_field_tag "type", MemberType[:paddler].name, :readonly=>true %>
-  <%= hidden_field_tag "member[type_id]", MemberType[:paddler].id%>
-</p>
+<%unless ["new","create"].include? controller.action_name%>
+<h4>Account Information</h4>
+<%= error_messages_for :user %>
+Login: <%= text_field :user, :login, :size=>50, :disabled=>true%>
+<%end%>
 
 <h4>Personal Information</h4>
-<table width="600" cellpadding="0" cellspacing="0">
-  <%= render :partial => 'persons/full_show'%>
+ <%= error_messages_for :person %>
+<table cellpadding="0" cellspacing="0">
+    <% fields_for "person", @person do |person_field| %>
+    <%= render :partial => 'persons/form_1', :locals =>{:f=>person_field} %>
+    <% end %>
 </table>
+<br/>
 
+<p>  
+
+Invitation Status: <%=image_tag "icons/#{@paddler.invitation_status.name.downcase}.png", :title=>"#{@paddler.invitation_status.name}".capitalize %>
+
+<%= f.select :invitation_status_id, @statuses.map { |s| [s.name.capitalize, s.id] }%>
+
+</p>

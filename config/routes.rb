@@ -43,13 +43,16 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.with_options :path_prefix => 'admin/teams/:team_id', :name_prefix => 'admin_' do |m|
+    m.list_by_waiver_sign_status_to_csv  'paddlers/list_by_waiver_sign_status_to_csv/:status',    :controller => 'admin/paddlers', :action=>"list_by_waiver_sign_status_to_csv"
+    m.list_by_invitation_status 'paddlers/list_by_invitation_status/:status',    :controller => 'admin/paddlers', :action=>"list_by_invitation_status"
+    m.list_by_waiver_sign_status 'paddlers/list_by_waiver_sign_status/:status',    :controller => 'admin/paddlers', :action=>"list_by_waiver_sign_status"
+    m.access_paddler 'paddlers/:id/access',    :controller => 'admin/paddlers', :action=>"access"
     m.resources     :paddlers,    :controller => 'admin/paddlers'
   end
   
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :support_tickets,    :controller => 'admin/support'
-    #m.resources     :paddlers,    :controller => 'admin/paddlers'
     m.resources     :users,    :controller => 'admin/users'
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
@@ -64,6 +67,7 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :teams,    :controller => 'admin/teams'
     m.resources     :boat_types,    :controller => 'admin/boat_types'
     m.resources     :items,    :controller => 'admin/items'
+    m.resources     :orders,    :controller => 'admin/orders'
     m.snippets_index '/admin/snippets', :controller => 'admin/snippets',:action=> 'index'
   end
   

@@ -15,7 +15,7 @@
     active = team.members.find_active(:all).size
 %>
   <tr>
-    <td><%=team.name%></td>
+    <td><%=link_to team.name, admin_team_path(team) %></td>
     <td><%=captain.person.name%> < <%= mail_to captain.email %> ></td>
     <td><%=team.created_at.strftime("%d/%m/%Y")%></td>
     <td><%=team.members.size%></td> 

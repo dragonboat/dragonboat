@@ -1,5 +1,7 @@
 class Admin::PaddlersController < Admin::WebsiteController
   before_filter :fetch_team
+  before_filter :set_types, :only=>[:edit, :update]
+  require 'fastercsv'
    
   def index
     conditions = search
@@ -33,10 +35,80 @@ class Admin::PaddlersController < Admin::WebsiteController
     end
   end
   
+ def show
+   @paddler = @team.members.find_paddlers(params[:id]) 
+   @person = @paddler.user.person
+ end
+ 
+ def edit
+    @paddler = @team.members.find_paddlers(params[:id])
+    @user = @paddler.user
+    @person = @user.person
+ end
+  
+ def update
+    @paddler = @team.members.find_paddlers(params[:id])
+    @user = @paddler.user
+    @person = @user.person
+    @person.attributes = (params[:person])
+    @person.validation_mode = :member 
+    @paddler.attributes=(params[:paddler])
+    respond_to do |format|    
+    if  @person.valid? && @user.valid? && @paddler.valid? && @person.save! && @user.save! && @paddler.save!
+        flash[:notice] = 'Paddler was successfully updated.'
+        format.html { redirect_to admin_paddlers_url(@team) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @paddler.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  def access
+    @paddler = @team.members.find_paddlers(params[:id])
+    @user = @paddler.user
+    @person = @user.person
+  end
+  
+  def list_by_invitation_status
+    @status = Status.find(params[:status])
+    @status_title = @status.name=='confirmed' ? "accepted invitations" : "not accepted invitations"
+    @paddlers = @team.members.find_paddlers(:all, :conditions => ["invitation_status_id=?",params[:status]], :order=>"members.created_at DESC") 
+  end
+  
+  def list_by_waiver_sign_status
+    @status = Status.find(params[:status])
+    @status_title = @status.name=='accept' ? "signed waivers" : "not signed waivers"
+    if @status.name=='accept'
+      conditions = ["waiver_status_id=?",params[:status]]
+    else
+      conditions = ["waiver_status_id<>?",Status.find_waiver_by_name('accept').id]
+    end
+    @paddlers = @team.members.find_paddlers(:all, :conditions => conditions, :order=>"members.created_at DESC") 
+  end
+  
+  def list_by_waiver_sign_status_to_csv
+    list_by_waiver_sign_status
+    csv_str = FasterCSV.generate do |csv|
+      csv << ["Name", "E-mail", "Gender", "Invitation Status", "Waiver Status", "Created at", "Date of Signature", "IP", "Team"]   
+      @paddlers.each do |paddler|
+        user = paddler.user
+        person = user.person
+        csv << [person.name, person.email, person.gender, paddler.invitation_status.name.capitalize, paddler.waiver_status.name.capitalize, paddler.created_at.strftime("%d/%m/%Y"), paddler.date_of_signature, paddler.ip, @team.name ]
+      end
+    end
+    send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=#{@team.name.to_slug}_paddlers_list_#{@status_title.gsub(" ","_")}_report.csv"
+  end
+  
   private
   
   def fetch_team
     @team = Team.find(params[:team_id])
+  end
+  
+  def set_types
+    @statuses = Status.find_invitation(:all, :order => "name")
   end
   
   def search

@@ -1,0 +1,47 @@
+<% content_for :title do %>Order Details<% end %>
+
+<h1>Order Details</h1>
+
+<p>ID: <%= @order.id %></p>
+<p>Status: <%= @order.status %></p>
+<p>TOTAL PAY: <b><%= number_to_currency @order.total_pay%></b></p>
+<p>Crerated at: <%= @order.created_at.strftime("%d.%m.%Y %H:%M") %></p>
+<br>
+<h4>Customer Details</h4>
+<p>First Name: <%= @person.first_name %></p>
+<p>Last Name: <%= @person.last_name %></p>
+<p>E-mail: <%= @person.email %></p>
+<p>Phone: <%= @person.phone %></p>
+<p>IP: <%= @order.customer_ip %></p>
+<br/>
+<h4>Credit Card</h4>
+<p>Type: <%= @credit_card.type %></p>
+<p>First Name: <%= @credit_card.first_name %></p>
+<p>Last Name: <%= @credit_card.last_name %></p>
+<p>Card Number: <%= @credit_card.display_number %></p>
+<p>Expiration Date Month / Year: <%= @credit_card.month %>/<%= @credit_card.year %></p>
+<br/>
+<h4>Billing Address</h4>
+<p>Street Address 1: <%= @person.address %><br>
+<p>Street Address 2: <%= @person.address2 %><br>
+<p>City: <%= @person.city %><br>
+<p>Zip code: <%= @person.zip %><br>
+<p>State: <%= @person.state %><br>
+<p>Country: <%= @person.country %><br>
+
+<h4>Order Items: </h4>
+<p>
+<h5>Boat</h5>
+<%= render :partial => 'member/boats/boat'%><br>
+
+<h5>Extras</h5>
+<%if @order.extras_orders.size>0%>
+<%= render :partial => 'extras_item'%>
+<%end%>
+</p>
+<br/>
+
+
+<p>
+<%= link_to 'Back',admin_orders_path %>
+</p>

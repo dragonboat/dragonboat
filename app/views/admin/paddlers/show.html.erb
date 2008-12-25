@@ -1,28 +1,13 @@
-<%@person = @paddler.person%>
-<h1>General Paddler Info</h1>
-<table id="users" class="obj_list">
-  <tr>
-    <td><b>Name</b></td>
-    <td><%=@person.name%></td>
-  </tr>
- 
-  <tr>
-     <td><b>Note</b></td>
-     <td class="note"><%=@paddler.note%></td>
-  </tr>
-  <tr>
-     <td><b>Created at</b></td>
-     <td><%= @paddler.created_at.strftime("%d.%m.%Y")%></td> 
-  </tr>
-  <tr>
-     <td colspan="2"><h4>Contact Information</h4></td>
-  </tr>
-  <%= render :partial => 'persons/full_show'%>
-  <tr>
-     <td colspan="2" align="center"><%= link_to 'Show', member_paddler_path(@paddler) %> |
-       <%= link_to 'Invite to join team'%>
-     </td>
-   </tr>
-</table>
+<% content_for :title do %>View Paddler<% end %>
+<div>
+  <%= render :partial => 'admin/teams/submenu/menu'%>
+</div>
+<h1>View Paddler</h1>
 
-<%= link_to 'Back', member_paddlers_path %>
+<%= render :partial => 'member'%>
+
+
+<%= link_to 'Edit', admin_edit_paddler_path(@team,@paddler.id) %> |
+
+<%= link_to 'Access Info', admin_access_paddler_path(@team,@paddler.id) %> |
+<%= link_to 'Back', admin_paddlers_path(@team)%>

@@ -2,9 +2,14 @@
 <div>
   <%= render :partial => 'admin/teams/submenu/menu'%>
 </div>
-<h1>Listing Paddlers</h1>
-
-<table border="0" width="100%" id="search">
+<h1 class="index">Listing Paddlers</h1>
+<div id="submenu" style="margin-left: 512px;">
+  <%= link_to 'Accepted invitations', admin_list_by_invitation_status_path(@team.id, Status.find_invitation_by_name('confirmed').id) %> |
+  <%= link_to 'Not accepted invitations', admin_list_by_invitation_status_path(@team.id, Status.find_invitation_by_name('unconfirmed').id) %> |
+  <%= link_to 'Signed waivers', admin_list_by_waiver_sign_status_path(@team.id, Status.find_waiver_by_name('accept').id) %> |
+  <%= link_to 'Not signed waivers', admin_list_by_waiver_sign_status_path(@team.id, Status.find_waiver_by_name('decline').id) %> |
+</div>
+      <table border="0" width="100%" id="search">
 	<tr><td>
 	<%form_tag(admin_paddlers_path(@team.id),:method=>:get) do |f|%>
 	Search: <%= text_field_tag :q, value = session["paddler_search_query_#{@team.id}"], :size => 40 %>

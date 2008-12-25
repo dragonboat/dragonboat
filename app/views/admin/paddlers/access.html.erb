@@ -1,0 +1,27 @@
+<% content_for :title do %>Paddler Access Info<% end %>
+<div>
+  <%= render :partial => 'admin/teams/submenu/menu'%>
+</div>
+<% content_for :scripts do %>
+<%=  stylesheet_link_tag 'print_style', :media => 'print' %>
+<% end %>
+
+<div class="to_print">
+  <h1>Paddler Access Info</h1>
+  <h2><%=@person.name%></h2>
+  <table >
+    <tr>
+      <td>Code number:</td>
+      <td><%=@user.code%></td>
+    </tr>
+    <tr>
+      <td>URL to login with a single code number:</td>
+      <td><%= link_to team_url_code_url(:slug => @team.name.to_slug, :url_code => @user.code), team_url_code_url(:slug => @team.name.to_slug, :url_code => @user.code) %></td>
+    </tr>
+  </table>
+</div> 
+
+<div align="center">
+ <%= button_to_function 'Print', 'print_page()', :id => "printLink" %>
+</div>
+<%= link_to 'Back', admin_paddlers_path(@team)%>

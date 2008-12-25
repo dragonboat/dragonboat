@@ -1,5 +1,7 @@
 <% url = controller.controller_path %>
-    <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.human_name %></h3>
+<table border="0" width="100%">
+<tr><td>
+    <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=link_to @team.human_name, admin_team_path(@team) %></h3>
     <br/>
     <div id="mainMenu">
       <ul class="tabs">
@@ -7,3 +9,6 @@
       </ul>
     </div>
     <span class="clearEm">&nbsp;&nbsp;</span>
+    
+ </td></tr>
+</table>
