@@ -56,7 +56,7 @@
       <label for="credit_card_number">Card Number</label>:<span id="required">*</span><br/><%= cc.text_field :number %></p>
     <p class="required">
       <label for="credit_card_month">Expiration Date Month / Year</label>:<span id="required">*</span><br/>
-      <%= cc.select :month, (1..12) %><%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
+      <%= cc.select :month, (1..12) %> <%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %>
     </p>
     <p class="required">
       <label for="credit_card_month">Card Verification Number</label>:<span id="required">*</span><br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
