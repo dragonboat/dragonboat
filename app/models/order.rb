@@ -63,6 +63,7 @@ class Order < ActiveRecord::Base
     #empty cart
     team.team_extras.each(&:destroy) if !@team.team_extras.empty?
     OrderNotifier.send("deliver_processed", self)
+    OrderNotifier.send("deliver_admin", self)
     true
   end
   
