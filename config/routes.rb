@@ -67,7 +67,8 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :teams,    :controller => 'admin/teams'
     m.resources     :boat_types,    :controller => 'admin/boat_types'
     m.resources     :items,    :controller => 'admin/items'
-    m.resources     :orders,    :controller => 'admin/orders'
+    m.resources     :orders,    :controller => 'admin/tent_positions'
+    m.resources     :tent_positions,    :controller => 'admin/tent_positions'
     m.snippets_index '/admin/snippets', :controller => 'admin/snippets',:action=> 'index'
   end
   
