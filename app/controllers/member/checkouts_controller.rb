@@ -1,6 +1,8 @@
 class Member::CheckoutsController < Member::WebsiteController 
 before_filter :has_any_boat?, :except=> :success
 before_filter :fetch_team
+before_filter :secure_site
+skip_before_filter :leave_secure_site
 
 include ActiveMerchant::Billing
 ActiveMerchant::Billing::Base.mode = :test

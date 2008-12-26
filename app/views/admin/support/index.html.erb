@@ -1,5 +1,13 @@
 <h1>Support Tickets List</h1>
 
+<div id="submenu">
+  <%= link_to("ALL", admin_support_tickets_url(:status=>'all'), :class=> !@filter || @filter=='all' ? "current" : "") + " |"%>
+  <%= link_to("OPEN", admin_support_tickets_url(:status=>'open'), :class=> @filter == 'open' ? "current" : '')+ " |"%>
+  <%= link_to("PENDING", admin_support_tickets_url(:status=>'pending'), :class=> @filter == 'pending' ? "current" : '')+ " |"%>
+  <%= link_to("REVIEW", admin_support_tickets_url(:status=>'review'), :class=> @filter == 'review' ? "current" : '')+ " |"%>
+  <%= link_to("CLOSED", admin_support_tickets_url(:status=>'closed'), :class=> @filter == 'closed' ? "current" : '')+ " |"%> 
+</div>
+
 <div id="pages"><%= will_paginate @tickets %></div>
 <%= render :partial => 'list'%>
 <div id="pages"><%= will_paginate @tickets %></div>

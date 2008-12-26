@@ -1,0 +1,13 @@
+    <p>
+      <strong>Number:</strong>
+      <br/>
+       <%= f.text_field :number, :size => 15, :disabled=>true %></span>
+    </p>
+    <p>
+       <strong>Status:</strong><br/>
+       <%= f.select :status, TentPosition::STATUS %>
+    </p>
+    <p>
+        <strong>Description:</strong><br/>
+        <%= f.text_area :description, :rows=>3 %>
+    </p>

@@ -1,0 +1,21 @@
+<table id="boat_types" class="obj_list">
+  <tr>
+    <th width="100"><%= link_to('Number', admin_tent_positions_url(:sort => sort_link_for('number', params[:sort])), :title=>"Sort by Number" ) %></th>
+    <th width="150"><%= link_to('Status', admin_tent_positions_url(:sort => sort_link_for('status', params[:sort])), :title=>"Sort by Status" ) %></th>
+    <th>Description</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for tent_position in  @tent_positions %>
+  <%@tent_position = tent_position%>
+  <tr>
+    <td><b><%=link_to tent_position.number, admin_edit_tent_position_path(tent_position)%></b></td>
+    <td><%= in_place_collection_editor_field( :tent_position, 'status',  TentPosition::STATUS )%></td>
+    <td class='notice'><%=tent_position.description%></td>
+      <td>
+        <%= link_to 'Edit', admin_edit_tent_position_path(tent_position) %> |
+        <%= link_to 'Delete', admin_tent_position_path(tent_position) , :confirm => 'Are you sure that you want to delete this tent position?', :method => :delete %>
+      </td>
+    </tr>
+<% end %>
+</table>

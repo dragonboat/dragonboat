@@ -7,10 +7,13 @@
     <th><%= link_to('Priority', admin_support_tickets_url(:sort => sort_link_for('ticket_priority', params[:sort])), :title=>"Sort by Priority" ) %></th>
     <th><%= link_to('Status', admin_support_tickets_url(:sort => sort_link_for('ticket_status', params[:sort])), :title=>"Sort by Status" ) %></th>
     <th><%= link_to('Created at', admin_support_tickets_url(:sort => sort_link_for('ticket_created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    <th><%= link_to('Last updated at', admin_support_tickets_url(:sort => sort_link_for('last_updated_at', params[:sort])), :title=>"Sort by Last Updated at" ) %></th>
+    <th><%= link_to('Last updated by', admin_support_tickets_url(:sort => sort_link_for('updated_by', params[:sort])), :title=>"Sort by Last Updated by" ) %></th>
     <th>&nbsp;</th>
   </tr>
-
-<% for ticket in @tickets %>
+  
+  <% for ticket in @tickets %>
+  <%updated_by = ticket.updated_by ? ticket.updated_by.login : 'non-registered'%>
   <tr>
     <td><%=ticket.id%></td>
     <td><%=ticket.subject%></td>
@@ -19,9 +22,12 @@
     <td><%=ticket.priority%></td>
     <td><%=ticket.status%></td>  
     <td><%=ticket.created_at.strftime("%d/%m/%Y %H:%M")%></td>  
+    <td><%=ticket.updated_at.strftime("%d/%m/%Y %H:%M") if ticket.updated_at%></td> 
+    <td><%=updated_by%></td> 
+      
       <td><%= link_to 'Show', admin_support_ticket_path(ticket) %> |
-        <%= link_to 'Edit', admin_edit_support_ticket_path(ticket) %> |
-        <%= link_to 'Destroy', admin_support_ticket_path(ticket) , :confirm => 'Are you sure?', :method => :delete %> 
+        <%= link_to 'Reply', admin_edit_support_ticket_path(ticket) %> |
+        <%= link_to 'Delete', admin_support_ticket_path(ticket) , :confirm => 'Are you sure?', :method => :delete %> 
       </td>
     </tr>
 <% end %>

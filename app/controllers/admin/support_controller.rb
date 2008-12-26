@@ -1,5 +1,6 @@
 class Admin::SupportController < Admin::WebsiteController
   def index
+    conditions = support_search
     order = case params[:sort]
       when 'ticket_id'             then 'tickets.id'
       when 'ticket_id_reverse'      then 'tickets.id desc'
@@ -15,10 +16,15 @@ class Admin::SupportController < Admin::WebsiteController
       when 'ticket_status_reverse'      then 'tickets.status desc' 
       when 'ticket_created_at'                then 'tickets.created_at'
       when 'ticket_created_at_reverse'        then 'tickets.created_at desc'
+      when 'last_updated_at'                then 'tickets.updated_at'
+      when 'last_updated_at_reverse'        then 'tickets.updated_at desc'
+      when 'updated_by'                then 'tickets.updated_by'
+      when 'updated_by_reverse'        then 'tickets.updated_by desc' 
       else 'tickets.created_at DESC'
     end
     @tickets = Ticket.paginate( :page => params[:page], 
                               :include=>[:user],
+                              :conditions => conditions,
                               :per_page =>APP_CONFIG["admin_per_page"],
                               :order => order)
     respond_to do |format|
@@ -40,6 +46,7 @@ class Admin::SupportController < Admin::WebsiteController
   def update
     @ticket = Ticket.find(params[:id])
     @ticket.attributes = (params[:ticket])
+    @ticket.updated_by = current_user
     @user = @ticket.user
     @answer = @ticket.answers.build
     @answer.attributes = (params[:answer])
@@ -54,6 +61,30 @@ class Admin::SupportController < Admin::WebsiteController
         format.xml  { render :xml => @ticket.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    flash[:notice] = 'Ticket was successfully deleted.'
+    respond_to do |format|
+      format.html { redirect_to(admin_support_tickets_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  private
+  def support_search
+    if params[:status]
+      session[:support_filter] = params[:status] 
+      session[:support_filter] = nil if params[:status] == 'all'
+    end
+    conditions = nil
+    if session[:support_filter]
+      @filter = session[:support_filter]
+      conditions = ["status=:query",{:query => "#{@filter}"}]
+    end
+    conditions
   end
 
 end

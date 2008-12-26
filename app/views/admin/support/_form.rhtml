@@ -19,11 +19,21 @@
 
 <p>
   <label for="ticket_priority">Priority:<br/></label>
-  <%= f.select :priority, Ticket::PRIORITY %>
+  <%# f.select :priority, Ticket::PRIORITY %>
+  <ul>
+  <%Ticket::PRIORITY.each do |p|%>
+  <li><%=f.radio_button :priority,p[1]%> <label for="ticket_priority_<%=p[1]%>"><%=p[0]%></label></li>
+  <%end%>
+  </ul>
 </p>
 <p>
   <label for="ticket_status">Status:<br/></label>
-  <%= f.select :status, Ticket::STATUS %>
+  <%# f.select :status, Ticket::STATUS %>
+   <ul>
+  <%Ticket::STATUS.each do |s|%>
+  <li><%=f.radio_button :status,s[1]%> <label for="ticket_status_<%=s[1]%>"><%=s[0]%></label></li>
+  <%end%>
+  </ul>
 </p>
 <p>
   <label for="answer_message">Add Reply Message:<br/></label>

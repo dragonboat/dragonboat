@@ -11,7 +11,7 @@
             <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>
             <%= render :partial=>'partials/parent_menu', :locals=>{ :p=>p } %>
             <% end %>
-   <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Support", :title=>"",:url=>{:controller=>'support', :action=>'new'}} %>
+   <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Support", :title=>"",:url=>{:controller=>'/support', :action=>'new'}} %>
    
             <!-- For admin user  -->
             <% if logged_in? && current_user.is_admin? %>

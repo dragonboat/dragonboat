@@ -1,0 +1,11 @@
+<% content_for :title do %>Edit Tent Position<% end %>
+
+<h1>Edit Tent Position</h1>
+<%= error_messages_for :tent_position %>
+
+<% form_for(:tent_position, :url => admin_tent_position_path(@tent_position), :html=>{:method=>:put}) do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<%= f.submit "Update" %>
+<% end %>
+  
+<%= link_to 'Back', admin_tent_positions_path %>

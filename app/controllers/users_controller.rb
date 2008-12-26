@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  #before_filter :login_required
-  #before_filter :admin_login_required
- # require_role "admin", :if => "login_required"
+  before_filter :secure_site, :only => [:new, :create]
+  skip_before_filter :leave_secure_site
+  
   layout "application"
   # render new.rhtml
   def new

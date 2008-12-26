@@ -3,6 +3,9 @@ class Member::BoatsController < Member::WebsiteController
  # require_role "captain", :only=>[:index]
   before_filter :has_boat?, :only=>[:index, :edit, :update]
   before_filter :fetch_team, :only=>[:extras, :add_extras]
+  
+  before_filter :secure_site, :except => [:index, :edit, :update]
+  skip_before_filter :leave_secure_site
  
   def index
    # @team = @teams.first

@@ -7,6 +7,8 @@ class Ticket < ActiveRecord::Base
   validates_inclusion_of :status, :in=>%w( open pending review closed )
   
   belongs_to :user, :foreign_key => 'user_id', :class_name=>"User"
+  belongs_to :updated_by, :foreign_key => 'updated_by', :class_name=>"User"
+  
   acts_as_tree :order => :created_at
   
   has_many :answers, :dependent=>:destroy

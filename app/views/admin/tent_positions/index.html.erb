@@ -1,0 +1,6 @@
+<% content_for :title do %>Tent Positions List<% end %>
+<h1 class="index">Tent Positions List</h1>
+
+<div id="pages"><%= will_paginate @tent_positions %></div>
+<%= render :partial => 'list'%>
+<div id="pages"><%= will_paginate  @tent_positions %></div>

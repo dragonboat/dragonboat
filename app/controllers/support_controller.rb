@@ -19,6 +19,7 @@ class SupportController < ApplicationController
       @user = User.find_by_login(params[:user][:login])  
       @ticket.email = @user.email if @user
       @ticket.user_id = @user.id  if @user
+      @ticket.updated_by = @user  if @user
     end
     if @ticket.save
       redirect_to new_support_path
@@ -56,6 +57,7 @@ class SupportController < ApplicationController
   @ticket.parent_id = @parent.id
   @ticket.email = @parent.email
   @ticket.user = @parent.user
+  @ticket.updated_by = @parent.user
    
   @answer = @parent.answers.find(params[:answer_id])
   @ticket.subject, @ticket.message = reply_to(@parent, @answer)
@@ -74,6 +76,7 @@ end
     if current_user
       @ticket.user_id = current_user.id 
       @ticket.email = current_user.email
+      @ticket.updated_by = current_user
       @user = @ticket.user
     end
   end
