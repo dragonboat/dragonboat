@@ -1,0 +1,25 @@
+<%current = url =~/(items|boat_types|practices|tent_positions)/%>
+<div class="menu">
+  <ul>
+<li><%=link_to "Other", admin_items_url, :class=>"hide" , :id=>current ? "current" : "" %>
+<!--[if lte IE 6]>
+<a href="<%=admin_items_url%>"  <%="id='current'" if current%>>Other
+<table><tr><td>
+<![endif]-->
+
+	<ul>
+           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Extras", :title=>"Extras",:url=>admin_items_url, :current=>url =~/(items)/}%>
+           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Boat Types", :title=>"Boat Types",:url=>admin_boat_types_url, :current=>url =~/(boat_types)/}%>
+           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Practices", :title=>"Practices",:url=>admin_practices_url, :current=>url =~/(practices)/}%>           
+           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Tents", :title=>"",:url=>admin_tent_positions_url, :current=>url =~/(tent_positions)/}%>
+        </ul>
+
+<!--[if lte IE 6]>
+</td></tr></table>
+</a>
+<![endif]-->
+
+</li>
+
+</ul>
+</div>

@@ -192,7 +192,10 @@ border: 0px solid green;
   background-color:green ;
 	
 }
-
+#submenu a.current {
+  color: white;
+  background-color:green ;	
+}
 
 #required {color:red;}
 div#pages {

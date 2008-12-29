@@ -417,7 +417,10 @@ float: left;
 	border-right: 1px solid white;
 	
 	}
-
+#mainMenu ul.tabs li.current a{
+	color: #FFF;
+	background-color: green;	
+	}
 #mainMenu ul.tabs li a{
 	color: #000;
 	background-color: #CCC;

@@ -19,6 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '', :controller => 'member/website',  :action => 'index'
+    m.profile '/profile',    :controller => 'member/users', :action=>"show"
     m.resource   :tent, :controller => 'member/tents'
    
     m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
@@ -57,8 +58,8 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
     m.resources     :files,    :controller => 'admin/files'
-    m.send_message_volunteer  'admin/volunteers/:id/send_message', :controller => 'admin/volunteers', :action=>'send_message'
-    m.send_message_by_type_volunteer  'admin/volunteers/send_message_by_type', :controller => 'admin/volunteers', :action=>'send_message_by_type'
+    m.send_message_volunteer  'volunteers/:id/send_message', :controller => 'admin/volunteers', :action=>'send_message'
+    m.send_message_by_type_volunteer  'volunteers/send_message_by_type', :controller => 'admin/volunteers', :action=>'send_message_by_type'
     m.resources     :volunteers,    :controller => 'admin/volunteers'
     m.resources     :events,    :controller => 'admin/events'
     m.resources     :practices,    :controller => 'admin/practices'  
@@ -67,9 +68,9 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :teams,    :controller => 'admin/teams'
     m.resources     :boat_types,    :controller => 'admin/boat_types'
     m.resources     :items,    :controller => 'admin/items'
-    m.resources     :orders,    :controller => 'admin/tent_positions'
+    m.resources     :orders,    :controller => 'admin/orders'
     m.resources     :tent_positions,    :controller => 'admin/tent_positions'
-    m.snippets_index '/admin/snippets', :controller => 'admin/snippets',:action=> 'index'
+    m.snippets_index 'snippets', :controller => 'admin/snippets',:action=> 'index'
   end
   
   map.register_user "/register", :controller =>"users", :action=>"new"

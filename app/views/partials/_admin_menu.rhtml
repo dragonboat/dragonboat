@@ -1,11 +1,20 @@
 <% url = controller.controller_path %>
 
+
     
     <div id="mainMenu"> 
+      <div style="float:left; margin-right:15px;">
       <ul class="tabs">
         <%= render :partial=>'partials/admin_menu/tool_content', :locals=>{:url=>url}%>
         <%= render :partial=>'partials/admin_menu/tool_users', :locals=>{:url=>url}%>
-        <%= render :partial=>'partials/admin_menu/tool_boats', :locals=>{:url=>url}%>
+        <%= render :partial=>'partials/admin_menu/tool_boats', :locals=>{:url=>url}%>     
       </ul>
       </div>
-        
+      <div>       
+        <%= render :partial=>'partials/admin_menu/tool_other', :locals=>{:url=>url}%>
+      </div>
+      </div>
+      
+          
+     
+            
