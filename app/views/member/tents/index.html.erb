@@ -1,21 +1,16 @@
-<% content_for :title do %><%=@team.name%> : Select Tent Position<% end %>
+<% content_for :title do %><%=@team.name%> : Select Tents<% end %>
 <div>
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 
-<h1>Select Tent Position</h1>
+<h1>Select Tents</h1>
+<%=image_tag "tents_graphic.jpg", :border=>"0"%>
 
-<%@tents.each_with_index do |tent, i|%>
-<div id="tent_location_<%=tent.id%>">
-  <%= render :partial => 'tent_location', :locals=>{:tent => tent, :index=>i}%>
+<h2>Position List</h2>
+<div id="tent_positions">
+  <%= render :partial => 'tent_location'%>
 </div>
-<br/>
-<%form_remote_for :tent, :url => member_team_tents_path(@team.id, "update", tent.id),
-            :loading => visual_effect(:highlight, "tent_location_#{tent.id}")do |f| %>
-<%=f.text_field :location%> <%=hidden_field_tag 'index', i%> <%=f.submit "Update"%>
-<%end%>
 
-<%end%>
 
 
 

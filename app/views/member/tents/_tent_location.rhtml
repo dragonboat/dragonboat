@@ -1,2 +1,22 @@
-  Location <%=index.to_i+1%>: <%=tent.location if tent.location && !tent.location.empty?%>
-  <%="--non select--" if tent.location.nil? or tent.location.empty?%>
+<%= error_messages_for :tent %>
+
+<%@tent_postions.each do |tent_position|%>
+<div id="tent_location_<%=tent_position.id%>">
+
+  <%if tent_position.status=="available"%>
+   <div id="available">
+     <%=link_to_remote tent_position.number, :url=>member_team_tents_path(@team.id, "update", tent_position.id),
+                :loading => visual_effect(:highlight, "tent_location_#{tent_position.id}")%>                
+   </div>
+  <%elsif @tents.map(&:location).include? tent_position.number.to_s%>
+    <div id="current_reserved"><%=tent_position.number%></div>
+  <%else%>
+    <div id="reserved"><%=tent_position.number%><br/><%=truncate(tent_position.team_name,15)%> </div>
+  <%end%>
+
+
+    
+</div>
+<br/>
+
+<%end%>

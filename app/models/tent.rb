@@ -3,7 +3,11 @@ class Tent < ActiveRecord::Base
   validates_associated :team
  # has_one  :extras_order, :as => :extras, :class_name => "ExtrasOrder"
   
-  def price
-    APP_CONFIG['tent_price']
+  scope_out :empty,
+            :conditions => "location IS NULL OR location=''"
+          
+  def reserved(tent_position)
+    self.location = tent_position.number.to_s
+    tent_position.update_attribute(:status, "reserved") if self.save
   end
 end

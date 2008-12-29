@@ -6,7 +6,7 @@
         
        
         <li  <%= "class=\"current\"" if url =~/(practices)/ %>><%= link_to 'Manage Practices', member_team_practices_path(@team.id)%> |</li>
-        <%unless @team.tent.nil?%>
+        <%if @team.tents.size>0%>
         <li  <%= "class=\"current\"" if url =~/(tent)/ %>><%= link_to 'Tent Position', member_team_tents_path(@team.id)%> |</li>
         <%end%>
         

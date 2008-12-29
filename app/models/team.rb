@@ -11,7 +11,7 @@ class Team < ActiveRecord::Base
   
   has_many :members, :dependent=>:destroy
   has_many :users, :through => :members
-  has_one :tent, :dependent=>:destroy
+  has_many :tents, :dependent=>:destroy
   
   has_one :order, :dependent=>:destroy
  

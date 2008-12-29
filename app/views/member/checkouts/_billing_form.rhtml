@@ -1,4 +1,4 @@
- <div style="display:none;" id="billing_address">
+      <div style="display:none;" id="billing_address">
          <% fields_for :person, @billing do |p| %>
           <p class="required">
             <label for="person_address">Street Address 1</label>:<span id="required">*</span><br/>  <%= p.text_field :address %>
@@ -19,6 +19,6 @@
             <label for="person_country">Country</label>:<span id="required">*</span><br/><%= p.country_select :country, ['United States', 'Canada'] %>
           </p>
          <% end %>
-       </div>
+     </div>
        
        <%=javascript_tag("if (!$('use_personal_address').checked) {$('billing_address').show();}") %>

@@ -66,5 +66,8 @@
     <% end %>
     
     </div>
-    <%=link_to "Go to Boat Home Page", member_boats_path %>
+    <ul id='none'>
+    <li><%=link_to "Go to Boat Home Page", member_boats_path %></li>
+    <li><%= link_to 'Select tent position', member_team_tents_path(@team.id) if @team.tents.size>0 %></li>
+    </ul>
     
