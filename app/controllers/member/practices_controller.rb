@@ -13,6 +13,7 @@ class Member::PracticesController < Member::WebsiteController
     @end_date = @filter.end_date
     @practices = Practice.find(:all,
       :order => "created_at DESC")
+    @current_practices = @team.practices.find(:all, :order=>"created_at")
   end
   
   def show
@@ -44,6 +45,7 @@ class Member::PracticesController < Member::WebsiteController
   
   def update
     @practice = Practice.find_available(params[:id])
+    @practice.attributes = (params[:practice])
     @practice.team_id = @team.id    
     @practice.validation_mode = :team   
   

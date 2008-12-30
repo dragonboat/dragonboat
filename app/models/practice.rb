@@ -77,6 +77,10 @@ class Practice < ActiveRecord::Base
     created_at.strftime("%I:%M%p")
   end
   
+  def date
+    created_at.strftime("%d %B %Y")
+  end
+  
   def status
    team_id.nil? ? "available" : "reserved"
   end

@@ -10,6 +10,12 @@
 
 <% form_for(:practice, :url => member_team_practices_path(@team,"update",@practice.id), :html=>{:method=>:put}) do |f| %>
 <%= f.hidden_field :team_id %>
+<p>
+  <label for="practice_launch_driver">Launch Driver</label>:&nbsp;&nbsp;<%= f.text_field :launch_driver, :size=>25%>
+</p>
+<p>
+  <label for="practice_steers_person">Steers Person</label>: <%= f.text_field :steers_person, :size=>25%>
+</p>
 
 <p><%= f.submit "Reserve This Practice Time" %></p>
 <% end %>
