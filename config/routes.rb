@@ -33,6 +33,7 @@ ActionController::Routing::Routes.draw do |map|
     m.team_practices '/boats/:team_id/practices/:action/:id', :controller => 'member/practices'
     m.team_tents '/boats/:team_id/tents/:action/:id', :controller => 'member/tents'
     m.reply '/support/reply/:id/:answer_id', :controller => 'member/support', :action => 'reply'
+    m.tickets_list '/support/list', :controller => 'member/support',  :action => 'index'
   end
   
   map.with_options :path_prefix => 'team/:slug', :name_prefix => 'team_' do |m|
@@ -76,6 +77,7 @@ ActionController::Routing::Routes.draw do |map|
   map.register_user "/register", :controller =>"users", :action=>"new"
   map.resources :users
   map.resource :session
+  map.create_ticket '/support/new', :controller => 'support', :action=>"new"
   map.resource :support, :controller => 'support'
   map.resources :volunteers
   map.resources :paddlers

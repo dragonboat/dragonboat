@@ -3,7 +3,7 @@
         <%unless current_user.is_admin?%>
         <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_profile_path %> &nbsp;|&nbsp;
         <%if current_user.tickets.find_pending(:first)%>
-        <%= link_to "Support", :controller=>"member/support", :action=>"index"%> &nbsp;|&nbsp; 
+        <%= link_to "Support", member_tickets_list_url%> &nbsp;|&nbsp; 
         <%end%>
         
         <%else%>
