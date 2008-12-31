@@ -10,9 +10,9 @@ way to fit your requirements.
 /* common styling */
 /* widht 104 - 80*/
 .menu a {padding-left:15px; padding-right:15px;}
-.menu ul { background:#F7941D; color:#fff; widht:auto; }
+.menu ul { background:#F7941D; color:#fff; widht:auto; display:inline; white-space: nowrap; }
 
-.menu {font-family: verdana, sans-serif; min-width:980px; width:100%; height:10px;; position:relative; font-size:11px; z-index:100;}
+.menu { font-family: verdana, sans-serif; min-width:1024px; width:100%; height:10px; position:relative; font-size:11px; z-index:100;}
 .menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;  white-space: nowrap; width:auto; height:20px;  border:1px solid #fff; background:#ffffff; line-height:20px; font-size:12px; font-weight:bold;  overflow:hide;}
 .menu ul {padding:0; margin:0; list-style: none;}
 .menu ul li {float:left; position:relative;}
