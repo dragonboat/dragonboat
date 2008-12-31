@@ -8,7 +8,8 @@ body {
     font: normal 12px 'Verdana', sans-serif;
     }
 
-a {color:#393537;}
+a {color:#393537; text-decoration: none;}
+a:hover {color:#393537; text-decoration: underline;}
 h1 {font-size:22px; color:#000; font-weight:bold;}
 h2 {font-size:14px; color:#F7941D;font-weight:bold;}
 h3 {font-size:12px; color:#F7941D;font-weight:bold;}
