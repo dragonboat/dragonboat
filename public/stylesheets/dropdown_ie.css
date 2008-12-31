@@ -9,8 +9,8 @@ way to fit your requirements.
 =================================================================== */
 .menu {display:inline; white-space: nowrap; font-family: verdana, sans-serif; min-width:900px; width:100%; height:1px; position:absolute; font-size:11px; z-index:100;}
 .menu a {padding-left:7px; padding-right:7px;}
-.menu ul { background:#FFF;  display:inline; white-space: nowrap;}
-.menu ul ul { background:#F7941D; color:#fff; display:inline; white-space: nowrap;}
+.menu ul { background:#FFF; }
+.menu ul ul { background:#F7941D; color:#fff; }
 
 .menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;  white-space: nowrap; width:1px; height: 1px; vertical-align: bottom; text-align:center; border:1px solid #fff; background:#fff; line-height:20px; font-size:12px; font-weight:bold;  overflow:visible;}
 .menu ul li a.hide, .menu ul li a:visited.hide {display:none;}
