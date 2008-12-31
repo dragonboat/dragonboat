@@ -7,9 +7,7 @@
     </h2>      
     <div class="notice">must be at least 12 years of age to volunteer</div>
     <br/>
-    <ul id="none">
-        <li>Please fill out all Required fields:</li>
-         </ul>
+    <p>Please fill out all Required fields:</p>
          
          <% form_for :volunteer, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
          <%= render :partial => 'form', :locals =>{:f=>f} %>
