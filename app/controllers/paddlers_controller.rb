@@ -1,6 +1,9 @@
 class PaddlersController < ApplicationController
   layout "application"
    
+  def index
+    redirect_to :action=>:new
+  end
   def new
     @paddler = OrphanedPaddler.new
   end
