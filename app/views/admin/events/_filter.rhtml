@@ -1,7 +1,7 @@
 Start Date:
-<%=date_select :filter, 'start_date',  :order => [:month, :day, :year] -%>
+<%=date_select :filter, 'start_date',  :order => [:month, :day, :year], :start_year => 1920 -%>
 End Date:
-<%=date_select :filter, 'end_date',  :order => [:month, :day, :year] -%>
+<%=date_select :filter, 'end_date',  :order => [:month, :day, :year], :start_year => 1920 -%>
 
 <%= submit_tag("Update")%>
 

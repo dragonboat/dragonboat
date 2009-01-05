@@ -14,60 +14,53 @@
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'registration-complete-instructions', :silent=>true %>
 <!-- -->
+<h2>Boat: <%=@team.name%></h2> 
+   
+    <fieldset>
+    <legend>Thank you! You have successfully registered your team! 
+    <%= "Please proceed to #{link_to('Select your tent position', member_team_tents_path(@team.id))}." if @team.tents.size>0 %>
+  </legend>
+  <h4>Your Details</h4>
+Name: <%= @billing.name %><br>
+Email Address : <%= @billing.email %><br>
+Home Phone number: <%= @billing.phone %><br>
+Username: <%=@user.login%><br>
+Type: <%=@user.type%>
 
-<div>
-<h2>Thanks for your order!</h2>
-
-<% content_tag :fieldset do %> 
-  <%= content_tag :legend, "Your Details" %>
-   Name: <%= @billing.name %><br>
-   Email Address : <%= @billing.email %><br>
-   Home Phone number: <%= @billing.phone %><br>
-<% end %>
-
-<% content_tag :fieldset do %> 
-  <%= content_tag :legend, "Your Account" %>
-   Login: <%=@user.login%><br>
-   Email Address: <%=@user.email%><br>
-   Type: <%=@user.type%>
-<% end %>
-
-<% content_tag :fieldset do %> 
-  <%= content_tag :legend, "Billing Address" %>
+<h4>Billing Address</h4>
   Street Address 1:  <%= @billing.address %><br>
   Street Address 2:  <%= @billing.address2 %><br>
   City:  <%= @billing.city %><br>
   Zip:  <%= @billing.zip %><br>
   State:  <%= @billing.state %><br>
   Country:  <%= @billing.country %><br>
-<% end %>
 
-<% content_tag :fieldset do %> 
-  <%= content_tag :legend, "Your Ordered" %>
-    <% content_tag :fieldset do %> 
-    <%= content_tag :legend, "Boat" %>
-    <%= render :partial => 'member/boats/boat'%><br>
-    <% end %>
-    <% content_tag :fieldset do %> 
-    <%= content_tag :legend, "Extras" %>
-    <%if @order.extras_orders.size>0%>
-        <%= render :partial => 'member/order/extras_item', :locals=>{:orders=>@order.extras_orders}%>
-    <%else%>
-        -- no item was selected --
-    <%end%>
-    <br>
-    <% end %>
-    <h5>TOTAL PAY:</h5> <strong><%=number_to_currency @order.total_pay%></strong>
-    <% end %>
-    
-    <% content_tag :fieldset do %> 
-    <%= content_tag :legend, "Payment Info" %>
-    Your credit card had been charged: <%=number_to_currency @order.total_pay %>
-    <% end %>
-    
-    </div>
+<h4>Your Ordered: </h4>
+<h5>Boat</h5>
+<%= render :partial => 'member/boats/boat'%><br>
+
+<h5>Extras</h5>
+<%if @order.extras_orders.size>0%>
+  <%= render :partial => 'member/order/extras_item', :locals=>{:orders=>@order.extras_orders}%>
+<%else%>
+   -- no item was selected --
+<%end%>
+<br>
+
+<h5>TOTAL PAY:</h5>
+<strong><%=number_to_currency @order.total_pay%></strong>
+
+  <h4>Payment Info:</h4>
+  <p>Your credit card had been charged: <%=number_to_currency @order.total_pay %></p>
+  
+  <%=button_to "Thanks", member_team_members_path(@team.id)%>
+
+</fieldset>
+
     <ul id='none'>
-    <li><%=link_to "Go to Boat Home Page", member_boats_path %></li>
-    <li><%= link_to 'Select tent position', member_team_tents_path(@team.id) if @team.tents.size>0 %></li>
+      <li><%=link_to "Go to Boat Home Page", member_boats_path %></li> 
+      <li><%= link_to 'Select tent position', member_team_tents_path(@team.id) if @team.tents.size>0 %></li>      
     </ul>
+
+   
     

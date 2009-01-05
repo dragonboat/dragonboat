@@ -5,7 +5,7 @@ Ticket Details:
 <p>ID#:            <%= @ticket.id %></p>
 <p>Subject:        <%= @ticket.subject %></p>
 <%if @ticket.user%>
-<p>User:           <%= @ticket.user.login %></p>
+<p>Username:           <%= @ticket.user.login %></p>
 <%end%>
 <p>Email:          <%= mail_to @ticket.email %></p>
 <p>Priority:       <%= @ticket.priority.capitalize %></p>

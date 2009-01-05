@@ -2,7 +2,7 @@
 <h4>From</h4>
  
   <p>
-    <label for="user_login">Login:</label>
+    <label for="user_login">Username:</label>
     <span class='notice'>(if you are registered on the online system already enter your login here else leave this field empty)</span><br/>
     <% fields_for "user", @user do |user_field| %>
     <%= user_field.text_field :login, :disabled=>current_user%>

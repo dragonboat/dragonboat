@@ -13,8 +13,8 @@
     <tr>
         <td class="required"><label for="person_gender_f_f">Gender:</label>
         <span id="required">*</span><br/>
-        <%=f.radio_button :gender_f, "F", :tabindex=> 6, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1"%> <label for="person_gender_f_f" >Female</label>
-        <%= f.radio_button :gender_m, "M", :tabindex=> 7, :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1"%> <label for="person_gender_m_m">Male</label>
+        <%=f.radio_button :gender_f, "F", :tabindex=> 6, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1", :onclick=>"$('person_gender_m_m').checked=0;"%> <label for="person_gender_f_f" >Female</label>
+        <%= f.radio_button :gender_m, "M", :tabindex=> 7, :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1", :onclick=>"$('person_gender_f_f').checked=0;"%> <label for="person_gender_m_m">Male</label>
         <%# f.radio_button :gender, "F" %> 
          <%# f.radio_button :gender, "M" %> 
       </td>
@@ -61,7 +61,7 @@
     <tr>
         <td class="required"><label for="person_state">State:</label>
         <span id="required">*</span><br/>
-        <%= f.select :state, states_options, :tabindex=> 14%></td>    
+        <%= f.select :state, states_options, {}, :tabindex=> 14%></td>    
     </tr>
     
     <tr>
@@ -71,7 +71,8 @@
     </tr>
     
     <tr>
-        <td><label for="person_birthday_date">Date of Birth Month / Day / Year:</label>
-        <br/>
-        <%= f.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1950,  :include_blank => "", :tabindex=> 16%></td>
+        <td><label for="person_birthday_date">Date of Birth:<br/>
+          Month <span class="mon_sep">/</span> Day <span class="day_sep">/</span> Year</label>
+          <br/>
+        <%= f.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920,  :include_blank => "", :tabindex=> 16%></td>
     </tr>

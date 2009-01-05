@@ -39,10 +39,12 @@
     
         <div id="main">
           
-          <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
-         
-         <%if @team && current_user.is_captain?%>
-         <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.human_name %></h3>
+        <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
+        
+        <%if @team && current_user.is_captain?%>
+        <%unless request.request_uri=~ /checkouts\/success/i%>
+        <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%=@team.human_name %></h3>
+        <%end%>
          <%end%>  
          <p style="color: green"><%= flash[:notice] %></p>
         

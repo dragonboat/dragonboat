@@ -1,0 +1,28 @@
+<% content_for :scripts do %>
+<%=  stylesheet_link_tag 'cvv' %>
+<% end %>
+<div>
+<h1>CVV Number</h1>
+<strong>CVV</strong> is an anti-fraud security 
+feature to help verify that you are in possession of your credit card. 
+This ensures that nobody can illegally use your credit card number without actually having the card in their possession. 
+<strong>This is for your protection</strong>.<p></p>
+<p>For <strong>Visa/MasterCard</strong>, the three-digit CVV number is printed on the signature panel on 
+the back of the card immediately after the card's account number </p>
+<p><span>For <strong>American Express</strong>, the four-digit CVV number is printed on the front of the card above the card account number.</span></p>
+<table>
+  <tbody>
+  <tr>
+    <td><strong>Visa/MasterCard</strong></td>
+    <td><strong>American Express</strong></td></tr>
+  <tr>
+    <td valign="top"><%=image_tag "cvv-visa.gif", :alt=>"VISA", :width=>"215", :height=>"103" %><br><small>A 3-digit number in reverse italics<br>on the 
+      <strong>back</strong> of your credit card</small></td>
+    <td valign="top"><%=image_tag "cvv-amex.gif", :widht=>"248", :alt=>"AMEX", :height=>"129" %><br>
+      <small>A 4-digit number on the <strong>front</strong>, just<br>above 
+your credit card number</small></td></tr>
+  <tr>
+    <td colspan="2" valign="top"><strong>NOTE: </strong>If your credit card does not have a CVV, please enter four zeroes (0000) on the CVV field. </td>
+    </tr>
+</tbody></table>
+</div>

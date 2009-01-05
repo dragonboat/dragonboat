@@ -2,7 +2,7 @@
   <legend>General Event Settings</legend>
   <p>
     <strong>Date:</strong> <span id="required">*<br /></span>
-     <%= f.date_select :start_date, :order => [:day, :month, :year] %>
+     <%= f.date_select :start_date, :order => [:day, :month, :year], :start_year => 1920 %>
     
      <%=link_to_function image_tag("icons/calendar.gif",:title=>"Open Calendar"), "return false;", :id=>"openCalendar"%>
      <div id="calendar"></div>

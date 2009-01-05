@@ -1,6 +1,6 @@
 <script>
   tinyMCE.init({
-    height : "80",
+    content_css : "/stylesheets/human_name.css",
     mode : "exact",
     elements : "team_human_name",
     theme_advanced_toolbar_location : "top",
@@ -16,7 +16,7 @@
 <p class="required">
     <label for="team_human_name">Team Name:</label>
     <span id="required">*<br />
-    <%= f.text_field :human_name, :size => 50 %></span>
+    <%= f.text_area :human_name, :rows=>2, :cols=>80 %></span>
   </p>
   <%unless ["edit","update"].include? controller.action_name%>
   <p class="required">
@@ -31,7 +31,9 @@
     <span class='notice'>http://www.teamwebsite.com</span>
   </p>
   <p>
-    <label for="team_description">Team Biography:</lablel><br />
+    <label for="team_description">Team Biography</lablel>
+    <span class='notice'>(Maximum 50 words)</span>:
+    <br />
     <%= f.text_area :description, :rows=>12, :cols=>80%></span>
   </p>
   

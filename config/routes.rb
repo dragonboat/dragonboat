@@ -83,6 +83,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :paddlers
   map.reply '/support/reply/:id/:answer_id', :controller => 'support', :action => 'reply'
   
+  map.cvv   '/cvv', :controller => 'users',  :action => 'cvv'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.forgot '/forgot', :controller => 'sessions', :action => 'forgot'

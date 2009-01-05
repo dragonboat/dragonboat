@@ -3,7 +3,7 @@
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 <h1>General Boat Info</h1>
-<p>Team Name: <%=@team.human_name%></p>
+<p>Team Name: <%=@team.name%></p>
 <p>Team URL: <%=link_to @team.url, @team.url%></p>
 <p>Team Biography: <%=@team.description%></p>
 <p>Captain: <%=@team.captain.person.name%></p>

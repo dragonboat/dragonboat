@@ -1,0 +1,274 @@
+@import url("email.css");
+
+
+table#pagelayout table.greytable { padding:0; border:1px solid #666;}
+table#pagelayout table.greytable td { padding:2px 3px; border:1px solid #666; background-color:#eee; }
+
+table#pagelayout {
+	margin:0 auto;
+	padding:0;
+	width:950px;
+	min-height:500px;
+	background-color:#fff;
+	vertical-align:top;
+	border-left:1px solid #003767;
+	border-right:1px solid #003767;
+}
+
+table#pagelayout td {
+	vertical-align:top;
+	padding-left:10px;
+}
+
+table#pagelayout td#gwn_logo { height:15px;}
+
+/*
+		Primary Navigation
+*/
+table#pagelayout td#primary_nav {
+	margin:0; padding:5px 0 0 0;
+	padding-left:14px;
+	background-color:#FFFFFF;
+}
+
+/*
+		Secondary Navigation
+*/
+table#pagelayout td#secondary_nav {
+	margin:0;
+	padding:3px 0 4px 15px;
+	color:#FFF;
+	font-size:0.85em;
+	font-weight:bold;
+	background-color:#80a1b6;
+	height:1.5em;
+}
+
+
+/*
+		Page Image at Top of Page
+*/
+table#pagelayout td#page_image {
+	background-color:#fff;
+	height:auto;
+	margin:0;
+	padding:3px 0 0 0;
+}
+
+table#pagelayout td#page_image img {
+	margin:0;padding:0;
+}
+
+/*
+		Breadcrumbs Section
+*/
+table#pagelayout td#page_breadcrumbs {
+	margin:0;
+	padding:3px 0 4px 15px;
+	color:#fff;
+	font-size:0.85em;
+	background-color:#80a1b6;
+	height:1.5em;
+}
+
+/*
+		Page Content
+*/
+table#pagelayout td#page_content {
+	width:auto;
+	font-size:0.9em;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:10px;
+}
+
+/*
+		Footer
+*/
+table#pagelayout td#footer {
+	font-size:0.75em;
+	padding:5px 15px 5px 15px;
+	color:#FFFFFF;
+	background:#666666;
+}
+table#pagelayout td#footer a:link, table#pagelayout td#footer a:visited { color:#FFFFFF; }
+table#pagelayout td#footer p { color:#aaa;  margin-top:5px; }
+table#pagelayout td#footer address {
+	font-style:normal;
+	margin-top:5px;
+	float:left;
+}
+
+
+
+/* CSS Document */
+/*
+	GWN Colors
+	Red: #b5111b
+	Blue: #003767
+	Grey: #80a1b6
+*/
+
+.nav {
+	margin:0; padding:4px;
+	cursor:pointer;
+}
+.nav li {
+	margin:0; padding:0;
+	list-style:none;
+	list-style-image:none;
+	display:inline;
+}
+.nav a:link,
+.nav a:visited,
+.nav a:active {
+	margin:0; padding:5px 12px;
+	font-size:11px;
+	font-weight:bold;
+	color:#999;
+	background-color:#FFF;
+	text-decoration:none;
+}
+
+.nav a:hover {
+	background-color:#80a1b6;
+	color: #FFF;
+	text-decoration:none;
+}
+
+.events_form li {
+	clear:both;
+	list-style:none;
+	list-style-image:none;
+}
+.events_form li h2 {
+	display:inline;
+}
+.events_form li img {
+	vertical-align:top;
+}
+.events_form li label {
+	float:left;
+	width:35%;
+	text-align:right;
+	padding:0 5px 0 0;
+	margin:0;
+}
+#waiver {
+	list-style-image:none;
+	color:#000;
+	overflow-y:auto;
+	overflow-x:none;
+	height:200px;
+	border:1px solid #80a0b7;
+	padding:5px;
+}
+.alert {
+	padding:5px;
+	margin:0 0 5px 0;
+	border:1px solid #b4101b;
+	background-color: #FDB;
+	font-weight:normal;
+	color:#000;
+	text-align:left;
+}
+
+.input_checkbox, .input_image, .input_radio {
+	border:none;
+	background:none;
+	padding:0;
+	margin:3px 0 0 0;
+}
+.input_remove {
+	color:#80a0b7;
+	border-top-color: #d9dfea;
+	border-left-color: #d9dfea;
+	border-bottom-color: #80a0b7;
+	border-right-color: #80a0b7;
+	background-color: #d9dfea;
+}
+.input_submit {
+	color:#fff;
+	border-top-color: #d9dfea;
+	border-left-color: #d9dfea;
+	border-bottom-color: #0e1f5b;
+	border-right-color: #0e1f5b;
+	background-color: #608196;
+}
+
+.box {
+	width:auto;
+	background: #d9dfea;
+	border:1px solid #80a0b7;
+	margin:0 0 10px 5px; padding:0;
+}
+.box p {
+	padding: 4px 8px;
+	margin:3px;
+}
+.box h2 {
+	margin: 0;
+	padding: 1px 4px;
+	color:#fff;
+	border:1px solid #013668;
+	background: #013668;
+}
+.box ul {
+	margin:0;
+	padding:8px 0;
+}
+.form {
+	padding:0;
+	margin:0;
+}
+.form li {
+	clear:both;
+	list-style:none;
+	list-style-image:none;
+	padding:2px;
+}
+.form li label {
+	float:left;
+	width:35%;
+	text-align:right;
+	padding:0 4px 0 0;
+	margin:0;
+}
+.form li div {
+	margin:0 0 0 35%;
+	color:#b4101b;
+	padding:0;
+}
+
+.ccform {
+	padding:0;
+	margin:0;
+}
+.ccform li {
+	clear:both;
+	list-style:none;
+	list-style-image:none;
+	padding:2px;
+}
+.ccform li label {
+	float:left;
+	width:35%;
+	text-align:right;
+	padding:0 4px 0 0;
+	margin:0;
+}
+.ccform li div {
+	margin:0 0 0 35%;
+	width:300px;
+	color:#b4101b;
+	padding:0;
+}
+
+.basket_thumbnail {
+	width:50px;
+	padding:0 5px 0 0;
+	border:none;
+}
+#order_history {
+	font-size:0.75em;
+}

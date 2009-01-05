@@ -4,7 +4,7 @@
 <%unless ["new","create"].include? controller.action_name%>
 <h4>Account Information</h4>
 <%= error_messages_for :user %>
-Login: <%= text_field :user, :login, :size=>50, :disabled=>true%>
+Username: <%= text_field :user, :login, :size=>50, :disabled=>true%>
 <%end%>
 
 <h4>Personal Information</h4>

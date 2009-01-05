@@ -8,7 +8,7 @@ class Order < ActiveRecord::Base
   # = Constants =
   # =============
 
-  CARD_TYPES = [ ['Visa',:visa], ['MasterCard',:master], ['American Express',:american_express], ['Discover', :discover]]
+  CARD_TYPES = [ ['VISA',:visa], ['MasterCard',:master], ['American Express',:american_express], ['Discover', :discover]]
   # ===============
   # = Secure attr =
   # ===============

@@ -268,3 +268,6 @@ LEGEND {
 #tent_positions #available { background-color:#99DB99;  }
 #tent_positions #reserved { background-color:#cccccc;   color: red; }
 #tent_positions #current_reserved { background-color: #9393FF; }
+
+.mon_sep {padding-left:51px; }
+.day_sep {padding-left:8px; }

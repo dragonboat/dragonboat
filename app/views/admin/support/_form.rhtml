@@ -5,7 +5,7 @@
   <br/></br>
   <%if @user%>
   <p>
-    <label for="user_login">User Login:</label><br/>
+    <label for="user_login">Username:</label><br/>
    <% fields_for "user", @user do |user_field| %>
     <%= user_field.text_field :login, :disabled=>current_user%>
    <% end %>         

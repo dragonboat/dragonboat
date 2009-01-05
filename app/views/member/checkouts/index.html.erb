@@ -15,7 +15,7 @@
   <%= render :comatose=>'step4-instructions', :silent=>true %>
 <!-- -->
   
-  <h2>Boat: <%=@team.human_name%></h2> 
+  <h2>Boat: <%=@team.name%></h2> 
   <fieldset>
     <legend>Step 4 - Payment Details</legend>
     <%= error_messages_for :order, :credit_card, :person, :billing %>
@@ -44,7 +44,7 @@
    <%= content_tag :legend, "Credit Card" %>
     <% fields_for :credit_card, @credit_card do |cc| %>
     <p class="required">
-      <label for="credit_card_type">Type</label>:<span id="required">*</span><br/><%= cc.select :type, Order::CARD_TYPES.map { |t| t} %>
+      <label for="credit_card_type">Type</label>:<span id="required">*</span><br/><%= cc.select :type, Order::CARD_TYPES.map { |t| [t[0].capitalize,t[1]] } %>
     </p>
     <p class="required">
       <label for="credit_card_first_name">First Name</label>:<span id="required">*</span><br/> <%= cc.text_field :first_name %>
@@ -55,18 +55,42 @@
     <p class="required">
       <label for="credit_card_number">Card Number</label>:<span id="required">*</span><br/><%= cc.text_field :number %></p>
     <p class="required">
-      <label for="credit_card_month">Expiration Date Month / Year</label>:<span id="required">*</span><br/>
+      <label for="credit_card_month">Expiration Date
+      <br/>
+      Month<span>/</span>Year:</label><span id="required">*</span><br/>
       <nobr><%= cc.select :month, (1..12) %><%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %></nobr>
     </p>
     <p class="required">
-      <label for="credit_card_month">Card Verification Number</label>:<span id="required">*</span><br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
+         <label for="credit_card_month">Card Verification Number</label>
+         <%=link_to "what's this?", cvv_url, :target=>"_blank"%>:
+         <span id="required">*</span><br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
        </p>     
        <% end %>
        <% end %>
        
        <% content_tag :fieldset do %> 
        <%= content_tag :legend, "Billing Address" %>
-       <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>the same as personal address</p>
+           <div>
+          <p>
+            <b>Street Address 1</b>: <%= @person.address %>
+          </p>
+          <p>
+            <b>Street Address 2</b>: <%= @person.address2 %>
+          </p>
+          <p>
+            <b>City</b>: <%= @person.city %>
+          </p>
+          <p>
+            <b>Zip code</b>: <%= @person.zip%>
+          </p>
+          <p>
+            <b>State</b>: <%= @person.state%>
+          </p>
+          <p>
+            <b>Country</b>: <%=  @person.country %>
+          </p>     
+     </div>
+       <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>Same as Personal Address</p>
 
        <%= render :partial => 'billing_form' %>
        <% end %>

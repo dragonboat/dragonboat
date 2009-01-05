@@ -13,7 +13,8 @@ class Person < ActiveRecord::Base
   
   HUMANIZED_ATTRIBUTES = {
     :phone => "Home Phone number",
-    :address => "Street Address 1"
+    :address => "Street Address 1",
+    :zip => "Zip code"
   }
 
   def self.human_attribute_name(attr)
@@ -72,7 +73,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
-      errors.add(:zip, 'is not a valid zip code') unless zip =~ /^[\d]{6}+$/
+      #errors.add(:zip, 'is not valid') unless zip =~ /^[\d]{6}+$/
     end 
   end
 end
