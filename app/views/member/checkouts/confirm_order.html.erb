@@ -9,82 +9,145 @@
   </div>
 <%end%>
 <% content_for  :current_page_name do%>
-  Verify Details
+  Verify Boat Registration Details
 <%end%>
-<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
-  <%= render :comatose=>'step5-instructions', :silent=>true %>
-<!-- -->
-<h2>Boat: <%=@team.name%></h2> 
-   
-    <fieldset>
-    <legend>Step 5 - Verify Registration Details</legend>
-<h4>Your Details</h4>
-<%= @person.first_name %>
-<%= @person.last_name %><br>
-<%= @person.email %><br>
-<%= @person.phone %>
-<h4>Credit Card</h4>
-<%= @credit_card.type %><br>
-<%= @credit_card.first_name %>
-<%= @credit_card.last_name %><br>
-<%= @credit_card.display_number %><br>
-<%= @credit_card.month %> - <%= @credit_card.year %>
-<h4>Billing Address</h4>
-<%= @person.address %><br>
-<%= @person.address2 %><br>
-<%= @person.city %><br>
-<%= @person.zip %><br>
-<%= @person.state %><br>
-<%= @person.country %><br>
 
-<h4>Your Ordered: </h4>
-<h5>Boat</h5>
-<%= render :partial => 'member/boats/boat'%><br>
 
-<h5>Extras</h5>
-<%if @team.team_extras.size>0%>
-<%= render :partial => 'member/boats/extras_item', :locals=>{:mode=>:read, :items=>@team.team_extras.map(&:extras)}%>
-<%else%>
--- no item was selected --
-<%end%>
-<br>
 
-<h5>TOTAL PAY:</h5>
-<strong><%= number_to_currency @team.total%></strong>
+<div id="step5">
+ <h4><%=@team.name%></h4> 
+  <div class="left">
+  <table class="box">
+  <tr>
+    <td><h2>Personal Details</h2></td>
+    <td width="100"><%=link_to "edit",  member_edit_user_path %></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+    <%= @person.first_name %> <%= @person.last_name %><br>
+    <%= @person.email %><br>
+    home:<%= @person.phone %><br>
+    cell: <%= @person.phone_2 %><br>
+    </td>
+  </tr>
+</table>
 
-<% form_for :order, @order, :url => {:action => "place_order"} do |f| %>
+<table class="box">
+  <tr>
+    <td><h2>Billing Details</h2></td>
+    <td width="100"><%=link_to "edit", member_boat_checkout_path(@team)%></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+   Card Type: <%= @credit_card.type.capitalize %><br>
+   Name on Card: <%= @credit_card.first_name %> <%= @credit_card.last_name %><br>
+   Card Number: <%= @credit_card.display_number %><br>
+   Expiration: <%= @credit_card.month %> / <%= @credit_card.year %>
+    </td>
+  </tr>
+</table>
+</div>
 
-     <% fields_for :person, @person do |p| %>
-        <%= p.hidden_field :first_name %>
-        <%= p.hidden_field :last_name %>
-        <%= p.hidden_field :email %>
-        <%= p.hidden_field :phone %>
-     <% end %>
 
-    <% fields_for :credit_card, @credit_card do |cc| %>
-       <%= cc.hidden_field :type %>
-       <%= cc.hidden_field :first_name %>
-       <%= cc.hidden_field :last_name %>
-       <%= cc.hidden_field :number %>
-       <%= cc.hidden_field :month %>
-       <%= cc.hidden_field :year %>
-       <%= cc.hidden_field :verification_value, :label => "CVV2" %>
-    <% end %>
 
-      <% fields_for :person, @billing do |p| %>
-        <%= p.hidden_field :address %>
-        <%= p.hidden_field :address2 %>
-        <%= p.hidden_field :zip %>
-        <%= p.hidden_field :city %>
-        <%= p.hidden_field :country %>
-        <%= p.hidden_field :state %>
-        <% end %>
-   
+<table class="box">
+  <tr>
+    <td><h2>Your Team</h2></td>
+    <td width="100"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
+  </tr>
+  <tr>
+      <td colspan="2" valign="top"><%=@team.name.upcase%></td>
+  </tr>
+  <tr>
+      <td colspan="2" valign="top"><%=@team.url%><br><br>
+        <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
+      </td>
+  </tr>
+  <tr>
+      <td colspan="2" valign="top"><br>Team Biography:<br/><br/>
+      <span class='notice'><%=@team.description%></span>
+        </td>
+  </tr>    
 
-        <%= f.submit "Complete Boat Registration" %>
+</table>
+
+<div class="clearEm">&nbsp;&nbsp;</div>
+
+
+<h1>Your Order</h1>
+<div class="left">
+<table class="big-box" cellspadding="0" cellspacing="0">
+  <tr>
+    <td><%=@team.boat_type_human%></td>
+    <td width="100" align="right"><%=number_to_currency @team.price%></td>
+  </tr>
+  <%@team.team_extras.map(&:extras).each do |item|%>
+  <%team_extras= item.team_extras.find_by_team_id(@team.id)%>
+  <%quantity = team_extras.quantity if team_extras%>
+  <% default = quantity ?  quantity : 1 %>
+  <%if quantity>0%>
+  <tr>
+    <td><%=quantity%> <%=item.name%></td>
+    <td width="100" align="right"><%=number_to_currency item.price*quantity%></td>
+  </tr>
+  <%end%>
+  <%end%>
+  <tr class='total'>
+    <td>Total Charge</td>
+    <td width="100" align="right"><%= number_to_currency @team.total%></td>
+  </tr>
+</table>
+</div>
+
+<table class="box">
+  <tr>
+    <td class='notice' height="65" valign="top">
+      <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+        <%= render :comatose=>'step5-instructions', :silent=>true %>
+        <!-- -->
+    </td>
+  </tr>
+  <tr>
+      <td valig="bottom">
+        <% form_for :order, @order, :url => {:action => "place_order"}, :html=>{:id=>"order_form"} do |f| %>
+
+<% fields_for :person, @person do |p| %>
+<%= p.hidden_field :first_name %>
+<%= p.hidden_field :last_name %>
+<%= p.hidden_field :email %>
+<%= p.hidden_field :phone %>
+<% end %>
+
+<% fields_for :credit_card, @credit_card do |cc| %>
+<%= cc.hidden_field :type %>
+<%= cc.hidden_field :first_name %>
+<%= cc.hidden_field :last_name %>
+<%= cc.hidden_field :number %>
+<%= cc.hidden_field :month %>
+<%= cc.hidden_field :year %>
+<%= cc.hidden_field :verification_value%>
+<% end %>
+
+<% fields_for :person, @billing do |p| %>
+<%= p.hidden_field :address %>
+<%= p.hidden_field :address2 %>
+<%= p.hidden_field :zip %>
+<%= p.hidden_field :city %>
+<%= p.hidden_field :country %>
+<%= p.hidden_field :state %>
+<% end %>
+
+
+<%= f.submit "Complete Boat Registration" %>
 
 <% end %>
- <!-- This is a snippet being edited by admin. Snippet Name "Confirm Order" -->
-  <%= render :comatose=>'confirm-order', :silent=>true %>
-  <!-- -->
-</fieldset>
+      </td>
+    </tr>
+</table>
+
+<div class="clearEm">&nbsp;&nbsp;</div>
+
+<!-- This is a snippet being edited by admin. Snippet Name "Confirm Order" -->
+<%= render :comatose=>'confirm-order', :silent=>true %>
+<!-- -->
+</div>

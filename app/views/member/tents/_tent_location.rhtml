@@ -1,3 +1,4 @@
+<p>You have reserved a <%= @tents.size - @team.tents.find_empty(:all).size%> of <%=@tents.size%> main tents</p>
 <%= error_messages_for :tent %>
 
 <%@tent_postions.each do |tent_position|%>
