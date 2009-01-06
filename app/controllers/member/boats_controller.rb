@@ -101,6 +101,19 @@ class Member::BoatsController < Member::WebsiteController
     redirect_to member_boat_checkout_path(@team)
   end
   
+  def total_cost
+    render :update do |page|
+      total = 0
+      if  params[:quantity]
+      params[:quantity].each_pair  do |id,quantity|
+        extras = Extras.find_available(id)
+        total+= extras.price * quantity.to_i
+      end
+      end
+      page.replace_html "total", :partial => 'total_cost', :locals=>{:total=>total }
+    end
+  end
+  
   def update_total_count
     @extras = Extras.find(params[:id])
    # @extras = Extras.find_available(:all)
@@ -111,6 +124,8 @@ class Member::BoatsController < Member::WebsiteController
       page.replace_html "total_count_#{@extras.id}", :partial => 'member/boats/total_count', :locals=>{:price=>price, :quantity => quantity}
     end
   end
+  
+
 
   private
   def fetch_team

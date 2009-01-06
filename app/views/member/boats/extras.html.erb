@@ -14,21 +14,27 @@
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'step3-instructions', :silent=>true %>
 <!-- -->
-  <div>
-    <h2>Boat: <%=@team.name%></h2> 
+  <div id="step3">
+   <h3> <span>Boat</span>: <span class="header"><%=@team.name%></span></h3> 
 
-    <fieldset>
-      <legend>Step 3 - Select Tents</legend>
-      <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true } do |f| %>
+  
+      <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true, :id=>"extras_form" } do |f| %>
    
-      <%= render :partial => 'extras_item', :locals=>{:mode=>:write, :items=>@extras}%>
-     
-
+      <%# render :partial => 'extras_item', :locals=>{:mode=>:write, :items=>@extras}%>
+      
+      <%= render :partial => 'extras_form'%>
+          
     
-        <div id="buttons">
-            <%= submit_tag  "Checkout"%><br/>
+        <div align="center">
+           <br/>
             <%# link_to("Cancel", member_new_boat_path ) %> 
         </div>
     <%end%>
-    </fieldset>
-  </div>
+    
+    <%= observe_form(:extras_form,
+                                  :url => { :action => 'total_cost'},
+                                #   :frequency => 0.5,  
+                                  # :update => "step3",
+                                   #:with => "Form.serialize($('extras_form').form)") 
+                                   :frequency  =>  0.5)%> 
+                                 </div>

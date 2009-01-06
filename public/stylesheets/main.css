@@ -273,11 +273,20 @@ LEGEND {
 .mon_sep {padding-left:51px; }
 .day_sep {padding-left:8px; }
 
-#step5 h4 {font-size:14px; color:#000; text-transform : uppercase; }
-#step5 div.left {float:left; widht:50%; margin-right:50px;}
+#step5 h4, #step3 h4 {font-size:14px; color:#000; text-transform : uppercase; }
+#step5 div.left, #step3 div.left {float:left; widht:50%; margin-right:50px;}
 #step5 table.box {width: 325px;}
 #step5 table.big-box {width: 350px; font-size:14px; font-weight:bold;}
 #step5 table.big-box td {padding-bottom: 3px; padding-top: 3px;}
 #step5 table.big-box tr.total {background-color:#cccccc;}
 #step5 table.box a {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
 #step5 .notice {font-size:11px; font-style  : normal; }
+
+#step3 .header {font-size:18px; color:#000; text-transform : uppercase; }
+#step3 table.box {width: 325px; font-size:14px; text-align:left;}
+#step3 table.box th {font-size:16px;}
+#step3 table.box td {padding-bottom: 3px; padding-top: 3px;}
+#step3 .notice  {font-size:12px; color: grey; height: 80px;}
+#step3 ul {list-style-type : none; display : block; margin-left:0px; padding:0px;}
+#step3 ul li {padding:3px;}
+#step3 #total { width: 300px; font-size:14px; background-color:#cccccc;  padding-top:5px; padding-bottom:5px; font-weight:bold; margin-right:50px;}
