@@ -6,7 +6,7 @@ class Practice < ActiveRecord::Base
 # Practice Status is reserved  if team_id is not NULL
 # *
   validates_presence_of :created_at
-  validates_uniqueness_of :created_at
+#  validates_uniqueness_of :created_at
   belongs_to :team
   
   HUMANIZED_ATTRIBUTES = {

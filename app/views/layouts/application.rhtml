@@ -15,6 +15,7 @@
     <%= stylesheet_link_tag 'dropdown', :media=>"all" %>
     <!--[if lte IE 6]>
     <%= stylesheet_link_tag 'dropdown_ie', :media=>"all" %>
+    <%= stylesheet_link_tag 'main_ie', :media=>"all" %>
     <![endif]-->
     
     <!-- Scripts -->
@@ -36,27 +37,26 @@
     </div>
    
     <div id="content">
-      <%unless request.request_uri=="/"%> 
+      <!--[if lte IE 6]><table id="main" valign="top" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="#fff"><tr><td width="1%"><![endif]-->
+        <%unless request.request_uri=="/"%> 
         <div id="submenu_section">
-            <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
+         &nbsp;&nbsp;
+            <%=javascript_tag "document.getElementById('content').style.background='#F7941D';document.getElementById('content').style.color='#fff'"%>
             <%= yield :submenu_area %> 
             <%= render :partial=>'partials/main_submenu'%>
         </div>
         <%else%>
         <%= render :partial=>'partials/news_section'%>
       <%end%>
-  
-        <div id="main">
+     <!--[if lte IE 6]></td><td style='background:#fff'><![endif]-->
+        <div id="main" >
           <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1>
           <p style="color: green"><%= flash[:notice] %></p>
           <%= yield %> 
         </div>
-    
-      </div>
-      <div id="separator"></div>
+     <!--[if lte IE 6]></td><tr></table><![endif]--></div>
+      <div id="separator">&nbsp;&nbsp;</div>
      
-     <div id="footer">
-        <%= render :partial=>'partials/footer'%>  
-      </div>
+     <div id="footer"><%= render :partial=>'partials/footer'%></div>
     </body>
 </html>

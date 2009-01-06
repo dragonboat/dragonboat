@@ -14,6 +14,12 @@
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Orphaned Paddlers", :title=>"", :url=>member_paddlers_path, :current=> url =~/(paddlers)/ } %>
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Profile", :title=>"", :url=> member_profile_path, :current=> url =~/(user)/ } %>
         <%end%>
-      </ul>
-    </div>
+</ul>
+</div>
 <%end%>
+
+<!--[if lte IE 6]>
+<style>
+#page_list table {display:none;}
+</style>
+<![endif]-->

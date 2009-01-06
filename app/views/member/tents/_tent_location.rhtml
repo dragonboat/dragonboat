@@ -1,4 +1,5 @@
-<p>You have reserved a <%= @tents.size - @team.tents.find_empty(:all).size%> of <%=@tents.size%> main tents</p>
+<p>You have reserved a <%= @team.tents.find_not_empty(:all).size%> of <%=@tents.size%> main tents</p>
+<p>Current Tent Position: <%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></p>
 <%= error_messages_for :tent %>
 
 <%@tent_postions.each do |tent_position|%>
@@ -10,8 +11,13 @@
                 :loading => visual_effect(:highlight, "tent_location_#{tent_position.id}")%>                
    </div>
   <%elsif @tents.map(&:location).include? tent_position.number.to_s%>
-    <div id="current_reserved"><%=tent_position.number%></div>
-  <%else%>
+    <div id="current_reserved">
+      <%=link_to_remote(tent_position.number, :url=>member_team_tents_path(@team.id, "unreserved", tent_position.id),
+                :loading => visual_effect(:highlight, "tent_location_#{tent_position.id}"),
+                :confirm => 'Are you sure that you want to be made available again this tent position?' ) %>
+                <div><%=truncate(tent_position.team_name,15)%> </div>
+     </div>
+    <%else%>
     <div id="reserved"><%=tent_position.number%><br/><%=truncate(tent_position.team_name,15)%> </div>
   <%end%>
 

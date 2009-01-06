@@ -1,11 +1,3 @@
-<div id="pdb_logo">
-<%=link_to image_tag("logo.gif", :width=>"327", :height=>"159", :id=>"pdb_logo"),"/"%>
-</div>
-
-<div id="user_panel">
-  <%= render :partial=>'partials/login', :locals=>{:mode=>:public}%>
-</div>
-
-<div id="main_nav">
-  <%= render :partial=>'partials/main_menu'%>
-</div> 
+<div id="pdb_logo"><%=link_to image_tag("logo.gif", :width=>"327", :height=>"159", :id=>"pdb_logo"),"/"%></div>
+<div id="user_panel"><%= render :partial=>'partials/login', :locals=>{:mode=>:public}%></div>
+<div id="main_nav"><%= render :partial=>'partials/main_menu'%></div> 

@@ -7,7 +7,7 @@ Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
 This stylesheet and the assocaited (x)html may be modified in any 
 way to fit your requirements.
 =================================================================== */
-.menu {font-family: verdana, sans-serif; min-width:900px; width:100%; height:1px; position:absolute; font-size:11px; z-index:100;}
+.menu { font-family: verdana, sans-serif; min-width:900px; width:100%; height:1px; position:absolute; font-size:11px; z-index:100;}
 .menu a {padding-left:7px; padding-right:7px;}
 .menu ul { background:#FFF; }
 .menu ul ul { background:#F7941D; color:#fff; }
@@ -25,20 +25,6 @@ way to fit your requirements.
 .menu ul li a:hover ul li a:hover ul.left {left:-100%;}
 
 .menu ul li li{float:left; position:relative; text-align:left;}
-
-img#pdb_logo { 
-            height: 159px; 
-            width:327px; 
-            border:0px; 
-            margin-top:3px;
-            margin-bottom:0px;   
-            white-space: nowrap; 
-        }
-#header { height: 162px; background: url(/images/top_line.gif)  repeat-x 0px 159px; }
-
-
-#header div#user_panel {height: 119px; text-align:right;}
-#header div#main_nav {height: 43px; vertical-align : bottom;}
         
        
 

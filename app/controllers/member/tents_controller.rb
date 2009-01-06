@@ -12,6 +12,7 @@ class Member::TentsController < Member::WebsiteController
   def update
     @tent_position = TentPosition.find(params[:id])
     @tent = @team.tents.find_empty(:first)
+    @tent = @team.tents.find(:first, :order=>"updated_at desc") unless @tent
     if @tent
       unless  @tent_position.status == "available"
        @tent.errors.add_to_base('Sorry, this tent position is reserved already') 
@@ -26,6 +27,18 @@ class Member::TentsController < Member::WebsiteController
     render :update do |page|
       page.replace_html "tent_positions", :partial => "tent_location"
     end
+  end
+  
+  def unreserved
+    @tent_position = TentPosition.find(params[:id])
+    @tent = @team.tents.find_by_location(@tent_position.number.to_s)
+    if @tent
+      @tent.unreserved(@tent_position)
+    end
+    fetch_tent_positions
+    render :update do |page|
+      page.replace_html "tent_positions", :partial => "tent_location"
+    end  
   end
   
   private
