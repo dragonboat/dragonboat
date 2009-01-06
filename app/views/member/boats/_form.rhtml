@@ -16,7 +16,7 @@
 <p class="required">
     <label for="team_human_name">Team Name:</label>
     <span id="required">*<br />
-    <%= f.text_area :human_name, :rows=>2, :cols=>80 %></span>
+    <%= f.text_area :human_name, :rows=>1, :cols=>80, :style=>"height:50px;" %></span>
   </p>
   <%unless ["edit","update"].include? controller.action_name%>
   <p class="required">
