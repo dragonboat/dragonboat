@@ -98,7 +98,7 @@ class Order < ActiveRecord::Base
                                         :pay => extras.price,
                                         :quantity  =>item.quantity
                                       })
-   if extras.name.downcase  == "main tent" 
+   if extras.name.downcase  =~ /main tent/i
      team.tents.each(&:destroy) if !team.tents.empty?
      team.tents.create if item.quantity > 0
      team.tents.create if item.quantity > 1
