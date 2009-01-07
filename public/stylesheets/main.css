@@ -63,7 +63,7 @@ img#pdb_logo {
 #content div#news_section div.news_block a.to_full {color: #959595; text-decoration: none;}
 
 /* Main Content */
-#content div#main { min-height:500px;height:100%; background-color: #fff; position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;}  
+#content div#main { color:#000000;min-height:500px;height:100%; background-color: #fff; position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;}  
     
 /* Breadcrumbing Area */
 #breadcrumbing_area {min-width:800px; height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
