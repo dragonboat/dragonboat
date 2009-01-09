@@ -1,22 +1,28 @@
  <%= calendar({:year => year, :month => month}) do |d| 
  @practices_by_date = Practice.find_by_day(d)
-         if @practices_by_date.size>0
+       if @practices_by_date.size>0
            cell_text = link_to(d.mday, member_team_practices_path(:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ),:title=>"Click to view all practices on #{d.strftime('%d %b %Y')}") << "<br />" 
-         else
-           cell_text = d.mday
-         end
-            cell_attrs = {:class => 'day'} 
-          @practices.each do |p| 
-          if p.created_at.to_date == d      
-            if @practices_by_date.map(&:team_id).include?(@team.id)
+       
+        cell_attrs = {:class => 'day'} 
+        
+        @practices_by_date_by_with_team = @practices_by_date.map(&:team_id).select {|team_id|  team_id.to_i>0}   
+        
+        #@practices.each do |p| 
+         #   if p.created_at.to_date == d   
+            
+            if @practices_by_date_by_with_team.include?(@team.id)
               cell_attrs[:class] = 'specialDay-current_reserved'
-            elsif Practice.is_full?(p.created_at)
+            elsif  @practices_by_date.size == @practices_by_date_by_with_team.size #Practice.is_full?(p.created_at)
               cell_attrs[:class] = 'specialDay-full' 
             else
               cell_attrs[:class] = 'specialDay-available'
             end
              
-          end 
-        end 
-        [cell_text, cell_attrs]
+        #end 
+       # end 
+       
+         else
+           cell_text = d.mday
+         end
+           [cell_text, cell_attrs]
     end %>
