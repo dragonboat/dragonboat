@@ -1,6 +1,6 @@
  <%= calendar({:year => year, :month => month}) do |d| 
  @practices_by_date = Practice.find_by_day(d)
-           if @practices_by_date.size>0
+         if @practices_by_date.size>0
            cell_text = link_to(d.mday, member_team_practices_path(:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ),:title=>"Click to view all practices on #{d.strftime('%d %b %Y')}") << "<br />" 
          else
            cell_text = d.mday

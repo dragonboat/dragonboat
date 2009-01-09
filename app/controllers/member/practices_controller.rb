@@ -13,6 +13,7 @@ class Member::PracticesController < Member::WebsiteController
     @end_date = @filter.end_date
     @practices = Practice.find(:all,
       :order => "created_at DESC")
+    #@practices_by_date = Practice.cou(:all, grou:order => "created_at DESC"
     @current_practices = @team.practices.find(:all, :order=>"created_at")
   end
   
