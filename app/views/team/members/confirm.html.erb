@@ -30,7 +30,7 @@
      <label for="person_birthday_date">Date of Birth:</label><br/>
       Month <span class="mon_sep">/</span> Day <span class="day_sep">/</span> Year</label>
       <br/>
-      <%= p.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920,  :include_blank => ""%>
+      <nobr><%= p.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920,  :include_blank => ""%></nobr>
    </p>
    <p>
      <label for="person_address">Address:</label><br/>
