@@ -13,8 +13,8 @@
     <tr>
         <td class="required"><label for="person_gender_f_f">Gender:</label>
         <span id="required">*</span><br/>
-        <%=f.radio_button :gender_f, "F", :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1"%> <label for="person_gender_f_f" >Female</label>
-        <%= f.radio_button :gender_m, "M", :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1"%> <label for="person_gender_m_m">Male</label>
+        <%=f.radio_button :gender_f, "F", :tabindex=> 6, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1", :onclick=>"$('person_gender_m_m').checked=0;"%> <label for="person_gender_f_f" >Female</label>
+        <%= f.radio_button :gender_m, "M", :tabindex=> 7, :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1", :onclick=>"$('person_gender_f_f').checked=0;"%> <label for="person_gender_m_m">Male</label>
         <%# f.radio_button :gender, "F" %> 
          <%# f.radio_button :gender, "M" %> 
      </td>
