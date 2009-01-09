@@ -7,12 +7,15 @@
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
 <p><%= render :comatose=>'select-tent-position-instructions', :silent=>true %></p>
 <!-- -->
-<%=image_tag "tents_graphic.jpg", :border=>"0"%>
 
+<%= link_to image_tag("tents_graphic.jpg", :border=>"0", :id=>"tents_graphic"), "/images/tents_graphic.jpg"%>
+<div id="tent_positions_list">
 <h2>Position List</h2>
 <div id="tent_positions">
   <%= render :partial => 'tent_location'%>
 </div>
+</div>
+<div class="clearEm">&nbsp;&nbsp;</div>
 
 
 

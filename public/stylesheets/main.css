@@ -262,10 +262,15 @@ LEGEND {
 #ticket-list div#from {padding-top:5px; color:blue;}
 
 /*Tent Positions*/
+#tents_graphic {float:left; widht:412px; height:2040px; margin-right: 10px; margin-bottom: 6260px }
+#tent_positions_list { position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;} 
 #tent_positions #available, #tent_positions #reserved, #tent_positions #current_reserved {
 	border: 1px solid #ccc; text-align:center; 
-	width: 150px; padding-top:10px; padding-bottom:10px;
+	width: 150px; padding-top:5px; padding-bottom:5px;       
 }
+#tent_positions a {padding-left:55px; padding-right:55px; padding-top: 10px; padding-bottom: 10px;}
+#tent_positions a:hover {border:1px solid black; }
+
 #tent_positions #available { background-color:#99DB99;  }
 #tent_positions #reserved { background-color:#cccccc;   color: red; }
 #tent_positions #current_reserved { background-color: #9393FF; }
