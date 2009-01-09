@@ -2,6 +2,7 @@
 <div>
 <div align="left" class="confirmed_box">
   <%=error_messages_for :member%>
+  <%=error_messages_for :person%>
   <%form_for :member do |f|%>
   <p>You have been invited to join <b><%=@team.name.capitalize%></b></p>
   
