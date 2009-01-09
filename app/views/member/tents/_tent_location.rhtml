@@ -12,7 +12,7 @@
    </div>
   <%elsif @tents.map(&:location).include? tent_position.number.to_s%>
     <div id="current_reserved">
-      <%=link_to_remote(tent_position.number, :url=>member_team_tents_path(@team.id, "unreserved", tent_position.id),
+      <%=link_to_remote("#{tent_position.number}", :url=>member_team_tents_path(@team.id, "unreserved", tent_position.id),
                 :loading => visual_effect(:highlight, "tent_location_#{tent_position.id}"),
                 :confirm => 'Are you sure that you want to be made available again this tent position?' ) %>
                 <div><%=truncate(tent_position.team_name,15)%> </div>
