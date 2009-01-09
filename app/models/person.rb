@@ -63,6 +63,10 @@ class Person < ActiveRecord::Base
       for attr_name in [:gender]
         errors.add_on_blank(attr_name, 'is required')
       end
+    elsif  self.validation_mode  == :sign_waiver
+      for attr_name in [:birthday_date, :address, :phone, :emergency_contact_name,:emergency_contact_number, :medical_conditions]
+        errors.add_on_blank(attr_name, 'is required')
+      end
     elsif  self.validation_mode == :paddler
       for attr_name in [:gender, :phone, :birthday_date, :experience, :preference]
         errors.add_on_blank(attr_name, 'is required')

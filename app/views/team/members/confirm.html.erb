@@ -1,5 +1,5 @@
 <%content_for :title do %>Team Member Home : You have been invited to join <%=@team.name.capitalize%><%end%>
-<div align="center">
+<div>
 <div align="left" class="confirmed_box">
   <%=error_messages_for :member%>
   <%form_for :member do |f|%>
@@ -20,14 +20,49 @@
      below, and check the box that says I consent to the terms of
      Philadelphia Dragon Boat's Liability Waiver <%= link_to "link to waiver content page in new window","", :target=>"_blank" %>
    </p>
+        
+   <% fields_for :person, @person do |p| %>
    <p>
-   <label for="member_sign_waiver_status">Your Full Name:</label><br/>
+     <label>Full Name:</label><br/>   
+     <%=@person.first_name.capitalize%>  <%=@person.last_name.capitalize%>
+   </p>
+   <p>
+     <label for="person_birthday_date">Date of Birth:</label><br/>
+      Month <span class="mon_sep">/</span> Day <span class="day_sep">/</span> Year</label>
+      <br/>
+      <%= p.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920,  :include_blank => ""%>
+   </p>
+   <p>
+     <label for="person_address">Address:</label><br/>
+      <%= p.text_field :address%>
+   </p>
+    <p>
+     <label for="person_phone">Telephone Number:</label><br/>
+      <%= p.text_field :phone%>
+   </p>
+   <p>
+     <label for="person_emergency_contact_name">Emergency Contact Name:</label><br/>
+      <%= p.text_field :emergency_contact_name%>
+   </p>
+   <p>
+     <label for="person_mergency_contact_number">Emergency Contact Number:</label><br/>
+      <%= p.text_field :emergency_contact_number%>
+   </p>   
+   <p>
+     <label for="person_medical_conditions">Medical Conditions:</label><br/>
+      <%= p.text_area :medical_conditions, :rows=>3%>
+   </p>
+   
+   <% end %>
+  
+   <p>
+   <label for="member_sign_waiver_status">Your Sign name:</label><br/>
    <%= f.text_field :sign_waiver_notice%>
    </p>
    <p>
-   <%= f.check_box :accept, {},1, 0 %> I consent to the terms of
+   <%= f.check_box :accept, {:onclick=>"$('submit_terms').disabled=!$('submit_terms').disabled"},1, 0 %> I consent to the terms of
    </p>
-   <%=submit_tag  "JOIN THE TEAM!" %>
+   <%=submit_tag  "JOIN THE TEAM!", :id=>"submit_terms",:disabled=> @member.accept.to_i == 0 %>
    <%end%>
  </div>
  </div>
