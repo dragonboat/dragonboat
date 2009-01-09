@@ -15,14 +15,16 @@ img#pdb_logo {
 #header { height: 162px; background: url(/images/top_line.gif)  repeat-x 0px 159px; }
 
 #content div#main { min-width:900px;}  
-#content table#main {height:100%; width:100%; background:#ffff;}
-#content table#main td {vertical-align:top; background:#ffff;}
+#content table#main {height:100%; width:100%;  background-color:#fff; margin:0px; padding:0px;}
+#content table#main td {vertical-align:top;}
 #header div#user_panel {height: 119px; text-align:right;}
 #header div#main_nav {height: 43px; vertical-align : bottom;}
-
+#separator {display:none; clear:both; height:1px; margin:0px; padding:0px; background-color:red; width:100%;}
 
 
 
 #page_list  li a.hide, #page_list ul li a:visited.hide {display:none;}
+
+
 
 

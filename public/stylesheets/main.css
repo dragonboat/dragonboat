@@ -42,7 +42,7 @@ img#pdb_logo {
 #user_panel a {color:#F7941D; text-decoration: underline;}
 
 /* Content */
-#content {min-height:500px; height: 100%; overflow: visible; margin-left:12px;  background-color: #fff; }
+#content {min-height:500px; height: 100%; overflow: visible; margin-left:12px; margin-bottom:0px; background-color: #fff; }
 
 /* Footer */
 #footer { height: 50px; background: url(/images/top_line.gif)  repeat-x top; padding-top:10px;}
