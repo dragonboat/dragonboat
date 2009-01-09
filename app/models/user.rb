@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates_presence_of     :password_confirmation,      :if => :password_required?
   validates_length_of       :password, :within => 4..40, :if => :password_required? && Proc.new { |user| user.password&&!user.password.empty? }
   validates_confirmation_of :password,                   :if => :password_required?
-  validates_length_of       :login,    :within => 3..40, :if => :login?
+  validates_length_of       :login,    :minimum=>3, :if => :login?
   #validates_format_of       :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'E-mail should be valid'
   validates_uniqueness_of   :login, :case_sensitive => false #:email
   before_save :encrypt_password
