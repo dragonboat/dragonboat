@@ -4,6 +4,9 @@
 <%end%>
 <% content_for :submenu_area do%>
   <div id="submenu_section">
+    <!--[if lte IE 6]>
+            <%=javascript_tag "document.getElementById('content_td').style.background='#F7941D';"%>
+    <![endif]-->
     <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
     <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"current", :s4=>"next", :s5=>"next", :s6=>"next"} %>    
   </div>
