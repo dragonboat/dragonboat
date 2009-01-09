@@ -49,7 +49,7 @@ class Member < ActiveRecord::Base
    end
   
   def accept=(checked)
-    @accept = checked
+    @accept = checked.to_i
     if checked.to_i == 1
       self.waiver_status_id = Status.find_waiver_by_name('accept').id
     else
