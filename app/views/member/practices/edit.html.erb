@@ -6,7 +6,12 @@
 <%d = @practice.created_at%>
 <h1 class="specialDay-available"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
 
-<%= error_messages_for :practice %>
+<%# error_messages_for :practice %>
+<%if @practice.errors && @practice.errors.size>0%>
+    <div id="errorExplanation" class="errorExplanation">
+      <%= content_tag("ul", @practice.errors.collect { |msg| content_tag("li", msg[1]) }) %>
+    </div>
+<%end%>
 
 <% form_for(:practice, :url => member_team_practices_path(@team,"update",@practice.id), :html=>{:method=>:put}) do |f| %>
 <%= f.hidden_field :team_id %>
