@@ -53,6 +53,10 @@ class Member::MembersController < Member::WebsiteController
     end
     @member.user = @user
     
+    if  @person.valid?  && !@user.valid?
+      raise "A user account is not valid: #{@user.errors.full_messages.to_s}"
+    end
+    
     if @person.valid? && @user.valid? && @member.valid? && @person.save! && @user.save! && @member.save! 
        list
        new

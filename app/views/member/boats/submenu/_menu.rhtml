@@ -3,11 +3,12 @@
     <div id="subMenu">
       <ul class="tabs">
         <li <%= "class=\"current\"" if url =~/(members)/ %>><%= link_to 'Manage Team Members', member_team_members_path(@team.id) %> |</li>
-        
-       
+         
         <li  <%= "class=\"current\"" if url =~/(practices)/ %>><%= link_to 'Manage Practices', member_team_practices_path(@team.id)%> |</li>
         <%if @team.tents.size>0%>
         <li  <%= "class=\"current\"" if url =~/(tent)/ %>><%= link_to 'Tent Position', member_team_tents_path(@team.id)%> |</li>
+        <%else%>
+        <li class="frozen"><%= link_to_function 'Tent Position', ""%> |</li>
         <%end%>
         
         <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Boat Details Setting', member_edit_boat_url(@team.id) %></li>

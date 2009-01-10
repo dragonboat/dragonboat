@@ -194,15 +194,29 @@ class User < ActiveRecord::Base
   end
   
   def generate_account(prefix_name="")
-    self.login = "#{person.first_name}.#{person.last_name}.#{Time.now.to_i}@#{prefix_name}".downcase
+    self.login = "#{person.first_name}.#{person.last_name}".downcase
+    users = User.find(:all, :conditions=>["login LIKE ?","%#{self.login}%"], :order=>"login")
+    logins = users.map(&:login).select {|l| (l =~/[.][\d]{1,}$/i) != nil }
+    if logins.size > 0
+      numbers = []
+      logins.map do |login|
+        login =~ /[.]([\d]{1,})$/i
+        numbers << $1.to_i
+      end
+      last_login_number = numbers.sort{|x,y| y <=> x }.first
+      self.login+=".#{last_login_number+1}" if last_login_number
+    elsif users.map(&:login).select {|l| l =~/#{self.login}$/i }.size > 0
+      self.login+=".1" 
+    end
     new_password = self.class.random_string(10)
-    self.password = self.password_confirmation = new_password
+    self.password = new_password
+    self.password_confirmation = new_password
   end
   
   def validate    
     if  self.validation_mode  == :member
-      illegal_character = login.gsub(/[^A-Z0-9._]/i, "")
-      errors.add(:login, 'should only contain alphabetic, digital characters or ".", "_"') if login != illegal_character
+      illegal_character = login.gsub(/[^A-Z0-9_]/i, "")
+      errors.add(:login, 'should only contain alphabetic, digital characters or "_"') if login != illegal_character
     end 
   end
 

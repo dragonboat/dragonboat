@@ -26,7 +26,10 @@ class Team < ActiveRecord::Base
             :conditions => "status_id=#{Status.find_team_by_name('active').id}"
           
   def before_validation
+    self.human_name = self.human_name.strip 
     self.name = strip_tags(self.human_name)
+    self.name = self.name.strip.gsub(/&nbsp;/i,'')
+    self.description = self.description.strip 
   end
   
   def total

@@ -22,7 +22,7 @@ def update
           UserNotifier.deliver_password_changed(@user, params[:user][:password])   
         end
         flash[:notice] = 'Profile Settings was successfully updated.'
-        format.html { redirect_to member_user_url }
+        format.html { redirect_to member_user_url(@user) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
