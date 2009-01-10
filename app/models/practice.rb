@@ -31,7 +31,7 @@ class Practice < ActiveRecord::Base
     if self.validation_mode == :team   
       total_per_month = team.practices.total_per_month(created_at)
       if total_per_month > 0
-        errors.add(:created_at, 'is already reserved by your team in this month')
+        errors.add(:created_at, 'You cannot reserve more than one practice per month. To change the date and time of your practice, first select the one you have and cancel it, and then you may reserve any other open practice time')
       end
     end 
   end
