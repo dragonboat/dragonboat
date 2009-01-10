@@ -4,7 +4,7 @@ Your order#<%= @order.id %> of boat registration has been <%= @order.status %>.
 
 
 Boat Details:
-Team Name: <%= @order.team.name %>
+Team Name: <%= CGI.unescapeHTML(@order.team.name) %>
 Team Biography: <%= @order.team.description %>
 
 Your Account Details:

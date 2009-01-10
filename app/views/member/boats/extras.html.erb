@@ -12,7 +12,7 @@
   <%= render :comatose=>'step3-instructions', :silent=>true %>
 <!-- -->
   <div id="step3">
-   <h3> <span>Boat</span>: <span class="header"><%=@team.name%></span></h3> 
+   <h3> <span>Boat</span>: <span class="header"><%= @team.name%></span></h3> 
 
   
       <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true, :id=>"extras_form" } do |f| %>

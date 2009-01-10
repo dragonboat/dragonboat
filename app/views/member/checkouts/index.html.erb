@@ -12,7 +12,7 @@
   <%= render :comatose=>'step4-instructions', :silent=>true %>
 <!-- -->
   
-  <h2>Boat: <%=@team.name%></h2> 
+  <h2>Boat: <%= @team.name%></h2> 
   <fieldset>
     <legend>Step 4 - Payment Details</legend>
     <%= error_messages_for :order, :credit_card, :person, :billing %>

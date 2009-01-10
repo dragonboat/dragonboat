@@ -20,7 +20,7 @@
   <table class="box">
   <tr>
     <td><h2>Personal Details</h2></td>
-    <td width="100"><%=link_to "edit",  member_edit_user_path%></td>
+    <td width="100"><%=link_to "edit",  member_edit_user_path(current_user)%></td>
   </tr>
   <tr>
     <td colspan="2" valign="top">
@@ -60,7 +60,7 @@
     <td width="100"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
   </tr>
   <tr>
-      <td colspan="2" valign="top"><%=@team.name.upcase%></td>
+      <td colspan="2" valign="top"><%=@team.name%></td>
   </tr>
   <tr>
       <td colspan="2" valign="top"><%=@team.url%><br><br>

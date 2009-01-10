@@ -2,7 +2,7 @@
 
 <%= error_messages_for :user %>
 
-<% form_for(:user, :url => member_user_path, :html=>{:method=>:put}) do |f| %>
+<% form_for(:user, :url => member_user_path(@user), :html=>{:method=>:put}) do |f| %>
   <table id="users" class="form">
   <%= render :partial => 'form', :locals => { :f => f } %>
   </table>
@@ -31,5 +31,5 @@
   <%= f.submit "Update" %>
 <% end %>
 
-<%= link_to 'Show', member_user_path %> |
-<%= link_to 'Back', member_user_path %>
+<%= link_to 'Show', member_user_path(@user) %> |
+<%= link_to 'Back', member_users_path %>

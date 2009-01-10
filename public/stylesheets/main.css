@@ -303,7 +303,7 @@ LEGEND {
     background: url(/images/tabBgCurrent.png) repeat-x 0 0;
     padding:2px;
     }
-      
+#subMenu ul.tabs li.frozen a {color:#ccc;}
  .note { height: 50px;   overflow: auto; border: 1px solid silver;}
  .clearEm {
   clear: both;
