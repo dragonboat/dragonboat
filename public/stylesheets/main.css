@@ -1,3 +1,9 @@
+/* @override 
+	http://www.phillydragonboat.info/stylesheets/main.css?1231519225
+	http://www.phillydragonboat.info/stylesheets/main.css?1231542401
+	http://www.phillydragonboat.info/stylesheets/main.css?1231543410
+*/
+
 body {
     background-color:#FFFFFF;
     padding-top: 0;
@@ -6,6 +12,7 @@ body {
     margin-right: 15px;
     color: #000000;
     font: normal 12px 'Verdana', sans-serif;
+    width: 1020px;
     }
 
 a {color:#393537; text-decoration: none;}
@@ -35,7 +42,18 @@ img#pdb_logo {
             margin-bottom:0px;    
         }
 #header div#pdb_logo {width:347px; height: 162px;  float:left;}
-#header div#user_panel {height: 122px; text-align:right;}
+#header div#user_panel { text-align:right;margin-top: 10px;margin-right: 10px;}
+
+#header div#banner{
+  border: 0px solid red;
+  float: right;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+#header div#banner img{ 
+	margin: 0px; border-top:2px solid black;border-bottom:2px solid black; }
+
 #header div#main_nav {height: 40px; vertical-align : bottom;}
 
 /*User Panel*/
@@ -61,6 +79,55 @@ img#pdb_logo {
 #content div#news_section div.news_block h2 a { color: #000; text-decoration: none }
 #content div#news_section div.news_block #date {color:#F7941D; font-weight:bold; margin-top:10px;}
 #content div#news_section div.news_block a.to_full {color: #959595; text-decoration: none;}
+
+/* Home */
+#home-left{
+	float: left; width: 300px;
+}
+
+#home-right{
+  width: 400px;
+}
+
+.home-icon{
+
+  clear: both;
+  margin-bottom: 15px;
+  border: 0px solid red;
+}
+
+.home-icon{
+}
+.home-icon a:hover{
+text-decoration: none;
+}
+
+.home-icon h2{
+margin-top: 0px;
+}
+
+.home-icon img{
+	border: 1px solid black;
+  float: left;
+  margin-right: 10px;
+}
+
+.home-icon span{
+  clear: both;
+}
+
+.home-icon div{
+height: 115px;
+}
+
+#home-right{
+  float: left;
+  margin-left: 20px;
+}
+
+#home-right .home-icon.register{
+height: 245px;
+}
 
 /* Main Content */
 #content div#main { color:#000000;min-height:500px;height:100%; background-color: #fff; position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;}  
