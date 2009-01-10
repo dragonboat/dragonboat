@@ -24,7 +24,7 @@ class Member::PracticesController < Member::WebsiteController
     @current_day = Date.new(year,mon,mday)
     @practices = Practice.find(:all,
       :conditions => "CAST(created_at AS DATE) = '#{@current_day.to_s(:db)}'",
-      :order => "created_at DESC")
+      :order => "created_at asc")
   end
   
   def edit
