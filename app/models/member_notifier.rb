@@ -9,7 +9,7 @@ class MemberNotifier < ActionMailer::Base
     @body[:code_url]   = team_url_code_url(:slug => team.name.to_slug, :url_code => member.user.code, :host => APP_CONFIG['hostname'])
 
     @recipients        = member.user.email
-    @from              = "noreply@philadragonboatfestival.com" #captain.email
+    @from              = "noreply@phillydragonboat.info" #captain.email
     @sent_on           = sent_at
     @headers           = {}
   end
