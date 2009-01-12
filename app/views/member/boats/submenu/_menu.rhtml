@@ -11,7 +11,7 @@
         <li class="frozen"><%= link_to_function 'Tent Position', ""%> |</li>
         <%end%>
         
-        <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Boat Details Setting', member_edit_boat_url(@team.id) %></li>
+        <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Edit Team Details', member_edit_boat_url(@team.id) %></li>
       </ul>
     </div>
     <span class="clearEm">&nbsp;&nbsp;</span>

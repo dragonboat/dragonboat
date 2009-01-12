@@ -26,9 +26,19 @@
 
 <h1>Manage Practices</h1>
 
+<div id="legen">
+  <table>
+    <tr><td><b>Legend:</b></td></tr>
+    <tr>
+      <td class="specialDay-current_reserved">Your Practice</td>
+      <td class="specialDay-full">Unavailable</td>
+      <td class="specialDay-available">Available</td>
+    </tr>
+  </table>
+</div>
 
 <div id="table">
-  <table border="0" cellspaccing="1" cellpadding="1">
+  <table border="0" cellspacing="1" cellpadding="1">
  
    <%#sub_month = (@start_date.month-@start_date.beginning_of_quarter.month).to_i %>
    <%# "<td></td><td></td>" if sub_month == 2 %> 
@@ -45,17 +55,4 @@
     </table>          
   </div>
   <br>
-<div id="legen">
-  <table>
-    <tr><td><b>Legend:</b></td></tr>
-    <tr>
-      <td class="specialDay-current_reserved">Your Practice</td>
-    </tr>
-     <tr>
-      <td class="specialDay-full">Unavailable</td>
-    </tr>
-    <tr>
-      <td class="specialDay-available">Available</td>
-    </tr>
-  </table>
-</div>
+

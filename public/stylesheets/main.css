@@ -1,18 +1,26 @@
 /* @override 
+	http://www.phillydragonboat.info/stylesheets/main.css?1231587328
 	http://www.phillydragonboat.info/stylesheets/main.css?1231519225
 	http://www.phillydragonboat.info/stylesheets/main.css?1231542401
 	http://www.phillydragonboat.info/stylesheets/main.css?1231543410
+	http://www.phillydragonboat.info/stylesheets/main.css?1231604772
+	http://www.phillydragonboat.info/stylesheets/main.css?1231604823
+	http://www.phillydragonboat.info/stylesheets/main.css?1231606511
+	http://www.phillydragonboat.info/stylesheets/main.css?1231697196
+	http://www.phillydragonboat.info/stylesheets/main.css?1231697209
+	http://www.phillydragonboat.info/stylesheets/main.css?1231716093
+	http://www.phillydragonboat.info/stylesheets/main.css?1231723388
+	http://www.phillydragonboat.info/stylesheets/main.css?1231723602
 */
 
 body {
     background-color:#FFFFFF;
     padding-top: 0;
-    margin-top: 0;
-    margin-left: 15px;
-    margin-right: 15px;
+	margin: 0px auto;
     color: #000000;
-    font: normal 12px 'Verdana', sans-serif;
-    width: 1020px;
+    font: normal 12px 'Helvetica', 'Arial', 'Verdana', sans-serif;
+    width: 972px;
+    border: 0px solid purple;
     }
 
 a {color:#393537; text-decoration: none;}
@@ -33,7 +41,24 @@ h4 {font-size:14px; font-weight:bold;}
     }
 img {border:0px;}
 /*Header*/
+
 #header { height: 162px; background: url(/images/top_line.gif)  repeat-x bottom; }
+
+
+
+#header div#pdb_logo {
+	width:347px; 
+	height: 162px;
+	float:left;
+	boder:0px solid red}
+
+#header_side{
+  float: right;
+  width: 615px;
+}
+
+
+
 img#pdb_logo { 
             height: 159px; 
             width:327px; 
@@ -41,20 +66,39 @@ img#pdb_logo {
             margin-top:3px;
             margin-bottom:0px;    
         }
-#header div#pdb_logo {width:347px; height: 162px;  float:left;}
-#header div#user_panel { text-align:right;margin-top: 10px;margin-right: 10px;}
+
+
+#header div#user_panel { 
+	text-align:right;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+
+	border: 0px solid red;
+	}
 
 #header div#banner{
-  border: 0px solid red;
-  float: right;
-  margin-top: 8px;
-  margin-bottom: 5px;
+	border: 0px solid green;
+	margin: 0px;
+	padding: 0px;
+	height: 104px;
 }
 
 #header div#banner img{ 
-	margin: 0px; border-top:2px solid black;border-bottom:2px solid black; }
 
-#header div#main_nav {height: 40px; vertical-align : bottom;}
+    margin: 0px; 
+	padding: 0px;
+	border-top:2px solid black;
+	border-bottom:2px solid black; }
+
+#header div#main_nav {
+	border: 0px solid blue;
+	height: 20px;
+}
+
+div#home-header h1{
+  margin: 0px;
+}
 
 /*User Panel*/
 #user_panel a {color:#F7941D; text-decoration: underline;}
@@ -82,11 +126,11 @@ img#pdb_logo {
 
 /* Home */
 #home-left{
-	float: left; width: 300px;
+	float: left; width: 290px;
 }
 
 #home-right{
-  width: 400px;
+  width: 360px;
 }
 
 .home-icon{
@@ -130,7 +174,19 @@ height: 245px;
 }
 
 /* Main Content */
-#content div#main { color:#000000;min-height:500px;height:100%; background-color: #fff; position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;}  
+#content div#main, #content div#main_member {
+	color:#000000;
+	min-height:500px;
+	height:100%;
+	background-color: #fff;
+	position:relative;
+	display:block;
+	overflow:hidden;
+	border: 0px solid red;
+	padding-top: 0px;
+	padding-left:25px;
+	padding-right:0px;
+	padding-bottom:25px;}  
     
 /* Breadcrumbing Area */
 #breadcrumbing_area {min-width:800px; height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
@@ -138,10 +194,19 @@ height: 245px;
 #breadcrumbing_area a {color: #fff; text-decoration: none;}
 
 /*Submenu Section*/
-#content div#submenu_section {height: 100%; width:220px; float:left; 
-                    background-color: #F7941D; 
-                    padding-right:15px; font-size:12px;        
-                }                
+#content div#submenu_section {
+	height: 100%; 
+	width:220px; 
+	float:left;
+	background-color: #F7941D; 
+    padding-right:15px; 
+    font-size:12px;        
+                }
+                
+#submenu_section_member{
+  display: none;
+}
+                     
 /*Order Steps*/
 #step_list ul {
     margin:0 10 0 10;
@@ -194,14 +259,14 @@ label {font-weight:normal;}
     float: left;
     }
 /**Main Submenu**/
-#main_submenu  {width:250px; height: 100%; display: block; 
+#main_submenu, #main_submenu_member {width:250px; height: 100%; display: block; 
                 border: 1px solid #C3C9BD; float: left; margin-right:10px;
                 background-color:#F35F17; color:#ffffff;
             }
 
-#main_submenu a {color:#ffffff;text-decoration: none;}
-#main_submenu ul { list-style:none;  padding-left:20px; font-size:14px;  }
-#main_submenu ul li {
+#main_submenu a, #main_submenu_member a {color:#ffffff;text-decoration: none;}
+#main_submenu ul, #main_submenu_member ul { list-style:none;  padding-left:20px; font-size:14px;  }
+#main_submenu ul li, #main_submenu_member ul li {
 
 
     }
@@ -329,14 +394,39 @@ LEGEND {
 #ticket-list div#from {padding-top:5px; color:blue;}
 
 /*Tent Positions*/
-#tents_graphic {float:left; widht:412px; height:2040px; margin-right: 10px; margin-bottom: 6260px }
-#tent_positions_list { position:relative; display:block;  overflow:hidden; border: 0px solid red; padding-left:25px; padding-right:25px; padding-bottom:25px;} 
-#tent_positions #available, #tent_positions #reserved, #tent_positions #current_reserved {
-	border: 1px solid #ccc; text-align:center; 
-	width: 150px; padding-top:5px; padding-bottom:5px;       
+#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px; margin-bottom: 6260px }
+
+#tent_positions_list {
+	position:relative;
+	display:block;
+	overflow:hidden;
+	border: 0px solid red;
+	padding-left:25px;
+	padding-right:25px;
+	padding-bottom:25px;} 
+
+#tent_positions #available, 
+#tent_positions #reserved, 
+#tent_positions #current_reserved {
+	border: 1px solid #AAA; 
+	text-align:center; 
+	width: 150px;
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-bottom: 3px;
 }
-#tent_positions a {padding-left:55px; padding-right:55px; padding-top: 10px; padding-bottom: 10px;}
-#tent_positions a:hover {border:1px solid black; }
+
+#tent_positions #available:hover, 
+#tent_positions #reserved:hover, 
+#tent_positions #current_reserved:hover {
+border: 1px solid black;
+}
+
+#tent_positions a {
+	padding:3px 60px;
+      
+}
+#tent_positions a:hover {text-decoration: underline; }
 
 #tent_positions #available { background-color:#99DB99;  }
 #tent_positions #reserved { background-color:#cccccc;   color: red; }

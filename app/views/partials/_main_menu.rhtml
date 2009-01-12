@@ -1,6 +1,5 @@
 <% url = controller.controller_path %>
 <% pages_paths = Comatose::Page.root.children.find(:all,:conditions=>"is_page=1").map(&:full_path)%>  
-<br/>
 <div class="menu">
 <ul>
   <%# render :partial=>'partials/menu_item', :locals=>{:name=>"Home", :title=>"",:url=>"/"}%>

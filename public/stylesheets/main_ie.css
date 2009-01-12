@@ -1,3 +1,13 @@
+body {
+    background-color:#FFFFFF;
+    padding-top: 0;
+	margin: 0px auto;
+    color: #000000;
+    font: normal 12px 'Verdana', sans-serif;
+    width: 972px;
+    border: 0px solid green;
+    }
+
 /*Order Steps*/
 #step_list ul {
     margin:0px;
@@ -12,14 +22,53 @@ img#pdb_logo {
             margin-bottom:0px;   
             white-space: nowrap; 
         }
-#header { height: 162px; background: url(/images/top_line.gif)  repeat-x 0px 159px; }
+        
+#header { 
+	height: 159px; 
+	background: url(/images/top_line.gif)  repeat-x 0px 159px;
+	border: 0px solid blue;
+	background-color: white;
+}
 
-#content div#main { min-width:900px;}  
-#content table#main {height:100%; width:100%;  background-color:#fff; margin:0px; padding:0px;}
-#content table#main td {vertical-align:top;}
-#header div#user_panel {height: 119px; text-align:right;}
-#header div#main_nav {height: 43px; vertical-align : bottom;}
-#separator {display:none; clear:both; height:1px; margin:0px; padding:0px; background-color:red; width:100%;}
+
+#header_side{
+
+  float: right;
+  width: 600px;
+	border: 0px solid red;
+	margin:0px;
+	padding:0px;
+
+}
+
+#header div#user_panel {
+	border: 0px solid green; 
+	text-align:right;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left:0px;
+	margin-right: 10px;
+	padding:0px;
+
+	}
+
+#header div#banner{
+  border: 0px solid red;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+#header div#main_nav {
+	background-color: #EEE;
+	margin-top: 0px;
+	height: 18px; 
+	vertical-align : bottom;
+	border: 0px solid green;
+
+	}
+
+
 
 
 
@@ -27,4 +76,16 @@ img#pdb_logo {
 
 
 
+#content div#main { min-width:900px;}  
 
+#content table#main {
+		height:100%; width:100%;  
+		background-color:#fff; 
+		margin:0px; 
+		padding:0px;}
+
+#content table#main td {vertical-align:top;}
+
+
+
+#separator {display:none; clear:both; height:1px; margin:0px; padding:0px; background-color:red; width:100%;}

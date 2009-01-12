@@ -7,18 +7,44 @@ Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
 This stylesheet and the assocaited (x)html may be modified in any 
 way to fit your requirements.
 =================================================================== */
-.menu { font-family: verdana, sans-serif; min-width:900px; width:100%; height:1px; position:absolute; font-size:11px; z-index:100;}
-.menu a {padding-left:7px; padding-right:7px;}
-.menu ul { background:#FFF; }
+.menu { 
+	border: 0px solid blue;
+	font-family: verdana, sans-serif; 
+	width:100%; height:1px; 
+	position:absolute; 
+	font-size:11px; 
+	z-index:100;
+	background-color: #FFF;
+	}
+	
+.menu a {padding-left:12px; padding-right:12px;}
+.menu ul { background:#0AC; }
 .menu ul ul { background:#F7941D; color:#fff; }
 
-.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000;  white-space: nowrap; width:1px; height: 1px; vertical-align: bottom; text-align:center; border:1px solid #fff; background:#fff; line-height:20px; font-size:12px; font-weight:bold;  overflow:visible;}
+.menu ul li a, .menu ul li a:visited {
+	display:block; 
+	text-decoration:none; 
+	color:#000;  
+	white-space: nowrap; 
+	width:1px; 
+	height: 1px; 
+	vertical-align: bottom; 
+	text-align:center; 
+	border:1px solid #FFF; 
+	background:#fff; 
+	line-height:15px; 
+	font-size:12px; 
+	font-weight:bold;  
+	overflow:visible;
+	padding: 4px 10px 0px;
+
+	}
 .menu ul li a.hide, .menu ul li a:visited.hide {display:none;}
 .menu ul li a:hover ul li a.hide {display:none; }
-.menu ul li a:hover {color:#fff; background:#F7941D; border:1px solid #F7941D;}
+.menu ul li a:hover {color:#fff; background:#F7941D; border:1px solid #F7941D;text-decoration: none;}
 .menu ul li a:hover ul {display:block; position:absolute; top:25px; left:0; width:auto; }
 .menu ul li a:hover ul li a.sub {background:#F7941D; color:#fff; border:1px solid #F7941D;}
-.menu ul li a:hover ul li a {display:block; background:#F7941D; color:#fff; border:1px solid #F7941D}
+.menu ul li a:hover ul li a {display:block; background:#F7941D; color:#fff; border:1px solid #F7941D; margin: 0px 1px;	padding: 4px 10px 4px;}
 .menu ul li a:hover ul li a ul {visibility:hidden;}
 .menu ul li a:hover ul li a:hover {background:#fff; color:#F7941D;}
 .menu ul li a:hover ul li a:hover ul {visibility:visible; position:absolute; left:100%; top:0; color:#000;}
