@@ -17,6 +17,12 @@ class Member < ActiveRecord::Base
  
   scope_out :paddlers,
             :conditions => "type_id=#{MemberType[:paddler].id}"
+          
+  scope_out :accessibled_paddlers,
+            :conditions => "type_id=#{MemberType[:paddler].id} AND invitation_status_id=#{Status.find_invitation_by_name('confirmed').id} AND waiver_status_id<>#{Status.find_waiver_by_name('decline').id}"
+         
+  scope_out :declined_paddlers,
+            :conditions => "type_id=#{MemberType[:paddler].id} AND waiver_status_id=#{Status.find_waiver_by_name('decline').id}"
   
   validates_presence_of  :type_id,:waiver_status_id,:invitation_status_id
   validates_associated :team, :user

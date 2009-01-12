@@ -1,8 +1,8 @@
   <%if p.children.size >0 %>
-  <li><%=link_to p.title.titleize, p.uri, :class=>"hide"%>
+  <li><%=link_to p.title_titleize, p.uri, :class=>"hide"%>
 
     <!--[if lte IE 6]>
-    <a href="<%=p.uri%>"><%=p.title.titleize%>
+    <a href="<%=p.uri%>"><%=p.title_titleize%>
     <table><tr><td>
     <![endif]-->
 
@@ -18,5 +18,5 @@
     <![endif]-->
   </li>
   <%else%>
-    <li><%=link_to p.title.titleize, p.uri%></li>
+    <li><%=link_to p.title_titleize, p.uri%></li>
   <%end%>

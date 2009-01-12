@@ -130,6 +130,14 @@ class Comatose::Page < ActiveRecord::Base
     false
   end
   
+  def short_title?
+    short_title && !short_title.empty?
+  end
+  
+  def title_titleize
+    short_title? ?  short_title.titleize : title.titleize
+  end
+  
 protected
 
   # Creates a URI path based on the Page tree

@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 85) do
+ActiveRecord::Schema.define(:version => 86) do
 
   create_table "answers", :force => true do |t|
     t.integer  "ticket_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 85) do
     t.datetime "created_on"
     t.boolean  "is_page",                   :default => true
     t.string   "notice"
+    t.string   "short_title"
   end
 
   add_index "comatose_pages", ["is_page"], :name => "index_comatose_pages_on_is_page"

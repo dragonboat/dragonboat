@@ -9,8 +9,8 @@ collapse_children = (level >= Comatose.config.default_tree_level)
   <table cellpadding="0" cellspacing="0" <%="style='display:none;'" if page.root == page.parent%>>
     <tr> 
       <td>
-        <%= link_to page.title, page.uri , :title=>"#{page.title}", :class=>'page' unless page.full_path == @page.full_path%>
-        <%= link_to page.title, page.uri , :title=>"#{page.title}", :id=>'current' if page.full_path == @page.full_path%>
+        <%= link_to page.title_titleize, page.uri , :title=>"#{page.title}", :class=>'page' unless page.full_path == @page.full_path%>
+        <%= link_to page.title_titleize, page.uri , :title=>"#{page.title}", :id=>'current' if page.full_path == @page.full_path%>
       </td>
     </tr>
   

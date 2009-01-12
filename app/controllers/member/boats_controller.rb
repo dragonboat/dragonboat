@@ -9,6 +9,12 @@ class Member::BoatsController < Member::WebsiteController
  
   def index
    # @team = @teams.first
+   @person = @team.captain.person
+   @current_practices = @team.practices.find(:all, :order=>"created_at")
+   @tents = @team.tents
+   @paddlers = @team.members.count_paddlers
+   @paddlers_accessibled = @team.members.count_accessibled_paddlers
+   @paddlers_declined = @team.members.count_declined_paddlers
   end
   
   def new
