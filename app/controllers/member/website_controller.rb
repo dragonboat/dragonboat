@@ -50,6 +50,7 @@ class Member::WebsiteController < ApplicationController
   end
   
   def is_not_member?
+     @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
      current_user.is_captain? or !current_user.is_member? ? true : access_denied
   end
   

@@ -37,5 +37,4 @@ def set_user
   @person = @user.person
   @person.email = @user.email unless  @person.email
 end
-
 end

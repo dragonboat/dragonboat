@@ -3,7 +3,7 @@
         <%unless current_user.is_admin?%>
         <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_users_path %> &nbsp;|&nbsp;
         
-        <%if current_user.is_captain?%>
+        <%if @team&&current_user.is_captain?%>
           <%= link_to "Manage Team", team_members_path(@team.name.to_slug)%> &nbsp;|&nbsp; 
         <%end%>
         

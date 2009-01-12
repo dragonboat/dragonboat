@@ -10,11 +10,11 @@
     <%=link_to_function "X", "$('changed_password').style.display='none';", :id=>"close"%>
   <table class="form" >
   <tr>
-    <td><label for="user_password">Password:</lable></td>
+    <td><label for="user_password">New Password:</lable></td>
     <td><%= f.password_field :password, :size=>50 %></td>
   </tr>
   <tr>
-   <td><label for="user_password_confirmation">Password confirmation:</lable></td>
+   <td><label for="user_password_confirmation">Confirm New Password:</lable></td>
    <td><%= f.password_field :password_confirmation, :size=>50 %></td>
   </tr>
   </table>
