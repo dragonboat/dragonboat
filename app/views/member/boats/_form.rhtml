@@ -36,6 +36,12 @@
     <br />
     <%= f.text_area :description, :rows=>12, :cols=>80%></span>
   </p>
+  <p>
+    <label for="team_visit_status">New to Dragon Boating?</lablel>
+    <span class='notice'>(Maximum 50 words)</span>:
+    <br/>
+    <%= f.select :visit_status, Team::VISIT_STATUS%></span>
+  </p>
   
   <p> 
 <div id="team_logo">

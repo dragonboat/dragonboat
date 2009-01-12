@@ -3,7 +3,8 @@
 Team Registration > Step 1 - Create Account
 <%end%>
 <% content_for :submenu_area do%>
-  <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"current", :s2=>"next", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
+<span id='submenu_section_member'></span>
+<%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"current", :s2=>"next", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
 <%end%>
 <% content_for  :current_page_name do%>
   Create Account

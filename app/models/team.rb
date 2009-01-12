@@ -1,5 +1,7 @@
 class Team < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
+  VISIT_STATUS = [["Please Select",""],["Yes - this is my first time", "first_time"],  ["Yes - new to this festival", "new_to_this_festival"],["No - I've done this before","done_this_before"]]
+ 
   validates_presence_of :name
   belongs_to :boat_type, :foreign_key => 'type_id', :class_name=>"BoatType"
   belongs_to :captain, :foreign_key => 'captain_id', :class_name=>"User"
@@ -20,7 +22,7 @@ class Team < ActiveRecord::Base
   belongs_to :status
   validates_associated :captain
   validates_uniqueness_of :name, :case_sensitive => false
-  validates_format_of  :url, :with =>/(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  #validates_format_of  :url, :with =>/(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
 
   scope_out :active,
             :conditions => "status_id=#{Status.find_team_by_name('active').id}"

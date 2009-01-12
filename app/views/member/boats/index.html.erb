@@ -1,8 +1,8 @@
-<% content_for :title do %>Boat Home<% end %>
+<% content_for :title do %>Manage: <%=CGI.unescapeHTML(@team.name)%><% end %>
+
 <div>
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
-<h1>General Boat Info</h1>
 <p>Team Name: <%=@team.name%></p>
 <p>Team URL: <%=link_to @team.url, @team.url%></p>
 <p>Team Biography: <%=@team.description%></p>

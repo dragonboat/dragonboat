@@ -1,5 +1,7 @@
 <% content_for :title do %>Team Member Home : Members List<% end %>
-
+<div>
+  <%= render :partial => 'team/website/submenu/menu'%>
+</div>
 <h1>Team Members List (<%=@members_count%>)</h1>
 
 <div id="pages"><%= will_paginate @members %></div>

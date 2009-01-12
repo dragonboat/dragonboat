@@ -89,3 +89,6 @@ img#pdb_logo {
 
 
 #separator {display:none; clear:both; height:1px; margin:0px; padding:0px; background-color:red; width:100%;}
+
+#step5 table.box, #step3 table.box  {width: 300px;}
+#step5 table.big-box {width: 310px;}

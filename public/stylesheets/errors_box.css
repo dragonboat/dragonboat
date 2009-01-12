@@ -5,7 +5,7 @@
 }
 
 #errorExplanation {
-  width: 400px;
+  width: auto;
   border: 1px solid #F7B8BA;
   padding: 5px;
   margin: 0 0 20px 30px;

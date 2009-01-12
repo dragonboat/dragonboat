@@ -11,7 +11,7 @@
 <% form_for(:practice, :url => member_team_practices_path(@team,"undo",@practice.id), :html=>{:method=>:put}) do |f| %>
 <%= f.hidden_field :team_id %>
 
-<p><%= f.submit "Undo This Practice Time Reservation" %></p>
+<p><%= f.submit "Cancel this scheduled Practice" %></p>
 <% end %>
 <p>
 <%= button_to "Cancel",member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ) %>

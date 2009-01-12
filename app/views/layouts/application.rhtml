@@ -40,8 +40,9 @@
       <!--[if lte IE 6]><table id="main" valign="top" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="#fff"><tr><td width="1%" id="content_td"><![endif]-->
         <%unless request.request_uri=="/"%> 
         <div id="submenu_section">
-           &nbsp;&nbsp;
+           
             <!--[if lte IE 6]>
+            &nbsp;&nbsp;
             <%=javascript_tag "document.getElementById('content_td').style.background='#F7941D';"%>
             <![endif]-->
             <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
@@ -55,9 +56,12 @@
      <!--[if lte IE 6]></td><td style='background-color:#fff;'><![endif]-->
         <div id="main" >
           <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1>
-          <p style="color: green"><%= flash[:notice] %></p>
+          
+          <%if flash[:notice] && !flash[:notice].empty?%>
+          <p id="notice"><%= flash[:notice] %></p>
+          <%end%>
           <%= yield %> 
-        </div>
+          </div>
         <!--[if lte IE 6]></td><tr></table><![endif]--></div>
       <div id="separator">&nbsp;&nbsp;</div>
      

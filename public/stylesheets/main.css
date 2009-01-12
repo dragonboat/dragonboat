@@ -124,6 +124,8 @@ div#home-header h1{
 #content div#news_section div.news_block #date {color:#F7941D; font-weight:bold; margin-top:10px;}
 #content div#news_section div.news_block a.to_full {color: #959595; text-decoration: none;}
 
+
+#notice {color:green; font-size:14px;}
 /* Home */
 #home-left{
 	float: left; width: 290px;
@@ -351,7 +353,7 @@ LEGEND {
     padding:0;
     list-style:none;
     height: 34px;
-    width: 740px;
+    width: 780px;
     float: left;
     }
 #subMenu ul.tabs li {
@@ -438,7 +440,7 @@ border: 1px solid black;
 #step5 h4, #step3 h4 {font-size:14px; color:#000; text-transform : uppercase; }
 #step5 div.left, #step3 div.left {float:left; widht:50%; margin-right:50px;}
 #step5 table.box {width: 325px;}
-#step5 table.big-box {width: 350px; font-size:14px; font-weight:bold;}
+#step5 table.big-box {width: 325px; font-size:14px; font-weight:bold;}
 #step5 table.big-box td {padding-bottom: 3px; padding-top: 3px;}
 #step5 table.big-box tr.total {background-color:#cccccc;}
 #step5 table.box a {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
@@ -452,3 +454,5 @@ border: 1px solid black;
 #step3 ul {list-style-type : none; display : block; margin-left:0px; padding:0px;}
 #step3 ul li {padding:3px;}
 #step3 #total { width: 300px; font-size:14px; background-color:#cccccc;  padding-top:5px; padding-bottom:5px; font-weight:bold; margin-right:50px;}
+
+.obj_list td a {text-decoration: underline; }

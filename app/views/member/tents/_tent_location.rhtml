@@ -1,7 +1,6 @@
 <p>You have reserved a <%= @team.tents.find_not_empty(:all).size%> of <%=@tents.size%> main tents</p>
 <p>Current Tent Position: <%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></p>
 <%= error_messages_for :tent %>
-
 <%@tent_postions.each do |tent_position|%>
 <div id="tent_location_<%=tent_position.id%>">
 

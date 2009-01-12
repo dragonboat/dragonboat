@@ -2,6 +2,11 @@
         Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
         <%unless current_user.is_admin?%>
         <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_users_path %> &nbsp;|&nbsp;
+        
+        <%if current_user.is_captain?%>
+          <%= link_to "Manage Team", team_members_path(@team.name.to_slug)%> &nbsp;|&nbsp; 
+        <%end%>
+        
         <%if current_user.tickets.find_pending(:first)%>
         <%= link_to "Support", member_tickets_list_url%> &nbsp;|&nbsp; 
         <%end%>
@@ -9,8 +14,11 @@
         <%else%>
          <%= link_to "My Account",admin_user_path(current_user)%> &nbsp;|&nbsp;
         <%end%>
-        <%= link_to "logout", logout_url %>
+        <%= link_to "[LOG OUT ]", logout_url %>
         <br/>
    <%else%>
-       <%= link_to "login", login_url %>
-  <%end%>     
+       <%= link_to "[LOGIN]", login_url %>
+  <%end%>    
+
+
+ 

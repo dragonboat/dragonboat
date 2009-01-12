@@ -40,13 +40,13 @@
           <div id="submenu_section_member">
          
            <!--[if lte IE 6]>
-           &nbsp;&nbsp; 
-            <%=javascript_tag "document.getElementById('content_td').style.background='#F7941D';"%>
+           
+            <%#javascript_tag "document.getElementById('content_td').style.background='#F7941D';"%>
            <![endif]-->
            <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
            <%=yield :submenu_area %> 
          </div> 
-    
+      
 
      
        <!--[if lte IE 6]></td><td style='background:#fff'><![endif]-->
@@ -59,7 +59,9 @@
         <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%= @team.human_name %></h3>
         <%end%>
          <%end%>  
-         <p style="color: green"><%= flash[:notice] %></p>
+         <%if flash[:notice] && !flash[:notice].empty?%>
+          <p id="notice"><%= flash[:notice] %></p>
+         <%end%>
         
          <%= yield %>
         </div>
