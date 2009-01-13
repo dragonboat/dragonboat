@@ -22,9 +22,6 @@ ActionController::Routing::Routes.draw do |map|
     #m.profile '/profile/:id',    :controller => 'member/users', :action=>"show"
     m.resource   :tent, :controller => 'member/tents'
    
-    m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
-    m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"
-    m.resources   :paddlers,    :controller => 'member/paddlers'
     m.resources    :users,    :controller => 'member/users'
     m.extras_boat  '/boats/:id/extras', :controller => 'member/boats', :action => 'extras'
     m.resources   :boats, :controller => 'member/boats'
@@ -43,6 +40,14 @@ ActionController::Routing::Routes.draw do |map|
     m.resources    :members,    :controller => 'team/members'
     m.url_code 'member/confirm/:url_code', :controller => 'team/website', :action => 'index'
   end
+  
+  map.with_options :path_prefix => 'member/boats/:team_id', :name_prefix => 'member_' do |m|
+    m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
+    m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"
+    m.resources   :paddlers,    :controller => 'member/paddlers' 
+  end
+  
+   
   
   map.with_options :path_prefix => 'admin/teams/:team_id', :name_prefix => 'admin_' do |m|
     m.list_by_waiver_sign_status_to_csv  'paddlers/list_by_waiver_sign_status_to_csv/:status',    :controller => 'admin/paddlers', :action=>"list_by_waiver_sign_status_to_csv"
