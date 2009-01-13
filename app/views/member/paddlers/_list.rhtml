@@ -17,8 +17,8 @@
     <td><%=person.phone%></td>
     <td><%=person.created_at.strftime("%d.%m.%Y %H:%M")%></td>  
       <td>
-        <%= link_to 'Details', member_paddler_path(paddler) %> |
-        <%= link_to 'Invite to join team',  member_invite_paddler_path(paddler)%> 
+        <%= link_to 'Details', member_paddler_path(@team, paddler) %> |
+        <%= link_to 'Invite to join team',  member_invite_paddler_path(@team, paddler)%> 
   </tr>
 <% end %>
 </table>

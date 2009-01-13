@@ -110,7 +110,7 @@
         <%= render :comatose=>'registration-complete-instructions', :silent=>true %>
     <!-- -->
     <p><%= link_to 'Select tent position', member_team_tents_path(@team.id) if @team.tents.size>0 %></p>
-    <p> <%=link_to "Go to Boat Home Page", member_boats_path %></p>  
+    <p> <%=link_to "Go to Boat Home Page", member_boat_path(@team) %></p>  
     </td>
   </tr>
   <tr>

@@ -15,10 +15,16 @@ class Member::WebsiteController < ApplicationController
         format.html do
           store_location 
           if current_user
-            redirect_to admin_index_path if current_user.is_admin?
-            redirect_to member_index_path unless current_user.is_admin?
+            if current_user.is_admin?
+              redirect_to admin_index_path 
+              return false
+            else
+              redirect_to  member_index_path 
+              return false
+            end
           else
             redirect_to new_session_path
+            return false
           end
         end
         format.any do
@@ -35,9 +41,11 @@ class Member::WebsiteController < ApplicationController
   def has_boat?
     unless current_user.is_captain?&&!current_user.has_any_boat? 
       access_denied
-      return
+      return false
     end
-    @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
+    
+    
+   # @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
     true
   end
   
@@ -50,11 +58,23 @@ class Member::WebsiteController < ApplicationController
   end
   
   def is_not_member?
-     @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
+     #@team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
      current_user.is_captain? or !current_user.is_member? ? true : access_denied
   end
   
   def fetch_team
-    @team = current_user.is_member? ?  current_user.member.team : current_user.teams.find(params[:team_id])
+    if current_user.is_member? 
+       @team = current_user.member.team 
+       @teams = [@team]
+    elsif current_user.teams.exists?(params[:team_id])
+      @team = current_user.teams.find(params[:team_id])
+      @teams = current_user.teams.find_active(:all, :order=>"created_at DESC")
+    end
+    unless @team 
+      redirect_to member_boats_url
+      false
+    else
+      true 
+    end
   end
 end

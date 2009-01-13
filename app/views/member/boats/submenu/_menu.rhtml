@@ -2,7 +2,7 @@
 
     <div id="subMenu">
       <ul class="tabs">
-          <li <%= "class=\"current\"" if request.request_uri =~/boats\/?$/  %>><%= link_to 'Team Home', member_boats_url %> |</li>
+          <li <%= "class=\"current\"" if request.request_uri =~/boats\/?$/  %>><%= link_to 'Team Home', member_boat_url(@team) %> |</li>
         <li <%= "class=\"current\"" if url =~/(members)/ %>><%= link_to 'Manage Team Members', member_team_members_path(@team.id) %> |</li>
          
         <li  <%= "class=\"current\"" if url =~/(practices)/ %>><%= link_to 'Manage Practices', member_team_practices_path(@team.id)%> |</li>
@@ -13,7 +13,7 @@
         <%end%>
         
       
-        <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path %> |</li>
+        <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path(@team) %> |</li>
 
         <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Edit Team', member_edit_boat_url(@team.id) %> |</li>
          <li <%= "class=\"current\"" if  url =~/(users)/   %>><%= link_to 'Your Profile', member_users_path %> </li>    

@@ -1,121 +1,20 @@
-<% content_for :title do %>Manage: <%=CGI.unescapeHTML(@team.name)%><% end %>
+<% content_for :title do %>Boats List<% end %>
 
-<div>
-  <%= render :partial => 'member/boats/submenu/menu'%>
-</div>
-<div id="step5">
+<% content_for :breadcrumbing_area do %>
+<h1>Select Boat</h1>
+<% end %>
 
- <div class="left">
-    
+<div id="boat_list">
  <table class="box">
   <tr>
-    <td><h2>Your Team</h2></td>
-    <td width="100"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top"><%=@team.name%></td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top"><%=@team.url%><br><br>
-        <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
-      </td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top"><br>Team Biography:<br/><br/>
-      <span class='notice'><%=@team.description%></span>
-        </td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top">Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></td>
-  </tr>   
-</table>
-<!--  total number of paddlers Invited, accepted, declined -->
- <table class="box">
-  <tr>
-    <td><h2>Total number of paddlers</h2></td>
-    <td width="100"><%=link_to "edit",  member_team_members_path(@team) %></td>
-  </tr>
-  <tr>
-    <td>Invited</td>
-    <td><%= @paddlers %></td>
-  </tr>
-  <tr>
-    <td>Accepted</td>
-    <td><%=@paddlers_accessibled %></td>
-  </tr>
-  <tr>
-    <td>Declined</td>
-    <td><%=@paddlers_declined%></td>
-  </tr>
-</table>
-
-<!-- Scheduled Practice Dates -->
- <table class="box">
-  <tr>
-    <td colspan="2"><h2>Scheduled Practice Dates</h2></td>
-    <td width="100"><%=link_to "edit",member_team_practices_path(@team)%></td>
+    <td><h2>Boats</h2></td>
   </tr>
 
-  <tr>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Other</th>
-  </tr>
-
-  <% @current_practices.each do |p|%>
+  <% @teams.each do |team|%>
    <tr>
-     <td class="specialDay-current_reserved"><%=p.date%></td>
-     <td class="specialDay-current_reserved"><%=p.time%></td>
-     <td class="specialDay-current_reserved" style="text-align:left;">
-       <%="<br>Launch Driver: #{p.launch_driver}" if p.launch_driver && !p.launch_driver.empty?%>
-       <%="<br>Steers Person: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
-     </td>
+     <td class="specialDay-current_reserved"><%=link_to team.name,  member_boat_url(team)%></td>
    </tr>
-  <%end%>
-
-</table>
-  </div>
-  <!-- Right Side -->
-  <table class="box">
-    <tr>
-    <td><h2>Personal Details</h2></td>
-    <td width="100"><%=link_to "edit",  member_edit_user_path(current_user) %></td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-    <%= @person.first_name %> <%= @person.last_name %><br>
-    <%= @person.email %><br>
-    home:<%= @person.phone %><br>
-    cell: <%= @person.phone_2 %><br>
-    </td>
-  </tr>
-</table>
-
-<!-- Total Tents and reserved tent position  -->
-<table class="box">
-  <tr>
-    <td><h2>Tents</h2></td>
-    <td width="100">
-        <%if @team.tents.size>0%>
-        <%= link_to 'edit', member_team_tents_path(@team.id)%>
-        <%end%>
-    </td>
-  </tr>
-   <tr>
-    <td>Total:</td>
-    <td><%=@tents.size%></td>
-  </tr>
-  <tr>
-    <td>Reserved:</td>
-    <td><%= @team.tents.find_not_empty(:all).size%></td>
-  </tr>
-  <tr>
-    <td>Current Tent Position:</td>
-    <td><%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></td>
-  </tr>
-  
-</table>
-
-<div class="clearEm">&nbsp;&nbsp;</div>
+   <%end%>
+   </table>
 </div>
   

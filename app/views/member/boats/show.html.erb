@@ -1,8 +1,8 @@
-<% content_for :title do %>Team member Home<% end %>
+<% content_for :title do %>Manage: <%=CGI.unescapeHTML(@team.name)%><% end %>
+
 <div>
-  <%= render :partial => 'team/website/submenu/menu'%>
+  <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
-<%slug = @team.name.to_slug%>
 <div id="step5">
 
  <div class="left">
@@ -10,7 +10,7 @@
  <table class="box">
   <tr>
     <td><h2>Your Team</h2></td>
-    <td width="100"> </td>
+    <td width="100"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
   </tr>
   <tr>
       <td colspan="2" valign="top"><%=@team.name%></td>
@@ -33,7 +33,7 @@
  <table class="box">
   <tr>
     <td><h2>Total number of paddlers</h2></td>
-    <td width="100"><%=link_to "view",  team_members_path(slug) %></td>
+    <td width="100"><%=link_to "edit",  member_team_members_path(@team) %></td>
   </tr>
   <tr>
     <td>Invited</td>
@@ -53,7 +53,7 @@
  <table class="box">
   <tr>
     <td colspan="2"><h2>Scheduled Practice Dates</h2></td>
-    <td width="100"></td>
+    <td width="100"><%=link_to "edit",member_team_practices_path(@team)%></td>
   </tr>
 
   <tr>
@@ -76,7 +76,8 @@
 </table>
   </div>
   <!-- Right Side -->
- <table class="box">
+  <%if @person != @captain%>
+  <table class="box">
     <tr>
     <td><h2>Captain Personal Details</h2></td>
     <td width="100"></td>
@@ -90,11 +91,11 @@
     </td>
   </tr>
 </table>
-
+  <%end%>
   <table class="box">
     <tr>
     <td><h2>Personal Details</h2></td>
-    <td width="100"><%=link_to "edit",   team_user_path(slug)%></td>
+    <td width="100"><%=link_to "edit",  member_edit_user_path(current_user) %></td>
   </tr>
   <tr>
     <td colspan="2" valign="top">
@@ -111,6 +112,9 @@
   <tr>
     <td><h2>Tents</h2></td>
     <td width="100">
+        <%if @team.tents.size>0%>
+        <%= link_to 'edit', member_team_tents_path(@team.id)%>
+        <%end%>
     </td>
   </tr>
    <tr>
@@ -130,3 +134,4 @@
 
 <div class="clearEm">&nbsp;&nbsp;</div>
 </div>
+  

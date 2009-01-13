@@ -1,15 +1,26 @@
 class Member::BoatsController < Member::WebsiteController 
-  before_filter :has_any_boat?, :except => [:index, :edit, :update]
+ # before_filter :has_any_boat?, :except => [:index, :edit, :update]
  # require_role "captain", :only=>[:index]
-  before_filter :has_boat?, :only=>[:index, :edit, :update]
-  before_filter :fetch_team, :only=>[:extras, :add_extras]
+  before_filter :has_boat?, :only=>[:index, :edit, :update, :show]
+  before_filter :fetch_team, :only=>[:show, :edit, :update, :extras, :add_extras]
   
-  before_filter :secure_site, :except => [:index, :edit, :update]
+  before_filter :secure_site, :except => [:index, :edit, :update, :show]
   skip_before_filter :leave_secure_site
  
   def index
    # @team = @teams.first
-   @person = @team.captain.person
+    @teams = current_user.teams.find_active(:all, :order=>"created_at DESC")
+    if @teams.size > 1
+      render :action=>:index
+    else
+      @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
+      redirect_to member_boat_url(@team)
+    end
+  end
+  
+  def show
+   @person = current_user.person
+   @captain = @team.captain.person
    @current_practices = @team.practices.find(:all, :order=>"created_at")
    @tents = @team.tents
    @paddlers = @team.members.count_paddlers
@@ -54,7 +65,7 @@ class Member::BoatsController < Member::WebsiteController
     respond_to do |format|
       if  @team.save
         flash[:notice] = 'Boat Details Setting was successfully updated.'
-        format.html { redirect_to member_boats_url }
+        format.html { redirect_to member_boat_url(@team) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
