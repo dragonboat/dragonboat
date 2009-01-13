@@ -11,6 +11,7 @@
 	http://www.phillydragonboat.info/stylesheets/main.css?1231716093
 	http://www.phillydragonboat.info/stylesheets/main.css?1231723388
 	http://www.phillydragonboat.info/stylesheets/main.css?1231723602
+	http://www.phillydragonboat.info/stylesheets/main.css?1231766162
 */
 
 body {
@@ -237,8 +238,39 @@ ul#page_list{
 #page_list #current {background-color:#fff; color:#F7941D; }
 #page_list a:hover {background-color:#fff; color:#F7941D;}
 #separator {clear:both; height:1px; margin:0px; padding:0px; width:100%;}
-label {font-weight:normal;}
-.required label {font-weight:bold;}
+label {font-weight:normal;margin-top:13px;margin-bottom: 20px;}
+
+.required label {font-weight:bold; color: #E50;}
+
+.required input[type=text], .required input[type=password]{
+  border: 2px solid #E50;
+}
+
+
+#main form label {
+
+	margin-top:13px;
+	margin-bottom: 20px;
+	padding-left: 2px;
+	font-size: 14px;
+	}
+
+#main form input[type=text], #main form input[type=password]{
+  font-size:18px;
+  padding: 6px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+
+
+#main form input[type=radio], #main form select {
+	margin-top: 6px;
+  margin-bottom: 15px;
+}
+
+
+
 /* Main Menu */
 #mainMenu {
     clear: both;
