@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 86) do
+ActiveRecord::Schema.define(:version => 87) do
 
   create_table "answers", :force => true do |t|
     t.integer  "ticket_id"
@@ -323,9 +323,11 @@ ActiveRecord::Schema.define(:version => 86) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "t_type",     :limit => 50, :default => "main"
   end
 
   add_index "tents", ["team_id"], :name => "index_tents_on_team_id"
+  add_index "tents", ["t_type"], :name => "index_tents_on_t_type"
 
   create_table "tickets", :force => true do |t|
     t.integer  "parent_id"

@@ -16,7 +16,7 @@ class Order < ActiveRecord::Base
   serialize :credit_card, ActiveMerchant::Billing::CreditCard
   
   
-  validates_uniqueness_of :team_id, :scope => [:team_id, :status], :if => :allow_validation
+  #validates_uniqueness_of :team_id, :scope => [:team_id, :status], :if => :allow_validation
 
   validates_associated :team, :user
   
@@ -35,7 +35,7 @@ class Order < ActiveRecord::Base
   end
   
   def calculate_boat_pay
-    team.price
+    team.active? ? 0 : team.price
   end
   
   def extras_pay
@@ -59,9 +59,12 @@ class Order < ActiveRecord::Base
   def activate
     return false unless  self.valid?
     user.to_captain
-    team.activate
+    team.activate unless team.active?
     #empty cart
     team.team_extras.each(&:destroy) if !@team.team_extras.empty?
+    #add tents
+    extras_orders.each {|extras_order| add_tents(extras_order) }
+    
     OrderNotifier.send("deliver_processed", self)
     OrderNotifier.send("deliver_admin", self)
     true
@@ -98,11 +101,21 @@ class Order < ActiveRecord::Base
                                         :pay => extras.price,
                                         :quantity  =>item.quantity
                                       })
-   if extras.name.downcase  =~ /main tent/i
-     team.tents.each(&:destroy) if !team.tents.empty?
-     team.tents.create if item.quantity > 0
-     team.tents.create if item.quantity > 1
-   end
-   a = "erverbr"
+  
+  end
+  
+  def add_tents(extras_order)
+    quantity = extras_order.quantity
+    extras = extras_order.extras
+    if extras.name.downcase  =~ /tent/i
+     #team.tents.each(&:destroy) if !team.tents.empty?
+     if quantity > 0
+       quantity.times {team.tents.create(:t_type=>"additional")} 
+     end
+     @first_two = team.tents.find(:all, :order=>"created_at", :limit=>"2") 
+     @first_two.each do |tent|
+       tent.update_attribute(:t_type,"main") unless tent.type == 'main'
+     end
+    end
   end
 end

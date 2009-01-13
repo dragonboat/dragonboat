@@ -1,17 +1,8 @@
-<% content_for :title do %>Step 4 - Payment Details<% end %>
-<% content_for :breadcrumbing_area do%>
-<h1>Team Registration > Step 4 - Payment Details</h1>
-<%end%>
-<% content_for :submenu_area do%>
-    <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"current", :s5=>"next", :s6=>"next"} %>
-<%end%>
-<% content_for  :current_page_name do%>
-  Payment Details
-<%end%>
-<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
-  <%= render :comatose=>'step4-instructions', :silent=>true %>
-<!-- -->
-  
+<% @tents = @team.tents  %>
+<%= render :partial => 'registration_header_4' unless @team.active? %>
+<%= render :partial => 'purchase_tents_header_2' if @team.active? %>
+
+
   <h2>Boat: <%= @team.name%></h2> 
   <fieldset>
     <legend>Step 4 - Payment Details</legend>

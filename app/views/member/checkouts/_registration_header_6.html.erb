@@ -1,0 +1,14 @@
+<% content_for :title do %>Registration Complete<% end %>
+<% content_for :breadcrumbing_area do%>
+<h1>Team Registration > Registration Complete</h1>
+<%end%>
+<% content_for :submenu_area do%>
+    <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"previous", :s6=>"current"} %>
+<%end%>
+<% content_for  :current_page_name do%>
+  Registration Complete
+<%end%>
+
+<h2>Thank you! You have successfully registered your team! 
+    <%= "Please proceed to #{link_to('Select your tent position', member_team_tents_path(@team.id))}." if @team.tents.size>0 %>
+</h2>

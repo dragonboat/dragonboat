@@ -21,7 +21,9 @@ Quantity: <%=extras_order.quantity%>
 <%end%>
 
 Receipt
+<%if @order.boat_pay>0%>
 Boat: <%=number_to_currency @order.boat_pay %>
+<%end%>
 <%if @order.extras_orders.size > 0%>
 Extras:
 <%@order.extras_orders.each do |extras_order|%>

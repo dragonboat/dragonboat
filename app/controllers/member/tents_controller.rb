@@ -12,7 +12,7 @@ class Member::TentsController < Member::WebsiteController
   def update
     @tent_position = TentPosition.find(params[:id])
     @tent = @team.tents.find_empty(:first)
-    @tent = @team.tents.find(:first, :order=>"updated_at desc") unless @tent
+    @tent = @team.tents.find_main(:first, :order=>"updated_at desc") unless @tent
     if @tent
       unless  @tent_position.status == "available"
        @tent.errors.add_to_base('Sorry, this tent position is reserved already') 
@@ -20,7 +20,7 @@ class Member::TentsController < Member::WebsiteController
        @tent.reserved(@tent_position)
       end
     else
-     @tent = @team.tents.first
+     @tent = @team.tents.find_main(:first)
      @tent.errors.add_to_base('You have reserved all available tent positions for your team')
     end
     fetch_tent_positions
@@ -43,7 +43,7 @@ class Member::TentsController < Member::WebsiteController
   
   private
   def fetch_tent_positions
-    @tents = @team.tents
+    @tents = @team.tents.find_main(:all)
     @tent_postions = TentPosition.find(:all, :order=>"number")
   end
   

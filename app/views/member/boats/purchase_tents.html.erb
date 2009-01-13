@@ -1,9 +1,9 @@
-<% content_for :title do %>Step 3 - Select Tents<% end %>
+<% content_for :title do %>Step 1 - Select Tents<% end %>
 <% content_for :breadcrumbing_area do%>
-<h1>Team Registration > Step 3 - Select Tents</h1>
+<h1>Purchase Tents > Step 1 - Select Tents</h1>
 <%end%>
 <% content_for :submenu_area do%>
-    <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"current", :s4=>"next", :s5=>"next", :s6=>"next"} %>    
+    <%= render :partial => 'partials/tents/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"current", :s4=>"next", :s5=>"next", :s6=>"next"} %>    
 <%end%>
 <% content_for  :current_page_name do%>
   Select Tents
@@ -11,5 +11,4 @@
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'step3-instructions', :silent=>true %>
 <!-- -->
-
  <%= render :partial => 'extras'%>

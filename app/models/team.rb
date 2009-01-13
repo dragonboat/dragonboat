@@ -35,7 +35,7 @@ class Team < ActiveRecord::Base
   end
   
   def total
-    total = self.price
+    total = self.active? ? 0 : self.price
     team_extras.each {|te| total+= te.extras.price*te.quantity}
     return total
   end

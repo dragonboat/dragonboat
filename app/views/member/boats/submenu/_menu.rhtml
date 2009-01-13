@@ -12,6 +12,8 @@
         <li class="frozen"><%= link_to_function 'Tent Position', ""%> |</li>
         <%end%>
         
+        <li><%= link_to 'Purchase Tents', member_extras_boat_url(@team)%> |</li>
+        
       
         <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path(@team) %> |</li>
 

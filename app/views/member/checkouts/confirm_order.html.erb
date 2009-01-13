@@ -1,15 +1,6 @@
-<% content_for :title do %>Step 5 - Verify Details<% end %>
-<% content_for :breadcrumbing_area do%>
-<h1>Team Registration > Step 5 - Verify Details</h1>
-<%end%>
-<% content_for :submenu_area do%>
-   <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"current", :s6=>"next"} %>
-<%end%>
-<% content_for  :current_page_name do%>
-  Verify Boat Registration Details
-<%end%>
-
-
+<% @tents = @team.tents  %>
+<%= render :partial => 'registration_header_5' unless @team.active? %>
+<%= render :partial => 'purchase_tents_header_3' if @team.active? %>
 
 <div id="step5">
  <h4><%=@team.name%></h4> 
@@ -74,10 +65,12 @@
 <h1>Your Order</h1>
 <div class="left">
 <table class="big-box" cellspadding="0" cellspacing="0">
+  <%unless @team.active?%>
   <tr>
     <td><%=@team.boat_type_human%></td>
-    <td width="100" align="right"><%=number_to_currency @team.price%></td>
+    <td width="100" align="right"><%=number_to_currency(@team.price)%></td>
   </tr>
+  <%end%>
   <%@team.team_extras.map(&:extras).each do |item|%>
   <%team_extras= item.team_extras.find_by_team_id(@team.id)%>
   <%quantity = team_extras.quantity if team_extras%>

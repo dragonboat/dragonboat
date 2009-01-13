@@ -3,10 +3,12 @@ class Tent < ActiveRecord::Base
   validates_associated :team
  # has_one  :extras_order, :as => :extras, :class_name => "ExtrasOrder"
   
+  scope_out :main,
+            :conditions => "t_type='main'"
   scope_out :empty,
-            :conditions => "location IS NULL OR location=''"
+            :conditions => "(location IS NULL OR location='') AND t_type='main'"
   scope_out :not_empty,
-            :conditions => "location IS NOT NULL AND location<>''"
+            :conditions => "(location IS NOT NULL AND location<>'') AND t_type='main'"
           
   def reserved(tent_position)
     old_tent_position = TentPosition.find_by_number(self.location.to_i)

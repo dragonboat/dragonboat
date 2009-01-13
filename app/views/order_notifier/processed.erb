@@ -1,7 +1,9 @@
 Hello, <%= @order.user.person.name %>
-
+<%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
+Your order#<%= @order.id %> of tents has been <%= @order.status %>.
+<%else%>
 Your order#<%= @order.id %> of boat registration has been <%= @order.status %>.
-
+<%end%>
 
 Boat Details:
 Team Name: <%= CGI.unescapeHTML(@order.team.name) %>
@@ -21,7 +23,9 @@ Quantity: <%=extras_order.quantity%>
 <%end%>
 
 Receipt
+<%if @order.boat_pay>0%>
 Boat: <%=number_to_currency @order.boat_pay %>
+<%end%>
 <%if @order.extras_orders.size > 0%>
 Extras:
 <%@order.extras_orders.each do |extras_order|%>

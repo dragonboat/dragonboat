@@ -1,0 +1,51 @@
+<%
+main_tents = @extras[0]
+additional_tents = @extras[1]
+%>
+<div class="left">
+<table class="box">
+  <tr>
+    <th><%=main_tents.name%><%=hidden_field_tag "extras[#{main_tents.id}]", 1 %></th>  
+  </tr>
+  <tr>
+    <td class="notice" valign="top"><%=main_tents.notice%></td>  
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><%=radio_button_tag("quantity[#{main_tents.id}]", 0, true)%> <label for="quantity[<%=main_tents.id%>]_0">No Tent</label></li>
+        <li><%=radio_button_tag("quantity[#{main_tents.id}]", 1)%> <label for="quantity[<%=main_tents.id%>]_1">1 Tent (<%=number_to_currency main_tents.price%>)</label></li>
+        <li><%=radio_button_tag("quantity[#{main_tents.id}]", 2)%> <label for="quantity[<%=main_tents.id%>]_2">2 Tents (<%=number_to_currency main_tents.price*2%>)</label></li>
+      </ul>
+    </td>  
+  </tr>
+</table>
+</div>
+
+<div>
+ <table class="box">
+  <tr>
+    <th><%=additional_tents.name%><%=hidden_field_tag "extras[#{additional_tents.id}]", 1 %></th>  
+  </tr>
+  <tr>
+    <td class="notice" valign="top"><%=additional_tents.notice%></td>  
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><%=radio_button_tag("quantity[#{additional_tents.id}]", 0, true)%> <label for="quantity[<%=additional_tents.id%>]_0">No Additional Tent</label></li>
+        <li><%=radio_button_tag("quantity[#{additional_tents.id}]", 1)%> <label for="quantity[<%=additional_tents.id%>]_1">1 Tent (<%=number_to_currency additional_tents.price%>)</label></li>
+        <li><%=radio_button_tag("quantity[#{additional_tents.id}]", 2)%> <label for="quantity[<%=additional_tents.id%>]_2">2 Tents (<%=number_to_currency additional_tents.price*2%>)</label></li>
+        <li><%=radio_button_tag("quantity[#{additional_tents.id}]", 3)%> <label for="quantity[<%=additional_tents.id%>]_3">3 Tents (<%=number_to_currency additional_tents.price*3%>)</label></li>
+        <li><%=radio_button_tag("quantity[#{additional_tents.id}]", 4)%> <label for="quantity[<%=additional_tents.id%>]_4">4 Tents (<%=number_to_currency additional_tents.price*4%>)</label></li>
+      </ul>
+    </td>  
+  </tr>
+</table>
+</div>
+<div class="clearEm">&nbsp;&nbsp;</div>
+<div align="center">
+  <span id="total"><%= render :partial => 'member/boats/total_cost', :locals=>{:total=>0 }%></span>
+  <%= submit_tag  "Checkout"%>
+</div>
+                                  

@@ -482,7 +482,7 @@ border: 1px solid black;
 #step3 table.box {width: 325px; font-size:14px; text-align:left;}
 #step3 table.box th {font-size:16px;}
 #step3 table.box td {padding-bottom: 3px; padding-top: 3px;}
-#step3 .notice  {font-size:12px; color: grey; height: 60px;}
+#step3 .notice  {font-size:12px; color: grey; }
 #step3 ul {list-style-type : none; display : block; margin-left:0px; padding:0px;}
 #step3 ul li {padding:3px;}
 #step3 #total { width: 300px; font-size:14px; background-color:#cccccc;  padding-top:5px; padding-bottom:5px; font-weight:bold; margin-right:50px;}
