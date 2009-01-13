@@ -1,6 +1,6 @@
 class Member::TentsController < Member::WebsiteController
-  before_filter :has_boat?, :has_tents?
-  before_filter :fetch_team
+  before_filter :has_boat?
+  before_filter :fetch_team, :has_tents?
   def index
     fetch_tent_positions
   end

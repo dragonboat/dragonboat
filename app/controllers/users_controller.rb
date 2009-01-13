@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   layout "application"
   # render new.rhtml
   def new
+    redirect_to(member_new_boat_url) if current_user
     if request.post?
       create
       return

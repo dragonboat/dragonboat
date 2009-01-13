@@ -439,9 +439,9 @@ LEGEND {
 	padding-right:25px;
 	padding-bottom:25px;} 
 
-#tent_positions #available, 
-#tent_positions #reserved, 
-#tent_positions #current_reserved {
+.tent_positions #available, 
+.tent_positions #reserved, 
+.tent_positions #current_reserved {
 	border: 1px solid #AAA; 
 	text-align:center; 
 	width: 150px;
@@ -450,21 +450,21 @@ LEGEND {
 	margin-bottom: 3px;
 }
 
-#tent_positions #available:hover, 
-#tent_positions #reserved:hover, 
-#tent_positions #current_reserved:hover {
+.tent_positions #available:hover, 
+.tent_positions #reserved:hover, 
+.tent_positions #current_reserved:hover {
 border: 1px solid black;
 }
 
-#tent_positions a {
+.tent_positions a {
 	padding:3px 60px;
       
 }
-#tent_positions a:hover {text-decoration: underline; }
+.tent_positions a:hover {text-decoration: underline; }
 
-#tent_positions #available { background-color:#99DB99;  }
-#tent_positions #reserved { background-color:#cccccc;   color: red; }
-#tent_positions #current_reserved { background-color: #9393FF; }
+.tent_positions #available { background-color:#99DB99;  }
+.tent_positions #reserved { background-color:#cccccc;   color: red; }
+.tent_positions #current_reserved { background-color: #9393FF; }
 
 .mon_sep {padding-left:51px; }
 .day_sep {padding-left:8px; }
@@ -486,5 +486,13 @@ border: 1px solid black;
 #step3 ul {list-style-type : none; display : block; margin-left:0px; padding:0px;}
 #step3 ul li {padding:3px;}
 #step3 #total { width: 300px; font-size:14px; background-color:#cccccc;  padding-top:5px; padding-bottom:5px; font-weight:bold; margin-right:50px;}
+
+
+#boat_list table td{text-align:left; padding-left:15px;  padding-right:15px; padding-top:5px; padding-bottom:5px;}
+#boat_list a{font-size:14px; padding:3px;}
+#boat_list a:hover {
+border: 1px solid black;
+}
+
 
 .obj_list td a {text-decoration: underline; }

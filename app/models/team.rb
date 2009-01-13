@@ -56,6 +56,10 @@ class Team < ActiveRecord::Base
     status.name == 'inactive' ? 'inactive (unpaid)' : 'active (paid)' if status
   end
   
+  def active?
+    status.name == 'active'
+  end
+  
   def url
     read_attribute(:url).nil? ? "" : read_attribute(:url)
   end

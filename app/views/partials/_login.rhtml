@@ -1,11 +1,22 @@
  <% if logged_in? %>
-        Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
-        <%unless current_user.is_admin?%>
-        <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_users_path %> &nbsp;|&nbsp;
-        
-        <%if @team&&current_user.is_captain?%>
-          <%= link_to "Manage Team", team_members_path(@team.name.to_slug)%> &nbsp;|&nbsp; 
-        <%end%>
+            Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
+            <%unless current_user.is_admin?%>
+            <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_users_path %> &nbsp;|&nbsp;
+            
+            
+            <%if current_user.is_captain?%>
+            
+            <%if current_user.teams.count_active == 1 %>
+              <%= link_to("Manage Team", team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
+              <%= link_to("Manage Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
+              <%= link_to "Register Another Team", register_user_url%> &nbsp;|&nbsp; 
+            <%elsif current_user.teams.count_active > 1%>
+               <%= link_to "Manage Teams", member_boats_path%> &nbsp;|&nbsp;  
+               <%= link_to "Register Another Team", register_user_url%> &nbsp;|&nbsp;               
+            <%end%> 
+            
+             
+            <%end%>
         
         <%if current_user.tickets.find_pending(:first)%>
         <%= link_to "Support", member_tickets_list_url%> &nbsp;|&nbsp; 
@@ -14,6 +25,7 @@
         <%else%>
          <%= link_to "My Account",admin_user_path(current_user)%> &nbsp;|&nbsp;
         <%end%>
+       
         <%= link_to "[LOG OUT ]", logout_url %>
         <br/>
    <%else%>

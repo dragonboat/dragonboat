@@ -1,7 +1,7 @@
 class Member::PaddlersController < Member::WebsiteController 
  include ApplicationHelper
  before_filter :has_boat?
- #before_filter :fetch_team
+ before_filter :fetch_team
   
  def index
     order = case params[:sort]
@@ -26,9 +26,10 @@ class Member::PaddlersController < Member::WebsiteController
    @paddler = OrphanedPaddler.find(params[:id])
    @member = Member.new
    @member.type_id = MemberType[:paddler].id
+   @member.team_id = @team.id
    @user = User.new
    @person = @paddler.person
-   @teams = current_user.teams
+   #@teams = current_user.teams
  end
  
  def create_member
@@ -52,7 +53,7 @@ class Member::PaddlersController < Member::WebsiteController
      flash[:notice] = "E-mail with offer to join was successfully sent on #{@person.email}. Paddler was added to team with unconfirmed waiver status."
      redirect_to member_paddlers_path
    else
-     @teams = current_user.teams
+     #@teams = current_user.teams
      render :action => "invite" 
    end
  end

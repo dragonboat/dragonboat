@@ -6,11 +6,11 @@
 
 <%= error_messages_for :member %>
 
-<% form_for(:member, :url => member_create_member_path(@paddler.id), :html=>{:method=>:put}) do |f| %>
+<% form_for(:member, :url => member_create_member_path(@team,@paddler.id), :html=>{:method=>:put}) do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
   <span id="required">*</span>-Required <br/>
   <%= f.submit "Confirm" %>
 <% end %>
 
-<%= link_to 'Details', member_paddler_path(@paddler.id) %> |
-<%= link_to 'Back', member_paddlers_path %>
+<%= link_to 'Details', member_paddler_path(@team,@paddler.id) %> |
+<%= link_to 'Back', member_paddlers_path(@team) %>

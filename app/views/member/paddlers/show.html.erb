@@ -22,10 +22,10 @@
   </tr>
   <%= render :partial => 'persons/full_show'%>
   <tr>
-     <td colspan="2" align="center"><%= link_to 'Show', member_paddler_path(@paddler) %> |
-       <%= link_to 'Invite to join team'%>
+     <td colspan="2" align="center"><%= link_to 'Show', member_paddler_path(@team, @paddler) %> |
+        <%= link_to 'Invite to join team',  member_invite_paddler_path(@team, @paddler)%> 
      </td>
    </tr>
 </table>
 
-<%= link_to 'Back', member_paddlers_path %>
+<%= link_to 'Back', member_paddlers_path(@team) %>
