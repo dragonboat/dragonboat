@@ -41,9 +41,9 @@ ActiveMerchant::Billing::Base.mode = :test #:live
 	#:login => "v9675631",
         ### TEST GATEWAY SETTINGS
         #:password => "t+IrK3EGO4nYKjfyzalmPnoLat2W9LSlz/DJdeK1iw2sHnGEE4cDGGkx9hKEnEFvGh36YsuGpe+Xi8mD5ZfGf9uhlDfOO4VxIag7XGsAh8DhyFGyff64u0aI+TtzExSGvFfPOZDJ7xx6Dp46Xtoo0Ed0vx0TYnfmpgnLyMlXCbsCIF2PRbMQxQahAuu7qWY+egtq3Zb0tKXP8Ml14rWLDawecYQThwMYaTH2EoScQW8aHfpiy4al75eLyYPll8Z/26GUN847hXEhqDtcawCHwOHIUbJ9/ri7Roj5O3MTFIa8V885kMnvHHoOnjpe2ijQR3S/HRNid+amCcvIyVcJuw==",
-        #:test=> true,
-       #:ignore_avs => true,  
-        #:ignore_cvv => true
+        :test=> true,
+       :ignore_avs => true,  
+       :ignore_cvv => true
 
         ### PRODUCTION GATEWAY SETTINGS
 	#:password => "RWKzJjQXET3SXPqWak4JqK4NmCovoHFKm6o4OFT1/eLUrySgdgkpQTf+NDWr8dstAXN+oo47JAit9QthxguYIRwgAMN+J0T4U9zXTydDZkqmfwrfoKlLouQZmCCs+shQGGzhU1rWL6Trdn9xsX5yQ+XQ3n5oAE0GaB+ccS9m9VTx0r8m95XFO7YINeCfKXVk+vKrL6BxSpuqODhU9f3i1K8koHYJKUE3/jQ1q/HbLQFzfqKOOyQIrfULYcYLmCEcIADDfidE+FPc108nQ2ZKpn8K36CpS6LkGZggrPrIUBhs4VNa1i+k63Z/cbF+ckPl0N5+aABNBmgfnHEvZvVU/w==",
