@@ -21,7 +21,8 @@ ActionController::Routing::Routes.draw do |map|
     m.index   '', :controller => 'member/website',  :action => 'index'
     #m.profile '/profile/:id',    :controller => 'member/users', :action=>"show"
     m.resource   :tent, :controller => 'member/tents'
-   
+    
+    map.resources :users, :user => { :index => :get, :edit => :get, :update=>:put,:create=>:post } 
     m.resources    :users,    :controller => 'member/users'
     m.extras_boat  '/boats/:id/extras', :controller => 'member/boats', :action => 'extras'
     m.resources   :boats, :controller => 'member/boats'
