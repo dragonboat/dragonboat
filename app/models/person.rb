@@ -77,7 +77,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
-      #errors.add(:zip, 'is not valid') unless zip =~ /^[\d]{6}+$/
+      errors.add(:zip, 'is not valid') unless zip =~ /^[\d]{0,5}$/
     end 
   end
 end

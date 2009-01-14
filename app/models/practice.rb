@@ -89,5 +89,9 @@ class Practice < ActiveRecord::Base
     team.nil? ? "available" : team.name
   end
   
-  
+  def undo_team
+    self.team_id = nil    
+    self.launch_driver = ""
+    self.steers_person = ""
+  end
 end

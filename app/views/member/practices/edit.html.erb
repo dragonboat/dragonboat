@@ -9,21 +9,35 @@
 <%# error_messages_for :practice %>
 <%if @practice.errors && @practice.errors.size>0%>
     <div id="errorExplanation" class="errorExplanation">
-      <%= content_tag("ul", @practice.errors.collect { |msg| content_tag("li", msg[1]) }) %>
+      <%# content_tag("ul", @practice.errors.collect { |msg| content_tag("li", msg[1]) }) %>
+      <p>You are only allowed one practice per month and your team already has a practice reserved for the month of 
+      <%=@old_practice.created_at.strftime('%B')%>. </p>
+      <p>If you wish to reschedule your practice to this new date / time your other practice will be cancelled. </p>
+      <p>
+      Are you sure you wish to reschedule your practice from <%=@old_practice.date%> / <%=@old_practice.time%> to 
+      <%= @current_practice.date%> / <%= @current_practice.time%>?
+      </p>
     </div>
-<%end%>
+    
+    <% form_for(:practice, :url => member_team_practices_path(@team,"reschedule",@practice.id), :html=>{:method=>:put}) do |f| %>
+        <%= f.hidden_field :team_id %>
+
+        <%= render :partial => 'form' , :locals=>{:f=>f } %>
+
+        <p><%= f.submit "Reschedule This Practice Time"%></p>
+    <% end %>
+<%else%>
 
 <% form_for(:practice, :url => member_team_practices_path(@team,"update",@practice.id), :html=>{:method=>:put}) do |f| %>
 <%= f.hidden_field :team_id %>
-<p>
-  <label for="practice_launch_driver">Launch Driver</label>:&nbsp;&nbsp;<%= f.text_field :launch_driver, :size=>25%>
-</p>
-<p>
-  <label for="practice_steers_person">Steers Person</label>: <%= f.text_field :steers_person, :size=>25%>
-</p>
 
-<p><%= f.submit "Reserve This Practice Time" %></p>
+<%= render :partial => 'form' , :locals=>{:f=>f } %>
+
+<p><%= f.submit "Reserve This Practice Time"%></p>
 <% end %>
+
+<%end%>
+
 <p>
 <%= button_to "Cancel",member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ) %>
 </p>
