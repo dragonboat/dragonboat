@@ -33,6 +33,8 @@ ActionController::Routing::Routes.draw do |map|
     m.tickets_list '/support/list', :controller => 'member/support',  :action => 'index'
   end
   
+  map.team_confirm_form "team/confirm", :controller => 'sessions', :action=>"confirm"
+   
   map.with_options :path_prefix => 'team/:slug', :name_prefix => 'team_' do |m|
     m.index   '', :controller => 'team/website', :action => 'index'
     m.resource    :user,    :controller => 'team/users'

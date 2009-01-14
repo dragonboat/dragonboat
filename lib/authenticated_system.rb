@@ -113,7 +113,7 @@ module AuthenticatedSystem
     end
     
    def login_from_code
-     self.current_user = User.find_by_code(params[:url_code]) if params[:url_code]
+     self.current_user = User.find_by_code(params[:url_code].strip) if params[:url_code]
    end
 
     # Called from #current_user.  Finaly, attempt to login by an expiring token in the cookie.

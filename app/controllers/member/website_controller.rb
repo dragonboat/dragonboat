@@ -75,6 +75,10 @@ class Member::WebsiteController < ApplicationController
     if current_user.is_member? 
        @team = current_user.member.team 
        @teams = [@team]
+       if current_user.member.team_id != params[:team_id].to_i
+         redirect_to member_boat_url(@team) 
+         return false
+       end
     elsif current_user.teams.exists?(params[:team_id])
       @team = current_user.teams.find(params[:team_id])
       @teams = current_user.teams.find_active(:all, :order=>"created_at DESC")

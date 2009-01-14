@@ -7,6 +7,8 @@ class MemberNotifier < ActionMailer::Base
     @body[:team]       = team
     @body[:captain]    = captain
     @body[:code_url]   = team_url_code_url(:slug => team.name.to_slug, :url_code => member.user.code, :host => APP_CONFIG['hostname'])
+    @body[:code_url_form]  = team_confirm_form_url(:host => APP_CONFIG['hostname'])
+    @body[:code]  = member.user.code
 
     @recipients        = member.user.email
     @from              = "noreply@phillydragonboat.info" #captain.email

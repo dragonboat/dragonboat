@@ -1,0 +1,11 @@
+<% content_for :title do %>Enter the confirmation code<% end %>
+
+  <div>
+    <% form_tag team_confirm_form_path do -%>
+    <p  class="required">
+        <label for="url_code">Confirmation Code</label><span id="required">*</span><br/>
+        <%= text_field_tag 'url_code',"",:size=>50 %></p>
+     </p>        
+        <%= submit_tag  "Enter"%>
+      <%end%>
+  </div>

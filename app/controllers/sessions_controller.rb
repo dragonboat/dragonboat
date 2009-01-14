@@ -2,6 +2,14 @@
 class SessionsController < ApplicationController
   #include AuthenticatedSystem
   # render new.rhtml
+  def confirm
+    if request.post? && current_user && current_user.member
+      redirect_to team_index_path(current_user.member.team.name.to_slug)
+      return
+    end
+    flash[:notice] = "Confirmation Code is not valid"  if request.post?
+  end
+  
   def new
   end
 
