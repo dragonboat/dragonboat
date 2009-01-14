@@ -58,8 +58,12 @@ class Order < ActiveRecord::Base
   
   def activate
     return false unless  self.valid?
-    user.to_captain
-    team.activate unless team.active?
+    
+    unless team.active?
+      user.to_captain
+      team.activate
+      create_member     
+    end
     #empty cart
     team.team_extras.each(&:destroy) if !@team.team_extras.empty?
     #add tents
@@ -117,5 +121,12 @@ class Order < ActiveRecord::Base
        tent.update_attribute(:t_type,"main") unless tent.type == 'main'
      end
     end
+  end
+  
+   def create_member
+    member = team.members.build
+    member.type = MemberType.find_by_name('co-captain')
+    member.user = user
+    member.valid? && member.save
   end
 end

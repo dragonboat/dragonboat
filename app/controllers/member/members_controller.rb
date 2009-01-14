@@ -38,6 +38,7 @@ class Member::MembersController < Member::WebsiteController
   def new
     @member = @team.members.build
     @member.invitation_status_id = invitation_status_id_by_name('unconfirmed')
+    @member.type_id = MemberType.find_by_name('paddler')
     @user = User.new
     @person = @user.person
   end
@@ -116,7 +117,7 @@ class Member::MembersController < Member::WebsiteController
   
   private
   def set_types
-    @types = MemberType.find(:all, :order => "name")
+    @types = MemberType.find(:all)
     @statuses = Status.find_invitation(:all, :order => "name")
   end
 end
