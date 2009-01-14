@@ -403,6 +403,8 @@ LEGEND {
     padding:2px;
     }
 #subMenu ul.tabs li.frozen a {color:#ccc;}
+
+#frozen  {color:#ccc; text-decoration:none;}
  .note { height: 50px;   overflow: auto; border: 1px solid silver;}
  .clearEm {
   clear: both;

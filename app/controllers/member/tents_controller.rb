@@ -10,14 +10,22 @@ class Member::TentsController < Member::WebsiteController
   end
   
   def update
+    @tents = @team.tents.find_main(:all)
     @tent_position = TentPosition.find(params[:id])
-    @tent = @team.tents.find_empty(:first)
-    @tent = @team.tents.find_main(:first, :order=>"updated_at desc") unless @tent
+   # @tent = @team.tents.find_empty(:first)
+    @tent = @team.tents.find_main(:first) unless @tent
     if @tent
-      unless  @tent_position.status == "available"
-       @tent.errors.add_to_base('Sorry, this tent position is reserved already') 
+      @tent_position.has_available_next_position?
+      
+      if  @tent_position.status != "available"
+         @tent.errors.add_to_base('Sorry, this tent position is reserved already') 
+      elsif  @tents.size > 1 && !@tent_position.has_available_next_position?
+        @tent.errors.add_to_base("Sorry, this 2 tent positions is reserved already") 
       else
        @tent.reserved(@tent_position)
+       if  @tents.size > 1
+         @tents[1].reserved(@tent_position.next_position)
+       end      
       end
     else
      @tent = @team.tents.find_main(:first)

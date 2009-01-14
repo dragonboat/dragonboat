@@ -13,16 +13,19 @@ class Tent < ActiveRecord::Base
   def reserved(tent_position)
     old_tent_position = TentPosition.find_by_number(self.location.to_i)
     self.location = tent_position.number.to_s
-    if self.save
+  
+    if tent_position.status == "available" && self.save
      tent_position.update_attribute(:status, "reserved") 
      old_tent_position.update_attribute(:status, "available")  if old_tent_position
     end
   end
   
-   def unreserved(tent_position)
+  def unreserved(tent_position)
     self.location = ""
     if self.save
      tent_position.update_attribute(:status, "available") 
     end
   end
+  
+
 end

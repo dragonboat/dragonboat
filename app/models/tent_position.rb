@@ -8,4 +8,17 @@ class TentPosition < ActiveRecord::Base
     @tent = Tent.find_by_location(self.number.to_s)
     @tent ? @tent.team.name : "" 
   end
+  
+  def has_available_next_position?
+    begin
+      @next = TentPosition.find_by_number(self.number.to_i + 1)
+      @next &&  @next.status == 'available'
+    rescue Exception 
+      false
+    end
+  end
+  
+  def next_position
+    TentPosition.find_by_number(self.number.to_i + 1)
+  end
 end
