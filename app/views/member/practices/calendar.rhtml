@@ -2,26 +2,29 @@
 <div>
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
-<%if  @current_practices.size>0%>
+
+<h2>Your team's currently scheduled practices:</h2>
+
 <table cellspacing=1 cellspadding=1 class="day">
   <tr>
     <th>Date</th>
     <th>Time</th>
     <th width="150">Assisted by</th>
   </tr>
-
+<%if  @current_practices.size>0%>
   <% @current_practices.each do |p|%>
    <tr>
      <td class="specialDay-current_reserved"><%=p.date%></td>
      <td class="specialDay-current_reserved"><%=p.time%></td>
      <td class="specialDay-current_reserved" style="text-align:left;">
        <%="<br>Launch Driver: #{p.launch_driver}" if p.launch_driver && !p.launch_driver.empty?%>
-       <%="<br>Steers Person: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
+       <%="<br>Steersperson: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
      </td>
    </tr>
   <%end%>
-</table>
 <%end%>
+</table>
+
 
 
 <h1>Manage Practices</h1>
@@ -38,19 +41,19 @@
 </div>
 
 <div id="table">
-  <table border="0" cellspacing="1" cellpadding="1">
+  <table border="0" cellspacing="1" cellpadding="1" width="100%">
  
-   <%#sub_month = (@start_date.month-@start_date.beginning_of_quarter.month).to_i %>
-   <%# "<td></td><td></td>" if sub_month == 2 %> 
-   <%# "<td></td>" if sub_month == 1 %> 
+   <%sub_month = (@start_date.month-@start_date.beginning_of_quarter.month).to_i %>
+   <%= "<td></td><td></td>" if sub_month == 2 %> 
+   <%= "<td></td>" if sub_month == 1 %> 
    <% @start_date.step( @end_date, 1.month ) do |date| %>
-    <tr>
+    
     <% @year = date.year
     @month = date.month
    %>     
-     <td valign="top"><%= render :partial => 'month' , :locals=>{:year=> @year, :month=> @month }%> </td>   
-   <%# "</tr><tr>" if @month.to_f%3 == 0 %> 
-   </tr>
+     <td valign="top" ><%= render :partial => 'month' , :locals=>{:year=> @year, :month=> @month }%> </td>   
+   <%= "</tr><tr>" if @month.to_f%3 == 0 %> 
+   
     <%end%>    
     </table>          
   </div>

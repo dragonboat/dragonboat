@@ -99,7 +99,7 @@ class Member::PracticesController < Member::WebsiteController
   def init_filter
    # On admin calendar view, only display July-Oct 2009
    from = Date.new(2009,7).beginning_of_month
-   to = Date.new(2009,10).end_of_month
+   to = Date.new(2009,9).end_of_month
    
    @filter = EventFilter.new(from, to)
   end

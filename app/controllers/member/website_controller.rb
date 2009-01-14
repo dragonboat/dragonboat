@@ -19,6 +19,10 @@ class Member::WebsiteController < ApplicationController
               redirect_to admin_index_path 
               return false
             else
+              if current_user.member && current_user.is_captain?
+                redirect_to  member_boat_path(current_user.member.team)
+                return false
+              end
               redirect_to  member_index_path 
               return false
             end
@@ -54,7 +58,12 @@ class Member::WebsiteController < ApplicationController
   end
   
   def is_member?
-    current_user.is_member?&&!current_user.is_captain? ? true : access_denied
+    if current_user.is_member? 
+      return true if current_user.member.is_unconfirmed?
+      return true if !current_user.is_captain?
+    end
+    access_denied
+    return false
   end
   
   def is_not_member?
