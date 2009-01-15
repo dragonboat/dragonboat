@@ -1,6 +1,7 @@
 <% form_remote_for(:member, :url => member_team_members_path(@team, 'create')) do |f| %>
 <%= error_messages_for :member %>
 <%= error_messages_for :person %>
+
 <table id="members" class="obj_list">
   <tr>
   <th><label for="member_type_id">Position<span id="required">*</span></label></th>
@@ -23,6 +24,6 @@
 </tr>
 </table>  
 
-  <span id="required">*</span>-Required <br/>
-  <%= f.submit "Add a new member" , :tabindex=>1007%>
+  <br/>
+  <%= f.submit "Create New Team Member and Send Invitation" , :tabindex=>1007%>
   <% end %>

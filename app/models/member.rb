@@ -44,12 +44,13 @@ class Member < ActiveRecord::Base
   
    def validate    
     if self.validation_mode == :waiver_form   
+      
+    if !self.is_unconfirmed? 
       for attr_name in [:confirm]
         errors.add_on_blank(attr_name, 'is required')
       end
-    
-    if !self.is_unconfirmed? 
-      errors.add(:accept, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver') if self.waiver_status_id != Status.find_waiver_by_name('accept').id
+      
+      errors.add(:accept, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver')  if accept!=1#self.waiver_status_id != Status.find_waiver_by_name('accept').id
       errors.add_on_blank(:sign_waiver_notice, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver')
     end
     
@@ -59,9 +60,11 @@ class Member < ActiveRecord::Base
   def accept=(checked)
     @accept = checked.to_i
     if checked.to_i == 1
-      self.waiver_status_id = Status.find_waiver_by_name('accept').id
-    else
-      self.waiver_status_id = Status.find_waiver_by_name('decline').id
+      if self.is_unconfirmed?
+        self.waiver_status_id = Status.find_waiver_by_name('decline').id
+      else
+        self.waiver_status_id = Status.find_waiver_by_name('accept').id
+      end
     end
   end
   
@@ -115,7 +118,21 @@ class Member < ActiveRecord::Base
     self.waiver_status_id == Status.find_waiver_by_name('accept').id
   end
   
+  def is_decline?
+    self.waiver_status_id == Status.find_waiver_by_name('decline').id
+  end
+  
   def date_of_signature
     waiver_sign_at.strftime("%d.%m.%Y") if waiver_sign_at
+  end
+  
+  def waiver_status_human
+    if self.is_accept?
+      "Waiver Signed"
+    elsif self.is_decline?
+      "Invitation Declined"
+    else
+      "Invitation Pending"
+    end
   end
 end

@@ -3,8 +3,7 @@
     <%= render :partial => 'persons/full_show'%>
 </table>
 <p>Position: <%=@paddler.type.name %></p>
-<p>Invitation Status: <%=image_tag "icons/#{@paddler.invitation_status.name.downcase}.png", :title=>"#{@paddler.invitation_status.name}".capitalize %> <%= @paddler.invitation_status.name%></p>
-<p>Sign Waiver Status: <%=image_tag "icons/#{@paddler.waiver_status.name.downcase}.png", :title=>"#{@paddler.waiver_status.name}".capitalize %> <%= @paddler.waiver_status.name%></p>
+<p>Approval Status: <%=image_tag "icons/#{@paddler.waiver_status.name.downcase}.png", :title=>"#{@paddler.waiver_status.name}".capitalize %> <%=@paddler.waiver_status_human%></p>
 <p>Created At: <%=@paddler.created_at.strftime("%d/%m/%Y") %></p>
 <p>IP: <%=@paddler.ip%></p>
 <p>Date of Waiver Signature: <%=@paddler.date_of_signature%></p>

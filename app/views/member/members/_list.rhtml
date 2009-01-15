@@ -2,13 +2,13 @@
   <tr>
     <th><%= link_to('Position', member_team_members_path(:sort => sort_link_for('type', params[:sort])), :title=>"Sort by Position" ) %></th>
     <th><%= link_to('Name', member_team_members_path(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
-    <th><%= link_to('E-mail', member_team_members_path(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th><%= link_to('Email', member_team_members_path(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by Email" ) %></th>
     <th><%= link_to('Gender', member_team_members_path(:sort => sort_link_for('gender', params[:sort])), :title=>"Sort by Gender" ) %></th>  
     <th><%= link_to('Created at', member_team_members_path(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
-    <th><%= link_to('Invitation', member_team_members_path(:sort => sort_link_for('invitation', params[:sort])), :title=>"Sort by Invitation" ) %></th>
-    <th><%= link_to('Waiver status', member_team_members_path(:sort => sort_link_for('waiver_status', params[:sort])), :title=>"Sort by Waiver status" ) %></th>
+    <th><%= link_to('Approval Status', member_team_members_path(:sort => sort_link_for('invitation', params[:sort])), :title=>"Sort by Approval Status" ) %>
+        <%# link_to('Waiver status', member_team_members_path(:sort => sort_link_for('waiver_status', params[:sort])), :title=>"Sort by Waiver status" ) %></th>
     
-    <th>&nbsp;</th>
+    <th>Manage</th>
   </tr>
   
   <% for member in @members %>
@@ -20,8 +20,8 @@
     <td><%= mail_to user.email%></td>
     <td><%=person.gender%></td>
     <td><%=member.created_at.strftime("%d.%m.%Y")%></td>
-    <td align="center"><%=image_tag "icons/#{member.invitation_status.name.downcase}.png", :title=>"#{member.invitation_status.name}".capitalize %></td>
-    <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
+    <%#image_tag "icons/#{member.invitation_status.name.downcase}.png", :title=>"#{member.invitation_status.name}".capitalize %>
+    <td align="left"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %> <%=member.waiver_status_human%></td>      
     
     <td><%# link_to 'Show', member_team_members_path(@team, "show", member.id) %> 
         <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %> |
