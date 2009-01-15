@@ -9,6 +9,10 @@
     <td class="field"><%= f.text_field :title, :tabindex=>1, :maxlength=>255, :size=>50 %> <%= link_to_function "More...", "ComatoseEditForm.toggle_extra_fields(this)", :id=>'more-options' %></td>
   </tr>
 
+  <tr>
+    <td class="label"><label for="page_short_title">Short Title</label></td>
+    <td class="field"><%= f.text_field :short_title, :tabindex=>2, :maxlength=>255, :size=>25 %> </td>
+  </tr>
     
   <tr id="slug_row" class="meta-info">
     <td class="label"><label for="page_slug">Slug</label></td>
