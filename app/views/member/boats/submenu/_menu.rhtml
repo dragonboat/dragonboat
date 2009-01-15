@@ -18,7 +18,7 @@
         <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path(@team) %> |</li>
 
         <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Edit Team', member_edit_boat_url(@team.id) %> |</li>
-         <li <%= "class=\"current\"" if  url =~/(users)/   %>><%= link_to 'Your Profile', member_profile_path %> </li>    
+         <li <%= "class=\"current\"" if  url =~/(users)/   %>><%= link_to 'Your Profile', member_edit_profile_url %> </li>    
       </ul>
     </div>
     <span class="clearEm">&nbsp;&nbsp;</span>

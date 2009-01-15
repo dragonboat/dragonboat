@@ -9,7 +9,7 @@ class Team::MembersController < Team::WebsiteController
   end
   
   def confirm
-    redirect_to team_edit_user_url(@team.name.to_slug) if !@member.is_unconfirmed?
+    redirect_to team_edit_profile_path(@team.name.to_slug) if !@member.is_unconfirmed?
     if request.post?
       @member.attributes = (params[:member])
       @member.validation_mode = :waiver_form   
@@ -23,7 +23,7 @@ class Team::MembersController < Team::WebsiteController
           redirect_to logout_url 
         else
           flash[:notice] = "Thank you for joining the team and signing your waiver!"
-          redirect_to team_edit_user_url(@team.name.to_slug)
+          redirect_to team_edit_profile_url(@team.name.to_slug)
         end
       end
     end
