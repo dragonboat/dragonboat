@@ -23,7 +23,7 @@
     <td align="center"><%=image_tag "icons/#{member.invitation_status.name.downcase}.png", :title=>"#{member.invitation_status.name}".capitalize %></td>
     <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
     
-    <td><%= link_to 'Show', member_team_members_path(@team, "show", member.id) %> |
+    <td><%# link_to 'Show', member_team_members_path(@team, "show", member.id) %> 
         <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %> |
        <%if user == current_user && (user.teams)%>
          <%= link_to 'Sign Waiver', team_member_confirm_url(@team.name.to_slug) if member.is_unconfirmed? %>

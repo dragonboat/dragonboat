@@ -17,13 +17,7 @@ Username: <%= text_field :user, :login, :size=>50, :disabled=>true%>
 <br/>
 
 <p>  
-<%if ["new","create"].include? controller.action_name%>
- 
-  <%=f.check_box(:invitation_status_id,{},invitation_status_id_by_name('confirmed'), invitation_status_id_by_name('unconfirmed'))%> 
-  Invite to join immediately
-<%else%>
+
 Invitation Status: <%=image_tag "icons/#{@member.invitation_status.name.downcase}.png", :title=>"#{@member.invitation_status.name}".capitalize %>
 
-<%= f.select :invitation_status_id, @statuses.map { |s| [s.name.capitalize, s.id] }%>
-<%end%>
 </p>

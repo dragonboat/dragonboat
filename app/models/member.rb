@@ -47,10 +47,12 @@ class Member < ActiveRecord::Base
       for attr_name in [:confirm]
         errors.add_on_blank(attr_name, 'is required')
       end
-    end
+    
     if !self.is_unconfirmed? 
       errors.add(:accept, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver') if self.waiver_status_id != Status.find_waiver_by_name('accept').id
       errors.add_on_blank(:sign_waiver_notice, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver')
+    end
+    
     end
    end
   

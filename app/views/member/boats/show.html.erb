@@ -92,20 +92,7 @@
   </tr>
 </table>
   <%end%>
-  <table class="box">
-    <tr>
-    <td><h2>Personal Details</h2></td>
-    <td width="100"><%=link_to "edit",  member_edit_team_profile_url(@team) %></td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-    <%= @person.first_name %> <%= @person.last_name %><br>
-    <%= @person.email %><br>
-    home:<%= @person.phone %><br>
-    cell: <%= @person.phone_2 %><br>
-    </td>
-  </tr>
-</table>
+
 
 <!-- Total Tents and reserved tent position  -->
 <table class="box">
@@ -130,6 +117,11 @@
     <td><%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></td>
   </tr>
   
+</table>
+<table class="box" style="padding-top:25px;">
+  <tr>
+    <td><%= link_to "Register Another Team", register_user_url%></td>
+  </tr>
 </table>
 
 <div class="clearEm">&nbsp;&nbsp;</div>
