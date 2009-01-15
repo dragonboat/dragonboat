@@ -1,8 +1,10 @@
   <% url = controller.controller_path 
   
   
+  if @current_page_name&&!@current_page_name.empty?
+  page = Comatose::Page.find_by_path( @current_page_name ) 
   
-  page = Comatose::Page.find_by_path( @current_page_name ) if @current_page_name&&!@current_page_name.empty?
+  end
     if page && page.is_page==true
     @parent = page.parent 
     if page.root == @parent ||  @parent == nil 

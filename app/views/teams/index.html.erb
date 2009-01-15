@@ -1,0 +1,24 @@
+<% content_for :title do %>Team Names<% end %>
+<h1>Team Names</h1>
+<%if @teams_list%>
+
+  
+<table class="obj_list" >
+  <tr>
+    <th width="200">Team Name</th>
+    <th width="100">Logo</th>
+    <th>Biographies</th>
+  </tr>
+  
+  <%@teams_list.each do |team|%>
+  <tr>
+    <td><%=textilize(team.name)%></td>
+    <td><%= image_tag( team.image.public_filename(:thumb), :id=>"logo" ) if team.image%></td>
+    <td><%=team.description%></td>
+  </tr>
+  <%end%>
+  
+</table>
+
+
+<%end%>

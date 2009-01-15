@@ -6,7 +6,13 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-    <title><%= yield :title %></title>
+    <title>
+      <%if @current_page_name && p = Comatose::Page.find_by_path( @current_page_name ) %>
+        <%=CGI.unescapeHTML(p.title) %>
+      <%else%>
+        <%= yield :title %>
+      <%end%>
+    </title>
     <!-- Styles -->
     <%= stylesheet_link_tag 'main' %>
     <%= stylesheet_link_tag 'redbox' %>
