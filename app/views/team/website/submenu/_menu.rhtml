@@ -1,5 +1,6 @@
 <% url = controller.controller_path %>
 <%slug = @team.name.to_slug%>
+<%content_for :object_menu do%>
     <div id="subMenu">
       <ul class="tabs">
         <li <%= "class=\"current\"" if url =~/(website)/  %>><%= link_to 'Team Home', team_index_path(slug)%> |</li>
@@ -10,7 +11,8 @@
       </ul>
     </div>
     <span class="clearEm">&nbsp;&nbsp;</span>
-    
+ <% end %>   
 <% content_for :breadcrumbing_area do %>
 <h1><%=@team.name%></h1>
 <% end %>
+

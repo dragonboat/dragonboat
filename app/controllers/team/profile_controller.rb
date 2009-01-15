@@ -11,7 +11,7 @@ class Team::ProfileController < Team::WebsiteController
     @person.validation_mode = :member 
     respond_to do |format|
         if  @person.valid? && @person.save
-          flash[:notice] = 'Profile Settings was successfully updated.'
+          flash[:notice] = 'Changes to your profile have been saved.'
           format.html { redirect_to team_edit_profile_url(@team.name.to_slug) }
           format.xml  { head :ok }
         else

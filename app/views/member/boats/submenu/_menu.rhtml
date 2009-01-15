@@ -1,5 +1,6 @@
+<%if @team && @team.active?%>
 <% url = controller.controller_path %>
-
+    <%content_for :object_menu do%>
     <div id="subMenu">
       <ul class="tabs">
           <li <%= "class=\"current\"" if request.request_uri =~/boats\/?$/  %>><%= link_to 'Team Home', member_boat_url(@team) %> |</li>
@@ -13,16 +14,21 @@
         <%end%>
         
         <li><%= link_to 'Purchase Tents', member_extras_boat_url(@team)%> |</li>
+        <%if current_user.teams.count_active > 0 %>
+        <li><%= link_to "Register Another Team", register_user_url%> |</li>
+        <%end%>
         
-      
         <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path(@team) %> |</li>
 
         <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Edit Team', member_edit_boat_url(@team.id) %> |</li>
-         <li <%= "class=\"current\"" if  url =~/(users)/   %>><%= link_to 'Your Profile', member_edit_profile_url %> </li>    
+         <li <%= "class=\"current\"" if  url =~/(users)/   %>><%= link_to 'Your Profile', member_edit_team_profile_url(@team) %> </li>    
       </ul>
     </div>
     <span class="clearEm">&nbsp;&nbsp;</span>
-    
+<% end %>
+ 
 <% content_for :breadcrumbing_area do %>
 <h1>Manage: <%=@team.name%></h1>
 <% end %>
+<% end %>
+

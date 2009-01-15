@@ -46,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.with_options :path_prefix => 'member/boats/:team_id', :name_prefix => 'member_' do |m|
+    m.resource :team_profile,    :controller => 'member/profile'
     m.create_member "/paddlers/:id/create_member",    :controller => 'member/paddlers', :action=>"create_member"
     m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"
     m.resources   :paddlers,    :controller => 'member/paddlers' 
