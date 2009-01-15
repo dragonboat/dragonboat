@@ -1,7 +1,7 @@
  <% if logged_in? %>
             Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
             <%unless current_user.is_admin?%>
-            <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_users_path %> &nbsp;|&nbsp;
+            <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_user_path(current_user.member.team.name.to_slug) : member_profile_path %> &nbsp;|&nbsp;
             
             
             <%if current_user.is_captain?%>

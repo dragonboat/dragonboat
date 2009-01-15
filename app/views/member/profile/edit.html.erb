@@ -1,0 +1,35 @@
+<h1>Editing Profile</h1>
+
+<%= error_messages_for :user %>
+
+<% form_for(:user, :url => member_profile_path, :html=>{:method=>:put}) do |f| %>
+  <table id="users" class="form">
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  </table>
+  <div id="changed_password" style="display:none;width:500px;">
+    <%=link_to_function "X", "$('changed_password').style.display='none';", :id=>"close"%>
+  <table class="form" >
+  <tr>
+    <td><label for="user_password">New Password:</lable></td>
+    <td><%= f.password_field :password, :size=>50 %></td>
+  </tr>
+  <tr>
+   <td><label for="user_password_confirmation">Confirm New Password:</lable></td>
+   <td><%= f.password_field :password_confirmation, :size=>50 %></td>
+  </tr>
+  </table>
+  </div>
+  <table id="users" class="form">
+  <tr>
+    <td colspan="2"><h4>Personal Information</h4></td></tr>
+    <tr><td colspan="2"><%= error_messages_for :person %></td></tr>
+    <% fields_for "person", @person do |person_field| %>
+    <%= render :partial => 'persons/full_form_1', :locals =>{:f=>person_field} %>
+    <% end %>
+  </table>
+  <span id="required">*</span>-Required <br/>
+  <%= f.submit "Update" %>
+<% end %>
+
+<%= link_to 'Show', member_profile_path %> |
+<%= link_to 'Back', member_profile_path %>
