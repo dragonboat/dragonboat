@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 87) do
+ActiveRecord::Schema.define(:version => 88) do
 
   create_table "answers", :force => true do |t|
     t.integer  "ticket_id"
@@ -195,6 +195,7 @@ ActiveRecord::Schema.define(:version => 87) do
     t.datetime "created_on"
     t.boolean  "is_page",                   :default => true
     t.string   "notice"
+    t.string   "short_title"
   end
 
   add_index "page_versions", ["is_page"], :name => "index_page_versions_on_is_page"
