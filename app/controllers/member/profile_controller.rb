@@ -3,15 +3,12 @@ before_filter :is_not_member?
 before_filter :set_user, :only=>[:index,:edit,:show]
 
 def index
-  render :action=>:show
+  render :action=>:edit  
 end
 
 def edit 
 end
 
-def show
-  render :action=>:show  
-end
 
 def update
   @user = current_user
@@ -22,7 +19,7 @@ def update
           UserNotifier.deliver_password_changed(@user, params[:user][:password])   
         end
         flash[:notice] = 'Profile Settings was successfully updated.'
-        format.html { redirect_to member_profile_url}
+        format.html { redirect_to member_edit_profile_url}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

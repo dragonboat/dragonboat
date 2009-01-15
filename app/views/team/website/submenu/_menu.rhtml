@@ -5,7 +5,7 @@
         <li <%= "class=\"current\"" if url =~/(website)/  %>><%= link_to 'Team Home', team_index_path(slug)%> |</li>
         <li <%= "class=\"current\"" if url =~/(members)/ %>><%= link_to 'Team Members', team_members_path(slug) %> |</li>
          
-        <li  <%= "class=\"current\"" if url =~/(user)/ %>><%= link_to 'Your Profile', team_user_path(slug)%> |</li>
+        <li  <%= "class=\"current\"" if url =~/(user)/ %>><%= link_to 'Your Profile', team_edit_profile_url(slug)%> |</li>
          
       </ul>
     </div>

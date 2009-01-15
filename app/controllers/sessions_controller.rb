@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
       redirect_back_or_default(admin_index_url)
       flash[:notice] = "Logged in successfully"
     else
+      flash[:notice] = "The username and/or password you entered were incorrect.<br>Please try to reenter them again correctly.<br><br> Remember passwords are CASE-SENSITIVE. <br>If you continue to have problems, please click on 'Forgot Your Password?' to retrieve your password."
       render :action => 'new'
     end
   end
