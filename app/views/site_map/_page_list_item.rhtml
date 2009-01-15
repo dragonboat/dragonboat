@@ -1,0 +1,36 @@
+<%# Params:
+#     - page  (Page Node)
+#     - level (integer indicating current tree depth)
+#   Called From:
+#     - index
+#   Description:
+#     This partial is used recursively. Render it with the root node, and it will recurse
+#     down all of the child nodes to build a list with proper indentation to indicate
+#     tree depth.
+%>
+<%if page.is_page %>
+<%
+
+# Level check, one, two, three...
+collapse_children = (level >= Comatose.config.default_tree_level)
+%>
+
+<li id="page_<%= page.id %>">
+  <table cellpadding="0" cellspacing="0">
+    <tr>
+    
+      <td>
+        <%= link_to page.title, page.full_path , :title=>"Path:#{page.full_path}", :class=>'page' %>
+      </td>
+    </tr>
+   
+  </table>
+
+  <ul id="page_list_<%= page.id %>" old="lvl-<%= page.id %>" class="page-list <%= 'collapsed' if collapse_children %>" >
+    <% for child in page.children %>
+      <%= render :partial=>'page_list_item', :locals=>{ :page=>child, :level=>level+1 } %>
+    <% end %>
+  </ul>
+
+  
+<%end%>

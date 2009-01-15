@@ -1,0 +1,22 @@
+<% content_for :title do %>Athlete's Village<% end %>
+<h1>Athlete's Village</h1>
+<%if @tent_positions %>
+
+  
+<table class="obj_list" >
+  <tr>
+    <th width="200">Tent Position</th>
+    <th>Team Name</th>
+  </tr>
+  
+  <%@tent_positions.each do |tent_position|%>
+  <tr>
+    <td><%=tent_position.number%></td>
+    <td><%=tent_position.team_name%></td>
+  </tr>
+  <%end%>
+  
+</table>
+
+
+<%end%>

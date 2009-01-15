@@ -1,0 +1,14 @@
+<% content_for :title do %>Site Map<% end %>
+<h1>Site Map</h1>
+
+
+  
+<% pages_paths = Comatose::Page.root.children.find(:all,:conditions=>"is_page=1").map(&:full_path)%>  
+
+    <ul >    
+     <% pages_paths.map { |path| Comatose::Page.find_by_path(path) }.each do |p| %>  
+        <%= render :partial=>'page_list_item', :locals=>{ :page=>p, :level=>1 } %>
+      <% end %>
+    </ul>
+
+

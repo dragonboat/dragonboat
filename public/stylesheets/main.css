@@ -500,3 +500,17 @@ border: 1px solid black;
 
 
 .obj_list td a {text-decoration: underline; }
+
+/* Table Obj List*/
+table.obj_list {margin-top: 10px;border: 1px #DDD solid; width: 100%;}
+table.obj_list td {vertical-align: top;}
+table.obj_list  th {
+  background-color:#EEE;
+  border-bottom:1px solid #05303c;
+  padding:2px 0px 2px 5px;
+  vertical-align:middle;
+  font-weight:bold;
+}
+
+/*Practice Manager*/
+.schedule_header { border-bottom:1px dotted #05303c; padding:10px; font-weight:bold; color: #8faebe;}

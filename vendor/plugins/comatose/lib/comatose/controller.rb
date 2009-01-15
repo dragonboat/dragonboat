@@ -2,7 +2,7 @@
 module Comatose
 
   class Controller < ActionController::Base 
-  
+    include ActionView::Helpers::CaptureHelper
     before_filter :handle_authorization, :set_content_type
     after_filter :cache_cms_page
       

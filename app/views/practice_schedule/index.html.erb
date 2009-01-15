@@ -1,0 +1,23 @@
+<% content_for :title do %>Practice Schedule<% end %>
+<h1>Practice Schedule</h1>
+<%if @practices%>
+
+  
+<table class="obj_list" width="100%">
+  <tr>
+    <th colspan="2" width="200">Date</th>
+    <th width="100">Time</th>
+    <th>Team</th>
+  </tr>
+  
+  <%@practices.each do |practice|%>
+  <tr>
+    <td><%=practice.date%></td>
+    <td><%=practice.created_at.strftime("%A")%> </td>
+    <td><%=practice.time%></td>
+    <td><%=practice.team_name%></td>
+  </tr>
+  <%end%>
+</table>
+
+<%end%>
