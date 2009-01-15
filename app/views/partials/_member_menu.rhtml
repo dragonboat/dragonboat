@@ -12,7 +12,7 @@
         <%else%>
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Team Home", :title=>"", :url=>member_boats_url, :current=>url =~/(boats|members)/ } %>
           <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Other Paddlers", :title=>"", :url=>member_paddlers_path, :current=>  request.request_uri =~/paddlers\/?$/ } %>
-          <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Your Profile", :title=>"", :url=> member_edit_profile_url, :current=> url =~/(users)/ } %>
+          <%= render :partial=>'partials/menu_item', :locals=>{:name=>"Your Profile", :title=>"", :url=> member_edit_team_profile_url(@team), :current=> url =~/(users)/ } %>
         <%end%>
 </ul>
 </div>

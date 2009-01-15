@@ -385,8 +385,9 @@ LEGEND {
     padding:0;
     list-style:none;
     height: 34px;
-    width: 780px;
+    width: 980px;
     float: left;
+    font: normal 12px 'Helvetica', 'Arial', 'Verdana', sans-serif;
     }
 #subMenu ul.tabs li {
     display: block; 
@@ -470,7 +471,7 @@ border: 1px solid black;
 
 .mon_sep {padding-left:51px; }
 .day_sep {padding-left:8px; }
-
+#step5 h2, #step3 h2 {font-size:14px;}
 #step5 h4, #step3 h4 {font-size:14px; color:#000; text-transform : uppercase; }
 #step5 div.left, #step3 div.left {float:left; widht:50%; margin-right:50px;}
 #step5 table.box {width: 325px;}
@@ -495,6 +496,7 @@ border: 1px solid black;
 #boat_list a:hover {
 border: 1px solid black;
 }
+#boat_list a.menu {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
 
 
 .obj_list td a {text-decoration: underline; }

@@ -59,7 +59,8 @@
         <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%= @team.human_name %></h3>
         <%end%>
          <%end%>  
-         <%if flash[:notice] && !flash[:notice].empty?%>
+         <%= yield :object_menu %>
+          <%if flash[:notice] && !flash[:notice].empty?%>
           <p id="notice"><%= flash[:notice] %></p>
          <%end%>
         

@@ -11,6 +11,7 @@ class Member::BoatsController < Member::WebsiteController
    # @team = @teams.first
     @teams = current_user.teams.find_active(:all, :order=>"created_at DESC")
     if @teams.size > 1
+      @team = @teams.first
       render :action=>:index
     else
       @team = current_user.is_member? ? current_user.member.team : current_user.teams.find(:first)
