@@ -16,7 +16,9 @@ class Team::MembersController < Team::WebsiteController
       @member.ip = request.remote_ip
       @person =  @member.user.person
       @person.attributes = (params[:person]) if params[:person]
-      @person.validation_mode = :sign_waiver
+      unless @member.is_decline?
+        @person.validation_mode = :sign_waiver
+      end
       @member.waiver_sign_at = Time.now()
       if @person.valid? && @member.valid? &&  @person.save && @member.save
         if @member.is_unconfirmed?

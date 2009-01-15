@@ -6,6 +6,5 @@
   </p> 
 <br/>
 <p>Position: <%=@member.type.name %></p>
-<p>Invitation Status: <%=image_tag "icons/#{@member.invitation_status.name.downcase}.png", :title=>"#{@member.invitation_status.name}".capitalize %> <%= @member.invitation_status.name%></p>
-<p>Sign Waiver Status: <%=image_tag "icons/#{@member.waiver_status.name.downcase}.png", :title=>"#{@member.waiver_status.name}".capitalize %> <%= @member.waiver_status.name%></p>
+<p>Approval Status: <%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %> <%=member.waiver_status_human%></p>
 <p>Created At: <%=@member.created_at.strftime("%d/%m/%Y") %></p>

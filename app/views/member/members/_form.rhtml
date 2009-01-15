@@ -15,9 +15,3 @@ Username: <%= text_field :user, :login, :size=>50, :disabled=>true%>
     <% end %>
 </table>
 <br/>
-
-<p>  
-
-Invitation Status: <%=image_tag "icons/#{@member.invitation_status.name.downcase}.png", :title=>"#{@member.invitation_status.name}".capitalize %>
-
-</p>

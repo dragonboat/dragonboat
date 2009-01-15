@@ -48,11 +48,21 @@ class Admin::PaddlersController < Admin::WebsiteController
   
  def update
     @paddler = @team.members.find_paddlers(params[:id])
+    paddler  = params[:paddler]
+    if paddler[:invitation_status_id].to_i != @paddler.invitation_status_id
+      if paddler[:invitation_status_id].to_i == Status.find_invitation_by_name('confirmed').id
+        @paddler.waiver_status_id = Status.find_waiver_by_name('accept').id  
+      else
+        @paddler.waiver_status_id = Status.find_waiver_by_name('decline').id 
+      end
+    end
     @user = @paddler.user
     @person = @user.person
     @person.attributes = (params[:person])
     @person.validation_mode = :member 
     @paddler.attributes=(params[:paddler])
+   
+ 
     respond_to do |format|    
     if  @person.valid? && @user.valid? && @paddler.valid? && @person.save! && @user.save! && @paddler.save!
         flash[:notice] = 'Paddler was successfully updated.'

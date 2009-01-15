@@ -4,7 +4,7 @@
     <th>E-mail</th>
     <th>Type</th>
     <th>Created at</th>
-    <th>Waiver status</th>
+    <th>Approval Status</th>
     <th>&nbsp;</th>
   </tr>
   
@@ -16,7 +16,7 @@
     <td><%= mail_to user.email%></td>
     <td><%=member.type.name%></td>
     <td><%=member.created_at.strftime("%d.%m.%Y")%></td>
-    <td align="center"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %></td>      
+    <td  align="left"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %> <%=member.waiver_status_human%></td>      
     
     <td>
       <%= link_to 'Show', team_member_path(@team.name.to_slug,member.id) %>    

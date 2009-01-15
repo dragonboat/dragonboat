@@ -15,9 +15,8 @@ Username: <%= text_field :user, :login, :size=>50, :disabled=>true%>
 <br/>
 
 <p>  
-
-Invitation Status: <%=image_tag "icons/#{@paddler.invitation_status.name.downcase}.png", :title=>"#{@paddler.invitation_status.name}".capitalize %>
-
+Approval Status: <%=image_tag "icons/#{@paddler.waiver_status.name.downcase}.png", :title=>"#{@paddler.waiver_status.name}".capitalize %> <%=@paddler.waiver_status_human%>
+<br>
 <%= f.select :invitation_status_id, @statuses.map { |s| [s.name.capitalize, s.id] }%>
 
 </p>
