@@ -2,71 +2,89 @@
 <%= render :partial => 'registration_header_6' unless @tents.size>0 %>
 <%= render :partial => 'purchase_tents_header_4' if @tents.size>0 %>
 
-      <%if  @tents.size > 0%>
-      <h2>Current tents number : <%=@tents.size%></h2>
-      <%end%>
+<p> Your Registration Details (print this page for a hard-copy of your receipt):</p>
 
 <div id="step5">
-  <h4><%=@team.name%></h4>
+  <h4>Order # <%=@order.id%></h4>
   <div class="left">
-  <table class="box">
+ <table class="box">
   <tr>
-    <td><h2>Personal Details</h2></td>
-    <td width="100"><%=link_to "edit",  member_edit_team_profile_url(@team)%></td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-    <%= @billing.first_name %> <%= @billing.last_name %><br>
-    <%= @billing.email %><br>
-    home:<%= @billing.phone %><br>
-    cell: <%= @billing.phone_2 %><br>
-    Username: <%=@user.login%><br>
-    Type: <%=@user.type%>
-    </td>
-  </tr>
-</table>
-
-<table class="box">
-  <tr>
-    <td><h2>Billing Address</h2></td>
-    <td width="100"></td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-     Street Address 1:  <%= @billing.address %><br>
-     Street Address 2:  <%= @billing.address2 %><br>
-     City:  <%= @billing.city %><br>
-     Zip Code:  <%= @billing.zip %><br>
-     State:  <%= @billing.state %><br>
-     Country:  <%= @billing.country %><br>
-    </td>
-  </tr>
-</table>
-</div>
-
-
-
-<table class="box">
-  <tr>
-    <td><h2>Your Team</h2></td>
-    <td width="100"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top"><%=@team.name%></td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top"><%=@team.url%><br><br>
+      <td colspan="2" valign="top">
         <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
       </td>
-  </tr>
+  </tr>  
   <tr>
-      <td colspan="2" valign="top"><br>Team Profile:<br/><br/>
-      <span class='notice'><%=@team.description%></span>
-        </td>
+      <td colspan="2" valign="top"><h2>Your Team: <%=@team.name%></h2></td>
+  </tr>
+ 
+  <tr>
+      <td colspan="2" valign="top">
+        <b>Team Type</b>: <%=@team.boat_type_human%> <br/>
+        <b>New team?</b>: <%=@team.visit_status.to_s.capitalize%> <br/>
+        <b>Team Profile</b>: 
+        <p>
+        <span class='notice'><%=@team.description%></span>
+        </p>
+        <b>Tents</b>: <%=@team.team_extras.size%> <br/>
+        
+      </td>
   </tr>    
 
 </table>
+<%@credit_card = @order.credit_card%>
+<table class="box">
+  <tr>
+    <td><h2>Billing Details</h2></td>
+    <td width="100"><%#link_to "edit", member_boat_checkout_path(@team)%></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+   <b>Card Type</b>: <%= @credit_card.type.capitalize %><br>
+   <b>Name on Card</b>: <%= @credit_card.first_name %> <%= @credit_card.last_name %><br>
+   <b>Card Number</b>: <%= @credit_card.display_number %><br>
+   <b>Expiration Date</b>: <%= @credit_card.month %> / <%= @credit_card.year %>
+    </td>
+  </tr>
+ 
 
+  <tr>
+    <td colspan="2" valign="top"><br/>
+   <b>Billing Address</b>: <%= "#{@billing.address} #{@billing.address2} #{@billing.city}, #{@billing.state} #{@billing.zip}" %>
+    </td>
+  </tr>
+  
+  </table>
+</div>
+
+
+<%@person = @team.captain.person%>
+<table class="box">
+  <tr>
+    <td><h2>Captain Details</h2></td>
+    <td width="100"><%#link_to "edit",  member_edit_profile_url(@team)%></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+    <%= @person.first_name %> <%= @person.last_name %><br>
+    <%= @person.email %><br>
+      
+            <b>Street Address 1</b>: <%= @person.address %><br>
+          
+            <b>Street Address 2</b>: <%= @person.address2 %><br>
+          
+            <b>City</b>: <%= @person.city %><br>
+         
+            <b>Zip code</b>: <%= @person.zip%><br>
+          
+            <b>State</b>: <%= @person.state%><br>
+          
+            <b>Country</b>: <%=  @person.country %><br>
+              
+    <%= @person.phone %><br>
+    <%= @person.phone_2 %><br>
+    </td>
+  </tr>
+</table>
 <div class="clearEm">&nbsp;&nbsp;</div>
 
 

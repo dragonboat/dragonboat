@@ -6,9 +6,27 @@
     <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"previous", :s6=>"current"} %>
 <%end%>
 <% content_for  :current_page_name do%>
-  Registration Complete
+  Team Registration Complete
 <%end%>
 
-<h2>Thank you! You have successfully registered your team! 
-    <%= "Please proceed to #{link_to('Select your tent position', member_team_tents_path(@team.id))}." if @team.tents.size>0 %>
-</h2>
+ <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+        <%= render :comatose=>'step6-instructions', :silent=>true %>
+<!-- -->
+
+<h2>
+  Congratulations, you have successfully registered your team: <%=@team.name%> for the 2009 Philadelphia International Dragon Boat Festival
+    
+    <%# "Please proceed to #{link_to('Select your tent position', member_team_tents_path(@team.id))}." if @team.tents.size>0 %>
+  </h2>
+  <div>
+    <p>Now that you have registered your team you can:</p>
+    <ul id="none_style">
+    <li>- <%=link_to "Update your team's details", member_edit_boat_url(@team) %> - update your team's name, profile, logo, and website</li>
+    <li>- <%= link_to "Manage your team", member_team_members_path(@team)%> - Invite paddlers to join your team</li>
+    <li>- <%= link_to "Schedule your practices", member_team_practices_path(@team)%> - choose one date/time each month for a team practice on the Schuylkill River</li>
+    <%if @team.tents.size>0%>
+      <li>- <%= link_to "Reserve your tent position", member_team_tents_path(@team)%> - pick the spot where your team will rest in the Athletes Village</li>
+    <%end%>
+    </ul>
+
+ </div>

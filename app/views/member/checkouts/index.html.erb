@@ -2,14 +2,14 @@
 <%= render :partial => 'registration_header_4' unless @team.active? %>
 <%= render :partial => 'purchase_tents_header_2' if @team.active? %>
 
+<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+  <%= render :comatose=>'step4-instructions', :silent=>true %>
+<!-- -->
 
-  <h2>Boat: <%= @team.name%></h2> 
-  <fieldset>
-    <legend>Step 4 - Payment Details</legend>
     <%= error_messages_for :order, :credit_card, :person, :billing %>
     
     <% form_for :order, @order, :url => {:action => "confirm_order"} do |f| %>
-    
+    <!--
     <% content_tag :fieldset do %> 
     <%= content_tag :legend, "Your Personal Information" %>
     <% fields_for :person, @person do |p| %>
@@ -27,12 +27,16 @@
     </p> 
     <% end %>
    <% end %>
-   
-   <% content_tag :fieldset do %> 
-   <%= content_tag :legend, "Credit Card" %>
+   -->
+  
+    <h4>Credit Card Information</h4>
     <% fields_for :credit_card, @credit_card do |cc| %>
     <p class="required">
-      <label for="credit_card_type">Type</label>:<span id="required">*</span><br/><%= cc.select :type, Order::CARD_TYPES.map { |t| [t[0].capitalize,t[1]] } %>
+      <label for="credit_card_type">Card Type</label>:<span id="required">*</span><br/>
+      <%Order::CARD_TYPES.each do |type| %>
+        <%= cc.radio_button :type, type[1] %>  
+        <label for="credit_card_type_<%=type[1]%>"> <%=image_tag "icons/#{type[1]}.gif", :title=>type[0].capitalize,:border=>0%> </label>
+        <%end%>
     </p>
     <p class="required">
       <label for="credit_card_first_name">First Name</label>:<span id="required">*</span><br/> <%= cc.text_field :first_name %>
@@ -43,21 +47,23 @@
     <p class="required">
       <label for="credit_card_number">Card Number</label>:<span id="required">*</span><br/><%= cc.text_field :number %></p>
     <p class="required">
-      <label for="credit_card_month">Expiration Date
-      <br/>
-      Month<span>/</span>Year:</label><span id="required">*</span><br/>
-      <nobr><%= cc.select :month, (1..12) %><%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %></nobr>
-    </p>
-    <p class="required">
          <label for="credit_card_month">Card Verification Number</label>
          <%=link_to "what's this?", cvv_url, :target=>"_blank"%>:
          <span id="required">*</span><br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
-       </p>     
-       <% end %>
-       <% end %>
-       
-       <% content_tag :fieldset do %> 
-       <%= content_tag :legend, "Billing Address" %>
+     </p> 
+      <p class="required">
+      <label for="credit_card_month">Expiration Date:</label>
+      <span id="required">*</span>
+      <br/>
+      Month<span>/</span>Year<br/>
+      <nobr><%= cc.select :month, (1..12) %><%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %></nobr>
+    </p>
+      
+           <% end %>
+           
+           
+           
+           <h4>Billing Address</h4>
            <div>
           <p>
             <b>Street Address 1</b>: <%= @person.address %>
@@ -78,13 +84,13 @@
             <b>Country</b>: <%=  @person.country %>
           </p>     
      </div>
-       <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>Same as Personal Address</p>
+     <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>Same as Personal Address  (uncheck this to change the billing address)</p>
+     
+     <%= render :partial => 'billing_form' %>
+     
+     
+     
+     <%= f.submit "CONTINUE REGISTRATION" %>
+     <span class='notice'> (you will be able to verify all information on the following screen before your card is charged)</span>
 
-       <%= render :partial => 'billing_form' %>
-       <% end %>
-   
-   
-   <%= f.submit "Continue Checkout..." %>
-  
 <% end %>
-</fieldset>

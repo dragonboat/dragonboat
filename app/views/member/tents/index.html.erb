@@ -4,6 +4,7 @@
 </div>
 
 <h1>Select Tents</h1>
+
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
 <p><%= render :comatose=>'select-tent-position-instructions', :silent=>true %></p>
 <!-- -->
@@ -11,6 +12,13 @@
 <%= link_to image_tag("tents_graphic.jpg", :border=>"0", :id=>"tents_graphic"), "/images/tents_graphic.jpg"%>
  <!--[if lte IE 6]></td><td><![endif]-->
 <div id="tent_positions_list">
+  <div  id="step5">
+<table class="box">
+  <tr>
+    <td><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
+  </tr>
+</table>
+</div>
   <h2>Position List</h2>
 
 <div class="tent_positions">

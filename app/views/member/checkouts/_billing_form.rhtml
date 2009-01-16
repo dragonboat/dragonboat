@@ -13,7 +13,7 @@
             <label for="person_state">State</label>:<span id="required">*</span><br/>  <%= p.select :state, states_options %>
           </p>
           <p class="required">
-            <label for="person_zip">Zip code</label>:<span id="required">*</span><br/>  <%= p.text_field :zip , :size=>6%>
+            <label for="person_zip">Zip code</label>:<span id="required">*</span><br/>  <%= p.text_field :zip , :size=>6, :maxlength=>5%>
           </p>  
           <p class="required">
             <label for="person_country">Country</label>:<span id="required">*</span><br/><%= p.country_select :country, ['United States', 'Canada'] %>

@@ -32,7 +32,7 @@
     </tr>
     <tr>
         <td>Zip code:</td>
-        <td  class="notRequired"><%= f.text_field :zip%></td>    
+        <td  class="notRequired"><%= f.text_field :zip, :size=>6, :maxlength=>5%></td>    
     </tr>
     <tr>
         <td>State:</td>

@@ -1,19 +1,18 @@
-<% content_for :title do %>Step 2 - Enter Boat Details<% end %>
+<% content_for :title do %>Step 2 - Enter Team Details<% end %>
 <% content_for :breadcrumbing_area do%>
-<h1>Team Registration > Step 2 - Enter Boat Details</h1>
+<h1>Team Registration > Step 2 - Enter Team Details</h1>
 <%end%>
 <% content_for :submenu_area do%>
 <%= render :partial => 'partials/order_step_list', :locals =>{:s1=>"previous", :s2=>"current", :s3=>"next", :s4=>"next", :s5=>"next", :s6=>"next"} %>
 <%end%>
 <% content_for  :current_page_name do%>
-  Enter Boat Details
+  Enter Team Details
 <%end%>
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'step2-instructions', :silent=>true %>
 <!-- -->
 <div>
-    <fieldset>
-    <legend>Step 2 - Enter Boat Details</legend>
+   
     <% form_for :team, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
     <%= error_messages_for :team %>
     
@@ -21,8 +20,9 @@
     
         
         <div id="buttons">
-            <%= submit_tag  "Continue >"%><br/>
+            <br>
+            <%= submit_tag  "CONTINUE REGISTRATION"%><br/>
         </div>
     <%end%>
-    </fieldset>
+ 
 </div>

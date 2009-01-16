@@ -1,7 +1,6 @@
-  <div id="step3">
-      <h3> <span>Boat</span>: <span class="header"><%= @team.name%></span></h3> 
-      
-      <h2>Current tents number : <%=@tents.size%></h2>
+
+<div id="step3">
+
      
       
       <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true, :id=>"extras_form" } do |f| %>

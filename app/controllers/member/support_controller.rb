@@ -1,6 +1,7 @@
 class Member::SupportController < ApplicationController
   include SupportHelper
   before_filter :login_required, :is_not_admin?, :fetch_user
+  before_filter :fetch_team
   layout 'member'
 
 def index
@@ -63,4 +64,14 @@ private
       end
       false
   end
+  
+  def fetch_team
+   begin
+     @team = current_user.teams.find(params[:team_id])
+     @teams = current_user.teams.find_active(:all, :order=>"created_at DESC")
+   rescue Exception 
+     @team = current_user.member.team  if current_user.is_member?
+     @team = current_user.teams.find(:first, :order=>"created_at") unless @team
+   end
+ end
 end

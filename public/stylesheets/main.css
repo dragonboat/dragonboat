@@ -344,6 +344,8 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 
 #none  {list-style-type : none; display : block; margin-left:230px;}
 #none  li {padding:3px;}
+#none_style  {list-style-type : none; display : block;}
+#none_style li a {text-decoration:underline;}
 
 /**Volunteer Form**/
 #volunteer_form table.person td {padding:0px 5px 5px 0px;}
@@ -442,7 +444,7 @@ LEGEND {
 #ticket-list div#from {padding-top:5px; color:blue;}
 
 /*Tent Positions*/
-#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px; margin-bottom: 6260px }
+#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px; }
 
 #tent_positions_list {
 	position:relative;

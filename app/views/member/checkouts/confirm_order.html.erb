@@ -1,23 +1,36 @@
 <% @tents = @team.tents  %>
 <%= render :partial => 'registration_header_5' unless @team.active? %>
 <%= render :partial => 'purchase_tents_header_3' if @team.active? %>
-
+        
+       <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+        <%= render :comatose=>'step5-instructions', :silent=>true %>
+        <!-- -->
 <div id="step5">
- <h4><%=@team.name%></h4> 
-  <div class="left">
+
+  <div class='left'>
   <table class="box">
   <tr>
-    <td><h2>Personal Details</h2></td>
-    <td width="100"><%#link_to "edit",  member_edit_profile_url(@team)%></td>
-  </tr>
+      <td colspan="2" valign="top">
+        <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
+      </td>
+  </tr>  
   <tr>
-    <td colspan="2" valign="top">
-    <%= @person.first_name %> <%= @person.last_name %><br>
-    <%= @person.email %><br>
-    home:<%= @person.phone %><br>
-    cell: <%= @person.phone_2 %><br>
-    </td>
+      <td colspan="2" valign="top"><h2>Your Team: <%=@team.name%></h2></td>
   </tr>
+ 
+  <tr>
+      <td colspan="2" valign="top">
+        <b>Team Type</b>: <%=@team.boat_type_human%> <br/>
+        <b>New team?</b>: <%=@team.visit_status.to_s.capitalize%> <br/>
+        <b>Team Profile</b>: 
+        <p>
+        <span class='notice'><%=@team.description%></span>
+        </p>
+        <b>Tents</b>: <%=@team.team_extras.size%> <br/>
+        
+      </td>
+  </tr>    
+
 </table>
 
 <table class="box">
@@ -27,47 +40,64 @@
   </tr>
   <tr>
     <td colspan="2" valign="top">
-   Card Type: <%= @credit_card.type.capitalize %><br>
-   Name on Card: <%= @credit_card.first_name %> <%= @credit_card.last_name %><br>
-   Card Number: <%= @credit_card.display_number %><br>
-   Expiration: <%= @credit_card.month %> / <%= @credit_card.year %>
+   <b>Card Type</b>: <%= @credit_card.type.capitalize %><br>
+   <b>Name on Card</b>: <%= @credit_card.first_name %> <%= @credit_card.last_name %><br>
+   <b>Card Number</b>: <%= @credit_card.display_number %><br>
+   <b>Expiration Date</b>: <%= @credit_card.month %> / <%= @credit_card.year %>
     </td>
   </tr>
-</table>
+ 
+
+  <tr>
+    <td colspan="2" valign="top"><br/>
+   <b>Billing Address</b>: <%= "#{@billing.address} #{@billing.address2} #{@billing.city}, #{@billing.state} #{@billing.zip}" %>
+    </td>
+  </tr>
+  
+  </table>
 </div>
 
 
 
 <table class="box">
   <tr>
-    <td><h2>Your Team</h2></td>
-    <td width="100"> <%#link_to "edit", member_edit_boat_url(@team.id) %></td>
+    <td><h2>Captain Details</h2></td>
+    <td width="100"><%#link_to "edit",  member_edit_profile_url(@team)%></td>
   </tr>
   <tr>
-      <td colspan="2" valign="top"><%=@team.name%></td>
+    <td colspan="2" valign="top">
+    <%= @person.first_name %> <%= @person.last_name %><br>
+    <%= @person.email %><br>
+      
+            <b>Street Address 1</b>: <%= @person.address %><br>
+          
+            <b>Street Address 2</b>: <%= @person.address2 %><br>
+          
+            <b>City</b>: <%= @person.city %><br>
+         
+            <b>Zip code</b>: <%= @person.zip%><br>
+          
+            <b>State</b>: <%= @person.state%><br>
+          
+            <b>Country</b>: <%=  @person.country %><br>
+              
+    <%= @person.phone %><br>
+    <%= @person.phone_2 %><br>
+    </td>
   </tr>
-  <tr>
-      <td colspan="2" valign="top"><%=@team.url%><br><br>
-        <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
-      </td>
-  </tr>
-  <tr>
-      <td colspan="2" valign="top"><br>Team Profile:<br/><br/>
-      <span class='notice'><%=@team.description%></span>
-        </td>
-  </tr>    
-
 </table>
+
 
 <div class="clearEm">&nbsp;&nbsp;</div>
 
-
-<h1>Your Order</h1>
 <div class="left">
+<h1>Order Total</h1>
+
 <table class="big-box" cellspadding="0" cellspacing="0">
+ 
   <%unless @team.active?%>
   <tr>
-    <td><%=@team.boat_type_human%></td>
+    <td><%=@team.boat_type_human%> : <%=@team.name%> </td>
     <td width="100" align="right"><%=number_to_currency(@team.price)%></td>
   </tr>
   <%end%>
@@ -92,9 +122,9 @@
 <table class="box">
   <tr>
     <td class='notice' height="65" valign="top">
-      <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
-        <%= render :comatose=>'step5-instructions', :silent=>true %>
-        <!-- -->
+     
+        <%= render :comatose=>'step5-instructions-2', :silent=>true %>
+       
     </td>
   </tr>
   <tr>
@@ -128,7 +158,7 @@
 <% end %>
 
 
-<%= f.submit "Complete Boat Registration" %>
+<%= f.submit "COMPLETE REGISTRATION" %>
 
 <% end %>
       </td>
@@ -137,7 +167,4 @@
 
 <div class="clearEm">&nbsp;&nbsp;</div>
 
-<!-- This is a snippet being edited by admin. Snippet Name "Confirm Order" -->
-<%= render :comatose=>'confirm-order', :silent=>true %>
-<!-- -->
 </div>

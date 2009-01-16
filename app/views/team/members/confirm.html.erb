@@ -24,8 +24,16 @@
         
    <% fields_for :person, @person do |p| %>
    <p>
-     <label>Full Name:</label><br/>   
-     <%=@person.first_name.capitalize%>  <%=@person.last_name.capitalize%>
+     <label for="person_first_name">First Name:</label><br/>   
+       <%= p.text_field :first_name %>  
+   </p>
+   <p>
+     <label for="person_last_name">Last Name:</label><br/>   
+       <%= p.text_field :last_name%>  
+   </p>
+   <p>
+     <label for="person_email">Email Address:</label><br/>
+     <%= p.text_field :email%>
    </p>
    <p>
      <label for="person_birthday_date">Date of Birth:</label><br/>
@@ -33,10 +41,33 @@
       <br/>
       <nobr><%= p.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920,  :include_blank => ""%></nobr>
    </p>
-   <p>
-     <label for="person_address">Address:</label><br/>
-      <%= p.text_field :address%>
-   </p>
+    <p>
+         <label for="person_address">Street Address 1:</label>
+         <br/>
+         <%= p.text_field :address %>
+          <!-- Hide Country: -->
+          <%= hidden_field_tag "person[country]", "United States"%>
+        </td>
+    </p>
+    <p>
+        <label for="person_address2">Street Address 2:</label>
+        <br/><%= p.text_field :address2%>
+    </p>
+
+    <p>
+        <label for="person_city">City:</label><br/>
+        <%= p.text_field :city%>  
+    </p>
+    
+    <p>
+        <label for="person_state">State:</label><br/>
+        <%= p.select :state, states_options%>    
+    </p>
+    
+    <p>
+        <label for="person_zip">Zip code:</label></span><br/>
+        <%= p.text_field :zip, :size=>6, :maxlength=>5%>
+    </p>
     <p>
      <label for="person_phone">Telephone Number:</label><br/>
       <%= p.text_field :phone%>
@@ -50,12 +81,13 @@
       <%= p.text_field :emergency_contact_number%>
    </p>   
    <p>
-     <label for="person_medical_conditions">Please note any medical conditions to be aware of:</label><br/>
+     <label for="person_medical_conditions">Medical Conditions:</label><br/>
       <%= p.text_area :medical_conditions, :rows=>3%>
    </p>
    
    <% end %>
-  
+   
+   
    <p>
    <label for="member_sign_waiver_status">Please retype your complete name to sign this waiver:</label><br/>
    <%= f.text_field :sign_waiver_notice%>

@@ -12,9 +12,9 @@ Team Registration > Step 1 - Create Account
 <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'step1-instructions', :silent=>true %>
 <!-- -->
-  <p class="notice">If you are registered on the online system already please  click here
-  <%= link_to "Sign In", login_url%>
-  </p>
+ 
+  <%# link_to "Sign In", login_url%>
+
   <div>
     <% @object = @user %>  
    
@@ -23,7 +23,7 @@ Team Registration > Step 1 - Create Account
           <% form_for :user, :url => register_user_path, :html => { :multipart => true } do |f| %>
           <%= render :partial => 'form', :locals =>{:f=>f} %>
           <div id="buttons">
-              <%= submit_tag  "Sign Up"%>
+              <%= submit_tag  "CONTINUE REGISTRATION"%>
           </div>
       <%end%>
   </div>

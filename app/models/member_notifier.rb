@@ -2,7 +2,7 @@ class MemberNotifier < ActionMailer::Base
   def unconfirmed(member, sent_at = Time.now)
     team = member.team
     captain = team.captain
-    @subject           = "Invitation to join the team #{team.name}"
+    @subject           = "Invitation to join the team #{CGI.unescapeHTML(team.name)}"
     @body[:member]     = member
     @body[:team]       = team
     @body[:captain]    = captain
@@ -11,7 +11,7 @@ class MemberNotifier < ActionMailer::Base
     @body[:code]  = member.user.code
 
     @recipients        = member.user.email
-    @from              = "noreply@phillydragonboat.info" #captain.email
+    @from              = "#{APP_CONFIG['noreply_email']}" 
     @sent_on           = sent_at
     @headers           = {}
   end

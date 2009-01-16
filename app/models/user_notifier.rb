@@ -16,7 +16,7 @@ class UserNotifier < ActionMailer::Base
   protected
   def setup_email(user)
     @recipients  = "#{user.email}"
-    @from        = "#{APP_CONFIG['admin_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}"
     @subject     = ""
     @sent_on     = Time.now
     @body[:user] = user

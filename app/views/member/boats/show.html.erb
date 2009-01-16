@@ -116,6 +116,9 @@
     <td>Current Tent Position:</td>
     <td><%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></td>
   </tr>
+  <tr>
+    <td colspan="2"><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
+  </tr>
   
 </table>
 <table class="box" style="padding-top:25px;">

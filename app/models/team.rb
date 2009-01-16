@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
-  VISIT_STATUS = [["Please Select",""],["Yes - this is my first time", "first_time"],  ["Yes - new to this festival", "new_to_this_festival"],["No - I've done this before","done_this_before"]]
+  VISIT_STATUS = [["Please Select",""],["Yes", "yes"], ["No","no"]]
  
   validates_presence_of :name
   belongs_to :boat_type, :foreign_key => 'type_id', :class_name=>"BoatType"

@@ -11,6 +11,12 @@
        </td>
     </tr>
     <tr>
+        <td class="required"><label for="person_email">Email Address:</label>
+        <span id="required">*</span><br/>
+        <%= f.text_field :email, :tabindex=> 8 %>
+        </td>
+    </tr>
+    <tr>
         <td class="required"><label for="person_gender_f_f">Gender:</label>
         <span id="required">*</span><br/>
         <%=f.radio_button :gender_f, "F", :tabindex=> 6, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1", :onclick=>"$('person_gender_m_m').checked=0;"%> <label for="person_gender_f_f" >Female</label>
@@ -19,39 +25,23 @@
          <%# f.radio_button :gender, "M" %> 
       </td>
     </tr>
-    <tr>
-        <td class="required"><label for="person_email">Email Address:</label>
-        <span id="required">*</span><br/>
-        <%= f.text_field :email, :tabindex=> 8 %>
-        </td>
-    </tr>
-    <tr>
-        <td class="required"><label for="person_phone">Home Phone number:</label>
-        <span id="required">*</span><br/>
-        <%= f.text_field :phone, :tabindex=> 9 %><a>
-        </td>
-    </tr>
-    <tr>
-        <td><label for="person_phone_2">Mobile Phone:</label>
-        <br/>
-        <%= f.text_field :phone_2, :tabindex=> 10 %>
-        </td>  
-    </tr>
+    
 
     <tr>
-         <td class="required"><label for="person_address">Street Address 1:</label>
+         <td class="required"><label for="person_address">Street Address:</label>
          <span id="required">*</span><br/>
          <%= f.text_field :address , :tabindex=> 11%>
           <!-- Hide Country: -->
           <%= hidden_field_tag "person[country]", "United States"%>
         </td>
     </tr>
-    <tr>
+    <!--
+      <tr>
         <td ><label for="person_address2">Street Address 2:</label>
         <br/><%= f.text_field :address2 , :tabindex=> 12%>
         </td>
     </tr>
-
+-->
     <tr>
         <td class="required"><label for="person_city">City:</label>
         <span id="required">*</span><br/>
@@ -69,5 +59,20 @@
         <span id="required">*</span><br/>
         <%= f.text_field :zip, :tabindex=> 15, :size=>6, :maxlength=>5%></td>    
     </tr>
+    
+    <tr>
+        <td class="required"><label for="person_phone">Phone Number:</label>
+        <span id="required">*</span><br/>
+        <%= f.text_field :phone, :tabindex=> 9 %><a>
+        </td>
+    </tr>
+    <!--
+      <tr>
+        <td><label for="person_phone_2">Mobile Phone:</label>
+        <br/>
+        <%= f.text_field :phone_2, :tabindex=> 10 %>
+        </td>  
+    </tr>
+    -->
     
   

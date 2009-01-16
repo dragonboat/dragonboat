@@ -12,3 +12,17 @@
 <h2>Thank you! You have successfully registered your tents! 
     <%= "Please proceed to #{link_to('Select your tent position', member_team_tents_path(@team.id))}." if @team.tents.size>0 %>
 </h2>
+
+ <div>
+    <ul id="none_style">
+    <li>- <%=link_to "Update your team's details", member_edit_boat_url(@team) %> - update your team's name, profile, logo, and website</li>
+    <li>- <%= link_to "Manage your team", member_team_members_path(@team)%> - Invite paddlers to join your team</li>
+    <li>- <%= link_to "Schedule your practices", member_team_practices_path(@team)%> - choose one date/time each month for a team practice on the Schuylkill River</li>
+    <li>- <%= link_to "Reserve your tent position", member_team_tents_path(@team)%> - pick the spot where your team will rest in the Athletes Village</li>
+    </ul>
+
+ </div>
+      
+      <%if  @tents.size > 0%>
+      <h2>Current tents number : <%=@tents.size%></h2>
+      <%end%>

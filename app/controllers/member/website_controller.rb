@@ -72,7 +72,7 @@ class Member::WebsiteController < ApplicationController
   end
   
   def fetch_team
-    if current_user.is_member? 
+    if current_user.is_member?&&current_user.teams.size==0
        @team = current_user.member.team 
        @teams = [@team]
        if current_user.member.team_id != params[:team_id].to_i

@@ -1,6 +1,6 @@
 class Member::CheckoutsController < Member::WebsiteController 
 #before_filter :has_any_boat?, :except=> :success
-before_filter :fetch_team
+before_filter :fetch_team_and_redirect
 before_filter :secure_site
 skip_before_filter :leave_secure_site
 
@@ -135,4 +135,10 @@ ActiveMerchant::Billing::Base.mode = :test#:live
       return false
     end
   end
+  
+  private
+   def fetch_team_and_redirect
+     @team = current_user.teams.find(params[:team_id])
+     @team ? true : access_denied
+   end
 end

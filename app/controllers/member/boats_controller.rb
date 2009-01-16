@@ -2,7 +2,8 @@ class Member::BoatsController < Member::WebsiteController
  # before_filter :has_any_boat?, :except => [:index, :edit, :update]
  # require_role "captain", :only=>[:index]
   before_filter :has_boat?, :only=>[:index, :edit, :update, :show]
-  before_filter :fetch_team, :only=>[:show, :edit, :update, :extras, :add_extras]
+  before_filter :fetch_team, :only=>[:show, :edit, :update]
+  before_filter :fetch_team_and_redirect, :only=>[:extras, :add_extras]
   
   before_filter :secure_site, :except => [:index, :edit, :update, :show]
   skip_before_filter :leave_secure_site
@@ -102,15 +103,24 @@ class Member::BoatsController < Member::WebsiteController
   
   def add_extras 
     @team.team_extras.each(&:destroy) if !@team.team_extras.empty?
-    
+    @tents = @team.tents
     if params[:extras]&&params[:quantity]
       #each_pair
       params[:extras].each_key  do |id|
         extras = Extras.find_available(id)
         quantity = params[:quantity][id].to_i
-        @team.team_extras.create(:extras=>extras, :quantity => quantity ) if quantity > 0
+        
+        if (@tents.size + quantity) > 6
+          flash[:notice] = "Sorry, a single team can only reserve a maximum of 6 tents"
+          redirect_to member_extras_boat_path(@team.id)
+          return
+        else
+          @team.team_extras.create(:extras=>extras, :quantity => quantity ) if quantity > 0
+        end
+        
       end
     end
+    
     redirect_to member_boat_checkout_path(@team)
   end
   
@@ -142,6 +152,11 @@ class Member::BoatsController < Member::WebsiteController
 
   private
   def fetch_team
-    @team =  current_user.is_member? ?  current_user.member.team : current_user.teams.find(params[:id])
+    @team =  current_user.is_member?&&current_user.teams.size==0 ?  current_user.member.team : current_user.teams.find(params[:id])
+  end
+  
+  def fetch_team_and_redirect
+    @team = current_user.teams.find(params[:id])
+    @team ? true : access_denied
   end
 end

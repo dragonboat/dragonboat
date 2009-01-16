@@ -1,21 +1,33 @@
 <% @person = @user.person %>
                         <h4>Account Information</h4>
+                        <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+                        <%= render :comatose=>'step1-instructions-2', :silent=>true %>
+                        <!-- -->
                         <%= error_messages_for :user %>
                         <p class="required">  
-                          <label for="user_login">Username:</label><span id="required">*</span><br/>
+                          <label for="user_login">Account Username:</label><span id="required">*</span><br/>
+                          <span class='notice'>(You'll need to use this when you login to manage your team)</span>
+                          <br/>
+                          
                           <%= f.text_field :login, :tabindex=> 1 %>
                         </p>
+                      
                         <p class="required">  
-                          <label for="user_password">Password:</label><span id="required">*</span><br/>
+                          <label for="user_password">Account Password:</label><span id="required">*</span><br/>
+                          <span class='notice'>(Make sure this is something you will remember)</span><br/>
                           <%= f.password_field :password, :tabindex=> 2 %>
                         </p>
-                        
+
                         <p class="required">  
-                          <label for="user_password_confirmation">Password Confirmation:</label><span id="required">*</span><br/>
+                          <label for="user_password_confirmation">Confirm Password:</label><span id="required">*</span><br/>
+                          <span class='notice'>(Please reenter your password for confirmation)</span><br>
                           <%= f.password_field :password_confirmation, :tabindex=> 3 %>
                         </p>
 
-<h4>Personal Information</h4>
+
+
+<h4>Captain Information</h4>
+<span class='notice'>(Please enter your personal information below.)</span><br>
 <table cellpadding="1" cellspacing="1">
   <tr><td><%= error_messages_for :person %></td></tr>
     <% fields_for "person", @person do |person_field| %>

@@ -16,6 +16,8 @@ class Member::MembersController < Member::WebsiteController
       when 'email_reverse'      then 'persons.email desc'
       when 'type'             then 'member_types.name'
       when 'type_reverse'      then 'member_types.name desc'
+      when  'gender'          then 'persons.gender'
+      when  'gender_reverse'   then 'persons.gender desc'  
       when 'invitation'             then 'statuses.name'
       when 'invitation_reverse'      then 'statuses.name desc'
       when 'waiver_status'             then 'statuses.name'
