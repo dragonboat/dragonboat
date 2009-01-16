@@ -12,6 +12,8 @@
 	http://www.phillydragonboat.info/stylesheets/main.css?1231723388
 	http://www.phillydragonboat.info/stylesheets/main.css?1231723602
 	http://www.phillydragonboat.info/stylesheets/main.css?1231766162
+	http://www.phillydragonboat.info/stylesheets/main.css?1232036756
+	http://www.phillydragonboat.info/stylesheets/main.css?1232044448
 */
 
 body {
@@ -48,14 +50,15 @@ img {border:0px;}
 
 
 #header div#pdb_logo {
-	width:347px; 
+	width:327px; 
 	height: 162px;
 	float:left;
 	boder:0px solid red}
 
 #header_side{
   float: right;
-  width: 615px;
+  width: 640px;
+  border: 0px solid blue;
 }
 
 
@@ -378,13 +381,13 @@ LEGEND {
 #subMenu {
     clear: both;
     margin:2px;
-    height: 25px;
+    height: 24px;
+    background: #f60;
     }
 #subMenu ul.tabs {
     margin:0;
-    padding:0;
+    padding:5px 0px;
     list-style:none;
-    height: 34px;
     width: 980px;
     float: left;
     font: normal 12px 'Helvetica', 'Arial', 'Verdana', sans-serif;
@@ -393,15 +396,23 @@ LEGEND {
     display: block; 
     padding: 0 2px 0 2px;
     margin: 0;
-    height: 34px;
     float: left;
     font-weight:normal;   
     }
-#subMenu ul.tabs li a {padding:2px;}
+#subMenu ul.tabs li a {
+	padding:0px; 
+	color:#FFF; 
+	font-weight: bold; 
+	border-top:1px solid #f60;
+	padding:2px 2px;
+	}
+	
 #subMenu ul.tabs li.current a {
-    color:#fff;
-    background: url(/images/tabBgCurrent.png) repeat-x 0 0;
-    padding:2px;
+    color:#F60;
+	background-color: #FFF;
+    padding:4px 6px;
+    border-top:1px solid #f60 ;
+    border-bottom:1px solid #fFF ;
     }
 #subMenu ul.tabs li.frozen a {color:#ccc;}
 

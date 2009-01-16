@@ -11,16 +11,16 @@
   <%= f.radio_button :confirm, "yes"%><label for="member_invitation_status_yes">YES</label>
   <%= f.radio_button :confirm, "no"%><label for="member_invitation_status_no">NO</label>
 
-   <p>
-     If you are accepting the invitation, you need to digitally sign
-     our liability release waiver in order to ride in a dragon boat.
-   </p>
-   
-   <p>
-     To Sign the waiver, please type your full name into the text box
-     below, and check the box that says I consent to the terms of
-     Philadelphia Dragon Boat's Liability Waiver <%= link_to "link to waiver content page in new window","", :target=>"_blank" %>
-   </p>
+	<div id="instructions">
+		<%= render :comatose=>'waiver-instructions' %>
+	</div>
+
+	<div id="waiver_details">
+		<h2>WAIVER OF LIABILITY RELEASE <br/>
+		INDEMNIFICATION AND HOLD HARMLESS NOTICE</h2>
+		<%= render :comatose=>'waiver-details' %>
+	</div>
+
         
    <% fields_for :person, @person do |p| %>
    <p>
@@ -50,18 +50,19 @@
       <%= p.text_field :emergency_contact_number%>
    </p>   
    <p>
-     <label for="person_medical_conditions">Medical Conditions:</label><br/>
+     <label for="person_medical_conditions">Please note any medical conditions to be aware of:</label><br/>
       <%= p.text_area :medical_conditions, :rows=>3%>
    </p>
    
    <% end %>
   
    <p>
-   <label for="member_sign_waiver_status">Your Sign name:</label><br/>
+   <label for="member_sign_waiver_status">Please retype your complete name to sign this waiver:</label><br/>
    <%= f.text_field :sign_waiver_notice%>
    </p>
    <p>
-   <%= f.check_box :accept, {:onclick=>"$('submit_terms').disabled=!$('submit_terms').disabled"},1, 0 %> I consent to the terms of
+   <%= f.check_box :accept, {:onclick=>"$('submit_terms').disabled=!$('submit_terms').disabled"},1, 0 %> Check this box to acknowledge that you have read this document.
+	<%= render :comatose=>'waiver-consent' %>
    </p>
    <%=submit_tag  "JOIN THE TEAM!", :id=>"submit_terms",:disabled=> @member.accept.to_i == 0 %>
    <%end%>
