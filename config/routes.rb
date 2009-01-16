@@ -35,6 +35,12 @@ ActionController::Routing::Routes.draw do |map|
     m.tickets_list '/support/list', :controller => 'member/support',  :action => 'index'
   end
   
+  map.with_options :path_prefix => 'member/boats/:team_id', :name_prefix => 'member_team_' do |m|
+   # m.tickets_list '/support/list', :controller => 'member/support',  :action => 'index'
+    m.reply '/support/reply/:id/:answer_id', :controller => 'member/support', :action => 'reply'
+    m.tickets_list '/support/list', :controller => 'member/support',  :action => 'index'
+  end
+  
   map.team_confirm_form "team/confirm", :controller => 'sessions', :action=>"confirm"
    
   map.with_options :path_prefix => 'team/:slug', :name_prefix => 'team_' do |m|
@@ -51,8 +57,6 @@ ActionController::Routing::Routes.draw do |map|
     m.invite_paddler "/paddlers/:id/invite",    :controller => 'member/paddlers', :action=>"invite"
     m.resources   :paddlers,    :controller => 'member/paddlers' 
   end
-  
-   
   
   map.with_options :path_prefix => 'admin/teams/:team_id', :name_prefix => 'admin_' do |m|
     m.list_by_waiver_sign_status_to_csv  'paddlers/list_by_waiver_sign_status_to_csv/:status',    :controller => 'admin/paddlers', :action=>"list_by_waiver_sign_status_to_csv"
