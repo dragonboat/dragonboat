@@ -9,7 +9,7 @@
   <% for ticket in @tickets %>
   <tr>
     <td><%=ticket.id%></td>
-    <td><%=link_to ticket.subject, {:action=>:show, :id=>ticket.id}, :title=>"Click to review"%></td>
+    <td><%=link_to ticket.subject, {:team_id=>@team, :action=>:show, :id=>ticket.id}, :title=>"Click to review"%></td>
     <td><%=ticket.priority%></td>
     <td><%= ticket.status%></td>
   </tr>

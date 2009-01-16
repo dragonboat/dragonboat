@@ -1,23 +1,23 @@
  <% if logged_in? %>
             Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
             <%unless current_user.is_admin?%>
-            <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_edit_profile_url(current_user.member.team.name.to_slug) : ( @team&&@team.id? ? member_edit_team_profile_url(@team) : member_edit_profile_url ) %> &nbsp;|&nbsp;
+            <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_edit_profile_url(current_user.member.team.name.to_slug) : ( @team&&@team.active? ? member_edit_team_profile_url(@team) : member_edit_profile_url ) %> &nbsp;|&nbsp;
             
             
             <%if current_user.is_captain?%>
             
             <%if current_user.teams.count_active == 1 %>
-              <%= link_to("Manage Team", team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
-              <%= link_to("Manage Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
+              <%= link_to("Your Team", team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
+              <%= link_to("Your Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
             <%elsif current_user.teams.count_active > 1%>
-               <%= link_to "Manage Teams", member_boats_path%> &nbsp;|&nbsp;                
+               <%= link_to "Your Teams", member_boats_path%> &nbsp;|&nbsp;                
             <%end%> 
             
              
             <%end%>
         
         <%if current_user.tickets.find_pending(:first)%>
-        <%= link_to "Support", member_tickets_list_url%> &nbsp;|&nbsp; 
+        <%= link_to "Support",  @team&&@team.active? ? member_team_tickets_list_url(@team) : member_tickets_list_url  %> &nbsp;|&nbsp; 
         <%end%>
         
         <%else%>

@@ -1,5 +1,8 @@
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
 <% content_for :title do %>Support : Reply to Ticket ID#<%=@parent.id%>: <%=@parent.subject%><% end %>
-  <div>
+   <div>
      <fieldset>
             <legend>Create Ticket</legend> 
             <% form_for :ticket, :url => member_reply_path(@parent.id,@answer.id), :html => { :method => :post } do |f| %>
