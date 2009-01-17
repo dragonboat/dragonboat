@@ -31,14 +31,14 @@
                         </p>
 
 
-
+<div id="captain-info"></div>
 <h4>Captain Information</h4>
 <span class='notice'>Please enter your personal information below</span><br>
-<p>
+
 <table cellpadding="1" cellspacing="1">
   <tr><td><%= error_messages_for :person %></td></tr>
     <% fields_for "person", @person do |person_field| %>
     <%= render :partial => 'persons/form_1', :locals =>{:f=>person_field} %>
   <% end %>
 </table>
-</p>
+</div>
