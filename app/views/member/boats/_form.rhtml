@@ -30,12 +30,12 @@
     </p>
   
   <p>
-    <label for="team_visit_status_yes">Is this a new team?</label><br>
+    <label for="team_visit_status_yes"><strong>Is this a new team?</strong></label><br>
     <%Team::VISIT_STATUS.each do |s|%>
     <%= f.radio_button :visit_status, s[1] %>  <label for="team_visit_status_<%=s[1]%>" ><%=s[0] %></label>
     <%end%>
     <span class='notice'>
-    Answer YES if your team is new to the sport of dragon boating
+    <br/>Answer YES if your team is new to the sport of dragon boating
     </span>
   </p>
   <%end%>
@@ -48,8 +48,8 @@
   </p>
   
   <p>
-    <label for="team_description">Team Profile:</label>
-   
+    <label for="team_description">Team Profile:</label><br />
+   <span class="notice">Please write a brief description (maximum of 50 words) of your team for our Festival MC to read as you race down the course;  i.e. team background, have you paddled before, why did your team get together, special achievements, etc.</span>
     <br />
      <%= f.text_area :description, :rows=>12, :cols=>80%></span><br>
      <span class='notice'>Maximum 50 words</span>
