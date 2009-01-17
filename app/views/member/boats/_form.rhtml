@@ -55,11 +55,8 @@
      <span class='notice'>Maximum 50 words</span>
     </p>
 
-  
-  <p> 
-<div id="team_logo">
-  <%= render :partial => 'logo', :locals =>{:image=>@team.image} %>
-</div>
+	<p> 
+		<span id="team_logo"><%= render :partial => 'logo', :locals =>{:image=>@team.image} %></span>
 <% fields_for :image do |image| %>
 <label for="uploaded_data">Select File</label><br /> 
 <%= image.file_field :uploaded_data %><br>
