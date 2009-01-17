@@ -31,12 +31,11 @@
   
   <p>
     <label for="team_visit_status_yes">Is this a new team?</label><br>
-    <br/>
     <%Team::VISIT_STATUS.each do |s|%>
     <%= f.radio_button :visit_status, s[1] %>  <label for="team_visit_status_<%=s[1]%>" ><%=s[0] %></label>
-    <%end%><br>
+    <%end%>
     <span class='notice'>
-    Answer yes if your team is new to the sport of dragon boating
+    Answer YES if your team is new to the sport of dragon boating
     </span>
   </p>
   <%end%>
