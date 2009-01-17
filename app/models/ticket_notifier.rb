@@ -42,7 +42,7 @@ class TicketNotifier < ActionMailer::Base
   
   def admin_notifier(ticket)
     @recipients  = "#{APP_CONFIG['admin_email']}"
-    @from        = "Dragon Boat Site"
+    @from        = "#{APP_CONFIG['noreply_email']}"
     @subject     =  "The ticket##{ticket.id} has been created. "
     @subject +=ticket.subject
     @content_type = "text/html"  
@@ -72,4 +72,5 @@ class TicketNotifier < ActionMailer::Base
     @body[:answer] = answer.reload.message
     @subject +="Re: "+ticket.subject
   end
+  
 end

@@ -1,14 +1,23 @@
+<div class="instructions">
+  <%= render :comatose=>'edit-team-member-position-field-instructions', :silent=>true %>
+</div>
 <p>Position: 
-<span id="required">*<%= f.select :type_id, @types.map { |t| [t.name.capitalize, t.id] } %></span>
+  <span id="required">*<%= f.select :type_id, @types.map { |t| [t.name.capitalize, t.id] } %></span>
 </p>
 <%unless ["new","create"].include? controller.action_name%>
 <h4>Account Information</h4>
+<div class="instructions">
+  <%= render :comatose=>'edit-team-member-account-information-instructions', :silent=>true %>
+</div>
 <%= error_messages_for :user %>
 Username: <%= text_field :user, :login, :size=>50, :disabled=>true%>
 <%end%>
 
 <h4>Personal Information</h4>
- <%= error_messages_for :person %>
+<div class="instructions">
+  <%= render :comatose=>'edit-team-member-personal-information-instructions', :silent=>true %>
+</div>
+<%= error_messages_for :person %>
 <table cellpadding="0" cellspacing="0">
     <% fields_for "person", @person do |person_field| %>
     <%= render :partial => 'persons/form_1', :locals =>{:f=>person_field} %>

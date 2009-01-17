@@ -3,7 +3,9 @@
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 <h1>Invite to join team</h1>
-
+<div class="instructions">
+  <%= render :comatose=>'invite-to-join-team-instructions', :silent=>true %>
+</div>
 <%= error_messages_for :member %>
 
 <% form_for(:member, :url => member_create_member_path(@team,@paddler.id), :html=>{:method=>:put}) do |f| %>

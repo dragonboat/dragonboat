@@ -2,15 +2,16 @@
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 <h1>Editing Profile</h1>
-
-<%= error_messages_for :user %>
-
-<% form_for(:user, :url => member_profile_path, :html=>{:method=>:put}) do |f| %>
-  <table id="users" class="form">
-  <%= render :partial => 'form', :locals => { :f => f } %>
+  <table class="form" >
+  <tr>
+  <td><label for="user_login">Username:</lable></td>
+  <td id="required">*<%= text_field_tag 'user[login]',@user.login, :size=>50, :disabled=>@user.is_member?%></td>
+  </tr>
   </table>
+  <%= error_messages_for :user %>
+
   <div id="changed_password" style="display:none;width:500px;">
-    <%=link_to_function "X", "$('changed_password').style.display='none';", :id=>"close"%>
+  <% form_for(:user, :url => member_profile_path, :html=>{:method=>:put}) do |f| %>
   <table class="form" >
   <tr>
     <td><label for="user_password">New Password:</lable></td>
@@ -19,9 +20,24 @@
   <tr>
    <td><label for="user_password_confirmation">Confirm New Password:</lable></td>
    <td><%= f.password_field :password_confirmation, :size=>50 %></td>
-  </tr>
-  </table>
+   </tr>
+   <tr>
+     <td colspan="2"> 
+       <%= submit_tag "Update Password" %>
+       <%=link_to_function "Cancel", "$('changed_password').style.display='none';"%>
+     </td>
+   </tr>
+   </table>
+  <%end%>
   </div>
+  
+ <% form_for(:user, :url => member_profile_path, :html=>{:method=>:put}) do |f| %>
+  <table id="users" class="form">
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  </table>
+  
+  
+  
   <table id="users" class="form">
   <tr>
     <td colspan="2"><h4>Personal Information</h4></td></tr>

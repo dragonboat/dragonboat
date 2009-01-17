@@ -4,6 +4,10 @@
 </div>
 
 <h1><%=@current_day.strftime("%d %B %Y")%> - Practice Schedule</h1>
+<div class="instructions">
+  <%= render :comatose=>'practice-schedule-instructions', :silent=>true %>
+</div>
+
 <table cellspacing=1 cellspadding=1 class="day">
   <tr>
     <th>Time</th>

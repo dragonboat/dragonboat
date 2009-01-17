@@ -3,8 +3,10 @@
 </div>
 <% content_for :title do %>Support : Pending Tickets List<% end %>
 <%if @tickets.size>0%>
-<h2>Pending Support Tickets List</h2>  
-    
+<h1>Pending Support Tickets List</h1>  
+<div class="instructions">
+  <%= render :comatose=>'pending-support-tickets-list-instructions', :silent=>true %>
+</div>   
 <div id="list">
   <%= render :partial => 'list'%>
 </div>

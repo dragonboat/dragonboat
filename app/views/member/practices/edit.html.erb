@@ -6,6 +6,10 @@
 <%d = @practice.created_at%>
 <h1 class="specialDay-available"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
 
+<div class="instructions">
+  <%= render :comatose=>'reserve-practice-time-instructions', :silent=>true %>
+</div>
+
 <%# error_messages_for :practice %>
 <%if @practice.errors && @practice.errors.size>0%>
     <div id="errorExplanation" class="errorExplanation">

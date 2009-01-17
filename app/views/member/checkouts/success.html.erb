@@ -24,8 +24,14 @@
         <b>Team Profile</b>: 
         <p>
         <span class='notice'><%=@team.description%></span>
-        </p>
-        <b>Tents</b>: <%=@team.team_extras.size%> <br/>
+            </p>
+            <%tents = 0%>
+            <%@order.extras_orders.each do |order|%>
+            <%extras= order.extras%>
+            <%quantity = order.quantity%>
+            <%tents+=quantity%>
+            <%end%>
+        <b>Tents</b>: <%=tents%> <br/>
         
       </td>
   </tr>    

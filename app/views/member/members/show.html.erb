@@ -4,6 +4,9 @@
 </div>
 
 <h1>Team Member Detail Info</h1>
+<div class="instructions">
+  <%= render :comatose=>'show-team-member-instructions', :silent=>true %>
+</div>
 <%= render :partial => 'member/members/member'%>
 
 <%= link_to 'Edit', member_team_members_path(@team, "edit", @member.id) %> |

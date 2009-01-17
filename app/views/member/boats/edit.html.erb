@@ -3,15 +3,19 @@
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 
-<h1>Boat Details Setting</h1>
-<%= error_messages_for :team %>
-
-<% form_for(:team, :url => member_boat_path(@team.id), :html=>{:method=>:put,:multipart => true }) do |f| %>
+  <h1>Boat Details Setting</h1>
+  <div class="instructions">
+  <%= render :comatose=>'edit-team-instructions', :silent=>true %>
+  </div>
+  <%= error_messages_for :team %>
+  
+  <% form_for(:team, :url => member_boat_path(@team.id), :html=>{:method=>:put,:multipart => true }) do |f| %>
   
   <%= render :partial => 'form', :locals =>{:f=>f} %>
-
- <span id="required">*</span>-Required <br/>
+  
+<p>
   <%= f.submit "Update" %>
-<% end %> 
+  </p>
+  <% end %> 
 
 <%= link_to 'Back', member_boats_path%>

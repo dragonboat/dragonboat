@@ -4,6 +4,9 @@
 <% content_for :title do %>Support : View Ticket<% end %>
 <%if @ticket %>
 <h1>Ticket ID#<%=@ticket.id%></h1>
+<div class="instructions">
+  <%= render :comatose=>'show-ticket-instructions', :silent=>true %>
+</div> 
 <table>
 <tr>
 <td>

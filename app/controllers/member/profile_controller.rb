@@ -16,7 +16,7 @@ def update
   @user.person.attributes = (params[:person])
   respond_to do |format|
       if @user.update_attributes(params[:user]) && @user.person.save
-        if params[:user][:password].length > 0
+        if params[:user]&&params[:user][:password].length > 0
           flash[:notice] = 'Your password has been changed.'
           UserNotifier.deliver_password_changed(@user, params[:user][:password])   
         else

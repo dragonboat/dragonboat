@@ -187,11 +187,12 @@ module ApplicationHelper
      end
      pages_paths = [] unless pages_paths
      html = ""
-      pages_paths.map { |path| Comatose::Page.find_by_path(path) }.reverse.each do |page| 
-        next if page.root == page
-        html << page.title.titleize
-        html << separator
-      end 
+     #
+     # pages_paths.map { |path| Comatose::Page.find_by_path(path) }.reverse.each do |page| 
+     #   next if page.root == page
+     #   html << page.title.titleize
+    #    html << separator
+     # end 
       html << current_page[:title] if current_page
    end
 

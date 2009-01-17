@@ -4,6 +4,9 @@
 </div>
 
 <h1>Editing Team Member</h1>
+<div class="instructions">
+  <%= render :comatose=>'edit-team-member-instructions', :silent=>true %>
+</div>
 <%= error_messages_for :member %>
 
 <% form_for(:member, :url => member_team_members_path(@team,"update",@member.id), :html=>{:method=>:put}) do |f| %>

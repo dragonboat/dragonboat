@@ -100,6 +100,7 @@ ActionController::Routing::Routes.draw do |map|
   map.cvv   '/cvv', :controller => 'users',  :action => 'cvv'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
+  map.change_password '/change_password/:code', :controller => 'sessions', :action => 'change_password'
   map.forgot '/forgot', :controller => 'sessions', :action => 'forgot'
   map.connect ':controller/service.wsdl', :action => 'wsdl'
 

@@ -1,3 +1,6 @@
+<div class="instructions">
+  <%= render :comatose=>'manage-team-add-new-member-instructions', :silent=>true %>
+</div>
 <% form_remote_for(:member, :url => member_team_members_path(@team, 'create')) do |f| %>
 <%= error_messages_for :member %>
 <%= error_messages_for :person %>

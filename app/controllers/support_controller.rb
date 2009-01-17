@@ -55,6 +55,7 @@ class SupportController < ApplicationController
   @parent = Ticket.find_nonregistered(params[:id])
   @ticket = Ticket.new
   @ticket.parent_id = @parent.id
+  @ticket.priority =  @parent.priority
   @ticket.email = @parent.email
   @ticket.user = @parent.user
   @ticket.updated_by = @parent.user

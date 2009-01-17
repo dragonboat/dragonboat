@@ -5,7 +5,9 @@
 <%if @practice%>
 <%d = @practice.created_at%>
 <h1 class="specialDay-current_reserved"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
-
+ <div class="instructions">
+  <%= render :comatose=>'cancel-scheduled-practice-time-instructions', :silent=>true %>
+ </div>
 <%= error_messages_for :practice %>
 
 <% form_for(:practice, :url => member_team_practices_path(@team,"undo",@practice.id), :html=>{:method=>:put}) do |f| %>

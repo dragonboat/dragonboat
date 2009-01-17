@@ -14,7 +14,7 @@
     <p>Captain: <%=captain.person.name%> < <%= mail_to captain.email %> > </p>
 
     <p>Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></p>
-    <p>Logo: <%= image_tag( @team.image.public_filename(:thumb_big) ) if @team.image%> </p>
+    <p>Logo: <%= image_tag( @team.image.public_filename(:thumb) ) if @team.image%> </p>
     
 
 <%= link_to 'Edit', admin_edit_team_path(@team) %> |

@@ -32,6 +32,7 @@ a:hover {background-color:#FF6600; color: #fff;text-decoration: underline;}
 h1 {font-size:22px; color:#000; font-weight:bold;}
 h2 {font-size:14px; color:#000;font-weight:bold;}
 h3 {font-size:12px; color:#F7941D;font-weight:bold;}
+h3.boat_name {font-size:22px;}
 h4 {font-size:14px; font-weight:bold;}
 
 #required {color:red;}
@@ -358,6 +359,7 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 
 #none  {list-style-type : none; display : block; margin-left:230px;}
 #none  li {padding:3px;}
+#none_style  {list-style-type : none; display : block; }
 
 /**Volunteer Form**/
 #volunteer_form table.person td {padding:0px 5px 5px 0px;}
@@ -373,7 +375,7 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 
 
 
-#logo {float:left; widht:50px; height:50px; margin-bottom:5px; margin-right:5px;}
+#logo {float:left; margin-bottom:5px; margin-right:5px;}
 
 /* Table Item List*/
 table.item_list {border: 1px #DDD solid; width: 100%;}
@@ -456,7 +458,7 @@ LEGEND {
 #ticket-list div#from {padding-top:5px; color:blue;}
 
 /*Tent Positions*/
-#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px; margin-bottom: 6260px }
+#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px;  }
 
 #tent_positions_list {
 	position:relative;
@@ -517,10 +519,8 @@ border: 1px solid black;
 
 
 #boat_list table td{text-align:left; padding-left:15px;  padding-right:15px; padding-top:5px; padding-bottom:5px;}
-#boat_list a{font-size:14px; padding:3px;}
-#boat_list a:hover {
-border: 1px solid black;
-}
+#boat_list a{ color:#fff; font-size:14px; padding:1px;}
+
 #boat_list a.menu {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
 
 

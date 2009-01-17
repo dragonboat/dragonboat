@@ -52,14 +52,20 @@
        <!--[if lte IE 6]></td><td style='background:#fff'><![endif]-->
          <div id="main_member">
           
-        <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
+         <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
+         
+         <%if @team && current_user.is_captain?%>
+         <%unless request.request_uri=~ /(checkouts)/i%>
         
-        <%if @team && current_user.is_captain?%>
-        <%unless request.request_uri=~ /checkouts\/success/i%>
-        <h3><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%>  <%= @team.human_name %></h3>
-        <%end%>
-         <%end%>  
-         <%= yield :object_menu %>
+          <h3 class="boat_name"><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image && @team.active?%>  <%= @team.human_name %></h3>
+          
+          <%end%>
+          <%end%>  
+          <%= yield :object_menu %>
+          
+          <% if @team.image && @team.active?%>
+          <div class="clearEm">&nbsp;&nbsp;</div>
+          <%end%> 
           <%if flash[:notice] && !flash[:notice].empty?%>
           <p id="notice"><%= flash[:notice] %></p>
          <%end%>

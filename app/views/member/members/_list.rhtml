@@ -24,13 +24,13 @@
     <td align="left"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %> <%=member.waiver_status_human%></td>      
     
     <td><%# link_to 'Show', member_team_members_path(@team, "show", member.id) %> 
-        <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %> |
-       <%if user == current_user && (user.teams)%>
+        <%= link_to 'Edit', member_team_members_path(@team, "edit", member.id) %> 
+       <%if user == current_user && (user.teams)%> |
          <%= link_to 'Sign Waiver', team_member_confirm_url(@team.name.to_slug) if member.is_unconfirmed? %>
          <%= link_to_function 'Sign Waiver', "", :id=>"frozen" unless member.is_unconfirmed?%>
       <%else%>
 
-         <%= link_to 'Access Info', member_team_members_path(@team, "access", member.id) %>
+         <%# link_to 'Access Info', member_team_members_path(@team, "access", member.id) %>
        <%end%>
       </td>
     </tr>

@@ -25,8 +25,15 @@
         <b>Team Profile</b>: 
         <p>
         <span class='notice'><%=@team.description%></span>
-        </p>
-        <b>Tents</b>: <%=@team.team_extras.size%> <br/>
+            </p>
+            <%tents = 0%>
+            <%@team.team_extras.map(&:extras).each do |item|%>
+            <%
+            team_extras= item.team_extras.find_by_team_id(@team.id)
+            quantity = team_extras.quantity if team_extras
+             tents+=quantity %>
+        <%end%>
+        <b>Tents</b>: <%=tents%> <br/>
         
       </td>
   </tr>    

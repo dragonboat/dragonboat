@@ -1,4 +1,4 @@
-<%if @team && @team.active?%>
+<%if @team && @team.active? && current_user.is_captain?%>
 <% url = controller.controller_path %>
     <%content_for :object_menu do%>
     <div id="subMenu">

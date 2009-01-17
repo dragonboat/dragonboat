@@ -16,41 +16,45 @@
 <p class="required">
     <label for="team_human_name">Team Name:</label>
     <span id="required">*<br /></span>
-    <span class='notice'>(Please enter the official name of your team.  This will appear in the schedule and is the name that will be called on race day)</span></br>
-    <%= f.text_area :human_name, :rows=>1, :cols=>80, :style=>"height:50px;" %>
+    <%= f.text_area :human_name, :rows=>1, :cols=>80, :style=>"height:50px;" %><br>
+    <span class='notice'>Please enter the official name of your team.  This will appear in the schedule and is the name that will be called on race day</span>
   </p>
   <%unless ["edit","update"].include? controller.action_name%>
   <p class="required">
-    <label for="team_type_id">Boat Type:</label>
+    <label for="team_type_id">Team Type:</label>
     <span id="required">*<br />
     <%= f.select :type_id, BoatType.find_active(:all).map { |r| ["#{r.name.capitalize} - #{number_to_currency r.price}", r.id] } %></span>
-  </p>
+    <br><span class='notice'>
+      Select the type of team you are registering. Please review <%=link_to "Team Type Information","/for-captains" %>
+     </spanp>
+    </p>
   
   <p>
-    <label for="team_visit_status">Is this a new team?</lablel><br>
-    <span class='notice'>
-     Yes or No<br>
-    (Answer yes if your team is new to the sport of dragon boating)<br>
-    </spna>
-  
+    <label for="team_visit_status_yes">Is this a new team?</label><br>
     <br/>
-    <%= f.select :visit_status, Team::VISIT_STATUS%></span>
+    <%Team::VISIT_STATUS.each do |s|%>
+    <%= f.radio_button :visit_status, s[1] %>  <label for="team_visit_status_<%=s[1]%>" ><%=s[0] %></label>
+    <%end%><br>
+    <span class='notice'>
+    Answer yes if your team is new to the sport of dragon boating
+    </span>
   </p>
   <%end%>
   
  
   <p>
-    <label for="team_url">Team Website:</lablel><br />
-     <span class='notice'>( If your team has a website, please enter it here (eg. www.yourteamname.com) )</span></br>
-    <%= f.text_field :url, :size => 50 %><br />
+    <label for="team_url">Team Website:</label><br />
+    <%= f.text_field :url, :size => 50 %><br>
+    <span class='notice'> If your team has a website, please enter it here (eg. www.yourteamname.com) </span>
   </p>
   
   <p>
-    <label for="team_description">Team Profile:</lablel>
-    <span class='notice'>(Maximum 50 words)</span>
+    <label for="team_description">Team Profile:</label>
+   
     <br />
-    <%= f.text_area :description, :rows=>12, :cols=>80%></span>
-  </p>
+     <%= f.text_area :description, :rows=>12, :cols=>80%></span><br>
+     <span class='notice'>Maximum 50 words</span>
+    </p>
 
   
   <p> 
@@ -58,9 +62,9 @@
   <%= render :partial => 'logo', :locals =>{:image=>@team.image} %>
 </div>
 <% fields_for :image do |image| %>
-<label for="uploaded_data">Select File</lablel><br /> 
-<span class='notice'>(If your team has a logo, please upload a graphic file here.  Only GIFs and JPGs please, maximum 1MB filesize)</span>
-<%= image.file_field :uploaded_data %>
+<label for="uploaded_data">Select File</label><br /> 
+<%= image.file_field :uploaded_data %><br>
+<span class='notice'>If your team has a logo, please upload a graphic file here.  Only GIFs and JPGs please, maximum 1MB filesize</span>
 <%end%>
 </p>
 

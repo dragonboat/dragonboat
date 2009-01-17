@@ -1,7 +1,19 @@
 <%= error_messages_for :ticket %>
 <ul id="ticket-list" style="width:600px;">
   <li>
-<h1>Reply to Ticket ID#<%=@parent.id%>: <%=@parent.subject%></h1>
+    <div id="from">
+      <div id="right"><%=@parent.status.capitalize%> | <%=@parent.priority.capitalize%> | <%=@parent.created_at.strftime("%d/%m/%Y %H:%M")%></div>
+     
+      <i><%=@parent.email%></i>:
+    </div>
+    <h1>
+      <b>Reply to Ticket ID#<%=@parent.id%></b>:<%= @parent.subject %> 
+    </h1>
+    
+    <p>
+      <%=simple_format(@parent.message)%>
+    </p>
+    
 <div id="answer">
   <div id="date"><%=@answer.created_at.strftime("%d/%m/%Y %H:%M")%></div>
   <i>PDB Admin:</i> <br/>
@@ -10,21 +22,11 @@
     <%=h @answer.message%>
   </div>
 </div>
-<h4>From:</h4>
-<%=@ticket.email%>
-<p>
-<b></b>
-</p> 
-  
-<br/>
-<p>
-  <label for="ticket_subject">Subject:<span id="required">*</span><br/></label>
-  <%= f.text_field :subject%>
-</p>
-<p>
-  <label for="ticket_priority">Priority:<span id="required">*</span><br/></label>
-  <%= f.select :priority, Ticket::PRIORITY %>
-</p>
+
+  <%= f.hidden_field :subject%>
+
+  <%= f.hidden_field :priority%>
+
 <p>
   <label for="ticket_message">Message:<span id="required">*</span><br/></label>
   <%= f.text_area :message, :rows=>10%>

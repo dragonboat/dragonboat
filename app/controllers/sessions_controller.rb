@@ -38,20 +38,35 @@ class SessionsController < ApplicationController
   
   def forgot
     if request.post?      
-      user = User.find(:first, :include=>[:person], :conditions=>["persons.email=? AND login=?", params[:email], params[:login]])
+      user = User.find(:first, :include=>[:person], :conditions=>["persons.email=? AND login=?", params[:email].strip, params[:login].strip])
       if user
-        new_password = user.password_reset!
-        if new_password
-          UserNotifier.deliver_password_changed(user, new_password) 
-          flash[:notice] = "Your new password has been emailed to " + params[:email]
-         else
-          flash[:notice] = "Password can't be send."
-         end
+        #new_password = user.password_reset!
+        
+        UserNotifier.deliver_invite_to_change_password(user) 
+        flash[:notice] = "We have emailed instructions for resetting your password to " + params[:email]
+        redirect_to login_url
       else
         #flash.delete(:info)
         #flash[:warning] = "No user found with login #{params[:login]} and email address " + params[:email]
         flash[:notice] = "No user found with login #{params[:login]} and email address " + params[:email]
       end
+    end
+  end
+  
+  def change_password
+    @user = User.find_by_code(params[:code].strip)
+    unless @user
+      flash[:notice] = "This link is incorrect. To receive a good link on your email fill in 'Password Restore' form below"
+      redirect_to forgot_url
+      return false
+    end
+
+    if request.post?&&params[:user][:password].length > 0 
+      @user.attributes = (params[:user])
+      @user.valid? && @user.save
+      flash[:notice] = 'Your password has been changed.'
+      UserNotifier.deliver_password_changed(@user, params[:user][:password])  
+      redirect_to login_url
     end
   end
 end

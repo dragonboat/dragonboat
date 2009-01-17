@@ -31,7 +31,7 @@
 <div class="index-list image-list">
 <% for image in @images %>
       <div class="image-block"><div class="image-wrapper">
-        <%= link_to image_tag(image.public_filename(:thumb_big)), admin_edit_image_path(image) %>
+        <%= link_to image_tag(image.public_filename(:thumb)), admin_edit_image_path(image) %>
       </div>
        <div style="width:180px;">
        <small style="word-wrap:break-word;">Name: <%=image.filename%></small><br/>

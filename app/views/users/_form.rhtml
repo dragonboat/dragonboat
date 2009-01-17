@@ -6,28 +6,34 @@
                         <%= error_messages_for :user %>
                         <p class="required">  
                           <label for="user_login">Account Username:</label><span id="required">*</span><br/>
-                          <span class='notice'>(You'll need to use this when you login to manage your team)</span>
-                          <br/>
-                          
+         
                           <%= f.text_field :login, :tabindex=> 1 %>
+                          <br/>
+                          <span class='notice'>You'll need to use this when you login to manage your team</span>
+                      
                         </p>
                       
                         <p class="required">  
                           <label for="user_password">Account Password:</label><span id="required">*</span><br/>
-                          <span class='notice'>(Make sure this is something you will remember)</span><br/>
+                         
                           <%= f.password_field :password, :tabindex=> 2 %>
+                          <br>
+                          <span class='notice'>Make sure this is something you will remember</span>
+                          
                         </p>
 
                         <p class="required">  
                           <label for="user_password_confirmation">Confirm Password:</label><span id="required">*</span><br/>
-                          <span class='notice'>(Please reenter your password for confirmation)</span><br>
+                          
                           <%= f.password_field :password_confirmation, :tabindex=> 3 %>
+                          <br>
+                          <span class='notice'>Please reenter your password for confirmation</span>
                         </p>
 
 
 
 <h4>Captain Information</h4>
-<span class='notice'>(Please enter your personal information below.)</span><br>
+<span class='notice'>Please enter your personal information below</span><br>
 <table cellpadding="1" cellspacing="1">
   <tr><td><%= error_messages_for :person %></td></tr>
     <% fields_for "person", @person do |person_field| %>

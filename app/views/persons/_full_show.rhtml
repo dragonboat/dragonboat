@@ -57,10 +57,18 @@
         <td><%= @person.age %></td>
     </tr>
      <tr>
-        <td>Experience:</td>
+        <td>Experience:
+        <div class="instructions">
+            <%= render :comatose=>'invite-to-join-team-experience-field-instructions', :silent=>true %>
+        </div>
+        </td>
         <td class="note"><%= @person.experience %></td>
     </tr>
      <tr>
-        <td>Preferences:</td>
+        <td>Preferences:
+        <div class="instructions">
+            <%= render :comatose=>'invite-to-join-team-preferences-field-instructions', :silent=>true %>
+        </div>
+        </td>
         <td class="note"><%= @person.preference %></td>
     </tr>

@@ -21,6 +21,7 @@ def reply
   @parent = @user.tickets.find(params[:id])
   @ticket = @user.tickets.build
   @ticket.parent_id = @parent.id
+  @ticket.priority =  @parent.priority
   @ticket.email = @parent.email
   @ticket.updated_by = current_user
    

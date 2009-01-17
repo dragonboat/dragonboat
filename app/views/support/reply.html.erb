@@ -7,7 +7,8 @@
             <p><span id="required">*</span>-Required </p>
             <div id="buttons">
               <%= submit_tag  "Reply"%>
-          </div>
+               <%=link_to "Cancel", {:action=>:show, :id=>@parent.id}%>
+            </div>
       <%end%>
     </fieldset>
   </div>

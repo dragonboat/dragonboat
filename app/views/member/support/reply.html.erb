@@ -3,14 +3,14 @@
 </div>
 <% content_for :title do %>Support : Reply to Ticket ID#<%=@parent.id%>: <%=@parent.subject%><% end %>
    <div>
-     <fieldset>
-            <legend>Create Ticket</legend> 
+    
             <% form_for :ticket, :url => member_reply_path(@parent.id,@answer.id), :html => { :method => :post } do |f| %>
             <%= render :partial => 'member/support/form', :locals =>{:f=>f} %>
             <p><span id="required">*</span>-Required </p>
             <div id="buttons">
               <%= submit_tag  "Reply"%>
-          </div>
+              <%=link_to "Cancel", {:action=>:show, :id=>@parent.id}%>
+            </div>
       <%end%>
-    </fieldset>
+    
   </div>

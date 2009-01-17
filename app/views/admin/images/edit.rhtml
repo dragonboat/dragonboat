@@ -6,7 +6,7 @@
 <% form_for :image,:url => admin_image_path(@image), :html=>{:method=>:put} do |f| %>
 	   
 <fieldset style="width:450px;">
-  <%= link_to(image_tag(@image.public_filename(:thumb_big)),@image.public_filename, :target=>"_blank") %>
+  <%= link_to(image_tag(@image.public_filename(:thumb)),@image.public_filename, :target=>"_blank") %>
         <ol>
 	<li><span style="display: block; width: 300px;line-height:1.8">Image size: 
         <b><%=@image.width%></b>x<b><%=@image.height%></b></span></li>

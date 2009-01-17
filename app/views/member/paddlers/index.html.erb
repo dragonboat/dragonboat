@@ -3,7 +3,9 @@
 </div>
 <% content_for :title do %>Listing Orphaned Paddlers<% end %>
 <h1>Listing Orphaned Paddlers</h1>
-
+<div class="instructions">
+  <%= render :comatose=>'listing-orphaned-paddlers-instructions', :silent=>true %>
+</div>
 <div id="pages"><%= will_paginate @paddlers %></div>
 <%= render :partial => 'list'%>
 <div id="pages"><%= will_paginate @paddlers %></div>
