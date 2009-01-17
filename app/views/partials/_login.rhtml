@@ -1,5 +1,5 @@
  <% if logged_in? %>
-            Logged as <b><%= current_user.login %></b> &nbsp;|&nbsp;
+            Logged in as <b><%= current_user.person.first_name  %> <%= current_user.person.last_name  %></b> &nbsp;|&nbsp;
             <%unless current_user.is_admin?%>
             <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_edit_profile_url(current_user.member.team.name.to_slug) : ( @team&&@team.active? ? member_edit_team_profile_url(@team) : member_edit_profile_url ) %> &nbsp;|&nbsp;
             
@@ -24,10 +24,10 @@
          <%= link_to "My Account",admin_user_path(current_user)%> &nbsp;|&nbsp;
         <%end%>
        
-        <%= link_to "[LOG OUT ]", logout_url %>
+        <%= link_to "<strong>Sign out</strong>", logout_url %>
         <br/>
    <%else%>
-       <%= link_to "[LOGIN]", login_url %>
+       <%= link_to "Sign in", login_url %>
   <%end%>    
 
 

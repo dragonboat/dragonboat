@@ -14,6 +14,7 @@
 	http://www.phillydragonboat.info/stylesheets/main.css?1231766162
 	http://www.phillydragonboat.info/stylesheets/main.css?1232036756
 	http://www.phillydragonboat.info/stylesheets/main.css?1232044448
+	http://www.phillydragonboat.info/stylesheets/main.css?1232120946
 */
 
 body {
@@ -26,8 +27,8 @@ body {
     border: 0px solid purple;
     }
 
-a {color:#393537; text-decoration: none;}
-a:hover {color:#393537; text-decoration: underline;}
+a {color:#F60; text-decoration: none;}
+a:hover {background-color:#FF6600; color: #fff;text-decoration: underline;}
 h1 {font-size:22px; color:#000; font-weight:bold;}
 h2 {font-size:14px; color:#000;font-weight:bold;}
 h3 {font-size:12px; color:#F7941D;font-weight:bold;}
@@ -105,7 +106,7 @@ div#home-header h1{
 }
 
 /*User Panel*/
-#user_panel a {color:#F7941D; text-decoration: underline;}
+#user_panel a {color:#F7941D; text-decoration: underline;padding: 3px 3px;}
 
 /* Content */
 #content {min-height:500px; height: 100%; overflow: visible; margin-left:12px; margin-bottom:0px; background-color: #fff; }
@@ -193,7 +194,20 @@ height: 245px;
 	padding-left:25px;
 	padding-right:0px;
 	padding-bottom:25px;}  
-    
+
+
+#main a{
+color: #F60;
+text-decoration: underline;
+padding: 1px 1px;
+}
+
+#main a:hover{
+  background-color: #F60;
+  color: #FFF;
+}
+
+
 /* Breadcrumbing Area */
 #breadcrumbing_area {min-width:800px; height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
 #breadcrumbing_area h1{margin:0px; padding-top:5px;  padding-left:15px; height: 32px; background-color: #000; color: #fff; font-size:14px; font-weight:bold;}
@@ -344,8 +358,6 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 
 #none  {list-style-type : none; display : block; margin-left:230px;}
 #none  li {padding:3px;}
-#none_style  {list-style-type : none; display : block;}
-#none_style li a {text-decoration:underline;}
 
 /**Volunteer Form**/
 #volunteer_form table.person td {padding:0px 5px 5px 0px;}
@@ -444,7 +456,7 @@ LEGEND {
 #ticket-list div#from {padding-top:5px; color:blue;}
 
 /*Tent Positions*/
-#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px; }
+#tents_graphic {float:left; width:618px; height:3060px; margin-right: 10px; margin-bottom: 6260px }
 
 #tent_positions_list {
 	position:relative;
