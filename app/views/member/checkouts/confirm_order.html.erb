@@ -7,25 +7,21 @@
         <!-- -->
 <div id="step5">
 
-  <div class='left'>
-  <table class="box">
-  <tr>
-      <td colspan="2" valign="top">
-        <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 
-      </td>
-  </tr>  
-  <tr>
-      <td colspan="2" valign="top"><h2>Your Team: <%=@team.name%></h2></td>
-  </tr>
- 
-  <tr>
-      <td colspan="2" valign="top">
+
+
+
+	<div id="team-details">
+	<h2>Your Team: <%=@team.name%></h2>
         <b>Team Type</b>: <%=@team.boat_type_human%> <br/>
-        <b>New team?</b>: <%=@team.visit_status.to_s.capitalize%> <br/>
+        
+		<b>New team?</b>: <%=@team.visit_status.to_s.capitalize%> <br/>
         <b>Team Profile</b>: 
         <p>
-        <span class='notice'><%=@team.description%></span>
-            </p>
+        <span class='team-profile'><%=@team.description%></span>
+        </p>
+		<br/>
+		<b>Team Logo</b>: <%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> 		<br/>
+
             <%tents = 0%>
             <%@team.team_extras.map(&:extras).each do |item|%>
             <%
@@ -33,71 +29,39 @@
             quantity = team_extras.quantity if team_extras
              tents+=quantity %>
         <%end%>
-        <b>Tents</b>: <%=tents%> <br/>
-        
-      </td>
-  </tr>    
+        <b>Total tents ordered</b>: <%=tents%> <br/>
+    	
+	</div>        
 
-</table>
+	<div id="billing-details">
+	<h2>Billing Details</h2>
 
-<table class="box">
-  <tr>
-    <td><h2>Billing Details</h2></td>
-    <td width="100"><%#link_to "edit", member_boat_checkout_path(@team)%></td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
+	<%#link_to "edit", member_boat_checkout_path(@team)%>
    <b>Card Type</b>: <%= @credit_card.type.capitalize %><br>
    <b>Name on Card</b>: <%= @credit_card.first_name %> <%= @credit_card.last_name %><br>
    <b>Card Number</b>: <%= @credit_card.display_number %><br>
-   <b>Expiration Date</b>: <%= @credit_card.month %> / <%= @credit_card.year %>
-    </td>
-  </tr>
- 
-
-  <tr>
-    <td colspan="2" valign="top"><br/>
+   <b>Expiration Date</b>: <%= @credit_card.month %> / <%= @credit_card.year %><br>
    <b>Billing Address</b>: <%= "#{@billing.address} #{@billing.address2} #{@billing.city}, #{@billing.state} #{@billing.zip}" %>
-    </td>
-  </tr>
-  
-  </table>
-</div>
+	</div>
 
+	<div id="captain-details">
+	<h2>Captain Details</h2>
+	<%#link_to "edit",  member_edit_profile_url(@team)%>
 
-
-<table class="box">
-  <tr>
-    <td><h2>Captain Details</h2></td>
-    <td width="100"><%#link_to "edit",  member_edit_profile_url(@team)%></td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-    <%= @person.first_name %> <%= @person.last_name %><br>
-    <%= @person.email %><br>
+    <strong>Captain Name:</strong> <%= @person.name %><br>
+    <strong>Captain Email Address:</strong> <%= @person.email %><br>
       
-            <b>Street Address 1</b>: <%= @person.address %><br>
-          
-            <b>Street Address 2</b>: <%= @person.address2 %><br>
-          
-            <b>City</b>: <%= @person.city %><br>
-         
-            <b>Zip code</b>: <%= @person.zip%><br>
-          
-            <b>State</b>: <%= @person.state%><br>
-          
-            <b>Country</b>: <%=  @person.country %><br>
+            <b>Address</b>:<br/>
+			<%= @person.address %> <%= @person.address2 %><br>
+			<%= @person.city %>, <%= @person.state%> <%= @person.zip%><br>
+			<%=  @person.country %><br>
               
     <%= @person.phone %><br>
     <%= @person.phone_2 %><br>
-    </td>
-  </tr>
-</table>
+	</div>
 
 
-<div class="clearEm">&nbsp;&nbsp;</div>
-
-<div class="left">
+<div id="order-details">
 <h1>Order Total</h1>
 
 <table class="big-box" cellspadding="0" cellspacing="0">
@@ -105,7 +69,7 @@
   <%unless @team.active?%>
   <tr>
     <td><%=@team.boat_type_human%> : <%=@team.name%> </td>
-    <td width="100" align="right"><%=number_to_currency(@team.price)%></td>
+    <td width="400" align="right"><%=number_to_currency(@team.price)%></td>
   </tr>
   <%end%>
   <%@team.team_extras.map(&:extras).each do |item|%>
@@ -115,27 +79,22 @@
   <%if quantity>0%>
   <tr>
     <td><%=quantity%> <%=item.name%></td>
-    <td width="100" align="right"><%=number_to_currency item.price*quantity%></td>
+    <td width="400" align="right"><%=number_to_currency item.price*quantity%></td>
   </tr>
   <%end%>
   <%end%>
   <tr class='total'>
     <td>Total Charge</td>
-    <td width="100" align="right"><%= number_to_currency @team.total%></td>
+    <td width="400" align="right"><%= number_to_currency @team.total%></td>
   </tr>
 </table>
 </div>
 
-<table class="box">
-  <tr>
-    <td class='notice' height="65" valign="top">
-     
+
+     <div class="notice">
         <%= render :comatose=>'step5-instructions-2', :silent=>true %>
-       
-    </td>
-  </tr>
-  <tr>
-      <td valig="bottom">
+     </div>
+
         <% form_for :order, @order, :url => {:action => "place_order"}, :html=>{:id=>"order_form"} do |f| %>
 
 <% fields_for :person, @person do |p| %>
@@ -168,9 +127,7 @@
 <%= f.submit "COMPLETE REGISTRATION" %>
 
 <% end %>
-      </td>
-    </tr>
-</table>
+
 
 <div class="clearEm">&nbsp;&nbsp;</div>
 

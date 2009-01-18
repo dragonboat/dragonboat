@@ -8,7 +8,7 @@
 </div>
 <div id="step5">
 
- <div class="left">
+
     
  <table class="box">
   <tr>
@@ -25,17 +25,17 @@
   </tr>
   <tr>
       <td colspan="2" valign="top"><br>Team Profile:<br/><br/>
-      <span class='notice'><%=@team.description%></span>
+      <span class='team-profile'><%=@team.description%></span>
         </td>
   </tr>
-  <tr>
-      <td colspan="2" valign="top">Created at: <%=@team.created_at.strftime("%d/%m/%Y")%></td>
-  </tr>   
+
 </table>
+
 <!--  total number of paddlers Invited, accepted, declined -->
+
  <table class="box">
   <tr>
-    <td><h2>Total number of paddlers</h2></td>
+    <td><h2>Your team members</h2></td>
     <td width="100"><%=link_to "edit",  member_team_members_path(@team) %></td>
   </tr>
   <tr>
@@ -55,8 +55,8 @@
 <!-- Scheduled Practice Dates -->
  <table class="box">
   <tr>
-    <td colspan="2"><h2>Scheduled Practice Dates</h2></td>
-    <td width="100"><%=link_to "edit",member_team_practices_path(@team)%></td>
+    <td colspan="2"><h2>Your Practice Dates</h2></td>
+    <td ><%=link_to "edit",member_team_practices_path(@team)%></td>
   </tr>
 
   <tr>
@@ -77,7 +77,7 @@
   <%end%>
 
 </table>
-  </div>
+
   <!-- Right Side -->
   <%if @person != @captain%>
   <table class="box">
@@ -100,7 +100,7 @@
 <!-- Total Tents and reserved tent position  -->
 <table class="box">
   <tr>
-    <td><h2>Tents</h2></td>
+    <td><h2>Your Tents</h2></td>
     <td width="100">
         <%if @team.tents.size>0%>
         <%= link_to 'edit', member_team_tents_path(@team.id)%>

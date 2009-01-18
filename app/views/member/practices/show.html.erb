@@ -1,9 +1,9 @@
-<% content_for :title do %>Manage Practices : Show Practice Schedule<% end %>
+<% content_for :title do %>Manage Practices : Practices on <%=@current_day.strftime("%A %B %d, %Y")%><% end %>
 <div>
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 
-<h1><%=@current_day.strftime("%d %B %Y")%> - Practice Schedule</h1>
+<h1>Practices for <%=@current_day.strftime("%A %B %d, %Y")%></h1>
 <div class="instructions">
   <%= render :comatose=>'practice-schedule-instructions', :silent=>true %>
 </div>
@@ -11,13 +11,13 @@
 <table cellspacing=1 cellspadding=1 class="day">
   <tr>
     <th>Time</th>
-    <th width="250"></th>
+    <th width="350">Scheduled Practices</th>
   </tr>
   <%@practices.each do |p|%>
   <tr>
     <%if p.team_id == @team.id%>
      <td class="specialDay-current_reserved"><%=link_to p.time, member_team_practices_path(@team.id,'undo_reservation', p.id), :title=>"Click to undo your reservation"%></td>
-     <td class="other"><%=p.team_name.capitalize%></td>
+     <td class="other"><%=p.team_name%></td>
      <%elsif p.team_id.nil?%>
     <td class="specialDay-available">
       <%=link_to p.time, member_team_practices_path(@team.id,'edit', p.id), :title=>"Click to reserve this time for your team"%>
@@ -25,10 +25,10 @@
      <td class="other"></td>
     <%else%>
     <td class="specialDay-full"><%=p.time%></td>
-    <td class="other"><%=truncate(p.team_name.capitalize)%></td>
+    <td class="other"><%=p.team_name.ucase%></td>
     <%end%>
   </tr>
 <%end%>
 </table>
-
-<%= link_to 'Back', member_team_practices_path(@team)%>
+<br/>
+<%= link_to 'Return to practice schedule home', member_team_practices_path(@team)%>

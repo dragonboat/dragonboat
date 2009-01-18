@@ -14,15 +14,14 @@
 });
 </script>
 <p class="required">
-    <label for="team_human_name">Team Name:</label>
-    <span id="required">*<br /></span>
+    <label for="team_human_name">Team Name:</label><br />
     <%= f.text_area :human_name, :rows=>1, :cols=>80, :style=>"height:50px;" %><br>
     <span class='notice'>Please enter the official name of your team.  This will appear in the schedule and is the name that will be called on race day</span>
   </p>
   <%unless ["edit","update"].include? controller.action_name%>
   <p class="required">
     <label for="team_type_id">Team Type:</label>
-    <span id="required">*<br />
+    <span id="required"><br />
     <%= f.select :type_id, BoatType.find_active(:all).map { |r| ["#{r.name.capitalize} - #{number_to_currency r.price}", r.id] } %></span>
     <br><span class='notice'>
       Select the type of team you are registering. Please review <%=link_to "Team Type Information","/for-captains" %>

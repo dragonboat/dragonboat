@@ -14,16 +14,16 @@
     <%= content_tag :legend, "Your Personal Information" %>
     <% fields_for :person, @person do |p| %>
     <p class="required">
-      <label for="person_first_name">First Name</label>:<span id="required">*</span><br/><%= p.text_field :first_name %> 
+      <label for="person_first_name">First Name</label>:<br/><%= p.text_field :first_name %> 
     </p>
     <p class="required">
-      <label for="person_last_name">Last Name</label>:<span id="required">*</span><br/><%= p.text_field :last_name %> 
+      <label for="person_last_name">Last Name</label>:<br/><%= p.text_field :last_name %> 
     </p>
     <p class="required">
-      <label for="person_email">Email Address</label>:<span id="required">*</span><br/><%= p.text_field :email %>
+      <label for="person_email">Email Address</label>:<br/><%= p.text_field :email %>
     </p>
     <p class="required">
-      <label for="person_phone">Home Phone number</label>:<span id="required">*</span><br/><%= p.text_field :phone %>
+      <label for="person_phone">Home Phone number</label>:<br/><%= p.text_field :phone %>
     </p> 
     <% end %>
    <% end %>
@@ -32,28 +32,27 @@
     <h4>Credit Card Information</h4>
     <% fields_for :credit_card, @credit_card do |cc| %>
     <p class="required">
-      <label for="credit_card_type">Card Type</label>:<span id="required">*</span><br/>
+      <label for="credit_card_type">Card Type</label>:<br/>
       <%Order::CARD_TYPES.each do |type| %>
         <%= cc.radio_button :type, type[1] %>  
         <label for="credit_card_type_<%=type[1]%>"> <%=image_tag "icons/#{type[1]}.gif", :title=>type[0].capitalize,:border=>0%> </label>
         <%end%>
     </p>
     <p class="required">
-      <label for="credit_card_first_name">First Name</label>:<span id="required">*</span><br/> <%= cc.text_field :first_name %>
+      <label for="credit_card_first_name">First Name</label>:<br/> <%= cc.text_field :first_name %>
     </p>
     <p class="required">
-      <label for="credit_card_last_name">Last Name</label>:<span id="required">*</span><br/><%= cc.text_field :last_name %>
+      <label for="credit_card_last_name">Last Name</label>:<br/><%= cc.text_field :last_name %>
     </p>
     <p class="required">
-      <label for="credit_card_number">Card Number</label>:<span id="required">*</span><br/><%= cc.text_field :number %></p>
+      <label for="credit_card_number">Card Number</label>:<br/><%= cc.text_field :number %></p>
     <p class="required">
          <label for="credit_card_month">Card Verification Number</label>
          <%=link_to "what's this?", cvv_url, :target=>"_blank"%>:
-         <span id="required">*</span><br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
+         <br/> <%= cc.text_field :verification_value, :label => "CVV2", :size=>5 %>
      </p> 
       <p class="required">
       <label for="credit_card_month">Expiration Date:</label>
-      <span id="required">*</span>
       <br/>
       Month<span>/</span>Year<br/>
       <nobr><%= cc.select :month, (1..12) %><%= cc.select :year, (Time.now.year...(Time.now.year + 10)) %></nobr>
@@ -66,23 +65,10 @@
            <h4>Billing Address</h4>
            <div>
           <p>
-            <b>Street Address 1</b>: <%= @person.address %>
-          </p>
-          <p>
-            <b>Street Address 2</b>: <%= @person.address2 %>
-          </p>
-          <p>
-            <b>City</b>: <%= @person.city %>
-          </p>
-          <p>
-            <b>Zip code</b>: <%= @person.zip%>
-          </p>
-          <p>
-            <b>State</b>: <%= @person.state%>
-          </p>
-          <p>
-            <b>Country</b>: <%=  @person.country %>
-          </p>     
+            <%= @person.address %> <%= @person.address2 %><br/>
+			<%= @person.city %>, <%= @person.state%> <%= @person.zip%><br/>
+			<%= @person.country %>
+          </p> 
      </div>
      <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>Same as Personal Address  (uncheck this to change the billing address)</p>
      
@@ -91,6 +77,6 @@
      
      
      <%= f.submit "CONTINUE REGISTRATION" %>
-     <span class='notice'> you will be able to verify all information on the following screen before your card is charged</span>
+     <span class='notice'> You will be able to verify all information on the following screen before your card is charged</span>
 
 <% end %>
