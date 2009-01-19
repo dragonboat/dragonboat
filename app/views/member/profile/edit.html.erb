@@ -5,7 +5,7 @@
   <table class="form" >
   <tr>
   <td><label for="user_login">Username:</lable></td>
-  <td id="required">*<%= text_field_tag 'user[login]',@user.login, :size=>50, :disabled=>@user.is_member?%></td>
+  <td id="required"><%= text_field_tag 'user[login]',@user.login, :size=>50, :disabled=>@user.is_member?%></td>
   </tr>
   </table>
   <%= error_messages_for :user %>
@@ -46,6 +46,5 @@
     <%= render :partial => 'persons/full_form_1', :locals =>{:f=>person_field} %>
     <% end %>
   </table>
-  <span id="required">*</span>-Required <br/>
   <%= f.submit "Update" %>
 <% end %>

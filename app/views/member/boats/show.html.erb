@@ -56,9 +56,11 @@
  <table class="box">
   <tr>
     <td colspan="2"><h2>Your Practice Dates</h2></td>
-    <td ><%=link_to "edit",member_team_practices_path(@team)%></td>
+    <td width="100"><%=link_to "edit",member_team_practices_path(@team)%></td>
   </tr>
 
+  <tr><td colspan="3">
+  <table width="100%">
   <tr>
     <th>Date</th>
     <th>Time</th>
@@ -75,7 +77,8 @@
      </td>
    </tr>
   <%end%>
-
+	</table>
+	</td></tr></table>
 </table>
 
   <!-- Right Side -->
@@ -119,8 +122,10 @@
     <td>Current Tent Position:</td>
     <td><%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></td>
   </tr>
+	<tr><td></td></tr>
   <tr>
-    <td colspan="2"><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
+	
+    <td colspan=2 align="right"><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
   </tr>
   
 </table>

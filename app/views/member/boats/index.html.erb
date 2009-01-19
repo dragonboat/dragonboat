@@ -1,27 +1,22 @@
-<% content_for :title do %>Boats List<% end %>
+<% content_for :title do %>Your Teams<% end %>
 
 <% content_for :breadcrumbing_area do %>
-<h1>Select Boat</h1>
+<h1>Select a Team</h1>
+<% end %>
+
+<h2>Your Teams</h2>
 <div class="instructions">
   <%= render :comatose=>'team-list-instructions', :silent=>true %>
 </div>
-<% end %>
 
 <div id="boat_list">
- <table class="box">
-  <tr>
-    <td><h2>Boats</h2></td>
-    <td width="200"><%= link_to "Register Another Team", register_user_url, :class=>"menu"%></td>
-    <td colspan="2"></td>
-  </tr>
-
   <% @teams.each do |team|%>
-   <tr>
-     <td colspan="2" class="specialDay-current_reserved"><%=link_to team.name,  member_boat_url(team)%></td>
-     <td ><%= link_to(image_tag( team.image.public_filename(:thumb), :id=>"logo" ), member_boat_url(team) ) if team.image%></td>
-     <td valign="top" align="left" class='notice'> <%= h team.description%></td>
-   </tr>
-   <%end%>
-   </table>
+	<div class="team">
+		<%= link_to(image_tag( team.image.public_filename(:thumb), :id=>"logo" ), member_boat_url(team) ) if team.image%>
+		<h3><%=link_to team.name,  member_boat_url(team)%></h3>
+		<p><%= h team.description%></p>
+	</div>
+  <%end%>
 </div>
-  
+
+<div class="page-link"><%= link_to "Register Another Team", register_user_url, :class=>"menu"%></div>

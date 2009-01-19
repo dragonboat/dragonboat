@@ -37,17 +37,20 @@
 
 <%= render :partial => 'form' , :locals=>{:f=>f } %>
 
-<p><%= f.submit "Reserve This Practice Time"%></p>
+
+<%= f.submit "Reserve This Practice Time"%>&nbsp;&nbsp;<%= link_to 'Cancel', member_team_practices_path(@team)%>
+
+
 <% end %>
 
 <%end%>
-
+<!--
 <p>
 <%= button_to "Cancel",member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ) %>
 </p>
-
+-->
 <%else%>
-<p>Sorry, this is unavailable time..</p>
+<p>Sorry, this is practice slot is not available..</p>
 <%= link_to 'Back', member_team_practices_path(@team)%>
 <%end%>
 

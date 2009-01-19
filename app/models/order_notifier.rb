@@ -15,7 +15,7 @@ class OrderNotifier < ActionMailer::Base
   
   private
   def setup_email(order, sent_at)
-    @subject            = "Dragonboat Order##{order.id} #{order.status}"
+    @subject            = "Registration Confirmation: #{order.team.name}"
     @body[:order]       = order
     @recipients         = order.user.person.email
     @from               = "#{APP_CONFIG["admin_email"]}"

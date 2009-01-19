@@ -1,42 +1,71 @@
-Hello, <%= @order.user.person.name %>
+<%= @order.user.person.first_name %>,
+
 <%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
-Your order#<%= @order.id %> of tents has been <%= @order.status %>.
+	Your purchase of additional tents  for your team has been <%= @order.status %>.<%else%>
+Thank you for registering your team for the 2009 Philadelphia International Dragon Boat Festival!
+
+You can now manage your team by going to the address below and logging in with the username and password you entered during registration.
+	
+	http://www.philadragonboatfestival.com/login
+
+In the team management system you can:
+
+- Update your team name, profile, website, and upload a team logo
+- Invite paddlers to join your team
+- Get your paddlers to sign release waivers (required before they can get in a boat)
+- Reserve your team's practice times
+- Reserve your team's tent positions
+- Register more teams
+
+For more information on what to do next you can also check out our website for further information about participating in the festival:
+
+	http://www.philadragonboatfestival.com/information
+
+If you have any problems or questions, feel free to email us here:
+
+	support@philadragonboatfestival.com
+
+
+Below is the receipt for your registration:
+------------------------------------------------------------------------------------------
+<%end%>
+<%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
+	Tent Order Details
 <%else%>
-Your order#<%= @order.id %> of boat registration has been <%= @order.status %>.
-<%end%>
+Your Team: <%= CGI.unescapeHTML(@order.team.name) %>
+Team Type: <%=@order.team.boat_type_human%>
+New team? <%= @order.team.visit_status.to_s.capitalize %>
+Team Profile: <%=@order.team.description%>
+Tents: <%if @order.extras_orders.size > 0%><%@order.extras_orders.each do |extras_order|%> <%=extras_order.quantity%><%end%><%end%>
 
-Boat Details:
-Team Name: <%= CGI.unescapeHTML(@order.team.name) %>
-Team Profile: <%= @order.team.description %>
+Captain Details<%@person = @order.team.captain.person%>
+Captain Name: <%= @person.name %>
+Captain Email Address: <%= @person.email %>
+<%end%>
+Billing Details<%@credit_card = @order.credit_card%>
+Card Type: <%= @credit_card.type.capitalize %>
+Name on Card: <%= @credit_card.first_name %> <%= @credit_card.last_name %>
+Card Number: <%= @credit_card.display_number %>
+Expiration Date: <%= @credit_card.month %> / <%= @credit_card.year %><%@billing=@order.person %>
+Billing Address: <%= "#{@billing.address} #{@billing.address2} #{@billing.city}, #{@billing.state} #{@billing.zip}" %>
+<%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
+	Tent Order Details
+<%else%>
+------------------------------------------------------------------------------------------
+Order Total
+------------------------------------------------------------------------------------------
+<%=@order.team.boat_type_human%>: <%= CGI.unescapeHTML(@order.team.name) %> 		<%=number_to_currency @order.boat_pay %><%if @order.extras_orders.size > 0%><%@order.extras_orders.each do |extras_order|%>
+Tents: <%=extras_order.quantity%>					<%=number_to_currency(extras_order.pay * extras_order.quantity)%><%end%><%end%>
+------------------------------------------------------------------------------------------<% end %>
+TOTAL:						<%=number_to_currency @order.total_pay %>
+------------------------------------------------------------------------------------------
 
-Your Account Details:
-Username: <%= @order.user.login %>
-Type: <%= @order.user.type %>
 
-<%if @order.extras_orders.size > 0%>
-Extras Details:
-<%@order.extras_orders.each do |extras_order|%>
-Name: <%=extras_order.extras.name%>
-Quantity: <%=extras_order.quantity%>
---
-<%end%>
-<%end%>
+We look forward to seeing you on the water this year!
 
-Receipt
-<%if @order.boat_pay>0%>
-Boat: <%=number_to_currency @order.boat_pay %>
-<%end%>
-<%if @order.extras_orders.size > 0%>
-Extras:
-<%@order.extras_orders.each do |extras_order|%>
-Name: <%=extras_order.extras.name%>
-Quantity: <%=extras_order.quantity%>
-Price: <%=extras_order.pay%>
-Total: <%=extras_order.pay * extras_order.quantity%>
---
-<%end%>
-<%end%>
-TOTAL PAY: <%=number_to_currency @order.total_pay %>
+-- Philadelphia International Dragon Boat Festival
 
-Thanks,
-Dragonboat Team
+------------------------------------------------------------------------------------------
+If you need experience any problems with the website, or need any help, 
+please email: support@philadragonboatfestival.com
+

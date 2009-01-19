@@ -1,59 +1,14 @@
 /* @override 
 	http://www.phillydragonboat.info/stylesheets/main.css?1231587328
-	http://www.phillydragonboat.info/stylesheets/main.css?1231519225
-	http://www.phillydragonboat.info/stylesheets/main.css?1231542401
-	http://www.phillydragonboat.info/stylesheets/main.css?1231543410
-	http://www.phillydragonboat.info/stylesheets/main.css?1231604772
-	http://www.phillydragonboat.info/stylesheets/main.css?1231604823
-	http://www.phillydragonboat.info/stylesheets/main.css?1231606511
-	http://www.phillydragonboat.info/stylesheets/main.css?1231697196
-	http://www.phillydragonboat.info/stylesheets/main.css?1231697209
-	http://www.phillydragonboat.info/stylesheets/main.css?1231716093
-	http://www.phillydragonboat.info/stylesheets/main.css?1231723388
-	http://www.phillydragonboat.info/stylesheets/main.css?1231723602
-	http://www.phillydragonboat.info/stylesheets/main.css?1231766162
-	http://www.phillydragonboat.info/stylesheets/main.css?1232036756
-	http://www.phillydragonboat.info/stylesheets/main.css?1232044448
-	http://www.phillydragonboat.info/stylesheets/main.css?1232120946
-	http://www.phillydragonboat.info/stylesheets/main.css?1232080954
-	http://www.phillydragonboat.info/stylesheets/main.css?1232194100
-	http://www.phillydragonboat.info/stylesheets/main.css?1232210308
-	http://phillydragonboat.info/stylesheets/main.css?1232215837
-	http://phillydragonboat.info/stylesheets/main.css?1232215843
-	http://phillydragonboat.info/stylesheets/main.css?1232221081
-	http://www.phillydragonboat.info/stylesheets/main.css?1232222621
-	http://www.phillydragonboat.info/stylesheets/main.css?1232222906
-	http://www.phillydragonboat.info/stylesheets/main.css?1232223446
-	http://www.phillydragonboat.info/stylesheets/main.css?1232223614
-	http://www.phillydragonboat.info/stylesheets/main.css?1232223968
-	http://www.phillydragonboat.info/stylesheets/main.css?1232225165
-	http://www.phillydragonboat.info/stylesheets/main.css?1232227065
-	http://www.phillydragonboat.info/stylesheets/main.css?1232228361
-	http://www.phillydragonboat.info/stylesheets/main.css?1232228810
-	http://www.phillydragonboat.info/stylesheets/main.css?1232229900
-	http://www.phillydragonboat.info/stylesheets/main.css?1232229990
-	http://www.phillydragonboat.info/stylesheets/main.css?1232231047
-	http://www.phillydragonboat.info/stylesheets/main.css?1232231928
-	http://www.phillydragonboat.info/stylesheets/main.css?1232234072
-	http://www.phillydragonboat.info/stylesheets/main.css?1232240482
-	http://www.phillydragonboat.info/stylesheets/main.css?1232240569
-	http://www.phillydragonboat.info/stylesheets/main.css?1232240602
-	http://www.phillydragonboat.info/stylesheets/main.css?1232242262
-	http://www.phillydragonboat.info/stylesheets/main.css?1232243476
-	http://www.phillydragonboat.info/stylesheets/main.css?1232243506
-	http://www.phillydragonboat.info/stylesheets/main.css?1232244287
-	http://www.phillydragonboat.info/stylesheets/main.css?1232245070
-	http://www.phillydragonboat.info/stylesheets/main.css?1232245561
-	http://www.phillydragonboat.info/stylesheets/main.css?1232246334
-	http://www.phillydragonboat.info/stylesheets/main.css?1232249039
-	http://phillydragonboat.info/stylesheets/main.css?1232249692
-	http://phillydragonboat.info/stylesheets/main.css?1232291385
-	http://phillydragonboat.info/stylesheets/main.css?1232294079
-	http://phillydragonboat.info/stylesheets/main.css?1232295450
-	http://phillydragonboat.info/stylesheets/main.css?1232295705
-	http://phillydragonboat.info/stylesheets/main.css?1232301059
-	http://phillydragonboat.info/stylesheets/main.css?1232301229
 	http://phillydragonboat.info/stylesheets/main.css?1232301333
+	http://www.phillydragonboat.info/stylesheets/main.css?1232302357
+	http://www.phillydragonboat.info/stylesheets/main.css?1232315898
+	http://www.phillydragonboat.info/stylesheets/main.css?1232316174
+	http://www.phillydragonboat.info/stylesheets/main.css?1232319779
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320017
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320042
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320142
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320184
 */
 
 body {
@@ -71,7 +26,8 @@ a:hover {background-color:#FF6600; color: #fff;}
 h1 {font-size:22px; color:#000; font-weight:bold;}
 h2 {font-size:14px; color:#000;font-weight:bold;}
 h3 {font-size:12px; color:#F7941D;font-weight:bold;}
-h3.boat_name {font-size:22px;}
+h3.boat_name {font-size:32px; margin-top: 2px; margin-bottom: 5px;}
+
 h4 {font-size:14px; font-weight:bold;}
 
 #required {color:red;}
@@ -250,13 +206,13 @@ height: 245px;
 	display:block;
 	overflow:hidden;
 	border: 0px solid red;
-	padding-top: 0px;
+	padding-top: 20px;
 	padding-left:20px;
 	padding-right:0px;
 	padding-bottom:25px;}  
 
 #content div#main_member{
-	padding-left:00px;  
+	padding-left:0px;
 }
 
 
@@ -301,10 +257,11 @@ h1 #home-heading{
 	float:left;
 	background-color: #F7941D; 
     padding-right:15px; 
-    font-size:12px;        
-                }
+    font-size:12px;
+   }
                 
 #submenu_section_member{
+
   display: none;
 }
                      
@@ -582,22 +539,45 @@ LEGEND {
 .tent_positions #reserved, 
 .tent_positions #current_reserved {
 	border: 1px solid #AAA; 
-	text-align:center; 
-	width: 150px;
+	text-align:left; 
+	width: 275px;
 	padding-top:2px;
 	padding-bottom:2px;
 	margin-bottom: 1px;
+	padding-left: 5px;
+}
+
+.tent_positions td#available, 
+.tent_positions td#reserved, 
+.tent_positions td#current_reserved {
+text-align: left;
+font-weight: bold;
+width: 78px;
+}
+
+div.legend{
+  width: 270px;
+  border: 1px solid #AAA;
+  padding: 5px;
+  background-color: #FAFAFA;
+}
+
+div.legend h3{
+	width: 100px;
+	margin: 0;
+	padding-left: 3px;
 }
 
 .tent_positions #available:hover, 
 .tent_positions #reserved:hover, 
 .tent_positions #current_reserved:hover {
-	border: px solid black;
+	border: 1px solid #AAA;
 
 }
 
 .tent_positions a {
-	padding:3px 65px;
+	padding:3px 1px;
+	padding-right: 250px;
       color: #000;
       font-weight: bold;
 }
@@ -609,7 +589,7 @@ LEGEND {
 }
 
 
-.tent_positions a:hover {background-color:#FFF ; padding: 1px 65px;}
+.tent_positions a:hover {background-color:#FFF ; padding: 3px 1px;padding-right: 250px;}
 
 .tent_positions #available, .legend #available { background-color:#99DB99;  }
 .tent_positions #reserved, .legend #reserved {text-align: 
@@ -708,10 +688,31 @@ td.specialDay-available a:hover{
 #step3 #total { width: 300px; font-size:14px; background-color:#cccccc;  padding-top:5px; padding-bottom:5px; font-weight:bold; margin-right:50px;}
 
 
-#boat_list table td{text-align:left; padding-left:15px;  padding-right:15px; padding-top:5px; padding-bottom:5px;}
-#boat_list a{ color:#fff; font-size:14px; padding:1px;}
-
+#boat_list a{ color:#000; padding:1px;}
 #boat_list a.menu {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
+
+#boat_list .team{
+  height: 100px;
+  border: 1px solid #EEE;
+  background-color: #FAFAFA;
+  margin-bottom:15px;
+}
+
+#boat_list .team:hover{
+	border: 1px solid #AAA;
+}
+#boat_list .team img#logo{
+  float: left;
+}
+
+#boat_list .team h3{
+  font-size: 16px;
+}
+
+#boat_list .team h3, #boat_list .team p{
+  margin-left: 130px;
+  margin-top: 5px;
+}
 
 
 .obj_list td a {text-decoration: underline; }
