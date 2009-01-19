@@ -51,7 +51,7 @@
 
      
        <!--[if lte IE 6]></td><td style='background:#fff'><![endif]-->
-       <%unless request.request_uri=~ /(checkouts)|(\/member\/boats\/new)|(\/add_extras)|(\/extras)|(\/update)/i  %>
+       <%unless request.request_uri=~ /(checkouts)|(\/member\/boats\/new)|(\/add_extras)|(\/extras)/i  %>
        
        <div id="main<%="_member" if @team && @team.active?%>">
        <%else%>
