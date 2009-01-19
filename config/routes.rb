@@ -109,5 +109,11 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   # install comatose root lowest priority
   map.comatose_admin
+  map.comatose_root 'home-page',  :layout=>'application', :use_cache=>false
   map.comatose_root '', :layout => 'application', :use_cache=>false
+  #map.connect '', :controller =>"home"
+
+  #map.connect 'home', :controller=>'comatose', :action=>"show", :id=>'home-page'
+ # map.comatose_home_page 'home', :index=>'application', :use_cache=>false
+
 end
