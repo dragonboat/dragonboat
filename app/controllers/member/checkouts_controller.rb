@@ -5,7 +5,7 @@ before_filter :secure_site
 skip_before_filter :leave_secure_site
 
 include ActiveMerchant::Billing
-ActiveMerchant::Billing::Base.mode = :live #:test
+ActiveMerchant::Billing::Base.mode = :test #:live
 
  def index
     @order = Order.new
