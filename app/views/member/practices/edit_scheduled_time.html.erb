@@ -1,0 +1,33 @@
+<% content_for :title do %>Manage Practices : Undo Practice Time Reservation<% end %>
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+<%if @practice%>
+<%d = @practice.created_at%>
+<h1 class="specialDay-current_reserved"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
+ <div class="instructions">
+  <%= render :comatose=>'cancel-scheduled-practice-time-instructions', :silent=>true %>
+ </div>
+<%= error_messages_for :practice %>
+
+<% form_for(:practice, :url => member_team_practices_path(@team,"update_data",@practice.id), :html=>{:method=>:put}) do |f| %>
+
+<%= render :partial => 'form' , :locals=>{:f=>f } %>
+
+<p><%= f.submit "Update"%></p>
+<% end %>
+
+<% form_for(:practice, :url => member_team_practices_path(@team,"undo",@practice.id), :html=>{:method=>:put } ) do |f| %>
+<%= f.hidden_field :team_id %>
+
+<p><%= submit_tag "Cancel this scheduled Practice" , :onclick=>"return confirm('Do you really want to cancel this scheduled practice?');"%></p>
+<% end %>
+<p>
+
+</p>
+
+<%else%>
+<p>Sorry, this is unavailable time..</p>
+<%= link_to 'Back', member_team_practices_path(@team)%>
+<%end%>
+

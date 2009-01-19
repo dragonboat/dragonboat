@@ -2,7 +2,7 @@ class TicketNotifier < ActionMailer::Base
   include SupportHelper
   def open(ticket)
     @recipients  = "#{ticket.email}"
-    @from        = "#{APP_CONFIG['admin_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}" 
     @subject     =  "Your ticket##{ticket.id} has been created. "
     @subject +=ticket.subject
     setup_email(ticket)
@@ -10,7 +10,7 @@ class TicketNotifier < ActionMailer::Base
   
   def reply(ticket) 
     @recipients  = "#{ticket.email}"
-    @from        = "#{APP_CONFIG['admin_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}" 
     @subject     =  ""
     setup_email(ticket)
     set_answer(ticket)    
@@ -18,7 +18,7 @@ class TicketNotifier < ActionMailer::Base
   
   def pending(ticket)
     @recipients  = "#{ticket.email}"
-    @from        = "#{APP_CONFIG['admin_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}" 
     @subject     =  "Your ticket##{ticket.id} has been pending."
     setup_email(ticket)
     set_answer(ticket)    
@@ -26,7 +26,7 @@ class TicketNotifier < ActionMailer::Base
   
   def review(ticket) 
     @recipients  = "#{ticket.email}"
-    @from        = "#{APP_CONFIG['admin_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}"  
     @subject     =  "Your ticket##{ticket.id} has been reviewed."
     setup_email(ticket) 
     set_answer(ticket)
@@ -34,7 +34,7 @@ class TicketNotifier < ActionMailer::Base
   
   def closed(ticket)
     @recipients  = "#{ticket.email}"
-    @from        = "#{APP_CONFIG['admin_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}" 
     @subject     =  "Your ticket##{ticket.id} has been closed."
     setup_email(ticket)    
     set_answer(ticket)   
@@ -42,7 +42,7 @@ class TicketNotifier < ActionMailer::Base
   
   def admin_notifier(ticket)
     @recipients  = "#{APP_CONFIG['admin_email']}"
-    @from        = "#{APP_CONFIG['noreply_email']}"
+    @from        = "#{APP_CONFIG['noreply_email']}" 
     @subject     =  "The ticket##{ticket.id} has been created. "
     @subject +=ticket.subject
     @content_type = "text/html"  

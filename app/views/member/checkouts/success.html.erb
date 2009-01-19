@@ -1,10 +1,11 @@
 <% @tents = @team.tents %>
-<%= render :partial => 'registration_header_6' unless @tents.size>0 %>
-<%= render :partial => 'purchase_tents_header_4' if @tents.size>0 %>
+<%= render :partial => 'registration_header_6' if @order.boat_pay > 0 %>
+<%= render :partial => 'purchase_tents_header_4' if @order.boat_pay == 0 %>
 
-<p> Your Registration Details (print this page for a hard-copy of your receipt):</p>
+<p> Your Registration Details (<%=link_to_function "print this page","void(printSpecial());"%> for a hard-copy of your receipt):</p>
 
 <div id="step5">
+  <span id="printReady">
   <h4>Order # <%=@order.id%></h4>
   <div class="left">
  <table class="box">
@@ -99,7 +100,7 @@
 <table class="big-box" cellspadding="0" cellspacing="0">
   <%if @order.boat_pay > 0%>
   <tr>
-    <td><%=@team.boat_type_human%></td>
+    <td><%=@team.boat_type_human%> : <%=@team.name%></td>
     <td width="100" align="right"><%=number_to_currency @team.price%></td>
   </tr>
   <%end%>
@@ -120,7 +121,7 @@
   </tr>
 </table>
 </div>
-
+</span>
 <table class="box">
   <tr>
     <td class='notice' height="65" valign="top">
@@ -144,7 +145,7 @@
 <div class="clearEm">&nbsp;&nbsp;</div>
 
 </div>
-    
+
 
 
    

@@ -79,7 +79,7 @@ class Person < ActiveRecord::Base
       for attr_name in [:phone,:address, :zip, :city, :state]
         errors.add_on_blank(attr_name, 'is required')
       end
-      errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
+      errors.add(:phone, 'must consist of 10 digits') if  phone_number&&phone_number.size != 10 
       errors.add(:zip, 'is not valid') unless zip =~ /^[\d]{0,5}$/
     end 
   end

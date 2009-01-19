@@ -1,6 +1,7 @@
 class Member::PracticesController < Member::WebsiteController 
   before_filter :has_boat?
   before_filter :fetch_team
+  before_filter :is_captain, :only=>[:reschedule,:undo,:update, :update_data]
   before_filter :init_filter
   
   def index
@@ -36,7 +37,7 @@ class Member::PracticesController < Member::WebsiteController
     end
   end
   
-  def undo_reservation
+  def edit_scheduled_time
     @practice = @team.practices.find(params[:id])
   end
   
@@ -69,10 +70,23 @@ class Member::PracticesController < Member::WebsiteController
     end
 
     rescue Exception 
-   #   render :action=> :edit
+      render :action=> :edit
     end
  end
  
+  def update_data
+    @practice = @team.practices.find(params[:id])
+    @practice.attributes = (params[:practice])
+    @practice.team_id = @team.id   
+    if @practice.save
+      flash[:notice] = 'Practice was successfully updated.'
+      d = @practice.created_at
+      redirect_to member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year )
+    else 
+      render :action=> :edit_scheduled_time
+    end    
+  end
+  
   def reschedule
     begin
     @practice = Practice.find_available(params[:id])
@@ -102,5 +116,9 @@ class Member::PracticesController < Member::WebsiteController
    to = Date.new(2009,9).end_of_month
    
    @filter = EventFilter.new(from, to)
+  end
+  
+  def is_captain
+    current_user.is_captain? && current_user.teams.include?(@team) ? true : access_denied
   end
 end

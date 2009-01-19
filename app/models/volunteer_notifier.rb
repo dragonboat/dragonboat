@@ -2,7 +2,7 @@ class VolunteerNotifier < ActionMailer::Base
   
   def message(volunteer,subject,message)
     @recipients  = "#{volunteer.person.email}"
-    @from        = APP_CONFIG['admin_email']
+    @from        = "#{APP_CONFIG['noreply_email']}" 
     @subject     = subject
     @sent_on     = Time.now
     @body[:volunteer] = volunteer  

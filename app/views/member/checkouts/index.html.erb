@@ -84,7 +84,7 @@
             <b>Country</b>: <%=  @person.country %>
           </p>     
      </div>
-     <p><%=check_box_tag "use_personal_address", "1",params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>Same as Personal Address  (uncheck this to change the billing address)</p>
+     <p><%=check_box_tag "use_personal_address", "1", address(@billing) == address(@person)  ? "1" : params[:use_personal_address], :onclick=>"$('billing_address').toggle();" %>Same as Personal Address  (uncheck this to change the billing address)</p>
      
      <%= render :partial => 'billing_form' %>
      

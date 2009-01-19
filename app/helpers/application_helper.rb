@@ -196,4 +196,7 @@ module ApplicationHelper
       html << current_page[:title] if current_page
    end
 
+   def address(person)
+     "#{person.address} #{person.address2} #{person.city}, #{person.state} #{person.zip} #{person.country}"
+   end
 end

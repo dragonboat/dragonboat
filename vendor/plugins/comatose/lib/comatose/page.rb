@@ -135,7 +135,7 @@ class Comatose::Page < ActiveRecord::Base
   end
   
   def title_titleize
-    short_title? ?  short_title.titleize : title.titleize
+    short_title? ?  short_title : title
   end
   
 protected

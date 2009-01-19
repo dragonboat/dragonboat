@@ -13,14 +13,27 @@
     <th>Time</th>
     <th width="250"></th>
   </tr>
+  <%allow_edit = current_user.teams.include?(@team)%>
   <%@practices.each do |p|%>
   <tr>
     <%if p.team_id == @team.id%>
-     <td class="specialDay-current_reserved"><%=link_to p.time, member_team_practices_path(@team.id,'undo_reservation', p.id), :title=>"Click to undo your reservation"%></td>
+     <td class="specialDay-current_reserved">
+       <%if allow_edit%>
+        <%=link_to p.time, member_team_practices_path(@team.id,'edit_scheduled_time', p.id), :title=>"Click to edit scheduled time"%>
+       <%else%>
+         <%= p.time %>
+       <%end%>
+     </td>
      <td class="other"><%=p.team_name.capitalize%></td>
      <%elsif p.team_id.nil?%>
     <td class="specialDay-available">
-      <%=link_to p.time, member_team_practices_path(@team.id,'edit', p.id), :title=>"Click to reserve this time for your team"%>
+      
+      
+      <%if allow_edit%>
+        <%=link_to p.time, member_team_practices_path(@team.id,'edit', p.id), :title=>"Click to reserve this time for your team"%>
+       <%else%>
+         <%= p.time %>
+       <%end%>
     </td>
      <td class="other"></td>
     <%else%>

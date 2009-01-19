@@ -5,7 +5,7 @@ before_filter :secure_site
 skip_before_filter :leave_secure_site
 
 include ActiveMerchant::Billing
-ActiveMerchant::Billing::Base.mode = :test#:live
+ActiveMerchant::Billing::Base.mode = :live #:test
 
  def index
     @order = Order.new
@@ -117,12 +117,11 @@ ActiveMerchant::Billing::Base.mode = :test#:live
     @order.team = @team
     @customer = current_user
     @person = @customer.person
-    if params[:use_personal_address] == "1"
-      @billing = Person.new(@person.attributes)
-    else
-      @billing = Person.new(params[:person])
+    @billing = Person.new(@person.attributes)
+    unless params[:use_personal_address] == "1"  
+      @billing.attributes = (params[:person])
     end
-    #@person.attributes = (params[:person])
+  
     @billing.validation_mode = :order
     @order.person = @billing
     @credit_card = ActiveMerchant::Billing::CreditCard.new(params[:credit_card])

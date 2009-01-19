@@ -10,7 +10,7 @@
         <%if @team.tents.size>0%>
         <li  <%= "class=\"current\"" if url =~/(tent)/ %>><%= link_to 'Tent Position', member_team_tents_path(@team.id)%> |</li>
         <%else%>
-        <li class="frozen"><%= link_to_function 'Tent Position', ""%> |</li>
+        <li><%= link_to 'Order Tents', member_extras_boat_url(@team)%> |</li>
         <%end%>
         <%if current_user.teams.count_active > 0 %>
         <li><%= link_to "Register Another Team", register_user_url%> |</li>

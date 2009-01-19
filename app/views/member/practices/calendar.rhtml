@@ -9,7 +9,7 @@
   <tr>
     <th>Date</th>
     <th>Time</th>
-    <th width="150">Assisted by</th>
+    <th width="200" colspan="2">Assisted by</th>
   </tr>
 <%if  @current_practices.size>0%>
   <% @current_practices.each do |p|%>
@@ -19,7 +19,9 @@
      <td class="specialDay-current_reserved" style="text-align:left;">
        <%="<br>Launch Driver: #{p.launch_driver}" if p.launch_driver && !p.launch_driver.empty?%>
        <%="<br>Steersperson: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
+       
      </td>
+     <td class="specialDay-current_reserved"><%=link_to "edit", member_team_practices_path(@team.id,'edit_scheduled_time', p.id) if  current_user.teams.include?(@team)%></td>
    </tr>
   <%end%>
 <%end%>

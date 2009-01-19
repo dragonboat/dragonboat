@@ -1,8 +1,6 @@
 class UpdatePracticeDatePractices < ActiveRecord::Migration
   def self.up
-    #July & August: Monday – Thursday(1-4) – 6pm & 7pm (2 at each hour) 
-    #в 6 часов 2 практики 
-    #в 7 часов 2 практики
+   #July & August: Monday – Thursday(1-4) – 6pm & 7pm (2 at each hour) 
    Practice.delete_all
    start_date = Date.new(2009,7).beginning_of_month #July 
    end_date = Date.new(2009,8).end_of_month #August
