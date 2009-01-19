@@ -1,21 +1,23 @@
  <% if logged_in? %>
-            Logged in as <b><%= current_user.person.first_name  %> <%= current_user.person.last_name  %></b> &nbsp;|&nbsp;
-            <%unless current_user.is_admin?%>
-            <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_edit_profile_url(current_user.member.team.name.to_slug) : ( @team&&@team.active? ? member_edit_team_profile_url(@team) : member_edit_profile_url ) %> &nbsp;|&nbsp;
-            
-            
-            <%if current_user.is_captain?%>
-            
-            <%if current_user.teams.count_active == 1 %>
-              <%= link_to("My Team", team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
-              <%= link_to("My Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
-            <%elsif current_user.teams.count_active > 1%>
-               <%= link_to "My Teams", member_boats_path%> &nbsp;|&nbsp;                
-            <%end%> 
-            
-             
-            <%end%>
+        Logged in as <b><%= current_user.person.first_name  %> <%= current_user.person.last_name  %></b> &nbsp;|&nbsp;
+        <%unless current_user.is_admin?%>
+        <%= link_to "My Account",current_user.is_member?&&!current_user.is_captain? ?  team_edit_profile_url(current_user.member.team.name.to_slug) : ( @team&&@team.active? ? member_edit_team_profile_url(@team) : member_edit_profile_url ) %> &nbsp;|&nbsp;
         
+        
+        <%if current_user.is_captain?%>
+        
+        <%if current_user.teams.count_active == 1 %>
+        <%= link_to("My Team", member_team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
+        <%= link_to("My Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
+        <%elsif current_user.teams.count_active > 1%>
+        <%= link_to "My Teams", member_boats_path%> &nbsp;|&nbsp;                
+        <%end%> 
+        
+        
+        <%elsif !current_user.is_member?%>
+          <%= link_to("My Team", member_boats_path) + "&nbsp;|&nbsp;" %> 
+        <%end%>
+            
         <%if current_user.tickets.find_pending(:first)%>
         <%= link_to "Support",  @team&&@team.active? ? member_team_tickets_list_url(@team) : member_tickets_list_url  %> &nbsp;|&nbsp; 
         <%end%>
