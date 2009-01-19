@@ -1,5 +1,15 @@
-<p>You have reserved a <%= @team.tents.find_not_empty(:all).size%> of <%=@tents.size%> main tents</p>
-<p>Current Tent Position: <%=@team.tents.find_not_empty(:all).map(&:location).join(",")%></p>
+
+<div class="legend">
+<h3>Position legend</h3>
+  <table>
+    <tr>
+      <td id="current_reserved">Your Tent</td>
+      <td id="reserved">Reserved</td>
+      <td id="available">Available</td>
+    </tr>
+  </table>
+</div>
+<br/>
 
 <%@tent_postions.each do |tent_position|%>
 <%= error_messages_for :tent if @tent_position && (@tent_position.number == tent_position.number)%>
@@ -13,13 +23,13 @@
    </div>
   <%elsif @tents.map(&:location).include? tent_position.number.to_s%>
     <div id="current_reserved">
-      <%=link_to_remote("#{tent_position.number}", :url=>member_team_tents_path(@team.id, "unreserved", tent_position.id),
+      <%=link_to_remote("#{tent_position.number}: #{truncate(tent_position.team_name,25)}", :url=>member_team_tents_path(@team.id, "unreserved", tent_position.id),
                 :loading => visual_effect(:highlight, "tent_location_#{tent_position.id}"),
-                :confirm => 'Are you sure that you want to be made available again this tent position?' ) %>
-                <div><%=truncate(tent_position.team_name,15)%> </div>
+                :confirm => 'Are you sure that you want to cancel this tent reservation?' ) %>
+
      </div>
     <%else%>
-    <div id="reserved"><%=tent_position.number%><br/><%=truncate(tent_position.team_name,15)%> </div>
+    <div id="reserved"><%=tent_position.number%>: <%=truncate(tent_position.team_name,25)%> </div>
   <%end%>
 
 

@@ -7,10 +7,10 @@
             <%if current_user.is_captain?%>
             
             <%if current_user.teams.count_active == 1 %>
-              <%= link_to("Your Team", team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
-              <%= link_to("Your Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
+              <%= link_to("My Team", team_members_path(@team.name.to_slug)) + "&nbsp;|&nbsp;" if @team&&@team.name %> 
+              <%= link_to("My Team", member_boats_path) + "&nbsp;|&nbsp;" unless @team&&@team.name %> 
             <%elsif current_user.teams.count_active > 1%>
-               <%= link_to "Your Teams", member_boats_path%> &nbsp;|&nbsp;                
+               <%= link_to "My Teams", member_boats_path%> &nbsp;|&nbsp;                
             <%end%> 
             
              

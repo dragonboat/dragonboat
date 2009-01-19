@@ -9,6 +9,6 @@
 </div>
 <%= render :partial => 'member/members/member'%>
 
-<%= link_to 'Edit', member_team_members_path(@team, "edit", @member.id) %> |
+<%= link_to 'Edit this team member', member_team_members_path(@team, "edit", @member.id) %> |
 
-<%= link_to 'Back', member_team_members_path(@team)%>
+<%= link_to 'Return to team member list', member_team_members_path(@team)%>

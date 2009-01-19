@@ -4,7 +4,7 @@
 </div>
 <%if @practice%>
 <%d = @practice.created_at%>
-<h1 class="specialDay-available"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
+<h1 >Schedule Practice for <%=d.strftime("%A %B %d, %Y")%> at <%= @practice.time %></h1>
 
 <div class="instructions">
   <%= render :comatose=>'reserve-practice-time-instructions', :silent=>true %>
@@ -13,13 +13,13 @@
 <%# error_messages_for :practice %>
 <%if @practice.errors && @practice.errors.size>0%>
     <div id="errorExplanation" class="errorExplanation">
+		<h2>Are you sure you want to reschedule?</h2>
       <%# content_tag("ul", @practice.errors.collect { |msg| content_tag("li", msg[1]) }) %>
       <p>You are only allowed one practice per month and your team already has a practice reserved for the month of 
-      <%=@old_practice.created_at.strftime('%B')%>. </p>
-      <p>If you wish to reschedule your practice to this new date / time your other practice will be cancelled. </p>
-      <p>
-      Are you sure you wish to reschedule your practice from <%=@old_practice.date%> / <%=@old_practice.time%> to 
-      <%= @current_practice.date%> / <%= @current_practice.time%>?
+      <%=@old_practice.created_at.strftime('%B')%>. If you wish to reschedule your practice to this new date / time your other practice will be cancelled. 
+		<br/>
+      <strong>Are you sure you wish to reschedule your practice from <%=@old_practice.date%> / <%=@old_practice.time%> to 
+      <%= @current_practice.date%> / <%= @current_practice.time%>?</strong>
       </p>
     </div>
     
@@ -28,7 +28,7 @@
 
         <%= render :partial => 'form' , :locals=>{:f=>f } %>
 
-        <p><%= f.submit "Reschedule This Practice Time"%></p>
+        <p><%= f.submit "YES, reschedule my practice to this new time"%></p>
     <% end %>
 <%else%>
 
@@ -37,17 +37,20 @@
 
 <%= render :partial => 'form' , :locals=>{:f=>f } %>
 
-<p><%= f.submit "Reserve This Practice Time"%></p>
+
+<%= f.submit "Reserve This Practice Time"%>&nbsp;&nbsp;<%= link_to 'Cancel', member_team_practices_path(@team)%>
+
+
 <% end %>
 
 <%end%>
-
+<!--
 <p>
 <%= button_to "Cancel",member_team_practices_path(:team_id=>@team,:action=>'show', :mday=>d.mday,:mon=>d.mon,:year=>d.year ) %>
 </p>
-
+-->
 <%else%>
-<p>Sorry, this is unavailable time..</p>
+<p>Sorry, this is practice slot is not available..</p>
 <%= link_to 'Back', member_team_practices_path(@team)%>
 <%end%>
 

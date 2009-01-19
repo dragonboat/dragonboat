@@ -1,2 +1,5 @@
 <% content_for :title do %>LOGIN<% end %>
+<% content_for :breadcrumbing_area do %><h1>Sign in to manage a team</h1><% end %>
+
+<%= render :comatose=>'login-instructions', :silent=>true %>
 <%= render :partial => 'sessions/form'%>

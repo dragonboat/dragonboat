@@ -1,20 +1,14 @@
 /* @override 
 	http://www.phillydragonboat.info/stylesheets/main.css?1231587328
-	http://www.phillydragonboat.info/stylesheets/main.css?1231519225
-	http://www.phillydragonboat.info/stylesheets/main.css?1231542401
-	http://www.phillydragonboat.info/stylesheets/main.css?1231543410
-	http://www.phillydragonboat.info/stylesheets/main.css?1231604772
-	http://www.phillydragonboat.info/stylesheets/main.css?1231604823
-	http://www.phillydragonboat.info/stylesheets/main.css?1231606511
-	http://www.phillydragonboat.info/stylesheets/main.css?1231697196
-	http://www.phillydragonboat.info/stylesheets/main.css?1231697209
-	http://www.phillydragonboat.info/stylesheets/main.css?1231716093
-	http://www.phillydragonboat.info/stylesheets/main.css?1231723388
-	http://www.phillydragonboat.info/stylesheets/main.css?1231723602
-	http://www.phillydragonboat.info/stylesheets/main.css?1231766162
-	http://www.phillydragonboat.info/stylesheets/main.css?1232036756
-	http://www.phillydragonboat.info/stylesheets/main.css?1232044448
-	http://www.phillydragonboat.info/stylesheets/main.css?1232120946
+	http://phillydragonboat.info/stylesheets/main.css?1232301333
+	http://www.phillydragonboat.info/stylesheets/main.css?1232302357
+	http://www.phillydragonboat.info/stylesheets/main.css?1232315898
+	http://www.phillydragonboat.info/stylesheets/main.css?1232316174
+	http://www.phillydragonboat.info/stylesheets/main.css?1232319779
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320017
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320042
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320142
+	http://www.phillydragonboat.info/stylesheets/main.css?1232320184
 */
 
 body {
@@ -28,11 +22,12 @@ body {
     }
 
 a {color:#F60; text-decoration: none;}
-a:hover {background-color:#FF6600; color: #fff;text-decoration: underline;}
+a:hover {background-color:#FF6600; color: #fff;}
 h1 {font-size:22px; color:#000; font-weight:bold;}
 h2 {font-size:14px; color:#000;font-weight:bold;}
 h3 {font-size:12px; color:#F7941D;font-weight:bold;}
-h3.boat_name {font-size:22px;}
+h3.boat_name {font-size:32px; margin-top: 2px; margin-bottom: 5px;}
+
 h4 {font-size:14px; font-weight:bold;}
 
 #required {color:red;}
@@ -55,7 +50,12 @@ img {border:0px;}
 	width:327px; 
 	height: 162px;
 	float:left;
-	boder:0px solid red}
+	border:0px solid red}
+
+#header div#pdb_logo a:hover {
+padding: 0px;
+background-color:#FFF;
+}
 
 #header_side{
   float: right;
@@ -108,6 +108,8 @@ div#home-header h1{
 
 /*User Panel*/
 #user_panel a {color:#F7941D; text-decoration: underline;padding: 3px 3px;}
+#user_panel a:hover {color:#FFF; text-decoration: underline;padding: 3px 3px;}
+
 
 /* Content */
 #content {min-height:500px; height: 100%; overflow: visible; margin-left:12px; margin-bottom:0px; background-color: #fff; }
@@ -145,13 +147,22 @@ div#home-header h1{
 
   clear: both;
   margin-bottom: 15px;
-  border: 0px solid red;
+  border: 1px solid white;
+
 }
 
-.home-icon{
+.home-icon:hover{
+border: 1px solid #FFF;	
 }
+
+.home-icon a{
+  color: #000;
+}
+
 .home-icon a:hover{
 text-decoration: none;
+color: #000;
+background-color: #FFF;
 }
 
 .home-icon h2{
@@ -159,9 +170,13 @@ margin-top: 0px;
 }
 
 .home-icon img{
-	border: 1px solid black;
+	border: 2px solid black;
   float: left;
   margin-right: 10px;
+}
+
+.home-icon img:hover{
+	border: 2px solid #F60;
 }
 
 .home-icon span{
@@ -191,21 +206,42 @@ height: 245px;
 	display:block;
 	overflow:hidden;
 	border: 0px solid red;
-	padding-top: 0px;
-	padding-left:25px;
+	padding-top: 20px;
+	padding-left:20px;
 	padding-right:0px;
 	padding-bottom:25px;}  
 
+#content div#main_member{
+	padding-left:0px;
+}
+
 
 #main a{
-color: #F60;
-text-decoration: underline;
-padding: 1px 1px;
+	color: #F60;
+padding: 0px 0px;
 }
 
 #main a:hover{
-  background-color: #F60;
-  color: #FFF;
+	background-color: #F60;
+	color: #FFF;
+	padding: 0px 0px;
+}
+
+
+div#main .home-icon h2 a{
+  padding: 1px 2px;
+}
+
+div#main .home-icon h2 a{
+
+}
+
+div#main .home-con h2 a:hover{
+
+}
+
+h1 #home-heading{
+ border: 10px solid red; 
 }
 
 
@@ -221,10 +257,11 @@ padding: 1px 1px;
 	float:left;
 	background-color: #F7941D; 
     padding-right:15px; 
-    font-size:12px;        
-                }
+    font-size:12px;
+   }
                 
 #submenu_section_member{
+
   display: none;
 }
                      
@@ -247,7 +284,7 @@ ul#page_list, #page_list ul {
     margin-left:10px;
     list-style:none;
     padding:0px;
-}
+    }
 ul#page_list{
     margin-left:0px;
 }
@@ -256,11 +293,14 @@ ul#page_list{
 #page_list #current {background-color:#fff; color:#F7941D; }
 #page_list a:hover {background-color:#fff; color:#F7941D;}
 #separator {clear:both; height:1px; margin:0px; padding:0px; width:100%;}
-label {font-weight:normal;margin-top:13px;margin-bottom: 20px;}
+label {font-weight:bold;margin-top:13px;margin-bottom: 20px;}
+
 
 .required label {font-weight:bold; color: #E50;}
 
-.required input[type=text], .required input[type=password]{
+.required input[type=text],
+.required input[type=password],
+#main_member form input[type=text]{
   border: 2px solid #E50;
 }
 
@@ -273,13 +313,31 @@ label {font-weight:normal;margin-top:13px;margin-bottom: 20px;}
 	font-size: 14px;
 	}
 
-#main form input[type=text], #main form input[type=password]{
+#main form input[type=text],
+#main form input[type=password],
+#main_member form input[type=text] {
   font-size:18px;
   padding: 6px;
   margin-top: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
+#main_member form textarea{
+	margin-top: 5px;
+  border: 2px solid #E50;
+  width: 360px;
+  height: 100px;
+}
+
+#main_member form input[type=text] {
+  
+}
+
+table#members.obj_list input[type=text] {
+  font-size: 10px;
+  padding: 4px;
+  width: 200px;
+}
 
 
 #main form input[type=radio], #main form select {
@@ -353,13 +411,13 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 .clearEm {
   clear: both;
 }
-.notice {font-size:12px; font-style :italic; font-stretch : extra-condensed; margin:0 0 5 0;}
+.notice {color: #777;font-size:12px; font-style :italic; font-stretch : extra-condensed;border: 0px solid red; margin:0px 0px 5px 0px;padding: 0px 2px;}
 #numbered  {list-style-type : decimal; display : block; margin-left:250px;}
 #numbered li {padding:3px;}
 
 #none  {list-style-type : none; display : block; margin-left:230px;}
 #none  li {padding:3px;}
-#none_style  {list-style-type : none; display : block; }
+#none_style  {display : block;}
 
 /**Volunteer Form**/
 #volunteer_form table.person td {padding:0px 5px 5px 0px;}
@@ -371,11 +429,10 @@ img.cover {float:left; margin-right:5px; margin-bottom:5px;}
 
 #volunteer_form #volunteer_note {width:515px;}
 
-#buttons input, button {display:inline;}
+#buttons input, button {display:inline;margin-top: 15px;}
 
 
-
-#logo {float:left; margin-bottom:5px; margin-right:5px;}
+#logo {margin-bottom:5px; margin-right:5px;}
 
 /* Table Item List*/
 table.item_list {border: 1px #DDD solid; width: 100%;}
@@ -392,6 +449,12 @@ LEGEND {
   font-weight: bold;
   color:  #62669A;
 }
+
+#legend td{
+  padding: 10px 15px;
+  border: 0px solid green;
+}
+
 
 /* SUB Menu */
 #subMenu {
@@ -410,7 +473,7 @@ LEGEND {
     }
 #subMenu ul.tabs li {
     display: block; 
-    padding: 0 2px 0 2px;
+    padding: 0 10px 0 10px;
     margin: 0;
     float: left;
     font-weight:normal;   
@@ -422,6 +485,11 @@ LEGEND {
 	border-top:1px solid #f60;
 	padding:2px 2px;
 	}
+
+#subMenu ul.tabs li a:hover {
+    color:#F60;
+	background-color: #FFF;
+}
 	
 #subMenu ul.tabs li.current a {
     color:#F60;
@@ -434,9 +502,7 @@ LEGEND {
 
 #frozen  {color:#ccc; text-decoration:none;}
  .note { height: 50px;   overflow: auto; border: 1px solid silver;}
- .clearEm {
-  clear: both;
-}
+ 
 /* Confirmed Box*/
 .confirmed_box {
   border: 1px solid #ccc;
@@ -473,43 +539,147 @@ LEGEND {
 .tent_positions #reserved, 
 .tent_positions #current_reserved {
 	border: 1px solid #AAA; 
-	text-align:center; 
-	width: 150px;
-	padding-top:3px;
-	padding-bottom:3px;
-	margin-bottom: 3px;
+	text-align:left; 
+	width: 275px;
+	padding-top:2px;
+	padding-bottom:2px;
+	margin-bottom: 1px;
+	padding-left: 5px;
+}
+
+.tent_positions td#available, 
+.tent_positions td#reserved, 
+.tent_positions td#current_reserved {
+text-align: left;
+font-weight: bold;
+width: 78px;
+}
+
+div.legend{
+  width: 270px;
+  border: 1px solid #AAA;
+  padding: 5px;
+  background-color: #FAFAFA;
+}
+
+div.legend h3{
+	width: 100px;
+	margin: 0;
+	padding-left: 3px;
 }
 
 .tent_positions #available:hover, 
 .tent_positions #reserved:hover, 
 .tent_positions #current_reserved:hover {
-border: 1px solid black;
+	border: 1px solid #AAA;
+
 }
 
 .tent_positions a {
-	padding:3px 60px;
-      
+	padding:3px 1px;
+	padding-right: 250px;
+      color: #000;
+      font-weight: bold;
 }
-.tent_positions a:hover {text-decoration: underline; }
 
-.tent_positions #available { background-color:#99DB99;  }
-.tent_positions #reserved { background-color:#cccccc;   color: red; }
-.tent_positions #current_reserved { background-color: #9393FF; }
+.tent_positions #current_reserved a {
+	padding:3px 0px;
+      color: #000;
+      font-weight: bold;
+}
+
+
+.tent_positions a:hover {background-color:#FFF ; padding: 3px 1px;padding-right: 250px;}
+
+.tent_positions #available, .legend #available { background-color:#99DB99;  }
+.tent_positions #reserved, .legend #reserved {text-align: 
+left; background-color:#cccccc;   color: black; }
+.tent_positions #current_reserved, .legend #current_reserved {text-align: 
+left; background-color: #9393FF; }
 
 .mon_sep {padding-left:51px; }
 .day_sep {padding-left:8px; }
 #step5 h2, #step3 h2 {font-size:14px;}
 #step5 h4, #step3 h4 {font-size:14px; color:#000; text-transform : uppercase; }
-#step5 div.left, #step3 div.left {float:left; widht:50%; margin-right:50px;}
-#step5 table.box {width: 325px;}
-#step5 table.big-box {width: 325px; font-size:14px; font-weight:bold;}
-#step5 table.big-box td {padding-bottom: 3px; padding-top: 3px;}
-#step5 table.big-box tr.total {background-color:#cccccc;}
-#step5 table.box a {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
-#step5 .notice {font-size:11px; font-style  : normal; }
+#step5 div.left, #step3 div.left {float:left; margin-right:50px;}
+#step5 table.box {border: 1px solid #DDD; margin: 20px 0px 0px 0px;padding: 10px;background: #FCFCFC; width:100%}
+
+#step5 table.big-box { font-size:14px; font-weight:bold;}
+#step5 table.big-box td {padding:5px 15px;}
+#step5 table.big-box tr.total {background-color:#F60;}
+#step5 table.box a {
+	font-size: 11px; 
+	padding-left:20px; 
+	padding-right:20px; 
+	padding-bottom:5px; 
+	padding-top:5px; 
+	background-color:#EEE;
+	color: #000;
+	border:1px solid #AAA;
+	font-weight:bold;}
+
+#step5 table.box a:hover {
+	background-color: #CCC;
+	}
+
+#step5 table.box td{
+  border: 0px solid red;
+}
+
+td.specialDay-available a{
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0.7em 1em;
+}
+
+td.specialDay-available a:hover{
+	
+}
+
+#step5 .notice {font-size:11px; font-style  : normal; margin-bottom: 20px;}
+
+#step5 #team-details,
+#step5 #billing-details,
+#step5 #order-details,
+#step5 #captain-details{
+  border: 1px solid #DDD;
+  padding: 8px;
+  background-color: #FAFAFA;
+  margin-bottom: 20px;
+}
+
+#complete #step5 h2,#step5 #complete h1{
+  margin-top: 0px;
+  font-size: 18px;
+  color: #000;
+}
+
+
+#step5 h2, #step5 h1{
+  margin-top: 0px;
+  font-size: 18px;
+  color: #F60;
+}
+
+#step5 .notice{
+  padding: 8px;
+  background-color: #FAFAFA;
+  border: 1px solid #f60;
+  color: #F60;
+  font-size: 12px;
+  font-weight: bold;
+}
 
 #step3 .header {font-size:18px; color:#000; text-transform : uppercase; }
-#step3 table.box {width: 325px; font-size:14px; text-align:left;}
+#step3 table.box {
+	width: 325px; font-size:14px; text-align:left;
+	border: 1px solid #DDD;
+	padding: 8px;
+	background-color: #FAFAFA;
+	margin: 15px 0px; 
+	}
+	
 #step3 table.box th {font-size:16px;}
 #step3 table.box td {padding-bottom: 3px; padding-top: 3px;}
 #step3 .notice  {font-size:12px; color: grey; }
@@ -518,10 +688,31 @@ border: 1px solid black;
 #step3 #total { width: 300px; font-size:14px; background-color:#cccccc;  padding-top:5px; padding-bottom:5px; font-weight:bold; margin-right:50px;}
 
 
-#boat_list table td{text-align:left; padding-left:15px;  padding-right:15px; padding-top:5px; padding-bottom:5px;}
-#boat_list a{ color:#fff; font-size:14px; padding:1px;}
-
+#boat_list a{ color:#000; padding:1px;}
 #boat_list a.menu {font-size: 11px; padding-left:10px; padding-right:10px; padding-bottom:3px; padding-top:3px; background-color:#cccccc;   color: #fff;}
+
+#boat_list .team{
+  height: 100px;
+  border: 1px solid #EEE;
+  background-color: #FAFAFA;
+  margin-bottom:15px;
+}
+
+#boat_list .team:hover{
+	border: 1px solid #AAA;
+}
+#boat_list .team img#logo{
+  float: left;
+}
+
+#boat_list .team h3{
+  font-size: 16px;
+}
+
+#boat_list .team h3, #boat_list .team p{
+  margin-left: 130px;
+  margin-top: 5px;
+}
 
 
 .obj_list td a {text-decoration: underline; }
@@ -539,3 +730,52 @@ table.obj_list  th {
 
 /*Practice Manager*/
 .schedule_header { border-bottom:1px dotted #05303c; padding:10px; font-weight:bold; color: #8faebe;}
+
+/* @group Registration Form */
+
+
+div#main_member div form p,
+p.required,
+div#captain-info,
+div#billing_address p{
+  border: 1px solid #DDD;
+  padding: 8px;
+  background-color: #FAFAFA;
+  margin: 15px 0px; 
+}
+
+div#captain-info h4{
+  margin-top: 0px;
+}
+
+/* @end */
+
+
+#content #main_member h1{
+  margin-top: 0;
+}
+
+
+
+#calendars{
+  border: 0px solid red;
+}
+
+
+#calendars table{
+  border: 0px solid blue;
+}
+
+table.schedule {
+	background: #DDD;
+	padding: 5px;
+  width: 700px;
+}
+table.schedule td{
+  border: 0;
+}
+
+table.schedule td.assisted{
+width: 400px;
+
+}

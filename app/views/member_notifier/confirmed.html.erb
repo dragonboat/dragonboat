@@ -1,18 +1,27 @@
-Dear, <%= @member.user.person.name %>
+<%= @member.user.person.name %>,
 
-The Dragonboat Team: <%= @team.name %> 
-invite you to join the team as <%=@member.type.name%> of boat.
+You have been invited to participate in the 2009 Philadelphia International Dragon Boat Festival.
 
+<%=@captain.person.name%> has invited you to join the team:
 
-Boat Details:
-Name: <%= @team.name %>
-Description: <%= @team.description %>
-Captain: <%=@captain.person.name%>  <  <%=@captain.email%>  >
+<%= CGI.unescapeHTML(@team.name) %>
 
-Go to URL: 
+To accept this invitation, you need to click on the link below, and follow the instructions.
+
 <%=@code_url%>
-to accept or declide your membership.
 
-Thanks,
-Captain of "<%= @team.name %>" Team,
-<%=@captain.person.name%>
+If for any reason you have trouble with the link aboveyou can go to the website below, and manually enter the confimation code provided.
+ 
+<%=@code_url_form%>
+
+Confirmation Code: 
+<%=@code%>
+
+
+We look forward to seeing you on the river soon!
+
+-- Philadelphia International Dragon Boat Festival
+
+----------------------------------------------------------------------------
+If you need experience any problems with the website, or need any help, 
+please email: support@philadragonboatfestival.com

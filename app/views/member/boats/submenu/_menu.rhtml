@@ -3,20 +3,22 @@
     <%content_for :object_menu do%>
     <div id="subMenu">
       <ul class="tabs">
-          <li <%= "class=\"current\"" if request.request_uri =~/boats\/?$/  %>><%= link_to 'Team Home', member_boat_url(@team) %> |</li>
-        <li <%= "class=\"current\"" if url =~/(members)/ %>><%= link_to 'Manage Team Members', member_team_members_path(@team.id) %> |</li>
+          <li <%= "class=\"current\"" if request.request_uri =~/boats\/?$/  %>><%= link_to 'Team Home', member_boat_url(@team) %></li>
+        <li <%= "class=\"current\"" if url =~/(members)/ %>><%= link_to 'Manage Team Members', member_team_members_path(@team.id) %></li>
          
-        <li  <%= "class=\"current\"" if url =~/(practices)/ %>><%= link_to 'Manage Practices', member_team_practices_path(@team.id)%> |</li>
+        <li  <%= "class=\"current\"" if url =~/(practices)/ %>><%= link_to 'Manage Practices', member_team_practices_path(@team.id)%></li>
         <%if @team.tents.size>0%>
-        <li  <%= "class=\"current\"" if url =~/(tent)/ %>><%= link_to 'Tent Position', member_team_tents_path(@team.id)%> |</li>
+        <li  <%= "class=\"current\"" if url =~/(tent)/ %>><%= link_to 'Tent Position', member_team_tents_path(@team.id)%></li>
         <%else%>
+
         <li><%= link_to 'Order Tents', member_extras_boat_url(@team)%> |</li>
+
         <%end%>
         <%if current_user.teams.count_active > 0 %>
-        <li><%= link_to "Register Another Team", register_user_url%> |</li>
+        <li><%= link_to "Register Another Team", register_user_url%></li>
         <%end%>
         
-        <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path(@team) %> |</li>
+        <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Other Paddlers', member_paddlers_path(@team) %></li>
 
         <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Edit Team', member_edit_boat_url(@team.id) %> </li>
        

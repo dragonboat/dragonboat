@@ -3,7 +3,7 @@
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 
-<h1>Editing Team Member</h1>
+<h1>Editing Team Member: <%= @member.user.person.name %></h1>
 <div class="instructions">
   <%= render :comatose=>'edit-team-member-instructions', :silent=>true %>
 </div>
@@ -11,9 +11,8 @@
 
 <% form_for(:member, :url => member_team_members_path(@team,"update",@member.id), :html=>{:method=>:put}) do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
-  <span id="required">*</span>-Required <br/>
-  <%= f.submit "Update" %>
+  <%= f.submit "Save Team Member Information" %>&nbsp;<%= link_to 'Cancel', member_team_members_path(@team)%>
 <% end %>
 
 
-<%= link_to 'Back', member_team_members_path(@team)%>
+

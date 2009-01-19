@@ -5,7 +5,7 @@
                         <!-- -->
                         <%= error_messages_for :user %>
                         <p class="required">  
-                          <label for="user_login">Account Username:</label><span id="required">*</span><br/>
+                          <label for="user_login">Account Username:</label><br/>
          
                           <%= f.text_field :login, :tabindex=> 1 %>
                           <br/>
@@ -14,7 +14,7 @@
                         </p>
                       
                         <p class="required">  
-                          <label for="user_password">Account Password:</label><span id="required">*</span><br/>
+                          <label for="user_password">Account Password:</label><br/>
                          
                           <%= f.password_field :password, :tabindex=> 2 %>
                           <br>
@@ -23,7 +23,7 @@
                         </p>
 
                         <p class="required">  
-                          <label for="user_password_confirmation">Confirm Password:</label><span id="required">*</span><br/>
+                          <label for="user_password_confirmation">Confirm Password:</label><br/>
                           
                           <%= f.password_field :password_confirmation, :tabindex=> 3 %>
                           <br>
@@ -31,12 +31,14 @@
                         </p>
 
 
-
+<div id="captain-info">
 <h4>Captain Information</h4>
 <span class='notice'>Please enter your personal information below</span><br>
+
 <table cellpadding="1" cellspacing="1">
   <tr><td><%= error_messages_for :person %></td></tr>
     <% fields_for "person", @person do |person_field| %>
     <%= render :partial => 'persons/form_1', :locals =>{:f=>person_field} %>
   <% end %>
 </table>
+</div>

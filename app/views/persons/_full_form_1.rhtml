@@ -1,10 +1,10 @@
     <tr>
         <td>First name:</td>
-        <td id="required">&#42;&nbsp;<%= f.text_field :first_name %></td>
+        <td id="required"><%= f.text_field :first_name %></td>
     </tr>
     <tr>
         <td>Last name:</td>
-        <td id="required">&#42;&nbsp;<%= f.text_field :last_name %></td>
+        <td id="required"><%= f.text_field :last_name %></td>
     </tr>
     <tr>
         <td>Gender:</td>
@@ -25,7 +25,14 @@
         <td>Mobile Phone:</td>
         <td class="notRequired"><%= f.text_field :phone_2 %></td>  
     </tr>
-   
+    <tr>
+        <td>Street Address 1:</td>
+        <td class="notRequired"><%= f.text_field :address %></td>
+    </tr>
+    <tr>
+        <td>Street Address 2:</td>
+        <td class="notRequired"><%= f.text_field :address2 %></td>
+    </tr>
     <tr>
         <td>City:</td>
         <td  class="notRequired"><%= f.text_field :city%></td>    
@@ -42,14 +49,7 @@
         <td>Country:</td>
         <td  class="notRequired"><%= f.country_select :country, ['United States', 'Canada']%></td>    
     </tr>
-    <tr>
-        <td>Street Address 1:</td>
-        <td class="notRequired"><%= f.text_field :address %></td>
-    </tr>
-    <tr>
-        <td>Street Address 2:</td>
-        <td class="notRequired"><%= f.text_field :address2 %></td>
-    </tr>
+
     <!--
       <tr>
         <td>Date of Birth:</td>

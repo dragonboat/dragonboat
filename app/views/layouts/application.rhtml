@@ -61,7 +61,7 @@
       <%end%>
      <!--[if lte IE 6]></td><td style='background-color:#fff;'><![endif]-->
         <div id="main" >
-          <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1>
+          <% unless request.request_uri=="/" %><h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1><% end %>
           
           <%if flash[:notice] && !flash[:notice].empty?%>
           <p id="notice"><%= flash[:notice] %></p>

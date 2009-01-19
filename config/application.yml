@@ -1,8 +1,16 @@
 # Hostname of the server, used to generate bounced email return addresses
-hostname: localhost:3000
-admin_per_page: 5
+hostname: phillydragonboat.info
+# on - enable automatically switching to secure server
+# off - disable automatically switching to secure server
+SSL: on
+
+
+admin_per_page: 50
 news_per_page: 5
-#admin_email: admin@dragonboat.com
-admin_email: din.chick@gmail.com
-boat_price: 15.00
-tent_price: 5.00
+
+
+#TODO: change to no-reply@philadragonboatfestival.com
+noreply_email: noreply@phillydragonboat.info 
+admin_email: admin@phillydragonboat.info
+order_email: orders@phillydragonboat.info
+

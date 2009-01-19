@@ -50,21 +50,21 @@
 
      
        <!--[if lte IE 6]></td><td style='background:#fff'><![endif]-->
-         <div id="main_member">
-          
+		<div id="main_member">
+
          <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
          
          <%if @team && current_user.is_captain?%>
          <%unless request.request_uri=~ /(checkouts)/i%>
-        
+         <%unless request.request_uri== "/member/boats" %>
           <h3 class="boat_name"><%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image && @team.active?%>  <%= @team.human_name %></h3>
-          
+          <%end%>
           <%end%>
           <%end%>  
           <%= yield :object_menu %>
           
-          <% if @team&&@team.image && @team.active?%>
-          <div class="clearEm">&nbsp;&nbsp;</div>
+          <% if @team && @team.image && @team.active?%>
+
           <%end%> 
           <%if flash[:notice] && !flash[:notice].empty?%>
           <p id="notice"><%= flash[:notice] %></p>

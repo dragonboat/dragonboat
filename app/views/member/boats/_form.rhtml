@@ -14,15 +14,14 @@
 });
 </script>
 <p class="required">
-    <label for="team_human_name">Team Name:</label>
-    <span id="required">*<br /></span>
+    <label for="team_human_name">Team Name:</label><br />
     <%= f.text_area :human_name, :rows=>1, :cols=>80, :style=>"height:50px;" %><br>
     <span class='notice'>Please enter the official name of your team.  This will appear in the schedule and is the name that will be called on race day</span>
   </p>
   <%unless ["edit","update"].include? controller.action_name%>
   <p class="required">
     <label for="team_type_id">Team Type:</label>
-    <span id="required">*<br />
+    <span id="required"><br />
     <%= f.select :type_id, BoatType.find_active(:all).map { |r| ["#{r.name.capitalize} - #{number_to_currency r.price}", r.id] } %></span>
     <br><span class='notice'>
       Select the type of team you are registering. Please review <%=link_to "Team Type Information","/for-captains" %>
@@ -30,13 +29,12 @@
     </p>
   
   <p>
-    <label for="team_visit_status_yes">Is this a new team?</label><br>
-    <br/>
+    <label for="team_visit_status_yes"><strong>Is this a new team?</strong></label><br>
     <%Team::VISIT_STATUS.each do |s|%>
     <%= f.radio_button :visit_status, s[1] %>  <label for="team_visit_status_<%=s[1]%>" ><%=s[0] %></label>
-    <%end%><br>
+    <%end%>
     <span class='notice'>
-    Answer yes if your team is new to the sport of dragon boating
+    <br/>Answer YES if your team is new to the sport of dragon boating
     </span>
   </p>
   <%end%>
@@ -49,18 +47,15 @@
   </p>
   
   <p>
-    <label for="team_description">Team Profile:</label>
-   
+    <label for="team_description">Team Profile:</label><br />
+   <span class="notice">Please write a brief description (maximum of 50 words) of your team for our Festival MC to read as you race down the course;  i.e. team background, have you paddled before, why did your team get together, special achievements, etc.</span>
     <br />
      <%= f.text_area :description, :rows=>12, :cols=>80%></span><br>
      <span class='notice'>Maximum 50 words</span>
     </p>
 
-  
-  <p> 
-<div id="team_logo">
-  <%= render :partial => 'logo', :locals =>{:image=>@team.image} %>
-</div>
+	<p> 
+		<span id="team_logo"><%= render :partial => 'logo', :locals =>{:image=>@team.image} %></span>
 <% fields_for :image do |image| %>
 <label for="uploaded_data">Select File</label><br /> 
 <%= image.file_field :uploaded_data %><br>

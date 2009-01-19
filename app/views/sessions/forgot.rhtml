@@ -1,6 +1,9 @@
 <% content_for :title do %>Password Restore<% end %>
+
 <div id="login">
     <h2>Password Restore</h2>
+	<div id="instructions"><%= render :comatose=>'forgot-password-instructions', :silent=>true %></div>
+
     <% form_tag '/forgot' do %>
       <table cellpadding="0" cellspacing="5">
         <tr>

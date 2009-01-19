@@ -3,20 +3,23 @@
   <%= render :partial => 'member/boats/submenu/menu'%>
 </div>
 
+<h1>Manage Practices</h1>
+
+<%if  @current_practices.size>0%>
 <h2>Your team's currently scheduled practices:</h2>
 
-<table cellspacing=1 cellspadding=1 class="day">
+<table cellspacing=1 cellspadding=1 class="schedule">
   <tr>
     <th>Date</th>
     <th>Time</th>
     <th width="200" colspan="2">Assisted by</th>
   </tr>
-<%if  @current_practices.size>0%>
+
   <% @current_practices.each do |p|%>
    <tr>
      <td class="specialDay-current_reserved"><%=p.date%></td>
      <td class="specialDay-current_reserved"><%=p.time%></td>
-     <td class="specialDay-current_reserved" style="text-align:left;">
+     <td class="specialDay-current_reserved assisted" style="text-align:left;">
        <%="<br>Launch Driver: #{p.launch_driver}" if p.launch_driver && !p.launch_driver.empty?%>
        <%="<br>Steersperson: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
        
@@ -24,27 +27,18 @@
      <td class="specialDay-current_reserved"><%=link_to "edit", member_team_practices_path(@team.id,'edit_scheduled_time', p.id) if  current_user.teams.include?(@team)%></td>
    </tr>
   <%end%>
-<%end%>
 </table>
+<%end%>
 
 
 
-<h1>Manage Practices</h1>
+
+
 <div class="instructions">
   <%= render :comatose=>'manage-practices-instructions', :silent=>true %>
 </div>
-<div id="legen">
-  <table>
-    <tr><td><b>Legend:</b></td></tr>
-    <tr>
-      <td class="specialDay-current_reserved">Your Practice</td>
-      <td class="specialDay-full">Unavailable</td>
-      <td class="specialDay-available">Available</td>
-    </tr>
-  </table>
-</div>
 
-<div id="table">
+<div id="calendars">
   <table border="0" cellspacing="1" cellpadding="1" width="100%">
  
    <%sub_month = (@start_date.month-@start_date.beginning_of_quarter.month).to_i %>
@@ -63,3 +57,13 @@
   </div>
   <br>
 
+<div id="legend">
+<h3>Legend:</h3>
+  <table>
+    <tr>
+      <td class="specialDay-current_reserved">Your Practice</td>
+      <td class="specialDay-full">Unavailable</td>
+      <td class="specialDay-available">Available</td>
+    </tr>
+  </table>
+</div>
