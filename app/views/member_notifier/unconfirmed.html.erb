@@ -1,19 +1,27 @@
-You have been invited to join:
+<%= @member.user.person.name %>,
+
+You have been invited to participate in the 2009 Philadelphia International Dragon Boat Festival.
+
+<%=@captain.person.name%> has invited you to join the team:
 
 <%= CGI.unescapeHTML(@team.name) %>
-<%= @team.description %>
 
-To confirm that you will be a member of this team, please click
-on the link below and fill out your personal details:
+To accept this invitation, you need to click on the link below, and follow the instructions.
 
 <%=@code_url%>
 
-If the above link doesn’t work properly, please use the link below, 
+If for any reason you have trouble with the link aboveyou can go to the website below, and manually enter the confimation code provided.
+ 
 <%=@code_url_form%>
-and enter the following confirmation code when asked.
 
-Confirmation Code: <%=@code%>
+Confirmation Code: 
+<%=@code%>
 
-Thank you,
 
-Philadelphia Dragon Boat Festival
+We look forward to seeing you on the river soon!
+
+-- Philadelphia International Dragon Boat Festival
+
+----------------------------------------------------------------------------
+If you need experience any problems with the website, or need any help, 
+please email: support@philadragonboatfestival.com

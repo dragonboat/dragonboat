@@ -2,7 +2,7 @@ class MemberNotifier < ActionMailer::Base
   def unconfirmed(member, sent_at = Time.now)
     team = member.team
     captain = team.captain
-    @subject           = "Invitation to join the team #{CGI.unescapeHTML(team.name)}"
+    @subject           = "Philadelphia Dragon Boat Festival Team Invitation: #{CGI.unescapeHTML(team.name)}"
     @body[:member]     = member
     @body[:team]       = team
     @body[:captain]    = captain
