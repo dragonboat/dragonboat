@@ -37,14 +37,14 @@
       <%= render :partial=>'partials/header'%>
     </div>  
     <div id="breadcrumbing_area">
-      <%unless request.request_uri=="/"%>
+      <%unless request.request_uri=="/" || request.request_uri=="/home"%>
       <h1><%=navigation_links(@current_page_name, " > ")%><%= yield :breadcrumbing_area %></h1>
       <%end%>
     </div>
    
     <div id="content">
       <!--[if lte IE 6]><table id="main" valign="top" width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="#fff"><tr><td width="1%" id="content_td"><![endif]-->
-        <%unless request.request_uri=="/"%> 
+        <%unless request.request_uri=="/"|| request.request_uri=="/home"%> 
         <div id="submenu_section">
            
             <!--[if lte IE 6]>
