@@ -201,6 +201,6 @@ module ApplicationHelper
    end
    
    def is_free_registration
-     session[:free] && session[:free]=="1" && [0,1].include?(current_user.teams.size)
+     session[:free] && session[:free]=="1" && [0].include?(current_user.teams.size)
    end
 end
