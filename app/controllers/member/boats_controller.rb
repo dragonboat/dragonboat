@@ -1,4 +1,5 @@
 class Member::BoatsController < Member::WebsiteController 
+  include ApplicationHelper
  # before_filter :has_any_boat?, :except => [:index, :edit, :update]
  # require_role "captain", :only=>[:index]
   before_filter :has_boat?, :only=>[:index, :edit, :update, :show]
@@ -45,8 +46,17 @@ class Member::BoatsController < Member::WebsiteController
       @team.image = @image if @image.valid?
     end
     if @team.valid?&&@team.save
-  
-      redirect_to member_extras_boat_path(@team.id)
+      #Check if boat is FREE
+      if is_free_registration && BoatType.find_free(:all).include?(@team.boat_type)
+        activate_team
+        session[:free] = nil
+        flash[:notice] = "Congratulations, you have successfully registered your team!"
+        redirect_to member_boat_url(@team)
+        return
+      else
+        redirect_to member_extras_boat_path(@team.id)
+      end
+      
     else
       render :action => 'new'
     end
@@ -158,5 +168,17 @@ class Member::BoatsController < Member::WebsiteController
   def fetch_team_and_redirect
     @team = current_user.teams.find(params[:id])
     @team ? true : access_denied
+  end
+  
+  def activate_team
+    current_user.to_captain
+    @team.activate
+    create_member 
+  end
+  def create_member
+    member = @team.members.build
+    member.type = MemberType.find_by_name('co-captain')
+    member.user = current_user
+    member.valid? && member.save
   end
 end

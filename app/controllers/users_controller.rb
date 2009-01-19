@@ -14,6 +14,21 @@ class UsersController < ApplicationController
     @person = Person.new
    # session[:register_user] = nil
   end
+  
+ def free
+    session[:free] = "1"
+    if current_user && current_user.teams
+      redirect_to(member_new_boat_url) 
+    else
+    if request.post?
+      create
+      return
+    end
+      @user = User.new
+      @person = Person.new
+      render :action =>:new
+    end
+  end
 
   def create
     cookies.delete :auth_token

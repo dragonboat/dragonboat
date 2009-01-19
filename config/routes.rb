@@ -89,6 +89,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.register_user "/register", :controller =>"users", :action=>"new"
+  map.register_free_user "/register_for_free", :controller =>"users", :action=>"free"
   map.resources :users
   map.resource :session
   map.create_ticket '/support/new', :controller => 'support', :action=>"new"
