@@ -45,13 +45,18 @@
            <![endif]-->
            <%=javascript_tag "document.getElementById('content').style.background='#F7941D';"%>
            <%=yield :submenu_area %> 
+           
          </div> 
       
 
      
        <!--[if lte IE 6]></td><td style='background:#fff'><![endif]-->
-		<div id="main_member">
-
+       <%unless request.request_uri=~ /(checkouts)|(\/member\/boats\/new)|(\/add_extras)|(\/extras)|(\/update)/i  %>
+       
+       <div id="main<%="_member" if @team && @team.active?%>">
+       <%else%>
+       <div id="main">
+       <%end%>
          <h1><%= navigation_path(@current_page_name,"/")%><%= yield :current_page_name %></h1> 
          
          <%if @team && current_user.is_captain?%>

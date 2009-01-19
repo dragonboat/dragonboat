@@ -129,6 +129,13 @@ class User < ActiveRecord::Base
     nil
   end
   
+  def self.find_all_by_code(url_code)
+    User.find(:all).each do |u|
+      return u if u.has_code?(url_code)
+    end
+    nil
+  end
+  
   def has_code?(url_code)
     url_code == code
   end

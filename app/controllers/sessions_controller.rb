@@ -54,7 +54,7 @@ class SessionsController < ApplicationController
   end
   
   def change_password
-    @user = User.find_by_code(params[:code].strip)
+    @user = User.find_all_by_code(params[:code].strip)
     unless @user
       flash[:notice] = "This link is incorrect. To receive a good link on your email fill in 'Password Restore' form below"
       redirect_to forgot_url
