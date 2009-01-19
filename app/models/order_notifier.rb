@@ -7,7 +7,7 @@ class OrderNotifier < ActionMailer::Base
     @subject            = "Dragonboat Order##{order.id} #{order.status}"
     @body[:order]       = order
     @recipients         = "#{APP_CONFIG["order_email"]}"
-    @from               = "#{APP_CONFIG['noreply_email']}" 
+    @from               = "Philadelphia Dragon Boat Festival <#{APP_CONFIG['noreply_email']}>"  
     @sent_on            = sent_at
     @body[:order_details_path] = admin_order_url(:id=>order.id,:host => APP_CONFIG['hostname'])
     @headers            = {}
@@ -18,7 +18,7 @@ class OrderNotifier < ActionMailer::Base
     @subject            = "Registration Confirmation: #{order.team.name}"
     @body[:order]       = order
     @recipients         = order.user.person.email
-    @from               = "#{APP_CONFIG['noreply_email']}" 
+    @from               = "Philadelphia Dragon Boat Festival <#{APP_CONFIG['noreply_email']}>" 
     @sent_on            = sent_at
     @headers            = {}
   end

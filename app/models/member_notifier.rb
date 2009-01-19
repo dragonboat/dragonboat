@@ -11,7 +11,7 @@ class MemberNotifier < ActionMailer::Base
     @body[:code]  = member.user.code
 
     @recipients        = member.user.email
-    @from              = "#{APP_CONFIG['noreply_email']}" 
+    @from              = "Philadelphia Dragon Boat Festival <#{APP_CONFIG['noreply_email']}>" 
     @sent_on           = sent_at
     @headers           = {}
   end
