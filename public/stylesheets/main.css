@@ -14,6 +14,7 @@
 	http://www.phillydragonboat.info/stylesheets/main.css?1232413430
 	http://www.phillydragonboat.info/stylesheets/main.css?1232421357
 	http://www.phillydragonboat.info/stylesheets/main.css?1232429173
+	http://www.phillydragonboat.info/stylesheets/main.css?1232429366
 */
 
 body {
@@ -646,7 +647,7 @@ left; background-color: #9393FF; }
 #step5 table.box {border: 1px solid #DDD; margin: 20px 0px 0px 0px;padding: 10px;background: #FCFCFC; width:100%}
 
 #step5 table.big-box { font-size:14px; font-weight:bold;}
-#step5 table.big-box td {padding:5px 15px;}
+#step5 table.big-box td {}
 #step5 table.big-box tr.total {background-color:#F60;}
 #step5 table.box a {
 	font-size: 11px; 
