@@ -11,6 +11,9 @@
 	http://www.phillydragonboat.info/stylesheets/main.css?1232320184
 	http://www.phillydragonboat.info/stylesheets/main.css?1232372259
 	http://www.phillydragonboat.info/stylesheets/main.css?1232412165
+	http://www.phillydragonboat.info/stylesheets/main.css?1232413430
+	http://www.phillydragonboat.info/stylesheets/main.css?1232421357
+	http://www.phillydragonboat.info/stylesheets/main.css?1232429173
 */
 
 body {
@@ -114,7 +117,7 @@ div#home-header h1{
 
 
 /* Content */
-#content {min-height:500px; height: 100%; overflow: visible; margin-left:12px; margin-bottom:0px; background-color: #fff; }
+#content {min-height:500px; height: 100%; overflow: visible; margin-left:14px; margin-bottom:0px; background-color: #fff; }
 
 /* Footer */
 #footer { height: 50px; background: url(/images/top_line.gif)  repeat-x top; padding-top:10px;}
@@ -256,7 +259,7 @@ h1 #home-heading{
 
 
 /* Breadcrumbing Area */
-#breadcrumbing_area {min-width:800px; height: 30px;  display:block;  overflow:hidden; margin-left:12px;}
+#breadcrumbing_area {min-width:800px; height: 30px;  display:block;  overflow:hidden; margin-left:14px;}
 #breadcrumbing_area h1{margin:0px; padding-top:5px;  padding-left:15px; height: 32px; background-color: #000; color: #fff; font-size:14px; font-weight:bold;}
 #breadcrumbing_area a {color: #fff; text-decoration: none;}
 
@@ -290,19 +293,47 @@ h1 #home-heading{
 #step_list .previous {color:#ccc;}
 
 /*Page-list*/
+
 ul#page_list, #page_list ul {
-    margin-left:10px;
-    list-style:none;
-    padding:0px;
-    }
-ul#page_list{
-    margin-left:0px;
+margin: 0;
+padding:0;
+list-style:none;
+margin-left: 10px;
+margin-top:10px
+	    }
+	    
+ul#page_list li ul{
+  margin-top: 5px;
 }
-#page_list li{ list-style:none; padding-top:2px;  padding-bottom:2px; padding-right:0px;  padding-left:2px;}
-#page_list a {  padding-left:5px; padding-right:5px; padding-top:2px; padding-bottom:2px; width:100%;  color: #fff;font-size:13px;font-weight: bold; text-decoration: none;  }
-#page_list #current {background-color:#fff; color:#F7941D; }
-#page_list a:hover {background-color:#fff; color:#F7941D;}
+
+
+#page_list li{
+	list-style:none;
+	}
+
+#page_list a {
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:2px;
+	padding-bottom:2px;
+
+	
+	color: #fff;
+	font-size:13px;
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+#page_list a:hover {
+	background-color:#fff;
+	color:#F7941D;
+	}
+
+
+#page_list #current {}
+
 #separator {clear:both; height:1px; margin:0px; padding:0px; width:100%;}
+
 label {font-weight:bold;margin-top:13px;margin-bottom: 20px;}
 
 
@@ -344,7 +375,7 @@ label {font-weight:bold;margin-top:13px;margin-bottom: 20px;}
 }
 
 table#members.obj_list input[type=text] {
-  font-size: 10px;
+  font-size: 16px;
   padding: 4px;
   width: 200px;
 }
