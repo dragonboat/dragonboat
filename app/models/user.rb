@@ -210,7 +210,7 @@ class User < ActiveRecord::Base
   end
   
   def generate_account(prefix_name="")
-    self.login = "#{person.first_name}.#{person.last_name}".downcase
+    self.login = "#{person.first_name.strip}#{person.last_name.strip}".downcase
     users = User.find(:all, :conditions=>["login LIKE ?","%#{self.login}%"], :order=>"login")
     logins = users.map(&:login).select {|l| (l =~/[.][\d]{1,}$/i) != nil }
     if logins.size > 0

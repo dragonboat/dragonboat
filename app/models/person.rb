@@ -20,6 +20,12 @@ class Person < ActiveRecord::Base
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
   
+  def before_validation
+    self.first_name = self.first_name.strip 
+    self.last_name = self.last_name.strip
+    self.email = self.email.strip
+  end
+  
   def age
     return "" unless birthday_date
     d1 = self.birthday_date
