@@ -1,16 +1,13 @@
 <% @tents = @team.tents  %>
 <%= render :partial => 'registration_header_5' unless @team.active? %>
 <%= render :partial => 'purchase_tents_header_3' if @team.active? %>
-        
+       <div class="instructions">
        <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
         <%= render :comatose=>'step5-instructions', :silent=>true %>
         <!-- -->
-<div id="step5">
-
-
-
-
-	<div id="team-details">
+        </div>
+        <div id="step5">
+        <div id="team-details">
 	<h2>Your Team: <%=@team.name%></h2>
         <b>Team Type</b>: <%=@team.boat_type_human%> <br/>
         
@@ -93,8 +90,8 @@
 
      <div class="notice">
         <%= render :comatose=>'step5-instructions-2', :silent=>true %>
-     </div>
-
+        </div>
+        
         <% form_for :order, @order, :url => {:action => "place_order"}, :html=>{:id=>"order_form"} do |f| %>
 
 <% fields_for :person, @person do |p| %>
@@ -132,3 +129,4 @@
 <div class="clearEm">&nbsp;&nbsp;</div>
 
 </div>
+

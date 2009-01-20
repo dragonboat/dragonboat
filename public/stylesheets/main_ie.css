@@ -86,7 +86,6 @@ img#pdb_logo {
 
 #step5 table.box, #step3 table.box  {width: 310px;}
 #step5 table.big-box {width: 310px;}
-#step5 table,#step3 table{margin-bottom:15px;}
 
 
 #step5 table.box{ 
@@ -109,6 +108,7 @@ border: 1px solid #DDD; margin: 20px 0px 0px 0px; padding: 10px;background-color
 #step5 table.box a:hover {
 	background-color: #CCC;
 	}
+
 
 #boat_list a:hover  div.team{
 	border: 1px solid #AAA;
