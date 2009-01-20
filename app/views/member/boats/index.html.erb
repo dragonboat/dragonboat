@@ -11,12 +11,18 @@
 
 <div id="boat_list">
   <% @teams.each do |team|%>
-	<div class="team">
+<!--[if lte IE 6]>
+<a href="#" >
+<![endif]-->
+                <div class="team">
 		<%= link_to(image_tag( team.image.public_filename(:thumb), :id=>"logo" ), member_boat_url(team) ) if team.image%>
 		<h3><%=link_to team.name,  member_boat_url(team)%></h3>
 		<p><%= h team.description%></p>
 	</div>
-  <%end%>
+ <!--[if lte IE 6]>
+</a>
+<![endif]-->
+        <%end%>
 </div>
 
 <div class="page-link"><%= link_to "Register Another Team", register_user_url, :class=>"menu"%></div>
