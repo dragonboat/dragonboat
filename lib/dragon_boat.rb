@@ -1,6 +1,6 @@
 module DragonBoat
   def self.included(base)
-    base.before_filter  :leave_secure_site #, :www_check
+    base.before_filter  :leave_secure_site, :www_check
     base.send :helper_method
   end
   
