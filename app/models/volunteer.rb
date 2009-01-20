@@ -20,14 +20,14 @@ class Volunteer < ActiveRecord::Base
   def validate
     if options.size == 0
       errors.add_to_base("Select at least one available time for the event")
-      errors.add_to_base("Select at least one available time for the Pre-Festival")
+     # errors.add_to_base("Select at least one available time for the Pre-Festival")
     end
     
     if options.size > 0
       times_available = options.map(&:option_type).include?("times_available")
       pre_festival_times = options.map(&:option_type).include?("pre_festival_times")
       errors.add_to_base("Select at least one available time for the event") unless times_available
-      errors.add_to_base("Select at least one available time for the Pre-Festival") unless pre_festival_times
+     # errors.add_to_base("Select at least one available time for the Pre-Festival") unless pre_festival_times
     end
   end
   

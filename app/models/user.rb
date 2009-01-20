@@ -41,6 +41,15 @@ class User < ActiveRecord::Base
   
   belongs_to :person
   validates_associated :person
+  
+  
+   HUMANIZED_ATTRIBUTES = {
+    :login => "The username"
+  }
+
+  def self.human_attribute_name(attr)
+    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end
     
   def after_initialize
     build_person unless person
@@ -222,8 +231,8 @@ class User < ActiveRecord::Base
   
   def validate    
     if  self.validation_mode  == :member
-      illegal_character = login.gsub(/[^A-Z0-9_]/i, "")
-      errors.add(:login, 'should only contain alphabetic, digital characters or "_"') if login != illegal_character
+      illegal_character = login.gsub(/[^A-Z0-9_ ]/i, "")
+      errors.add(:login, 'you provided was not valid. Please ensure that there are no special characters in the name') if login != illegal_character
     end 
   end
 

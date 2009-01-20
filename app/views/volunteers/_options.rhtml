@@ -9,7 +9,7 @@
   </ul>
 </p>
 
-<p>Times you are available Pre-Festival:<span id="required">*</span>
+<p>Times you are available Pre-Festival:
 <ul id="none">
  <%pre_festival_times(@options).each_with_index  do |option, i| %>
   <li><%= check_box_tag("options[pre_festival_times][]", option[:id], @options&&@options.map(&:option).include?(option[:id]), :id=>"pre_festival_times_#{i}")%> 
