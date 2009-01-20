@@ -1,6 +1,4 @@
-<div id="pdb_logo">
-  <%=link_to image_tag("dragon_logo.gif", :width=>"365", :height=>"160", :id=>"pdb_logo"),"/"%>
-</div>
+<div id="pdb_logo"><%=link_to image_tag("dragon_logo.gif", :width=>"365", :height=>"160", :id=>"pdb_logo"),"/"%></div>
 <div id="header_side">
 	<div id="user_panel"><%= render :partial=>'partials/login', :locals=>{:mode=>:public}%></div>
 	<div id="banner"><%= image_tag("home/home_banner_01c.jpg", :width=>"615", :height=>"100", :id=>"banner_image") %></div>

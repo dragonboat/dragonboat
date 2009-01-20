@@ -1,13 +1,3 @@
-body {
-    background-color:#FFFFFF;
-    padding-top: 0;
-	margin: 0px auto;
-    color: #000000;
-    font: normal 12px 'Verdana', sans-serif;
-    width: 972px;
-    border: 0px solid green;
-    }
-
 /*Order Steps*/
 #step_list ul {
     margin:0px;
@@ -120,3 +110,15 @@ border: 1px solid #DDD; margin: 20px 0px 0px 0px; padding: 10px;background-color
 	background-color: #CCC;
 	}
 
+#boat_list a:hover  div.team{
+	border: 1px solid #AAA;
+}
+
+table td.specialDay-available a{
+  
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0.7em 1em;
+  
+  color: #000;
+}
