@@ -15,12 +15,14 @@ class Member::TentsController < Member::WebsiteController
    # @tent = @team.tents.find_empty(:first)
     @tent = @team.tents.find_main(:first) unless @tent
     if @tent
-      @tent_position.has_available_next_position?
+      #@tent_position.has_available_next_position?
       
       if  @tent_position.status != "available"
-         @tent.errors.add_to_base('Sorry, this tent location is reserved already') 
+         @tent.errors.add_to_base('Sorry, this tent location is reserved already') unless @tents.map(&:location).include?(@tent_position.number.to_s)
       elsif  @tents.size > 1 && !@tent_position.has_available_next_position?
-        @tent.errors.add_to_base("Sorry, this 2 tent positions is reserved already") 
+        unless @tent_position.next_position && @tents.map(&:location).include?(@tent_position.next_position.number.to_s)
+          @tent.errors.add_to_base("Sorry, these positions are already reserved") 
+        end
       else
        @tent.reserved(@tent_position)
        if  @tents.size > 1
