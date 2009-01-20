@@ -4,7 +4,7 @@
 </div>
 <%if @practice%>
 <%d = @practice.created_at%>
-<h1 class="specialDay-current_reserved"><%=d.strftime("%d %B %Y")%> <%= @practice.time %></h1>
+<h1>Edit Scheduled Practice: <%=d.strftime("%A %B %d, %Y")%> at <%= @practice.time %></h1>
  <div class="instructions">
   <%= render :comatose=>'cancel-scheduled-practice-time-instructions', :silent=>true %>
  </div>
@@ -14,8 +14,10 @@
 
 <%= render :partial => 'form' , :locals=>{:f=>f } %>
 
-<p><%= f.submit "Update"%></p>
+<p><%= f.submit "Update this Practice"%>&nbsp;&nbsp;<%= link_to 'Cancel', member_team_practices_path(@team)%></p>
 <% end %>
+
+<h2>OR</h2>
 
 <% form_for(:practice, :url => member_team_practices_path(@team,"undo",@practice.id), :html=>{:method=>:put } ) do |f| %>
 <%= f.hidden_field :team_id %>

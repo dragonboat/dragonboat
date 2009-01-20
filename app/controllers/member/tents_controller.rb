@@ -18,7 +18,7 @@ class Member::TentsController < Member::WebsiteController
       @tent_position.has_available_next_position?
       
       if  @tent_position.status != "available"
-         @tent.errors.add_to_base('Sorry, this tent position is reserved already') 
+         @tent.errors.add_to_base('Sorry, this tent location is reserved already') 
       elsif  @tents.size > 1 && !@tent_position.has_available_next_position?
         @tent.errors.add_to_base("Sorry, this 2 tent positions is reserved already") 
       else

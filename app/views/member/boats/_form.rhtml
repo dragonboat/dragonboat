@@ -50,12 +50,12 @@
   <p>
     <label for="team_url">Team Website:</label><br />
     <%= f.text_field :url, :size => 50 %><br>
-    <span class='notice'> If your team has a website, please enter it here (eg. www.yourteamname.com) </span>
+    <span class='notice'> If your team has a website, please enter it here (example: www.yourteamname.com). If you do not have a website please leave this field blank.</span>
   </p>
   
   <p>
     <label for="team_description">Team Profile:</label><br />
-   <span class="notice">Please write a brief description (maximum of 50 words) of your team for our Festival MC to read as you race down the course;  i.e. team background, have you paddled before, why did your team get together, special achievements, etc.</span>
+   <span class="notice">Please write a brief description (maximum of 50 words) of your team for our Festival MC to read as you race down the course;  i.e. team background, have you paddled before, why did your team get together, special achievements, etc.<br/><strong>PLEASE NOTE: You can always fill this in at a later date</strong></span>
     <br />
      <%= f.text_area :description, :rows=>12, :cols=>80%></span><br>
      <span class='notice'>Maximum 50 words</span>

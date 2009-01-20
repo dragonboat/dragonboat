@@ -68,8 +68,8 @@
  
   <%unless @team.active?%>
   <tr>
-    <td><%=@team.boat_type_human%> : <%=@team.name%> </td>
-    <td width="400" align="right"><%=number_to_currency(@team.price)%></td>
+    <td width="400"><%=@team.boat_type_human%> : <%=@team.name%> </td>
+    <td width="200" align="right"><%=number_to_currency(@team.price)%></td>
   </tr>
   <%end%>
   <%@team.team_extras.map(&:extras).each do |item|%>
@@ -79,13 +79,13 @@
   <%if quantity>0%>
   <tr>
     <td><%=quantity%> <%=item.name%></td>
-    <td width="400" align="right"><%=number_to_currency item.price*quantity%></td>
+    <td width="200" align="right"><%=number_to_currency item.price*quantity%></td>
   </tr>
   <%end%>
   <%end%>
   <tr class='total'>
     <td>Total Charge</td>
-    <td width="400" align="right"><%= number_to_currency @team.total%></td>
+    <td width="200" align="right"><%= number_to_currency @team.total%></td>
   </tr>
 </table>
 </div>

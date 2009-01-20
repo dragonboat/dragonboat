@@ -1,10 +1,13 @@
 <% content_for :title do %>Paddler Registration<% end %>
 <div>
-    <h2>Paddler Registration</h2>      
+    <h1>Looking for a team?</h1>
+	<div class="instructions">
+	  <%= render :comatose=>'need-a-team-instructions', :silent=>true %>
+	</div>
     <% form_for :paddler, :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
         <%= render :partial => 'form', :locals =>{:f=>f} %>
         <div id="buttons">
-            <%= submit_tag  "Submit"%>&nbsp;&nbsp;
+            <%= submit_tag  "Submit Your Info"%>&nbsp;&nbsp;
             <%= link_to("Cancel", "/" ) %> 
         </div>
     <%end%>

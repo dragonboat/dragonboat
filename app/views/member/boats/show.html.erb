@@ -71,9 +71,9 @@
    <tr>
      <td class="specialDay-current_reserved"><%=p.date%></td>
      <td class="specialDay-current_reserved"><%=p.time%></td>
-     <td class="specialDay-current_reserved" style="text-align:left;">
-       <%="<br>Launch Driver: #{p.launch_driver}" if p.launch_driver && !p.launch_driver.empty?%>
-       <%="<br>Steersperson: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
+     <td class="specialDay-current_reserved">
+       <%="Launch Driver: #{p.launch_driver}" if p.launch_driver && !p.launch_driver.empty?%><br/>
+       <%="Steersperson: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
      </td>
    </tr>
   <%end%>
@@ -125,7 +125,7 @@
 	<tr><td></td></tr>
   <tr>
 	
-    <td colspan=2 align="right"><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
+    <td colspan=2 align="right"><br/><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
   </tr>
   
 </table>

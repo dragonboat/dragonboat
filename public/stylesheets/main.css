@@ -9,6 +9,8 @@
 	http://www.phillydragonboat.info/stylesheets/main.css?1232320042
 	http://www.phillydragonboat.info/stylesheets/main.css?1232320142
 	http://www.phillydragonboat.info/stylesheets/main.css?1232320184
+	http://www.phillydragonboat.info/stylesheets/main.css?1232372259
+	http://www.phillydragonboat.info/stylesheets/main.css?1232412165
 */
 
 body {
@@ -133,7 +135,15 @@ div#home-header h1{
 #content div#news_section div.news_block a.to_full {color: #959595; text-decoration: none;}
 
 
-#notice {color:green; font-size:14px;}
+#notice {
+	border: 1px solid green;
+	background-color:lightgreen ;
+	padding: 10px;
+	color:black; 
+	font-size:14px;
+	margin: 10px 0px;
+	
+}
 /* Home */
 #home-left{
 	float: left; width: 290px;
@@ -666,7 +676,7 @@ td.specialDay-available a:hover{
   padding: 8px;
   background-color: #FAFAFA;
   border: 1px solid #f60;
-  color: #F60;
+  color: #000;
   font-size: 12px;
   font-weight: bold;
 }
@@ -733,7 +743,7 @@ table.obj_list  th {
 
 /* @group Registration Form */
 
-
+div#main div form p,
 div#main_member div form p,
 p.required,
 div#captain-info,

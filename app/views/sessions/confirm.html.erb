@@ -1,5 +1,8 @@
-<% content_for :title do %>Enter the confirmation code<% end %>
-
+<% content_for :title do %>Enter your confirmation code<% end %>
+<h1>Enter your confirmation code to continue</h1>
+<div class="instructions">
+	<%= render :comatose=>'confirmation-code-instructions', :silent=>true %>
+</div>
   <div>
     <% form_tag team_confirm_form_path do -%>
     <p  class="required">

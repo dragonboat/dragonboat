@@ -101,25 +101,6 @@
 
 </span>
 
-<table class="box">
-  <tr>
-    <td class='notice' height="65" valign="top">
-     <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
-        <%= render :comatose=>'registration-complete-instructions', :silent=>true %>
-    <!-- -->
-    <p><%= link_to 'Select tent position', member_team_tents_path(@team.id) if @team.tents.size>0 %></p>
-    <p> <%=link_to "Go to Boat Home Page", member_boat_path(@team) %></p>  
-    </td>
-  </tr>
-  <tr>
-      <td valig="bottom">
-     
-      
-   
-        <%=button_to "Thanks", member_team_members_path(@team.id)%>
-      </td>
-    </tr>
-</table>
 
 </div>
 </div>

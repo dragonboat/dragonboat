@@ -14,7 +14,7 @@ class UserNotifier < ActionMailer::Base
   
   def invite_to_change_password(user)
     setup_email(user)
-    @subject = 'philadragonboatfestival.com: password restore'
+    @subject = 'philadragonboatfestival.com: reset password'
     @content_type = "text/html"
     @body[:url] = "http://#{APP_CONFIG["hostname"]}/change_password/#{user.code}"
   end

@@ -20,7 +20,8 @@
 
      <td class="specialDay-current_reserved">
         <%if allow_edit%>
-         <%=link_to p.time, member_team_practices_path(@team.id,'undo_reservation', p.id), :title=>"Click to undo your reservation"%>
+         <%#=link_to p.time, member_team_practices_path(@team.id,'undo_reservation', p.id), :title=>"Click to undo your reservation"%>
+		 <%=link_to p.time, member_team_practices_path(@team.id,'edit_scheduled_time', p.id), :title=>"Click to edit this practice reservation" if current_user.teams.include?(@team)%>
         <%else%>
          <%=p.time%>
         <%end%>

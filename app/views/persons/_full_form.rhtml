@@ -1,18 +1,15 @@
     <tr>
-        <td class="required"><label for="person_first_name">First name:</label>
-         <span id="required">*</span><br/>
+        <td class="required"><label for="person_first_name">First name:</label><br/>
          <%= f.text_field :first_name %>
         </td>
      </tr>
     <tr>
-        <td class="required"><label for="person_last_name">Last name:</label>
-         <span id="required">*</span><br/>
+        <td class="required"><label for="person_last_name">Last name:</label><br/>
          <%= f.text_field :last_name %>
         </td>
      </tr>
     <tr>
-        <td class="required"><label for="person_gender_f_f">Gender:</label>
-        <span id="required">*</span><br/>
+        <td class="required"><label for="person_gender_f_f">Gender:</label><br/>
         <%=f.radio_button :gender_f, "F", :tabindex=> 6, :onfocus=>"$('person_gender_m_m').checked=0;$('person_gender_f_f').checked=1", :onclick=>"$('person_gender_m_m').checked=0;"%> <label for="person_gender_f_f" >Female</label>
         <%= f.radio_button :gender_m, "M", :tabindex=> 7, :onfocus=>"$('person_gender_f_f').checked=0;$('person_gender_m_m').checked=1", :onclick=>"$('person_gender_f_f').checked=0;"%> <label for="person_gender_m_m">Male</label>
         <%# f.radio_button :gender, "F" %> 
@@ -21,21 +18,15 @@
     </tr>
       <tr>
         <td class="required"><label for="person_email">Email Address:</label>
-         <span id="required">*</span><br/>
+<br/>
          <%= f.text_field :email %>
         </td>
      </tr>
     <tr>
         <td class="required"><label for="person_phone">Home Phone number:</label>
-         <span id="required">*</span><br/>
+<br/>
          <%= f.text_field :phone %>
        </td>
-     </tr>
-    <tr>
-        <td><label for="person_phone_2">Mobile Phone:</label>
-        <br/>
-        <%= f.text_field :phone_2 %>
-       </td>  
      </tr>
     <tr>
         <td><label for="person_zip">Zip code:</label>
@@ -48,24 +39,22 @@
         <br/>
         <%= f.text_field :address %></td>
     </tr>
-    <tr>
-        <td><label for="person_address2">Street Address 2:</label>
-        <br/>
-        <%= f.text_field :address2 %></td>
-      </tr>
       <tr>
         <td class="required"><label for="person_birthday_date">Date of Birth: Month / Day / Year</label>
         <span id="required">*</span><br/>
         <%= f.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920 ,  :include_blank => ""%></td>
      </tr>
      <tr>
-        <td class="required"><label for="person_experience">Experience:</label>
-        <span id="required">*</span><br/>
+        <td class="required"><label for="person_experience">Experience:</label><br/>
+		<div class="instructions" style="width:400px"><br/>
+			Please tell us about your previous paddling experience if any, as well as your weight, physical fitness  (Poor, Fair, Good, Excellent), and preferred side of the boat (Port / Starboard / No Preference).
+		</div>
+		<br/>
         <%= f.text_area :experience,  :rows=>3 %>
         </td>
     </tr>
-     <tr>
+     <tr style="display:none;">
         <td class="required"><label for="person_preference">Preferences:</label>
         <span id="required">*</span><br/>
-        <%= f.text_area :preference,  :rows=>3  %></td>
+        <%= f.text_area :preference,  :rows=>3, :value=>"n/a" %></td>
     </tr>

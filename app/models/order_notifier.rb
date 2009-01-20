@@ -15,7 +15,7 @@ class OrderNotifier < ActionMailer::Base
   
   private
   def setup_email(order, sent_at)
-    @subject            = "Registration Confirmation: #{order.team.name}"
+    @subject            = "Registration Confirmation: #{CGI.unescapeHTML(order.team.name)}"
     @body[:order]       = order
     @recipients         = order.user.person.email
     @from               = "Philadelphia Dragon Boat Festival <#{APP_CONFIG['noreply_email']}>" 
