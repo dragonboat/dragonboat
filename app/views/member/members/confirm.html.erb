@@ -1,6 +1,13 @@
 <%content_for :title do %>Team Member Home : You have been invited to join <%=CGI.unescapeHTML(@team.name).capitalize%><%end%>
 <div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+<div>
 <div align="left" class="confirmed_box">
+  <h1>Enter Waiver Info</h1>
+  <div id="instructions">
+    <%= render :comatose=>'captain-enter-waiver-info-instructions' %>
+  </div>
   <%=error_messages_for :member%>
   <%=error_messages_for :person%>
   <%form_for :member do |f|%>
@@ -11,16 +18,7 @@
   <%= f.radio_button :confirm, "yes"%><label for="member_invitation_status_yes">YES</label>
   <%= f.radio_button :confirm, "no"%><label for="member_invitation_status_no">NO</label>
 
-	<div id="instructions">
-		<%= render :comatose=>'waiver-instructions' %>
-	</div>
-
-	<div id="waiver_details">
-		<h2>WAIVER OF LIABILITY RELEASE <br/>
-		INDEMNIFICATION AND HOLD HARMLESS NOTICE</h2>
-		<%= render :comatose=>'waiver-details' %>
-	</div>
-
+	
         
    <% fields_for :person, @person do |p| %>
    <p>

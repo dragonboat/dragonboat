@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 98) do
+ActiveRecord::Schema.define(:version => 97) do
 
   create_table "answers", :force => true do |t|
     t.integer  "ticket_id"

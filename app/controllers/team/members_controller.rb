@@ -10,11 +10,12 @@ class Team::MembersController < Team::WebsiteController
   
   def confirm
     redirect_to team_edit_profile_path(@team.name.to_slug) if !@member.is_unconfirmed?
+    @person =  @member.user.person
     if request.post?
       @member.attributes = (params[:member])
       @member.validation_mode = :waiver_form   
       @member.ip = request.remote_ip
-      @person =  @member.user.person
+      #@person =  @member.user.person
       @person.attributes = (params[:person]) if params[:person]
       unless @member.is_decline?
         @person.validation_mode = :sign_waiver

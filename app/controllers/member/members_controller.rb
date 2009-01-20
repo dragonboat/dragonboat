@@ -105,10 +105,24 @@ class Member::MembersController < Member::WebsiteController
     @person = @user.person
   end
 
-  def confirm
-    @member = Member.find(params[:id])  
-    flash[:notice] = "Member #{@member.user.person.name} was invited to join the team." if @member && @member.invite 
-    redirect_to member_team_members_url(@team)
+ def confirm
+    @member = @team.members.find(params[:id])
+    @person =  @member.user.person
+    redirect_to member_team_members_url(@team) if !@member.is_unconfirmed?
+    if request.post?
+      @member.attributes = (params[:member])
+      @member.validation_mode = :waiver_form   
+      @member.ip = request.remote_ip  
+      @person.attributes = (params[:person]) if params[:person]
+      unless @member.is_decline?
+        @person.validation_mode = :sign_waiver
+      end
+      @member.waiver_sign_at = Time.now()
+      if @person.valid? && @member.valid? &&  @person.save && @member.save     
+        flash[:notice] = "Enter Waiver Info was successfully updated."
+        redirect_to member_team_members_url(@team)
+      end
+    end
   end
   
   def access

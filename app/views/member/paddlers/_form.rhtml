@@ -4,7 +4,7 @@
   </div>
   <lable for="">Team Name:</lable>
   <% if @teams.size > 1 %>
-    <%= f.select(:team_id, @teams.collect {|t| [t.name, t.id]}, :readonly => true ) %>
+    <%= f.select(:team_id, @teams.collect {|t| [CGI.unescapeHTML(t.name), t.id]}, :readonly => true ) %>
   <%else%>
     <%= text_field_tag "team",@teams.first.name ,:readonly => true%>
     <%= hidden_field_tag "member[team_id]", @teams.first.id %>

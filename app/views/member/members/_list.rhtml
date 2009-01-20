@@ -28,9 +28,9 @@
        <%if user == current_user && (user.teams)%> |
          <%= link_to 'Sign Waiver', team_member_confirm_url(@team.name.to_slug) if member.is_unconfirmed? %>
          <%= link_to_function 'Sign Waiver', "", :id=>"frozen" unless member.is_unconfirmed?%>
-      <%else%>
-
-         <%# link_to 'Access Info', member_team_members_path(@team, "access", member.id) %>
+      <%elsif member.is_unconfirmed?%>
+        |
+         <%= link_to 'Enter Waiver Info', member_team_members_path(@team, "confirm", member.id) %>
        <%end%>
       </td>
     </tr>
