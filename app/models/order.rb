@@ -27,7 +27,7 @@ class Order < ActiveRecord::Base
   end
   
   def after_destroy
-    person.destroy
+    person.destroy if person
   end
   
   def allow_validation

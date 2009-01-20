@@ -107,7 +107,7 @@ class Member < ActiveRecord::Base
   end
   
   def after_destroy
-    user.destroy
+    user.destroy if user
   end
   
   def is_unconfirmed?

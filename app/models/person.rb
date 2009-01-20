@@ -1,10 +1,9 @@
 class Person < ActiveRecord::Base
   set_table_name "persons"
   validates_presence_of :first_name, :last_name
-  has_one :user, :dependent => :destroy
-  has_one :order, :foreign_key => 'billing_id', :class_name=>"Person", :dependent => :destroy
-  has_one :volunteer, :dependent => :destroy
-  has_one :orphaned_paddler, :dependent => :destroy
+  has_one :user #, :dependent => :destroy
+  has_one :volunteer #, :dependent => :destroy
+  has_one :orphaned_paddler #, :dependent => :destroy
   validates_format_of  :email, :with => /^(?:[_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-zA-Z0-9\-\.]+)*(\.[a-z]{2,4})$/i, :message => 'should be valid' #, :if=>Proc.new { |person| person.email&&!person.email.empty? }
   
  

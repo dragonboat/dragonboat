@@ -7,6 +7,6 @@ class OrphanedPaddler < ActiveRecord::Base
   end
   
   def after_destroy
-    person.destroy
+    person.destroy if person
   end
 end

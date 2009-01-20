@@ -90,15 +90,22 @@ img#pdb_logo {
 
 #separator {display:none; clear:both; height:1px; margin:0px; padding:0px; background-color:red; width:100%;}
 
+
+
+#main {margin-top:20px;}
+
 #step5 table.box, #step3 table.box  {width: 310px;}
 #step5 table.big-box {width: 310px;}
 #step5 table,#step3 table{margin-bottom:15px;}
 
-#step5 table.box{
-border: 1px solid #DDD; margin: 20px 0px 0px 0px;padding: 10px;background: #FCFCFC; width:100%
-}
 
-#step5 table.box a {
+#step5 table.box{ 
+border: 1px solid #DDD; margin: 20px 0px 0px 0px; padding: 10px;background-color:#FCFCFC; width:100%;
+}
+#step5 table.box td { padding-left: 10px; padding-right: 10px;}
+#step5 .padding_all { padding: 10px;}
+
+#step5 table.box a, #step5 table.box a:hover {
 	font-size: 11px; 
 	padding-left:20px; 
 	padding-right:20px; 
@@ -107,11 +114,9 @@ border: 1px solid #DDD; margin: 20px 0px 0px 0px;padding: 10px;background: #FCFC
 	background-color:#EEE;
 	color: #000;
 	border:1px solid #AAA;
-	font-weight:bold;}
+	font-weight:bold; }
 
 #step5 table.box a:hover {
 	background-color: #CCC;
 	}
 
-
-#main {margin-top:20px;}

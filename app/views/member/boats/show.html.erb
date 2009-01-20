@@ -11,9 +11,10 @@
 
     
  <table class="box">
-  <tr>
-    <td><h2>Your Team</h2></td>
-    <td width="100"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
+
+   <tr>
+    <td class="padding_all"><h2>Your Team</h2></td>
+    <td width="100" class="padding_all"> <%=link_to "edit", member_edit_boat_url(@team.id) %></td>
   </tr>
   <tr>
       <td colspan="2" valign="top"><%=@team.name%></td>
@@ -27,16 +28,16 @@
       <td colspan="2" valign="top"><br>Team Profile:<br/><br/>
       <span class='team-profile'><%=@team.description%></span>
         </td>
-  </tr>
-
+      </tr>
+    
 </table>
 
 <!--  total number of paddlers Invited, accepted, declined -->
 
  <table class="box">
   <tr>
-    <td><h2>Your team members</h2></td>
-    <td width="100"><%=link_to "edit",  member_team_members_path(@team) %></td>
+    <td class="padding_all"><h2>Your team members</h2></td>
+    <td width="100" class="padding_all"><%=link_to "edit",  member_team_members_path(@team) %></td>
   </tr>
   <tr>
     <td>Invited</td>
@@ -53,10 +54,11 @@
 </table>
 
 <!-- Scheduled Practice Dates -->
- <table class="box">
+
+<table class="box">  
   <tr>
-    <td colspan="2"><h2>Your Practice Dates</h2></td>
-    <td width="100"><%=link_to "edit",member_team_practices_path(@team)%></td>
+    <td colspan="2" class="padding_all"><h2>Your Practice Dates</h2></td>
+    <td width="100" class="padding_all"><%=link_to "edit",member_team_practices_path(@team)%></td>
   </tr>
 
   <tr><td colspan="3">
@@ -76,17 +78,17 @@
        <%="Steersperson: #{p.steers_person}" if p.steers_person && !p.steers_person.empty?%>
      </td>
    </tr>
-  <%end%>
-	</table>
-	</td></tr></table>
-</table>
+   <%end%>
+    </table>
+
+  </table>
 
   <!-- Right Side -->
   <%if @person != @captain%>
   <table class="box">
     <tr>
-    <td><h2>Captain Personal Details</h2></td>
-    <td width="100"></td>
+    <td class="padding_all"><h2>Captain Personal Details</h2></td>
+    <td width="100" class="padding_all"></td>
   </tr>
   <tr>
     <td colspan="2" valign="top">
@@ -103,8 +105,8 @@
 <!-- Total Tents and reserved tent position  -->
 <table class="box">
   <tr>
-    <td><h2>Your Tents</h2></td>
-    <td width="100">
+    <td class="padding_all"><h2>Your Tents</h2></td>
+    <td width="100" class="padding_all">
         <%if @team.tents.size>0%>
         <%= link_to 'edit', member_team_tents_path(@team.id)%>
         <%end%>
@@ -125,16 +127,17 @@
 	<tr><td></td></tr>
   <tr>
 	
-    <td colspan=2 align="right"><br/><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
+    <td colspan=2 align="right" class="padding_all"><br/><%= link_to 'Purchase More Tents', member_extras_boat_url(@team)%></td>
   </tr>
   
 </table>
 <table class="box" style="padding-top:25px;">
   <tr>
-    <td><%= link_to "Register Another Team", register_user_url%></td>
+    <td class="padding_all"><%= link_to "Register Another Team", register_user_url%></td>
   </tr>
 </table>
 
 <div class="clearEm">&nbsp;&nbsp;</div>
+
 </div>
   

@@ -18,7 +18,7 @@
         <li><%= link_to "Register Another Team", register_user_url%></li>
         <%end%>
         
-        <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Need a Paddler?', member_paddlers_path(@team) %></li>
+        <li <%= "class=\"current\"" if  request.request_uri =~/paddlers\/?$/  %>><%= link_to 'Need a Paddler?', member_paddlers_url(@team) %></li>
         <li <%= "class=\"current\"" if url =~ /(boats)/ && ['edit','update'].include?(controller.action_name) %>><%= link_to 'Edit Team Details', member_edit_boat_url(@team.id) %> </li>
        
       </ul>

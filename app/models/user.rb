@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
   end
   
   def after_destroy
-    person.destroy
+    person.destroy if person
   end
   # has_role? simply needs to return true or false whether a user has a role or not.  
   # It may be a good idea to have "admin" roles return true always
