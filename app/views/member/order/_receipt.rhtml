@@ -2,6 +2,8 @@
   @order = order
   @billing = @order.person
 %>
+
+
 <p>Here are the details of your order at <%=@order.created_at.strftime("%d.%m.%Y %H:%M")%>:
   <br/><br/>(<%=link_to_function "print this page","printSpecial()"%>  for a hard-copy of your receipt)
 </p>
@@ -11,7 +13,7 @@
 <div id="step5">
 
   <span id="printReady">
- 
+  <h2>Philadelphia International Dragon Boat Festival Registration</h2>
   <h4>Order # <%=@order.id%> processed successfully</h4>
 
 	<div id="team-details">
@@ -97,6 +99,13 @@
   </tr>
 </table>
 </div>
+
+<h4>
+	Philadelphia International Dragon Boat Festival<br/>
+	Box 122<br/>
+	Haverford, PA  19041<br/>
+	(610) 642-2333
+</h4>
 
 </span>
 
