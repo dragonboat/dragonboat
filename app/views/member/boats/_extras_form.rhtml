@@ -12,6 +12,9 @@ main_tents = @extras[0]
   <tr>
     <td valign="top">
       <ul>
+	
+		<li><%=radio_button_tag("quantity[#{main_tents.id}]", 0)%> <label for="quantity[<%=main_tents.id%>]_0">Reserve at a later date</label></li>
+	
         <li><%=radio_button_tag("quantity[#{main_tents.id}]", 1, true)%> <label for="quantity[<%=main_tents.id%>]_1">1 Tent (<%=number_to_currency main_tents.price%>)</label></li>
         <li><%=radio_button_tag("quantity[#{main_tents.id}]", 2)%> <label for="quantity[<%=main_tents.id%>]_2">2 Tents (<%=number_to_currency main_tents.price*2%>)</label></li>
         
