@@ -123,7 +123,7 @@ class Member < ActiveRecord::Base
   end
   
   def date_of_signature
-    waiver_sign_at.strftime("%d.%m.%Y") if waiver_sign_at
+    waiver_sign_at.strftime("%d.%m.%Y %H:%M") if waiver_sign_at
   end
   
   def waiver_status_human

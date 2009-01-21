@@ -1,0 +1,25 @@
+<% content_for :title do %>Manage Team Tents : Change tents number<% end %>
+    <h1>Change tents number</h1>
+    <%
+      team =  @team
+      captain = team.captain 
+      tents = team.tents
+      %>   
+    <p> Team: <%= team.name %></p>
+    <p> Captain: <%= captain.person.name%> < <%= mail_to captain.email %> ></p>
+    <p> Total tents: <%=tents.size%></p>
+    <p> Main: <%= team.tents.find_main(:all).size%></p>
+    <p> Other: <%= team.tents.find_additional(:all).size%></p>
+    <p> Reserved: <%= team.tents.find_not_empty(:all).size%> </p>
+    <p> Current Tent Position: <%=team.tents.find_not_empty(:all).map(&:location).join(",")%></p>
+    
+    <p>
+    
+      <% form_tag admin_change_tents_number_path do %>
+       <p>Main Tents Number: <%= text_field_tag :main_total, team.tents.find_main(:all).size %> </p>
+       <p>OtherTents Number: <%= text_field_tag :other_total, team.tents.find_additional(:all).size %> </p>
+      <p><%= submit_tag 'Update' %></p>
+      <% end %>
+    
+    </p>
+    

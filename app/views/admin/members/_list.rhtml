@@ -1,0 +1,40 @@
+<table id="members" class="obj_list">
+  <tr>
+    <th><%= link_to('Username', admin_members_path(:sort => sort_link_for('login', params[:sort])), :title=>"Sort by Username" ) %></th>
+    <th><%= link_to('E-mail', admin_members_path(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th><%= link_to('Name', admin_members_path(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
+    <th width="50"><%= link_to('Type', admin_members_path(:sort => sort_link_for('type', params[:sort])), :title=>"Sort by Type" ) %></th>  
+    <th width="100"><%= link_to('Approval Status', admin_members_path(:sort => sort_link_for('waiver_status', params[:sort])), :title=>"Sort by Waiver status" ) %></th>
+    <th width="120"><%= link_to('Time of Signature', admin_members_path(:sort => sort_link_for('date_of_signature', params[:sort])), :title=>"Sort by Time of Signature" ) %></th>
+    <th width="120"><%= link_to('IP', admin_members_path(:sort => sort_link_for('ip', params[:sort])), :title=>"Sort by IP" ) %></th>
+    <th>Waiver Signature</th>
+    <th width="150"><%= link_to('Created at', admin_members_path(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    
+    <th width="150">&nbsp;</th>
+  </tr>
+  
+  <% for member in @members %>
+  <%unless @team && @team==member.team%>
+  <tr><td colspan="10"><b><%=member.team.name%></b></td></tr>
+  <%end%>
+  <%@team = member.team%>
+  <%user = member.user%>
+  <%person = user.person%>
+  <tr>
+    <td><%= link_to(user.login,admin_user_path(user))%></td>
+    <td><%= mail_to user.email%></td>
+    <td> <%=person.name%> </td>
+    <td><%=member.type.name%></td>
+     <td align="left"><%=image_tag "icons/#{member.waiver_status.name.downcase}.png", :title=>"#{member.waiver_status.name}".capitalize %> <%=member.waiver_status_human%></td>      
+   
+    
+    <td><%=member.date_of_signature%></td>
+    <td><%=member.ip%></td>
+    <td><%=member.sign_waiver_notice%></td>
+    <td><%=member.created_at.strftime("%d.%m.%Y")%> / <%=member.created_at.strftime("%H:%M")%></td>
+      <td><%= link_to 'Show', admin_member_path(member.id) %> 
+      | <%= link_to 'Re-send invitation',admin_resend_invitation_path(member.id) %> 
+      </td>
+    </tr>
+<% end %>
+</table>

@@ -1,0 +1,9 @@
+
+<table>
+    <%= render :partial => 'persons/full_show'%>
+</table>
+<p>Position: <%=@member.type.name %></p>
+<p>Approval Status: <%=image_tag "icons/#{@member.waiver_status.name.downcase}.png", :title=>"#{@member.waiver_status.name}".capitalize %> <%=@member.waiver_status_human%></p>
+<p>Created At: <%=@member.created_at.strftime("%d/%m/%Y") %></p>
+<p>IP: <%=@member.ip%></p>
+<p>Time of Waiver Signature: <%=@member.date_of_signature%></p>

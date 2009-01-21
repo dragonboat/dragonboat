@@ -1,0 +1,36 @@
+<% content_for :title do %>Manage Team Tents<% end %>
+<h1 class="index">Manage Team Tents</h1>
+
+<div id="pages"><%= will_paginate @teams %></div>
+
+<table id="teams" class="obj_list">
+  <tr>
+    <th><%= link_to('Name', admin_team_tents_url(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by team name" ) %></th>
+    <th><%= link_to('Captain', admin_team_tents_url(:sort => sort_link_for('captain', params[:sort])), :title=>"Sort by captain name" ) %></th>
+    <th><%= link_to('Created at', admin_team_tents_url(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by created at" ) %></th>
+    <th>Total Tents</th>
+    <th>Reserved</th>
+    <th>Current Tent Position</th>
+ 
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for team in @teams %>
+  <%
+    captain = team.captain 
+    tents = team.tents
+    
+%>
+  <tr>
+    <td><%=link_to team.name, admin_team_path(team) %></td>
+    <td><%=link_to captain.person.name, admin_user_path(captain)%> < <%= mail_to captain.email %> ></td>
+    <td><%=team.created_at.strftime("%d.%m.%Y")%> / <%=team.created_at.strftime("%H:%M")%></td>
+    <td><%=tents.size%></td> 
+    <td><%= team.tents.find_not_empty(:all).size%></td>
+    <td><%=team.tents.find_not_empty(:all).map(&:location).join(",")%></td> 
+    <td><%= link_to 'Change tents number', admin_change_tents_number_path(team) %> </td>
+    </tr>
+<% end %>
+</table>
+
+<div id="pages"><%= will_paginate @teams %></div>

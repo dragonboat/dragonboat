@@ -12,7 +12,7 @@
   
   <%@teams_list.each do |team|%>
   <tr>
-    <td><%=textilize(team.name)%></td>
+    <td><%=team.name%></td>
     <td><%= image_tag( team.image.public_filename(:thumb), :id=>"logo" ) if team.image%></td>
     <td><%=team.description%></td>
   </tr>

@@ -7,6 +7,8 @@ class Tent < ActiveRecord::Base
             :conditions => "t_type='main'"
   scope_out :empty,
             :conditions => "(location IS NULL OR location='') AND t_type='main'"
+  scope_out :additional,
+            :conditions => "t_type='additional'"
   scope_out :not_empty,
             :conditions => "(location IS NOT NULL AND location<>'') AND t_type='main'"
           

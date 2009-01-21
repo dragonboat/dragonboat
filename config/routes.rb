@@ -71,6 +71,8 @@ ActionController::Routing::Routes.draw do |map|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :support_tickets,    :controller => 'admin/support'
     m.resources     :users,    :controller => 'admin/users'
+    m.resend_invitation 'members/:id/resend_invitation',  :controller => 'admin/members', :action=>"resend_invitation"
+    m.resources     :members,    :controller => 'admin/members'
     m.resources     :news_contents,    :controller => 'admin/news_contents'
     m.resources     :images,    :controller => 'admin/images'
     m.resources     :files,    :controller => 'admin/files'
@@ -86,6 +88,8 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :items,    :controller => 'admin/items'
     m.order_confirmation "/orders/:id/send_order_confirm", :controller => 'admin/orders', :action=>"send_order_confirm"
     m.resources     :orders,    :controller => 'admin/orders'
+    m.team_tents 'tents/team_tents',    :controller => 'admin/tent_positions', :action=>"team_tents"
+    m.change_tents_number 'tents/:id/change_tents_number',    :controller => 'admin/tent_positions', :action=>"change_tents_number"
     m.resources     :tent_positions,    :controller => 'admin/tent_positions'
     m.snippets_index 'snippets', :controller => 'admin/snippets',:action=> 'index'
   end

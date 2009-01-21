@@ -73,7 +73,7 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
       if zip && !zip.empty?
-        errors.add(:zip, 'is not valid') unless zip =~ /^[\d]{0,5}$/
+        errors.add(:zip, 'is not valid') unless zip =~ /^[ A-Z\d]{0,9}$/i
       end
     elsif  self.validation_mode == :paddler
       for attr_name in [:gender, :phone, :birthday_date]

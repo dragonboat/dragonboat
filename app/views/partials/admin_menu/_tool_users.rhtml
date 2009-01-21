@@ -1,5 +1,6 @@
 <li class="block1">|</li>        
 <li <%= "class=\"current\"" if url =~/(users)/ %> class="block3"><%=link_to "Users", admin_users_url %></li> 
+<li <%= "class=\"current\"" if url =~/(members)/ %> class="block3"><%=link_to "Members", admin_members_url %></li> 
 <li <%= "class=\"current\"" if url =~/(support)/ %> class="block3"><%=link_to "Support", admin_support_tickets_url %></li>
 <li <%= "class=\"current\"" if url =~/(orders)/ %> class="block3"><%=link_to "Orders", admin_orders_url %></li>
 
