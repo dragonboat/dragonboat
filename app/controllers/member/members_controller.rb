@@ -131,6 +131,27 @@ class Member::MembersController < Member::WebsiteController
     @person = @user.person
   end
   
+  def delete
+    @member = @team.members.find(params[:id])
+    if @member.destroy
+      flash[:notice] = "The member was successfully deleted" 
+    end
+    redirect_to member_team_members_url(@team)
+  end
+  
+  def resend_invitation
+    @member = @team.members.find(params[:id])
+    begin
+      MemberNotifier.send("deliver_unconfirmed", @member)
+    rescue Exception 
+      flash[:notice] = "Please try again, error occurred while re-sending the invitation #{e}"
+      redirect_to member_team_members_url(@team)
+    end
+    flash[:notice] = "The invitation e-mail  was successfully re-sent to the member < #{@member.user.email} >"
+    redirect_to member_team_members_url(@team)
+  end
+  
+  
   private
   def set_types
     @types = MemberType.find(:all)

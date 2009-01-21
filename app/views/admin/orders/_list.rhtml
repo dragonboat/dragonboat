@@ -15,15 +15,16 @@
   <tr>
     <td><%=order.id%></td>
     <td><%=order.status%></td>
-    <td><%=person.name%> < <%=mail_to person.email%> > <%= order.customer_ip %> <br> 
+    <td><%= link_to person.name, admin_user_path(order.user)%> < <%=mail_to person.email%> > <%= order.customer_ip %> <br> 
        <%= person.phone %>
     </td>
     <td><%= order.credit_card.type %></td>
     <td><%=number_to_currency order.total_pay%></td> 
     <td><%=order.created_at.strftime("%d.%m.%Y %H:%M") %></td>     
     <td>
-        <%= link_to 'Details', admin_order_path(order) %> 
-      
+        <%= link_to 'Details', admin_order_path(order) %> |
+        <%= link_to 'Send Order Confirmation', admin_order_confirmation_path(order) %> 
+        
         <%# link_to 'Destroy', admin_order_path(order) , :confirm => 'Are you sure?', :method => :delete %>
     </td>
     </tr>

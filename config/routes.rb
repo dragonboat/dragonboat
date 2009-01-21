@@ -83,6 +83,7 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :teams,    :controller => 'admin/teams'
     m.resources     :boat_types,    :controller => 'admin/boat_types'
     m.resources     :items,    :controller => 'admin/items'
+    m.order_confirmation "/orders/:id/send_order_confirm", :controller => 'admin/orders', :action=>"send_order_confirm"
     m.resources     :orders,    :controller => 'admin/orders'
     m.resources     :tent_positions,    :controller => 'admin/tent_positions'
     m.snippets_index 'snippets', :controller => 'admin/snippets',:action=> 'index'

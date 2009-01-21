@@ -7,5 +7,8 @@
 <span id="required">*</span>-Required <br/>
 <%= f.submit "Update" %>
 <% end %>
-  
+<br/>
+<% form_for(:practice, :url => admin_practice_path(@practice), :html=>{:method => :delete}) do |f| %>
+<%=f.submit "Delete this practice", :onclick=>"return confirm('Are you sure?');"%>
+<% end %>
 <%= link_to 'Back', admin_practices_path %>

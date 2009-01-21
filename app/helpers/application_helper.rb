@@ -127,7 +127,22 @@ module ApplicationHelper
     	['Washington', 'WA'], 
     	['West Virginia', 'WV'], 
     	['Wisconsin', 'WI'], 
-    	['Wyoming', 'WY']]
+    	['Wyoming', 'WY'],
+        #Canadian Provinces
+        ['Alberta', 'AB'],
+        ['British Columbia', 'BC'],
+        ['Manitoba', 'MB'],
+        ['New Brunswick', 'NB'],
+        ['Newfoundland and Labrador', 'NL'],
+        ['Northwest Territories', 'NT'],
+        ['Nova Scotia', 'NS'],
+        ['Nunavut', 'NU'],
+        ['Ontario', 'ON'],
+        ['Prince Edward Island', 'PE'],
+        ['Québec', 'QC'],
+        ['Saskatchewan', 'SK'],
+        ['Yukon', 'YT']
+        ]
    end
    
    def invitation_status_id_by_name(name)

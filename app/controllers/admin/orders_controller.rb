@@ -32,4 +32,16 @@ class Admin::OrdersController < Admin::WebsiteController
     @credit_card = @order.credit_card
   end
   
+  def send_order_confirm
+    @order = Order.find(params[:id])
+    begin
+    OrderNotifier.send("deliver_processed", @order)
+    rescue Exception 
+      flash[:notice] = "Please try again, error occurred while re-sending the order confirmation to the user who place it #{e}"
+      redirect_to :action=>"show", :id=>@order.id
+    end
+    flash[:notice] = "The order confirmation e-mail  was successfully re-sent to the user < #{@order.person.email} >"
+    redirect_to :action=>"index"
+  end
+  
 end

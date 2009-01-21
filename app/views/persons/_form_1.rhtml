@@ -26,8 +26,7 @@
     <tr>
          <td class="required"><label for="person_address">Street Address:</label><br/>
          <%= f.text_field :address , :tabindex=> 11%>
-          <!-- Hide Country: -->
-          <%= hidden_field_tag "person[country]", "United States"%>
+         
         </td>
     </tr>
     <!--
@@ -49,7 +48,7 @@
     
     <tr>
         <td class="required"><label for="person_zip">Zip code:</label><br/>
-        <%= f.text_field :zip, :tabindex=> 15, :size=>6, :maxlength=>5%></td>    
+        <%= f.text_field :zip, :tabindex=> 15, :size=>10, :maxlength=>9%></td>    
     </tr>
     
     <tr>
@@ -57,13 +56,14 @@
         <%= f.text_field :phone, :tabindex=> 9 %><a>
         </td>
     </tr>
-    <!--
-      <tr>
-        <td><label for="person_phone_2">Mobile Phone:</label>
+   
+    <tr>
+        <td class="required"><label for="person_country">Country:</label>
         <br/>
-        <%= f.text_field :phone_2, :tabindex=> 10 %>
+        
+          <%= f.country_select :country, ['United States', 'Canada'], :tabindex=> 10%>
         </td>  
     </tr>
-    -->
+  
     
   

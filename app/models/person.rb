@@ -81,11 +81,11 @@ class Person < ActiveRecord::Base
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number.size != 10 
     elsif  self.validation_mode == :order
-      for attr_name in [:phone,:address, :zip, :city, :state]
+      for attr_name in [:phone,:address, :zip, :city, :state, :country]
         errors.add_on_blank(attr_name, 'is required')
       end
       errors.add(:phone, 'must consist of 10 digits') if  phone_number&&phone_number.size != 10 
-      errors.add(:zip, 'is not valid') unless zip =~ /^[\d]{0,5}$/
+      errors.add(:zip, 'is not valid') unless zip =~ /^[ A-Z\d]{0,9}$/i
     end 
   end
 end

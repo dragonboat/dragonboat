@@ -1,20 +1,29 @@
 <fieldset>
   <legend>General Practice Settings</legend>
   <p>
-    <strong>Date:</strong> <span id="required">*<br /></span>
+    <label for="practice_created_at_2i">Date:</label> <span id="required">*<br /></span>
     <%= f.date_select :created_at, :order => [:month, :day, :year],  :start_year => 2009, :end_year=>2009 %>
   </p>
   <p>
-    <strong>Time:</strong> <span id="required">*<br /></span>
+    <label for="practice_created_at_4i">Time:</label> <span id="required">*<br /></span>
     <%= f.time_select :created_at, {:order=>[:hour], :discard_minute=>true, :twelve_hour => true} %>
   </p>
 
  
   <p>
-    <strong>Team:</strong> <span id="required">*<br/></span>
+    <label for="practice_team_id">Team:</label> <span id="required">*<br/></span>
     <%= f.select(:team_id, [["no-team",""]] + @teams.collect {|t| [t.name, t.id]}) %></td>
   </p>
-  </fieldset>
+  
+  <p>
+   <label for="practice_launch_driver">Launch Driver:</label><br/>
+	<%= f.text_field :launch_driver, :size=>25%>
+  </p>
+<p>
+   <label for="practice_steers_person">Steersperson:</label><br/>
+	<%= f.text_field :steers_person, :size=>25%>
+</p>
+</fieldset>
 
 
 

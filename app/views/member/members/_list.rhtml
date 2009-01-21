@@ -32,6 +32,9 @@
         |
          <%= link_to 'Enter Waiver Info', member_team_members_path(@team, "confirm", member.id) %>
        <%end%>
+       | <%= link_to 'Delete', member_team_members_path(@team, "delete", member.id) , :confirm => 'Are you sure?' %> 
+       | <%= link_to 'Re-send invitation', member_team_members_path(@team, "resend_invitation", member.id) %> 
+        
       </td>
     </tr>
 <% end %>
