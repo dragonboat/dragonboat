@@ -16,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   # Allow downloading Web Service WSDL as a file with an extension
   # instead of a file named 'wsdl'
   #map.home '',  :controller => 'news',:action=>"index"
-  
+  map.redirect '/Default.asp', 'http://www.philadragonboatfestival.com', :permament => true
   map.with_options :path_prefix => 'member', :name_prefix => 'member_' do |m|
     m.index   '', :controller => 'member/website',  :action => 'index'
     #m.profile '/profile/:id',    :controller => 'member/users', :action=>"show"
@@ -118,7 +118,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'home', :controller =>"home", :action=>:index
   map.comatose_root '', :layout => 'application', :use_cache=>false
   #map.comatose_root 'home-page', :index=>'home-page', :layout=>'application', :use_cache=>false
- 
+
+
 
   #map.connect 'home', :controller=>'comatose', :action=>"show", :id=>'home-page'
  # map.comatose_home_page 'home', :index=>'application', :use_cache=>false

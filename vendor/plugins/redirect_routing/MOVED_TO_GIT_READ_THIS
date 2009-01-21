@@ -1,0 +1,7 @@
+This plugin has moved to git here:
+
+git://github.com/larspind/redirect_routing.git
+
+If you're using git, you can install using:
+
+git submodule add git://github.com/larspind/redirect_routing.git vendor/plugins/redirect_routing
