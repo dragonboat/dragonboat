@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
    # m.resources :users, :controller => 'member/users'
     m.resource :profile,    :controller => 'member/profile'
     m.extras_boat  '/boats/:id/extras', :controller => 'member/boats', :action => 'extras'
+    m.print_receipt   '/boats/:id/print_receipt', :controller => 'member/boats',  :action => 'print_receipt'
     m.resources   :boats, :controller => 'member/boats'
     m.boat_checkout '/boats/:team_id/checkouts/:action/:id', :controller => 'member/checkouts'
     m.team_members '/boats/:team_id/members/:action/:id', :controller => 'member/members'

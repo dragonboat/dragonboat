@@ -1,0 +1,105 @@
+<%
+  @order = order
+  @billing = @order.person
+%>
+<p>Here are the details of your order at <%=@order.created_at.strftime("%d.%m.%Y %H:%M")%>:
+  <br/><br/>(<%=link_to_function "print this page","printSpecial()"%>  for a hard-copy of your receipt)
+</p>
+
+
+<div id="complete">
+<div id="step5">
+
+  <span id="printReady">
+ 
+  <h4>Order # <%=@order.id%> processed successfully</h4>
+
+	<div id="team-details">
+		<h2>Your Team: <%=@team.name%></h2>
+
+        <b>Team Type</b>: <%=@team.boat_type_human%> <br/>
+        <b>New team?</b>: <%=@team.visit_status.to_s.capitalize%> <br/>
+        <b>Team Profile</b>: 
+        <p><span class='team-profile'><%=@team.description%></span></p>
+		<%= image_tag( @team.image.public_filename(:thumb), :id=>"logo" ) if @team.image%> <br/>
+            <%tents = 0%>
+            <%@order.extras_orders.each do |order|%>
+            <%extras= order.extras%>
+            <%quantity = order.quantity%>
+            <%tents+=quantity%>
+            <%end%>
+        <b>Tents</b>: <%=tents%> <br/>
+     </div>
+
+
+<%@credit_card = @order.credit_card%>
+<div id="billing-details">
+<h2>Billing Details</h2>
+
+<%#link_to "edit", member_boat_checkout_path(@team)%>
+<b>Card Type</b>: <%= @credit_card.type.capitalize %><br>
+<b>Name on Card</b>: <%= @credit_card.first_name %> <%= @credit_card.last_name %><br>
+<b>Card Number</b>: <%= @credit_card.display_number %><br>
+<b>Expiration Date</b>: <%= @credit_card.month %> / <%= @credit_card.year %><br>
+<b>Billing Address</b>: <%= "#{@billing.address} #{@billing.address2} #{@billing.city}, #{@billing.state} #{@billing.zip}" %>
+</div>
+
+
+
+
+<%@person = @team.captain.person%>
+
+<div id="captain-details">
+<h2>Captain Details</h2>
+<%#link_to "edit",  member_edit_profile_url(@team)%>
+
+<strong>Captain Name:</strong> <%= @person.name %><br>
+<strong>Captain Email Address:</strong> <%= @person.email %><br>
+  
+        <b>Address</b>:<br/>
+		<%= @person.address %> <%= @person.address2 %><br>
+		<%= @person.city %>, <%= @person.state%> <%= @person.zip%><br>
+		<%=  @person.country %><br>
+          
+<%= @person.phone %><br>
+<%= @person.phone_2 %><br>
+</div>
+
+
+
+<div id="order-details">
+<h1>Order Total</h1>
+
+<table class="big-box" cellspadding="0" cellspacing="0">
+  <%if @order.boat_pay > 0%>
+  <tr>
+
+    <td><%=@team.boat_type_human%> : <%=@team.name%></td>
+  
+    <td width="400" align="right"><%=number_to_currency @team.price%></td>
+
+  </tr>
+  <%end%>
+  <%@order.extras_orders.each do |order|%>
+  <%extras= order.extras%>
+  <%quantity = order.quantity%>
+  <% default = quantity %>
+  <%if quantity>0%>
+  <tr>
+    <td><%=quantity%> <%=extras.name%></td>
+    <td width="400" align="right"><%=number_to_currency order.pay*quantity%></td>
+  </tr>
+  <%end%>
+  <%end%>
+  <tr class='total'>
+    <td>Total Charge</td>
+    <td width="400" align="right"><%=number_to_currency @order.total_pay%></td>
+  </tr>
+</table>
+</div>
+
+</span>
+
+
+</div>
+</div>

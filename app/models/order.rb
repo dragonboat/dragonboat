@@ -22,6 +22,11 @@ class Order < ActiveRecord::Base
   
   validates_inclusion_of  :status, :in => %w(open processed prepared canceled failed)
   
+  #processed
+  scope_out :processed,
+            :conditions => "status='processed'"
+  
+  
   def after_initialize
     self.status = 'open' unless self.status
   end

@@ -2,11 +2,11 @@ class Member::BoatsController < Member::WebsiteController
   include ApplicationHelper
  # before_filter :has_any_boat?, :except => [:index, :edit, :update]
  # require_role "captain", :only=>[:index]
-  before_filter :has_boat?, :only=>[:index, :edit, :update, :show]
-  before_filter :fetch_team, :only=>[:show, :edit, :update]
+  before_filter :has_boat?, :only=>[:index, :edit, :update, :show, :print_receipt]
+  before_filter :fetch_team, :only=>[:show, :print_receipt, :edit, :update]
   before_filter :fetch_team_and_redirect, :only=>[:extras, :add_extras]
   
-  before_filter :secure_site, :except => [:index, :edit, :update, :show]
+  before_filter :secure_site, :except => [:index, :edit, :update, :show, :print_receipt]
   skip_before_filter :leave_secure_site
  
   def index
@@ -29,6 +29,10 @@ class Member::BoatsController < Member::WebsiteController
    @paddlers = @team.members.count_paddlers
    @paddlers_accessibled = @team.members.count_accessibled_paddlers
    @paddlers_declined = @team.members.count_declined_paddlers
+  end
+  
+  def print_receipt
+    @orders = @team.orders.find_processed(:all, :order=>"created_at DESC")
   end
   
   def new

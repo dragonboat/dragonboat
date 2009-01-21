@@ -1,0 +1,10 @@
+<% content_for :title do %>Manage: <%=CGI.unescapeHTML(@team.name)%> : Print Receipt<% end %>
+
+<div>
+  <%= render :partial => 'member/boats/submenu/menu'%>
+</div>
+<%@orders.each do |order|%>
+<%= render :partial => 'member/order/receipt', :locals=>{:order=>order}%>
+<p>---------------------------------------------------------------------</p>
+<%end%>
+  

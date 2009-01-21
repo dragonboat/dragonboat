@@ -28,8 +28,10 @@
       <td colspan="2" valign="top"><br>Team Profile:<br/><br/>
       <span class='team-profile'><%=@team.description%></span>
         </td>
-      </tr>
-    
+  </tr>
+  <tr>
+    <td class="padding_all"><%= link_to "Print Receipt", member_print_receipt_url(@team)%></td>
+  </tr>  
 </table>
 
 <!--  total number of paddlers Invited, accepted, declined -->
@@ -83,7 +85,7 @@
 
   </table>
 
-  <!-- Right Side -->
+ 
   <%if @person != @captain%>
   <table class="box">
     <tr>
@@ -135,6 +137,7 @@
   <tr>
     <td class="padding_all"><%= link_to "Register Another Team", register_user_url%></td>
   </tr>
+
 </table>
 
 <div class="clearEm">&nbsp;&nbsp;</div>

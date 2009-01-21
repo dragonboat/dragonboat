@@ -15,7 +15,7 @@ class Team < ActiveRecord::Base
   has_many :users, :through => :members
   has_many :tents, :dependent=>:destroy
   
-  has_one :order, :dependent=>:destroy
+  has_many :orders, :dependent=>:destroy
  
   has_enumerated  :status, :class_name => 'Status',:foreign_key => 'status_id'
   
