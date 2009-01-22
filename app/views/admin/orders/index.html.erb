@@ -1,5 +1,10 @@
 <h1 class="index">Order List</h1>
-<div id="submenu">&nbsp;</div>
+<div id="submenu">
+  <%= render :partial => 'admin/orders/submenu/menu'%>
+</div>
+
+<p>Filter: <%=@view%></p>
+<p>TOTAL: <%=@orders_count%></p>
 <div id="pages"><%= will_paginate @orders %></div>
 <%= render :partial => 'list'%>
 <div id="pages"><%= will_paginate @orders %></div>

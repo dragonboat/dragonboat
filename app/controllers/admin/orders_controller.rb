@@ -1,4 +1,5 @@
 class Admin::OrdersController < Admin::WebsiteController
+  before_filter :set_view, :get_view
   
   def index
     order = case params[:sort]
@@ -15,10 +16,19 @@ class Admin::OrdersController < Admin::WebsiteController
       else 'orders.created_at DESC'
     end
     
+    if @view == 'processed'
+      conditions = "status='processed'"
+    elsif @view == 'failed'
+      conditions = "status='failed'"
+    else
+      conditions = nil
+    end
     @orders = Order.paginate(:page => params[:page], 
                               :include=>[:person],
                                 :per_page =>APP_CONFIG["admin_per_page"],
-                                :order => order)
+                                :order => order,
+                              :conditions => conditions)
+    @orders_count = Order.count(:conditions => conditions)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @orders }
@@ -44,4 +54,14 @@ class Admin::OrdersController < Admin::WebsiteController
     redirect_to :action=>"index"
   end
   
+  private
+  def set_view
+    session[:orders_view] = params[:view] if params[:view]
+    session[:orders_view] = nil if params[:view_clear]
+  end
+
+  def get_view
+    @view = session[:orders_view] ? session[:orders_view] : "all"
+  end
+
 end

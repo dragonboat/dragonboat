@@ -34,7 +34,7 @@ class Person < ActiveRecord::Base
   end
     
   def name
-    self.first_name.to_s + " " + self.last_name.to_s
+    self.first_name.to_s.strip + " " + self.last_name.to_s.strip
   end
   
   def human_birthday_date
