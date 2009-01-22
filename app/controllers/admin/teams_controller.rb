@@ -1,5 +1,7 @@
 class Admin::TeamsController < Admin::WebsiteController
   require 'fastercsv'
+  before_filter :set_view, :get_view
+  
   def index
     conditions = team_search
     order = case params[:sort]
@@ -18,6 +20,17 @@ class Admin::TeamsController < Admin::WebsiteController
       else 'teams.created_at DESC'
     end
     
+    if @view == 'inactive'
+      view_conditions = "statuses.name='inactive'"
+    else
+      view_conditions = "statuses.name='active'"
+    end
+    if conditions
+      conditions+=" AND #{view_conditions}"
+    else
+      conditions="#{view_conditions}"
+    end
+    
     @teams = Team.paginate(:page => params[:page], 
                                 :include => [:members, :users, :status],
                                 :joins => "LEFT JOIN users as captain ON captain.id = teams.captain_id
@@ -25,6 +38,10 @@ class Admin::TeamsController < Admin::WebsiteController
                                 :per_page =>APP_CONFIG["admin_per_page"],
                                 :conditions => conditions,
                                 :order => order)
+    @teams_count = Team.count(:include => [:members, :users, :status],
+                        :joins => "LEFT JOIN users as captain ON captain.id = teams.captain_id
+                                          LEFT JOIN persons cp ON cp.id=captain.person_id",
+                        :conditions => conditions)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @teams }
@@ -77,7 +94,7 @@ class Admin::TeamsController < Admin::WebsiteController
       @teams.each do |team|
         captain = team.captain 
         active = team.members.find_active(:all).size
-        csv << [team.name, captain.person.name,  captain.email, team.created_at.strftime("%d/%m/%Y"), team.members.size, active, team.status_human_name]
+        csv << [CGI.unescapeHTML(team.name), captain.person.name,  captain.email, team.created_at.strftime("%d/%m/%Y"), team.members.size, active, team.status_human_name]
       end
     end
     send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=alphabetical_teams_report.csv"
@@ -91,10 +108,25 @@ class Admin::TeamsController < Admin::WebsiteController
       @teams.each do |team|
         captain = team.captain 
         active = team.members.find_active(:all).size
-        csv << [team.created_at.strftime("%d/%m/%Y"), team.name, captain.person.name,  captain.email,team.members.size, active, team.status_human_name]
+        csv << [team.created_at.strftime("%d/%m/%Y"), CGI.unescapeHTML(team.name), captain.person.name,  captain.email,team.members.size, active, team.status_human_name]
       end
     end
     send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=chronological_teams_report.csv"
+  end
+  
+  def teams_captains_to_csv
+    #Full Name, First Name, Last Name, Email Address, Team Name
+    @members = Member.find_cocaptain(:all, 
+      :include=>[:user, :team],
+        :joins => "LEFT JOIN users ON users.id = members.user_id LEFT JOIN persons ON persons.id = users.person_id",
+      :order=>"first_name, last_name")
+     csv_str = FasterCSV.generate do |csv|
+      csv << ["Full Name", "First Name", "Last Name", "Email Address", "Team Name"]   
+      @members.each do |member|
+        csv << [member.sign_waiver_notice, member.user.person.first_name,  member.user.person.last_name, member.user.person.email,CGI.unescapeHTML(member.team.name)]
+      end
+    end
+    send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=teams_captains_to_csv.csv"
   end
   
   private
@@ -108,6 +140,15 @@ class Admin::TeamsController < Admin::WebsiteController
                     {:query => "%#{@query}%"}]
     end
     conditions
+  end
+  
+  def set_view
+    session[:teams_view] = params[:view] if params[:view]
+    session[:teams_view] = nil if params[:view_clear]
+  end
+
+  def get_view
+    @view = session[:teams_view] ? session[:teams_view] : "active"
   end
 
 end

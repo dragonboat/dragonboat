@@ -1,9 +1,13 @@
 <% content_for :title do %>Listing Teams<% end %>
-<h1 class="index">Listing teams</h1>
+<h1 class="index">Listing teams (<%= @teams_count%>)</h1>
 
 <div id="submenu">
+  <%= link_to 'All inactive', admin_teams_url(:view=>"inactive") unless @view == "inactive" %> 
+  <%= link_to 'All active', admin_teams_url(:view_clear=>1) if @view == "inactive" %> 
+  |
   <%= link_to 'Chronological view', admin_teams_chronological_url %> |
-  <%= link_to 'Alphabetical view', admin_teams_alphabetical_url %>
+  <%= link_to 'Alphabetical view', admin_teams_alphabetical_url %> |
+  <%= link_to 'Captains-CSV', admin_teams_captains_to_csv_url %>
 </div>
 <table border="0" width="100%" id="search">
 	<tr><td>

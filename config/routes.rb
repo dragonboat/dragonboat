@@ -81,7 +81,8 @@ ActionController::Routing::Routes.draw do |map|
     m.send_message_by_type_volunteer  'volunteers/send_message_by_type', :controller => 'admin/volunteers', :action=>'send_message_by_type'
     m.resources     :volunteers,    :controller => 'admin/volunteers'
     m.resources     :events,    :controller => 'admin/events'
-    m.resources     :practices,    :controller => 'admin/practices'  
+    m.resources     :practices,    :controller => 'admin/practices' 
+    m.teams_captains_to_csv 'teams/teams_captains_to_csv' , :controller => 'admin/teams', :action=>"teams_captains_to_csv"
     m.teams_alphabetical 'teams/teams_alphabetical' , :controller => 'admin/teams', :action=>"alphabetical_to_csv"
     m.teams_chronological 'teams/teams_chronological' , :controller => 'admin/teams', :action=>"chronological_to_csv"
     m.resources     :teams,    :controller => 'admin/teams'

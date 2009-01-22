@@ -22,7 +22,7 @@ class Admin::PaddlersController < Admin::WebsiteController
       when 'date_of_signature_reverse'   then 'members.waiver_sign_at DESC' 
       else 'members.created_at DESC'
     end
-    @paddlers = @team.members.paginate_paddlers(:all, 
+    @paddlers = @team.members.paginate(:all, 
                    :page => params[:page], 
                    :include =>[:type,:user],
                    :joins => "LEFT JOIN users ON users.id = members.user_id LEFT JOIN persons ON persons.id = users.person_id LEFT JOIN statuses i_s ON i_s.id = members.invitation_status_id LEFT JOIN statuses w_s ON w_s.id = members.waiver_status_id",
@@ -36,18 +36,18 @@ class Admin::PaddlersController < Admin::WebsiteController
   end
   
  def show
-   @paddler = @team.members.find_paddlers(params[:id]) 
+   @paddler = @team.members.find(params[:id]) 
    @person = @paddler.user.person
  end
  
  def edit
-    @paddler = @team.members.find_paddlers(params[:id])
+    @paddler = @team.members.find(params[:id])
     @user = @paddler.user
     @person = @user.person
  end
   
  def update
-    @paddler = @team.members.find_paddlers(params[:id])
+    @paddler = @team.members.find(params[:id])
     paddler  = params[:paddler]
     if paddler[:invitation_status_id].to_i != @paddler.invitation_status_id
       if paddler[:invitation_status_id].to_i == Status.find_invitation_by_name('confirmed').id
@@ -76,7 +76,7 @@ class Admin::PaddlersController < Admin::WebsiteController
   end
   
   def access
-    @paddler = @team.members.find_paddlers(params[:id])
+    @paddler = @team.members.find(params[:id])
     @user = @paddler.user
     @person = @user.person
   end
@@ -84,7 +84,7 @@ class Admin::PaddlersController < Admin::WebsiteController
   def list_by_invitation_status
     @status = Status.find(params[:status])
     @status_title = @status.name=='confirmed' ? "accepted invitations" : "not accepted invitations"
-    @paddlers = @team.members.find_paddlers(:all, :conditions => ["invitation_status_id=?",params[:status]], :order=>"members.created_at DESC") 
+    @paddlers = @team.members.find(:all, :conditions => ["invitation_status_id=?",params[:status]], :order=>"members.created_at DESC") 
   end
   
   def list_by_waiver_sign_status
@@ -95,7 +95,7 @@ class Admin::PaddlersController < Admin::WebsiteController
     else
       conditions = ["waiver_status_id<>?",Status.find_waiver_by_name('accept').id]
     end
-    @paddlers = @team.members.find_paddlers(:all, :conditions => conditions, :order=>"members.created_at DESC") 
+    @paddlers = @team.members.find(:all, :conditions => conditions, :order=>"members.created_at DESC") 
   end
   
   def list_by_waiver_sign_status_to_csv
@@ -105,7 +105,7 @@ class Admin::PaddlersController < Admin::WebsiteController
       @paddlers.each do |paddler|
         user = paddler.user
         person = user.person
-        csv << [person.name, person.email, person.gender, paddler.invitation_status.name.capitalize, paddler.waiver_status.name.capitalize, paddler.created_at.strftime("%d/%m/%Y"), paddler.date_of_signature, paddler.ip, @team.name ]
+        csv << [person.name, person.email, person.gender, paddler.invitation_status.name.capitalize, paddler.waiver_status.name.capitalize, paddler.created_at.strftime("%d/%m/%Y"), paddler.date_of_signature, paddler.ip, CGI.unescapeHTML(@team.name) ]
       end
     end
     send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=#{@team.name.to_slug}_paddlers_list_#{@status_title.gsub(" ","_")}_report.csv"

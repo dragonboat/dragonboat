@@ -17,6 +17,9 @@ class Member < ActiveRecord::Base
  
   scope_out :paddlers,
             :conditions => "type_id=#{MemberType[:paddler].id}"
+  
+  scope_out :cocaptain,
+            :conditions => "members.type_id=#{MemberType['co-captain'].id}"
           
   scope_out :accessibled_paddlers,
             :conditions => "type_id=#{MemberType[:paddler].id} AND invitation_status_id=#{Status.find_invitation_by_name('confirmed').id} AND waiver_status_id<>#{Status.find_waiver_by_name('decline').id}"
@@ -41,6 +44,13 @@ class Member < ActiveRecord::Base
   
   attr_accessor :accept, :confirm
   attr_accessor :validation_mode
+  
+  #def validate_on_create
+    # set limit for the total number of paddlers that can be added to a team, and make this limit 30
+    #if team && team.members.find_paddlers(:all).size >= 30
+    #  errors.add_to_base('You are only allowed to add 30 paddlers to a team.')
+    #end 
+  #end
   
    def validate    
     if self.validation_mode == :waiver_form   

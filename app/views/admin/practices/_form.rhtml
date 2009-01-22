@@ -12,7 +12,7 @@
  
   <p>
     <label for="practice_team_id">Team:</label> <span id="required">*<br/></span>
-    <%= f.select(:team_id, [["no-team",""]] + @teams.collect {|t| [t.name, t.id]}) %></td>
+    <%= f.select(:team_id, [["no-team",""]] + @teams.collect {|t| [CGI.unescapeHTML(t.name), t.id]}) %></td>
   </p>
   
   <p>
