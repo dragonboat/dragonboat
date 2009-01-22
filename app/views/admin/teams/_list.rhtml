@@ -16,7 +16,11 @@
 %>
   <tr>
     <td><%=link_to team.name, admin_team_path(team) %></td>
-    <td><%=link_to captain.person.name, admin_user_path(captain)%> < <%= mail_to captain.email %> ></td>
+    <td>
+      <div style='float:right;'><%= link_to 'Login as', admin_login_as_url(captain.id) %></div>
+      <%=link_to captain.person.name, admin_user_path(captain)%> < <%= mail_to captain.email %> >
+        
+   </td>
     <td><%=team.created_at.strftime("%d/%m/%Y")%></td>
     <td><%=team.members.size%></td> 
     <td><%=active%></td>

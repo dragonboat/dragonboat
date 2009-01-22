@@ -82,7 +82,12 @@ class Member < ActiveRecord::Base
   end
   
   def confirm
-   @confirm  if @confirm  
+    if @confirm 
+      @confirm   
+    else
+      return "yes" if is_accept?
+      return "no" if  is_decline?
+    end
   end
   
   def after_initialize

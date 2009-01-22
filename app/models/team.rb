@@ -26,6 +26,9 @@ class Team < ActiveRecord::Base
 
   scope_out :active,
             :conditions => "status_id=#{Status.find_team_by_name('active').id}"
+  scope_out :with_tents,
+            :include => [:tents],
+            :conditions => "tents.t_type='main'"
           
   def before_validation
     self.human_name = self.human_name.strip 

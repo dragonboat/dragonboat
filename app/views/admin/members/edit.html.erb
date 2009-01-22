@@ -1,0 +1,102 @@
+<% content_for :title do %>Edit Waiver Info<% end %>
+
+<h1>Edit Waiver Info</h1>
+
+<h2>Team: <%=@team.name%></h2>
+<h2>Member: <%=@person.name%></h2>
+<div>
+<div align="left" class="confirmed_box">
+  <div id="instructions">
+    <%= render :comatose=>'captain-enter-waiver-info-instructions' %>
+  </div>
+  <%=error_messages_for :member%>
+  <%=error_messages_for :person%>
+  <%form_for(:member, :url => admin_member_path(@member), :html=>{:method=>:put,:multipart => true }) do |f|%>
+  <p>You have been invited to join <b><%=@team.name.capitalize%></b></p>
+  
+  <p>Would you like to accept the invitation?</p>
+  
+  <%= f.radio_button :confirm, "yes"%><label for="member_invitation_status_yes">YES</label>
+  <%= f.radio_button :confirm, "no"%><label for="member_invitation_status_no">NO</label>
+
+	
+        
+   <% fields_for :person, @person do |p| %>
+   <p>
+     <label for="person_first_name">First Name:</label><br/>   
+       <%= p.text_field :first_name %>  
+   </p>
+   <p>
+     <label for="person_last_name">Last Name:</label><br/>   
+       <%= p.text_field :last_name%>  
+   </p>
+   <p>
+     <label for="person_email">Email Address:</label><br/>
+     <%= p.text_field :email%>
+   </p>
+   <p>
+     <label for="person_birthday_date">Date of Birth:</label><br/>
+      Month <span class="mon_sep">/</span> Day <span class="day_sep">/</span> Year</label>
+      <br/>
+      <nobr><%= p.date_select :birthday_date, :order => [:month, :day, :year], :start_year => 1920,  :include_blank => ""%></nobr>
+   </p>
+    <p>
+         <label for="person_address">Street Address 1:</label>
+         <br/>
+         <%= p.text_field :address %>
+          <!-- Hide Country: -->
+          <%= hidden_field_tag "person[country]", "United States"%>
+        </td>
+    </p>
+    <p>
+        <label for="person_address2">Street Address 2:</label>
+        <br/><%= p.text_field :address2%>
+    </p>
+
+    <p>
+        <label for="person_city">City:</label><br/>
+        <%= p.text_field :city%>  
+    </p>
+    
+    <p>
+        <label for="person_state">State:</label><br/>
+        <%= p.select :state, states_options%>    
+    </p>
+    
+    <p>
+        <label for="person_zip">Zip code:</label></span><br/>
+        <%= p.text_field :zip, :size=>10, :maxlength=>9%>
+    </p>
+    <p>
+     <label for="person_phone">Telephone Number:</label><br/>
+      <%= p.text_field :phone%>
+   </p>
+   <p>
+     <label for="person_emergency_contact_name">Emergency Contact Name:</label><br/>
+      <%= p.text_field :emergency_contact_name%>
+   </p>
+   <p>
+     <label for="person_mergency_contact_number">Emergency Contact Number:</label><br/>
+      <%= p.text_field :emergency_contact_number%>
+   </p>   
+   <p>
+     <label for="person_medical_conditions">Medical Conditions:</label><br/>
+      <%= p.text_area :medical_conditions, :rows=>3%>
+   </p>
+   
+   <% end %>
+   
+   
+   <p>
+   <label for="member_sign_waiver_status">Please retype your complete name to sign this waiver:</label><br/>
+   <%= f.text_field :sign_waiver_notice%>
+   </p>
+   <p>
+   <%= f.check_box :accept, {:onclick=>"$('submit_terms').disabled=!$('submit_terms').disabled"},1, 0 %> Check this box to acknowledge that you have read this document.
+	<%= render :comatose=>'waiver-consent' %>
+   </p>
+   <%=submit_tag  "JOIN THE TEAM!", :id=>"submit_terms",:disabled=> @member.accept.to_i == 0 %>
+   <%end%>
+ </div>
+ </div>
+ <%= link_to 'Back', admin_members_path%>

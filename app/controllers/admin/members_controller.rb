@@ -40,6 +40,36 @@ class Admin::MembersController < Admin::WebsiteController
     @person =@member.user.person
   end
   
+  def edit
+    @member = Member.find(params[:id])
+    @team = @member.team
+    @user = @member.user
+    @person = @user.person
+  end
+  
+  def update
+    @member = Member.find(params[:id])
+    @team = @member.team
+    @user = @member.user
+    @person = @user.person
+    
+      @member.attributes = (params[:member])
+      @member.validation_mode = :waiver_form   
+      @member.ip = request.remote_ip  
+      @person.attributes = (params[:person]) if params[:person]
+      unless @member.is_decline?
+        @person.validation_mode = :sign_waiver
+      end
+      @member.waiver_sign_at = Time.now()
+      if @person.valid? && @member.valid? &&  @person.save && @member.save     
+        flash[:notice] = "Enter Waiver Info was successfully updated."
+        redirect_to admin_members_url
+      else
+       render :action=>"edit"  
+      end
+  end
+  
+  
   def resend_invitation
     @member = Member.find(params[:id]) 
     begin

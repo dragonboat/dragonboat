@@ -10,4 +10,10 @@
     <p>
         <strong>Description:</strong><br/>
         <%= f.text_area :description, :rows=>3 %>
+      </p>
+    
+    <p>  
+        <strong>Team list (There are teams only with main tents):</strong><br/>
+       <%= f.select :team_id, Team.find_with_tents(:all, :order=>"teams.name").map {|t| [CGI.unescapeHTML(t.name), t.id]}, :include_blank=>true %>
     </p>
+    

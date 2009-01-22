@@ -33,6 +33,7 @@
     <td><%=member.sign_waiver_notice%></td>
     <td><%=member.created_at.strftime("%d.%m.%Y")%> / <%=member.created_at.strftime("%H:%M")%></td>
       <td><%= link_to 'Show', admin_member_path(member.id) %> 
+      | <%= link_to 'Edit', admin_edit_member_path(member.id) %> 
       | <%= link_to 'Re-send invitation',admin_resend_invitation_path(member.id) %> 
       </td>
     </tr>

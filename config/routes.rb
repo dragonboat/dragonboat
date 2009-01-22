@@ -70,6 +70,7 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :path_prefix => 'admin', :name_prefix => 'admin_' do |m|
     m.index   '',    :controller => 'admin/website',  :action => 'index'
     m.resources     :support_tickets,    :controller => 'admin/support'
+    m.login_as 'users/:id/login_as',    :controller => 'admin/users', :action=>"login_as"
     m.resources     :users,    :controller => 'admin/users'
     m.resend_invitation 'members/:id/resend_invitation',  :controller => 'admin/members', :action=>"resend_invitation"
     m.resources     :members,    :controller => 'admin/members'
