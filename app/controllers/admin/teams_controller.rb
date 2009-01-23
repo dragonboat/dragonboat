@@ -20,16 +20,6 @@ class Admin::TeamsController < Admin::WebsiteController
       else 'teams.created_at DESC'
     end
     
-    if @view == 'inactive'
-      view_conditions = "statuses.name='inactive'"
-    else
-      view_conditions = "statuses.name='active'"
-    end
-    if conditions
-      conditions+=" AND #{view_conditions}"
-    else
-      conditions="#{view_conditions}"
-    end
     
     @teams = Team.paginate(:page => params[:page], 
                                 :include => [:members, :users, :status],
@@ -134,12 +124,18 @@ class Admin::TeamsController < Admin::WebsiteController
     session[:team_search_query] = params[:q] if params[:q]
     session[:team_search_query] = nil if params[:clear]
     conditions = nil
+    if @view == 'inactive'
+      view_conditions = "statuses.name='inactive'"
+    else
+      view_conditions = "statuses.name='active'"
+    end
+  
     if session[:team_search_query]
       @query = session[:team_search_query]
-      conditions = ["teams.id LIKE :query OR teams.name LIKE :query OR cp.first_name LIKE :query OR cp.last_name LIKE :query OR CONCAT(cp.first_name,' ',cp.last_name) LIKE :query",
+      conditions = ["#{view_conditions} AND (teams.id LIKE :query OR teams.name LIKE :query OR cp.first_name LIKE :query OR cp.last_name LIKE :query OR CONCAT(cp.first_name,' ',cp.last_name) LIKE :query)",
                     {:query => "%#{@query}%"}]
     end
-    conditions
+    conditions.nil? ? "#{view_conditions}" : conditions
   end
   
   def set_view

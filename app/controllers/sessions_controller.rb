@@ -11,6 +11,9 @@ class SessionsController < ApplicationController
   end
   
   def new
+    if request.post?
+      create
+    end
   end
 
   def create
