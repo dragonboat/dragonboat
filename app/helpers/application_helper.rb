@@ -56,7 +56,7 @@ module ApplicationHelper
   def previous_link_for_month(date)
     html = ""
     html =  link_to_remote(" &laquo; "+date.strftime("%B"), 
-      :url=>{:action=>:update_calendar, :mon => date.mon, :year=> date.year},
+      :url=>{:controller=>"events", :action=>:update_calendar, :mon => date.mon, :year=> date.year},
       :title=>"Previous Month")
   end
   
@@ -70,7 +70,7 @@ module ApplicationHelper
   def next_link_for_month(date)
     html = ""
     html =  link_to_remote(date.strftime("%B") + " &raquo; ", 
-      :url=>{:action=>:update_calendar, :mon => date.mon, :year=> date.year},
+      :url=>{:controller=>"events", :action=>:update_calendar, :mon => date.mon, :year=> date.year},
       :title=>"Next Month")
   end
   

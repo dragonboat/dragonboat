@@ -100,13 +100,13 @@ module CalendarHelper
     cal = %(<table class="#{options[:table_class]}" border="0" cellspacing="0" cellpadding="0">)
     cal << %(<thead><tr>)
     if options[:previous_month_text] or options[:next_month_text]
-      cal << %(<th colspan="2">#{options[:previous_month_text]}</th>)
+      cal << %(<th colspan="2" align="left" width='45%'>#{options[:previous_month_text]}</th>)
       colspan=3
     else
       colspan=7
     end
-    cal << %(<th colspan="#{colspan}" class="#{options[:month_name_class]}">#{Date::MONTHNAMES[options[:month]]}-#{options[:year]}</th>)
-    cal << %(<th colspan="2">#{options[:next_month_text]}</th>) if options[:next_month_text]
+    cal << %(<th colspan="#{colspan}" class="#{options[:month_name_class]}" >#{Date::MONTHNAMES[options[:month]]}-#{options[:year]}</th>)
+    cal << %(<th colspan="2" align="right" width='45%'>#{options[:next_month_text]}</th>) if options[:next_month_text]
     cal << %(</tr><tr class="#{options[:day_name_class]}">)
     day_names.each do |d|
       unless d[options[:abbrev]].eql? d

@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   include RoleRequirementSystem
   include ExceptionNotifiable
   include DragonBoat
+  include EventsHelper
   
   local_addresses.clear  
 

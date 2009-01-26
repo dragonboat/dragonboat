@@ -66,11 +66,24 @@
           <%if flash[:notice] && !flash[:notice].empty?%>
           <p id="notice"><%= flash[:notice] %></p>
           <%end%>
-          <%= yield %> 
-          </div>
+          <%= yield %>
+
+          
+        </div>
+          
+          
         <!--[if lte IE 6]></td><tr></table><![endif]--></div>
-      <div id="separator">&nbsp;&nbsp;</div>
-     
+        
+       
+        
+        <div id="separator">&nbsp;&nbsp;</div>
+       
+      <%if request.request_uri=="/"|| request.request_uri=="/home"%> 
+         <div id="events">
+           <div id="breadcrumbing_area"><h1>Events</h1></div>
+           <%= events_calendar %>
+         </div>
+      <%end%>  
       <div id="footer"><%= render :partial=>'partials/footer'%></div>
       
       <script type="text/javascript">

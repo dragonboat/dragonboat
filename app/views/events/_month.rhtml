@@ -1,11 +1,12 @@
- <%= calendar({:year => year, :month => month, :accessible=>false, 
-            :previous_month_text  => previous_link_for_year(@previous_year) + " " + previous_link_for_month(@previous_month) ,  
-            :next_month_text=> next_link_for_month(@next_month) +" "+ next_link_for_year(@next_year) })    do |d|  
+<%#previous_link_for_year(@previous_year) next_link_for_year(@next_year)%> 
+<%= calendar({:year => year, :month => month, :accessible=>false, 
+            :previous_month_text  => previous_link_for_month(@previous_month) ,  
+            :next_month_text=> next_link_for_month(@next_month)})    do |d|  
             cell_text = d.mday.to_s << "<br />" 
         cell_attrs = {:class => 'day'} 
         @events.each do |e| 
           if e.start_date.to_date == d 
-          cell_text << link_to(truncate(e.name, 60), {:action=>:show, :id=>e, :mon => d.mon, :year=> d.year}) << "<br />" 
+          cell_text << link_to(truncate(e.name, 100), {:action=>:show, :id=>e, :mon => d.mon, :year=> d.year}) << "<br />" 
           cell_attrs[:class] = 'specialDay'
           end 
         end 

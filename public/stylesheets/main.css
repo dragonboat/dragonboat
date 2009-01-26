@@ -264,6 +264,11 @@ h1 #home-heading{
 #breadcrumbing_area h1{margin:0px; padding-top:5px;  padding-left:15px; height: 32px; background-color: #000; color: #fff; font-size:14px; font-weight:bold;}
 #breadcrumbing_area a {color: #fff; text-decoration: none;}
 
+#events { background: url(/images/top_line.gif)  repeat-x top; padding-top:10px;}
+#events #breadcrumbing_area {height: 30px;  display:block; margin-left:0px;}
+#events #breadcrumbing_area h1{margin:0px; padding-top:5px;  padding-left:5px; height: 32px; background-color: #000; color: #fff; font-size:14px; font-weight:bold;}
+#events #breadcrumbing_area a {color: #fff; text-decoration: none;}
+
 /*Submenu Section*/
 #content div#submenu_section {
 	height: 100%; 
