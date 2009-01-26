@@ -1,10 +1,12 @@
 
   Comatose.configure do |config|
     # Sets the text in the Admin UI's title area
-    config.admin_title = "DragonBoat.com - Admin"
+    config.admin_title = "DragonBoat.com - Admin Home"
     config.admin_sub_title = "&nbsp;"
+
     #config.disable_caching = true
     config.helpers << :application_helper
+    config.helpers << :events_helper
  
     config.includes << :authenticated_system
     config.admin_includes << :tinymce_use
