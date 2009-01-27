@@ -1,0 +1,100 @@
+<% content_for :title do %>Manage Team Tents : Manage Additional Tents<% end %>
+    <h1>Manage Additional Tents</h1>
+    <div id="submenu">
+  <%= link_to 'Manage Team Tents', admin_team_tents_url  %> |
+  <%= link_to 'Tents to CSV', admin_tent_positions_to_csv_url  %>
+</div>
+      <%
+      team =  @team
+      captain = team.captain 
+      tents = team.tents
+      %>   
+    <p> Team: <%= team.name %></p>
+    <p> Captain: <%= captain.person.name%> < <%= mail_to captain.email %> ></p>
+    <p> Total tents: <%=tents.size%></p>
+    <p> Main: <%= team.tents.find_main(:all).size%></p>
+    <p> Alternate: <%= team.tents.find_additional(:all).size%></p>
+    <p> Reserved (main/alternate): <%= team.tents.find_not_empty(:all).size%> / <%= team.tents.find_not_empty_additional(:all).size%>  </p>
+    <p> Current Tent Position: <%=(team.tents.find_not_empty(:all).map(&:location)+ team.tents.find_not_empty_additional(:all).map(&:location)).join(",")%></p>
+    
+    <p>
+      <h2>Select/unselect tent positions for current team <%= team.name %></h2>
+      <div id="tent_positions" class="tent_positions">
+      <% form_tag admin_manage_additional_tents_path(team), :id=>"tents_map" do %>
+      <table>
+        <tr>
+          <th>Main</th>
+          <th colspan="5">Alternate</th>
+        </tr>
+        <tr>
+          <th>Team Name A</th>
+         
+          <th>Team Name B</th>
+          <th>Team Name C</th>
+          <th>Team Name D</th>
+          <th>Team Name F</th>
+          <th>Team Name G</th>
+        </tr>
+        <%@tent_positions.each do |tent_positions|%>
+        <tr>
+          <td><%=tent_positions.number%>
+          </td>
+          <td width="150"><%=tent_positions.number%>B</td>
+          <td width="150"><%=tent_positions.number%>C</td>
+          <td width="150"><%=tent_positions.number%>D</td>
+          <td width="150"><%=tent_positions.number%>F</td>
+          <td width="150"><%=tent_positions.number%>G</td>
+        </tr>
+        <tr>
+          <td id="reserved" >
+            <%reserved = @tents.map(&:location).include?(tent_positions.number.to_s) 
+              is_current = @main_tents.map(&:location).include?(tent_positions.number.to_s)
+            %>
+            <%= check_box_tag "main_tents[#{tent_positions.number}]", true, is_current, :disabled=>reserved&&!is_current %>
+            <%if reserved%>
+            <%
+            tent = Tent.find_by_location(tent_positions.number.to_s)
+            %>
+            <%= link_to truncate(tent.team.name, 60), admin_manage_additional_tents_path(tent.team) %>
+            <%end%>
+          </td>
+          <% %w(B C D F G).each do |p| %>
+            <%= render :partial => 'additional_item', :locals => { :p => p, :tent_positions=>tent_positions } %>
+          <%end%>
+        
+        </tr>
+        
+        <%end%>
+      </table>
+      </div>  
+      
+      <script>    
+        function check_tents_map() 
+        {
+          var total_main = check_tents_number($('tents_map'),'main_tents');
+          var total_additional = check_tents_number($('tents_map'),'additional');
+          
+          if (total_main > <%=@main_tents.size%> )
+          {
+            alert("You have selected "+total_main+"  Main tents. The team <%=@team.name%> can have not more then <%=@main_tents.size%> Main tents!");  
+            return false;
+          }
+          
+          if (total_additional > <%=@other_tents.size%> )
+          {
+            alert("You have selected "+total_additional+"  Alternate tents. The team <%=@team.name%> can have not more then <%=@other_tents.size%> Alternate tents!");  
+            return false;
+          }
+          
+          return true;
+        }
+      </script>
+      
+      <p><%= submit_tag 'Update', :onclick=>"return check_tents_map()" %></p>
+      <% end %>
+    
+    </p>
+    
+    <%=link_to "Back", admin_team_tents_path%>
+    
+    

@@ -13,7 +13,22 @@
   
      function print_page() {
         window.print();  
-      }                         
+      }  
+      
+     function check_tents_number(form,name_ptr) {
+       var 
+       fm = form;
+     
+       if (!fm) return;
+       var len = fm.elements.length;
+       var total = 0;
+       for (var i=0; i<len; i++) {
+        if (fm.elements[i].getAttribute("type").toLowerCase()=="checkbox" && fm.elements[i].checked && !fm.elements[i].disabled && (fm.elements[i].name.indexOf(name_ptr)!=-1)) {
+         total+=1
+	}
+      } 
+    return total;  
+  }                         
 
 
     

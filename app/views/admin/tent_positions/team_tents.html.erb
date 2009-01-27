@@ -1,6 +1,17 @@
 <% content_for :title do %>Manage Team Tents<% end %>
 <h1 class="index">Manage Team Tents</h1>
 
+<table border="0" width="100%" id="search">
+	<tr><td>
+	<%form_tag(admin_team_tents_url,:method=>:get) do |f|%>
+	Search: <%= text_field_tag :q, value = session[:team_tents_search_query], :size => 40 %>
+	<%= image_submit_tag("icons/magnifier.png") %>
+	<%= link_to(image_tag("icons/broom.png", :border => 0),admin_team_tents_path(:clear => true)) %>
+	<%end%>
+	</td>
+	</tr>
+</table>
+
 <div id="pages"><%= will_paginate @teams %></div>
 
 <table id="teams" class="obj_list">
@@ -23,13 +34,18 @@
 %>
   <tr>
     <td><%=link_to team.name, admin_team_path(team) %></td>
-    <td><%=link_to captain.person.name, admin_user_path(captain)%> < <%= mail_to captain.email %> ></td>
+    <td><%=link_to captain.person.name, admin_user_path(captain)%> </td>
     <td><%=team.created_at.strftime("%d.%m.%Y")%> / <%=team.created_at.strftime("%H:%M")%></td>
     <td><%=tents.size%> / <%=team.tents.find_main(:all).size%> /<%= team.tents.find_additional(:all).size%></td> 
-    <td><%= team.tents.find_not_empty(:all).size%></td>
-    <td><%=team.tents.find_not_empty(:all).map(&:location).join(",")%></td> 
-    <td><%= link_to 'Change tents number', admin_change_tents_number_path(team) %> </td>
-    </tr>
+    <td><%= team.tents.find_not_empty(:all).size%> / <%= team.tents.find_not_empty_additional(:all).size%></td>
+    <td><%=(team.tents.find_not_empty(:all).map(&:location)+team.tents.find_not_empty_additional(:all).map(&:location)).join(",")%>
+      
+    </td> 
+    <td><%= link_to 'Change tents number', admin_change_tents_number_path(team) %> 
+    | 
+    <%= link_to 'Manage Additional Tents', admin_manage_additional_tents_path(team) %> 
+    </td>
+</tr>
 <% end %>
 </table>
 

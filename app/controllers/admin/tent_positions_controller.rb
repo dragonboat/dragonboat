@@ -1,4 +1,5 @@
 class Admin::TentPositionsController < Admin::WebsiteController
+  require 'fastercsv'
   in_place_collection_edit_for :tent_position, :status,  TentPosition::STATUS 
   
   def index
@@ -20,6 +21,7 @@ class Admin::TentPositionsController < Admin::WebsiteController
   end
   
   def team_tents
+    conditions = team_search
     order = case params[:sort]
       when 'name'                   then 'teams.name'
       when 'name_reverse'           then 'teams.name DESC'
@@ -30,6 +32,7 @@ class Admin::TentPositionsController < Admin::WebsiteController
       else 'teams.created_at DESC'
     end
     @teams = Team.paginate_active(:all, :order=>order,  
+                                :conditions => conditions,
                                 :page => params[:page], 
                                 :per_page => 200,
                                 :include => [:members, :users, :status],
@@ -80,6 +83,32 @@ class Admin::TentPositionsController < Admin::WebsiteController
     
   end
   
+  def manage_additional_tents
+    @team = Team.find(params[:id])
+    @main_tents = @team.tents.find_main(:all, :order=>"created_at")
+    @other_tents = @team.tents.find_additional(:all, :order=>"created_at")   
+    if request.post? && params[:main_tents]
+      @main_tents.each {|t| t.update_attribute(:location,"")}
+      i = 0
+      params[:main_tents].each_key do |location|
+        @main_tents[i].update_attribute(:location,location)
+        i+=1
+      end
+    end
+    
+    if request.post? && params[:additional]
+      @other_tents.each {|t| t.update_attribute(:location,"")}
+      i = 0
+      params[:additional].each_key do |location|
+        @other_tents[i].update_attribute(:location,location)
+        i+=1
+      end
+    end
+   
+    @tent_positions = TentPosition.find( :all,:order => "number")
+    @tents = Tent.find_not_empty_all(:all)   
+  end
+  
   def edit
     @tent_position = TentPosition.find(params[:id]) 
   end
@@ -107,5 +136,46 @@ class Admin::TentPositionsController < Admin::WebsiteController
       format.html { redirect_to(admin_tent_positions_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def tent_positions_to_csv
+  #Position Number, Team Name A, Team Name B, Team Name C -- for each of the tent positions. 
+  #Additional Columns (taken from Team A): Captain Name, Captain Email, Captain Phone
+     @tent_positions = TentPosition.find(:all,:order => "number")
+     @tents = Tent.find_not_empty_all(:all)
+     csv_str = FasterCSV.generate do |csv|
+      csv << ["Position Number", "Team Name A", "Team Name B", "Team Name C", "Team Name F", "Team Name G", "Captain Name", "Captain Email", "Captain Phone"]   
+      @tent_positions.each do |position|
+        row = []
+        reserved = @tents.map(&:location).include?(position.number.to_s)
+        @team = Tent.find_by_location(position.number.to_s).team if reserved
+        row << position.number
+        row << (@team ? CGI.unescapeHTML(@team.name) : nil)
+        %w(B C D F G).each do |p|
+           location = "#{position.number.to_s}#{p}"
+           reserved = @tents.map(&:location).include?(location)
+           team = Tent.find_by_location(location).team if reserved
+           row << (team ? CGI.unescapeHTML(team.name) : nil)
+        end
+        row << [@team.captain.person.name,@team.captain.email, @team.captain.person.phone ] if @team
+        row << [nil,nil,nil] unless @team
+        csv << row
+      end
+    end
+    send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=tent_positions_to_csv.csv"
+  end
+  
+   private
+  def team_search
+    session[:team_tents_search_query] = params[:q] if params[:q]
+    session[:team_tents_search_query] = nil if params[:clear]
+    conditions = nil
+  
+    if session[:team_tents_search_query]
+      @query = session[:team_tents_search_query]
+      conditions = ["(teams.id LIKE :query OR teams.name LIKE :query OR cp.first_name LIKE :query OR cp.last_name LIKE :query OR CONCAT(cp.first_name,' ',cp.last_name) LIKE :query)",
+                    {:query => "%#{@query}%"}]
+    end
+    conditions
   end
 end

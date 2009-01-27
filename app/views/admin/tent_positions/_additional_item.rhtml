@@ -1,0 +1,17 @@
+ <% 
+ location = "#{tent_positions.number.to_s}#{p}"
+ reserved = @tents.map(&:location).include?(location) 
+ is_current = @other_tents.map(&:location).include?(location)
+%>
+         
+           
+
+<td>
+  <%= check_box_tag "additional[#{location}]", true, is_current,:disabled=>reserved&&!is_current  %>
+   <%if reserved%>
+            <%
+            tent = Tent.find_by_location(location)
+            %>
+            <%= link_to truncate(tent.team.name, 60), admin_manage_additional_tents_path(tent.team) %>
+   <%end%>  
+</td>
