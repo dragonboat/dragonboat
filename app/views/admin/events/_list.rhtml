@@ -10,7 +10,7 @@
   <tr class="<%= cycle('','alt') %>">
     <td><%= link_to(h(truncate(event.name,50)), admin_edit_event_path(event)) %>
     </td>
-    <td><b><%=h event.start_date.strftime("%d %B %Y") %></b></td>
+    <td><b><%=h event.start_date.strftime("%d %B %Y")%> <%=event.time%></b></td>
    <td><%= truncate(event.content, 150) %></td>
   </td>
     <td colspan="3">

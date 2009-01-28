@@ -27,7 +27,9 @@ def new
   mday = params[:mday] if params[:mday]
   mon = params[:mon] if params[:mon]
   year = params[:year] if params[:year]
-  @event.start_date = Time.local(year, mon, mday)  if year
+  @event.start_date = Time.local(year, mon, mday, 0, 0)  if year
+  
+  @event.start_date = Time.local(Date.today.year, Date.today.mon, Date.today.mday, 0, 0) unless year
 end
 
 def create

@@ -3,7 +3,7 @@
           
          
          
-         <div><i><%=@event.start_date.strftime("%d/%m/%Y")%></i></div>  
+         <div><i><%=@event.start_date.strftime("%d/%m/%Y")%> <%=@event.time%></i></div>  
          <div><%=@event.content%></div>
 </div>
 <%= link_to 'Back', {:action=>:index, :mon=>@month, :year=>@year} %>
