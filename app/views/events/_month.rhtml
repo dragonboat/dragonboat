@@ -6,7 +6,7 @@
         cell_attrs = {:class => 'day'} 
         @events.each do |e| 
           if e.start_date.to_date == d 
-          cell_text << link_to(truncate("#{e.time} - #{e.name}", 50), {:controller=>"events",:action=>:show, :id=>e, :mon => d.mon, :year=> d.year}) << "<br />" 
+          cell_text << link_to(truncate("#{e.time} - #{e.name}", 25), {:controller=>"events",:action=>:show, :id=>e, :mon => d.mon, :year=> d.year}) << "<br />" 
           cell_attrs[:class] = 'specialDay'
           end 
         end 
