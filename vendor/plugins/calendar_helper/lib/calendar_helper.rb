@@ -100,7 +100,7 @@ module CalendarHelper
     cal = %(<table class="#{options[:table_class]}" border="0" cellspacing="0" cellpadding="0">)
     cal << %(<thead><tr>)
     if options[:previous_month_text] or options[:next_month_text]
-      cal << %(<th colspan="2" align="left" width='45%'>#{options[:previous_month_text]}</th>)
+      cal << %(<th colspan="2" align="left" class="monthbutton">#{options[:previous_month_text]}</th>)
       colspan=3
     else
       colspan=7
