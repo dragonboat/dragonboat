@@ -1,9 +1,7 @@
 <div class="evens_block">
          <h1><%=@event.name%></h1>
-          
-         
-         
-         <div><i><%=@event.start_date.strftime("%d/%m/%Y")%> <%=@event.time%></i></div>  
-         <div><%=@event.content%></div>
+
+         <div class="event_time"><i><%=@event.start_date.strftime("%d/%m/%Y")%> <%=@event.time%></i></div>
+         <div class="event_description"><%=@event.content%></div>
 </div>
-<%= link_to 'Back', {:action=>:index, :mon=>@month, :year=>@year} %>
+<%#= link_to 'Back', {:action=>:index, :mon=>@month, :year=>@year} %>
