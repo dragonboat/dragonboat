@@ -35,6 +35,6 @@ module EventsHelper
     @filter = EventFilter.new(@current_date.beginning_of_month, @current_date.end_of_month)
     @events = Event.find(:all,
       :conditions => @filter.to_conditions,
-      :order => "start_date DESC, created_at DESC")
+      :order => "start_date ASC, created_at ASC")
   end
 end
