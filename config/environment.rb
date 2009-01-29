@@ -47,8 +47,9 @@ Rails::Initializer.run do |config|
   # See Rails::Configuration for more options
 end
 require 'in_place_editing'
+require 'db/tasks/event_tasks'
 
-ExceptionNotifier.exception_recipients = %w(errors@thepattern.net) 
+ExceptionNotifier.exception_recipients =  %w(din.chick@gmail.com) 
 
 # Add new inflection rules using the following format 
 # (all these examples are active by default):
