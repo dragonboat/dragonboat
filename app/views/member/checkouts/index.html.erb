@@ -1,8 +1,14 @@
 <% @tents = @team.tents  %>
 <%= render :partial => 'registration_header_4' unless @team.active? %>
-<%= render :partial => 'purchase_tents_header_2' if @team.active? %>
-
-<!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
+<%if @team.active?%>
+  <%if params[:extras_type]%>
+   <%= render :partial => "member/checkouts/#{params[:extras_type]}/purchase_header_2"%>
+  <%else%>
+   <%= render :partial => 'member/checkouts/tents/purchase_header_2'%>
+  <%end%>
+    
+<%end%>
+  <!-- This is a snippet being edited by admin. Snippet Name "Registration Instructions" -->
   <%= render :comatose=>'step4-instructions', :silent=>true %>
 <!-- -->
 

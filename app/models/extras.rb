@@ -19,4 +19,14 @@ class Extras < ActiveRecord::Base
  def description
    notice&&!notice.empty? ? "(#{notice})" : ""
  end
+ 
+ def is_tent?
+   name.downcase  =~ /tent/i
+ end
+ 
+  def is_practice?
+   name.downcase  =~ /practice/i
+ end
+ 
+ 
 end

@@ -24,10 +24,12 @@ ActionController::Routing::Routes.draw do |map|
     
     #m.resources :users, :controller => 'member/users', :collection => { :index => :get, :edit => :get, :update=>[:put,:post],:create=>:post } 
    # m.resources :users, :controller => 'member/users'
-    m.resource :profile,    :controller => 'member/profile'
+    m.resource :profile,    :controller => 'member/profile' 
+    m.extras_practice  '/boats/:id/extras_practice', :controller => 'member/boats', :action => 'extras_practice'
     m.extras_boat  '/boats/:id/extras', :controller => 'member/boats', :action => 'extras'
     m.print_receipt   '/boats/:id/print_receipt', :controller => 'member/boats',  :action => 'print_receipt'
     m.resources   :boats, :controller => 'member/boats'
+    m.extras_checkout '/boats/:team_id/:extras_type/checkouts/:action/:id', :controller => 'member/checkouts'
     m.boat_checkout '/boats/:team_id/checkouts/:action/:id', :controller => 'member/checkouts'
     m.team_members '/boats/:team_id/members/:action/:id', :controller => 'member/members'
     m.team_practices '/boats/:team_id/practices/:action/:id', :controller => 'member/practices'

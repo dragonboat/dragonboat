@@ -16,6 +16,7 @@ class Member::PracticesController < Member::WebsiteController
       :order => "created_at DESC")
     #@practices_by_date = Practice.cou(:all, grou:order => "created_at DESC"
     @current_practices = @team.practices.find(:all, :order=>"created_at")
+    @purchased_practices = @team.team_practices
   end
   
   def show

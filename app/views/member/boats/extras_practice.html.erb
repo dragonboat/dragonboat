@@ -1,0 +1,35 @@
+<% content_for :title do %>Step 1 - Order Additional Practices<% end %>
+<% content_for :breadcrumbing_area do%>
+<h1>Purchase Practices > Step 1 - Order Additional Practices</h1>
+<%end%>
+<% content_for :submenu_area do%>
+    <%= render :partial => 'partials/practices/order_step_list', :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"current", :s4=>"next", :s5=>"next", :s6=>"next"} %>    
+<%end%>
+<% content_for  :current_page_name do%>
+  Order Additional Practices
+<%end%>
+
+<div id="step3">
+
+     
+      
+      <% form_for :boat, :url => { :action => 'add_extras', :id=>@team.id }, :html => { :multipart => true, :id=>"extras_form" } do |f| %>
+   
+      <%# render :partial => 'extras_item', :locals=>{:mode=>:write, :items=>@extras}%>
+      
+      <%= render :partial => 'practice_form'%>
+          
+    
+        <div align="center">
+           <br/>
+            <%# link_to("Cancel", member_new_boat_path ) %> 
+        </div>
+    <%end%>
+    
+    <%= observe_form(:extras_form,
+                                  :url => { :action => 'total_cost'},
+                                #   :frequency => 0.5,  
+                                  # :update => "step3",
+                                   #:with => "Form.serialize($('extras_form').form)") 
+                                   :frequency  =>  0.05)%> 
+</div>

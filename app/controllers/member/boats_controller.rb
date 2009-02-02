@@ -4,7 +4,7 @@ class Member::BoatsController < Member::WebsiteController
  # require_role "captain", :only=>[:index]
   before_filter :has_boat?, :only=>[:index, :edit, :update, :show, :print_receipt]
   before_filter :fetch_team, :only=>[:show, :print_receipt, :edit, :update]
-  before_filter :fetch_team_and_redirect, :only=>[:extras, :add_extras]
+  before_filter :fetch_team_and_redirect, :only=>[:extras, :extras_practice, :add_extras]
   
   before_filter :secure_site, :except => [:index, :edit, :update, :show, :print_receipt]
   skip_before_filter :leave_secure_site
@@ -115,6 +115,10 @@ class Member::BoatsController < Member::WebsiteController
     @team.active? ? render(:action => "purchase_tents") : render(:action => "extras")
   end
   
+  def extras_practice
+    @extras = Extras.find_available(:all)    
+  end
+  
   def add_extras 
     @team.team_extras.each(&:destroy) if !@team.team_extras.empty?
     @tents = @team.tents
@@ -124,19 +128,27 @@ class Member::BoatsController < Member::WebsiteController
         extras = Extras.find_available(id)
         quantity = params[:quantity][id].to_i
         
-        if (@tents.size + quantity) > 6
+        if extras.is_tent? && (@tents.size + quantity) > 6
           flash[:notice] = "Sorry, a single team can only reserve a maximum of 6 tents"
           redirect_to member_extras_boat_path(@team.id)
           return
         else
           @team.team_extras.create(:extras=>extras, :quantity => quantity ) if quantity > 0
         end
-        
+        @extras = extras
       end
     end
     
-    redirect_to member_boat_checkout_path(@team)
+    if @extras&&@extras.is_practice?
+      redirect_to member_extras_checkout_path(@team,'practices')
+      return
+    else
+      redirect_to member_boat_checkout_path(@team)
+    end
+    
   end
+  
+ 
   
   def total_cost
     render :update do |page|

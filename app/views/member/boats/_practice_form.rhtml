@@ -1,0 +1,29 @@
+<%
+practices = @extras[2]
+%>
+<div>
+<table class="box">
+ 
+  <tr>
+    <td></td>  
+    <td>Price</td>  
+    <td>Quantity</td>  
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>	
+        <li><label for="quantity[<%=practices.id%>]_1"><%=practices.name%><%=hidden_field_tag "extras[#{practices.id}]", 1 %></label>  </li>
+      </ul>
+    </td>  
+    <td><b><%=number_to_currency practices.price%></b></td>  
+    <td><%=text_field_tag "quantity[#{practices.id}]", 1, :size=>3, :id=>"quantity_#{practices.id}" %></td> 
+  </tr>
+</table>
+</div>
+
+<div align="center">
+  <span id="total"><%= render :partial => 'member/boats/total_cost', :locals=>{:total=>100 }%></span>
+  <%= submit_tag  "CONTINUE"%>
+</div>
+ 
+

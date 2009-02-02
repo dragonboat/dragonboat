@@ -72,7 +72,7 @@ class Order < ActiveRecord::Base
     #empty cart
     team.team_extras.each(&:destroy) if !@team.team_extras.empty?
     #add tents
-    extras_orders.each {|extras_order| add_tents(extras_order) }
+    extras_orders.each {|extras_order| add_extras(extras_order) }
     
     OrderNotifier.send("deliver_processed", self)
     OrderNotifier.send("deliver_admin", self)
@@ -113,10 +113,7 @@ class Order < ActiveRecord::Base
   
   end
   
-  def add_tents(extras_order)
-    quantity = extras_order.quantity
-    extras = extras_order.extras
-    if extras.name.downcase  =~ /tent/i
+  def add_tents(extras, quantity)
      #team.tents.each(&:destroy) if !team.tents.empty?
      if quantity > 0
        quantity.times {team.tents.create(:t_type=>"additional")} 
@@ -125,10 +122,25 @@ class Order < ActiveRecord::Base
      @first_two.each do |tent|
        tent.update_attribute(:t_type,"main") unless tent.type == 'main'
      end
+  end
+  
+  def add_practices(extras, quantity)
+    if quantity > 0
+      quantity.times {team.team_practices.create} 
     end
   end
   
-   def create_member
+  def add_extras(extras_order)
+    quantity = extras_order.quantity
+    extras = extras_order.extras
+    if extras.is_tent?
+      add_tents(extras, quantity)
+    elsif extras.is_practice?
+      add_practices(extras, quantity)
+    end
+  end
+  
+  def create_member
     member = team.members.build
     member.type = MemberType.find_by_name('co-captain')
     member.user = user

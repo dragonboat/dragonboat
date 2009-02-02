@@ -1,7 +1,7 @@
 <%= @order.user.person.first_name %>,
 
 <%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
-	Your purchase of additional tents  for your team has been <%= @order.status %>.<%else%>
+	Your purchase of additional <%=@order.extras_orders.map{|o| o.extras.name}.join(",").downcase %>  for your team has been <%= @order.status %>.<%else%>
 Thank you for registering your team for the 2009 Philadelphia International Dragon Boat Festival!
 
 You can now manage your team by going to the address below and logging in with the username and password you entered during registration.
@@ -30,7 +30,7 @@ Below is the receipt for your registration:
 ------------------------------------------------------------------------------------------
 <%end%>
 <%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
-	Tent Order Details
+	<%=@order.extras_orders.map{|o| o.extras.name}.join(",").capitalize %> Order Details
 <%else%>
 Your Team: <%= CGI.unescapeHTML(@order.team.name) %>
 Team Type: <%=@order.team.boat_type_human%>
@@ -49,7 +49,7 @@ Card Number: <%= @credit_card.display_number %>
 Expiration Date: <%= @credit_card.month %> / <%= @credit_card.year %><%@billing=@order.person %>
 Billing Address: <%= "#{@billing.address} #{@billing.address2} #{@billing.city}, #{@billing.state} #{@billing.zip}" %>
 <%if @order.boat_pay == 0 &&  @order.extras_orders.size > 0%>
-	Tent Order Details
+	<%=@order.extras_orders.map{|o| o.extras.name}.join(",").capitalize %> Order Details
 <%else%>
 ------------------------------------------------------------------------------------------
 Order Total

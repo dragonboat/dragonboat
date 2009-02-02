@@ -1,7 +1,14 @@
 <% @tents = @team.tents %>
 <%= render :partial => 'registration_header_6' if @order.boat_pay > 0 %>
-<%= render :partial => 'purchase_tents_header_4' if @order.boat_pay == 0 %>
 
+<% if @order.boat_pay == 0 %>
+  <%if params[:extras_type]%>
+   <%= render :partial => "member/checkouts/#{params[:extras_type]}/purchase_header_4"%>
+  <%else%>
+   <%= render :partial => 'member/checkouts/tents/purchase_header_4'%>
+  <%end%>
+    
+<%end%>
 
 <p>Here are the details of your order:
 <br/><br/>(<%=link_to_function "print this page","printSpecial()"%>  for a hard-copy of your receipt)
@@ -16,7 +23,7 @@
   <h4>Order # <%=@order.id%> processed successfully</h4>
 
 	<div id="team-details">
-		<h2>Your Team: <%=@team.name%></h2>
+        <h2>Your Team: <%=@team.name%></h2>
 
         <b>Team Type</b>: <%=@team.boat_type_human%> <br/>
         <b>New team?</b>: <%=@team.visit_status.to_s.capitalize%> <br/>

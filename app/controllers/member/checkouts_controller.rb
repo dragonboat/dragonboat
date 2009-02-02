@@ -94,7 +94,12 @@ ActiveMerchant::Billing::Base.mode = :live
           return
         end
         @order.activate
-        redirect_to member_boat_checkout_url(@team.id,'success',@order.id)
+        
+        if params[:extras_type]
+          redirect_to member_extras_checkout_url(@team.id,params[:extras_type],'success',@order.id)
+        else
+          redirect_to member_boat_checkout_url(@team.id,'success',@order.id)
+        end
       else
         @order.failed!
         flash.now[:notice] = "Transaction failed. #{response.message}"

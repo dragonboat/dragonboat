@@ -30,8 +30,18 @@ class Practice < ActiveRecord::Base
   def validate    
     if self.validation_mode == :team   
       total_per_month = team.practices.total_per_month(created_at)
+     
+      total_per_month_1 = team.practices.total_per_month(Date.new(Date.today.year,7)) > 0 ? 1 : 0
+      total_per_month_2 = team.practices.total_per_month(Date.new(Date.today.year,8)) > 0 ? 1 : 0
+      total_per_month_3 = team.practices.total_per_month(Date.new(Date.today.year,9)) > 0 ? 1 : 0
+     
+      additional_size = team.team_practices.size - team.practices.size + (total_per_month_1 + total_per_month_2 + total_per_month_3)
+   
       if total_per_month > 0
-        errors.add(:created_at, 'You cannot reserve more than one practice per month. To change the date and time of your practice, first select the one you have and cancel it, and then you may reserve any other open practice time')
+        if additional_size > 0
+        else
+          errors.add(:created_at, 'You cannot reserve more than one practice per month. To change the date and time of your practice, first select the one you have and cancel it, and then you may reserve any other open practice time')
+        end
       end
     end 
   end

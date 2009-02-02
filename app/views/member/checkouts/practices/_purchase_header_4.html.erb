@@ -1,0 +1,28 @@
+<% content_for :title do %>Purchase Practices Complete<% end %>
+<% content_for :breadcrumbing_area do%>
+<h1>Purchase Practices > Complete</h1>
+<%end%>
+<% content_for :submenu_area do%>
+  <%= render :partial => "partials/#{params[:extras_type]}/order_step_list", :locals =>{:s1=>"previous", :s2=>"previous", :s3=>"previous", :s4=>"previous", :s5=>"previous", :s6=>"current"} %>
+<%end%>
+<% content_for  :current_page_name do%>
+  Purchase Practices Complete
+<%end%>
+
+<h2>Thank you! You have successfully registered your practices! 
+    <%= "Please proceed to #{link_to('Schedule your practices', member_team_practices_path(@team))}."%>
+</h2>
+
+ <div>
+    <ul id="none_style">
+    <li><strong><%=link_to "Update your team's details", member_edit_boat_url(@team) %></strong> - update your team's name, profile, logo, and website</li>
+    <li><strong><%= link_to "Manage your team", member_team_members_path(@team)%></strong> - Invite paddlers to join your team</li>
+    <li><strong><%= link_to "Schedule your practices", member_team_practices_path(@team)%></strong> - choose one date/time each month for a team practice on the Schuylkill River</li>
+    <li><strong><%= link_to "Reserve your tent position", member_team_tents_path(@team)%></strong> - pick the spot where your team will rest in the Athletes Village</li>
+    </ul>
+
+ </div>
+      
+      <%if  @tents.size > 0%>
+      <h2>Current tents number : <%=@tents.size%></h2>
+      <%end%>
