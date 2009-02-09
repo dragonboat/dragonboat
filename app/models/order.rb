@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
   belongs_to :person, :foreign_key => 'billing_id', :class_name=>"Person"
   
   has_many :extras_orders, :dependent=>:destroy
+  
   # =============
   # = Constants =
   # =============

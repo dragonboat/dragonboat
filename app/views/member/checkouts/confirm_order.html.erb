@@ -98,38 +98,37 @@
 
      <div class="notice">
         <%= render :comatose=>'step5-instructions-2', :silent=>true %>
-        </div>
-        
-        <% form_for :order, @order, :url => {:action => "place_order"}, :html=>{:id=>"order_form"} do |f| %>
-
-<% fields_for :person, @person do |p| %>
-<%= p.hidden_field :first_name %>
-<%= p.hidden_field :last_name %>
-<%= p.hidden_field :email %>
-<%= p.hidden_field :phone %>
-<% end %>
-
-<% fields_for :credit_card, @credit_card do |cc| %>
-<%= cc.hidden_field :type %>
-<%= cc.hidden_field :first_name %>
-<%= cc.hidden_field :last_name %>
-<%= cc.hidden_field :number %>
-<%= cc.hidden_field :month %>
-<%= cc.hidden_field :year %>
-<%= cc.hidden_field :verification_value%>
-<% end %>
-
-<% fields_for :person, @billing do |p| %>
-<%= p.hidden_field :address %>
-<%= p.hidden_field :address2 %>
+      </div>
+      
+      <% form_for :order, @order, :url => {:action => "place_order"}, :html=>{:id=>"order_form"} do |f| %>
+      
+      <% fields_for :person, @person do |p| %>
+      <%= p.hidden_field :first_name %>
+      <%= p.hidden_field :last_name %>
+      <%= p.hidden_field :email %>
+      <%= p.hidden_field :phone %>
+      <% end %>
+      
+      <% fields_for :credit_card, @credit_card do |cc| %>
+      <%= cc.hidden_field :type %>
+      <%= cc.hidden_field :first_name %>
+      <%= cc.hidden_field :last_name %>
+      <%= cc.hidden_field :number %>
+      <%= cc.hidden_field :month %>
+      <%= cc.hidden_field :year %>
+      <%= cc.hidden_field :verification_value%>
+      <% end %>
+      
+      <% fields_for :person, @billing do |p| %>
+      <%= p.hidden_field :address %>
+      <%= p.hidden_field :address2 %>
 <%= p.hidden_field :zip %>
 <%= p.hidden_field :city %>
 <%= p.hidden_field :country %>
 <%= p.hidden_field :state %>
 <% end %>
 
-
-<%= f.submit "COMPLETE REGISTRATION" %>
+<%= f.submit "COMPLETE REGISTRATION", :disabled=> (@team.total == 0), :id=>"submit_info", :onclick=>"check_submit();" %>
 
 <% end %>
 

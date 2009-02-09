@@ -28,7 +28,25 @@
 	}
       } 
     return total;  
-  }                         
+  }  
+  
+  function check_submit()
+  {
+      
+    var el = document.getElementById("submit_info");
+    var res = el.disabled; 
+    el.disabled=true; 
+    
+    if (!res) { 
+        document.getElementById("order_form").submit();
+        el.disabled=true; 
+        return true
+    }
+    else
+    {
+      return false;  
+    }
+   }                       
 
 
     
