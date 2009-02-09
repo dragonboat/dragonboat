@@ -115,7 +115,7 @@ class Admin::TeamsController < Admin::WebsiteController
       csv << ["Full Name", "First Name", "Last Name", "Email Address", "Team Name", "Team Type"]   
       @members.each do |member|
         csv << [member.user.person.name, member.user.person.first_name,  member.user.person.last_name, 
-          member.user.person.email,CGI.unescapeHTML(member.team.name), member.team.boat_type_human, member.team.status.name]
+          member.user.person.email,CGI.unescapeHTML(member.team.name), member.team.boat_type_human]
       end
     end
     send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=teams_captains_to_csv.csv"
