@@ -146,7 +146,7 @@ ActiveMerchant::Billing::Base.mode = :live
     begin
       @team = current_user.teams.find(params[:team_id])
     rescue Exception 
-      flash[:notice] = "Sorry, this action is only available for team captain '#{team.captain.person.name}'"
+      flash[:notice] = "Sorry, this action is only available for team captain '#{@team.captain.person.name}'"
       access_denied
     end
     true

@@ -185,7 +185,7 @@ class Member::BoatsController < Member::WebsiteController
     begin
       @team = current_user.teams.find(params[:id])
     rescue Exception 
-      flash[:notice] = "Sorry, this action is only available for team captain '#{team.captain.person.name}'"
+      flash[:notice] = "Sorry, this action is only available for team captain '#{@team.captain.person.name}'"
       access_denied
     end
     true
