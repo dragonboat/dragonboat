@@ -91,7 +91,9 @@ ActionController::Routing::Routes.draw do |map|
     m.resources     :boat_types,    :controller => 'admin/boat_types'
     m.resources     :items,    :controller => 'admin/items'
     m.order_confirmation "/orders/:id/send_order_confirm", :controller => 'admin/orders', :action=>"send_order_confirm"
+    m.orders_processed_to_csv 'orders/orders_processed_to_csv', :controller => 'admin/orders', :action=>"orders_processed_to_csv"
     m.resources     :orders,    :controller => 'admin/orders'
+    m.resources     :other_paddlers,    :controller => 'admin/other_paddlers'
     m.team_tents 'tents/team_tents',    :controller => 'admin/tent_positions', :action=>"team_tents"
     m.tent_positions_to_csv 'tents/tent_positions_to_csv',    :controller => 'admin/tent_positions', :action=>"tent_positions_to_csv"
     m.manage_additional_tents 'tents/:id/manage_additional_tents',    :controller => 'admin/tent_positions', :action=>"manage_additional_tents"

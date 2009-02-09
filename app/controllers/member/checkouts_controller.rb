@@ -143,7 +143,12 @@ ActiveMerchant::Billing::Base.mode = :live
   
   private
    def fetch_team_and_redirect
-     @team = current_user.teams.find(params[:team_id])
-     @team ? true : access_denied
+    begin
+      @team = current_user.teams.find(params[:team_id])
+    rescue Exception 
+      flash[:notice] = "Sorry, this action is only available for team captain"
+      access_denied
+    end
+    true
    end
 end

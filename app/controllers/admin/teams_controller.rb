@@ -56,7 +56,7 @@ class Admin::TeamsController < Admin::WebsiteController
     end
     respond_to do |format|
       if  @team.save
-        flash[:notice] = 'TEam was successfully updated.'
+        flash[:notice] = 'Team was successfully updated.'
         format.html { redirect_to admin_teams_url }
         format.xml  { head :ok }
       else
@@ -109,11 +109,13 @@ class Admin::TeamsController < Admin::WebsiteController
     @members = Member.find_cocaptain(:all, 
       :include=>[:user, :team],
         :joins => "LEFT JOIN users ON users.id = members.user_id LEFT JOIN persons ON persons.id = users.person_id",
+        :conditions=>"teams.status_id=#{Status.find_team_by_name('active').id}",
       :order=>"first_name, last_name")
      csv_str = FasterCSV.generate do |csv|
-      csv << ["Full Name", "First Name", "Last Name", "Email Address", "Team Name"]   
+      csv << ["Full Name", "First Name", "Last Name", "Email Address", "Team Name", "Team Type"]   
       @members.each do |member|
-        csv << [member.sign_waiver_notice, member.user.person.first_name,  member.user.person.last_name, member.user.person.email,CGI.unescapeHTML(member.team.name)]
+        csv << [member.user.person.name, member.user.person.first_name,  member.user.person.last_name, 
+          member.user.person.email,CGI.unescapeHTML(member.team.name), member.team.boat_type_human, member.team.status.name]
       end
     end
     send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=teams_captains_to_csv.csv"

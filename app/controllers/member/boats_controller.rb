@@ -182,8 +182,13 @@ class Member::BoatsController < Member::WebsiteController
   end
   
   def fetch_team_and_redirect
-    @team = current_user.teams.find(params[:id])
-    @team ? true : access_denied
+    begin
+      @team = current_user.teams.find(params[:id])
+    rescue Exception 
+      flash[:notice] = "Sorry, this action is only available for team captain"
+      access_denied
+    end
+    true
   end
   
   def activate_team

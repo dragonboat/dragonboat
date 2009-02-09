@@ -1,4 +1,6 @@
 class Admin::OrdersController < Admin::WebsiteController
+  require 'fastercsv'
+  include ActionView::Helpers::NumberHelper
   before_filter :set_view, :get_view
   
   def index
@@ -52,6 +54,28 @@ class Admin::OrdersController < Admin::WebsiteController
     end
     flash[:notice] = "The order confirmation e-mail  was successfully re-sent to the user < #{@order.person.email} >"
     redirect_to :action=>"index"
+  end
+  
+  #Orders to CSV
+  #Captain Name, Team Name, Team Type, Name On Card, Card Type, Total Charged, Date/Time, Total Tents.
+  def orders_processed_to_csv
+    @orders = Order.find(:all,:include=>[:person],:order => "orders.created_at DESC", :conditions =>"status='processed'")
+    csv_str = FasterCSV.generate do |csv|
+      csv << ["Captain Name", "Team Name", "Team Type", "Name On Card", "Card Type", 
+              "Total Charged", "Date/Time", "Total Tents"]   
+      @orders.each do |order|
+        team = order.team
+        captain = team.captain 
+        credit_card = order.credit_card
+        extras_orders = order.extras_orders.select {|o| o.extras.is_tent? }
+        tents = 0
+        extras_orders.each {|o| tents+=o.quantity}
+        csv << [captain.person.name, CGI.unescapeHTML(team.name), team.boat_type_human, 
+              "#{credit_card.first_name} #{credit_card.last_name}", credit_card.type.capitalize, 
+              number_to_currency(order.total_pay), order.created_at.strftime("%d.%m.%Y/%H:%M"), tents]
+      end
+    end
+    send_data csv_str, :type => 'text/csv', :disposition => "attachment;filename=orders_processed_to_csv.csv"
   end
   
   private

@@ -1,0 +1,24 @@
+<table id="paddlers" class="obj_list">
+  <tr>
+    <th><%= link_to('Name', admin_other_paddlers_url(:sort => sort_link_for('name', params[:sort])), :title=>"Sort by Name" ) %></th>
+    <th><%= link_to('E-mail', admin_other_paddlers_url(:sort => sort_link_for('email', params[:sort])), :title=>"Sort by E-mail" ) %></th>
+    <th><%= link_to('Age', admin_other_paddlers_url(:sort => sort_link_for('age', params[:sort])), :title=>"Sort by Age" ) %></th>
+    <th>Phone number</th>
+    <th><%= link_to('Created at', admin_other_paddlers_url(:sort => sort_link_for('created_at', params[:sort])), :title=>"Sort by Created at" ) %></th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <% for paddler in @paddlers %>
+  <%person = paddler.person%>
+  <tr>
+    <td><%=person.name%></td>
+    <td><%=mail_to person.email%></td>
+    <td><%=person.age%></td>
+    <td><%=person.phone%></td>
+    <td><%=person.created_at.strftime("%d.%m.%Y %H:%M")%></td>  
+      <td>
+        <%= link_to 'Details', admin_other_paddler_url(paddler) %>
+      </td> 
+  </tr>
+<% end %>
+</table>
