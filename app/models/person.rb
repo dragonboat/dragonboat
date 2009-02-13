@@ -16,6 +16,7 @@ class Person < ActiveRecord::Base
     :zip => "Zip code"
   }
 
+
   def self.human_attribute_name(attr)
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
@@ -69,12 +70,14 @@ class Person < ActiveRecord::Base
         errors.add_on_blank(attr_name, 'is required')
       end
     elsif  self.validation_mode  == :sign_waiver
+      
       for attr_name in [:birthday_date, :zip, :address, :city, :state, :phone, :emergency_contact_name,:emergency_contact_number]
         errors.add_on_blank(attr_name, 'is required')
       end
       if zip && !zip.empty?
         errors.add(:zip, 'is not valid') unless zip =~ /^[ A-Z\d]{0,9}$/i
       end
+
     elsif  self.validation_mode == :paddler
       for attr_name in [:gender, :phone, :birthday_date]
         errors.add_on_blank(attr_name, 'is required')

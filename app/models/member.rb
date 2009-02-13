@@ -63,10 +63,6 @@ class Member < ActiveRecord::Base
       errors.add(:accept, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver')  if accept!=1#self.waiver_status_id != Status.find_waiver_by_name('accept').id
       errors.add_on_blank(:sign_waiver_notice, 'is required. If you are accepting the invitation, you need to digitally sign our liability release waiver')
       
-      if self.sign_waiver_notice && !self.sign_waiver_notice.empty?
-        errors.add(:sign_waiver_notice, 'is incorrect. Please retype your complete name to sign this waiver') unless self.sign_waiver_notice.strip.gsub(' ', "").downcase == user.person.name.gsub(' ', "").downcase 
-      end
-      
     end
     
     end
