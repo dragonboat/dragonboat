@@ -151,6 +151,21 @@ class Member::MembersController < Member::WebsiteController
     redirect_to member_team_members_url(@team)
   end
   
+  def send_email_to_team
+    result = ""
+    subject = params[:subject].chomp if params[:subject]
+    body = params[:body].chomp if params[:body]
+    if subject && !subject.empty? && body && !body.empty?
+      @team.members.each do |member|
+        MemberEmail.deliver_team_notifier(member,subject,body)
+      end
+      result = "The team email was successfully sent to your team members"
+    else
+      result = "Sorry, we could not send your message. You should fill in required fields."
+    end
+    render :text=>result, :layout => false
+  end
+  
   
   private
   def set_types

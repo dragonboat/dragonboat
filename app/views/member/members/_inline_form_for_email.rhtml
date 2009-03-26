@@ -1,0 +1,42 @@
+<h2>Email My Team</h2>
+
+<div id="send_email_results" class="notice"></div>
+<%= form_remote_tag(:update => "send_email_results", 
+                    :url => { :action => :send_email_to_team }, :html=>{:id=>"send_email_to_team"} ) %>
+
+<p>
+  <label for="message">Subject:<span id="required">*</span><br/></label>
+  <%= text_field_tag 'subject', params[:subject],:id=>"f_subject", :size=>50, :onchange=>"change_submit_btn_status();"%>
+</p> 
+<p>
+  <label for="message_body">Body:<span id="required">*</span><br/></label>
+  <%= text_area_tag 'body', params[:body], :id=>"f_body" , :rows=>10, :cols=>50 , :onchange=>"change_submit_btn_status();"%>
+</p>  
+
+  <br/>
+  <%= submit_tag "Send Email to Team", :id=>"f_submit",:disabled=>true%>
+</form>
+
+<script>
+  function change_submit_btn_status ()
+  {
+     var d = document;
+     //var f = d.getElementById('send_email_to_team')
+     var subject =  d.getElementById('f_subject').value;
+     var body =  d.getElementById('f_body').value;
+     var btn =  d.getElementById('f_submit');
+     s_size = subject.length;
+     b_size = body.length;
+     size = subject.length;
+     while (subject.slice(0,1) == " ") //Strip leading spaces
+     {subject = subject.substr(1,size-1);size = subject.length;}
+     size = body.length;
+     while (body.slice(0,1) == " ") //Strip leading spaces
+     {body = body.substr(1,size-1);size = body.length;}
+     if (body != "" && subject != "" )
+     { btn.disabled = false; }
+     else
+     {  btn.disabled = true; }
+     
+  }
+</script>
