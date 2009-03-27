@@ -3,6 +3,8 @@ class Member::PracticesController < Member::WebsiteController
   before_filter :fetch_team
   before_filter :is_captain, :only=>[:reschedule,:undo,:update, :update_data]
   before_filter :init_filter
+  cache_sweeper :practice_sweeper, :only => [:undo, :update, :update_data, :reschedule]
+
   
   def index
     calendar

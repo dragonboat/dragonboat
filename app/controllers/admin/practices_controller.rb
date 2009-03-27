@@ -2,6 +2,7 @@ class Admin::PracticesController < Admin::WebsiteController
 before_filter :set_teams, :only=>[:edit, :update, :new, :create]
 before_filter :set_view, :get_view
 before_filter :init_filter, :set_filter, :store_filter
+cache_sweeper :practice_sweeper, :only => [:create, :update, :destroy]
 
  def index
   if @view == "list"

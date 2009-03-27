@@ -29,6 +29,11 @@ Rails::Initializer.run do |config|
     :session_key => '_dragonboat_session',
     :secret      => '0065486985468546954654620349'
   }
+  
+  #Cashe
+  #config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
+  config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
+
   # Use the database for sessions instead of the file system
   # (create the session table with 'rake db:sessions:create')
   config.action_controller.session_store = :active_record_store

@@ -36,9 +36,10 @@
     </td>
     <td>
       <%next_p =  @practices[i+1]%>
-      <%if  next_p && next_p.date == practice.date%>
+      <%if  next_p && (next_p.time == practice.time)%>
+     
       <%practice = next_p%>
-      <%=practice.team_name%>
+            <%=practice.team_name%>
             <%if practice.team %>      
             <br>Launch Driver: <%= practice.launch_driver %> 
             <br>Steers Person: <%=practice.steers_person%>
