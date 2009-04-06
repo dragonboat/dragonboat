@@ -9,7 +9,7 @@
   <%time = ""%>
   <%p_date = ""%>
   <%@practices.each_with_index do |practice, i|%>
-  <%unless practice.time == time  %>
+  <%unless ( practice.time == time && practice.date == p_date ) %>
   <%if practice.created_at.month != month%>
   <tr>
     <th colspan="3"> <%=practice.created_at.strftime("%B").upcase%></th>
@@ -36,7 +36,8 @@
     </td>
     <td>
       <%next_p =  @practices[i+1]%>
-      <%if  next_p && (next_p.time == practice.time)%>
+      
+      <%if  next_p && (next_p.time == practice.time) && (next_p.date==practice.date)%>
      
       <%practice = next_p%>
             <%=practice.team_name%>
