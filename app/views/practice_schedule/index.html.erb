@@ -5,7 +5,8 @@
 <style>
 .practiceline{border-bottom:2px solid red;margin-bottom:10px;}
 .pline{border-top:1px solid #AAA;padding-top:5px;padding:10px;margin:0px; font-size:12px;}
-
+.team{font-weight:bold;}
+.newteam{font-weight:bold;color:#FF6600;}
 </style>
 
   
@@ -38,7 +39,13 @@
     <%end%>
 
     <td class="pline">
-      <strong><%=practice.team_name%></strong>
+	<% 
+		tclass="team" 	
+		if practice.team && practice.team.visit_status!="no"
+			tclass="newteam" 
+		end
+	%>
+      <div class="<%=tclass%>"><%=practice.team_name%></div>
       <%if practice.team %>
       <br>Launch Driver: <%= practice.launch_driver %> 
       <br>Steers Person: <%=practice.steers_person%>
@@ -49,7 +56,13 @@
       <%next_p =  @practices[i+1]%>
       <%if  next_p && (next_p.time == practice.time) && (next_p.date==practice.date)%>
       <%practice = next_p%>
-            <strong><%=practice.team_name%></strong>
+	<% 
+		tclass="team" 	
+		if practice.team && practice.team.visit_status!="no"
+			tclass="newteam" 
+		end
+	%>
+      <div class="<%=tclass%>"><%=practice.team_name%></div>
             <%if practice.team %>      
             <br>Launch Driver: <%= practice.launch_driver %> 
             <br>Steers Person: <%=practice.steers_person%>
@@ -65,3 +78,5 @@
 </table>
 
 <%end%>
+
+<div class="newteam">New teams names are displayed in ORANGE</div>
