@@ -2,6 +2,12 @@
 <h1>Practice Schedule</h1>
 <%if @practices%>
 
+<style>
+.practiceline{border-bottom:2px solid red;margin-bottom:10px;}
+.pline{border-top:1px solid #AAA;padding-top:5px;padding:10px;margin:0px; font-size:12px;}
+
+</style>
+
   
 <table class="obj_list" width="100%">
 
@@ -11,36 +17,39 @@
   <%@practices.each_with_index do |practice, i|%>
   <%unless ( practice.time == time && practice.date == p_date ) %>
   <%if practice.created_at.month != month%>
+
+<tr><td colspan="3"><h2><%=practice.created_at.strftime("%B").upcase%></h2></td></tr>
   <tr>
-    <th colspan="3"> <%=practice.created_at.strftime("%B").upcase%></th>
-    <th> Team Asisted By</th>
-    <th> Team Asisted By</th>
+    <th colspan="3">Practice Date / Time</th>
+    <th>Team</th>
+    <th>Team</th>
   </tr>
   <%end%>
 
-  <tr>
+  <tr class="practiceline">
     <%if practice.date != p_date%>
-    <td width="60"><%=practice.created_at.strftime("%A")%></td>
-    <td width="120"><%=practice.created_at.strftime("%d %B %Y")%></td>
-    <td width="70"><%=practice.time%></td>
+	<% lclass="pline" %>
+	    <td width="60" class="<%=lclass%>"><%=practice.created_at.strftime("%A")%></td>
+	    <td width="120" class="<%=lclass%>"><%=practice.created_at.strftime("%d %B %Y")%></td>
+	    <td width="70" class="<%=lclass%>"><%=practice.time%></td>
     <%else%>
-    <td colspan="2"></td>
-    <td><%=practice.time%></td>
+	    <td colspan="2"></td>
+	    <td class="pline"><%=practice.time%></td>
     <%end%>
-    <td>
-      <%=practice.team_name%> 
+
+    <td class="pline">
+      <strong><%=practice.team_name%></strong>
       <%if practice.team %>
       <br>Launch Driver: <%= practice.launch_driver %> 
       <br>Steers Person: <%=practice.steers_person%>
       <%end%>
     </td>
-    <td>
+
+    <td class="pline">
       <%next_p =  @practices[i+1]%>
-      
       <%if  next_p && (next_p.time == practice.time) && (next_p.date==practice.date)%>
-     
       <%practice = next_p%>
-            <%=practice.team_name%>
+            <strong><%=practice.team_name%></strong>
             <%if practice.team %>      
             <br>Launch Driver: <%= practice.launch_driver %> 
             <br>Steers Person: <%=practice.steers_person%>
