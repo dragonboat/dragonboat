@@ -157,7 +157,7 @@ class Member::MembersController < Member::WebsiteController
     body = params[:body].chomp if params[:body]
     if subject && !subject.empty? && body && !body.empty?
       @team.members.each do |member|
-        MemberEmail.deliver_team_notifier(member,subject,body)
+        MemberEmail.deliver_team_notifier(current_user, member,subject,body)
       end
       result = "The team email was successfully sent to your team members"
     else
