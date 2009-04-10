@@ -1,5 +1,6 @@
 <% content_for :title do %>Practice Schedule<% end %>
 <h1>Practice Schedule</h1>
+<% cache do %>
 <%if @practices%>
 
 <style>
@@ -80,3 +81,4 @@
 <%end%>
 
 <div class="newteam">New teams names are displayed in ORANGE</div>
+<%end%>

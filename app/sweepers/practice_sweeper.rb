@@ -12,7 +12,8 @@ class PracticeSweeper < ActionController::Caching::Sweeper
           
   private
   def expire_cache_for(record)
-    expire_page(:controller => '/practice_schedule', :action => 'index')
+   # expire_page(:controller => '/practice_schedule', :action => 'index')
+    expire_fragment(:controller => '/practice_schedule', :action => 'index')
     #expire_page(:controller => 'practice_schedule', :action => 'index', :id => record.id)
 
   end
