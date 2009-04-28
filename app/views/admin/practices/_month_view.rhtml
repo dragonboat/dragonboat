@@ -5,7 +5,7 @@
   <% practices = Practice.find_by_month(i) %>
   <%if practices.size>0%>
   <tr>
-    <td align="center" colspan="5" class="schedule_header"><%= m.upcase if m %></td> 
+    <td align="center" colspan="6" class="schedule_header"><%= m.upcase if m %></td> 
 
     <tr>
     
@@ -33,4 +33,4 @@
     <%end%>
  <%end%>
 <%end%>
-  </table>git pu
+  </table>
