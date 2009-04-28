@@ -63,7 +63,7 @@ class Practice < ActiveRecord::Base
   #month_num this is a number from 0 till 12
   def self.find_by_month(month_num=0)
     self.find(:all, :conditions=>"DATE_FORMAT(created_at,'%c')= '#{month_num.to_i}'",
-      :order => "created_at DESC" )
+      :order => "created_at ASC" )
   end
   
   
