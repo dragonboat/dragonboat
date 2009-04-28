@@ -2,7 +2,7 @@
 
   
 <% Date::MONTHNAMES.each_with_index do |m,i| %>
-  <% practices = Practice.find_by_month(i) %>
+  <% practices = Practice.find_by_month(i, :order=>'created_at asc') %>
   <%if practices.size>0%>
   <tr>
     <td align="center" colspan="5" class="schedule_header"><%= m.upcase if m %></td> 
