@@ -12,7 +12,8 @@
       <th width="200">Date</th>
       <th width="70">Time</th>
       <th>Team Name</th>
-	  <th>Assisted By</th>
+	  <th>Steersperson</th>
+ 	  <th>Launch Driver</th>
       <th>&nbsp;</th>
     </tr>
    
@@ -21,10 +22,9 @@
     <td><b><%=h practice.created_at.strftime("%d %B %Y - %a") %></b></td>
     <td><%=h practice.created_at.strftime("%I:%M%p") %></td>
     <td><%= practice.team_name %></td>
-	<td>
-		Steersperson: <%= practice.steers_person %><br/>
-		Launch Driver: <%= practice.launch_driver %>
-	</td>
+	<td><%= practice.steers_person %></td>
+	<td><%= practice.launch_driver %></td>
+
     <td >
       <%= link_to(image_tag("icons/page_white_edit.png"), admin_edit_practice_path(practice), :style => "margin-right: 3px;") %>
       <%= link_to(image_tag("icons/delete.png"), admin_practice_path(practice), :confirm => 'Are you sure?', :method => :delete, :style => "margin-right: 3px;") %>
